@@ -1,14 +1,16 @@
-import "./App.css"
-import { Route } from "react-router-dom"
-import CreatePokemon from "./components/CreatePokemon/CreatePokemon"
-import NavBar from "./components/NavBar/NavBar"
-import Detail from "./components/Detail/Detail"
-import Landing from "./components/Landing/Landing"
-import Home from "./components/Home/Home"
-import Paginated from "./components/Paginated/Paginated"
+import { Route, BrowserRouter } from "react-router-dom"
+import Home from "./components/Home"
+
+
 
 function App() {
-  return <>The Gaming Farm</>
+  return (
+    <BrowserRouter>
+    <div className="App">
+      <Route exact path='/home' component={Home} />
+    </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
