@@ -1,14 +1,18 @@
-import Footer from "./components/Footer/Footer";
+import Footer from './components/Footer/Footer';
 import './App.css';
-import LandingPage from "./components//Landing Page/Landing Page";
+import LandingPage from './components/Landing Page/LandingPage';
+import { Route, BrowserRouter } from "react-router-dom"
+
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-        <h1>The Gaming Farm</h1>
-      <LandingPage/>
+      <Route exact path='/' component={LandingPage} />
       <Footer/>
     </div>
+    </BrowserRouter>
   );
 }
 
