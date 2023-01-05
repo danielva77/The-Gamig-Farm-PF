@@ -11,4 +11,4 @@ router.post("/", createProducts);
 
 
 
-module.exports = router
+module.exports = router;

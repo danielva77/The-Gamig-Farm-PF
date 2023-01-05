@@ -31,3 +31,5 @@ router.put("/usuario/name?Nombre", async (req, res) => {
 router.delete("/usuario/name?Nombre", async (req, res) => {
 
 }) 
+
+module.exports = router;
