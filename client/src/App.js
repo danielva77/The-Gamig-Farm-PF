@@ -11,9 +11,10 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
+    <Route path='/home' component={NavBar} />
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/home' component={Home} />
-      <Route path='/home' component={NavBar} />
+      <Route path='/home/:id' component={Details} />
       <Footer/>
     </div>
     </BrowserRouter>

@@ -34,3 +34,14 @@ export function getAllProd() {
       dispatch({type:'VOLVER_A_HOME'}) 
     }
   }
+
+  //Actions para los Detalles
+
+  export const GET_DETAIL = 'GET_DETAIL';
+
+  export const getDetail = (id) => {
+    return async (dispatch) => {
+        let info = await axios.get(`/product/${id}`);
+        dispatch({ type: GET_DETAIL, payload: info.data });
+    }
+}
