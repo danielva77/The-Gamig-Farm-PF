@@ -55,7 +55,18 @@ if (mark.length) {
   res.status(200).send("Product created succesfully")
 };
 
+
+// getCategories te devuelve todas las categorias desde la api
+const getCategories = async () => {
+	const dbCategories = await Category.findAll();
+
+	if (!dbCategories.length) throw new Error(`Categories not found!`);
+
+	return dbCategories;
+};
+
 module.exports = {
   getAllProducts,
-  createProducts
+  createProducts,
+  getCategories
 };
