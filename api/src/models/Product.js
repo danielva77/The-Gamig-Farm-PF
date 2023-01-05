@@ -30,14 +30,18 @@ module.exports = sequelize => {
       price: {
         type: DataTypes.FLOAT,
         allowNull: false,
-        unique: true,
+      },
+      detail: {
+        type: DataTypes.TEXT,
+        allowNull: false,
       },
       img: {
         type: DataTypes.STRING,
       },
+      stock: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      }
     },
-    {
-      timestamps: false,
-    }
   )
 }
