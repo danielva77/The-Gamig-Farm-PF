@@ -54,7 +54,7 @@ if (mark.length) {
 }
   res.status(200).send("Product created succesfully")
 };
-console.log("hola")
+console.log("hola  ")
 
 module.exports = {
   getAllProducts,
