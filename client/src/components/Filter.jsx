@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Filter = () => {
     // const dispatch = useDispatch();
-
+console.log(hola)
            {/* FILTRADO */} 
 
     // const handleOrder = (event) => {
