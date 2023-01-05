@@ -6,13 +6,18 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import { BrowserRouter } from "react-router-dom"
 import { Provider } from "react-redux"
-// import store from "./redux/store/index"
+import store from "./redux/store"
 import dotenv from "dotenv"
 dotenv.config()
 
 axios.defaults.baseURL = `http://localhost:3001`
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(
+<Provider store={store}>
+<App />
+</Provider>, 
+document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
