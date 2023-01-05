@@ -19,7 +19,7 @@ const getAllProducts = async() => {
 };
 
 // Funcion para crear productos
-const createProducts = async(){
+const createProducts = async() => {
 	const { title, price, detail, img, stock, category, mark } = req.body;
     try {
       if (!title || !price || !detail || !img || !stock || !category || !mark) {
@@ -55,7 +55,18 @@ if (mark.length) {
   res.status(200).send("Product created succesfully")
 };
 
+
+// getCategories te devuelve todas las categorias desde la api
+const getCategories = async () => {
+	const dbCategories = await Category.findAll();
+
+	if (!dbCategories.length) throw new Error(`Categories not found!`);
+
+	return dbCategories;
+};
+
 module.exports = {
   getAllProducts,
-  createProducts
+  createProducts,
+  getCategories
 };
