@@ -19,7 +19,7 @@ const getAllProducts = async() => {
 };
 
 // Funcion para crear productos
-const createProducts = async(){
+const createProducts = async() => {
 	const { title, price, detail, img, stock, category, mark } = req.body;
     try {
       if (!title || !price || !detail || !img || !stock || !category || !mark) {
