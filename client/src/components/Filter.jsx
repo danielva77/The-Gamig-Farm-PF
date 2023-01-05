@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import StoreItems from "./StoreItems"
-import Filter  from "./Filter"
 
-const Home = () => {
+const Filter = () => {
     // const dispatch = useDispatch();
 
            {/* FILTRADO */} 
@@ -70,7 +68,6 @@ const Home = () => {
 
 return (
         
-    <> 
     <div className='Select'>
     {/* Ordenamiento */}
     <select>
@@ -78,7 +75,7 @@ return (
         <option value="Asc">Ascendente</option>
         <option value="Desc">Descendente</option>
     </select>
-    
+
     {/* filtrado por popularidad */}
     <select>
         <option value='Popularidad'>Pupularidad</option>
@@ -97,11 +94,9 @@ return (
             <option value={el} key={el.id}>{el}</option>
         ))} */}
     </select>
-
 </div>
-<Filter />
-      <StoreItems />
-      </>
+
 )
 }
-export default Home;
+
+export default Filter;
