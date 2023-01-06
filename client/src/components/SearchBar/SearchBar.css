@@ -1,0 +1,95 @@
+.searchbar-div {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    justify-content: right;
+    border-radius: 10px;
+    margin-right: 40px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 100%;
+    
+    
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    justify-content: right;
+    padding: 5px;
+    margin: 10px;
+    width: 4%;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.bar-btn {
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 5px;
+    width: 1;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    border-radius: 20px;
+    border-color: rgba(255, 255, 255, 0);
+   
+}
+
+.btn:hover {
+    background-color: rgb(165, 165, 165);
+    color: rgb(130, 128, 128);
+   
+}
+
+.bar-btn:hover {
+    background-color:rgba(222, 222, 226, 0.96)
+}
+
+.lupaa{
+position: relative;
+    margin-right: 12px;
+    size: 15px;
+    display: flex;
+    height:24px; 
+    width:20px;
+}
+
+.Logo{
+    display: flex;
+    height: 100%;
+    width:fit-content; 
+    padding-right: 60%;
+    
+}
+.Background{
+    
+  background: linear-gradient rgb(100, 98, 98);
+  background-size: 500%;
+
+ 
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 92%}
+  50%{background-position:100% 9%}
+  100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 92%}
+  50%{background-position:100% 9%}
+  100%{background-position:0% 92%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 92%}
+  50%{background-position:100% 9%}
+  100%{background-position:0% 92%}
+}
+    
