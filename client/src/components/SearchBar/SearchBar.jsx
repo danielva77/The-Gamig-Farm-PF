@@ -37,7 +37,7 @@ export default function SearchBar(){
           name="buscar" 
           placeholder="Search" color='white' 
           onChange={handleInputChange} 
-          value={input.buscar} 
+          // value={input.buscar} 
           autoComplete="off" 
         ></input>
         
