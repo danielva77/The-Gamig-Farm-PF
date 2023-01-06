@@ -1,9 +1,9 @@
-const { Product, Category, Mark } = require('../../db');
+// Modelos de la base de datos ↓
+const { Product, Mark, Category } = require("..../db.js");
 
 // Funcion para traer todos los juegos, incluye el modelo categoria
-const getAllProducts = async() => {
-	try {
-  let allproducts = await Product.findAll({
+const getDbproducts = async () =>{
+  return await Product.findAll({
 		include: [{
 			model: Category,
 			attributes: ['name'],
@@ -11,11 +11,16 @@ const getAllProducts = async() => {
 				attributes: [],
 			},
 		}]
-	});
-      return allproducts;
-  } catch (error) {
-    res.status(404).send("aun no hay nada")
-  }
+	})
+}
+
+
+const getAllProducts = async(req, res) => {
+
+  let allproducts = await getDbproducts();
+  console.log("prueba")
+    allproducts.length ?
+    res.status(200).send(allproducts) : res.status(404).send("aun no hay nada")
 };
 
 // Funcion para crear productos

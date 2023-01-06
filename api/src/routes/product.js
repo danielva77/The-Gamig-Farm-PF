@@ -4,9 +4,12 @@ import { getAllProducts, createProducts } from '../controllers/products/Controll
 const router = Router();
 
 // router.delete('/:productId', deleteProduct);
-router.get('/productos', getAllProducts),
+router.get("/prod", getAllProducts);
+
+
+
 // router.get("/:productId", getOneProduct);
-router.post("/productos", createProducts);
+router.post("/prod", createProducts);
 // router.put('/', productEdit)
 
 
