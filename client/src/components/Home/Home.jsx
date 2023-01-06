@@ -45,6 +45,8 @@ export function Home() {
                 />
       </div>
       <div><p>Page -{currentPage}-</p></div>
+
+      
       <StoreItems
       currentVideogames = {currentVideogames} />
       

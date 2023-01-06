@@ -110,4 +110,20 @@ router.post("/products", createProducts);
 
 router.get("/category", getCategories)
 
+router.get("/products/:id", async(req , res) =>{
+    // res.send("Soy el get /videogame")
+    const {id} = req.params;
+   
+    console.log("numero", id.toString().length);
+
+    let allprodById = await getAllProducts();
+    
+    if(id){
+      let ProdId = await allprodById.filter(e => e.id == id);
+      ProdId.length ?
+      res.status(200).json(ProdId) :
+      res.status(404).send("No existe juego con ese Id")
+    }
+})
+
 module.exports = router;

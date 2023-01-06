@@ -4,6 +4,8 @@ import data from "../data/items.json"
 
 export const GET_ALL_PROD = "GET_ALL_PROD";
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME";
+export const GET_DETAIL = "GET_DETAIL";
+export const CLEAN_DETAIL = "CLEAN_DETAIL";
 
 //Actions para la SearchBar
 
@@ -41,15 +43,24 @@ export function getAllProd() {
   }
 
   //Actions para los Detalles
-
-  export const GET_DETAIL = 'GET_DETAIL';
-
   export const getDetail = (id) => {
-    return async (dispatch) => {
-        let info = await axios.get(`/product/${id}`);
-        dispatch({ type: GET_DETAIL, payload: info.data });
+    return async function (dispatch) {
+        const response = await axios.get(
+            `http://localhost:3001/products/${id}`
+        )
+  
+        return dispatch({
+            type: GET_DETAIL,
+            payload: response.data
+        })
     }
-}
+  }
+  
+  export function cleanDetail(){
+    return{
+        type: 'CLEAN_DETAIL'
+    }
+  }
 
 
 //Actions para el carrito
