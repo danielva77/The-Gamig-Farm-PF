@@ -16,7 +16,7 @@ export default function SearchBar(){
     console.log(name);
   };
 
-  function handleSubmit(e){
+  function handleSubmit(e){w
     e.preventDefault();
     dispatch(searchByName(name));
     setName("");
@@ -35,12 +35,12 @@ export default function SearchBar(){
           className="bar-btn"
           type="text"
           name="buscar" 
-          placeholder="Search" color='white' 
-          onChange={handleInputChange} 
+          placeholder="Search ..." 
+          onChange={(e) =>{handleInputChange(e)}} 
           // value={input.buscar} 
           autoComplete="off" 
         ></input>
-        
+        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > <img className="lupaa" src={lupa} alt="lupa" /></button>
         </div>
       </div>
     );
