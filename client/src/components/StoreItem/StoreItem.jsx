@@ -20,10 +20,12 @@ export function StoreItem({ id, name, price, imgUrl }) {
       </div>
       <div class="card-footer">
         {quantity === 0 ? (
-          <button className="btn w-100">+ Add to Cart</button>
+          <div className="d-flex align-items-center">
+            <button className="btn btn-primary w-100">+ Add to Cart</button>
+          </div>
         ) : (
           <div
-            className="d-flex align-items-center flex-column"
+            className="d-flex flex-column align-items-center "
             style={{ gap: ".5rem" }}
           >
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>

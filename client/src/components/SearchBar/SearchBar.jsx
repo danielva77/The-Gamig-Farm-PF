@@ -45,7 +45,7 @@ function SearchBar({searchByName, volverAhome}) {
           value={input.buscar} 
           autoComplete="off" 
         ></input>
-        <button className="btn" onClick={handleOnClick} > <img className="lupaa"src={lupa} /></button>
+        <button className="btn-search-bar" onClick={handleOnClick} > <img className="lupaa"src={lupa} /></button>
         </div>
       </div>
     );
