@@ -8,12 +8,7 @@ const router = Router()
 
 
 // Obtener todos los usuarios
-router.get("/usuarios", async (req, res) => {
-<<<<<<< HEAD
-    
-=======
-    // AXIOS.GET("")
->>>>>>> 640f2160fd0ef69cc2c07bd12db255b13ad69701
+router.get("/usuarios", async (req, res) => {   
 }) 
 
 // obtener un usuario en particular
@@ -33,9 +28,5 @@ router.put("/usuario/name?Nombre", async (req, res) => {
 
 // Eliminar cuenta del usuario
 router.delete("/usuario/name?Nombre", async (req, res) => {
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 640f2160fd0ef69cc2c07bd12db255b13ad69701
 }) 

@@ -1,7 +1,6 @@
 import React from "react"
 import { StoreItem } from "../StoreItem/StoreItem"
 import data from "../../data/items.json"
-
 function StoreItems() {
   return (
     <div className="container d-flex justify-content-center align-items-center h-100">
