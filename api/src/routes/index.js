@@ -43,13 +43,13 @@ router.get("/usuarios", async (req, res) => {
     }
 
 
-}) // ✅✅✅✅✅✅✅✅✅
+}) // ✅✅✅✅✅
 
 
 // obtener un usuario en particular
 router.get("/usuario/name", async (req, res) => {
     res.status(202).send("Este es el perfil de : Alfredo Zavala")
-}) // ❓❓❓❓❓❓❓❓
+}) // ❓❓❓❓❓
 
 
 // cargar/crear usuario 
@@ -73,7 +73,7 @@ router.post("/usuarios", async (req, res) => {
         dateOfBirth,
         telephone,
         password,
-    }) // ✅✅✅✅✅✅✅✅✅
+    }) // ✅✅✅✅✅
 
     
 
