@@ -1,5 +1,7 @@
 //Reducers Search Bar
-import { GET_ALL_PROD } from "./actions";
+import { GET_ALL_PROD,
+    SEARCH_BY_NAME
+    } from "./actions";
 
 const initialState = { 
     filtered: [],
@@ -8,18 +10,17 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) { 
     switch (action.type) { 
-           case GET_ALL_PROD: 
-                return { 
-                    ...state,
-                    items: action.payload,
-                    filtered: action.payload
-                    
-            }; 
+      case GET_ALL_PROD: 
+        return { 
+        ...state,
+        items: action.payload,
+        filtered: action.payload
+        }; 
 
-           case 'SEARCH_BY_NAME':
-                 return {
-                    ...state,
-                    filtered: action.payload
+      case SEARCH_BY_NAME:
+        return {
+          ...state,
+          items: action.payload
     };
     case "REMOVE_FROM_CART":
       return {

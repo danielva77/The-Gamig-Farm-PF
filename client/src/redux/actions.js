@@ -3,40 +3,36 @@ import data from "../data/items.json"
 
 
 export const GET_ALL_PROD = "GET_ALL_PROD";
+export const SEARCH_BY_NAME = "SEARCH_BY_NAME";
 
 //Actions para la SearchBar
 
 export function searchByName(name)  { 
-  return function (dispatch) { 
-    return axios.get(`/product?name=${name}`) 
-      .then((res) => { 
-        console.log(res)
-        dispatch({ type: 'SEARCH_BY_NAME', payload: res.data }); 
+  return async function (dispatch) { 
+    try {
+      let json = await axios.get("http://localhost:3001/products?title="+name);
+      return dispatch({
+        type: "SEARCH_BY_NAME",
+        payload: json.data,
       })
-      .catch((err) => {
-        return err;
-      });
+    } catch (error) {
+        console.log(error)
+        console.log("prueba error obtener title de producto")
+        alert("No hay productos cargados con ese nombre")
+    };
   };
-}
+};
 
 export function getAllProd() { 
-      // ---------- get from api --------------
-      // return function (dispatch) { 
-        // return axios.get("/product/") 
-        //   .then((res) => { 
-        //     console.log(res)
-        //     dispatch({ type: 'GET_ALL_PROD', payload: res.data }); 
-        //   })
-        //   .catch((err) => { 
-        //     return err;
-        //   });
-      // };
+  return async function(dispatch){
+    var json = await axios.get("http://localhost:3001/products");
 
-      return {
-        type: 'GET_ALL_PROD',
-        payload: data
-      }
-  }
+    return dispatch({
+      type: "GET_ALL_PROD",
+      payload: json.data,
+    });
+  };
+};
 
   export function volverAhome(){ 
     return function (dispatch){ 

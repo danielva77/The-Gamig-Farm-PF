@@ -1,7 +1,7 @@
 const { Product, Mark, Category } = require("../../db");
 
 // Funcion para traer todos los juegos, incluye el modelo categoria
-const getAllProducts = async (req, res, next) => {
+const getAllProducts = async () => {
 
   try {
       const allproducts = await Product.findAll({
@@ -13,10 +13,10 @@ const getAllProducts = async (req, res, next) => {
               model: Mark,
             }
         ]})
-        
-        res.status(200).send(allproducts)
+        return allproducts;
+        // res.status(200).send(allproducts)
   } catch (error) {
-    res.status(404).send("aun no hay nada")
+    // res.status(404).send("aun no hay nada")
   }
 }
 
