@@ -1,5 +1,5 @@
 .btn-primary{
-    background-color: #8e2de2;
+    background-color: #8d2de2ba;
     width: 100%;
     border-radius: 15px;
     color:aliceblue;
@@ -11,5 +11,5 @@
 
 
 .btn-primary:hover {
-    background-color: #8d2de2ba;
+    background-color: #8e2de2;
 }
