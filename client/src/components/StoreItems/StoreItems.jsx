@@ -8,7 +8,7 @@ import { getAllProd } from "../../redux/actions";
 
 
 
-function StoreItems() {
+function StoreItems({currentVideogames}) {
   const dispatch = useDispatch();
   const allItems = useSelector(state => state.items);
   
@@ -25,7 +25,7 @@ function StoreItems() {
         className="row d-flex justify-content-center align-items-center"
         style={{ gap: "20px" }}
       >
-        {allItems.map(card => (
+        {currentVideogames.map(card => (
           <div className="col-md-4  mt-4">
             <StoreItem
               name={card.title}
