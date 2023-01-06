@@ -28,7 +28,7 @@ function StoreItems() {
         {allItems.map(card => (
           <div className="col-md-4  mt-4">
             <StoreItem
-              name={card.title}
+              name={card.name}
               imgUrl={card.imgUrl}
               price={card.price}
             />

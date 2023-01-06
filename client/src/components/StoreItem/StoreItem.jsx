@@ -1,7 +1,7 @@
 import React from "react"
 
 export function StoreItem({ id, name, price, imgUrl }) {
-  const quantity = 3
+  const quantity = 0
   return (
     <div className="card text-center bg-dark" style={{ height: "400px" }}>
       <img

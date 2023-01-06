@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Button, OverlayTrigger, Tooltip, Offcanvas } from 'react-bootstrap';
 import { removeFromCart } from '../../redux/actions';
+import Carrito from "../Assets/cart.png"
 
 const Cart = () => {
 //   const items = useSelector(state => state.cart.items);
@@ -18,9 +19,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <Button variant="primary" onClick={handleShow}>
-        Cart
-      </Button>
+      <Button variant=""  class="btn btn float-right"  onClick={handleShow}> <img src={Carrito} alt="imagen" class="img-fluid"/></Button>
       <Offcanvas show={show} onHide={handleHide} placement="end">
         <Offcanvas.Header>
           <Offcanvas.Title>Tu carrito</Offcanvas.Title>

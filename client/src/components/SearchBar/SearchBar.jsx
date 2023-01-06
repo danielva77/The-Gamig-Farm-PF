@@ -40,12 +40,12 @@ function SearchBar({searchByName, volverAhome}) {
         <input
           className="bar-btn"
           name="buscar" 
-          placeholder="Search" 
+          placeholder="Search" color='white' 
           onChange={handleInputChange} 
           value={input.buscar} 
           autoComplete="off" 
         ></input>
-        <button className="btn-search-bar" onClick={handleOnClick} > <img className="lupaa"src={lupa} /></button>
+        
         </div>
       </div>
     );
