@@ -1,12 +1,13 @@
-import StoreItems from "./StoreItems"
-import Filter  from "./Filter"
+import StoreItems from "../StoreItems/StoreItems"
+import Filter from "../Filter/Filter"
+
 
 export function Home() {
   return (
     <>
-      <h1>Home</h1>
       <Filter />
       <StoreItems />
+      
     </>
   )
 }
