@@ -18,29 +18,30 @@ module.exports = (sequelize) => {
         email: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
         adress: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         dateOfBirth: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING ,
+            // type: DataTypes.DATE,
             allowNull: false,
         },
         telephone: {
             type: DataTypes.INTEGER,
             allowNull: false,
-
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // isAdmin: {
-        //     type: DataTypes.BOOLEAN,
-        //     allowNull: false,
-        //     defaultValue: false
-        // },
+        isAdmin: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
         // Para desactivar el acceso
         isActive: {
             type: DataTypes.BOOLEAN,

@@ -1,31 +1,41 @@
-const { Product, Category, Mark } = require('../../db');
+const { Product, Mark, Category } = require("../../db");
 
 // Funcion para traer todos los juegos, incluye el modelo categoria
-const getAllProducts = async() => {
-	try {
-  let allproducts = await Product.findAll({
-		include: [{
-			model: Category,
-			attributes: ['name'],
-			through: {
-				attributes: [],
-			},
-		}]
-	});
-      return allproducts;
+const getAllProducts = async (req, res, next) => {
+
+  try {
+      const allproducts = await Product.findAll({
+          include: [
+            {
+              model: Category,
+            },
+            {
+              model: Mark,
+            }
+        ]})
+        
+        res.status(200).send(allproducts)
   } catch (error) {
-    alert(error)
+    res.status(404).send("aun no hay nada")
   }
-};
+}
+
+// async(req, res) => {
+
+//   let allproducts = await getDbproducts();
+//   console.log("prueba")
+//     allproducts.length ?
+//     res.status(200).send(allproducts) : res.status(404).send("aun no hay nada")
+// };
 
 // Funcion para crear productos
-const createProducts = async() => {
+const createProducts = async(req, res) => {
 	const { title, price, detail, img, stock, category, mark } = req.body;
     try {
       if (!title || !price || !detail || !img || !stock || !category || !mark) {
         res.status(404).send("faltan parametros") 
     }} catch (error) {
-      res.status(404).send(error)
+      res.status(404).send("aun no hay nada")
     }
 
     let productCreated = await Product.create({
@@ -44,14 +54,14 @@ const createProducts = async() => {
         productCreated.addCategory(c[0])
     })
 }
-if (mark.length) {
-  mark.map(async marca => {
-      let m = await Mark.findOrCreate({
-          where: { title: marca }
-      })
-      productCreated.addMark(m[0])
-  })
-}
+// if (mark.length){
+//   mark.map(async mak => {
+//       let m = await Mark.findOrCreate({
+//           where: { title: mak }
+//       })
+//       productCreated.addMark(m[0])
+//   })}
+
   res.status(200).send("Product created succesfully")
 };
 
@@ -69,4 +79,4 @@ module.exports = {
   getAllProducts,
   createProducts,
   getCategories
-};
+}

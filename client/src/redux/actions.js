@@ -1,6 +1,8 @@
 import axios from "axios";
 
 
+export const GET_ALL_PROD = "GET_ALL_PROD";
+
 //Actions para la SearchBar
 
 export function searchByName(name)  { 
@@ -17,17 +19,15 @@ export function searchByName(name)  {
 }
 
 export function getAllProd() { 
-    return function (dispatch) { 
-      return axios.get("/product/") 
-        .then((res) => { 
-          console.log(res)
-          dispatch({ type: 'GET_ALL_PROD', payload: res.data }); 
-        })
-        .catch((err) => { 
-          return err;
-        });
+  return async function (dispatch) { 
+    var json = await axios.get("http://localhost:3001/products")  
+   
+    return dispatch({ 
+      type: 'GET_ALL_PROD', 
+      payload: json.data,
+     }); 
     };
-  }
+    };
 
   export function volverAhome(){ 
     return function (dispatch){ 
