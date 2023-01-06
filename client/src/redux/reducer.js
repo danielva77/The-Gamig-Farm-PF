@@ -1,16 +1,17 @@
 //Reducers Search Bar
+import { GET_ALL_PROD } from "./actions";
 
 const initialState = { 
-    filtered: []
+    filtered: [],
+    items:[]
 };
 
 export default function rootReducer(state = initialState, action) { 
     switch (action.type) { 
-           case 'GET_ALL_GAMES': 
+           case GET_ALL_PROD: 
                 return { 
                     ...state,
-                    allGames: action.payload,
-                    gamesBackUp: action.payload,
+                    items: action.payload,
                     filtered: action.payload
                     
             }; 
@@ -20,6 +21,8 @@ export default function rootReducer(state = initialState, action) {
                     ...state,
                     filtered: action.payload
     };
+    default:
+      return state;
   }
 }; 
 

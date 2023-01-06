@@ -2,6 +2,8 @@ import axios from "axios";
 import data from "../data/items.json"
 
 
+export const GET_ALL_PROD = "GET_ALL_PROD";
+
 //Actions para la SearchBar
 
 export function searchByName(name)  { 
