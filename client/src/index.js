@@ -8,7 +8,6 @@ import reportWebVitals from "./reportWebVitals"
 import { Provider } from "react-redux"
 import {store} from "./redux/store"
 import dotenv from "dotenv"
-import App from "../src/App"
 dotenv.config()
 axios.defaults.baseURL = `http://localhost:3001`
 

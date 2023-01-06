@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Button, OverlayTrigger, Tooltip, Offcanvas } from 'react-bootstrap';
-import { removeFromCart } from '../../redux/actions';
+// import { removeFromCart } from '../../components/Cart';
 
 const Cart = () => {
 //   const items = useSelector(state => state.cart.items);
@@ -9,9 +9,9 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
 
-  const handleRemove = id => {
-    dispatch(removeFromCart(id));
-  };
+  // const handleRemove = id => {
+  //   dispatch(removeFromCart(id));
+  // };
 
   const handleShow = () => setShow(true);
   const handleHide = () => setShow(false);
@@ -54,7 +54,7 @@ const Cart = () => {
                       >
                         <Button
                           variant="danger"
-                          onClick={() => handleRemove(item.id)}
+                          // onClick={() => handleRemove(item.id)}
                         >
                           x
                         </Button>
