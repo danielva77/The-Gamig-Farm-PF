@@ -1,4 +1,5 @@
 import axios from "axios";
+import data from "../data/items.json"
 
 
 //Actions para la SearchBar
@@ -17,16 +18,22 @@ export function searchByName(name)  {
 }
 
 export function getAllProd() { 
-    return function (dispatch) { 
-      return axios.get("/product/") 
-        .then((res) => { 
-          console.log(res)
-          dispatch({ type: 'GET_ALL_PROD', payload: res.data }); 
-        })
-        .catch((err) => { 
-          return err;
-        });
-    };
+      // ---------- get from api --------------
+      // return function (dispatch) { 
+        // return axios.get("/product/") 
+        //   .then((res) => { 
+        //     console.log(res)
+        //     dispatch({ type: 'GET_ALL_PROD', payload: res.data }); 
+        //   })
+        //   .catch((err) => { 
+        //     return err;
+        //   });
+      // };
+
+      return {
+        type: 'GET_ALL_PROD',
+        payload: data
+      }
   }
 
   export function volverAhome(){ 
