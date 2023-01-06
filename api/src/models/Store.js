@@ -7,6 +7,7 @@ module.exports = (sequelize) => {
             defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey: true,
+<<<<<<< HEAD
           },
           //fecha de compra
         date: {
@@ -23,5 +24,8 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+=======
+        }
+>>>>>>> d93c52f599943a048680f7e10f2f8d34058160d9
     })
 }
