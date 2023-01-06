@@ -9,8 +9,12 @@
     padding-top: 3%;
     padding-bottom: 3%;
     width: 100%;
-    
-    
+}
+
+.Nombrelogo{
+align-items: center;
+justify-content: center;
+padding: 50%;
 }
 
 .btn {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
-
 function NavBar() {
     return ( 
     <div className='BotNav'> 

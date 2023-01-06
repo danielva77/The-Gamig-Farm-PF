@@ -9,12 +9,12 @@ import store from "./redux/store"
 import dotenv from "dotenv"
 dotenv.config()
 axios.defaults.baseURL = `http://localhost:3001`
-import App from "./App"
-import "bootstrap/dist/css/bootstrap.min.css"
+ import App from "./App"
+// import "bootstrap/dist/css/bootstrap.min.css"
 
 ReactDOM.render(
 <Provider store={store}>
-<App />
+<App/>,
 </Provider>, 
 document.getElementById("root")
 );

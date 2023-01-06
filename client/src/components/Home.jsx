@@ -70,7 +70,6 @@ const Home = () => {
 
 return (
         
-    <> 
     <div className='Select'>
     {/* Ordenamiento */}
     <select>
@@ -78,7 +77,7 @@ return (
         <option value="Asc">Ascendente</option>
         <option value="Desc">Descendente</option>
     </select>
-    
+
     {/* filtrado por popularidad */}
     <select>
         <option value='Popularidad'>Pupularidad</option>
@@ -97,11 +96,18 @@ return (
             <option value={el} key={el.id}>{el}</option>
         ))} */}
     </select>
-
 </div>
-<Filter />
-      <StoreItems />
-      </>
+
 )
+}
+
+export function Home() {
+  return (
+    <>
+      <h1>Home</h1>
+      <Filter />
+      <StoreItems />
+    </>
+  )
 }
 export default Home;
