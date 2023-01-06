@@ -41,14 +41,14 @@ router.get("/usuarios", async (req, res) => {
     }
 
 
-    const name = req.query.name // ?name="..."
+    const nombre = req.query.name // ?name="..."
 
-    if(name){
+    if(nombre){
 
         let users = await getDbInfo()
 
                                                                 //Comparamos ambos valores en minuscula
-        let usuarioName = await users.filter(e => e.name.toLowerCase() == (name.toLowerCase()))
+        let usuarioName = await users.filter(e => e.nombre.toLowerCase() == (nombre.toLowerCase()))
 
         usuarioName.length ?
             res.status(200).send(usuarioName) :
@@ -61,7 +61,7 @@ router.get("/usuarios", async (req, res) => {
     }
 
 
-}) // ✅✅✅✅✅
+ // ✅✅✅✅✅
 // obtener un usuario en particular
 router.get("/usuario/name", async (req, res) => {
     res.status(202).send("Este es el perfil de : Alfredo Zavala")
