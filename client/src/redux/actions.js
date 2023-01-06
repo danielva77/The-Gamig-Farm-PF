@@ -45,3 +45,34 @@ export function getAllProd() {
         dispatch({ type: GET_DETAIL, payload: info.data });
     }
 }
+
+
+export const filterByCategory = (payload) => {
+  return {
+      type: 'FILTER_CATEGORY',
+      payload
+  }
+}
+
+export const orderByTittle = (payload) => {
+  return {
+      type: 'ORDER_BY_ALFABETICO',
+      payload
+  }
+}
+
+
+export const orderByPrice = (payload) => {
+  return {
+      type: 'ORDER_BY_PRICE',
+      payload
+  }
+}
+
+
+export const filterByMarcas = (payload) => {
+  return {
+      type: 'FILTER_BY_MARCAS',
+      payload
+  }
+}
