@@ -16,7 +16,7 @@ export default function SearchBar(){
     console.log(name);
   };
 
-  function handleSubmit(e){w
+  function handleSubmit(e){
     e.preventDefault();
     dispatch(searchByName(name));
     setName("");

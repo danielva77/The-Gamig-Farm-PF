@@ -1,11 +1,12 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-
+import NavBar from "../NavBar/NavBar";
 import StoreItems from "../StoreItems/StoreItems"
 import Filter from "../Filter/Filter"
 import Paginado from "../Paginado/Paginado";
 import { getAllProd } from "../../redux/actions";
+import "./Home.css"
 
 
 export function Home() {
@@ -29,7 +30,11 @@ export function Home() {
 
   return (
     <>
+    
+      <NavBar/>
+      <div className="Home">
       <Filter />
+      </div>
       <div>
         <Paginado
                 videogamesPerPage = {videogamesPerPage}

@@ -20,24 +20,29 @@ export default function rootReducer(state = initialState, action) {
       filtered: action.payload
       }; 
 
-    case SEARCH_BY_NAME:
+      case SEARCH_BY_NAME:
+        return {
+          ...state,
+          items: action.payload
+    };
+    case "REMOVE_FROM_CART":
       return {
         ...state,
-        items: action.payload
-  };
-  case GET_DETAIL:
-    return {
-        ...state,
-        detail: action.payload,
-    }
-  case CLEAN_DETAIL:
-    return{
-        ...state,
-        detail: []
-    }
-  default:
-    return state;
-}
+        items: state.items.filter(item => item.id !== action.id),
+      };
+    case GET_DETAIL:
+      return {
+          ...state,
+          detail: action.payload,
+      }
+    case CLEAN_DETAIL:
+      return{
+          ...state,
+          detail: []
+      }
+    default:
+      return state;
+  }
 }; 
 
 //Reducers Search Bar

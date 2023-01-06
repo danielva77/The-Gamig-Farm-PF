@@ -54,13 +54,7 @@ export function getAllProd() {
             payload: response.data
         })
     }
-  }
-  
-  export function cleanDetail(){
-    return{
-        type: 'CLEAN_DETAIL'
-    }
-  }
+}
 
 
 //Actions para el carrito
@@ -71,3 +65,10 @@ export function removeFromCart(id){
     id,
   };
 }
+  
+  
+  export function cleanDetail(){
+    return{
+        type: 'CLEAN_DETAIL'
+    }
+  }
