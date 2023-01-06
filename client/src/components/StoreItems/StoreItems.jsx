@@ -29,7 +29,7 @@ function StoreItems() {
           <div className="col-md-4  mt-4">
             <StoreItem
               name={card.title}
-              imgUrl={card.img}
+              imgUrl={card.imgUrl}
               price={card.price}
             />
           </div>
