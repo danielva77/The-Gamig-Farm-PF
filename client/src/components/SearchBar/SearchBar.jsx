@@ -34,9 +34,9 @@ function SearchBar({searchByName, volverAhome}) {
       <div className="Background">
       <div className="searchbar-div">
       
-      
-     <h1> The Gaming Farm </h1>
-      
+      <div className='Nombrelogo'>
+        <h1>The Gaming Farm</h1>
+        </div>
         <input
           className="bar-btn"
           name="buscar" 
