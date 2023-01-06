@@ -14,7 +14,7 @@ const getAllProducts = async() => {
 	});
       return allproducts;
   } catch (error) {
-    alert(error)
+    res.status(404).send("aun no hay nada")
   }
 };
 
@@ -25,7 +25,7 @@ const createProducts = async() => {
       if (!title || !price || !detail || !img || !stock || !category || !mark) {
         res.status(404).send("faltan parametros") 
     }} catch (error) {
-      res.status(404).send(error)
+      res.status(404).send("aun no hay nada")
     }
 
     let productCreated = await Product.create({
@@ -54,7 +54,6 @@ if (mark.length) {
 }
   res.status(200).send("Product created succesfully")
 };
-console.log("hola")
 
 
 // getCategories te devuelve todas las categorias desde la api
