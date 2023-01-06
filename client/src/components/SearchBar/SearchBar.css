@@ -19,7 +19,7 @@ padding: 50%;
 font-family: Arial, Helvetica, sans-serif;
 }
 
-.btn {
+.btn-search-bar {
     display: flex;
     flex-direction: row;
     height: 40px;
@@ -46,7 +46,7 @@ font-family: Arial, Helvetica, sans-serif;
    
 }
 
-.btn:hover {
+.btn-search-bar:hover {
     background-color: rgb(165, 165, 165);
     color: rgb(130, 128, 128);
    
