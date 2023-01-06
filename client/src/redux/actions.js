@@ -46,6 +46,7 @@ export function getAllProd() {
     }
 }
 
+//Actions para los filtros
 
 export const filterByCategory = (payload) => {
   return {
@@ -62,15 +63,15 @@ export const orderByTittle = (payload) => {
 }
 
 
-export const orderByPrice = (payload) => {
-  return {
-      type: 'ORDER_BY_PRICE',
-      payload
-  }
-}
+// export const orderByPrice = (payload) => {
+//   return {
+//       type: 'ORDER_BY_PRICE',
+//       payload
+//   }
+// }
 
 
-export const filterByMarcas = (payload) => {
+export const filterByMark = (payload) => {
   return {
       type: 'FILTER_BY_MARCAS',
       payload

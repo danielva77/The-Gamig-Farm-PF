@@ -24,7 +24,7 @@ const Details = () => {
         <span>Loading...</span>
       ) : (
         <div className="Info-Container">
-          <img src={productInfo.imgUrl} alt="Producto" width="" height=""/>
+          <img src={productInfo.img} alt="Producto" width="" height=""/>
           <h2 className="name">{productInfo.name}</h2>                 
           <h3 className="price">Precio: {productInfo.price}$</h3>               
           <h4 className="description">{productInfo.description}</h4>               
