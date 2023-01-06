@@ -1,6 +1,8 @@
 import React from 'react';
 // import Footer from '../Footer/Footer';
 import styles from "./LandingPage.module.css"
+import Home from '../Home/Home';
+import { NavLink } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -12,7 +14,9 @@ const LandingPage = () => {
           <p>
             Tenemos una amplia selección de títulos para todas las plataformas. ¡Echa un vistazo a nuestros productos y encuentra tu próximo juego favorito!
           </p>
-          <button className="btn btn-primary">Ver productos</button>
+          <NavLink to="/Home"> 
+          <button className="btn-primary">Ver</button>
+          </NavLink>
         </div>
       </div>
       {/* <Footer /> */}

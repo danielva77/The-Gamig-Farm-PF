@@ -6,14 +6,12 @@ import Cart from '../Cart/Cart'
 function NavBar() {
     return ( 
     <div className='BotNav'> 
-        
                 <div className="Botones">
                 <NavLink to='/'><button>Sign in</button></NavLink>
                 <NavLink to='/'><button>Sign up</button></NavLink>
                 <Cart/>
-                <SearchBar></SearchBar>
-                </div>
-                
+                <SearchBar/>
+                </div> 
         </div> 
     )
 }
