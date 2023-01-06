@@ -1,6 +1,6 @@
 import React from "react"
-import { StoreItem } from "./StoreItem"
-import data from "../data/items.json"
+import { StoreItem } from "../StoreItem/StoreItem"
+import data from "../../data/items.json"
 
 function StoreItems() {
   return (

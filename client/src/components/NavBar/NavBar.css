@@ -1,0 +1,27 @@
+
+.BotSign{
+
+    width: 25%;
+     justify-content: center;
+     align-items: center;
+     font-size: 15px;
+     border-radius: 0px;
+     border-color: rgba(255, 255, 255, 0);
+     font-family:Arial, Helvetica, sans-serif;
+     background-color: rgb(215, 14, 14);
+     
+}       
+
+.background{
+     background-color: grey;
+}
+
+.BotSign:hover {
+     background-color: rgba(153, 154, 160);
+     color:rgb(0, 0, 0);
+     color: #fff;
+     text-align: center;
+}
+   
+     
+
