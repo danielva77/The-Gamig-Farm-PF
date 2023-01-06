@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import Footer from '../Footer/Footer';
 import styles from "./LandingPage.module.css"
 
@@ -12,7 +13,9 @@ const LandingPage = () => {
           <p>
             Tenemos una amplia selección de títulos para todas las plataformas. ¡Echa un vistazo a nuestros productos y encuentra tu próximo juego favorito!
           </p>
+          <Link to="/Home">
           <button className="btn btn-primary">Ver productos</button>
+          </Link>
         </div>
       </div>
       {/* <Footer /> */}

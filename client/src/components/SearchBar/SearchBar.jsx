@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchByName } from '../../redux/actions'
+import { Link } from "react-router-dom"
 import './SearchBar.css'
 import lupa from "../Assets/icone-loupe-gris.png"
 
@@ -26,7 +27,9 @@ export default function SearchBar(){
       <div className="searchbar-div">
       
       <div className='Nombrelogo'>
+        <Link to="/">
         <h1>The Gaming Farm</h1>
+        </Link>
         </div>
         <input
           className="bar-btn"
