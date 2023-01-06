@@ -4,14 +4,12 @@ import SearchBar from '../SearchBar/SearchBar'
 function NavBar() {
     return ( 
     <div className='BotNav'> 
-        
-                <div className="Botones">
+                <div className="BotSign">
                 <NavLink to='/'><button>Sign in</button></NavLink>
                 <NavLink to='/'><button>Sign up</button></NavLink>
-                <NavLink to='/about'><button>ABOUT</button></NavLink>
-        
-                <SearchBar></SearchBar>
                 </div>
+        
+                <SearchBar/>
                 
         </div> 
     )

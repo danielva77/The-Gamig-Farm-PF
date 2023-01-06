@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: right;
     border-radius: 10px;
+    border-color: beige;
     margin-right: 40px;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -15,6 +16,7 @@
 align-items: center;
 justify-content: center;
 padding: 50%;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn {
