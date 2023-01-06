@@ -1,7 +1,12 @@
 const { Router } = require('express');
-import { getAllProducts, createProducts } from '../controllers/products/Controllers';
+const axios = require("axios");
+// Modelos de la base de datos ↓
+import { getAllProducts } from '../controllers/products/Controllers';
+import { createProducts } from '../controllers/products/Controllers';
 
-const router = Router();
+const router = Router()
+// const { Router } = require('express');
+
 
 // router.delete('/:productId', deleteProduct);
 router.get("/prod", getAllProducts);

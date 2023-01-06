@@ -2,21 +2,17 @@ const { Router } = require('express');
 const axios = require("axios");
 // Modelos de la base de datos ↓
 const { User } = require("../db");
+const { getAllProducts, createProducts, getCategories } = require('../controllers/products/Controllers');
 
 const router = Router()
 
-
 // MIDDLEWARES 📌
 // router.use('/auth', authRouter);
-
 
 // Traer todos los usuarios de la base de datos
 const getDbInfo = async () =>{
     return await User.findAll()
 }
-
-
-
 
 // RUTAS
 
@@ -44,14 +40,10 @@ router.get("/usuarios", async (req, res) => {
 
 
 }) // ✅✅✅✅✅
-
-
 // obtener un usuario en particular
 router.get("/usuario/name", async (req, res) => {
     res.status(202).send("Este es el perfil de : Alfredo Zavala")
 }) // ❓❓❓❓❓
-
-
 // cargar/crear usuario 
 router.post("/usuarios", async (req, res) => {
 
@@ -82,18 +74,23 @@ router.post("/usuarios", async (req, res) => {
     
     res.status(200).send("El elemento fue publicado con exito")
 }) //✅
-
-
 // Actualizar informacion del usuario
 router.put("/usuario/name", async (req, res) => {
         res.send("El elemento fue actualizado")
 }) //✅
-
-
 // Eliminar cuenta del usuario
 router.delete("/usuario/name", async (req, res) => {
         res.send("El elemento fue eliminado con exito")
 }) //✅
 
+
+// **********************
+// PRODUCTOS
+// **********************
+router.get("/products", getAllProducts);
+router.post("/products", createProducts);
+
+
+router.get("/category", getCategories)
 
 module.exports = router;
