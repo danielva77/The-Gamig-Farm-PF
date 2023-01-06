@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 // import data from "../../data/items.json";
 import {useDispatch, useSelector} from "react-redux";
 import { getAllProd } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 
 
@@ -25,15 +26,19 @@ function StoreItems({currentVideogames}) {
         className="row d-flex justify-content-center align-items-center"
         style={{ gap: "20px" }}
       >
-        {currentVideogames.map(card => (
+        {currentVideogames.map((card) => {
+          return(
+            <Link to={"/products/"+card.id}>
           <div className="col-md-4  mt-4">
             <StoreItem
+              id={card.id}
               name={card.title}
               imgUrl={card.img}
               price={card.price}
             />
           </div>
-        ))}
+          </Link>
+          )})}
       </div>
     </div>
   )

@@ -1,11 +1,14 @@
 //Reducers Search Bar
 import { GET_ALL_PROD,
-    SEARCH_BY_NAME
+    SEARCH_BY_NAME,
+    GET_DETAIL,
+    CLEAN_DETAIL
     } from "./actions";
 
 const initialState = { 
     filtered: [],
-    items:[]
+    items:[],
+    detail:[]
 };
 
 export default function rootReducer(state = initialState, action) { 
@@ -22,6 +25,16 @@ export default function rootReducer(state = initialState, action) {
           ...state,
           items: action.payload
     };
+    case GET_DETAIL:
+      return {
+          ...state,
+          detail: action.payload,
+      }
+    case CLEAN_DETAIL:
+      return{
+          ...state,
+          detail: []
+      }
     default:
       return state;
   }

@@ -14,7 +14,7 @@ function App() {
     <Route path='/home' component={NavBar} />
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/home' component={Home} />
-      <Route path='/home/:id' component={Details} />
+      <Route path='/products/:id' component={Details} />
       <Footer/>
     </div>
     </BrowserRouter>
