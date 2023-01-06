@@ -2,6 +2,11 @@ import axios from "axios";
 
 
 export const GET_ALL_PROD = "GET_ALL_PROD";
+export const GET_DETAIL = "GET_DETAIL";
+export const FILTER_CATEGORY ="FILTER_CATEGORY";
+export const ORDER_BY_ALFABETICO = "ORDER_BY_ALFABETICO";
+export const FILTER_BY_MARK = "FILTER_BY_MARK";
+
 
 //Actions para la SearchBar
 
@@ -36,12 +41,10 @@ export function getAllProd() {
   }
 
   //Actions para los Detalles
-
-  export const GET_DETAIL = 'GET_DETAIL';
-
+  
   export const getDetail = (id) => {
     return async (dispatch) => {
-        let info = await axios.get(`/product/${id}`);
+        let info = await axios.get(`/products/${id}`);
         dispatch({ type: GET_DETAIL, payload: info.data });
     }
 }
@@ -73,7 +76,7 @@ export const orderByTittle = (payload) => {
 
 export const filterByMark = (payload) => {
   return {
-      type: 'FILTER_BY_MARCAS',
+      type: 'FILTER_BY_MARK',
       payload
   }
 }

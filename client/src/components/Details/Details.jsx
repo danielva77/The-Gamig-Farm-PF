@@ -25,7 +25,7 @@ const Details = () => {
       ) : (
         <div className="Info-Container">
           <img src={productInfo.img} alt="Producto" width="" height=""/>
-          <h2 className="name">{productInfo.name}</h2>                 
+          <h2 className="nanme">{productInfo.tittle}</h2>                 
           <h3 className="price">Precio: {productInfo.price}$</h3>               
           <h4 className="description">{productInfo.description}</h4>               
           <h4 className="category">{productInfo.category}</h4>  
