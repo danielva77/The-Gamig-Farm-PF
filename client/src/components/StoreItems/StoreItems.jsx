@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import data from "../../data/items.json";
 import {useDispatch, useSelector} from "react-redux";
 import { getAllProd } from "../../redux/actions";
+import "./Storeee.css";
 
 
 
@@ -20,10 +21,10 @@ function StoreItems() {
 
 
   return (
-    <div className="container d-flex justify-content-center align-items-center h-100">
+    <div className="container">
       <div
         className="row d-flex justify-content-center align-items-center"
-        style={{ gap: "20px" }}
+        style={{ gap: "20px" }} 
       >
         {allItems.map(card => (
           <div className="col-md-4  mt-4">

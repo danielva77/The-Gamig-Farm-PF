@@ -1,4 +1,5 @@
 import React from "react"
+import "./StoreItem.css"
 
 export function StoreItem({ id, name, price, imgUrl }) {
   const quantity = 0
@@ -21,7 +22,7 @@ export function StoreItem({ id, name, price, imgUrl }) {
       <div class="card-footer">
         {quantity === 0 ? (
           <div className="d-flex align-items-center">
-            <button className="btn btn-primary w-100">+ Add to Cart</button>
+            <button className="btn-primary">+ Add to Cart</button>
           </div>
         ) : (
           <div
