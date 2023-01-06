@@ -45,3 +45,13 @@ export function getAllProd() {
         dispatch({ type: GET_DETAIL, payload: info.data });
     }
 }
+
+
+//Actions para el carrito
+
+export function removeFromCart(id){
+  return{
+    type: "REMOVE_FROM_CART",
+    id,
+  };
+}

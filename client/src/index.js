@@ -1,3 +1,5 @@
+import App from "../src/App"
+import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import ReactDOM from "react-dom"
 import axios from "axios"
@@ -8,8 +10,6 @@ import store from "./redux/store"
 import dotenv from "dotenv"
 dotenv.config()
 axios.defaults.baseURL = `http://localhost:3001`
- import App from "../src/App"
-// import "bootstrap/dist/css/bootstrap.min.css"
 
 ReactDOM.render(
 <Provider store={store}>
