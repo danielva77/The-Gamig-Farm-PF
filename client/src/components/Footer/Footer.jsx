@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+console.log("hola")
+
 const Footer = () => {
   return (
     <footer>

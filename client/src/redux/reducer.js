@@ -20,6 +20,13 @@ export default function rootReducer(state = initialState, action) {
                     ...state,
                     filtered: action.payload
     };
+    case "REMOVE_FROM_CART":
+      return {
+        ...state,
+        items: state.items.filter(item => item.id !== action.id),
+      };
+      default:
+      return state;
   }
 }; 
 
