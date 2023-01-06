@@ -1,7 +1,7 @@
 import React from "react"
 import { StoreItem } from "../StoreItem/StoreItem"
 import {useState, useEffect} from "react";
-import data from "../../data/items.json";
+// import data from "../../data/items.json";
 import {useDispatch, useSelector} from "react-redux";
 import { getAllProd } from "../../redux/actions";
 

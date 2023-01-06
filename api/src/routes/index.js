@@ -19,49 +19,50 @@ const getDbInfo = async () =>{
 // Obtener todos los usuarios
 router.get("/usuarios", async (req, res) => {
     // AXIOS.GET("")
+    const name = req.query.name // ?name="..."
+
+    if(name){
+
+        let users = await getDbInfo()
+
+                                                                //Comparamos ambos valores en minuscula
+        let usuarioName = await users.filter(e => e.name.toLowerCase() == (name.toLowerCase()))
+
+        usuarioName.length ?
+            res.status(200).send(usuarioName) :
+            res.status(404).send(`<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`)
+
+    } else{ //no hay query → Enviar todos los datos normal
+
+        let users = await getDbInfo()
+        res.status(200).send(users)
+    }
 }) 
 
-    const name = req.query.name // ?name="..."
-
-    if(name){
-
-        let users = await getDbInfo()
-
-                                                                //Comparamos ambos valores en minuscula
-        let usuarioName = await users.filter(e => e.name.toLowerCase() == (name.toLowerCase()))
-
-        usuarioName.length ?
-            res.status(200).send(usuarioName) :
-            res.status(404).send(`<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`)
-
-    } else{ //no hay query → Enviar todos los datos normal
-
-        let users = await getDbInfo()
-        res.status(200).send(users)
-    }
 
 
-    const name = req.query.name // ?name="..."
 
-    if(name){
+//     const name = req.query.name // ?name="..."
 
-        let users = await getDbInfo()
+//     if(name){
 
-                                                                //Comparamos ambos valores en minuscula
-        let usuarioName = await users.filter(e => e.name.toLowerCase() == (name.toLowerCase()))
+//         let users = await getDbInfo()
 
-        usuarioName.length ?
-            res.status(200).send(usuarioName) :
-            res.status(404).send(`<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`)
+//                                                                 //Comparamos ambos valores en minuscula
+//         let usuarioName = await users.filter(e => e.name.toLowerCase() == (name.toLowerCase()))
 
-    } else{ //no hay query → Enviar todos los datos normal
+//         usuarioName.length ?
+//             res.status(200).send(usuarioName) :
+//             res.status(404).send(`<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`)
 
-        let users = await getDbInfo()
-        res.status(200).send(users)
-    }
+//     } else{ //no hay query → Enviar todos los datos normal
+
+//         let users = await getDbInfo()
+//         res.status(200).send(users)
+//     }
 
 
-}) // ✅✅✅✅✅
+// }) // ✅✅✅✅✅
 // obtener un usuario en particular
 router.get("/usuario/name", async (req, res) => {
     res.status(202).send("Este es el perfil de : Alfredo Zavala")
@@ -109,7 +110,23 @@ router.delete("/usuario/name", async (req, res) => {
 // **********************
 // PRODUCTOS
 // **********************
-router.get("/products", getAllProducts);
+router.get("/products", async (req , res) =>{
+    const nombre = req.query.title;
+    let allprod = await getAllProducts();
+  
+    if(nombre){
+    let videogamesName = await allprod.filter(el => el.title.toLowerCase().includes(nombre.toLowerCase()));
+    videogamesName.length ?
+    res.status(200).send(videogamesName.slice(0,15)) : 
+    res.status(404).send("product not found");
+    }else{
+    res.status(200).send(allprod);
+    }
+}
+)
+
+
+// getAllProducts);
 router.post("/products", createProducts);
 
 
