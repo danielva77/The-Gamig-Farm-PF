@@ -30,6 +30,7 @@ return(
           <p><strong>Descripcion:</strong> {myProduct[0].detail}</p>
           <p><strong>Precio:</strong> {myProduct[0].price}</p>
           <p><strong>Stock:</strong> {myProduct[0].stock}</p>
+          {/* // */}
         
         
         </div> : <p>Cargando ...</p>

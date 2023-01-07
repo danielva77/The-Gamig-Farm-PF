@@ -6,8 +6,8 @@ import "./NavBar.css"
 import { useAuth0 } from '@auth0/auth0-react'
 
 const NavBar = () => {
-  const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
+const { loginWithRedirect } = useAuth0();
+const { logout } = useAuth0();
     return ( 
     <div className='Componente'> 
                 <div className="Botones">
