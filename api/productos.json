@@ -1,0 +1,89 @@
+{
+  "name": "TheGamingFarm",
+  "home": "demo1",
+  "active": true,
+  "year": 2023,
+  "products": [
+    {
+      "title": "Teclado Minimalista Verde y blanco ",
+      "price": "$45usd",
+      "detail": "Teclado minimalista verde con teclas blancas, sin rgb, moderno",
+      "img": "https://i.pinimg.com/originals/5a/97/73/5a9773cf7002e64a6f45a16f737ced99.jpg",
+      "stock": "4",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
+      "price": "14.999",
+      "detail": "mouse inalambrico pro",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": "109.95",
+      "detail": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "stock": "3",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    }
+  ]
+}
