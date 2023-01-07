@@ -30,7 +30,7 @@ export default function SearchBar(){
        className='Nombrelogo'>
         <h1>The Gaming Farm</h1>
         </Link>
-        </div>
+        </div>  
         <input
           className="bar-btn"
           type="text"

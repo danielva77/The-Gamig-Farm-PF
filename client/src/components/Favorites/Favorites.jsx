@@ -5,7 +5,7 @@ import { removeFromCart } from '../../redux/actions';
 import Fav from "../Assets/favorito.png"
 
 
-const Cart = () => {
+const Favoritos = () => {
 //   const items = useSelector(state => state.cart.items);
   const items = []
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Cart = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           {items.length === 0 ? (
-            <p>No favourites</p>
+            <p>No favourites yet</p>
           ) : (
             <Table striped bordered hover>
               <thead>
@@ -72,4 +72,4 @@ const Cart = () => {
   );
 };
 
-export default Fav;
+export default Favoritos;
