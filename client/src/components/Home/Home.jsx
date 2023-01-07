@@ -31,7 +31,7 @@ export function Home() {
   return (
     <>
     
-      <NavBar/>
+      {/* <NavBar/> */}
       <div className="Home">
       <Filter />
       </div>

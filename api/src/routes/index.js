@@ -1,6 +1,3 @@
-// const {createProducts, getAllProducts, getCategories} = require('../controllers/products/Controllers')
-
-
 const { Router } = require('express');
 const axios = require("axios");
 // Modelos de la base de datos ↓

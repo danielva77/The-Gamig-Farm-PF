@@ -22,7 +22,12 @@ const LandingPage = () => {
           <Link to="/Home">
           <button className="btn btn-primary">Ver productos</button>
           </Link>
+
+          {/* LOGIN 👦🏻 */}
         </div>
+          <Link to={"/login"}>
+          <button className="btn btn-danger p-2 m-4">Registrarse</button>
+          </Link>
       
       {/* <Footer /> */}
     </div>
