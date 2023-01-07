@@ -1,12 +1,11 @@
 {
   "name": "TheGamingFarm",
-  "home": "demo1",
-  "active": true,
+  "totalProducts" : 21,
   "year": 2023,
   "products": [
     {
       "title": "Teclado Minimalista Verde y blanco ",
-      "price": "$45usd",
+      "price": "$45.5",
       "detail": "Teclado minimalista verde con teclas blancas, sin rgb, moderno",
       "img": "https://i.pinimg.com/originals/5a/97/73/5a9773cf7002e64a6f45a16f737ced99.jpg",
       "stock": "4",
@@ -14,74 +13,182 @@
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
+      "title": "ASCEND X DESCEND Mouse Pad",
+      "price": "29.99",
+      "detail": " Extra-Large in Size to Cover Most of Your Desk. Premium Cloth for Smooth Surface and Waterproofing. Non-Slip Rubber Base.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_0404s_1800x1800.jpg?v=1643095724",
+      "stock": "5",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "KRAKEN ABYSS Mouse Pad",
+      "price": "29.99",
+      "detail": "Extra-Large in Size to Cover Most of Your Desk. Premium Cloth for Smooth Surface and Waterproofing.Non-Slip Rubber Base.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_8850s_1800x1800.jpg?v=1626158219",
+      "stock": "4",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "MEKAURA RGB Mechanical Keyboard by MILLENNIAL ENGINEERS",
+      "price": "75.99",
+      "detail": "On-Board Memory for 5 Connected Bluetooth Devices.MEKAURA DRIVER: Dedicated Companion App for Customization.Compact 60% Layout.Wireless & Wired Connection Modes. ",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/mekaura-f5_1800x1800.png?v=1605577902",
+      "stock": "2",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "NIPPON WAVE Mouse Pad",
+      "price": "39.99",
+      "detail": "Extra-Large in Size to Cover Most of Your Desk. Premium Cloth for Smooth Surface and Waterproofing.Non-Slip Rubber Base.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_5663_1800x1800.jpg?v=1596421005",
+      "stock": "1",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "TOKYO NIGHT Mouse Pad",
+      "price": "29.99",
+      "detail": "Extra-Large in Size to Cover Most of Your Desk. Premium Cloth for Smooth Surface and Waterproofing. Non-Slip Rubber Base.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_5694_1800x1800.jpg?v=1596778752",
+      "stock": "4",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "BECOME LEGEND Mouse Pad",
+      "price": "29.99",
+      "detail": "Extra-Large in Size to Cover Most of Your Desk. Premium Cloth for Smooth Surface and Waterproofing.Non-Slip Rubber Base.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_6184b_1800x1800.png?v=1601448597",
+      "stock": "6",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "NIGHT MONSTER Mouse Pad",
+      "price": "29.99",
+      "detail": "Extra-Large in Size to Cover Most of Your Desk. Premium Cloth for Smooth Surface and Waterproofing. Non-Slip Rubber Base.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_5409_1800x1800.jpg?v=1595394787",
       "stock": "3",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
+      "title": "Mouse Razer Green theme",
+      "price": "19.99",
+      "detail": "mouse very nice",
+      "img": "https://i.pinimg.com/564x/2b/b5/bd/2bb5bd5b6dd152842be77d53b9b2c152.jpg",
+      "stock": "7",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
       "category": ["perifericos"],
       "mark": ["ke"]
     },
     {
-      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": "109.95",
-      "detail": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "stock": "3",
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "RK61 RGB Bluetooth/Wired Mechanical Keyboard",
+      "price": "69.99",
+      "detail": "RK61 mechanical keyboard offers great typing experience for a typist's daily use. It also provides connectivity of up to three devices which are easily switchable, including connecting to iOS and Android devices via Bluetooth.",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/HTB1jpw2XizxK1Rjy1zkq6yHrVXaS_1800x1800.jpg?v=1587095157",
+      "stock": "10",
+      "category": ["perifericos"],
+      "mark": ["ke"]
+    },
+    {
+      "title": "K66 Glazed Side-Lit Mechanical Keyboard",
+      "price": "79.99",
+      "detail": "Built-in Backlight Effects. Top- and Side-Lit Labels.  Fn Multi-Media Function. ",
+      "img": "https://cdn.shopify.com/s/files/1/0223/8994/8491/products/IMG_5382_1800x1800.png?v=1595385434",
+      "stock": "5",
       "category": ["perifericos"],
       "mark": ["ke"]
     }
