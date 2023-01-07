@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { searchByName } from '../../redux/actions'
 import { Link } from "react-router-dom"
 import './SearchBar.css'
-import lupa from "../Assets/icone-loupe-gris.png"
+import lupa from "../Assets/lupa.png"
 
 export default function SearchBar(){
   const dispatch = useDispatch(); //hoks
@@ -25,9 +25,9 @@ export default function SearchBar(){
     return (
       <div className="Background">
       <div className="searchbar-div">
-      
-      <div className='Nombrelogo'>
-        <Link to="/">
+      <div>
+      <Link to="/"
+       className='Nombrelogo'>
         <h1>The Gaming Farm</h1>
         </Link>
         </div>

@@ -24,8 +24,8 @@ function StoreItems({currentVideogames}) {
   return (
     <div className="container">
       <div
-        className="row d-flex justify-content-center align-items-center"
-        style={{ gap: "20px" }} 
+        className="row d-flex justify-content-center align-items-center bg-#fffff"
+        style={{ gap: "20px" , backgroundColor: "#black" }} 
       >
         {currentVideogames.map((card) => {
           return(
