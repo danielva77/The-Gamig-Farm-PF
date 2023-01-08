@@ -4,7 +4,7 @@ import "./StoreItem.css"
 export function StoreItem({ id, name, price, imgUrl }) {
   const quantity = 0
   return (
-    <div className="card text-center bg-dark" style={{ height: "400px" }}>
+    <div className="card text-center bg-dark" style={{ height: "400px", width: "350px" }}>
       <img
         src={imgUrl}
         alt="falta la imagen"
@@ -24,15 +24,15 @@ export function StoreItem({ id, name, price, imgUrl }) {
           <div className="d-flex align-items-center">
             <button className="btn-primary">+ Add to Cart</button>
           </div>
-           
+
         ) : (
           <div
             className="d-flex flex-column align-items-center "
             style={{ gap: ".5rem" }}
           >
             <div className="fav">
-           <button className="btn-primary">+ Favoutires</button>
-         </div>
+              <button className="btn-primary">+ Favoutires</button>
+            </div>
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button className="btn btn-outline-secondary rounded-0">-</button>
               <div

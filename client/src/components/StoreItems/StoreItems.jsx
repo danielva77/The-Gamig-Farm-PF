@@ -7,9 +7,6 @@ import { getAllProd } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
 
-
-
-
 function StoreItems({ currentVideogames }) {
   const dispatch = useDispatch();
 
@@ -19,13 +16,14 @@ function StoreItems({ currentVideogames }) {
   return (
     <div className="container">
       <div
-        className="row d-flex justify-content-center align-items-center bg-#fffff"
+        className="row"
         style={{ gap: "20px", backgroundColor: "#black" }}
-      >
-        {currentItems?.map((card) => {
-          return (
-            <Link to={"/products/" + card.id}>
-              <div className="col-md-4  mt-4">
+      ><div className="row row-cols-1 row-cols-md-2 g-4">
+          {currentItems?.map((card) => {
+            return (
+              // <Link to={"/products/" + card.id} style={{ textDecoration: 'none' }}>
+
+              <div className="col">
                 <StoreItem
                   id={card.id}
                   name={card.title}
@@ -33,11 +31,12 @@ function StoreItems({ currentVideogames }) {
                   price={card.price}
                 />
               </div>
-            </Link>
-          )
-        })}
+              // </Link>
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </div >
   )
 }
 
