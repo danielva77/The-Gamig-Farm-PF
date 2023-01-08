@@ -20,23 +20,23 @@
   },
 
   {
-    "title": "Mens Casual Premium Slim Fit T-Shirts ",
-    "price": "14.999",
-    "detail": "mouse inalambrico pro",
-    "img": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-    "stock": "3",
-    "category": ["perifericos"],
-    "mark": ["ke"]
+    "title": "Sony Playstation 5 Standard",
+    "price": "341999",
+    "detail": "Capacidad 825 GB. Memoria RAM 16 GB. Cantidad de controles incluidos 1. Color blanco y negro.",
+    "img": "https://http2.mlstatic.com/D_NQ_NP_841787-MLA44484414455_012021-O.webp",
+    "stock": "10",
+    "category": ["Consolas"],
+    "mark": ["Sony"]
   },
 
   {
-    "title": "Mens Cotton Jacket",
-    "price": "14.999",
-    "detail": "mouse inalambrico pro",
+    "title": "Sony Playstation 4 Standard",
+    "price": "172000",
+    "detail": "Capacidad 500 GB. Memoria RAM 8 GB. Cantidad de controles incluidos 1. Color negro azabache",
     "img": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
     "stock": "3",
-    "category": ["perifericos"],
-    "mark": ["ke"]
+    "category": ["Consolas"],
+    "mark": ["Sony"]
   },
 
   {

@@ -1,6 +1,11 @@
 //Reducers Search Bar
 import { equalsCheck } from "../hooks/equalsCheck"
-import { sortNameAsc, sortNameDesc } from "../hooks/combinedSorting"
+import {
+  sortNameAsc,
+  sortNameDesc,
+  sortPriceAsc,
+  sortPriceDesc,
+} from "../hooks/combinedSorting"
 import {
   GET_ALL_PROD,
   SEARCH_BY_NAME,
@@ -21,6 +26,8 @@ const initialState = {
     type: "",
   },
   sort: {
+    ascPrice: false,
+    descPrice: false,
     ascName: false,
     descName: false,
   },
@@ -84,6 +91,26 @@ export default function rootReducer(state = initialState, action) {
       }
 
     case CHANGE_SORT:
+      if (action.payload.ascPrice) {
+        let aux = sortPriceAsc(state.filtered)
+        return {
+          ...state,
+          sort: action.payload,
+          sorted: aux,
+          currentItems: aux.slice(0, state.itemsPerPage),
+        }
+      }
+
+      if (action.payload.descPrice) {
+        let aux = sortPriceDesc(state.filtered)
+        return {
+          ...state,
+          sort: action.payload,
+          sorted: aux,
+          currentItems: aux.slice(0, state.itemsPerPage),
+        }
+      }
+
       if (action.payload.ascName) {
         let aux = sortNameAsc(state.filtered)
         return {

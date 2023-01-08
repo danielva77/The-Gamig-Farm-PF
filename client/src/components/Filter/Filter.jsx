@@ -22,6 +22,22 @@ const Filter = ({ allVideogames, setCurrentPage }) => {
             case "default":
                 dispatch(resetSort())
                 break
+            case "priceAscendent":
+                dispatch(resetSort())
+                dispatch(changeSort({
+                    ...sort,
+                    ascPrice: true,
+                    descPrice: false
+                }))
+                break
+            case "priceDescendent":
+                dispatch(resetSort())
+                dispatch(changeSort({
+                    ...sort,
+                    ascPrice: false,
+                    descPrice: true
+                }))
+                break
             case "nameAscendent":
                 dispatch(resetSort())
                 dispatch(changeSort({
@@ -83,6 +99,16 @@ const Filter = ({ allVideogames, setCurrentPage }) => {
                     value='nameDescendent'
                 >
                     Z - A
+                </option>
+                <option
+                    value='priceAscendent'
+                >
+                    Price (min)
+                </option>
+                <option
+                    value='priceDescendent'
+                >
+                    Price (max)
                 </option>
             </select>
 

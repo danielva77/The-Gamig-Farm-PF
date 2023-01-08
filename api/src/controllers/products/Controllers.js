@@ -1,4 +1,5 @@
 const { Product, Mark, Category } = require("../../db")
+const validation = require("../../hooks/validateRequiredFields")
 
 // Funcion para traer todos los juegos, incluye el modelo categoria
 const getAllProducts = async () => {
@@ -29,44 +30,40 @@ const getAllProducts = async () => {
 // };
 
 // Funcion para crear productos
-const createProducts = async (req, res) => {
-  const { title, price, detail, img, stock, category, mark } = req.body
+async function createProducts(req, res) {
   try {
-    if (!title || !price || !detail || !img || !stock || !category || !mark) {
-      res.status(404).send("faltan parametros")
+    // Validate required fields
+    const validationError = validation.validateRequiredFields(req.body)
+    if (validationError) {
+      return res.status(400).send(validationError)
     }
-  } catch (error) {
-    res.status(404).send("aun no hay nada")
-  }
 
-  let productCreated = await Product.create({
-    title,
-    price,
-    detail,
-    img: img
-      ? img
-      : "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg",
-    stock,
-  })
-
-  if (category.length) {
-    category.map(async cat => {
-      let c = await Category.findOrCreate({
-        where: { title: cat },
+    let product
+    if (Array.isArray(req.body)) {
+      // Set default image URL if img field is not present for each object in the array
+      req.body.forEach(item => {
+        if (!item.img) {
+          item.img =
+            "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg"
+        }
       })
-      productCreated.addCategory(c[0])
-    })
-  }
-  // if (mark.length){
-  //   mark.map(async mak => {
-  //       let m = await Mark.findOrCreate({
-  //           where: { title: mak }
-  //       })
-  //       productCreated.addMark(m[0])
-  //   })}
-  // console.log("body length: ", req.body)
 
-  res.status(200).send("Product created succesfully")
+      // Create multiple products
+      product = await Product.bulkCreate(req.body)
+    } else {
+      // Set default image URL if img field is not present
+      if (!req.body.img) {
+        req.body.img =
+          "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg"
+      }
+
+      // Create a single product
+      product = await Product.create(req.body)
+    }
+    return res.status(201).send(product)
+  } catch (error) {
+    return res.status(400).send(error)
+  }
 }
 
 // getCategories te devuelve todas las categorias desde la api
