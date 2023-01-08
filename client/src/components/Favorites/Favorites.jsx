@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Table, Button, OverlayTrigger, Tooltip, Offcanvas } from 'react-bootstrap';
 import { removeFromCart } from '../../redux/actions';
 import Fav from "../Assets/favorito.png"
+import "./Favorites.css"
 
 
 const Favoritos = () => {
@@ -20,7 +21,7 @@ const Favoritos = () => {
 
   return (
     <div className="Fav">
-      <Button variant=""  class="btn btn float-left"  onClick={handleShow}> <img src={Fav} alt="imagen" class="img-fluid"/></Button>
+      <Button variant=""  class="btn btn float-left"  onClick={handleShow}> <img src={Fav} alt="imagen" class="img-fluid2"/></Button>
       <Offcanvas show={show} onHide={handleHide} placement="end">
         <Offcanvas.Header>
           <Offcanvas.Title>Your Favourties</Offcanvas.Title>

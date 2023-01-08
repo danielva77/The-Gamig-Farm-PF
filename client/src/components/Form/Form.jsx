@@ -191,7 +191,8 @@ export const Form = () => {
                  
                     </div>
                 </form>
-                <button type="submit" className="btn-enviar" onClick={(e) => handleSubmit(e)}>Guardar</button>
+                <button type="submit" className="btn btn-sucess btn-enviar" onClick={(e) => handleSubmit(e)}>Guardar</button>
+                {/* <button type="button" class="btn btn-success">Success</button> */}
             </div>
             <div>
                 <Link to="/Home"><button className="btn-volver">Volver al Home</button></Link>
