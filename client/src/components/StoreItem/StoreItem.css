@@ -1,0 +1,15 @@
+.btn-primary{
+    background-color: #8d2de2ba;
+    width: 100%;
+    border-radius: 15px;
+    color:aliceblue;
+    border-color: #8d2de200;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+
+}
+
+
+.btn-primary:hover {
+    background-color: #8e2de2;
+}

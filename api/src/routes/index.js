@@ -18,7 +18,7 @@ const getDbInfo = async () =>{
 
 // Obtener todos los usuarios
 router.get("/usuarios", async (req, res) => {
-
+    // AXIOS.GET("")
     const name = req.query.name // ?name="..."
 
     if(name){
@@ -37,9 +37,10 @@ router.get("/usuarios", async (req, res) => {
         let users = await getDbInfo()
         res.status(200).send(users)
     }
-
-
 }) // ✅✅✅✅✅
+
+
+
 // obtener un usuario en particular
 router.get("/usuario/name", async (req, res) => {
     res.status(202).send("Este es el perfil de : Alfredo Zavala")
@@ -87,10 +88,42 @@ router.delete("/usuario/name", async (req, res) => {
 // **********************
 // PRODUCTOS
 // **********************
-router.get("/products", getAllProducts);
+router.get("/products", async (req , res) =>{
+    const nombre = req.query.title;
+    let allprod = await getAllProducts();
+  
+    if(nombre){
+    let videogamesName = await allprod.filter(el => el.title.toLowerCase().includes(nombre.toLowerCase()));
+    videogamesName.length ?
+    res.status(200).send(videogamesName.slice(0,15)) : 
+    res.status(404).send("product not found");
+    }else{
+    res.status(200).send(allprod);
+    }
+}
+)
+
+
+// getAllProducts);
 router.post("/products", createProducts);
 
 
 router.get("/category", getCategories)
+
+router.get("/products/:id", async(req , res) =>{
+    // res.send("Soy el get /videogame")
+    const {id} = req.params;
+   
+    console.log("numero", id.toString().length);
+
+    let allprodById = await getAllProducts();
+    
+    if(id){
+      let ProdId = await allprodById.filter(e => e.id == id);
+      ProdId.length ?
+      res.status(200).json(ProdId) :
+      res.status(404).send("No existe juego con ese Id")
+    }
+})
 
 module.exports = router;

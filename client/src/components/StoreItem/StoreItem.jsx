@@ -1,7 +1,8 @@
 import React from "react"
+import "./StoreItem.css"
 
 export function StoreItem({ id, name, price, imgUrl }) {
-  const quantity = 3
+  const quantity = 0
   return (
     <div className="card text-center bg-dark" style={{ height: "400px" }}>
       <img
@@ -20,12 +21,18 @@ export function StoreItem({ id, name, price, imgUrl }) {
       </div>
       <div class="card-footer">
         {quantity === 0 ? (
-          <button className="btn w-100">+ Add to Cart</button>
+          <div className="d-flex align-items-center">
+            <button className="btn-primary">+ Add to Cart</button>
+          </div>
+           
         ) : (
           <div
-            className="d-flex align-items-center flex-column"
+            className="d-flex flex-column align-items-center "
             style={{ gap: ".5rem" }}
           >
+            <div className="fav">
+           <button className="btn-primary">+ Favoutires</button>
+         </div>
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button className="btn btn-outline-secondary rounded-0">-</button>
               <div

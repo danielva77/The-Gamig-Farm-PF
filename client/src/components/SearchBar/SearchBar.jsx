@@ -1,54 +1,47 @@
-import {React, useState} from 'react'
-import { connect } from 'react-redux'
-import { searchByName, getAllProd, volverAhome } from '../../redux/actions'
+import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { searchByName } from '../../redux/actions'
+import { Link } from "react-router-dom"
 import './SearchBar.css'
-import lupa from "../Assets/icone-loupe-gris.png"
+import lupa from "../Assets/lupa.png"
 
-function SearchBar({searchByName, volverAhome}) { 
+export default function SearchBar(){
+  const dispatch = useDispatch(); //hoks
+  const [name, setName] = useState(" "); //estado local
 
-    const [input, setInput] = useState({ 
-        buscar: ''
-    }) 
+  function handleInputChange(e){
+    e.preventDefault();
+    setName(e.target.value);
+    console.log(name);
+  };
 
-    const handleInputChange = function(e) { 
-          setInput({ 
-          [e.target.name]: e.target.value
-        });
-    } 
-
-    const handleOnClick = () => {
-        searchByName(input.buscar) 
-        setInput({
-            buscar: '' 
-        });
-    } 
-    const handleOnClickAll = () => {
-      
-        volverAhome()
-        setInput({
-            buscar: ''
-        });
-    } 
+  function handleSubmit(e){
+    e.preventDefault();
+    dispatch(searchByName(name));
+    setName("");
+  }; 
 
     return (
       <div className="Background">
       <div className="searchbar-div">
-      
-      <div className='Nombrelogo'>
+      <div>
+      <Link to="/"
+       className='Nombrelogo'>
         <h1>The Gaming Farm</h1>
+        </Link>
         </div>
         <input
           className="bar-btn"
+          type="text"
           name="buscar" 
-          placeholder="Search" 
-          onChange={handleInputChange} 
-          value={input.buscar} 
+          placeholder="Search ..." 
+          onChange={(e) =>{handleInputChange(e)}} 
+          // value={input.buscar} 
           autoComplete="off" 
         ></input>
-        <button className="btn" onClick={handleOnClick} > <img className="lupaa"src={lupa} /></button>
+        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > <img className="lupaa" src={lupa} alt="lupa" /></button>
         </div>
       </div>
     );
 }
-
-export default connect(null, { searchByName, getAllProd, volverAhome })(SearchBar)

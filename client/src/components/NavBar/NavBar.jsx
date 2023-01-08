@@ -1,21 +1,22 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import Cart from '../Cart/Cart'
+import "./NavBar.css"
 
-function NavBar() {
+
+ function navBar () {
+
     return ( 
-    <div className='BotNav'> 
-        
-                <div className="Botones">
-                <NavLink to='/'><button>Sign in</button></NavLink>
-                <NavLink to='/'><button>Sign up</button></NavLink>
-                <Cart/>
-                <SearchBar></SearchBar>
-                </div>
-                
+    <div className='Componente'> 
+    <div className="Botones">
+    <div className='btnCart'></div>
+      <Cart/> 
+      </div> 
+                <SearchBar/>       
         </div> 
     )
 }
 
-export default NavBar
+export default navBar
+
+
