@@ -1,5 +1,4 @@
 import axios from "axios"
-import data from "../data/items.json"
 
 export const GET_ALL_PROD = "GET_ALL_PROD"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
@@ -11,24 +10,6 @@ export const CHANGE_SORT = "CHANGE_SORT"
 export const CHANGE_FILTER = "CHANGE_FILTER"
 export const CHANGE_PAGE = "CHANGE_PAGE"
 export const RESET_SORT = "RESET_SORT"
-
-//Actions para la SearchBar
-
-export function searchByName(name) {
-  return async function (dispatch) {
-    try {
-      let json = await axios.get("http://localhost:3001/products?title=" + name)
-      return dispatch({
-        type: "SEARCH_BY_NAME",
-        payload: json.data,
-      })
-    } catch (error) {
-      console.log(error)
-      console.log("prueba error obtener title de producto")
-      alert("No hay productos cargados con ese nombre")
-    }
-  }
-}
 
 export function getAllProd() {
   return async function (dispatch) {
@@ -48,19 +29,35 @@ export function getAllCategories() {
 
       let categories = []
 
-      products.data.foreach(prod => {
-        prod.Categories.foreach(prodCategory => {
-          if (!categories.includes(prodCategory)) {
-            categories.push(prodCategory)
+      products?.data?.foreach(prod => {
+        prod.Categories?.foreach(prodCategory => {
+          if (!categories.includes(prodCategory.title)) {
+            categories.push(prodCategory.title)
           }
         })
       })
 
-      console.log("categories: ", categories)
-
       dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
     } catch (error) {
-      console.log(error.response.data)
+      // console.log(error.response.data)
+      console.log("error en getAllCategories")
+    }
+  }
+}
+
+//Actions para la SearchBar
+export function searchByName(name) {
+  return async function (dispatch) {
+    try {
+      let json = await axios.get("http://localhost:3001/products?title=" + name)
+      return dispatch({
+        type: "SEARCH_BY_NAME",
+        payload: json.data,
+      })
+    } catch (error) {
+      console.log(error)
+      console.log("prueba error obtener title de producto")
+      alert("No hay productos cargados con ese nombre")
     }
   }
 }

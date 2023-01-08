@@ -83,6 +83,27 @@ export default function rootReducer(state = initialState, action) {
         currentPage: 1,
       }
 
+    case CHANGE_SORT:
+      if (action.payload.ascName) {
+        let aux = sortNameAsc(state.filtered)
+        return {
+          ...state,
+          sort: action.payload,
+          sorted: aux,
+          currentItems: aux.slice(0, state.itemsPerPage),
+        }
+      }
+
+      if (action.payload.descName) {
+        let aux = sortNameDesc(state.filtered)
+        return {
+          ...state,
+          sort: action.payload,
+          sorted: aux,
+          currentItems: aux.slice(0, state.itemsPerPage),
+        }
+      }
+
     case SEARCH_BY_NAME:
       return {
         ...state,
@@ -126,24 +147,6 @@ export default function rootReducer(state = initialState, action) {
           type: action.payload.type,
         },
         filtered: aux,
-      }
-    case CHANGE_SORT:
-      if (action.payload.ascName) {
-        let aux = sortNameAsc(state.filtered)
-        return {
-          ...state,
-          sort: action.payload,
-          sorted: aux,
-        }
-      }
-
-      if (action.payload.descName) {
-        let aux = sortNameDesc(state.filtered)
-        return {
-          ...state,
-          sort: action.payload,
-          sorted: aux,
-        }
       }
 
       return {
