@@ -1,102 +1,112 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+import { changeFilter, changeSort, getAllCategories, getAllProd, resetFilter, resetSort } from '../../redux/actions';
 
-const Filter = () => {
-    // const dispatch = useDispatch();
+const Filter = ({ allVideogames, setCurrentPage }) => {
 
-           {/* FILTRADO */} 
+    const dispatch = useDispatch()
 
-    // const handleOrder = (event) => {
-    //     event.preventDefault();
-    //     dispatch(orderByOrder(event.target.value));
-    //     setCurrentPage(1);
-    //     setOrder(`Ordenado ${event.target.value}`);
-    // }
+    const filter = useSelector(state => state.filter)
+    const sort = useSelector(state => state.sort)
+    const categories = useSelector(state => state.categories)
 
-    // const handleOrderByPopularidad = (event) => {
-    //     event.preventDefault();
-    //     dispatch(orderByPopularidad(event.target.value));
-    //     setCurrentPage(1);
-    //     setOrder(`Ordenado ${event.target.value}`);
-    // }
+    useEffect(() => {
+        dispatch(getAllCategories())
+        dispatch(getAllProd())
+    }, [dispatch, sort, filter])
 
-    // const handleFilterMarcas = (event) => {
-    //     dispatch(filterMarcas(event.target.value));
-    // }
+    const handleChangeSort = (e) => {
+        // dispatch(actions.getAllPokemons())
 
-    
-    // const handleFilterByConsolas = (e) => {
-    //     e.preventDefault();
-    //     dispatch(FilterByConsolas(e.target.value));
-    //     setCurrentPage(1);
-    // }
+        switch (e.target.value) {
+            case "default":
+                dispatch(resetSort())
+                break
+            case "nameAscendent":
+                dispatch(resetSort())
+                dispatch(changeSort({
+                    ...sort,
+                    ascName: true,
+                    descName: false
+                }))
+                break
+            case "nameDescendent":
+                dispatch(resetSort())
+                dispatch(changeSort({
+                    ...sort,
+                    ascName: false,
+                    descName: true
+                }))
+                break
+            default:
+                return
+        }
+    }
 
-//     return (
-        
-//         <div className='Select'>
-//         {/* Ordenamiento */}
-//         <select onChange={(event) => handleOrder(event)} id=''>
-//             <option value='Asc-Desc Filter'>Orden Alfabetico</option>
-//             <option value="Asc">Ascendente</option>
-//             <option value="Desc">Descendente</option>
-//         </select>
+    const handleChangeCategory = (e) => {
+        dispatch(resetFilter())
 
-//         {/* filtrado por popularidad */}
-//         <select onChange={(event) => handleOrderByPopularidad(event)} id=''>
-//             <option value='Popularidad'>Pupularidad</option>
-//         </select>
+        if (e.target.value === 'categoryDefault') {
+            dispatch(resetFilter())
+            // Los pokemons a renderizar finalmente siempre vienen de la variable pokemonsSort
+            return dispatch(changeSort({}))
+        }
 
+        dispatch(changeFilter({
+            ...filter,
+            type: e.target.value
+        }))
 
-//         {/*filtrado por marcas */}
-//         <select onChange={(event) => handleFilterMarcas(event)} id=''>
-//             <option hidden='Marcas'>Marcas</option>
-//         </select>
+        // Los pokemons a renderizar finalmente siempre vienen de la variable pokemonsSort
+        return dispatch(changeSort({}))
+    }
 
-//         {/*filtrado por consolas */}
-//         <select onChange={(e) => handleFilterByConsolas(e)} id=''>
-//             <option value="Consolas">Consolas</option>
-//             {consolas.map((el) => (
-//                 <option value={el} key={el.id}>{el}</option>
-//             ))}
-//         </select>
-//     </div>
+    return (
+        <div className='filters-container'>
+            <select
+                defaultValue={'default'}
+                name={'name'}
+                id={'name'}
+                onChange={handleChangeSort}
+            >
+                <option
+                    value='default'
+                >
+                    Order
+                </option>
+                <option
+                    value='nameAscendent'
+                >
+                    A - Z
+                </option>
+                <option
+                    value='nameDescendent'
+                >
+                    Z - A
+                </option>
+            </select>
 
-//     )
-// }
+            {/*filtrado por categorias */}
+            <select
+                defaultValue={'default'}
+                name={'category'}
+                id={'category'}
+                onChange={handleChangeCategory}
+            >
+                <option
+                    value='categoryDefault'
+                >
+                    All Categories
+                </option>
+                {categories?.map(category => {
+                    return (
+                        <option value={category.name}>{category.name}</option>
+                    )
+                })}
+            </select>
+        </div>
 
-{/* Este apartado es solo para mostrar el esqueleto de los filtros..*/}
-
-return (
-        
-    <div className='Select'>
-    {/* Ordenamiento */}
-    <select>
-        <option value='Asc-Desc Filter'>Orden Alfabetico</option>
-        <option value="Asc">Ascendente</option>
-        <option value="Desc">Descendente</option>
-    </select>
-
-    {/* filtrado por popularidad */}
-    <select>
-        <option value='Popularidad'>Pupularidad</option>
-    </select>
-
-
-    {/*filtrado por marcas */}
-    <select>
-        <option hidden='Marcas'>Marcas</option>
-    </select>
-
-    {/*filtrado por consolas */}
-    <select>
-        <option value="Consolas">Consolas</option>
-        {/* {consolas.map((el) => (
-            <option value={el} key={el.id}>{el}</option>
-        ))} */}
-    </select>
-</div>
-
-)
+    )
 }
 
 export default Filter;
