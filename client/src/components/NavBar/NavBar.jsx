@@ -2,6 +2,7 @@ import React from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import Cart from '../Cart/Cart'
 import "./NavBar.css"
+import Favoritos from "../Favorites/Favorites"
 
 
  function navBar () {
@@ -11,6 +12,7 @@ import "./NavBar.css"
     <div className="Botones">
     <div className='btnCart'></div>
       <Cart/> 
+      <Favoritos/>
       </div> 
                 <SearchBar/>       
         </div> 

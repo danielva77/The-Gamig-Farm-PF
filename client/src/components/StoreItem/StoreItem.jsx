@@ -1,8 +1,15 @@
-import React from "react"
-import "./StoreItem.css"
+import React from "react";
+import "./StoreItem.css";
+import favo from "../Favorites/Favorites"
 
 export function StoreItem({ id, name, price, imgUrl }) {
-  const quantity = 0
+  const quantity = 0;
+  const btnFav = (
+    <div className="fav">
+      <button onClick={favo} className="btn btn-primary">+ Favoutires</button>
+    </div>
+  );
+
   return (
     <div className="card text-center bg-dark" style={{ height: "400px" }}>
       <img
@@ -21,18 +28,16 @@ export function StoreItem({ id, name, price, imgUrl }) {
       </div>
       <div class="card-footer">
         {quantity === 0 ? (
+          <> {btnFav} 
           <div className="d-flex align-items-center">
             <button className="btn-primary">+ Add to Cart</button>
           </div>
-           
+          </>
         ) : (
           <div
             className="d-flex flex-column align-items-center "
             style={{ gap: ".5rem" }}
           >
-            <div className="fav">
-           <button className="btn-primary">+ Favoutires</button>
-         </div>
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button className="btn btn-outline-secondary rounded-0">-</button>
               <div
@@ -52,5 +57,5 @@ export function StoreItem({ id, name, price, imgUrl }) {
         )}
       </div>
     </div>
-  )
+  );
 }

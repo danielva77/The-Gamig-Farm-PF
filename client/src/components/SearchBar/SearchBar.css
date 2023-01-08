@@ -6,16 +6,19 @@
     justify-content: right;
     border-radius: 10px;
     border-color: #cc00ff;
-    margin-right: 0%;
+    margin-right: 10%;
     padding-top: 3%;
     padding-bottom: 3%;
     width: 100%;
 }
 
 .Nombrelogo{
-margin-right: 46%;
+display: contents;
 font-family: Arial, Helvetica, sans-serif;
 color:#ffffff;
+float: left;
+margin-left: auto;
+
 
 }
 
