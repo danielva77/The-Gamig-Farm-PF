@@ -15,21 +15,18 @@ function StoreItems() {
   // ordenamiento
   const sortBy = useSelector(state => state.sortBy);
 
-  let filteredItems = items
+  let sortedItems = items
 
   // Sort items
   if (sortBy === 'Min price') {
-    filteredItems = filteredItems.sort((a, b) => {
+    sortedItems = sortedItems.sort((a, b) => {
       return a.price - b.price;
     })
-  }
-  if (sortBy === 'Max price') {
-    filteredItems = filteredItems.sort((a, b) => {
+  } else if (sortBy === 'Max price') {
+    sortedItems = sortedItems.sort((a, b) => {
       return b.price - a.price
     })
   }
-
-
 
   return (
     <div className="container">
@@ -38,7 +35,7 @@ function StoreItems() {
         className="row"
         style={{ gap: "20px", backgroundColor: "#black" }}
       ><div className="row row-cols-1 row-cols-md-2 g-4">
-          {items?.map((card) => {
+          {sortedItems?.map((card) => {
             return (
               <Link to={"/products/" + card.id} style={{ textDecoration: 'none' }}>
 
