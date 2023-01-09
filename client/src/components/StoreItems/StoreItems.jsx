@@ -13,10 +13,19 @@ function StoreItems() {
 
   const items = useSelector(state => state.items)
 
+  // filtrado
+  const filterBy = useSelector(state => state.filterBy)
+
+  let filteredItems = items
+
+  if (filterBy) {
+    filteredItems = filteredItems.filter(item => item.category.includes(filterBy))
+  }
+
   // ordenamiento
   const sortBy = useSelector(state => state.sortBy);
 
-  let sortedItems = items
+  let sortedItems = filteredItems
 
   // Sort items
   if (sortBy === 'Min price') {

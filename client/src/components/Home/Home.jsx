@@ -8,6 +8,7 @@ import Paginado from "../Paginado/Paginado";
 import { changePage, getAllCategories, getAllProd, resetFilter } from "../../redux/actions";
 import "./Home.css"
 import Sort from "../Sort/Sort";
+import CategoryFilter from "../CategoryFilter/CategoryFilter";
 
 
 export function Home() {
@@ -27,6 +28,7 @@ export function Home() {
       {/* <NavBar/> */}
       <div className="Home">
         <Sort />
+        <CategoryFilter />
         {/* <PriceFilter /> */}
       </div>
       <div>

@@ -19,11 +19,13 @@ import {
   RESET_SORT,
   SET_PRICE_RANGE,
   SET_SORT,
+  SET_FILTER_CATEGORY,
 } from "./actions"
 
 const initialState = {
   items: [],
   sortBy: "",
+  filterBy: "",
 
   detail: [],
   filter: {
@@ -60,35 +62,46 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         priceRange: action.payload,
       }
-    case GET_ALL_PROD:
-      // Si ha habido algun ordenamiento, no modificamos aquí pokemonsSorted
-      for (let prop in state.sort) {
-        if (state.sort[prop] === true) {
-          return {
-            ...state,
-          }
-        }
-      }
-
-      // Si ha habido algun filtrado, no modificamos aquí pokemonsFiltered
-      for (let filter in state.filter) {
-        if (state.filter[filter]) {
-          return {
-            ...state,
-          }
-        }
-      }
-
-      // Inicialmente, tanto 'pokemonsFiltered' como 'pokemonsSorted' tienen lo mismo que 'pokemons'
-      let allItems = action.payload
+    case SET_FILTER_CATEGORY:
       return {
         ...state,
-        items: allItems,
-        sorted: allItems,
-        filtered: allItems,
-        currentItems: state.sorted.slice(0, state.ItemsPerPage),
-        loading: false,
+        filterBy: action.payload,
       }
+
+    case GET_ALL_PROD:
+      return {
+        ...state,
+        items: action.payload,
+      }
+    // case GET_ALL_PROD:
+    //   // Si ha habido algun ordenamiento, no modificamos aquí pokemonsSorted
+    //   for (let prop in state.sort) {
+    //     if (state.sort[prop] === true) {
+    //       return {
+    //         ...state,
+    //       }
+    //     }
+    //   }
+
+    //   // Si ha habido algun filtrado, no modificamos aquí pokemonsFiltered
+    //   for (let filter in state.filter) {
+    //     if (state.filter[filter]) {
+    //       return {
+    //         ...state,
+    //       }
+    //     }
+    //   }
+
+    //   // Inicialmente, tanto 'pokemonsFiltered' como 'pokemonsSorted' tienen lo mismo que 'pokemons'
+    //   let allItems = action.payload
+    //   return {
+    //     ...state,
+    //     items: allItems,
+    //     sorted: allItems,
+    //     filtered: allItems,
+    //     currentItems: state.sorted.slice(0, state.ItemsPerPage),
+    //     loading: false,
+    //   }
 
     case GET_ALL_CATEGORIES:
       return {

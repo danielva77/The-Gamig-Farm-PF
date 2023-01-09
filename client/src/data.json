@@ -5,7 +5,7 @@
     "detail": "La próxima generación de consolas de Sony",
     "img": "https://http2.mlstatic.com/D_NQ_NP_922869-MLA51827540875_102022-O.webp",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Sony"
   },
   {
@@ -14,7 +14,7 @@
     "detail": "La próxima generación de consolas de Microsoft",
     "img": "https://http2.mlstatic.com/D_NQ_NP_627149-MLA44484230438_012021-O.webp",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Microsoft"
   },
   {
@@ -23,7 +23,7 @@
     "detail": "Una consola híbrida que se puede usar en la TV o en cualquier lugar",
     "img": "https://http2.mlstatic.com/D_NQ_NP_883371-MLA32731749246_112019-O.webp",
     "stock": 200,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Nintendo"
   },
   {
@@ -32,7 +32,7 @@
     "detail": "La consola de la generación actual de Sony",
     "img": "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Sony"
   },
   {
@@ -41,7 +41,7 @@
     "detail": "La consola de la generación actual de Microsoft",
     "img": "https://http2.mlstatic.com/D_NQ_NP_627149-MLA44484230438_012021-O.webp",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Microsoft"
   },
   {
@@ -50,7 +50,7 @@
     "detail": "Una versión miniaturizada de la consola clásica Sega Genesis",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Umt0-01frcQOD8BjrGxrdH5oOsMm0SrGpIpa5CCRCujKvI6DUkX1DSzChhU_aVStyD4&usqp=CAU",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Sega"
   },
   {
@@ -59,7 +59,7 @@
     "detail": "Una versión miniaturizada de la consola clásica Super Nintendo",
     "img": "https://mauricomputacion.com.ar/images/productos/galerias/19587/1884436034.jpg",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Nintendo"
   },
   {
@@ -68,25 +68,25 @@
     "detail": "Una versión miniaturizada de la consola original PlayStation",
     "img": "https://http2.mlstatic.com/D_NQ_NP_2X_869142-MLA32731749132_112019-V.webp",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Sony"
   },
   {
     "title": "NES Classic Edition",
     "price": 59.99,
     "detail": "Una versión miniaturizada de la consola original Nintendo Entertainment System",
-    "img": "https://example.com/nes-classic.jpg",
+    "img": "https://images.fravega.com/f500/f0224e7d8414691119e83d2f8ea132ea.jpg",
     "stock": 100,
-    "category": "Consolas",
+    "category": ["Consolas"],
     "mark": "Nintendo"
   },
   {
     "title": "Raton inalámbrico Logitech G Pro",
     "price": 149.99,
     "detail": "Un ratón inalámbrico para juegos con un sensor profesional",
-    "img": "https://example.com/logitech-g-pro-wireless.jpg",
+    "img": "https://http2.mlstatic.com/D_NQ_NP_876202-MLA45318471376_032021-O.jpg",
     "stock": 50,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "Logitech"
   },
   {
@@ -95,7 +95,7 @@
     "detail": "Un teclado mecánico de alta gama con iluminación RGB personalizable",
     "img": "https://example.com/corsair-k95-rgb-platinum-xt.jpg",
     "stock": 25,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "Corsair"
   },
   {
@@ -104,7 +104,7 @@
     "detail": "Unos auriculares ligeros para juegos con sonido envolvente de 7.1",
     "img": "https://example.com/razer-kraken-x-ultralight.jpg",
     "stock": 75,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "Razer"
   },
   {
@@ -113,7 +113,7 @@
     "detail": "Un mousepad grande y resistente para juegos",
     "img": "https://example.com/logitech-g840-xl.jpg",
     "stock": 50,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "Logitech"
   },
   {
@@ -122,7 +122,7 @@
     "detail": "Un teclado mecánico compacto y resistente para juegos",
     "img": "https://example.com/hyperx-alloy-fps-pro.jpg",
     "stock": 50,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "HyperX"
   },
   {
@@ -131,7 +131,7 @@
     "detail": "Unos auriculares inalámbricos con sonido envolvente de 7.1 y un micrófono desmontable",
     "img": "https://example.com/hyperx-cloud-flight.jpg",
     "stock": 50,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "HyperX"
   },
   {
@@ -140,7 +140,7 @@
     "detail": "Un volante para juegos de carreras con una transmisión por correa y pedales ajustables",
     "img": "https://example.com/logitech-g29-driving-force.jpg",
     "stock": 25,
-    "category": "Periféricos",
+    "category": ["Periféricos"],
     "mark": "Logitech"
   }
 ]

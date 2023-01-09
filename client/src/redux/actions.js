@@ -14,6 +14,7 @@ export const RESET_SORT = "RESET_SORT"
 
 export const SET_PRICE_RANGE = "SET_PRICE_RANGE"
 export const SET_SORT = "SET_SORT"
+export const SET_FILTER_CATEGORY = "SET_FILTER_CATEGORY"
 
 export const setPriceRange = priceRange => {
   return {
@@ -25,6 +26,13 @@ export const setPriceRange = priceRange => {
 export const setSort = payload => {
   return {
     type: SET_SORT,
+    payload,
+  }
+}
+
+export const setFilterCategory = payload => {
+  return {
+    type: SET_FILTER_CATEGORY,
     payload,
   }
 }
@@ -52,18 +60,22 @@ export function getAllProd() {
 export function getAllCategories() {
   return async function (dispatch) {
     try {
-      const products = await axios.get("http://localhost:3001/products")
+      //----- API
+      // const products = await axios.get("http://localhost:3001/products")
 
-      let categories = []
+      // let categories = []
 
-      products?.data?.foreach(prod => {
-        prod.Categories?.foreach(prodCategory => {
-          if (!categories.includes(prodCategory.title)) {
-            categories.push(prodCategory.title)
-          }
-        })
-      })
+      // products?.data?.foreach(prod => {
+      //   prod.Categories?.foreach(prodCategory => {
+      //     if (!categories.includes(prodCategory.title)) {
+      //       categories.push(prodCategory.title)
+      //     }
+      //   })
+      // })
+      // dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
 
+      // ----- JSON
+      const categories = ["Consolas", "Periféricos"]
       dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
     } catch (error) {
       // console.log(error.response.data)
