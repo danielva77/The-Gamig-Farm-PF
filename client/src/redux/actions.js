@@ -17,6 +17,15 @@ export const SET_SORT = "SET_SORT"
 export const SET_FILTER_CATEGORY = "SET_FILTER_CATEGORY"
 export const SET_NUMBERS_PAGINATED = "SET_NUMBERS_PAGINATED"
 export const RESET_FILTERS = "RESET_FILTERS"
+export const SET_FILTER_PRICE = "SET_FILTER_PRICE"
+export const SET_NAME_FILTER = "SET_NAME_FILTER"
+
+export const setNameFilter = payload => {
+  return {
+    type: SET_NAME_FILTER,
+    payload,
+  }
+}
 
 export const resetFilters = () => {
   return {
@@ -29,6 +38,10 @@ export const setPriceRange = priceRange => {
     type: SET_PRICE_RANGE,
     payload: priceRange,
   }
+}
+
+export const setFilterPrice = () => {
+  return { type: SET_FILTER_PRICE }
 }
 
 export const setSort = payload => {
@@ -54,44 +67,38 @@ export const setNumbersPaginated = payload => {
 
 export function getAllProd() {
   // ----- Get from API
-  // return async function (dispatch) {
-  //   var json = await axios.get("http://localhost:3001/products")
-
-  //   return dispatch({
-  //     type: "GET_ALL_PROD",
-  //     payload: json.data,
-  //   })
-  // }
-
-  // ----- Get from json
   return async function (dispatch) {
+    var req = await axios.get("http://localhost:3001/products")
+    const products = req.data
+
     return dispatch({
       type: "GET_ALL_PROD",
-      payload: jsonData,
+      payload: products,
     })
   }
+
+  // ----- Get from json
+  // return async function (dispatch) {
+  //   return dispatch({
+  //     type: "GET_ALL_PROD",
+  //     payload: jsonData,
+  //   })
+  // }
 }
 
 export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
-      // const products = await axios.get("http://localhost:3001/products")
+      const req = await axios.get("http://localhost:3001/category")
 
-      // let categories = []
+      const categories = req.data
 
-      // products?.data?.foreach(prod => {
-      //   prod.Categories?.foreach(prodCategory => {
-      //     if (!categories.includes(prodCategory.title)) {
-      //       categories.push(prodCategory.title)
-      //     }
-      //   })
-      // })
-      // dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
+      dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
 
       // ----- JSON
-      const categories = ["Consolas", "Periféricos"]
-      dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
+      // const categories = ["Consolas", "Periféricos"]
+      // dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
     } catch (error) {
       // console.log(error.response.data)
       console.log("error en getAllCategories")

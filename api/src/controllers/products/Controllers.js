@@ -5,14 +5,14 @@ const validation = require("../../hooks/validateRequiredFields")
 const getAllProducts = async () => {
   try {
     const allproducts = await Product.findAll({
-      include: [
-        {
-          model: Category,
-        },
-        {
-          model: Mark,
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Category,
+      //   },
+      //   {
+      //     model: Mark,
+      //   },
+      // ],
     })
     return allproducts
     // res.status(200).send(allproducts)
@@ -39,26 +39,34 @@ async function createProducts(req, res) {
     }
 
     let product
+
     if (Array.isArray(req.body)) {
       // Set default image URL if img field is not present for each object in the array
-      req.body.forEach(item => {
+      let productos = req.body
+
+      productos.forEach(item => {
         if (!item.img) {
           item.img =
             "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg"
         }
+
+        item.categoryName = item.category
       })
 
       // Create multiple products
-      product = await Product.bulkCreate(req.body)
+      product = await Product.bulkCreate(productos)
     } else {
       // Set default image URL if img field is not present
+      let producto = req.body
+
       if (!req.body.img) {
-        req.body.img =
+        producto.img =
           "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg"
       }
 
+      producto.categoryNames = req.body.categories
       // Create a single product
-      product = await Product.create(req.body)
+      product = await Product.create(producto)
     }
     return res.status(201).send(product)
   } catch (error) {
@@ -67,12 +75,9 @@ async function createProducts(req, res) {
 }
 
 // getCategories te devuelve todas las categorias desde la api
-const getCategories = async () => {
-  const dbCategories = await Category.findAll()
-
-  if (!dbCategories.length) throw new Error(`Categories not found!`)
-
-  return dbCategories
+const getCategories = async (req, res) => {
+  const categories = ["Consolas", "Periféricos"]
+  return res.status(200).send(categories)
 }
 
 module.exports = {

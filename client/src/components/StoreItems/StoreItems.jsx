@@ -12,17 +12,36 @@ function StoreItems() {
 
   const currentPage = useSelector(state => state.currentPage)
   const itemsPerPage = useSelector(state => state.itemsPerPage)
+  const nameFilter = useSelector(state => state.nameFilter)
 
   const items = useSelector(state => state.items)
 
-  // filtrado
+  let filteredByName
+
+  if (nameFilter) {
+    console.log(nameFilter);
+    // pokemonsFiltered: state.pokemons.filter(poke => {
+
+    //   let aux = poke.name.slice(0, action.payload.length)
+
+    //   return aux.toLowerCase() === action.payload.toLowerCase()
+    // }
+    filteredByName = items.filter(item => {
+      let aux = item.title.slice(0, nameFilter.length)
+
+      return aux.toLowerCase() === nameFilter.toLowerCase()
+    })
+  }
+
+  // filtrado por categorias (cambiar nombre despuesss)
   const filterBy = useSelector(state => state.filterBy)
 
-  let filteredItems = items
+  let filteredItems = filteredByName ? filteredByName : items
 
   if (filterBy) {
-    filteredItems = filteredItems.filter(item => item.category.includes(filterBy))
+    filteredItems = filteredItems.filter(item => item.categoryName === filterBy)
   }
+
 
   // ordenamiento
   const sortBy = useSelector(state => state.sortBy);
@@ -58,7 +77,6 @@ function StoreItems() {
 
   return (
     <div className="container">
-      {console.log(sortBy)}
       <div
         className="row"
         style={{ gap: "20px", backgroundColor: "#black" }}

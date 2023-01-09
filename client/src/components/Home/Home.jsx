@@ -18,8 +18,8 @@ export function Home() {
   const currentPage = useSelector(state => state.currentPage);
 
   useEffect(() => {
-    dispatch(getAllProd());
-    dispatch(resetFilter())
+    dispatch(getAllProd())
+    dispatch(getAllCategories())
   }, [dispatch]);
 
 

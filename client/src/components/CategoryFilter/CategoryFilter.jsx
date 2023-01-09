@@ -4,11 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories, setFilterCategory } from '../../redux/actions';
 
 const CategoryFilter = () => {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getAllCategories())
-    })
+    const dispatch = useDispatch()
 
     const categories = useSelector(state => state.categories)
 

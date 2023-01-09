@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setPriceRange } from '../../redux/actions';
+import { setFilterPrice, setPriceRange } from '../../redux/actions';
 
 const PriceFilter = () => {
     const dispatch = useDispatch();
@@ -9,6 +9,7 @@ const PriceFilter = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        dispatch(setFilterPrice())
         dispatch(setPriceRange({ min: minPrice, max: maxPrice }));
     };
 

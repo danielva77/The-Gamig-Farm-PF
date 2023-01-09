@@ -1,47 +1,46 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchByName } from '../../redux/actions'
+import { searchByName, setNameFilter } from '../../redux/actions'
 import { Link } from "react-router-dom"
 import './SearchBar.css'
 import lupa from "../Assets/lupa.png"
 
-export default function SearchBar(){
+export default function SearchBar() {
   const dispatch = useDispatch(); //hoks
   const [name, setName] = useState(" "); //estado local
 
-  function handleInputChange(e){
+  function handleInputChange(e) {
     e.preventDefault();
-    setName(e.target.value);
-    console.log(name);
+    dispatch(setNameFilter(e.target.value))
   };
 
-  function handleSubmit(e){
-    e.preventDefault();
-    dispatch(searchByName(name));
-    setName("");
-  }; 
+  // function handleSubmit(e){
+  //   e.preventDefault();
+  //   dispatch(searchByName(name));
+  //   setName("");
+  // }; 
 
-    return (
-      <div className="Background">
+  return (
+    <div className="Background">
       <div className="searchbar-div">
-      <div>
-      <Link to="/"
-       className='Nombrelogo'>
-        <h1>The Gaming Farm</h1>
-        </Link>
+        <div>
+          <Link to="/"
+            className='Nombrelogo'>
+            <h1>The Gaming Farm</h1>
+          </Link>
         </div>
         <input
           className="bar-btn"
           type="text"
-          name="buscar" 
-          placeholder="Search ..." 
-          onChange={(e) =>{handleInputChange(e)}} 
+          name="buscar"
+          placeholder="Search ..."
+          onChange={(e) => { handleInputChange(e) }}
           // value={input.buscar} 
-          autoComplete="off" 
+          autoComplete="off"
         ></input>
-        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > <img className="lupaa" src={lupa} alt="lupa" /></button>
-        </div>
+        <button className="btn-search-bar" type="submit" > <img className="lupaa" src={lupa} alt="lupa" /></button>
       </div>
-    );
+    </div>
+  );
 }

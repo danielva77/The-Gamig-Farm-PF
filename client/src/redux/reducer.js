@@ -22,6 +22,8 @@ import {
   SET_FILTER_CATEGORY,
   SET_NUMBERS_PAGINATED,
   RESET_FILTERS,
+  SET_FILTER_PRICE,
+  SET_NAME_FILTER,
 } from "./actions"
 
 const initialState = {
@@ -29,6 +31,7 @@ const initialState = {
   sortBy: "",
   filterBy: "",
   numbersPaginated: [],
+  nameFilter: "",
 
   detail: [],
   filter: {
@@ -55,6 +58,16 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    case SET_NAME_FILTER:
+      return {
+        ...state,
+        nameFilter: action.payload,
+      }
+    case SET_FILTER_PRICE:
+      return {
+        ...state,
+        filterBy: action.payload,
+      }
     case RESET_FILTERS:
       return {
         ...state,
