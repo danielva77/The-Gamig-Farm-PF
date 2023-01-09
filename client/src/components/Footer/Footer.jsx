@@ -9,24 +9,24 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
 
-        <div>
+        <div className='contenedores'>
           <img src={comprarSinM} title="compra sin problema" className="fotoComprar" />
           <h2 className="titulo2">Compra sin moverte</h2>
-          <p className="parrafo1">Encuentra lo que necesitas, y coordina el pago y la entrega con el vendedor. Es fácil y rápido. ¡Todos podemos hacerlo!</p>
+          <p className="parrafo1 p1">Encuentra lo que necesitas, y coordina el pago y la entrega con el vendedor. Es fácil y rápido. ¡Todos podemos hacerlo!</p>
           <a href="/home" className="link1">Compra nuestros productos</a>
         </div>
         {/*  */}
         <div className='conocenos'>
           <img src={Contactos} title="Contactos" className="fotoContacto" />
           <h2 className="titulo2">Conocenos</h2>
-          <p className="parrafo1">¡Dale un vistazo a los perfiles de Linkedin y GitHub!</p>
+          <p className="parrafo1 p2">¡Dale un vistazo a los perfiles de Linkedin y GitHub!</p>
           <a href="/contacto" className="link1">Ver perfiles</a>
         </div>
         {/*  */}
         <div>
           <img src={venderSinP} title="Vende sin Problemas" className="fotoVender" />
-          <h2 className="titulo2">Vende gratis</h2>
-          <p className="parrafo1">Miles de personas quieren lo que ofreces. Publica y verás qué pronto llegan las compras. ¡Tú no pagas nada!</p>
+          <h2 className="titulo2">Elegí cómo pagar</h2>
+          <p className="parrafo1 p3">Podés pagar con tarjeta, débito, efectivo o hasta 12 cuotas sin tarjeta con Mercado Crédito.</p>
           <a href="/form" className="link1">Como vender con Nosotros</a>
         </div>
       </footer>

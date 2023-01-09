@@ -23,7 +23,7 @@ const LandingPage = () => {
         {/* LOGIN 👦🏻 */}
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -8,6 +8,7 @@ background: #0F0E17;
 mix-blend-mode: normal;
 color: white;
 background-image: url("control.svg");
+/* height: 100%; */
 }
 .tituloLanding{
   position: absolute;

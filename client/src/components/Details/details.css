@@ -36,6 +36,7 @@ line-height: 48px;
 width: auto;
 color: #000000;
 margin-right: 140px;
+text-align: left;
 }
 .imagenProducto{
     position: absolute;
@@ -46,12 +47,13 @@ top: 143px;
 }
 .descripcion{
     position: absolute;
+    font-family: proxima-nova, sans-serif;
 width: 769px;
 height: 90px;
 left: 40px;
 top: 565px;
 
-font-family: 'Poppins';
+
 font-style: normal;
 font-weight: 500;
 font-size: 20px;

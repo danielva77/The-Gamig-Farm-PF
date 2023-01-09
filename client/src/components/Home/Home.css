@@ -2,6 +2,8 @@ body {
   position: relative;
   padding-bottom: 7em;
   min-height: 110vh;
+  overflow: scroll;
+  
 }
 .amdr {
   background-color: #0f0e17;

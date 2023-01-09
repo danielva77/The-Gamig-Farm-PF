@@ -33,7 +33,7 @@ function App() {
       <Route exact path='/' component={LandingPage} />
       <Route path='/home' component={Home} />
       <Route path='/products/:id' component={Details} />
-      <Route exact path='/form' component={Form} />
+      <Route  path='/form' component={Form} />
       {/* <Route path='/Footer' component={Footer} /> */}
 
       </Switch>

@@ -3,16 +3,19 @@ body {
   padding-bottom: 5em;
   min-height: 120vh;
   font-family: proxima-nova, sans-serif;
+  text-decoration: none;
+
 }
 .footer {
   background-color: #0f0e17;
   color: white;
   position: absolute;
-  bottom: -70px;
   width: 100%;
   padding: 20px 30px;
   display: flex;
   font-size: 10px;
+  justify-content: space-around;
+  margin-top: 100%;
 }
 
 .titulo2 {
@@ -32,9 +35,13 @@ body {
   line-height: 18px;
   text-align: center;
   color: #a7a9be;
+  text-align: center;
+  width: 50%;
+  
 }
 .link1 {
   color: #ff8906;
+  text-decoration: none;
 }
 .link1:hover {
   color: #ffffff;
@@ -44,4 +51,20 @@ body {
 }
 .fotoContacto{
   margin-bottom: 10px;
+}
+.p1{
+  position: relative;
+  right: -150px;
+}
+.p2{
+  position: relative;
+  right: -67px;
+}
+.p3{
+  position: relative;
+  right: -120px;
+}
+.contenedores{
+  /* display: block; */
+  justify-content: space-around;
 }
