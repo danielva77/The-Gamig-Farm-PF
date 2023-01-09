@@ -7,60 +7,40 @@ import { getAllProd, setNumbersPaginated } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
 import { filterByName } from "../../hooks/filterByName";
+import { filteredbyCategory } from "../../hooks/filterByCategory";
+import { sortByPrice } from "../../hooks/sortByPrice";
+import { paginateItems } from "../../hooks/paginateItems";
+import { getNumberButtons } from "../../hooks/getNumberButtons";
 
 function StoreItems() {
   const dispatch = useDispatch()
 
-  const currentPage = useSelector(state => state.currentPage)
-  const itemsPerPage = useSelector(state => state.itemsPerPage)
-  const nameFilter = useSelector(state => state.nameFilter)
-
+  // todos los productos
   const items = useSelector(state => state.items)
 
+  // variables globales para Paginado
+  const currentPage = useSelector(state => state.currentPage)
+  const itemsPerPage = useSelector(state => state.itemsPerPage)
 
-
-  // filtrado por categorias (cambiar nombre despuesss)
+  // variables globales para filtrado y ordenamiento
+  const nameFilter = useSelector(state => state.nameFilter)
   const categoryFilter = useSelector(state => state.categoryFilter)
-
-  let filteredbyCategory = items
-
-  if (categoryFilter) {
-    filteredbyCategory = filteredbyCategory.filter(item => item.categoryName === categoryFilter)
-  }
-
-  let filteredByName = nameFilter && filterByName(items, nameFilter)
-
-  // ordenamiento
   const sortBy = useSelector(state => state.sortBy);
 
-  let sortedItems = filteredByName ? filteredByName : filteredbyCategory
+  // Filtrado por categoria
+  let filteredAndSorted = categoryFilter ? filteredbyCategory(items, categoryFilter) : items
 
-  // Sort items
-  if (sortBy === 'Min price') {
-    sortedItems = sortedItems.sort((a, b) => {
-      return a.price - b.price;
-    })
-  } else if (sortBy === 'Max price') {
-    sortedItems = sortedItems.sort((a, b) => {
-      return b.price - a.price
-    })
-  }
+  // Filtrado por nombre
+  filteredAndSorted = nameFilter ? filterByName(filteredAndSorted, nameFilter) : filteredAndSorted
+
+  // Ordenamiento
+  filteredAndSorted = sortBy ? sortByPrice(filteredAndSorted, sortBy) : filteredAndSorted
 
   // Paginate items
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = sortedItems.slice(indexOfFirstItem, indexOfLastItem);
+  let currentItems = paginateItems(filteredAndSorted, currentPage, itemsPerPage)
 
-  // la cantidad de paginas
-  const amountOfPages = Math.ceil(sortedItems.length / itemsPerPage)
-
-  const numberButtons = []
-
-  for (let i = 1; i <= amountOfPages; i++) {
-    numberButtons.push(i)
-  }
-
-  dispatch(setNumbersPaginated(numberButtons))
+  // Enviar array de botones al paginado
+  getNumberButtons(filteredAndSorted, itemsPerPage, dispatch, setNumbersPaginated)
 
   return (
     <div className="container">
