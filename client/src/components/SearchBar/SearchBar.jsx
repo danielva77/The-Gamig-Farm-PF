@@ -40,7 +40,7 @@ export default function SearchBar(){
           // value={input.buscar} 
           autoComplete="off" 
         ></input>
-        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > <img className="lupaa" src={lupa} alt="lupa" /></button>
+        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > buscar</button>
         </div>
       </div>
     );
