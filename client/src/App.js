@@ -1,4 +1,4 @@
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import './App.css';
 import LandingPage from "./components//Landing Page/LandingPage";
 import { Route, BrowserRouter, Switch } from "react-router-dom"
@@ -10,6 +10,7 @@ import NavBar from './components/NavBar/NavBar';
 import { Profile } from "./components/Profile/profile"
 import { useAuth0 } from "@auth0/auth0-react";
 import Form from './components/Form/Form';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -32,9 +33,14 @@ function App() {
       <Route exact path='/' component={LandingPage} />
       <Route path='/home' component={Home} />
       <Route path='/products/:id' component={Details} />
-      <Route path='/form' component={Form} />
+      <Route exact path='/form' component={Form} />
+      {/* <Route path='/Footer' component={Footer} /> */}
+
       </Switch>
-      <Footer/>
+
+      <Footer className="amdr"/>
+      {/* Descomentar 'Footer' cuando tengamos más componentes en el home */}
+      
     </div>
     </BrowserRouter>
   );

@@ -1,4 +1,47 @@
-body{
-background: #0F0E17;
-    color: white;
+body {
+  position: relative;
+  padding-bottom: 5em;
+  min-height: 120vh;
+  font-family: proxima-nova, sans-serif;
+}
+.footer {
+  background-color: #0f0e17;
+  color: white;
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  font-size: 10px;
+}
+
+.titulo2 {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.parrafo1 {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #a7a9be;
+}
+.link1 {
+  color: #ff8906;
+}
+.link1:hover {
+  color: #ffffff;
+}
+.conocenos{
+  margin-top: 2px;
+}
+.fotoContacto{
+  margin-bottom: 10px;
 }

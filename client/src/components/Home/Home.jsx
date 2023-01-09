@@ -7,6 +7,8 @@ import Filter from "../Filter/Filter"
 import Paginado from "../Paginado/Paginado";
 import { getAllProd } from "../../redux/actions";
 import "./Home.css"
+// import "../Footer/Footer.css"
+import Footer from "../Footer/Footer"
 
 
 export function Home() {
@@ -47,8 +49,9 @@ export function Home() {
       
       <StoreItems
       currentVideogames = {currentVideogames} />
-      
+      <Footer className='amdr'/> 
     </>
+
   )
 }
 export default Home;

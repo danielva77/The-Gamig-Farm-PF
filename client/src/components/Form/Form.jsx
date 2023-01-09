@@ -17,7 +17,7 @@ export const Form = () => {
     // const marks = (state) => useSelector(state.marks);
     // const categories = (state) => useSelector(state.categories);
     const marks = [{ title: 'Logitech' }, { title: 'Razer' }, {title: "Redragon"}, {title: "Noga"}];
-    const categories = [{ title: 'MONITOR' }, { title: 'WEBCAM' }]
+    const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' },{ title: 'WebCam' },{ title: 'Auriculares' },{ title: 'Gabinetes' },{ title: 'MousePad' }, { title: 'Gabinete' }]
 
     // guardo la data para enviar a la db en un estado local
 
@@ -190,12 +190,14 @@ export const Form = () => {
                         </select>
                  
                     </div>
-                </form>
-                <button type="submit" className="btn btn-sucess btn-enviar" onClick={(e) => handleSubmit(e)}>Guardar</button>
+                </form>                            
+                                                 {/* btn-enviar */}
+                <button type="submit" className="btn btn-success mb-5 mt-4" onClick={(e) => handleSubmit(e)}>Guardar</button>
                 {/* <button type="button" class="btn btn-success">Success</button> */}
             </div>
             <div>
-                <Link to="/Home"><button className="btn-volver">Volver al Home</button></Link>
+                                                 {/* btn-volver */}
+                <Link to="/Home"><button className="btn btn-danger mb-5">Volver al Home</button></Link>
             </div>
         </div>
 

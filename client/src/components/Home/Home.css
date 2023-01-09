@@ -1,4 +1,17 @@
-.Home{
-    background-color: rgb(60, 58, 58);
-    
+body {
+  position: relative;
+  padding-bottom: 7em;
+  min-height: 110vh;
+}
+.amdr {
+  background-color: #0f0e17;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em 0em;
+
+}
+.Home {
+  background-color: rgb(60, 58, 58);
 }
