@@ -8,7 +8,8 @@ import "./Storeee.css";
 import { Link } from "react-router-dom";
 
 function StoreItems() {
-  const currentItems = useSelector(state => state.currentItems);
+  const currentPage = useSelector(state => state.currentPage)
+  const itemsPerPage = useSelector(state => state.itemsPerPage)
 
   const items = useSelector(state => state.items)
 
@@ -28,6 +29,11 @@ function StoreItems() {
     })
   }
 
+  // Paginate items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sortedItems.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
     <div className="container">
       {console.log(sortBy)}
@@ -35,7 +41,7 @@ function StoreItems() {
         className="row"
         style={{ gap: "20px", backgroundColor: "#black" }}
       ><div className="row row-cols-1 row-cols-md-2 g-4">
-          {sortedItems?.map((card) => {
+          {currentItems?.map((card) => {
             return (
               <Link to={"/products/" + card.id} style={{ textDecoration: 'none' }}>
 

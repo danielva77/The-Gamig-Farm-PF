@@ -15,7 +15,10 @@ const Sort = () => {
             name="type"
             id="type"
             onChange={handleChangeSort}
-            menuPlacement="top">
+            menuPlacement="top"
+            defaultValue={'DEFAULT'}
+        >
+            <option value="DEFAULT" disabled hidden>Sort by price</option>
             <option>Max price</option>
             <option>Min price</option>
         </select>
