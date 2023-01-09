@@ -7,6 +7,7 @@ import Filter from "../Filter/Filter"
 import Paginado from "../Paginado/Paginado";
 import { getAllProd } from "../../redux/actions";
 import "./Home.css"
+import About from "../About/About";
 
 
 export function Home() {

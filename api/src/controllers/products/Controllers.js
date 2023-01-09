@@ -20,15 +20,6 @@ const getAllProducts = async () => {
   }
 }
 
-// async(req, res) => {
-
-//   let allproducts = await getDbproducts();
-//   console.log("prueba")
-//     allproducts.length ?
-//     res.status(200).send(allproducts) : res.status(404).send("aun no hay nada")
-// };
-
-// Funcion para crear productos
 const createProducts = async(req, res) => {
 	const { title, price, detail, img, stock, category, mark } = req.body;
     try {
@@ -51,28 +42,37 @@ const createProducts = async(req, res) => {
         let c = await Category.findOrCreate({
             where: { title: cat }
         })
+
         productCreated.addCategory(c[0])
     })
 }
-// if (mark.length){
-//   mark.map(async mak => {
-//       let m = await Mark.findOrCreate({
-//           where: { title: mak }
-//       })
-//       productCreated.addMark(m[0])
-//   })}
+// console.log("ESTO total", productCreated)
+if (mark.length){
+  // console.log("QUE LLEGA", mark)
+  mark.map(async mak => {
+      let m = await Mark.findOrCreate({
+          where: { title: mak }
+      })
+
+      productCreated.addMark(m[0])
+      // console.log("ESTO GUARDA", m[0])
+  })
+
+}
 
   res.status(200).send("Product created succesfully")
 };
 
 
 // getCategories te devuelve todas las categorias desde la api
-const getCategories = async () => {
-	const dbCategories = await Category.findAll();
-
-	if (!dbCategories.length) throw new Error(`Categories not found!`);
-
-	return dbCategories;
+const getCategories = async (req,res) => {
+  try {
+    const cat = await getAllProducts();
+    let c = cat.map(el =>{return el.Categories[0].title} );
+    res.status(200).send(c)
+  } catch (error) {
+    res.status(404).send(error)
+  }
 };
 
 module.exports = {

@@ -46,10 +46,13 @@ const { Product, Category, Mark, Review, Store, User } = sequelize.models
 // Product.hasMany(Reviews);
 
 Product.belongsToMany(Category, { through: "Product_Category" });
-Category.belongsToMany(Product, { through: "Product_Category" });
+Category.belongsToMany(Product, { through: "Product_Category"});
 
-Mark.hasMany(Product);
-Product.belongsTo(Mark);
+Mark.belongsToMany(Product, { through: "Mark_Product" });
+Product.belongsToMany(Mark, { through: "Mark_Product" });
+
+// Mark.hasMany(Product);
+// Product.belongsTo(Mark);
 
 User.hasMany(Store);
 Store.belongsTo(User);
