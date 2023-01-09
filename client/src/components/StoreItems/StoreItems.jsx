@@ -3,11 +3,13 @@ import { StoreItem } from "../StoreItem/StoreItem"
 import { useState, useEffect } from "react";
 // import data from "../../data/items.json";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProd } from "../../redux/actions";
+import { getAllProd, setNumbersPaginated } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
 
 function StoreItems() {
+  const dispatch = useDispatch()
+
   const currentPage = useSelector(state => state.currentPage)
   const itemsPerPage = useSelector(state => state.itemsPerPage)
 
@@ -42,6 +44,17 @@ function StoreItems() {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = sortedItems.slice(indexOfFirstItem, indexOfLastItem);
+
+  // la cantidad de paginas
+  const amountOfPages = Math.ceil(sortedItems.length / itemsPerPage)
+
+  const numberButtons = []
+
+  for (let i = 1; i <= amountOfPages; i++) {
+    numberButtons.push(i)
+  }
+
+  dispatch(setNumbersPaginated(numberButtons))
 
   return (
     <div className="container">

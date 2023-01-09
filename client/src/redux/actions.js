@@ -15,6 +15,14 @@ export const RESET_SORT = "RESET_SORT"
 export const SET_PRICE_RANGE = "SET_PRICE_RANGE"
 export const SET_SORT = "SET_SORT"
 export const SET_FILTER_CATEGORY = "SET_FILTER_CATEGORY"
+export const SET_NUMBERS_PAGINATED = "SET_NUMBERS_PAGINATED"
+export const RESET_FILTERS = "RESET_FILTERS"
+
+export const resetFilters = () => {
+  return {
+    type: RESET_FILTERS,
+  }
+}
 
 export const setPriceRange = priceRange => {
   return {
@@ -33,6 +41,13 @@ export const setSort = payload => {
 export const setFilterCategory = payload => {
   return {
     type: SET_FILTER_CATEGORY,
+    payload,
+  }
+}
+
+export const setNumbersPaginated = payload => {
+  return {
+    type: SET_NUMBERS_PAGINATED,
     payload,
   }
 }

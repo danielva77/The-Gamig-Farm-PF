@@ -5,18 +5,7 @@ import { changePage } from "../../redux/actions"
 export default function Paginado() {
   const dispatch = useDispatch()
 
-  const sorted = useSelector(state => state.sorted)
-  const itemsPerPage = useSelector(state => state.itemsPerPage)
-  const currentPage = useSelector(state => state.currentPage)
-
-  // la cantidad de paginas
-  const amountOfPages = Math.ceil(sorted.length / itemsPerPage)
-
-  const numberButtons = []
-
-  for (let i = 1; i <= amountOfPages; i++) {
-    numberButtons.push(i)
-  }
+  const numbersPaginated = useSelector(state => state.numbersPaginated)
 
   const handleClick = e => {
     // setButtonColor('hsl(305, 33%, 69%, .8)')
@@ -26,14 +15,7 @@ export default function Paginado() {
 
   return (
     <div className="paginated-container">
-      {numberButtons.map(button => {
-        if (button === currentPage) {
-          return (
-            <button onClick={handleClick} value={button}>
-              {button}
-            </button>
-          )
-        }
+      {numbersPaginated.map(button => {
         return (
           <button onClick={handleClick} value={button}>
             {button}

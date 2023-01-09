@@ -20,12 +20,15 @@ import {
   SET_PRICE_RANGE,
   SET_SORT,
   SET_FILTER_CATEGORY,
+  SET_NUMBERS_PAGINATED,
+  RESET_FILTERS,
 } from "./actions"
 
 const initialState = {
   items: [],
   sortBy: "",
   filterBy: "",
+  numbersPaginated: [],
 
   detail: [],
   filter: {
@@ -52,6 +55,14 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    case RESET_FILTERS:
+      return {
+        ...state,
+        sortBy: "",
+        filter: {
+          type: "",
+        },
+      }
     case SET_SORT:
       return {
         ...state,
@@ -66,6 +77,12 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         filterBy: action.payload,
+      }
+
+    case SET_NUMBERS_PAGINATED:
+      return {
+        ...state,
+        numbersPaginated: action.payload,
       }
 
     case GET_ALL_PROD:
