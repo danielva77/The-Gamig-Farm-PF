@@ -7,31 +7,50 @@ import { getAllProd } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
 
-function StoreItems({ currentVideogames }) {
-  const dispatch = useDispatch();
-
+function StoreItems() {
   const currentItems = useSelector(state => state.currentItems);
-  const loadingState = useSelector(state => state.loading)
+
+  const items = useSelector(state => state.items)
+
+  // ordenamiento
+  const sortBy = useSelector(state => state.sortBy);
+
+  let filteredItems = items
+
+  // Sort items
+  if (sortBy === 'Min price') {
+    filteredItems = filteredItems.sort((a, b) => {
+      return a.price - b.price;
+    })
+  }
+  if (sortBy === 'Max price') {
+    filteredItems = filteredItems.sort((a, b) => {
+      return b.price - a.price
+    })
+  }
+
+
 
   return (
     <div className="container">
+      {console.log(sortBy)}
       <div
         className="row"
         style={{ gap: "20px", backgroundColor: "#black" }}
       ><div className="row row-cols-1 row-cols-md-2 g-4">
-          {currentItems?.map((card) => {
+          {items?.map((card) => {
             return (
-              // <Link to={"/products/" + card.id} style={{ textDecoration: 'none' }}>
+              <Link to={"/products/" + card.id} style={{ textDecoration: 'none' }}>
 
-              <div className="col">
-                <StoreItem
-                  id={card.id}
-                  name={card.title}
-                  imgUrl={card.img}
-                  price={card.price}
-                />
-              </div>
-              // </Link>
+                <div className="col">
+                  <StoreItem
+                    id={card.id}
+                    name={card.title}
+                    imgUrl={card.img}
+                    price={card.price}
+                  />
+                </div>
+              </Link>
             )
           })}
         </div>

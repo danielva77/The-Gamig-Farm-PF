@@ -17,10 +17,14 @@ import {
   CHANGE_SORT,
   CHANGE_PAGE,
   RESET_SORT,
+  SET_PRICE_RANGE,
+  SET_SORT,
 } from "./actions"
 
 const initialState = {
   items: [],
+  sortBy: "",
+
   detail: [],
   filter: {
     type: "",
@@ -32,6 +36,10 @@ const initialState = {
     descName: false,
   },
   filtered: [],
+  priceRange: {
+    min: 0,
+    max: 0,
+  },
   sorted: [],
   categories: [],
   itemsPerPage: 6,
@@ -42,6 +50,16 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    case SET_SORT:
+      return {
+        ...state,
+        sortBy: action.payload,
+      }
+    case SET_PRICE_RANGE:
+      return {
+        ...state,
+        priceRange: action.payload,
+      }
     case GET_ALL_PROD:
       // Si ha habido algun ordenamiento, no modificamos aquí pokemonsSorted
       for (let prop in state.sort) {

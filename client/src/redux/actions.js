@@ -1,4 +1,5 @@
 import axios from "axios"
+import jsonData from "../data.json"
 
 export const GET_ALL_PROD = "GET_ALL_PROD"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
@@ -11,13 +12,39 @@ export const CHANGE_FILTER = "CHANGE_FILTER"
 export const CHANGE_PAGE = "CHANGE_PAGE"
 export const RESET_SORT = "RESET_SORT"
 
-export function getAllProd() {
-  return async function (dispatch) {
-    var json = await axios.get("http://localhost:3001/products")
+export const SET_PRICE_RANGE = "SET_PRICE_RANGE"
+export const SET_SORT = "SET_SORT"
 
+export const setPriceRange = priceRange => {
+  return {
+    type: SET_PRICE_RANGE,
+    payload: priceRange,
+  }
+}
+
+export const setSort = payload => {
+  return {
+    type: SET_SORT,
+    payload,
+  }
+}
+
+export function getAllProd() {
+  // ----- Get from API
+  // return async function (dispatch) {
+  //   var json = await axios.get("http://localhost:3001/products")
+
+  //   return dispatch({
+  //     type: "GET_ALL_PROD",
+  //     payload: json.data,
+  //   })
+  // }
+
+  // ----- Get from json
+  return async function (dispatch) {
     return dispatch({
       type: "GET_ALL_PROD",
-      payload: json.data,
+      payload: jsonData,
     })
   }
 }
