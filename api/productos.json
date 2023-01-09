@@ -1,89 +1,124 @@
 {
   "name": "TheGamingFarm",
   "home": "demo1",
-  "active": true,
   "year": 2023,
   "products": [
     {
-      "title": "Teclado Minimalista Verde y blanco ",
-      "price": "$45usd",
-      "detail": "Teclado minimalista verde con teclas blancas, sin rgb, moderno",
-      "img": "https://i.pinimg.com/originals/5a/97/73/5a9773cf7002e64a6f45a16f737ced99.jpg",
-      "stock": "4",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Logitech-ratón óptico inalámbrico G Pro de 2,4 ghz, mouse para videojuegos, para jugadores de pcA",
+      "price": "120,66",
+      "detail": "PRO Wireless fue diseñado para ser el ratón de juego definitivo para los profesionales de esports. Durante 2 años, Logitech G colaboró con más de 50 jugadores profesionales para encontrar la forma, el peso y la sensación perfectos junto con nuestras tecnologías de sensores LIGHTSPEED wireless y HERO 25k",
+      "img": "https://s.alicdn.com/@sc04/kf/H4fc60ea9a80546e8a87eeeda647b32adq.jpg_960x960.jpg",
+      "stock": "20",
+      "category": ["Mouse"],
+      "Mark": ["Logitech"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Logitech-cámara web con micrófono C270 HD 720P, color negro",
+      "price": "16.31",
+      "detail": "Llamar, transmitir, escribir en el blogueo y grabar como un profesional en vídeo y audio HD cristalinos. Con una calidad de vídeo espectacular de hasta HD 1080p y Micrófonos doble integrados, C920 hace que sea fácil hacer que tu presencia en vídeo destaque entre la multitud.",
+      "img": "https://s.alicdn.com/@sc04/kf/Hf655cb6dd73f41118a0d5a01a7ca236cs.jpg_960x960.jpg",
+      "stock": "15",
+      "category": ["WebCam"],
+      "mark": ["Logitech"]
+    }, 
+    {
+      "title": "Logitech-cámara web C925e con vídeo HD y micrófonos estéreo incorporados, color negro",
+      "price": "60.50 ",
+      "detail": "mejore todas las oportunidades de colaboración con videos asequibles de calidad HD. el clip ajustable facilita el montaje en computadoras portátiles y monitores externos",
+      "img": "https://s.alicdn.com/@sc04/kf/HTB1WOhGaDZRMeJjSsplq6xeqXXag.jpg_960x960.jpg",
+      "stock": "9",
+      "category": ["WebCam"],
+      "mark": ["Logitech"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Logitech-ratón de juegos con cable, 2021 superior, Original, G502, 16000 DPI, para PC, Logitech, con 11 botones",
+      "price": "35.49",
+      "detail": "2021 ratón de Gaming con cable Original de 16000 DPI, ratón de Gaming de DIGITECH con 11 botones",
+      "img": "https://s.alicdn.com/@sc04/kf/Ub33aff6814904535ae134f7ff54127f6Q.png_960x960.png",
+      "stock": "13",
+      "category": ["Mouse"],
+      "mark": ["Logitech"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Razer Huntsman V2-teclado óptico lineal con Cable RGB, Teclado mecánico para videojuegos",
+      "price": "189.70",
+      "detail": "Estándar, resistente al agua, para portátiles, juegos, ergonómicos, mecánicos Anti-fantasma, reposabrazos de La Palma, Plug and Play.",
+      "img": "https://s.alicdn.com/@sc04/kf/Hdfef84705cb74b3aa1b9cb4b01199030W.jpg_960x960.jpg",
+      "stock": "11",
+      "category": ["Teclado"],
+      "mark": ["Razer"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Razer-ratón Razer Deathadder Essential Expert, con cable, Sensor óptico 4G, 6400 DPI, programable, para videojuegos",
+      "price": "13.11",
+      "detail": "Razer Deathadder ratón esencial experto ratón cableado Gaming 4G Sensor óptico 6400 DPI ratón programable Gaming Razer",
+      "img": "https://s.alicdn.com/@sc04/kf/U95cdcb406cca4127bee026b5976f1a8c0.png_960x960.png",
+      "stock": "16",
+      "category": ["Mouse"],
+      "mark": ["Razer"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Redragon K552 RGB 87 llaves accesorios de computadora Teclado mecánico del juego de teclado",
+      "price": "25.00",
+      "detail": " Teclado mecánico para juegos-versión negra; 87 teclas pequeño teclado mecánico compacto para juegos con interruptores de teclado de sensación mecánica personalizados. Diseñado para la longevidad con mayor durabilidad y capacidad de respuesta.",
+      "img": "https://s.alicdn.com/@sc04/kf/Hefae8df22eef4bdc88b8b8e7421785d2p.jpg_960x960.jpg",
+      "stock": "25",
+      "category": ["Teclado"],
+      "mark": ["Redragon"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Redragon-funda de ordenador profesional para juegos, GC-802 de lujo, ATX, RGB",
+      "price": "95.81",
+      "detail": "Ilumina tu sistema con tres ventiladores RGB de 120MM incluidos, Los edificios personalizados no tienen que estar desbordados-un diseño distintivo de doble cámara",
+      "img": "https://s.alicdn.com/@sc04/kf/Hd2ef542e415b4bbb96ea0586aa8c22b7p.jpg_960x960.jpg",
+      "stock": "10",
+      "category": ["Gabinete"],
+      "mark": ["Redragon"]
     },
     {
-      "title": "Teclado gamer Logitech Serie G Prodigy G213 QWERTY español color negro con luz RGB",
-      "price": "14.999",
-      "detail": "mouse inalambrico pro",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_640406-MLA32722390709_102019-V.webp",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "Auriculares con cable para Redragon H510 Zeus, estéreo envolvente, espuma de memoria, micrófono extraíble para PC/PS4 y Xbox, 7,1",
+      "price": "",
+      "detail": "",
+      "img": "https://s.alicdn.com/@sc04/kf/H615679d1dbd1429aaa53fc1402096f81A.png_960x960.png",
+      "stock": "",
+      "category": [""],
+      "mark": [""]
     },
     {
-      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": "109.95",
-      "detail": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "stock": "3",
-      "category": ["perifericos"],
-      "mark": ["ke"]
+      "title": "",
+      "price": "",
+      "detail": "",
+      "img": "",
+      "stock": "",
+      "category": [""],
+      "mark": [""]
+    },
+    {
+      "title": "",
+      "price": "",
+      "detail": "",
+      "img": "",
+      "stock": "",
+      "category": [""],
+      "mark": [""]
+    },
+    {
+      "title": "",
+      "price": "",
+      "detail": "",
+      "img": "",
+      "stock": "",
+      "category": [""],
+      "mark": [""]
+    },
+    {
+      "title": "",
+      "price": "",
+      "detail": "",
+      "img": "",
+      "stock": "",
+      "category": [""],
+      "mark": [""]
     }
   ]
 }
