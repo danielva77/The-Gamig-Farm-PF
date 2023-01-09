@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProd, setNumbersPaginated } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
+import { filterByName } from "../../hooks/filterByName";
 
 function StoreItems() {
   const dispatch = useDispatch()
@@ -16,37 +17,23 @@ function StoreItems() {
 
   const items = useSelector(state => state.items)
 
-  let filteredByName
 
-  if (nameFilter) {
-    console.log(nameFilter);
-    // pokemonsFiltered: state.pokemons.filter(poke => {
-
-    //   let aux = poke.name.slice(0, action.payload.length)
-
-    //   return aux.toLowerCase() === action.payload.toLowerCase()
-    // }
-    filteredByName = items.filter(item => {
-      let aux = item.title.slice(0, nameFilter.length)
-
-      return aux.toLowerCase() === nameFilter.toLowerCase()
-    })
-  }
 
   // filtrado por categorias (cambiar nombre despuesss)
-  const filterBy = useSelector(state => state.filterBy)
+  const categoryFilter = useSelector(state => state.categoryFilter)
 
-  let filteredItems = filteredByName ? filteredByName : items
+  let filteredbyCategory = items
 
-  if (filterBy) {
-    filteredItems = filteredItems.filter(item => item.categoryName === filterBy)
+  if (categoryFilter) {
+    filteredbyCategory = filteredbyCategory.filter(item => item.categoryName === categoryFilter)
   }
 
+  let filteredByName = nameFilter && filterByName(items, nameFilter)
 
   // ordenamiento
   const sortBy = useSelector(state => state.sortBy);
 
-  let sortedItems = filteredItems
+  let sortedItems = filteredByName ? filteredByName : filteredbyCategory
 
   // Sort items
   if (sortBy === 'Min price') {

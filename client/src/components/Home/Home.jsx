@@ -9,7 +9,7 @@ import { changePage, getAllCategories, getAllProd, resetFilter } from "../../red
 import "./Home.css"
 import Sort from "../Sort/Sort";
 import CategoryFilter from "../CategoryFilter/CategoryFilter";
-import ResetFiltersBtn from "../ResetFiltersBtn/ResetFiltersBtn";
+import ReloadPageBtn from "../ReloadPageBtn/ReloadPageBtn";
 
 
 export function Home() {
@@ -30,7 +30,7 @@ export function Home() {
       <div className="Home">
         <Sort />
         <CategoryFilter />
-        {/* <ResetFiltersBtn /> */}
+        <ReloadPageBtn />
         {/* <PriceFilter /> */}
       </div>
       <div>

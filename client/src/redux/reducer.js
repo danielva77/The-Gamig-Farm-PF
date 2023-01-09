@@ -1,11 +1,5 @@
 //Reducers Search Bar
-import { equalsCheck } from "../hooks/equalsCheck"
-import {
-  sortNameAsc,
-  sortNameDesc,
-  sortPriceAsc,
-  sortPriceDesc,
-} from "../hooks/combinedSorting"
+
 import {
   GET_ALL_PROD,
   SEARCH_BY_NAME,
@@ -29,8 +23,8 @@ import {
 const initialState = {
   items: [],
   sortBy: "",
-  filterBy: "",
   numbersPaginated: [],
+  categoryFilter: "",
   nameFilter: "",
 
   detail: [],
@@ -89,7 +83,7 @@ export default function rootReducer(state = initialState, action) {
     case SET_FILTER_CATEGORY:
       return {
         ...state,
-        filterBy: action.payload,
+        categoryFilter: action.payload,
       }
 
     case SET_NUMBERS_PAGINATED:
@@ -139,64 +133,6 @@ export default function rootReducer(state = initialState, action) {
         categories: action.payload,
       }
 
-    case RESET_SORT:
-      return {
-        ...state,
-        sort: {
-          ascName: false,
-          descName: false,
-        },
-        sorted: state.filtered,
-        currentItems: state.filtered.slice(0, state.itemsPerPage),
-        currentPage: 1,
-      }
-
-    case CHANGE_SORT:
-      if (action.payload.ascPrice) {
-        let aux = sortPriceAsc(state.filtered)
-        return {
-          ...state,
-          sort: action.payload,
-          sorted: aux,
-          currentItems: aux.slice(0, state.itemsPerPage),
-        }
-      }
-
-      if (action.payload.descPrice) {
-        let aux = sortPriceDesc(state.filtered)
-        return {
-          ...state,
-          sort: action.payload,
-          sorted: aux,
-          currentItems: aux.slice(0, state.itemsPerPage),
-        }
-      }
-
-      if (action.payload.ascName) {
-        let aux = sortNameAsc(state.filtered)
-        return {
-          ...state,
-          sort: action.payload,
-          sorted: aux,
-          currentItems: aux.slice(0, state.itemsPerPage),
-        }
-      }
-
-      if (action.payload.descName) {
-        let aux = sortNameDesc(state.filtered)
-        return {
-          ...state,
-          sort: action.payload,
-          sorted: aux,
-          currentItems: aux.slice(0, state.itemsPerPage),
-        }
-      }
-
-    case SEARCH_BY_NAME:
-      return {
-        ...state,
-        items: action.payload,
-      }
     case "REMOVE_FROM_CART":
       return {
         ...state,
@@ -211,46 +147,6 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         detail: [],
-      }
-
-    case RESET_FILTER:
-      return {
-        ...state,
-        filter: {
-          type: "",
-        },
-        filtered: state.items,
-        sorted: state.items,
-        currentPage: 1,
-      }
-    case CHANGE_FILTER:
-      let aux = state.items?.filter(item =>
-        item.category?.includes(action.payload.type)
-      )
-
-      return {
-        ...state,
-        filter: {
-          ...state.filter,
-          type: action.payload.type,
-        },
-        filtered: aux,
-      }
-
-      return {
-        ...state,
-        sorted: state.filtered,
-      }
-
-    case CHANGE_PAGE:
-      let currentPage = action.payload
-      let lastItemOfPage = currentPage * state.itemsPerPage
-      let firstItemOfPage = lastItemOfPage - state.itemsPerPage
-
-      return {
-        ...state,
-        currentPage: action.payload,
-        currentItems: state.sorted.slice(firstItemOfPage, lastItemOfPage),
       }
     default:
       return state
