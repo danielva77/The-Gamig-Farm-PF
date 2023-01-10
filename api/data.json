@@ -6,7 +6,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_922869-MLA51827540875_102022-O.webp",
     "stock": 100,
     "category": ["Consolas"],
-    "mark": "Sony"
+    "mark": ["Sony"]
   },
   {
     "title": "Xbox Series X",
@@ -15,7 +15,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_627149-MLA44484230438_012021-O.webp",
     "stock": 100,
     "category": ["Consolas"],
-    "mark": "Microsoft"
+    "mark": ["Microsoft"]
   },
   {
     "title": "Nintendo Switch",
@@ -24,7 +24,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_883371-MLA32731749246_112019-O.webp",
     "stock": 200,
     "category": ["Consolas"],
-    "mark": "Nintendo"
+    "mark": ["Nintendo"]
   },
   {
     "title": "PlayStation 4",
@@ -33,7 +33,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp",
     "stock": 100,
     "category": ["Consolas"],
-    "mark": "Sony"
+    "mark": ["Sony"]
   },
   {
     "title": "Xbox One",
@@ -42,7 +42,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_627149-MLA44484230438_012021-O.webp",
     "stock": 100,
     "category": ["Consolas"],
-    "mark": "Microsoft"
+    "mark": ["Microsoft"]
   },
   {
     "title": "Sega Genesis Mini",
@@ -60,7 +60,7 @@
     "img": "https://mauricomputacion.com.ar/images/productos/galerias/19587/1884436034.jpg",
     "stock": 100,
     "category": ["Consolas"],
-    "mark": "Nintendo"
+    "mark": ["Nintendo"]
   },
   {
     "title": "PlayStation Classic",
@@ -68,8 +68,8 @@
     "detail": "Una versión miniaturizada de la consola original PlayStation",
     "img": "https://http2.mlstatic.com/D_NQ_NP_2X_869142-MLA32731749132_112019-V.webp",
     "stock": 100,
-    "category": ["Consolas"],
-    "mark": "Sony"
+    "category": [["Consolas"]],
+    "mark": ["Sony"]
   },
   {
     "title": "NES Classic Edition",
@@ -78,7 +78,7 @@
     "img": "https://images.fravega.com/f500/f0224e7d8414691119e83d2f8ea132ea.jpg",
     "stock": 100,
     "category": ["Consolas"],
-    "mark": "Nintendo"
+    "mark": ["Nintendo"]
   },
   {
     "title": "Raton inalámbrico Logitech G Pro",
@@ -87,7 +87,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_876202-MLA45318471376_032021-O.jpg",
     "stock": 50,
     "category": ["Periféricos"],
-    "mark": "Logitech"
+    "mark": ["Logitech"]
   },
   {
     "title": "Teclado mecánico Corsair K95 RGB Platinum XT",
@@ -96,7 +96,7 @@
     "img": "https://http2.mlstatic.com/D_NQ_NP_627361-MLA41277723075_032020-O.jpg",
     "stock": 25,
     "category": ["Periféricos"],
-    "mark": "Corsair"
+    "mark": ["Corsair"]
   },
   {
     "title": "Auriculares Razer Kraken X Ultralight",
@@ -105,7 +105,7 @@
     "img": "https://i2.wp.com/deliverypc.store/wp-content/uploads/2022/10/concepto-5510426-1.png?fit=500%2C500&ssl=1",
     "stock": 75,
     "category": ["Periféricos"],
-    "mark": "Razer"
+    "mark": ["Razer"]
   },
   {
     "title": "Mousepad Logitech G840 XL",
@@ -114,7 +114,7 @@
     "img": "https://storelaplata.com.ar/img/Public/1098-producto-pad-logitech-g840-9734.jpg",
     "stock": 50,
     "category": ["Periféricos"],
-    "mark": "Logitech"
+    "mark": ["Logitech"]
   },
   {
     "title": "Teclado mecánico HyperX Alloy FPS Pro",
@@ -123,7 +123,7 @@
     "img": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/397/305/products/alloy-fps-pro1-b853a0f205a408411c16249147667423-640-0.jpg",
     "stock": 50,
     "category": ["Periféricos"],
-    "mark": "HyperX"
+    "mark": ["HyperX"]
   },
   {
     "title": "Auriculares inalámbricos HyperX Cloud Flight",
@@ -132,7 +132,7 @@
     "img": "https://hard-digital.com.ar/public/files/Auricular%20Inalambrico%20Hyperx%20Cloud%20Flight%20Hx-Hscf-Bk-Am%20Negro/6.jpg",
     "stock": 50,
     "category": ["Periféricos"],
-    "mark": "HyperX"
+    "mark": ["HyperX"]
   },
   {
     "title": "Volante Logitech G29 Driving Force",
@@ -141,6 +141,6 @@
     "img": "https://logitechar.vtexassets.com/arquivos/ids/156583/941-000111_1.png?v=636973475815370000",
     "stock": 25,
     "category": ["Periféricos"],
-    "mark": "Logitech"
+    "mark": ["Logitech"]
   }
 ]
