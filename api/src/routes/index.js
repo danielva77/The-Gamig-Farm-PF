@@ -1,4 +1,4 @@
-const {createProducts, getAllProducts, getCategories} = require('../controllers/products/Controllers')
+const {createProducts, getAllProducts, getCategories, getMarks} = require('../controllers/products/Controllers')
 
 
 const { Router } = require('express');
@@ -102,6 +102,8 @@ router.post("/products", createProducts);
 
 
 router.get("/category", getCategories)
+
+router.get("/mark", getMarks)
 
 router.get("/products/:id", async(req , res) =>{
     // res.send("Soy el get /videogame")

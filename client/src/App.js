@@ -5,6 +5,7 @@ import { Route, BrowserRouter } from "react-router-dom"
 import Home from "./components/Home/Home"
 import Details from './components/Details/Details';
 import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <Route exact path='/home' component={Home} />
       <Route path='/products/:id' component={Details} />
       <Route path='/about' component={About} />
+      <Route path='/contact' component={Contact} />
       <Footer/>
     </div>
     </BrowserRouter>

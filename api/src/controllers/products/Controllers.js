@@ -75,8 +75,19 @@ const getCategories = async (req,res) => {
   }
 };
 
+const getMarks = async(req, res) =>{
+  try {
+    const marca = await getAllProducts();
+    let m = marca.map(el =>{return el.Marks[0].title} );
+    res.status(200).send(m)
+  } catch (error) {
+    res.status(404).send(error)
+  }
+}
+
 module.exports = {
   getAllProducts,
   createProducts,
-  getCategories
+  getCategories,
+  getMarks
 }
