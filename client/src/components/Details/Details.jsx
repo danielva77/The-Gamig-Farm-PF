@@ -6,6 +6,10 @@ import "./Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
 import "./Details.css"
+import NavBar from "../NavBar/NavBar";
+
+
+
 export default function Details(props) {
 
   const dispatch = useDispatch();
@@ -21,10 +25,11 @@ export default function Details(props) {
   let myProduct = useSelector((state) => state.detail);
 
   return (
-    <div >
+    <div className='details-container'>
+      <NavBar />
       {
         myProduct.length > 0 ?
-          <div>
+          <div className='details-info'>
             <h1 className='titulo'>{myProduct[0].title}</h1>
             <img src={myProduct[0].img} alt="img" className='imagenProducto'></img>
             <h3 className='descripcionTitulo'>Descripcion del producto:</h3>
@@ -42,7 +47,9 @@ export default function Details(props) {
       <div className='filtros'>
         <a href="/home" className='volver'> 🡰 Volver</a>
       </div>
-      <Footer className='footer2' />
+      <div className='move-footer'>
+        <Footer />
+      </div>
     </div>
   )
 }
