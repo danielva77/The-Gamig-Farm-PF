@@ -1,48 +1,42 @@
 import React from "react";
-import {useState, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../NavBar/NavBar";
 import StoreItems from "../StoreItems/StoreItems"
-import Filter from "../Filter/Filter"
+import PriceFilter from "../PriceFilter/PriceFilter"
 import Paginado from "../Paginado/Paginado";
-import { getAllProd } from "../../redux/actions";
+import { changePage, getAllCategories, getAllProd, resetFilter } from "../../redux/actions";
 import "./Home.css"
 // import "../Footer/Footer.css"
 import Footer from "../Footer/Footer"
+import Sort from "../Sort/Sort";
+import CategoryFilter from "../CategoryFilter/CategoryFilter";
+import ReloadPageBtn from "../ReloadPageBtn/ReloadPageBtn";
 
 
 export function Home() {
   const dispatch = useDispatch();
-  const allVideogames = useSelector(state => state.items);
-//Paginado
-  const [currentPage, setCurrentPage] = useState(1);  //pag actual
-  const [videogamesPerPage, setVideogamesPerPage] = useState(5);
-  const [orden, setOrden] = useState("");
-  const indexOfLastVideogame = currentPage * videogamesPerPage;
-  const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
-  const currentVideogames = allVideogames.slice(indexOfFirstVideogame , indexOfLastVideogame);
 
-  const paginado = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-  useEffect(() =>{
-    dispatch(getAllProd());
+  const currentPage = useSelector(state => state.currentPage);
+
+  useEffect(() => {
+    dispatch(getAllProd())
+    dispatch(getAllCategories())
   }, [dispatch]);
 
 
   return (
     <>
-    
+
       {/* <NavBar/> */}
       <div className="Home">
-      <Filter />
+        <Sort />
+        <CategoryFilter />
+        <ReloadPageBtn />
+        {/* <PriceFilter /> */}
       </div>
       <div>
-        <Paginado
-                videogamesPerPage = {videogamesPerPage}
-                allVideogames = {allVideogames.length}
-                paginado = {paginado}
-                />
+        <Paginado />
       </div>
       <div><p>Page -{currentPage}-</p></div>
 
@@ -50,6 +44,9 @@ export function Home() {
       <StoreItems
       currentVideogames = {currentVideogames} />
       <Footer className='amdr'/> 
+
+      {/* <StoreItems /> */}
+
     </>
 
   )
