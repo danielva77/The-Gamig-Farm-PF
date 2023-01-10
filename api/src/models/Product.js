@@ -18,11 +18,11 @@ module.exports = (sequelize) => {
         unique: true,
       },
       price: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       detail: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
       img: {

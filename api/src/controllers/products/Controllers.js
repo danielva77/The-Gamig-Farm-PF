@@ -54,6 +54,7 @@ const createProducts = async(req, res) => {
         productCreated.addCategory(c[0])
     })
 }
+
 // if (mark.length){
 //   mark.map(async mak => {
 //       let m = await Mark.findOrCreate({

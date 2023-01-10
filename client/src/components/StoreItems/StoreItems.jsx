@@ -17,24 +17,22 @@ function StoreItems({ currentVideogames }) {
   console.log("array de items", allItems);
 
   return (
-    <div className="container">
-      <div
-        className="row d-flex justify-content-center align-items-center"
-        style={{ gap: "20px" }}
-      >
+    <div className="divG">
+      {/* <h1 className="productosT">PRODUCTOS</h1> */}
+      <div className="modelo3">
         {currentVideogames.map((card) => {
           return (
-            <>
-              <Link to={"/products/" + card.id}>
-                <div className="col-md-4  mt-4"></div>
-              </Link>
-              <StoreItem
-                id={card.id}
-                name={card.title}
-                imgUrl={card.img}
-                price={card.price}
-              />
-            </>
+            <div>
+              <Link to={"/products/" + card.id}></Link>
+              <div className="modelo">
+                <StoreItem
+                  id={card.id}
+                  name={card.title}
+                  imgUrl={card.img}
+                  price={card.price}
+                />
+              </div>
+            </div>
           );
         })}
       </div>

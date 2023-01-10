@@ -1,0 +1,24 @@
+.imagenP{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 1343px;
+    top: 20px;
+    border-radius: 50%;   
+}
+.nameP{
+    position: absolute;
+width: 58px;
+height: 24px;
+left: 1383px;
+top: 21px;
+font-size: 7px;
+color: rgb(255, 255, 255);
+
+
+font-family: proxima-nova, sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+}

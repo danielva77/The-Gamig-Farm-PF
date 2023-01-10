@@ -4,7 +4,6 @@ import {
   SEARCH_BY_NAME,
   GET_DETAIL,
   CLEAN_DETAIL,
-  REMOVE_FROM_CART,
 } from "./actions";
 
 const initialState = {
@@ -27,7 +26,19 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         items: action.payload,
       };
-    case REMOVE_FROM_CART:
+    case "REMOVE_FROM_CART":
+      return {
+        ...state,
+        items: action.payload,
+        filtered: action.payload,
+      };
+
+    case SEARCH_BY_NAME:
+      return {
+        ...state,
+        items: action.payload,
+      };
+    case "REMOVE_FROM_CART":
       return {
         ...state,
         items: state.items.filter((item) => item.id !== action.id),

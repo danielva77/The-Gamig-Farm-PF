@@ -33,15 +33,20 @@ const Cart = () => {
         {" "}
         <img src={Carrito} alt="imagen" class="img-fluid" />
       </Button>
-      <Offcanvas show={show} onHide={handleHide} placement="end">
+      <Offcanvas
+        show={show}
+        onHide={handleHide}
+        placement="end"
+        style={{ width: "50%", backgroundColor: "#0F0E17", color: "white" }}
+      >
         <Offcanvas.Header>
           <Offcanvas.Title>Tu carrito</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body style={{ color: "white" }}>
           {cart.length === 0 ? (
             <p>No hay productos en el carrito</p>
           ) : (
-            <Table striped bordered hover>
+            <Table striped bordered hover style={{ color: "white" }}>
               <thead>
                 <tr>
                   <th>Producto</th>

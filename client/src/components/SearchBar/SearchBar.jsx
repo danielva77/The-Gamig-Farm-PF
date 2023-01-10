@@ -1,47 +1,58 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchByName } from '../../redux/actions'
-import { Link } from "react-router-dom"
-import './SearchBar.css'
-import lupa from "../Assets/icone-loupe-gris.png"
+import { searchByName } from "../../redux/actions";
+import { Link } from "react-router-dom";
+import "./SearchBar.css";
+import lupa from "../Assets/lupa.png";
+import LOGO from "../Assets/LOGO.png";
 
-export default function SearchBar(){
+export default function SearchBar() {
   const dispatch = useDispatch(); //hoks
   const [name, setName] = useState(" "); //estado local
 
-  function handleInputChange(e){
+  function handleInputChange(e) {
     e.preventDefault();
     setName(e.target.value);
     console.log(name);
-  };
+  }
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
     dispatch(searchByName(name));
     setName("");
-  }; 
+  }
 
-    return (
-      <div className="Background">
-      <div className="searchbar-div">
-      
-      <div className='Nombrelogo'>
-        <Link to="/">
-        <h1>The Gaming Farm</h1>
-        </Link>
-        </div>
-        <input
-          className="bar-btn"
-          type="text"
-          name="buscar" 
-          placeholder="Search ..." 
-          onChange={(e) =>{handleInputChange(e)}} 
-          // value={input.buscar} 
-          autoComplete="off" 
-        ></input>
-        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > buscar</button>
-        </div>
-      </div>
-    );
+  return (
+    <div>
+      {/* <div className="searchbar-div"> */}
+      {/* <div> */}
+      <Link to="/" className="Nombrelogo">
+        <img src={LOGO} title="Logo Gaming" />
+      </Link>
+      {/* </div>   */}
+      <input
+        className="bar-btn"
+        type="text"
+        name="buscar"
+        placeholder="Search ..."
+        onChange={(e) => {
+          handleInputChange(e);
+        }}
+        // value={input.buscar}
+        autoComplete="off"
+      ></input>
+      <button
+        className="btn-search-bar"
+        type="submit"
+        onClick={(e) => {
+          handleSubmit(e);
+        }}
+      >
+        {" "}
+        buscar
+      </button>
+    </div>
+    // </div>
+  );
 }
