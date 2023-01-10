@@ -1,5 +1,4 @@
 import axios from "axios"
-import jsonData from "../data.json"
 
 export const GET_ALL_PROD = "GET_ALL_PROD"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
