@@ -30,39 +30,47 @@ const createProducts = async (req, res) => {
     res.status(404).send("aun no hay nada")
   }
 
-  let productCreated = await Product.create({
-    title,
-    price,
-    detail,
-    img: img
-      ? img
-      : "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg",
-    stock,
-  })
-
-  if (category.length) {
-    category.map(async cat => {
-      let c = await Category.findOrCreate({
-        where: { title: cat },
-      })
-
-      productCreated.addCategory(c[0])
+  try {
+    let productCreated = await Product.create({
+      title,
+      price,
+      detail,
+      img: img
+        ? img
+        : "https://gesisarg.com/sistema-gestion/res/archivos/imagen_articulo_por_defecto.jpg",
+      stock,
     })
-  }
-  // console.log("ESTO total", productCreated)
-  if (mark.length) {
-    // console.log("QUE LLEGA", mark)
-    mark.map(async mak => {
-      let m = await Mark.findOrCreate({
-        where: { title: mak },
+
+    if (category.length) {
+      category.map(async cat => {
+        let c = await Category.findOrCreate({
+          where: { title: cat },
+        })
+
+        productCreated.addCategory(c[0])
       })
+    }
+    // console.log("ESTO total", productCreated)
+    if (mark.length) {
+      // console.log("QUE LLEGA", mark)
+      mark.map(async mak => {
+        let m = await Mark.findOrCreate({
+          where: { title: mak },
+        })
 
-      productCreated.addMark(m[0])
-      // console.log("ESTO GUARDA", m[0])
-    })
+        productCreated.addMark(m[0])
+        // console.log("ESTO GUARDA", m[0])
+      })
+    }
+
+    res.status(200).send("Product created succesfully")
+  } catch (error) {
+    res
+      .status(400)
+      .send(
+        "Error al crear el producto. Revisar formato de valores recibidos (tanto category como marks deben ser arrays"
+      )
   }
-
-  res.status(200).send("Product created succesfully")
 }
 
 // getCategories te devuelve todas las categorias desde la api
