@@ -1,7 +1,64 @@
-/* .container{
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    height: 100%;
-    background-color: rgb(60, 58, 58);
-} */
+.divG {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  box-sizing: border-box;
+
+  position: absolute;
+  /* width: 360px;
+  height: 367px; */
+  left: 215px;
+  top: 171px;
+
+  background: #fffffe;
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  border-radius: 10px;
+  justify-content: space-between;
+  text-decoration: none;
+  text-decoration: transparent;
+}
+.modelo{
+  width: 380px;
+  height: 430px;
+  overflow: hidden;
+  transition: 0.5s;
+  animation: ease-in-out;
+  margin-bottom: 20%;
+  border-radius: 10px;
+  border: #e66f00;
+  margin-top: 50px;
+display: inline-flex;
+box-shadow: 5px 5px 5px 3px rgb(230, 230, 230);
+border: 2px solid rgb(230, 230, 230);
+border-radius: 5%;
+text-decoration: none;
+text-decoration: transparent;
+
+}
+.modelo3{
+display: inline-flex ;
+background-color: rgb(255, 255, 255);
+text-align: center;
+position: relative;
+left: -100px;
+top: -60px;
+/* text-decoration: none; */
+/* text-decoration: transparent; */
+flex-wrap: wrap;
+/* overflow: scroll */
+width: 100%;
+align-items: center;
+justify-content: center
+;
+}
+.productosT{
+  /* background-color: red; */
+  /* color: black;
+  position: absolute; */
+  bottom: 700px;
+}
+h1{
+  color: green;
+  /* position: absolute; */
+
+  top: 100px;
+}

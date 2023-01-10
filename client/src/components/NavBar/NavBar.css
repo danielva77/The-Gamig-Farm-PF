@@ -1,4 +1,6 @@
-
+/* body{ */
+     /* background: #1e00ff;
+}
 .cssbuttons-io {
      position: relative;
      font-family: inherit;
@@ -53,11 +55,11 @@
     
     .cssbuttons-io:active {
      transform: scale(0.95);
-    }
+    } */
 
     /* //boton2 */
 
-    
+/*     
 .cssbuttons-io1 {
      position: relative;
      font-family: inherit;
@@ -114,16 +116,18 @@
     
     .cssbuttons-io1:active {
      transform: scale(0.95);
-    }
+    } */
     
    
      /* BACKGROUND */
 
-     .Componente{
-          background-color: #000;
+     /* .Componente{
+          background-color: #ff0000;
      }
 
      .Botones{
+          background-color:  #1500b0fc;
+          ;
           display:flex;
           flex-direction: row-reverse;
      }
@@ -132,4 +136,37 @@
           display: flex;
           margin-top: 27px;
           margin-right:2% ;
-     }
+     } */
+
+.Componente{
+     background-color:#0F0E17;
+     position: absolute;
+width: 100%;
+height: 70px;
+left: 0px;
+top: 0px;
+}
+/* .menu{
+     color: white;
+    
+     width: 50px;
+     height: 24px;
+     top: 20px;
+} */
+.link{
+     color: white;
+     top: 20px;
+     position:relative ;
+     text-decoration: none;
+     bottom: 25px;
+     margin: -0px 12px;     
+     /*  */
+     font-family: proxima-nova, sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+}
+.link:hover{
+     color: #ff8906;
+}

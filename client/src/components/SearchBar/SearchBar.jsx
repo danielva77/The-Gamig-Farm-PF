@@ -5,6 +5,7 @@ import { searchByName } from '../../redux/actions'
 import { Link } from "react-router-dom"
 import './SearchBar.css'
 import lupa from "../Assets/lupa.png"
+import LOGO from "../Assets/LOGO.png"
 
 export default function SearchBar(){
   const dispatch = useDispatch(); //hoks
@@ -23,14 +24,18 @@ export default function SearchBar(){
   }; 
 
     return (
-      <div className="Background">
-      <div className="searchbar-div">
-      <div>
+      <div >
+      {/* <div className="searchbar-div"> */}
+      {/* <div> */}
       <Link to="/"
        className='Nombrelogo'>
-        <h1>The Gaming Farm</h1>
+
+
+        <img src={LOGO} title="Logo Gaming"/>
+
+
         </Link>
-        </div>
+        {/* </div>   */}
         <input
           className="bar-btn"
           type="text"
@@ -40,8 +45,8 @@ export default function SearchBar(){
           // value={input.buscar} 
           autoComplete="off" 
         ></input>
-        <button className="btn-search-bar" type="submit" onClick={(e) =>{handleSubmit(e)}} > <img className="lupaa" src={lupa} alt="lupa" /></button>
-        </div>
+<img className="lupaa" src={lupa} alt="lupa" onClick={(e) =>{handleSubmit(e)}}/>
+        {/* </div> */}
       </div>
     );
 }

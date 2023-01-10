@@ -1,0 +1,277 @@
+{
+  "name": "TheGamingFarm",
+  "home": "demo1",
+  "year": 2023,
+  "products": [
+    {
+      "title": "Logitech ratón óptico inalámbrico G Pro de 2,4 ghz",
+      "price": "120,66",
+      "detail": "PRO Wireless fue diseñado para ser el ratón de juego definitivo para los profesionales de esports. Durante 2 años, Logitech G colaboró con más de 50 jugadores profesionales para encontrar la forma, el peso y la sensación perfectos junto con nuestras tecnologías de sensores LIGHTSPEED wireless y HERO 25k",
+      "img": "https://s.alicdn.com/@sc04/kf/H4fc60ea9a80546e8a87eeeda647b32adq.jpg_960x960.jpg",
+      "stock": "20",
+      "category": ["Mouse"],
+      "Mark": ["Logitech"]
+    },
+    {
+      "title": "Logitech cámara web con micrófono C270 HD 720P",
+      "price": "16.30",
+      "detail": "Llamar, transmitir, escribir en el blogueo y grabar como un profesional en vídeo y audio HD cristalinos. Con una calidad de vídeo espectacular de hasta HD 1080p y Micrófonos doble integrados, C920 hace que sea fácil hacer que tu presencia en vídeo destaque entre la multitud.",
+      "img": "https://s.alicdn.com/@sc04/kf/Hf655cb6dd73f41118a0d5a01a7ca236cs.jpg_960x960.jpg",
+      "stock": "15",
+      "category": ["WebCam"],
+      "mark": ["Logitech"]
+    }, 
+    {
+      "title": "Logitech-cámara web C925e con vídeo HD y micrófonos estéreo incorporados",
+      "price": "60.50 ",
+      "detail": "mejore todas las oportunidades de colaboración con videos asequibles de calidad HD. el clip ajustable facilita el montaje en computadoras portátiles y monitores externos",
+      "img": "https://s.alicdn.com/@sc04/kf/HTB1WOhGaDZRMeJjSsplq6xeqXXag.jpg_960x960.jpg",
+      "stock": "9",
+      "category": ["WebCam"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Raton Logitech G502, 16000 DPI con 11 botones",
+      "price": "35.49",
+      "detail": "2021 ratón de Gaming con cable Original de 16000 DPI, ratón de Gaming de DIGITECH con 11 botones",
+      "img": "https://s.alicdn.com/@sc04/kf/Ub33aff6814904535ae134f7ff54127f6Q.png_960x960.png",
+      "stock": "13",
+      "category": ["Mouse"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Teclado mecánicoRazer Huntsman V2-teclado óptico lineal con Cable RGB",
+      "price": "189.70",
+      "detail": "Estándar, resistente al agua, para portátiles, juegos, ergonómicos, mecánicos Anti-fantasma, reposabrazos de La Palma, Plug and Play.",
+      "img": "https://s.alicdn.com/@sc04/kf/Hdfef84705cb74b3aa1b9cb4b01199030W.jpg_960x960.jpg",
+      "stock": "11",
+      "category": ["Teclado"],
+      "mark": ["Razer"]
+    },
+    {
+      "title": "Ratón Razer Deathadder Essential Expert, con cable, Sensor óptico 4G, 6400 DPI, programable",
+      "price": "13.11",
+      "detail": "Razer Deathadder ratón esencial experto ratón cableado Gaming 4G Sensor óptico 6400 DPI ratón programable Gaming Razer",
+      "img": "https://s.alicdn.com/@sc04/kf/U95cdcb406cca4127bee026b5976f1a8c0.png_960x960.png",
+      "stock": "16",
+      "category": ["Mouse"],
+      "mark": ["Razer"]
+    },
+    {
+      "title": "Teclado Mecanico Redragon K552 RGB 87 ",
+      "price": "25.00",
+      "detail": " Teclado mecánico para juegos-versión negra; 87 teclas pequeño teclado mecánico compacto para juegos con interruptores de teclado de sensación mecánica personalizados. Diseñado para la longevidad con mayor durabilidad y capacidad de respuesta.",
+      "img": "https://s.alicdn.com/@sc04/kf/Hefae8df22eef4bdc88b8b8e7421785d2p.jpg_960x960.jpg",
+      "stock": "25",
+      "category": ["Teclado"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Gabinete Redragon funda de ordenador profesional para juegos, GC-802 de lujo, ATX, RGB",
+      "price": "95.81",
+      "detail": "Ilumina tu sistema con tres ventiladores RGB de 120MM incluidos, Los edificios personalizados no tienen que estar desbordados-un diseño distintivo de doble cámara",
+      "img": "https://s.alicdn.com/@sc04/kf/Hd2ef542e415b4bbb96ea0586aa8c22b7p.jpg_960x960.jpg",
+      "stock": "10",
+      "category": ["Gabinete"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Teclado inalámbrico multidispositivo Logitech K780",
+      "price": "51.00",
+      "detail": "3D, Gaming, programable, retroiluminado, Mini, dedo, con sistema de huellas dactilares, aceleración de 40G",
+      "img": "https://s.alicdn.com/@sc04/kf/H2853b7da05f544e0b14f8ebe3c4f1bbcc.jpg_960x960.jpg",
+      "stock": "20",
+      "category": ["Teclado"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Auriculares Reddragon con cancelación activa de ruido para juegos, audífonos USB con sonido envolvente, H990 7,1",
+      "price": "35.90",
+      "detail": "Sonido envolvente 7,1; ¿La H990 Gaming Headset por Redragon ofrece una envolvente de cristal claro de sonido envolvente 7,1, cancelación activa de ruido; el juego de auriculares características cerrado diseño acústico con cancelación activa de ruido ",
+      "img": "https://s.alicdn.com/@sc04/kf/Hbfaaf9ab2de0445698bc85792ba831ddo.jpg_960x960.jpg",
+      "stock": "10",
+      "category": ["Auriculares"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Auriculares Reddragon Pandora H350 con retroiluminación RGB, dispositivo de audio USB + 3,5 MM, con micrófono y cancelación de ruido",
+      "price": "19.20",
+      "detail": "RGB y otros controles-H350 Pandora es el primer auricular reddragon con retroiluminación RGB. Los modos de retroiluminación RGB dinámica y estática se pueden cambiar fácilmente a través del control integrado de audio.",
+      "img": "https://s.alicdn.com/@sc04/kf/H3282258b6ce14d22bc577e36508c02afA.jpg_960x960.jpg",
+      "stock": "5",
+      "category": ["Auriculares"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "cámara Web Redragon GW800  de 100 Fps USB Hd 1080P Conferencia",
+      "price": "29.30",
+      "detail": "Camara HD 1080P HD Webcam,Cámara Web de 100 Fps USB Hd 1080P Conferencia",
+      "img": "https://s.alicdn.com/@sc04/kf/H89841d7c3129471281a4e2094b96a43ev.jpg_960x960.jpg",
+      "stock": "9",
+      "category": ["WebCam"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Teclado Mecanico Reddragon para jugadores, Teclado mecánico con retroiluminación LED roja, 87 teclas, K553",
+      "price": "21.00",
+      "detail": "teclado para juegos; Teclado mecánico de 87 teclas para juegos con interruptores mecánicos personalizados, diseñado para mayor durabilidad y teclado Led viene con botones moldeados por inyección de doble disparo que ofrecen retroiluminación uniforme y letras que no se rascan.",
+      "img": "https://s.alicdn.com/@sc04/kf/HTB1xme4rFOWBuNjy0Fiq6xFxVXao.jpg_960x960.jpg",
+      "stock": "24",
+      "category": ["Teclado"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Tarjeta gráfica ASUS RTX2060-O6GB e-sports",
+      "price": "60.00",
+      "detail": "Tarjeta Grafica ASUS, para ordenador de escritorio, novedad",
+      "img": "https://s.alicdn.com/@sc04/kf/Ha70da53c4192451bafe80c2514468972L.jpg_960x960.jpg",
+      "stock": "50",
+      "category": ["Tarjeta Grafica"],
+      "mark": ["ASUS"]
+    },
+    {
+      "title": "Tarjetas gráficas ASUS 1660ti Gpu, Geforce gtx 1660super 6G, para nvidia",
+      "price": "100.00",
+      "detail": "Reloj de memoria: 14 Gbps, de alta calidad, para nvidia, segunda mano, 1660s",
+      "img": "https://s.alicdn.com/@sc04/kf/H5582c7c05b60421d904f4d7b664f4167e.jpg_960x960.jpg",
+      "stock": "25",
+      "category": ["Tarjeta Grafica"],
+      "mark": ["ASUS"]
+    },
+    {
+      "title": "Teclado Original HP RGB clásico con cable K300, nuevo teclado mecánico para Gaming a mano USB en blanco y negro para Notebook, portátil, PC de escritorio",
+      "price": "11.99",
+      "detail": "Diseño elegante y minimalista, Teclado grueso con teclas sensibles. La retroiluminación LED especial con selección de luz monocromática o arcoíris destacará el elegante diseño y la función.",
+      "img": "https://s.alicdn.com/@sc04/kf/Ha43fe580f3c94a53b0df21af53940147I.jpg_960x960.jpg",
+      "stock": "6",
+      "category": ["Teclado"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "K10G-Teclado mecánico con cable, azul hielo, retroiluminado, para juegos de ordenador, HP",
+      "price": "25.50",
+      "detail": "Retroiluminado de hielo de la luz azul",
+      "img": "https://s.alicdn.com/@sc04/kf/H06ac7a9436874064a804a59d084ba754G.jpg_960x960.jpg",
+      "stock": "12",
+      "category": ["Teclado"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "Cámara web W500 para ordenador, Webcam 1080P HD Mini USB con micrófono incorporado para HP",
+      "price": "45.00",
+      "detail": "Super megapixeles en 1880 HD",
+      "img": "https://s.alicdn.com/@sc04/kf/Hf5311d320a73430ead5d856801b1e000l.png_960x960.png",
+      "stock": "25",
+      "category": ["WebCam"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "W100-minicámara Web de conferencia de alta calidad, Webcam Usb 2,0, 1080P, con micrófono, para ordenador portátil, PC y HP",
+      "price": "15.50",
+      "detail": "minicamara",
+      "img": "https://s.alicdn.com/@sc04/kf/H877f002eb2e34906b5c47f87148616fa4.jpg_960x960.jpg",
+      "stock": "18",
+      "category": ["WebCam"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "HP-auriculares Surround H200 7,1 para juegos, Diadema USB para PS4, cancelación de ruido, para Xbox",
+      "price": "20.00",
+      "detail": "CAMARA MODERNA MUY CARETA",
+      "img": "https://s.alicdn.com/@sc04/kf/Hd6534a8f8a3b4563b362c738431a7fc6W.jpg_960x960.jpg",
+      "stock": "10",
+      "category": ["Auriculares"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "Auriculares de juego Subwoofer para PC, con micrófono, novedad de 2021",
+      "price": "9.50",
+      "detail": "AAAAAAAAA",
+      "img": "https://s.alicdn.com/@sc04/kf/H1d432ae0b0d24a338b7855d08ec457f3k.png_960x960.png",
+      "stock": "35",
+      "category": ["Auriculares"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "ASUS ROG-STRIX-RTX3090-O24G-Gaming tarjeta de gráficos con 1860-1890MHz 24GB GDDR6X soporte 8K ASUS ROG STRIX RTX 3090",
+      "price": "149.99",
+      "detail": "ASUS ROG-STRIX-RTX3090-O24G-Gaming tarjeta de gráficos con 1860-1890MHz 24GB GDDR6X soporte 8K ASUS ROG STRIX RTX 3090",
+      "img": "https://s.alicdn.com/@sc04/kf/H6155e371a843465aa223e719f35646d3l.jpg_960x960.jpg",
+      "stock": "25",
+      "category": ["Tarjeta Grafica"],
+      "mark": ["ASUS"]
+    },
+    {
+      "title": "Logitech-auriculares inalámbricos G435 para videojuegos, con micrófono, Fps, Ps5, para teléfono móvil y ordenador, venta al por mayor",
+      "price": "70.00",
+      "detail": "Impermeable, Cancelación de ruido, Micrófono, Apoyo Ale",
+      "img": "https://s.alicdn.com/@sc04/kf/H24a972992eef43768bce182e912b0e86P.jpg_960x960.jpg",
+      "stock": "21",
+      "category": ["Auriculares"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Razer X-auriculares inalámbricos con cancelación activa de ruido, audífonos con certificado Opus",
+      "price": "310.00",
+      "detail": "Avanzada de cancelación activa de ruido, Almohadillas Cuero de proteína/Nylon con espuma",
+      "img": "https://s.alicdn.com/@sc04/kf/H72a96f681b5b4114a8603f4f84a9d9d1N.jpg_960x960.jpg",
+      "stock": "15",
+      "category": ["Auriculares"],
+      "mark": ["Razer"]
+    },
+    {
+      "title": "Redragon-GC-601 ATX, Panel de estado de vidrio de alta calidad, RGB, ventiladores profesionales para juegos, funda de escritorio para PC, novedad",
+      "price": "45.00",
+      "detail": "Color box  OEM/ODM Business Office ATX2.0 Full Tower Game Computer CasePuertoshenzhenz",
+      "img": "https://s.alicdn.com/@sc04/kf/Hcaf692df87a145c793e647ffb07f46ddE.jpg_960x960.jpg",
+      "stock": "7",
+      "category": ["Gabinete"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Funda de PC de juego profesional, insignia de Redragon IRONHIDE GC-801, 12 ventiladores LED, ventana de vidrio, ATX, a prueba de polvo, 2021",
+      "price": "110.00",
+      "detail": "Material : Aleación de aluminio, Plástico, SPCC ABS de vidrio",
+      "img": "https://s.alicdn.com/@sc04/kf/H69ecc25613484ba1b0b425883f42e90am.jpg_960x960.jpg",
+      "stock": "17",
+      "category": ["Gabinete"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Grafito blanco Logitech StreamCam con micrófono Webcam para la transmisión en directo de la belleza y la luz",
+      "price": "150.00",
+      "detail": "De alta definición fotos y vídeo: Disfrutar de imágenes nítidas con colores vivos y detalles con Full HD 1080p a 60 fps video ¡Todavía resolución de imagen de hasta 2,1 megapíxeles!",
+      "img": "https://s.alicdn.com/@sc04/kf/Hcf1a6f625edd476aa4fc79f85c3848b1S.jpg_960x960.jpg",
+      "stock": "15",
+      "category": ["WebCam"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Logitech-ratón inalámbrico M350 para videojuegos, logitech",
+      "price": "20.50",
+      "detail": "Ratón inalámbrico moderno, delgado y silencioso de DIGITECH PEBBLE M350",
+      "img": "https://s.alicdn.com/@sc04/kf/Hb31c3693a9fc4570a0d54d84489ad9edd.png_960x960.png",
+      "stock": "50",
+      "category": ["Mouse"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Logitech-teclado inalámbrico ergonómico para juegos de ordenador, interruptores de teclado para oficina, portátil, K380",
+      "price": "20.60",
+      "detail": "Indicador LED de batería, 3 indicadores LED de canal de dientes azules, Teclas calientes (Inicio, atrás, cambio de aplicación, menú de contexto), interruptor fácil™",
+      "img": "https://s.alicdn.com/@sc04/kf/H790a9e3ca91040be8d10fe362e932307X.png_960x960.png",
+      "stock": "15",
+      "category": [""],
+      "mark": [""]
+    },
+    {
+      "title": "Logitech-teclado inalámbrico ergonómico para juegos de ordenador, interruptores de teclado para oficina, portátil, K380",
+      "price": "20.60",
+      "detail": "Indicador LED de batería, 3 indicadores LED de canal de dientes azules.Teclas calientes (Inicio, atrás, cambio de aplicación, menú de contexto), interruptor fácil™",
+      "img": "https://s.alicdn.com/@sc04/kf/H3f2dafd4eda34ba98862fcb450f4a8e1H.png_960x960.png",
+      "stock": "12",
+      "category": ["Teclado"],
+      "mark": ["Logitech"]
+    }
+  ]
+}

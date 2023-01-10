@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Table, Button, OverlayTrigger, Tooltip, Offcanvas } from 'react-bootstrap';
 import { removeFromCart } from '../../redux/actions';
 import Carrito from "../Assets/cart.png"
+import "./Cart.css"
+
 
 const Cart = () => {
 //   const items = useSelector(state => state.cart.items);
