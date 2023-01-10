@@ -43,7 +43,7 @@ function App() {
 
       </Switch>
 
-      <Footer className="amdr"/>
+      {/* <Footer className="amdr"/> */}
       {/* Descomentar 'Footer' cuando tengamos más componentes en el home */}
       
     </div>
