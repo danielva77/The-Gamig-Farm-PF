@@ -21,6 +21,7 @@ export const SET_FILTER_PRICE = "SET_FILTER_PRICE"
 export const SET_NAME_FILTER = "SET_NAME_FILTER"
 
 export const setNameFilter = payload => {
+  console.log("object")
   return {
     type: SET_NAME_FILTER,
     payload,
@@ -67,38 +68,38 @@ export const setNumbersPaginated = payload => {
 
 export function getAllProd() {
   // ----- Get from API
-  return async function (dispatch) {
-    var req = await axios.get("http://localhost:3001/products")
-    const products = req.data
-
-    return dispatch({
-      type: "GET_ALL_PROD",
-      payload: products,
-    })
-  }
-
-  // ----- Get from json
   // return async function (dispatch) {
+  //   var req = await axios.get("http://localhost:3001/products")
+  //   const products = req.data
+
   //   return dispatch({
   //     type: "GET_ALL_PROD",
-  //     payload: jsonData,
+  //     payload: products,
   //   })
   // }
+
+  // ----- Get from json
+  return async function (dispatch) {
+    return dispatch({
+      type: "GET_ALL_PROD",
+      payload: jsonData,
+    })
+  }
 }
 
 export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
-      const req = await axios.get("http://localhost:3001/category")
+      // const req = await axios.get("http://localhost:3001/category")
 
-      const categories = req.data
+      // const categories = req.data
 
-      dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
+      // dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
 
       // ----- JSON
-      // const categories = ["Consolas", "Periféricos"]
-      // dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
+      const categories = ["Consolas", "Periféricos"]
+      dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
     } catch (error) {
       // console.log(error.response.data)
       console.log("error en getAllCategories")

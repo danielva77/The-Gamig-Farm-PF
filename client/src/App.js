@@ -27,7 +27,7 @@ function App() {
         ) : (
       <LoginButton/>
       )} */}
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/home" component={Home} />
@@ -38,9 +38,7 @@ function App() {
 
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>
-      <Footer className="amdr" />
-
-      {/* Descomentar 'Footer' cuando tengamos más componentes en el home */}
+      {/* <Footer className="amdr" /> */}
     </div>
   )
 }

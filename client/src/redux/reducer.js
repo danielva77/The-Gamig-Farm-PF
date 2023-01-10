@@ -26,6 +26,8 @@ const initialState = {
   numbersPaginated: [],
   categoryFilter: "",
   nameFilter: "",
+  currentPage: 1,
+  itemsPerPage: 6,
 
   detail: [],
   filter: {
@@ -44,8 +46,7 @@ const initialState = {
   },
   sorted: [],
   categories: [],
-  itemsPerPage: 6,
-  currentPage: 1,
+
   currentItems: [],
   loading: false,
 }
@@ -96,6 +97,11 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         items: action.payload,
+      }
+    case CHANGE_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
       }
     // case GET_ALL_PROD:
     //   // Si ha habido algun ordenamiento, no modificamos aquí pokemonsSorted

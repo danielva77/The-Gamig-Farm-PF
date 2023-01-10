@@ -20,14 +20,11 @@ function NavBar() {
   return (
     <div className="navbar-container">
 
-      <Link to="/"
-        className='Nombrelogo'>
-
-
-        <img src={LOGO} title="Logo Gaming" />
-
-
-      </Link>
+      <div className="logo-container">
+        <Link to="/" className='Nombrelogo'>
+          <img src={LOGO} title="Logo Gaming" />
+        </Link>
+      </div>
 
       <div className="menu-navbar">
         <a className="link" href="/home">Inicio</a>

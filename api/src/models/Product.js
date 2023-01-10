@@ -33,10 +33,10 @@ module.exports = sequelize => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      categoryName: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      // categoryName: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true,
+      // },
     },
     { timestamps: false }
   )
