@@ -16,7 +16,7 @@ const LandingPage = () => {
         </p>
         <NavLink to="/home">
           <button className="botonProductos">
-            <span className="products">Empezar</span>
+            <span className="products">Productos</span>
           </button>
         </NavLink>
 

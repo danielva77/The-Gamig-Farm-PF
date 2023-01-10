@@ -24,9 +24,9 @@ function App() {
     <div className="App">
     {/* {isAuthenticated ? (
           <>
-      <Profile/>
-      <LogoutButton/>
-      </>
+            <Profile />
+            <LogoutButton />
+          </>
         ) : (
       <LoginButton/>
       )} */}
@@ -48,7 +48,7 @@ function App() {
       
     </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

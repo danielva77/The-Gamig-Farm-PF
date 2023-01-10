@@ -1,22 +1,27 @@
-import React from "react";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { changePage } from "../../redux/actions"
 
-export default function Paginado({videogamesPerPage, allVideogames, paginado}){
-  let pageNumbers = [];
+export default function Paginado() {
+  const dispatch = useDispatch()
 
-  for (let i = 1; i <= Math.ceil(allVideogames/videogamesPerPage); i++) {
-    pageNumbers.push(i);
+  const numbersPaginated = useSelector(state => state.numbersPaginated)
+
+  const handleClick = e => {
+    // setButtonColor('hsl(305, 33%, 69%, .8)')
+    // e.target.style.backgroundColor = buttonColor
+    dispatch(changePage(e.target.value))
   }
-  return(
-    <div>
-      <p>
-        {
-          pageNumbers && 
-          pageNumbers.map(number => {return(
-            <button key={number} onClick={() => paginado(number)}>{number}</button>
-          )})
-        }
-      </p>
 
+  return (
+    <div className="paginated-container">
+      {numbersPaginated.map(button => {
+        return (
+          <button onClick={handleClick} value={button}>
+            {button}
+          </button>
+        )
+      })}
     </div>
   )
 }
