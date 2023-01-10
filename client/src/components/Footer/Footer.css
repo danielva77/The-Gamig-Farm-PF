@@ -1,11 +1,4 @@
-body {
-  position: relative;
-  padding-bottom: 5em;
-  min-height: 120vh;
-  font-family: proxima-nova, sans-serif;
-  text-decoration: none;
 
-}
 .footer {
   background-color: #0f0e17;
   color: white;
@@ -13,9 +6,11 @@ body {
   width: 100%;
   padding: 20px 30px;
   display: flex;
-  font-size: 10px;
+  font-size: 12px;
   justify-content: space-around;
-  margin-top: 100%;
+  margin-top: -20%;
+  /* bottom: -100%; */
+
 }
 
 .titulo2 {
@@ -67,4 +62,5 @@ body {
 .contenedores{
   /* display: block; */
   justify-content: space-around;
+
 }

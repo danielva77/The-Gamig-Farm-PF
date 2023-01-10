@@ -6,14 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProd } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
-import { filterByName } from "../../hooks/filterByName";
-import { filteredbyCategory } from "../../hooks/filterByCategory";
-import { sortByPrice } from "../../hooks/sortByPrice";
-import { paginateItems } from "../../hooks/paginateItems";
-import { getNumberButtons } from "../../hooks/getNumberButtons";
 
-function StoreItems() {
-  const dispatch = useDispatch()
 
 function StoreItems({ currentVideogames }) {
   const dispatch = useDispatch();
@@ -44,7 +37,7 @@ function StoreItems({ currentVideogames }) {
           )
         })}
       </div>
-    </div >
+    </div>
   )
 }
 

@@ -16,11 +16,13 @@ export default function SearchBar() {
     dispatch(setNameFilter(e.target.value))
   };
 
-  // function handleSubmit(e){
-  //   e.preventDefault();
-  //   dispatch(searchByName(name));
-  //   setName("");
-  // }; 
+
+  // ESTA FUNCION VA O NO?
+  function handleSubmit(e){
+    e.preventDefault();
+    dispatch(searchByName(name));
+    setName("");
+  }; 
 
     return (
       <div >

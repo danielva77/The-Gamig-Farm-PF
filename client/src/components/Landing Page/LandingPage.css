@@ -1,14 +1,14 @@
 .contenedor{
   position: static;
 width: 100%;
-height: 877px;
+height: 800px;
 left: -1px;
 top: 0px;
 background: #0F0E17;
 mix-blend-mode: normal;
 color: white;
 background-image: url("control.svg");
-/* height: 100%; */
+height: 1200px;
 }
 .tituloLanding{
   position: absolute;

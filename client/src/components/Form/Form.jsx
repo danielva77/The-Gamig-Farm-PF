@@ -137,20 +137,21 @@ export const Form = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container mb-5 padre">
+            <h1 className="tras"> 5</h1>
           <div >
-                <h3>Formulario de carga de Productos!</h3>
+                <h3 className="h3T">Formulario de carga de Productos!</h3>
                 <form className="formProduct">
                     <div className="div-title">
                     <label for="exampleInputEmail1" class="form-label">Titulo</label>
-                        <input type="text" name="title" value={input.title} onChange={(e) => handleChange(e)} className="form-control form-control-lg"required />
+                        <input type="text" name="title" value={input.title} onChange={(e) => handleChange(e)} className="form-control form-control-lg escribir"required/>
                         <div id="emailHelp" class="form-text">Es el primer contacto que el consumidor tiene con tu producto en el ambiente online </div>
                     </div>
                     
                     <br></br>
                     <div className="div-title">
                     <label for="exampleInputEmail1" class="form-label">Precio:</label>
-                        <input type="text" name="price" className="form-control"required />
+                        <input type="text" name="price" className="form-control escribir"required />
                         <div id="emailHelp" class="form-text">Es el que los clientes están dispuestos a pagar por un producto.</div>
                     </div>
                     <br></br>
@@ -160,14 +161,14 @@ export const Form = () => {
                     </div> */}
                     <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label" name="detail" htmlFor="detail">Detalles:</label>
-  <input class="form-control form-control-sm" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example" name="detail" value={input.detail} onChange={(e) => handleChange(e)}></input>
+  <input class="form-control form-control-sm escribir" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example" name="detail" value={input.detail} onChange={(e) => handleChange(e)}></input>
   <div id="emailHelp" class="form-text">Afectan la forma en que el producto se muestra a los clientes, te facilitan la organización de tus productos y ayudan a los clientes a encontrar el producto</div>
 
 </div>
                     <br></br>
                     <div className="div-stock col-2">
                         <label name="stock" htmlFor="stock">Stock: </label>
-                        <input class="form-control form-control-sm" type="number" placeholder=".form-control-sm" aria-label=".form-control-sm example"/>
+                        <input class="form-control form-control-sm escribir" type="number" placeholder=".form-control-sm" aria-label=".form-control-sm example"/>
                         <div id="emailHelp" class="form-text">Es el responsable de evitar la falta del producto</div>
                     </div>
               
@@ -175,7 +176,7 @@ export const Form = () => {
                    
                         <div class="mb-3 col-7 mb-4">
   <label for="formFile" class="form-label">Imagen</label>
-  <input class="form-control" type="file" id="formFile" value={input.imagen} onChange={(e) => handleChange(e)}/>
+  <input class="form-control escribir" type="file" id="formFile" value={input.imagen} onChange={(e) => handleChange(e)} />
   <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
 </div>
                    
@@ -186,7 +187,7 @@ export const Form = () => {
 
                     
 
-                        <select class="form-select mb-4" aria-label="Default select example" onChange={(e) => handleMark(e)}>
+                        <select class="form-select mb-4 escribir" aria-label="Default select example" onChange={(e) => handleMark(e)}>
                         <option name="new" value='' key='new'>- new Mark -</option>
                         {marks?.map(m => (<option name='mark' value={m.title} key={m.title}>{m.title}</option>))}
                         </select>
@@ -198,7 +199,7 @@ export const Form = () => {
                     <br></br>
                     <label>Category:</label>
                     <div className="div-category">                
-                        <select class="form-select mb-4" aria-label="Default select example" onChange={(e) => handleCategory(e)}>
+                        <select class="form-select mb-4 escribir" aria-label="Default select example" onChange={(e) => handleCategory(e)}>
                         <option selected >- Otra variedad -</option>
                         {categories?.map(c => (<option name="category" value={c.title} key={c.title}>{c.title}</option>))}
                         </select>
