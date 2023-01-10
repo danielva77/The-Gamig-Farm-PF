@@ -23,7 +23,6 @@ background-image: url("control.svg");
   line-height: 60px;
   color: #FFFFFF;
   text-align: left;
-  user-select: none;
 }
 .bienvenido{
   position: absolute;

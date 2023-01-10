@@ -9,13 +9,6 @@ const Filter = () => {
 
            {/* FILTRADO */} 
 
-     const handleTitlle = (event) => {
-         event.preventDefault();
-         dispatch(orderByTittle(event.target.value));
-        //  setCurrentPage(1);
-         setOrder(`Ordenado ${event.target.value}`);
-     }
-
     //  const handleOrderByPrice = (event) => {
     //      event.preventDefault();
     //      dispatch(orderByPrice(event.target.value));
