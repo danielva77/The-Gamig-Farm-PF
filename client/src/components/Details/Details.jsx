@@ -5,7 +5,7 @@ import { getDetail, cleanDetail } from '../../redux/actions';
 import "./Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
-
+import "./Details.css"
 export default function Details(props){
 
 const dispatch = useDispatch();

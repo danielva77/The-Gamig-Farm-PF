@@ -17,7 +17,7 @@ export const Form = () => {
     // // me traigo los estados de categoria y marcas
     // const marks = (state) => useSelector(state.marks);
     // const categories = (state) => useSelector(state.categories);
-    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, {title: "Redragon"}, {title: "ASUS"}];
+    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, {title: "Redragon"}, {title: "ASUS"},{title: "HP"}];
     const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' },{ title: 'WebCam' },{ title: 'Auriculares' },{ title: 'Gabinetes' },{ title: 'MousePad' }, { title: 'Gabinete' },{ title: 'Placa Madre' },{ title: 'Tarjeta Grafica' }]
 
     // guardo la data para enviar a la db en un estado local
