@@ -139,49 +139,139 @@
       "mark": ["ASUS"]
     },
     {
-      "title": "",
-      "price": "",
-      "detail": "",
-      "img": "",
-      "stock": "",
+      "title": "Teclado Original HP RGB clásico con cable K300, nuevo teclado mecánico para Gaming a mano USB en blanco y negro para Notebook, portátil, PC de escritorio",
+      "price": "11.99",
+      "detail": "Diseño elegante y minimalista, Teclado grueso con teclas sensibles. La retroiluminación LED especial con selección de luz monocromática o arcoíris destacará el elegante diseño y la función.",
+      "img": "https://s.alicdn.com/@sc04/kf/Ha43fe580f3c94a53b0df21af53940147I.jpg_960x960.jpg",
+      "stock": "6",
+      "category": ["Teclado"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "K10G-Teclado mecánico con cable, azul hielo, retroiluminado, para juegos de ordenador, HP",
+      "price": "25.50",
+      "detail": "Retroiluminado de hielo de la luz azul",
+      "img": "https://s.alicdn.com/@sc04/kf/H06ac7a9436874064a804a59d084ba754G.jpg_960x960.jpg",
+      "stock": "12",
+      "category": ["Teclado"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "Cámara web W500 para ordenador, Webcam 1080P HD Mini USB con micrófono incorporado para HP",
+      "price": "45.00",
+      "detail": "Super megapixeles en 1880 HD",
+      "img": "https://s.alicdn.com/@sc04/kf/Hf5311d320a73430ead5d856801b1e000l.png_960x960.png",
+      "stock": "25",
+      "category": ["WebCam"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "W100-minicámara Web de conferencia de alta calidad, Webcam Usb 2,0, 1080P, con micrófono, para ordenador portátil, PC y HP",
+      "price": "15.50",
+      "detail": "minicamara",
+      "img": "https://s.alicdn.com/@sc04/kf/H877f002eb2e34906b5c47f87148616fa4.jpg_960x960.jpg",
+      "stock": "18",
+      "category": ["WebCam"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "HP-auriculares Surround H200 7,1 para juegos, Diadema USB para PS4, cancelación de ruido, para Xbox",
+      "price": "20.00",
+      "detail": "CAMARA MODERNA MUY CARETA",
+      "img": "https://s.alicdn.com/@sc04/kf/Hd6534a8f8a3b4563b362c738431a7fc6W.jpg_960x960.jpg",
+      "stock": "10",
+      "category": ["Auriculares"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "Auriculares de juego Subwoofer para PC, con micrófono, novedad de 2021",
+      "price": "9.50",
+      "detail": "AAAAAAAAA",
+      "img": "https://s.alicdn.com/@sc04/kf/H1d432ae0b0d24a338b7855d08ec457f3k.png_960x960.png",
+      "stock": "35",
+      "category": ["Auriculares"],
+      "mark": ["HP"]
+    },
+    {
+      "title": "ASUS ROG-STRIX-RTX3090-O24G-Gaming tarjeta de gráficos con 1860-1890MHz 24GB GDDR6X soporte 8K ASUS ROG STRIX RTX 3090",
+      "price": "149.99",
+      "detail": "ASUS ROG-STRIX-RTX3090-O24G-Gaming tarjeta de gráficos con 1860-1890MHz 24GB GDDR6X soporte 8K ASUS ROG STRIX RTX 3090",
+      "img": "https://s.alicdn.com/@sc04/kf/H6155e371a843465aa223e719f35646d3l.jpg_960x960.jpg",
+      "stock": "25",
+      "category": ["Tarjeta Grafica"],
+      "mark": ["ASUS"]
+    },
+    {
+      "title": "Logitech-auriculares inalámbricos G435 para videojuegos, con micrófono, Fps, Ps5, para teléfono móvil y ordenador, venta al por mayor",
+      "price": "70.00",
+      "detail": "Impermeable, Cancelación de ruido, Micrófono, Apoyo Ale",
+      "img": "https://s.alicdn.com/@sc04/kf/H24a972992eef43768bce182e912b0e86P.jpg_960x960.jpg",
+      "stock": "21",
+      "category": ["Auriculares"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Razer X-auriculares inalámbricos con cancelación activa de ruido, audífonos con certificado Opus",
+      "price": "310.00",
+      "detail": "Avanzada de cancelación activa de ruido, Almohadillas Cuero de proteína/Nylon con espuma",
+      "img": "https://s.alicdn.com/@sc04/kf/H72a96f681b5b4114a8603f4f84a9d9d1N.jpg_960x960.jpg",
+      "stock": "15",
+      "category": ["Auriculares"],
+      "mark": ["Razer"]
+    },
+    {
+      "title": "Redragon-GC-601 ATX, Panel de estado de vidrio de alta calidad, RGB, ventiladores profesionales para juegos, funda de escritorio para PC, novedad",
+      "price": "45.00",
+      "detail": "Color box  OEM/ODM Business Office ATX2.0 Full Tower Game Computer CasePuertoshenzhenz",
+      "img": "https://s.alicdn.com/@sc04/kf/Hcaf692df87a145c793e647ffb07f46ddE.jpg_960x960.jpg",
+      "stock": "7",
+      "category": ["Gabinete"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Funda de PC de juego profesional, insignia de Redragon IRONHIDE GC-801, 12 ventiladores LED, ventana de vidrio, ATX, a prueba de polvo, 2021",
+      "price": "110.00",
+      "detail": "Material : Aleación de aluminio, Plástico, SPCC ABS de vidrio",
+      "img": "https://s.alicdn.com/@sc04/kf/H69ecc25613484ba1b0b425883f42e90am.jpg_960x960.jpg",
+      "stock": "17",
+      "category": ["Gabinete"],
+      "mark": ["Redragon"]
+    },
+    {
+      "title": "Grafito blanco Logitech StreamCam con micrófono Webcam para la transmisión en directo de la belleza y la luz",
+      "price": "150.00",
+      "detail": "De alta definición fotos y vídeo: Disfrutar de imágenes nítidas con colores vivos y detalles con Full HD 1080p a 60 fps video ¡Todavía resolución de imagen de hasta 2,1 megapíxeles!",
+      "img": "https://s.alicdn.com/@sc04/kf/Hcf1a6f625edd476aa4fc79f85c3848b1S.jpg_960x960.jpg",
+      "stock": "15",
+      "category": ["WebCam"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Logitech-ratón inalámbrico M350 para videojuegos, logitech",
+      "price": "20.50",
+      "detail": "Ratón inalámbrico moderno, delgado y silencioso de DIGITECH PEBBLE M350",
+      "img": "https://s.alicdn.com/@sc04/kf/Hb31c3693a9fc4570a0d54d84489ad9edd.png_960x960.png",
+      "stock": "50",
+      "category": ["Mouse"],
+      "mark": ["Logitech"]
+    },
+    {
+      "title": "Logitech-teclado inalámbrico ergonómico para juegos de ordenador, interruptores de teclado para oficina, portátil, K380",
+      "price": "20.60",
+      "detail": "Indicador LED de batería, 3 indicadores LED de canal de dientes azules, Teclas calientes (Inicio, atrás, cambio de aplicación, menú de contexto), interruptor fácil™",
+      "img": "https://s.alicdn.com/@sc04/kf/H790a9e3ca91040be8d10fe362e932307X.png_960x960.png",
+      "stock": "15",
       "category": [""],
       "mark": [""]
     },
     {
-      "title": "",
-      "price": "",
-      "detail": "",
-      "img": "",
-      "stock": "",
-      "category": [""],
-      "mark": [""]
-    },
-    {
-      "title": "",
-      "price": "",
-      "detail": "",
-      "img": "",
-      "stock": "",
-      "category": [""],
-      "mark": [""]
-    },
-    {
-      "title": "",
-      "price": "",
-      "detail": "",
-      "img": "",
-      "stock": "",
-      "category": [""],
-      "mark": [""]
-    },
-    {
-      "title": "",
-      "price": "",
-      "detail": "",
-      "img": "",
-      "stock": "",
-      "category": [""],
-      "mark": [""]
+      "title": "Logitech-teclado inalámbrico ergonómico para juegos de ordenador, interruptores de teclado para oficina, portátil, K380",
+      "price": "20.60",
+      "detail": "Indicador LED de batería, 3 indicadores LED de canal de dientes azules.Teclas calientes (Inicio, atrás, cambio de aplicación, menú de contexto), interruptor fácil™",
+      "img": "https://s.alicdn.com/@sc04/kf/H3f2dafd4eda34ba98862fcb450f4a8e1H.png_960x960.png",
+      "stock": "12",
+      "category": ["Teclado"],
+      "mark": ["Logitech"]
     }
   ]
 }
