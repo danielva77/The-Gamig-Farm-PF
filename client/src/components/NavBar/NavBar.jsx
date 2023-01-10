@@ -8,6 +8,8 @@ import { LogoutButton } from "../Logout/Logout";
 import { Profile } from "../Profile/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
+import LOGO from "../Assets/LOGO.png"
+
 
 function NavBar() {
 
@@ -16,22 +18,28 @@ function NavBar() {
   const { isAuthenticated } = useAuth0();
 
   return (
-    <div className="Componente">
+    <div className="navbar-container">
 
-      
+      <Link to="/"
+        className='Nombrelogo'>
 
+
+        <img src={LOGO} title="Logo Gaming" />
+
+
+      </Link>
+
+      <div className="menu-navbar">
         <a className="link" href="/home">Inicio</a>
         <a className="link" href="/form">Formulario</a>
-        <a className="link" href="/products">Productos</a>
+        <a className="link" href="/home">Productos</a>
         <a className="link" href="/contacto">Contacto</a>
         <a className="link" href="/about">Sobre Nosotros</a>
-     
-    
+      </div>
 
-
+      <SearchBar />
       <Cart />
       <Favoritos />
-      <SearchBar />
 
       {isAuthenticated ? (
         <>

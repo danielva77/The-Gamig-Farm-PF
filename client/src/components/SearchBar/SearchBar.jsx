@@ -18,37 +18,35 @@ export default function SearchBar() {
 
 
   // ESTA FUNCION VA O NO?
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
     dispatch(searchByName(name));
     setName("");
-  }; 
+  };
 
-    return (
-      <div >
-      {/* <div className="searchbar-div"> */}
-      {/* <div> */}
-      <Link to="/"
+  return (
+    <div className="search-bar-container">
+      {/* <Link to="/"
        className='Nombrelogo'>
 
 
         <img src={LOGO} title="Logo Gaming"/>
 
 
-        </Link>
-        {/* </div>   */}
-        <input
-          className="bar-btn"
-          type="text"
-          name="buscar"
-          placeholder="Search ..."
-          onChange={(e) => { handleInputChange(e) }}
-          // value={input.buscar} 
-          autoComplete="off"
-        ></input>
-<img className="lupaa" src={lupa} alt="lupa" onClick={(e) =>{handleSubmit(e)}}/>
-        {/* </div> */}
-      </div>
-  
+        </Link> */}
+      {/* </div>   */}
+      <input
+        className="search-bar-input"
+        type="text"
+        name="buscar"
+        placeholder="Search ..."
+        onChange={(e) => { handleInputChange(e) }}
+        // value={input.buscar} 
+        autoComplete="off"
+      ></input>
+      <img className="lupaa" src={lupa} alt="lupa" onClick={(e) => { handleSubmit(e) }} />
+      {/* </div> */}
+    </div>
+
   );
 }
