@@ -1,5 +1,5 @@
-import React from "react"
-import { StoreItem } from "../StoreItem/StoreItem"
+import React from "react";
+import { StoreItem } from "../StoreItem/StoreItem";
 import { useState, useEffect } from "react";
 // import data from "../../data/items.json";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +13,7 @@ import { sortByPrice } from "../../hooks/sortByPrice";
 import { paginateItems } from "../../hooks/paginateItems";
 import { getNumberButtons } from "../../hooks/getNumberButtons";
 import Footer from "../Footer/Footer";
+
 
 
 function StoreItems({ currentVideogames }) {
@@ -63,7 +64,9 @@ function StoreItems({ currentVideogames }) {
             currentItems.map((card) => {
               // { console.log(card) }
               return (
+                <>
                 <Link to={`/products/${card.id}`}>
+                </Link>
                   <div className="modelo">
                     <StoreItem
                       id={card.id}
@@ -72,7 +75,7 @@ function StoreItems({ currentVideogames }) {
                       price={card.price}
                     />
                   </div>
-                </Link>
+                  </>
               )
             })
             :

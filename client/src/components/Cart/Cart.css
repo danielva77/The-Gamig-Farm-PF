@@ -1,7 +1,20 @@
-.img-fluid {
+/* .img-fluid {
   position: absolute;
   width: 23px;
   height: 23px;
   right: 15%;
   top: 20px;
+}  */
+
+.cart-quantity-circle{
+  /* position: absolute; */
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  line-height: 20px;
 }
