@@ -14,9 +14,9 @@ export const Form = () => {
 
     const [input, setInput] = useState({
         title: '',
-        price: 0,
+        price: " ",
         detail: '',
-        stock: 0,
+        stock: " ",
         imagen: '',
         mark: '',
         category: '',
@@ -68,9 +68,9 @@ export const Form = () => {
     function clearInput() {
         setInput({
             title: '',
-            price: 0,
+            price: "",
             detail: '',
-            stock: 0,
+            stock: "",
             imagen: '',
             mark: '',
             category: '',
@@ -126,16 +126,25 @@ export const Form = () => {
         }
     }
 
+    // UPLOADCARE
+
+    function handleFile(e){
+        console.log(e.target.files, "%%%%%%%");
+        console.log(e.target.files, "$$$$$$$");
+    }
+
+  
+
     return (
         <div className="container padre">
             <h1 className="as"> as</h1>
-            <form className="formProduct row g-3 mt-2">
-                <h3 className="h3T">Cargar el Producto 📦</h3>
+            <form className="formProduct row g-5 mt-2">
+                <h3 className="h3T">📦 Cargar el Producto 📦</h3>
 
                 {/* TITULO  */}
 
                 <div className="div-title col-5">
-                    <label for="tituloI" class="form-label">Titulo</label>
+                    <label for="tituloI" class="form-label ">Titulo</label>
                     <input type="text" name="title" value={input.title} onChange={handleChange} className="form-control form-control-lg escribir" id="tituloI" placeholder="Escribe aquí tu titulo" required />
                     <div id="tituloI" class="form-text">Es el primer contacto que el consumidor tiene con tu producto en el ambiente online </div>
                 </div>
@@ -144,74 +153,87 @@ export const Form = () => {
                 {/* DETALLES */}
 
                 <div className="col-7">
-                    <label for="Detalle" class="form-label" name="detail" htmlFor="detail">Detalles:</label>
-                    <input class="form-control form-control-sm escribir detalless" type="text" id="tituloI" placeholder="Escribe aquí los detalles" aria-label=".form-control-lg example" name="detail" value={input.detail} onChange={(e) => handleChange(e)} required></input>
-                    <div id="tituloI" class="form-text">Afectan la forma en que el producto se muestra a los clientes, te facilitan la organización de tus productos y ayudan a los clientes a encontrar el producto
+                    <label for="detalle" class="form-label " name="detail" htmlFor="detail">Detallle</label>
+                    <input class="form-control form-control-sm escribir detalless" type="text" id="detalle" placeholder="Escribe aquí los detalles" aria-label=".form-control-lg example" name="detail" value={input.detail} onChange={(e) => handleChange(e)} required></input>
+                    <div id="tituloI" class="form-text">Mientras más detalles precisos les cuente al cliente, más interesado estaran en el producto
                     </div>
                 </div>
-
-                {/* IMAGEN */}
-
-                <div class="col-8">
-                    <label for="imagenI" class="form-label">Imagen</label>
-                    <input class="form-control escribir" type="file" id="imagenI" value={input.imagen} onChange={(e) => handleChange(e)} required />
-                    <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
-                </div>
-
-                {/* STOCK */}
-
-                <div className="div-stock col-2">
-                    <label name="stock" htmlFor="stock">Stock: </label>
-                    <input class="form-control form-control-sm escribir" type="number" placeholder=".form-control-sm" aria-label=".form-control-sm example" required />
-                    <div id="emailHelp" class="form-text">Es el responsable de evitar la falta del producto</div>
-                </div>
-
-
 
                 {/* PRECIO */}
 
                 <div className="div-title col-2">
-                    <label for="exampleInputEmail1" class="form-label">Precio:</label>
-                    <input type="number" name="price" className="form-control escribir " required />
+                    <label for="price" className="form-label labels" >Precio</label>
+                    <input type="number" name="price" className="form-control escribir" htmlFor="price"  required id="price" min="0" max="1000000" value={input.price} placeholder="$ USD " onChange={(e) => handleChange(e)}/>
                     {/* <div id="emailHelp" class="form-text">Lo que los clientes están dispuestos a pagar por un producto.</div> */}
-                    <div id="emailHelp" class="form-text">Lo que cliente esta dispuesto a pagar</div>
+                    <div id="emailHelp" class="form-text">El cliente esta dispuesto a pagar</div>
                 </div>
+
+                    {/* STOCK NEW  */}
+
+                    {/* Validar stock */}
+                <div className="div-title col-2">
+                    <label for="stock" className="form-label labels">Stock</label>
+                    <input type="number" name="stock" className="form-control escribir" htmlFor="stock" required id="stock" min="0" max="1000000" value={input.stock} onChange={(e) => handleChange(e)} placeholder="Cantidad"/>
+                    {/* <div id="emailHelp" class="form-text">Lo que los clientes están dispuestos a pagar por un producto.</div> */}
+                    <div id="emailHelp" class="form-text">Responsable de evitar la falta del producto</div>
+                </div>
+
+                   {/* IMAGEN */}
+
+                   <div class="col-8">
+                    <label for="imagenI" class="form-label labels">Imagen</label>
+                    <input class="form-control escribir" type="file" id="imagenI" value={input.imagen} onChange={(e) => handleChange(e)} required />
+                    <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
+                </div>
+
+                {/* UPLOADCARE */}
+                
+{/* 
+                <div>
+                    <label>Seleccionar el archivo</label>
+                    <input type="file"name="file" onChange={(e) => handleFile(e)} />
+                </div> 
+                <br />
+                <button>Upload</button> */}
+
+
 
                 {/* MARK */}
 
-                <div className="div-mark col-6">
-                    <label>Mark:</label>
-                    <select class="form-select mb-4 escribir" aria-label="Default select example" onChange={(e) => handleMark(e)}>
-                        <option name="new" value='' key='new'>- new Mark -</option>
+                <div className="div-mark col-5 selection2">
+                    <label className="form-label labels ">Marca</label>
+                    <select class="form-select escribir" aria-label="Default select example" onChange={(e) => handleMark(e)}>
+                        <option name="new" value='' key='new'>Otros...</option>
                         {marks?.map(m => (<option name='mark' value={m.title} key={m.title}>{m.title}</option>))}
                     </select>
                 </div>
 
                 {/* CATEGORIAS */}
 
-                <div className="div-category col-6">
-                    <label>Category:</label>
-                    <select class="form-select mb-4 escribir" aria-label="Default select example" onChange={(e) => handleCategory(e)}>
-                        <option selected >- Otra variedad -</option>
+                <div className="div-category col-5 selection">
+                    <label className="form-label labels" >Categoria</label>
+                    <select class="form-select escribir" aria-label="Default select example" onChange={(e) => handleCategory(e)}>
+                        <option selected >Otros...</option>
                         {categories?.map(c => (<option name="category" value={c.title} key={c.title}>{c.title}</option>))}
                     </select>
                 </div>
 
-
+              
+                <button type="submit" className="btn-enviar btn btn-success col-6 guardarBoton" onClick={(e) => handleSubmit(e)}>Guardar</button>     
+                <Link to="/Home"><button className="btn btn-danger volverBoton">Volver al Home</button></Link>
+            
             </form>
 
 
 
             {/* BOTONES ↓ */}
 
-            <div>
-                <Link to="/Home"><button className="btn btn-danger">Volver al Home</button></Link>
-                <button type="submit" className="btn btn-success" >Guardar</button>
-            </div>
+            
 
         </div>
 
     )
+    
 }
 
 export default Form;
