@@ -1,4 +1,4 @@
-export const filterByName = (items, nameFilter) => {
+export const filterByName = (items, nameFilter, resetCurrentPage) => {
   let filteredByName
 
   if (nameFilter) {
@@ -7,9 +7,11 @@ export const filterByName = (items, nameFilter) => {
 
       return aux.toLowerCase() === nameFilter.toLowerCase()
     })
+    resetCurrentPage()
 
     return filteredByName
   } else {
+    resetCurrentPage()
     return items
   }
 }
