@@ -111,7 +111,7 @@ export function StoreItem({ id, name, price, img }) {
               Remove
             </button>
           </div>
-        )}
+      )}
       </div>
     </div>
   );

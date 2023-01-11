@@ -86,10 +86,23 @@ const getCategories = async (req, res) => {
   }
 }
 
+const getMarks = async (req, res) => {
+  try {
+    const mak = await getAllProducts()
+    let m = mak.map(el => {
+      return el.Marks[0].title
+    })
+    res.status(200).send(m)
+  } catch (error) {
+    res.status(404).send(error)
+  }
+}
+
 module.exports = {
   getAllProducts,
   createProducts,
   getCategories,
+  getMarks
 }
 
 // const { Product, Mark, Category } = require("../../db")

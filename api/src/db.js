@@ -49,7 +49,7 @@ Product.belongsToMany(Category, { through: "Product_Category" });
 Category.belongsToMany(Product, { through: "Product_Category" });
 
 Mark.hasMany(Product);
-Product.belongsTo(Mark);
+Product.hasMany(Mark);
 
 User.hasMany(Store);
 Store.belongsTo(User);

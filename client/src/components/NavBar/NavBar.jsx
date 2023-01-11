@@ -9,11 +9,10 @@ import { Profile } from "../Profile/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 import LOGO from "../Assets/LOGO.png"
-import { Button } from "react-bootstrap";
 
 
 function NavBar() {
-  
+
 
   // AUTENTICACION
   const { isAuthenticated } = useAuth0();
@@ -35,11 +34,9 @@ function NavBar() {
         <a className="link" href="/about">Sobre Nosotros</a>
       </div>
 
-      
       <SearchBar />
-      <Favoritos />
       <Cart />
-      
+      <Favoritos />
 
       {isAuthenticated ? (
         <>
@@ -49,9 +46,7 @@ function NavBar() {
         </>
       ) : (
         <LoginButton />
-        )}
-       
-       
+      )}
 
     </div>
   );

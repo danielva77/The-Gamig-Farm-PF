@@ -5,7 +5,7 @@ import { getDetail, cleanDetail } from '../../redux/actions';
 import "./Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
-import "./Details.css"
+import "./details.css"
 import NavBar from "../NavBar/NavBar";
 import { useShoppingCart } from '../../context/CartContext/CartContext';
 

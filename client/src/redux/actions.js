@@ -5,6 +5,7 @@ export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
 export const GET_DETAIL = "GET_DETAIL"
 export const CLEAN_DETAIL = "CLEAN_DETAIL"
 export const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES"
+export const GET_ALL_MARKS = "GET_ALL_MARKS"
 export const RESET_FILTER = "RESET_FILTER"
 export const CHANGE_SORT = "CHANGE_SORT"
 export const CHANGE_FILTER = "CHANGE_FILTER"
@@ -14,6 +15,7 @@ export const RESET_SORT = "RESET_SORT"
 export const SET_PRICE_RANGE = "SET_PRICE_RANGE"
 export const SET_SORT = "SET_SORT"
 export const SET_FILTER_CATEGORY = "SET_FILTER_CATEGORY"
+export const SET_FILTER_MARKS = "SET_FILTER_MARKS"
 export const SET_NUMBERS_PAGINATED = "SET_NUMBERS_PAGINATED"
 export const RESET_FILTERS = "RESET_FILTERS"
 export const SET_FILTER_PRICE = "SET_FILTER_PRICE"
@@ -52,11 +54,19 @@ export const setSort = payload => {
 }
 
 export const setFilterCategory = payload => {
+  console.log("payload", payload)
   return {
     type: SET_FILTER_CATEGORY,
     payload,
   }
 }
+export const setFilterMarks = payload => {
+  return {
+    type: SET_FILTER_MARKS,
+    payload,
+  }
+}
+
 
 export const setNumbersPaginated = payload => {
   return {
@@ -86,13 +96,49 @@ export function getAllProd() {
   // }
 }
 
+export function getAllMarks(){
+  return async function (dispatch){
+    try {
+      const req = await axios.get("http://localhost:3001/mark")
+
+      // const categories = req.data
+      const unicos = req.data
+      const marks = [];
+
+      for(var i = 0; i < unicos.length; i++) {
+ 
+        const elemento = unicos[i];
+       
+        if (!marks.includes(unicos[i])) {
+          marks.push(elemento);
+        }
+      }
+
+      dispatch({ type: GET_ALL_MARKS, payload: marks })
+    } catch (error) {
+      console.log("error en getAllMarks", error)
+    }
+  }
+}
+
 export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
       const req = await axios.get("http://localhost:3001/category")
 
-      const categories = req.data
+      // const categories = req.data
+      const unicos = req.data
+      const categories = [];
+
+      for(var i = 0; i < unicos.length; i++) {
+ 
+        const elemento = unicos[i];
+       
+        if (!categories.includes(unicos[i])) {
+          categories.push(elemento);
+        }
+      }
 
       dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
 
@@ -101,7 +147,7 @@ export function getAllCategories() {
       //   dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
     } catch (error) {
       // console.log(error.response.data)
-      console.log("error en getAllCategories")
+      console.log("error en getAllCategories", error)
     }
   }
 }
@@ -114,7 +160,7 @@ export function searchByName(name) {
       return dispatch({
         type: "SEARCH_BY_NAME",
         payload: json.data,
-      });
+      })
     } catch (error) {
       console.log(error)
       console.log("prueba error obtener title de producto")
