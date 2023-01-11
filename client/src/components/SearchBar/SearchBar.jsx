@@ -1,54 +1,52 @@
-import {React, useState} from 'react'
-import { connect } from 'react-redux'
-import { searchByName, getAllProd, volverAhome } from '../../redux/actions'
+import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { searchByName, setNameFilter } from '../../redux/actions'
+import { Link } from "react-router-dom"
 import './SearchBar.css'
-import lupa from "../Assets/icone-loupe-gris.png"
+import lupa from "../Assets/lupa.png"
+import LOGO from "../Assets/LOGO.png"
 
-function SearchBar({searchByName, volverAhome}) { 
+export default function SearchBar() {
+  const dispatch = useDispatch(); //hoks
+  const [name, setName] = useState(" "); //estado local
 
-    const [input, setInput] = useState({ 
-        buscar: ''
-    }) 
+  function handleInputChange(e) {
+    e.preventDefault();
+    dispatch(setNameFilter(e.target.value))
+  };
 
-    const handleInputChange = function(e) { 
-          setInput({ 
-          [e.target.name]: e.target.value
-        });
-    } 
 
-    const handleOnClick = () => {
-        searchByName(input.buscar) 
-        setInput({
-            buscar: '' 
-        });
-    } 
-    const handleOnClickAll = () => {
-      
-        volverAhome()
-        setInput({
-            buscar: ''
-        });
-    } 
+  // ESTA FUNCION VA O NO?
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(searchByName(name));
+    setName("");
+  };
 
-    return (
-      <div className="Background">
-      <div className="searchbar-div">
-      
-      
-     <h1> The Gaming Farm </h1>
-      
-        <input
-          className="bar-btn"
-          name="buscar" 
-          placeholder="Search" 
-          onChange={handleInputChange} 
-          value={input.buscar} 
-          autoComplete="off" 
-        ></input>
-        <button className="btn" onClick={handleOnClick} > <img className="lupaa"src={lupa} /></button>
-        </div>
-      </div>
-    );
+  return (
+    <div className="search-bar-container">
+      {/* <Link to="/"
+       className='Nombrelogo'>
+
+
+        <img src={LOGO} title="Logo Gaming"/>
+
+
+        </Link> */}
+      {/* </div>   */}
+      <input
+        className="search-bar-input"
+        type="text"
+        name="buscar"
+        placeholder="Search ..."
+        onChange={(e) => { handleInputChange(e) }}
+        // value={input.buscar} 
+        autoComplete="off"
+      ></input>
+      <img className="lupaa" src={lupa} alt="lupa" onClick={(e) => { handleSubmit(e) }} />
+      {/* </div> */}
+    </div>
+
+  );
 }
-
-export default connect(null, { searchByName, getAllProd, volverAhome })(SearchBar)

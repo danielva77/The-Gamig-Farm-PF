@@ -1,0 +1,99 @@
+.info-landing {
+  position: static;
+  width: 100vw;
+  height: 100vh;
+  /* left: -1px; */
+  top: 0px;
+  background: #0f0e17;
+  mix-blend-mode: normal;
+  color: white;
+  background-image: url("control.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.tituloLanding {
+  position: absolute;
+  width: 695px;
+  height: 120px;
+  left: 6%;
+  top: 24%;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 60px;
+  color: #ffffff;
+  text-align: left;
+  user-select: none;
+}
+.bienvenido {
+  position: absolute;
+  width: 585px;
+  height: 180px;
+  left: 6%;
+  top: 43%;
+
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #a7a9be;
+  text-align: left;
+}
+.botonProductos {
+  /* outline: 2px solid white; */
+
+  position: absolute;
+  width: 262px;
+  height: 79px;
+  left: 18%;
+  top: 75%;
+
+  background: #ff8906;
+  border-radius: 10px;
+}
+
+.products {
+  /* position: absolute; */
+  /* width: 123px; */
+  /* height: 36px; */
+  /* left: 181px; */
+  /* top: 686px; */
+
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+
+  color: #ffffff;
+  cursor: pointer;
+}
+.products:hover {
+  cursor: pointer;
+  color: #0f0e17;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  /* background-color:  #FF8906; */
+  background-color: #0f0e17;
+  /* border-radius: 3px; */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff8906;
+  /* background-color: #0F0E17; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}

@@ -1,25 +1,35 @@
-
-.BotNav button{
-
-    width: 25%;
-     justify-content: center;
-     align-items: center;
-     font-size: 15px;
-     border-radius: 0px;
-     border-color: rgba(153, 154, 160, 0);
-     font-family:Arial, Helvetica, sans-serif;
-     background-color: #fff;
-     
-}       
-
-
-
-.BotNav button:hover {
-     background-color: rgba(153, 154, 160);
-     color:rgb(0, 0, 0);
-     color: #fff;
-     text-align: center;
+.navbar-container {
+  background-color: #0f0e17;
+  /* position: absolute; */
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-   
-     
 
+.menu-navbar {
+  position: absolute;
+  left: 18%;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link {
+  position: relative;
+  color: white;
+  top: 20px;
+  text-decoration: none;
+  /* bottom: 25px; */
+  margin: -0px 12px;
+  /*  */
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+.link:hover {
+  color: #ff8906;
+}

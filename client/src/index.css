@@ -1,0 +1,8 @@
+body {
+  position: relative;
+  padding-bottom: 7em;
+  min-height: 110vh;
+  overflow: scroll;
+
+  background-color: rgb(230, 230, 230);
+}

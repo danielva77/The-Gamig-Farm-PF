@@ -1,0 +1,86 @@
+.btn-primary{
+    background-color: #00f45aba;
+    width: 100%;
+    border-radius: 15px;
+    color:rgb(0, 255, 47);
+    border-color: #c60000f3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    text-decoration: transparent;
+}
+
+
+.btn-primary:hover {
+    background-color: #e40f00;
+    text-decoration: transparent;
+}
+.modelo{
+    width: 300px;
+    overflow: hidden;
+    transition: 0.5s;
+    animation: ease-in-out;
+    box-shadow: 0px 0px 15px 0px;
+    margin-bottom: 20%;
+    border: #e66f00;
+   
+    margin: 1px 30px;
+    text-decoration: transparent;
+    /* display: inline-flex; */
+}
+.nombre{
+    font-family: proxima-nova, sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 22px;
+color: #000000;
+
+text-align: left;
+margin-top: 30px;
+
+}
+.precios{
+    color: green;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height */
+text-align: left;
+margin-left: 20px;
+margin-top: 40px;
+
+
+color: #000000;
+}
+.nombreC{
+    width: 90%;
+    margin: 0px 7%;
+    text-decoration: transparent;
+    
+}
+.imagen{
+    width: 230px;
+    height: 220px;
+}
+.carritoss{
+    /* width: 73px; */
+/* height: 34.81px; */
+position: absolute;
+
+top: 420px;
+}
+.botonn{
+    border: none ;
+    background-color: transparent;
+    position: absolute;
+    left: 260px;
+}
+.botonnF{
+    border: none ;
+    background-color: transparent;
+    position: relative;
+    right:  -40px;
+    top: -7px;
+}
