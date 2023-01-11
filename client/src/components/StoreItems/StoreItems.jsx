@@ -49,21 +49,26 @@ function StoreItems({ currentVideogames }) {
       <div className="divG">
         <h1 className="productosT">PRODUCTOS</h1>
         <div className="modelo3">
-          {currentItems.map((card) => {
-            { console.log(card) }
-            return (
-              <Link to={`/products/${card.id}`}>
-                <div className="modelo">
-                  <StoreItem
-                    id={card.id}
-                    name={card.title}
-                    img={card.img}
-                    price={card.price}
-                  />
-                </div>
-              </Link>
-            )
-          })}
+          {currentItems.length
+            ?
+            currentItems.map((card) => {
+              { console.log(card) }
+              return (
+                <Link to={`/products/${card.id}`}>
+                  <div className="modelo">
+                    <StoreItem
+                      id={card.id}
+                      name={card.title}
+                      img={card.img}
+                      price={card.price}
+                    />
+                  </div>
+                </Link>
+              )
+            })
+            :
+            <div>  "No hay productos todavía."</div>
+          }
         </div>
         <Footer className='footer2' />
       </div>
