@@ -178,10 +178,7 @@ export const Form = () => {
                     <label for="imagenI" class="form-label labels">Imagen</label>
                     <input class="form-control escribir" type="file" id="imagenI" value={input.imagen} onChange={(e) => handleChange(e)} required />
                     <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
-                </div>
-
-         
-
+                </div>      
 
                 {/* MARK */}
 

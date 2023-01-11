@@ -65,7 +65,7 @@ label{
     font-family: proxima-nova, sans-serif !important;
     text-shadow: 3px 2px 3px black;
     border-radius: 0px !important;
-    padding: 6px !important;
+    padding: 6px !important; 
     border: rgb(0, 0, 0) 1px solid !important; 
 }
 .selection{
