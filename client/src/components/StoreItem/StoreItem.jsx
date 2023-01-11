@@ -46,7 +46,7 @@ export function StoreItem({ id, name, price, img }) {
   return (
     <div
       className="card text-center bg-dark"
-      style={{ height: "400px", width: "100%" }}
+      style={{ height: "100%", width: "100%" }}
       key={id}
     >
       <Link to={`/products/${id}`}>
