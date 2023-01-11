@@ -18,32 +18,29 @@ function App() {
   // const { isAuthenticated } = useAuth0();
 
   return (
-    <BrowserRouter>
       <div className="App">
         {/* {isAuthenticated ? (
           <>
-      <Profile/>
-      <LogoutButton/>
-      </>
+            <Profile />
+            <LogoutButton />
+          </>
         ) : (
       <LoginButton/>
       )} */}
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/home" component={Home} />
-          <Route path="/products/:id" component={Details} />
-          <Route path="/form" component={Form} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          {/* <Route path='/Footer' component={Footer} /> */}
-        </Switch>
+      {/* <NavBar /> */}
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/home" component={Home} />
+        <Route path="/products/:id" component={Details} />
+        <Route path="/form" component={Form} />
+        <Route path="/contacto" component={Contact} />
+        <Route path="/about" component={About} />
 
-        <Footer className="amdr" />
-        {/* Descomentar 'Footer' cuando tengamos más componentes en el home */}
-      </div>
-    </BrowserRouter>
-  );
+        {/* <Route path='/Footer' component={Footer} /> */}
+      </Switch>
+      {/* <Footer className="amdr" /> */}
+    </div>
+  )
 }
 
-export default App;
+export default App

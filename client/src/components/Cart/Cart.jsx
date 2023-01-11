@@ -9,9 +9,11 @@ import {
 } from "react-bootstrap";
 import { removeFromCart } from "../../redux/actions";
 import Carrito from "../Assets/cart.png";
-import { CartContext } from "../../context/CartContext/CartContext";
+import { CartContext, useShoppingCart } from "../../context/CartContext/CartContext";
+import "./Cart.css"
 
 const Cart = () => {
+  const {quantity } = useShoppingCart()
   //   const items = useSelector(state => state.cart.items);
   // const items = [];
   // const dispatch = useDispatch();
@@ -30,8 +32,9 @@ const Cart = () => {
   return (
     <div className="cart">
       <Button variant="" class="btn btn float-right" onClick={handleShow}>
-        {" "}
+        {""}
         <img src={Carrito} alt="imagen" class="img-fluid" />
+        <div className="cart-quantity-circle">{quantity}</div>
       </Button>
       <Offcanvas
         show={show}
@@ -61,7 +64,7 @@ const Cart = () => {
                     <td>{item.name}</td>
                     <td>
                       <img
-                        src={item.imgUrl}
+                        src={item.img}
                         alt={item.name}
                         style={{
                           width: "125px",
@@ -94,7 +97,7 @@ const Cart = () => {
                 <tr>
                   <td colSpan="2">Total</td>
                   <td>
-                    {cart.reduce((total, item) => total + item.quantity, 0)}
+                    {quantity}
                   </td>
                 </tr>
               </tfoot>

@@ -1,19 +1,13 @@
-body {
+/* body {
   position: relative;
   padding-bottom: 7em;
   min-height: 110vh;
   overflow: scroll;
-  
-}
-.amdr {
-  background-color: #0f0e17;
-  color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1em 0em;
+} */
 
-}
-.Home {
+.home-container {
   background-color: rgb(60, 58, 58);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

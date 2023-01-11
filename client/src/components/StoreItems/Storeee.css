@@ -3,11 +3,11 @@
   color: black;
   box-sizing: border-box;
 
-  position: absolute;
+  /* position: absolute; */
   /* width: 360px;
   height: 367px; */
-  left: 215px;
-  top: 171px;
+  /* left: 215px;
+  top: 171px; */
 
   background: #fffffe;
   /* border: 1px solid rgba(0, 0, 0, 0.2); */
@@ -33,13 +33,14 @@
   text-decoration: none;
   text-decoration: transparent;
 }
+
 .modelo3 {
   display: inline-flex;
-  /* background-color: rgb(230, 16, 16); */
+  background-color: rgb(255, 255, 255);
   text-align: center;
-  position: relative;
-  left: -100px;
-  top: -60px;
+  /* position: relative;
+  left: -100px; */
+  /* top: -60px; */
   /* text-decoration: none; */
   /* text-decoration: transparent; */
   flex-wrap: wrap;
@@ -49,10 +50,10 @@
   justify-content: center;
 }
 .productosT {
-  /* background-color: red; */
-  /* color: black;
-  position: absolute; */
-  bottom: 700px;
+  /* background-color: red;
+  color: black;
+  bottom: 700px; */
+  position: absolute;
 }
 h1 {
   color: green;

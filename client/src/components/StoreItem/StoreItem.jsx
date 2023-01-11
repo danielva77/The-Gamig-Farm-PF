@@ -4,8 +4,9 @@ import "./StoreItem.css";
 import { CartContext } from "../../context/CartContext/CartContext";
 import { useContext } from "react";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
+import { Link } from "react-router-dom";
 
-export function StoreItem({ id, name, price, imgUrl }) {
+export function StoreItem({ id, name, price, img }) {
   const [quantity, setQuantity] = useState(0);
   // const quantity = getItemQuantity(id);
 
@@ -21,14 +22,13 @@ export function StoreItem({ id, name, price, imgUrl }) {
   // useEffect(() => {
   //   setQuantity(getItemQuantity(id));
   // }, [cart, id]);
-
   const handleAddToCart = () => {
     // Obtén la cantidad actual del producto en el carrito
     const quantity = getItemQuantity(id);
     // // Agrega el elemento al carrito utilizando el método addToCart del contexto
     // addToCart({ id, name, price, imgUrl, quantity });
 
-    incrementItemQuantity({ id, name, price, imgUrl, quantity });
+    incrementItemQuantity({ id, name, price, img, quantity });
     setQuantity(quantity + 1);
   };
 
@@ -49,16 +49,15 @@ export function StoreItem({ id, name, price, imgUrl }) {
       style={{ height: "400px" }}
       key={id}
     >
+      <Link to={`/products/${id}`}>
       <img
-        src={imgUrl}
+        src={img}
         alt="falta la imagen"
         height="180px"
         style={{ objectFit: "contain" }}
         class="card-img-top"
       />
-      {/* <button className="btn-primary" onClick={handleAddToCart}>
-        + Add{" "}
-      </button> */}
+      
 
       <div className="card-body text-light">
         <h4 className="card-title" style={{ fontSize: "18px" }}>
@@ -66,6 +65,7 @@ export function StoreItem({ id, name, price, imgUrl }) {
         </h4>
         <p className="card-text text-secondary">${price}</p>
       </div>
+      </Link>
       <div class="card-footer">
         {quantity === 0 ? (
           <div className="d-flex align-items-center">

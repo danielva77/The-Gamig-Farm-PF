@@ -11,8 +11,11 @@ export function useShoppingCart() {
 export const CartProvider = ({ children }) => {
   // Estado del carrito
   const [cart, setCart] = useState([]);
+  
+  
 
-  const quantity = cart.reduce((quantity, item) => item.quantity + quantity, 0);
+  const quantity = cart.reduce((total, item) => total + item.quantity, 0);
+  
 
   // Métodos para manipular el carrito
   const addToCart = (item) => setCart([...cart, item]);
@@ -21,6 +24,7 @@ export const CartProvider = ({ children }) => {
     const item = cart.find((item) => item.id === id);
     return item ? item.quantity : 0;
   };
+  
   const incrementItemQuantity = (item) => {
     // Encuentra el ítem en el carrito
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
@@ -54,6 +58,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         cart,
+        quantity,
         addToCart,
         removeFromCart,
         getItemQuantity,
