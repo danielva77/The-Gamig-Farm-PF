@@ -1,8 +1,12 @@
 import React from "react";
+import Footer from "../Footer/Footer";
+import NavBar from "../NavBar/NavBar";
 import "./contact.css";
 
 export default function Contact() {
   return (
+    <div>
+      <NavBar/>
     <div className="container-contact">
       <h1>Contact as</h1>
       <div className="cont-contact">
@@ -33,6 +37,8 @@ export default function Contact() {
         <input type="submit" class="mb-3 btn-primary" />
       </div>
          
+    </div>
+    <Footer/>
     </div>
   );
 }
