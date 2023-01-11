@@ -126,12 +126,6 @@ export const Form = () => {
         }
     }
 
-    // UPLOADCARE
-
-    function handleFile(e){
-        console.log(e.target.files, "%%%%%%%");
-        console.log(e.target.files, "$$$$$$$");
-    }
 
   
 
@@ -186,16 +180,7 @@ export const Form = () => {
                     <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
                 </div>
 
-                {/* UPLOADCARE */}
-                
-{/* 
-                <div>
-                    <label>Seleccionar el archivo</label>
-                    <input type="file"name="file" onChange={(e) => handleFile(e)} />
-                </div> 
-                <br />
-                <button>Upload</button> */}
-
+         
 
 
                 {/* MARK */}
