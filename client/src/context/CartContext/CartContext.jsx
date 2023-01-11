@@ -10,9 +10,15 @@ export function useShoppingCart() {
 // Crea un componente que proporciona el contexto del carrito
 export const CartProvider = ({ children }) => {
   // Estado del carrito
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const localStorageCart = localStorage.getItem("cart");
+    return localStorageCart ? JSON.parse(localStorageCart) : [];
+});
   
-  
+  // const [cartItems, setCartItems] = useState(() => {
+  //   const localStorageCart = localStorage.getItem("cart");
+  //   return localStorageCart ? JSON.parse(localStorageCart) : [];
+  // })
 
   const quantity = cart.reduce((total, item) => total + item.quantity, 0);
   
@@ -32,9 +38,11 @@ export const CartProvider = ({ children }) => {
       // Si el ítem existe, incrementa su cantidad y actualiza el estado del carrito
       existingItem.quantity++;
       setCart([...cart]);
+      localStorage.setItem("cart", JSON.stringify(cart))
     } else {
       // Si el ítem no existe, agrega uno nuevo con cantidad 1 al carrito
       addToCart({ ...item, quantity: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart))
     }
   };
   const decrementItemQuantity = (id) => {
@@ -46,9 +54,11 @@ export const CartProvider = ({ children }) => {
       // Si la cantidad del ítem llega a cero, elimínalo del carrito
       if (item.quantity === 0) {
         removeFromCart(id);
+        localStorage.setItem("cart", JSON.stringify(cart))
       } else {
         // Si la cantidad del ítem es mayor a cero, actualiza el estado del carrito
         setCart([...cart]);
+        localStorage.setItem("cart", JSON.stringify(cart))
       }
     }
   };

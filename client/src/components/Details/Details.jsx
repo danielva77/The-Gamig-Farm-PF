@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, useContext } from 'react-redux';
 import { getDetail, cleanDetail } from '../../redux/actions';
-import "./Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
 import "./details.css"
