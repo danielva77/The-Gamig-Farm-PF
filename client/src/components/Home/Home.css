@@ -1,0 +1,13 @@
+/* body {
+  position: relative;
+  padding-bottom: 7em;
+  min-height: 110vh;
+  overflow: scroll;
+} */
+
+.home-container {
+  background-color: rgb(60, 58, 58);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
