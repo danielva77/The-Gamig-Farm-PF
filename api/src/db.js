@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
     logging: false,
     native: false,
   }
-)
+) 
 
 const basename = path.basename(__filename)
 
@@ -46,13 +46,10 @@ const { Product, Category, Mark, Review, Store, User } = sequelize.models
 // Product.hasMany(Reviews);
 
 Product.belongsToMany(Category, { through: "Product_Category" });
-Category.belongsToMany(Product, { through: "Product_Category"});
+Category.belongsToMany(Product, { through: "Product_Category" });
 
-Mark.belongsToMany(Product, { through: "Mark_Product" });
-Product.belongsToMany(Mark, { through: "Mark_Product" });
-
-// Mark.hasMany(Product);
-// Product.belongsTo(Mark);
+Mark.hasMany(Product);
+Product.belongsTo(Mark);
 
 User.hasMany(Store);
 Store.belongsTo(User);
@@ -66,12 +63,26 @@ Product.belongsToMany(Store, { through: "Store_Product" });
 Product.hasMany(Review);
 Review.belongsTo(Product);
 
+Mark.hasMany(Product)
+Product.hasMany(Mark)
+
 User.hasMany(Store)
 Store.belongsTo(User)
 
 User.hasMany(Review)
 Review.belongsTo(User)
 
+Store.belongsToMany(Product, { through: "Store_Product" })
+Product.belongsToMany(Store, { through: "Store_Product" })
+
+Product.hasMany(Review)
+Review.belongsTo(Product)
+
+User.hasMany(Store)
+Store.belongsTo(User)
+
+User.hasMany(Review)
+Review.belongsTo(User)
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

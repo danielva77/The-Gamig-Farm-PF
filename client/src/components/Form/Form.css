@@ -1,0 +1,31 @@
+
+.formProduct{
+    margin-top: 80px;
+    /* background-color: blue; */
+}
+.h3T{
+    margin-top: 20px;
+    /* background-color: red; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 40px;
+    color: rgb(0, 134, 251);
+}
+.tras{
+    color: transparent;
+
+}
+.padre{
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    border: 2px solid #ff8606;
+}
+.escribir{
+
+    background-color: #fffffe !important;
+    border: 2px black solid !important;
+}
+.escribir:active{
+    background-color: red;
+}
