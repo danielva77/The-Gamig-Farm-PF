@@ -31,10 +31,15 @@ function StoreItems({ currentVideogames }) {
   const markFilter = useSelector(state => state.marksFilter)
   const sortBy = useSelector(state => state.sortBy);
 
-  // Filtrado por categoria
-  let filteredAndSorted = categoryFilter ? filteredbyCategory(items, categoryFilter) : items
+  let filteredAndSorted = items;
 
-  filteredAndSorted = markFilter ? filteredbyMarks(items, markFilter) : items
+  // Filtrado por categoria
+  filteredAndSorted = categoryFilter ? filteredbyCategory(filteredAndSorted, categoryFilter) : filteredAndSorted
+  console.log("esto filtra categoria", filteredAndSorted)
+
+   // Filtrado por marca
+  filteredAndSorted = markFilter ? filteredbyMarks(filteredAndSorted, markFilter) : filteredAndSorted
+  console.log("esto filtra marca", filteredAndSorted)
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter ? filterByName(filteredAndSorted, nameFilter) : filteredAndSorted
@@ -56,7 +61,7 @@ function StoreItems({ currentVideogames }) {
           {currentItems.length
             ?
             currentItems.map((card) => {
-              { console.log(card) }
+              // { console.log(card) }
               return (
                 <Link to={`/products/${card.id}`}>
                   <div className="modelo">

@@ -61,18 +61,6 @@ export const setFilterCategory = payload => {
   }
 }
 export const setFilterMarks = payload => {
-  // return async function (dispatch) {
-  //   var req = await axios.get("http://localhost:3001/products")
-  //   const products = req.data
-  //   const filtered = products.filter(el => el.Marks[0].title == payload)
-  //   console.log("filtered", filtered)
-
-  //   return dispatch({
-  //     type: SET_FILTER_MARKS,
-  //     payload: filtered,
-  //   })
-  // }
-  
   return {
     type: SET_FILTER_MARKS,
     payload,

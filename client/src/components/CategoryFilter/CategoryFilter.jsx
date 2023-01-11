@@ -6,6 +6,10 @@ import { getAllCategories, setFilterCategory } from '../../redux/actions';
 const CategoryFilter = () => {
     const dispatch = useDispatch()
 
+    useEffect(() =>{
+        dispatch(getAllCategories());
+      }, [dispatch]);
+
     const categories = useSelector(state => state.categories)
 
     const handleChangeFilter = e => {

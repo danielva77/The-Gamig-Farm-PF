@@ -91,11 +91,11 @@ export default function rootReducer(state = initialState, action) {
         categoryFilter: action.payload,
       }
 
-      case SET_FILTER_MARKS:
-        return {
-          ...state,
-          marksFilter: action.payload,
-        }  
+    case SET_FILTER_MARKS:
+      return {
+        ...state,
+        marksFilter: action.payload,
+      }  
 
     case SET_NUMBERS_PAGINATED:
       return {
