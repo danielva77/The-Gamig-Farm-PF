@@ -1,26 +1,19 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getAllCategories, getAllMarks } from '';
-import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCategories, getAllMarks } from '../../redux/actions';
+import { Link, useHistory } from "react-router-dom"
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
-import "./Form.css"
+// import "./Form.css"
+import { postProducts } from "../../redux/actions";
 
-export const Form = () => {
+export default function Form(){
+    const dispatch = useDispatch();
 
-    // const dispatch = useDispatch();
-    // // llamo a la actions para traiga las marcas y cartegorias de la db
-    // useEffect(() => {
-    //     dispatch(getAllCategories)
-    //     dispatch(getAllMarks)
-    // },[dispatch])
+    const history = useHistory()
 
-    // // me traigo los estados de categoria y marcas
-    // const marks = (state) => useSelector(state.marks);
-    // const categories = (state) => useSelector(state.categories);
-    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }];
-    const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' }, { title: 'WebCam' }, { title: 'Auriculares' }, { title: 'Gabinetes' }, { title: 'MousePad' }, { title: 'Gabinete' }, { title: 'Placa Madre' }, { title: 'Tarjeta Grafica' }]
+    // const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }];
+    // const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' }, { title: 'WebCam' }, { title: 'Auriculares' }, { title: 'Gabinetes' }, { title: 'MousePad' }, { title: 'Gabinete' }, { title: 'Placa Madre' }, { title: 'Tarjeta Grafica' }]
 
     // guardo la data para enviar a la db en un estado local
 
@@ -29,13 +22,26 @@ export const Form = () => {
         price: 0,
         detail: '',
         stock: 0,
-        imagen: '',
-        mark: '',
-        category: '',
+        img: '',
+        mark: [],
+        category: [],
     })
 
     //este estado me habilita a enviar el formulario 
     const [enviar, setEnviar] = useState(false)
+
+    useEffect(() =>{
+        dispatch(getAllMarks())
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
+
+    useEffect(() =>{
+      dispatch(getAllCategories())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
+
+    const mark = useSelector(state => state.marks);
+    const category = useSelector(state => state.categories);
 
     // esta funcion valida los datos ingresados en el formulario y me da el ok para enviar el formulario
     function validate() {
@@ -83,24 +89,12 @@ export const Form = () => {
             price: 0,
             detail: '',
             stock: 0,
-            imagen: '',
-            mark: '',
-            category: '',
+            img: '',
+            mark: [],
+            category: [],
         });
 
         setEnviar(false);
-    }
-
-    //post 
-    function newProduct(data) {
-        return axios.post('http://localhost:3001/products', data)
-            .then((data) => {
-                alert(data)
-            })
-        // .catch(e => {
-        //     console.log(e)
-        //     alert('error al crear el producto')
-        // })
     }
 
     // handles
@@ -131,11 +125,13 @@ export const Form = () => {
         validate();
 
         if (enviar) {
-            await newProduct(input);
-            clearInput()
+            dispatch(postProducts(input))
+            // await newProduct(input);
             alert('Se guardaron los datos del producto')
+            clearInput()
             window.location.reload()
         }
+        history.push("/products");
     }
 
     return (
@@ -180,24 +176,17 @@ export const Form = () => {
 
                         <div class="mb-3 col-7 mb-4">
                             <label for="formFile" class="form-label">Imagen</label>
-                            <input class="form-control escribir" type="file" id="formFile" value={input.imagen} onChange={(e) => handleChange(e)} />
+                            <input class="form-control escribir" type="file" id="formFile" value={input.img} onChange={(e) => handleChange(e)} />
                             <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
                         </div>
 
                         <br></br>
                         <label>Mark:</label>
                         <div className="div-mark">
-
-
-
-
                             <select class="form-select mb-4 escribir" aria-label="Default select example" onChange={(e) => handleMark(e)}>
                                 <option name="new" value='' key='new'>- new Mark -</option>
-                                {marks?.map(m => (<option name='mark' value={m.title} key={m.title}>{m.title}</option>))}
+                                {mark?.map(m => (<option name='mark' value={m.title} key={m.title}>{m.title}</option>))}
                             </select>
-
-
-
                         </div>
 
                         <br></br>
@@ -205,13 +194,13 @@ export const Form = () => {
                         <div className="div-category">
                             <select class="form-select mb-4 escribir" aria-label="Default select example" onChange={(e) => handleCategory(e)}>
                                 <option selected >- Otra variedad -</option>
-                                {categories?.map(c => (<option name="category" value={c.title} key={c.title}>{c.title}</option>))}
+                                {category?.map(c => (<option name="category" value={c.title} key={c.title}>{c.title}</option>))}
                             </select>
 
                         </div>
                     </form>
                     {/* btn-enviar */}
-                    <button type="submit" className="btn btn-success mb-5 mt-4" onClick={(e) => alert("producto creado")}>Guardar</button>
+                    <button type="submit" className="btn btn-success mb-5 mt-4" onClick={(e) =>{handleSubmit(e)}}>Guardar</button>
                     {/* <button type="button" class="btn btn-success">Success</button> */}
                 </div>
                 <div>
@@ -226,4 +215,4 @@ export const Form = () => {
     )
 }
 
-export default Form;
+// export default Form;
