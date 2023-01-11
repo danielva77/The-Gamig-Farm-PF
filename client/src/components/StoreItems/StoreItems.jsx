@@ -8,6 +8,7 @@ import "./Storeee.css";
 import { Link } from "react-router-dom";
 import { filterByName } from "../../hooks/filterByName";
 import { filteredbyCategory } from "../../hooks/filterByCategory";
+import { filteredbyMarks } from "../../hooks/filterByMarks";
 import { sortByPrice } from "../../hooks/sortByPrice";
 import { paginateItems } from "../../hooks/paginateItems";
 import { getNumberButtons } from "../../hooks/getNumberButtons";
@@ -27,10 +28,13 @@ function StoreItems({ currentVideogames }) {
   // variables globales para filtrado y ordenamiento
   const nameFilter = useSelector(state => state.nameFilter)
   const categoryFilter = useSelector(state => state.categoryFilter)
+  const markFilter = useSelector(state => state.marksFilter)
   const sortBy = useSelector(state => state.sortBy);
 
   // Filtrado por categoria
   let filteredAndSorted = categoryFilter ? filteredbyCategory(items, categoryFilter) : items
+
+  filteredAndSorted = markFilter ? filteredbyMarks(items, markFilter) : items
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter ? filterByName(filteredAndSorted, nameFilter) : filteredAndSorted

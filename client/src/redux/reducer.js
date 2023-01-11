@@ -18,6 +18,8 @@ import {
   RESET_FILTERS,
   SET_FILTER_PRICE,
   SET_NAME_FILTER,
+  GET_ALL_MARKS,
+  SET_FILTER_MARKS
 } from "./actions"
 
 const initialState = {
@@ -25,6 +27,7 @@ const initialState = {
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
+  marksFilter: "",
   nameFilter: "",
   currentPage: 1,
   itemsPerPage: 2,
@@ -46,6 +49,7 @@ const initialState = {
   },
   sorted: [],
   categories: [],
+  marks:[],
 
   currentItems: [],
   loading: false,
@@ -86,6 +90,12 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         categoryFilter: action.payload,
       }
+
+      case SET_FILTER_MARKS:
+        return {
+          ...state,
+          marksFilter: action.payload,
+        }  
 
     case SET_NUMBERS_PAGINATED:
       return {
@@ -137,6 +147,12 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         categories: action.payload,
+      }
+
+    case GET_ALL_MARKS:
+      return {
+        ...state,
+        marks: action.payload,
       }
 
     case "REMOVE_FROM_CART":

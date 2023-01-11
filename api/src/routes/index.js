@@ -6,6 +6,7 @@ const {
   getAllProducts,
   createProducts,
   getCategories,
+  getMarks,
 } = require("../controllers/products/Controllers")
 
 const router = Router()
@@ -101,6 +102,7 @@ router.get("/products", async (req, res) => {
 router.post("/products", createProducts)
 
 router.get("/category", getCategories)
+router.get("/mark", getMarks)
 
 router.get("/products/:id", async (req, res) => {
   // res.send("Soy el get /videogame")
