@@ -1,3 +1,8 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .cont {
   background-color: #0f0e17;
   color: white;

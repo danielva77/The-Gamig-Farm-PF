@@ -27,7 +27,7 @@ const initialState = {
   categoryFilter: "",
   nameFilter: "",
   currentPage: 1,
-  itemsPerPage: 6,
+  itemsPerPage: 2,
 
   detail: [],
   filter: {
