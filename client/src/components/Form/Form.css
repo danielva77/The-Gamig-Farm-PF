@@ -51,7 +51,7 @@ label{
 .guardarBoton{
     position: absolute;
     top: 680px;
-    left: 370px;
+    left: 320px;
     padding: 10px !important;
     font-size: 20px !important;
     font-family: proxima-nova, sans-serif !important;
@@ -59,9 +59,9 @@ label{
     border-radius: 0px !important;
 }
 .volverBoton{
-    position: relative;
-    left:  587px;
-    bottom: -87px;
+    position: absolute;
+    left:  1285px;
+    bottom: -70px;
     font-family: proxima-nova, sans-serif !important;
     text-shadow: 3px 2px 3px black;
     border-radius: 0px !important;

@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCategories, setFilterCategory } from '../../redux/actions';
+// import { getAllCategories, setFilterCategory } from '../../redux/actions';
+import { getAllMarks, setFilterMarks } from '../../redux/actions';
 
-const CategoryFilter = () => {
+const MarkFilter = () => {
     const dispatch = useDispatch()
 
     useEffect(() =>{
-        dispatch(getAllCategories());
+        dispatch(getAllMarks());
       }, [dispatch]);
-
-    const categories = useSelector(state => state.categories)
+      
+    const marks = useSelector(state => state.marks)
 
     const handleChangeFilter = e => {
         // console.log(e.target.value);
-        dispatch(setFilterCategory(e.target.value));
+        dispatch(setFilterMarks(e.target.value));
     };
 
     return (
@@ -25,10 +26,10 @@ const CategoryFilter = () => {
             menuPlacement="top"
             defaultValue={'DEFAULT'}
         >
-            <option value="DEFAULT" disabled hidden>Category</option>
-            {categories?.map(category => {
+            <option value="DEFAULT" disabled hidden>Mark</option>
+            {marks?.map(mark => {
                 return (
-                    <option>{category}</option>
+                    <option>{mark}</option>
                 )
             })}
         </select>
@@ -36,4 +37,4 @@ const CategoryFilter = () => {
     );
 };
 
-export default CategoryFilter;
+export default MarkFilter;

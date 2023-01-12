@@ -12,50 +12,46 @@
    
 } */
 
-.Nombrelogo{
+.search-bar-container {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  right: 24%;
+  top: 21px;
+  display: flex;
+  column-gap: 10px;
+}
+
+.Nombrelogo {
   position: absolute;
   width: 76px;
   height: 68px;
   left: 86.22px;
   top: -5px;
-  
+
   mix-blend-mode: luminosity;
   /* transform: rotate(.22deg); */
-
-
 }
 
+.search-bar-input {
+  width: 180px;
+  height: 17px;
 
-.bar-btn {
-  position: absolute;
-  width: 168px;
-  height: 23px;
-  left: 1015px;
-  top: 21px;
-  
   background: rgba(255, 255, 255, 0.21);
   border-radius: 8px;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
-
-   
 }
 
-.bar-btn:active {
-    /* box-shadow: 2px 2px 15px #8707ff inset; */
-    border: greenyellow;
-    outline: greenyellow;
+.search-bar-input:active {
+  /* box-shadow: 2px 2px 15px #8707ff inset; */
+  border: greenyellow;
+  outline: greenyellow;
+}
 
-   }
-
-
-
-.lupaa{
-  position: absolute;
+.lupaa {
   width: 21px;
   height: 23px;
-  left: 1193px;
-  top: 22px;
   cursor: pointer;
 }
