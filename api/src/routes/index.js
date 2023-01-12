@@ -126,9 +126,10 @@ router.get("/products/:id", async (req, res) => {
 mercadopago.configure({access_token: process.env.MERCADOPAGO_KEY})
 
 router.post("/payment",(req, res) => {
-  const products = req.body
-  const totalProducts = [];
-  totalProducts.push(products);
+  // const products = req.body
+  // const totalProducts = [];
+  // totalProducts.push(products);
+  totalProducts = req.body
   console.log("totalproducts", totalProducts)
   let preference = {
     "items": totalProducts.map((product) => {

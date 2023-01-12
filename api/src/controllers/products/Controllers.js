@@ -50,7 +50,7 @@ const createProducts = async (req, res) => {
         productCreated.addCategory(c[0])
       })
     }
-    // console.log("ESTO total", productCreated)
+    console.log("ESTO llega marca", mark)
     if (mark.length) {
       mark.map(async mak => {
         let m = await Mark.findOrCreate({

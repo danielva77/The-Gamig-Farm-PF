@@ -31,7 +31,7 @@ const initialState = {
   marksFilter: "",
   nameFilter: "",
   currentPage: 1,
-  itemsPerPage: 2,
+  itemsPerPage: 4,
 
   detail: [],
   filter: {

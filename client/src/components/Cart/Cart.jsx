@@ -10,19 +10,20 @@ import {
 import { removeFromCart } from "../../redux/actions";
 import Carrito from "../Assets/cart.png";
 import { CartContext, useShoppingCart } from "../../context/CartContext/CartContext";
-import "./Cart.css"
+import "./Cart.css";
+import axios from "axios"
 
 const Cart = () => {
 
-  const [cartItems, setCartItems] = useState(() => {
-    const localStorageCart = localStorage.getItem("cart");
-    return localStorageCart ? JSON.parse(localStorageCart) : [];
-});
+//   const [cartItems, setCartItems] = useState(() => {
+//     const localStorageCart = localStorage.getItem("cart");
+//     return localStorageCart ? JSON.parse(localStorageCart) : [];
+// });
 
-useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    return () => localStorage.removeItem("cart");
-}, [cartItems])
+// useEffect(() => {
+//     localStorage.setItem("cart", JSON.stringify(cartItems));
+//     return () => localStorage.removeItem("cart");
+// }, [cartItems])
 
 
   const {quantity } = useShoppingCart()
@@ -43,7 +44,7 @@ useEffect(() => {
 
   const handleShow = () => setShow(true);
   const handleHide = () => setShow(false);
-
+  console.log("esto llega en cart", cart)
   return (
     <div className="cart">
       <Button variant="" class="btn btn float-right" onClick={handleShow}>
@@ -123,7 +124,8 @@ useEffect(() => {
                 </tr>
               </tfoot>
             </Table>
-             <Button variant="success" >
+             <Button variant="success"
+            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.open(res.data))}}>
              Pagar {totalPrice}
              </Button>
              </>
