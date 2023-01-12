@@ -124,29 +124,73 @@ router.get("/products/:id", async (req, res) => {
 
 
 mercadopago.configure({access_token: process.env.MERCADOPAGO_KEY})
-router.post("/payment",(req, res)=>{
-  const products = req.body;
+
+router.post("/payment",(req, res) => {
+  const products = req.body
+  const totalProducts = [];
+  totalProducts.push(products);
+  console.log("totalproducts", totalProducts)
   let preference = {
-    items: [{
-      id: products.body,
-      title: products.title,
-      currency_id: "ARS",
-      picture_url: products.img,
-      description: products.detail,
-      category_id: "art",
-      quantity: products.quantity,
-      unit_price: products.price,
-    }],
-    back_urls: {
-      succes: "http://localhost:3001/products",
-      failure: "",
-      pending: "",
-    },
-    auto_return: "approved",
-    binary_mode: true,
-  }
-  mercadopago.preferences.create(preference).then((response) => res.status(200).send({response})).catch((error) => res.status(400).send({error: error.message}))
-})
+    "items": totalProducts.map((product) => {
+
+      return({
+        title: product.name,
+        unit_price: Number(product.price),
+        quantity: Number(product.quantity),
+        picture_url: product.img
+      })
+    }),
+    "back_urls": {
+      "succes": "http://localhost:3001/products",
+      "failure": "",
+      "pending": "",
+    }
+  };
+
+  // totalProducts.map(async p => {
+  // await Product.increment({stock: -p.quantity}, {where:{ title: p.title}});
+  // })  
+
+  mercadopago.preferences
+  .create(preference)
+    .then(function (response) {
+      res.send(response.body.init_point)
+      //res.redirect({response.body.id})
+      // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.status(400).json(error.message);
+    });
+
+}
+)
+
+
+
+// (req, res)=>{
+//   const products = req.body;
+//   let preference = {
+//     items: [{
+//       id: products.body,
+//       title: products.title,
+//       currency_id: "ARS",
+//       picture_url: products.img,
+//       description: products.detail,
+//       category_id: "art",
+//       quantity: products.quantity,
+//       unit_price: products.price,
+//     }],
+//     back_urls: {
+//       succes: "http://localhost:3001/products",
+//       failure: "",
+//       pending: "",
+//     },
+//     auto_return: "approved",
+//     binary_mode: true,
+//   }
+//   mercadopago.preferences.create(preference).then((response) => res.status(200).send({response})).catch((error) => res.status(400).send({error: error.message}))
+// })
 
 // Para el boton:
 // onClick={() => {
