@@ -18,6 +18,7 @@ const Cart = () => {
   // const items = [];
   // const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+ 
 
   const { cart, addToCart, removeFromCart, getItemQuantity } =
     useContext(CartContext);
