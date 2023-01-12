@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 // Crea el contexto del carrito
 export const CartContext = createContext();
@@ -15,6 +15,9 @@ export const CartProvider = ({ children }) => {
     return localStorageCart ? JSON.parse(localStorageCart) : [];
 });
   
+  useEffect(() => {
+    if(cart.length === 0) localStorage.removeItem("cart")
+  }, [cart])
   // const [cartItems, setCartItems] = useState(() => {
   //   const localStorageCart = localStorage.getItem("cart");
   //   return localStorageCart ? JSON.parse(localStorageCart) : [];
@@ -25,7 +28,12 @@ export const CartProvider = ({ children }) => {
 
   // Métodos para manipular el carrito
   const addToCart = (item) => setCart([...cart, item]);
-  const removeFromCart = (id) => setCart(cart.filter((item) => item.id !== id));
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+    if(cart.length === 0){
+      localStorage.removeItem("cart");
+    }
+};
   const getItemQuantity = (id) => {
     const item = cart.find((item) => item.id === id);
     return item ? item.quantity : 0;

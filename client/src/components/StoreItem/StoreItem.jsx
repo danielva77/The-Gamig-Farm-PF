@@ -24,7 +24,7 @@ export function StoreItem({ id, name, price, img }) {
   // }, [cart, id]);
   const handleAddToCart = () => {
     // Obtén la cantidad actual del producto en el carrito
-    const quantity = getItemQuantity(id);
+    // const quantity = getItemQuantity(id);
     // // Agrega el elemento al carrito utilizando el método addToCart del contexto
     // addToCart({ id, name, price, imgUrl, quantity });
 
@@ -67,7 +67,7 @@ export function StoreItem({ id, name, price, img }) {
         </div>
       </Link>
       <div class="card-footer">
-        {quantity === 0 ? (
+        {!cart.length ? (
           <div className="d-flex align-items-center">
             <button className="btn-primary" onClick={handleAddToCart}>
               + Add to Cart
