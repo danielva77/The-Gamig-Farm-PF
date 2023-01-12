@@ -1,4 +1,6 @@
 const { Router } = require("express")
+const mercadopago = require('mercadopago');
+require("dotenv").config();
 const axios = require("axios")
 // Modelos de la base de datos ↓
 const { User } = require("../db")
@@ -6,6 +8,7 @@ const {
   getAllProducts,
   createProducts,
   getCategories,
+  getMarks,
 } = require("../controllers/products/Controllers")
 
 const router = Router()
@@ -101,6 +104,7 @@ router.get("/products", async (req, res) => {
 router.post("/products", createProducts)
 
 router.get("/category", getCategories)
+router.get("/mark", getMarks)
 
 router.get("/products/:id", async (req, res) => {
   // res.send("Soy el get /videogame")
@@ -117,5 +121,81 @@ router.get("/products/:id", async (req, res) => {
       : res.status(404).send("No existe juego con ese Id")
   }
 })
+
+
+mercadopago.configure({access_token: process.env.MERCADOPAGO_KEY})
+
+router.post("/payment",(req, res) => {
+  // const products = req.body
+  // const totalProducts = [];
+  // totalProducts.push(products);
+  totalProducts = req.body
+  console.log("totalproducts", totalProducts)
+  let preference = {
+    "items": totalProducts.map((product) => {
+
+      return({
+        title: product.name,
+        unit_price: Number(product.price),
+        quantity: Number(product.quantity),
+        picture_url: product.img
+      })
+    }),
+    "back_urls": {
+      "succes": "http://localhost:3001/products",
+      "failure": "",
+      "pending": "",
+    }
+  };
+
+  // totalProducts.map(async p => {
+  // await Product.increment({stock: -p.quantity}, {where:{ title: p.title}});
+  // })  
+
+  mercadopago.preferences
+  .create(preference)
+    .then(function (response) {
+      res.send(response.body.init_point)
+      //res.redirect({response.body.id})
+      // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.status(400).json(error.message);
+    });
+
+}
+)
+
+
+
+// (req, res)=>{
+//   const products = req.body;
+//   let preference = {
+//     items: [{
+//       id: products.body,
+//       title: products.title,
+//       currency_id: "ARS",
+//       picture_url: products.img,
+//       description: products.detail,
+//       category_id: "art",
+//       quantity: products.quantity,
+//       unit_price: products.price,
+//     }],
+//     back_urls: {
+//       succes: "http://localhost:3001/products",
+//       failure: "",
+//       pending: "",
+//     },
+//     auto_return: "approved",
+//     binary_mode: true,
+//   }
+//   mercadopago.preferences.create(preference).then((response) => res.status(200).send({response})).catch((error) => res.status(400).send({error: error.message}))
+// })
+
+// Para el boton:
+// onClick={() => {
+//   axios.post("http://localhost:3001/payment", prod).then((res)=>window.location.href = response.data.response.body.init_point)
+// }}
 
 module.exports = router

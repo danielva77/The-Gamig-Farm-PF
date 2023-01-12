@@ -1,25 +1,14 @@
-body {
-  position: absolute;
-  padding-bottom: 7em;
-  min-height: 110vh;
-  overflow: scroll;
-  width: 100vw;
-  height: 100vh;
-}
-
-.amdr {
+/* .amdr {
   background-color: #0f0e17;
   color: white;
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 1em 0em;
-}
+} */
 
 .App {
   text-align: center;
-  /* background: linear-gradient(rgba(0, 0, 0, 1) 35%, rgba(255, 134, 6, 1) 70%); */
-  background-color: rgb(230, 230, 230);
 }
 
 * {

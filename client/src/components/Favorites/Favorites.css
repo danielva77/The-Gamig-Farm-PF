@@ -1,9 +1,8 @@
 .img-fluid2 {
-    position: absolute;
-    left: 1231px;;
-    right: 25.68%;
-    top: 24px;
-    bottom: 12.00%;
-    
-    /* background: #FFFFFF; */
+  position: absolute;
+  right: 12%;
+  top: 24px;
+  bottom: 12%;
+
+  /* background: #FFFFFF; */
 }

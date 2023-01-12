@@ -1,21 +1,19 @@
-body {
+/* body {
   position: relative;
   padding-bottom: 7em;
   min-height: 110vh;
-}
-.footer2 {
-  background-color: #0f0e17;
-  color: white;
+} */
 
-  position: absolute;
-  bottom: 0;
+.details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-info {
+  height: 100%;
   width: 100%;
-  padding: 1em 0em;
-
-  /* 
-    left: 0px;
-    top: 605px;  */
 }
+
 .titulo {
   position: absolute;
   width: 577px;
@@ -161,4 +159,9 @@ body {
   position: relative;
   width: 30px;
   top: -5px;
+}
+
+.move-footer {
+  position: absolute;
+  top: 110vh;
 }

@@ -1,172 +1,35 @@
-/* body{ */
-     /* background: #1e00ff;
+.navbar-container {
+  background-color: #0f0e17;
+  /* position: absolute; */
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.cssbuttons-io {
-     position: relative;
-     font-family: inherit;
-     font-weight: 500;
-     font-size: 18px;
-     letter-spacing: 0.05em;
-     border-radius: 0.8em;
-     border: none;
-     background: linear-gradient(to right, #8e2de2, #4a00e0);
-     color: ghostwhite;
-     overflow: hidden;
-     margin-right: 20px;
-    }
-    
-    .cssbuttons-io svg {
-     width: 1.2em;
-     height: 1.2em;
-     margin-right: 0.5em;
-    }
-    
-    .cssbuttons-io span {
-     position: relative;
-     z-index: 10;
-     transition: color 0.4s;
-     display: inline-flex;
-     align-items: center;
-     padding: 0.8em 1.2em 0.8em 1.05em;
-    }
-    
-    .cssbuttons-io::before,
-    .cssbuttons-io::after {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     z-index: 0;
-    }
-    
-    .cssbuttons-io::before {
-     content: "";
-     background: #000;
-     width: 120%;
-     left: -10%;
-     transform: skew(30deg);
-     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-    }
-    
-    .cssbuttons-io:hover::before {
-     transform: translate3d(100%, 0, 0);
-    }
-    
-    .cssbuttons-io:active {
-     transform: scale(0.95);
-    } */
 
-    /* //boton2 */
-
-/*     
-.cssbuttons-io1 {
-     position: relative;
-     font-family: inherit;
-     font-weight: 500;
-     font-size: 18px;
-     letter-spacing: 0.05em;
-     border-radius: 0.8em;
-     border: none;
-     background: linear-gradient(to right, #8e2de2, #4a00e0);
-     color: ghostwhite;
-     overflow: hidden;
-     margin-top: 3vh;
-     margin-right: 40px;
-
-    }
-    
-    .cssbuttons-io1 svg {
-     width: 1.2em;
-     height: 1.2em;
-     margin-right: 0.5em;
-    }
-    
-    .cssbuttons-io1 span {
-     position: relative;
-     z-index: 10;
-     transition: color 0.4s;
-     display: inline-flex;
-     align-items: center;
-     padding: 0.8em 1.2em 0.8em 1.05em;
-    }
-    
-    .cssbuttons-io1::before,
-    .cssbuttons-io1::after {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     z-index: 0;
-    }
-    
-    .cssbuttons-io1::before {
-     content: "";
-     background: #000;
-     width: 120%;
-     left: -10%;
-     transform: skew(30deg);
-     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-    }
-    
-    .cssbuttons-io1:hover::before {
-     transform: translate3d(100%, 0, 0);
-    }
-    
-    .cssbuttons-io1:active {
-     transform: scale(0.95);
-    } */
-    
-   
-     /* BACKGROUND */
-
-     /* .Componente{
-          background-color: #ff0000;
-     }
-
-     .Botones{
-          background-color:  #1500b0fc;
-          ;
-          display:flex;
-          flex-direction: row-reverse;
-     }
-
-     .btnCart{
-          display: flex;
-          margin-top: 27px;
-          margin-right:2% ;
-     } */
-
-.Componente{
-     background-color:#0F0E17;
-     position: absolute;
-width: 100%;
-height: 70px;
-left: 0px;
-top: 0px;
+.menu-navbar {
+  position: absolute;
+  left: 18%;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
-/* .menu{
-     color: white;
-    
-     width: 50px;
-     height: 24px;
-     top: 20px;
-} */
-.link{
-     color: white;
-     top: 20px;
-     position:relative ;
-     text-decoration: none;
-     bottom: 25px;
-     margin: -0px 12px;     
-     /*  */
-     font-family: proxima-nova, sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
+
+.link {
+  position: relative;
+  color: white;
+  top: 20px;
+  text-decoration: none;
+  /* bottom: 25px; */
+  margin: -0px 12px;
+  /*  */
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 }
-.link:hover{
-     color: #ff8906;
+.link:hover {
+  color: #ff8906;
 }

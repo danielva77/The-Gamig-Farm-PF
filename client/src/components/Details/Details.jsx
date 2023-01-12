@@ -1,57 +1,66 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useContext } from 'react-redux';
 import { getDetail, cleanDetail } from '../../redux/actions';
-import "./Details.css"
+import "../Details/Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
-import "./Details.css"
-import { filteredbyCategory } from '../../hooks/filterByCategory'
+// import "./details.css"
+import NavBar from "../NavBar/NavBar";
+import { useShoppingCart } from '../../context/CartContext/CartContext';
 
-export default function Details(props){
 
-const dispatch = useDispatch();
 
-useEffect(() =>{
-  dispatch(getDetail(props.match.params.id))
-  filteredbyCategory(filterItems, myProduct.category)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [dispatch]);
+export default function Details(props) {
+  const {incrementItemQuantity, quantity} = useShoppingCart()
+  const dispatch = useDispatch();
 
-useEffect(() => {
-  return function () {
+  const handleAddToCart = () => {
+    const item = {
+        id: props.match.params.id,
+        name: myProduct[0].title,
+        price: myProduct[0].price,
+        img: myProduct[0].img
+    }
+    incrementItemQuantity(item);
+};
+
+  useEffect(() => {
+    dispatch(getDetail(props.match.params.id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return function () {
       dispatch(cleanDetail())
-  }
-},[dispatch])
+    }
+  }, []);
 
-let myProduct = useSelector((state) => state.detail);
+  let myProduct = useSelector((state) => state.detail);
 
-let filterItems = useSelector((state) => state.items);
-
-
-
-return(
-    <div >
+  return (
+    <div className='details-container'>
+      <NavBar />
       {
         myProduct.length > 0 ?
-        <div>
-          <h1 className='titulo'>{myProduct[0].title}</h1>
-          <img src={myProduct[0].img } alt="img" className='imagenProducto'></img>
-          <h3 className='descripcionTitulo'>Descripcion del producto:</h3>
-          <p className='descripcion'>{myProduct[0].detail}</p>
-          <p className='precio'>Precio: ${myProduct[0].price}</p>
-          <div className='botonDiv'> 
-            <button  className='botonCarritoDetalle'><a className='suma'>+ </a><img src={cart} className="carrito"/> </button>
-          </div>
-          <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
-        
+          <div className='details-info'>
+            <h1 className='titulo'>{myProduct[0].title}</h1>
+            <img src={myProduct[0].img} alt="img" className='imagenProducto'></img>
+            <h3 className='descripcionTitulo'>Descripcion del producto:</h3>
+            <p className='descripcion'>{myProduct[0].detail}</p>
+            <p className='precio'>Precio: ${myProduct[0].price}</p>
+            <div className='botonDiv'>
+              <button className='botonCarritoDetalle' onClick={handleAddToCart}><a className='suma'>+ {quantity}</a><img src={cart} className="carrito" /> </button>
+            </div>
+            <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
 
-        
-        </div> : <p>Cargando ...</p>
+
+
+          </div> : <p>Cargando ...</p>
       }
-        <div className='filtros'>
-          <a href="/home" className='volver'> 🡰 Volver</a>
-        </div>
-        <Footer className='footer2'/> 
+      <div className='filtros'>
+        <a href="/home" className='volver'> 🡰 Volver</a>
+      </div>
+      <div className='move-footer'>
+        <Footer />
+      </div>
     </div>
-)}
+  )
+}
