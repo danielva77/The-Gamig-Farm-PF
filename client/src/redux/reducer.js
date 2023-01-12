@@ -93,6 +93,7 @@ export default function rootReducer(state = initialState, action) {
       }
     
       case POST_PRODUCTS:
+        console.log("reducer post",action.payload)
         return{
           ...state,
         }

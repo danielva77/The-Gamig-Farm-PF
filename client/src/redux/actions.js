@@ -98,9 +98,10 @@ export function getAllProd() {
 }
 
 export function postProducts(payload){
+  console.log("esto llega en payload POST", payload)
   return async function (dispatch){
   const response = await axios.post("http://localhost:3001/products", payload);
-
+  
   return dispatch({
     type: "POST_PRODUCTS",
     payload: response.data,
