@@ -4,9 +4,45 @@ import React, { useState, useEffect } from "react";
 // import { getAllCategories, getAllMarks } from '';
 import { Link } from "react-router-dom"
 import "./Form.css"
+import { Container} from "reactstrap"
+import Dropzone from "react-dropzone"
 
 export const Form = () => {
 
+
+    // Cloudinary ☁
+    const [image, setImage] = useState({array : {}})
+    const [loading, setLoading] = useState("")
+    
+    const handleDrop = (files) =>{
+        const uploaders = files.map((file) => {
+            const formData = new FormData();
+            formData.append("file", file)
+            formData.append("tags", "codeinfuse, medium, gist")
+            formData.append("upload_preset", "gamingFarm")
+            formData.append("api_key", "482539939152741")
+            formData.append("timestamp", (Date.now() / 100) | 0)
+            setLoading("true")
+            return axios.post("https://api.cloudinary.com/v1_1/dfa5dlork/image/upload", formData,{
+                headers: {"X-Requested-With" : "XMLHttpRequest"},
+            })
+            .then((response) =>{
+                const data =response.data
+                
+                
+                var fileURL = data.secure_url
+
+                // URL DE LA IMAGEN
+              
+            })
+        })
+        axios.all(uploaders).then(() => {
+            setLoading("false")
+        })
+    } // CLOUDINARY ↑
+
+
+    // SELECT'S 
     const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }];
     const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' }, { title: 'WebCam' }, { title: 'Auriculares' }, { title: 'Gabinetes' }, { title: 'MousePad' }, { title: 'Gabinete' }, { title: 'Placa Madre' }, { title: 'Tarjeta Grafica' }]
 
@@ -17,18 +53,20 @@ export const Form = () => {
         price: " ",
         detail: '',
         stock: " ",
-        imagen: '',
+        imagen: '' ,
         mark: '',
         category: '',
     })
 
-    //Este estado me habilita a enviar el formulario 
-    const [enviar, setEnviar] = useState(false)
+
 
     // VALIDACION → esta funcion valida los datos ingresados en el formulario y me da el ok para enviar el formulario
     function validate() {
         let errors = {}
 
+        if(!input.imagen){
+            errors.imagen = "debe tener una foto"
+        } else
         if (!input.title) {
             errors.title = 'Debe completar el campo Title';
             return alert(errors.title);
@@ -71,7 +109,7 @@ export const Form = () => {
             price: "",
             detail: '',
             stock: "",
-            imagen: '',
+            imagen: ' ',
             mark: '',
             category: '',
         });
@@ -125,9 +163,8 @@ export const Form = () => {
             window.location.reload()
         }
     }
-
-
-  
+    const [enviar, setEnviar] = useState(false)
+	
 
     return (
         <div className="container padre">
@@ -172,13 +209,45 @@ export const Form = () => {
                     <div id="emailHelp" class="form-text">Responsable de evitar la falta del producto</div>
                 </div>
 
-                   {/* IMAGEN */}
+                 
 
-                   <div class="col-8">
+
+                {/* CLOUDINARY ☁  PART 2 */}
+
+                <div className="col-8">
+                    <Container>
+                        <label for="foto" className="form-label labels" name="foto">Subir Foto</label>
+
+                           
+                            
+                        <Dropzone className="dropzone"
+                        onDrop={handleDrop}
+                        onChange={(e) => setImage(e.target.value)}
+                        value={image}>
+                            
+
+                                {({getRootProps, getInputProps}) => (
+                                    <section>
+                                        <div {...getRootProps({className : "dropzone"})}>
+                                            <input {...getInputProps()}  />
+                                            
+                                            <p class="form-text"><span>📂</span>Coloca tus imagenes aqui o clickea para seleccionar</p>
+                                        </div>
+                                    </section>
+                                )}
+                        </Dropzone>
+                    </Container>
+                </div>
+
+
+                  {/* IMAGEN */}
+
+                   {/* <div class="col-8">
                     <label for="imagenI" class="form-label labels">Imagen</label>
                     <input class="form-control escribir" type="file" id="imagenI" value={input.imagen} onChange={(e) => handleChange(e)} required />
                     <div id="emailHelp" class="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
-                </div>      
+                </div>       */}                        
+
 
                 {/* MARK */}
 

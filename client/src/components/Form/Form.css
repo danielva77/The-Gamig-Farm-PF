@@ -76,3 +76,12 @@ label{
     position: relative;
     left: 90px;
 }
+.dropzone{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border: .1px solid #ff8906 !important;
+   height:45px;
+}
+.dropzone:hover{
+    cursor: pointer;
+}
