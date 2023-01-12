@@ -6,12 +6,15 @@ import "./Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
 import "./Details.css"
+import { filteredbyCategory } from '../../hooks/filterByCategory'
+
 export default function Details(props){
 
 const dispatch = useDispatch();
 
 useEffect(() =>{
   dispatch(getDetail(props.match.params.id))
+  filteredbyCategory(filterItems, myProduct.category)
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [dispatch]);
 
@@ -22,6 +25,10 @@ useEffect(() => {
 },[dispatch])
 
 let myProduct = useSelector((state) => state.detail);
+
+let filterItems = useSelector((state) => state.items);
+
+
 
 return(
     <div >
