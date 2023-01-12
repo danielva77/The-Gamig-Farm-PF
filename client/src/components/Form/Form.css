@@ -50,8 +50,8 @@ label{
 }
 .guardarBoton{
     position: absolute;
-    top: 680px;
-    left: 320px;
+    top: 620px;
+    left: 360px;
     padding: 10px !important;
     font-size: 20px !important;
     font-family: proxima-nova, sans-serif !important;
@@ -60,8 +60,8 @@ label{
 }
 .volverBoton{
     position: absolute;
-    left:  1285px;
-    bottom: -70px;
+    left:  1289px;
+    top: 12px;
     font-family: proxima-nova, sans-serif !important;
     text-shadow: 3px 2px 3px black;
     border-radius: 0px !important;

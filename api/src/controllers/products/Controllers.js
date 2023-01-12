@@ -22,13 +22,13 @@ const getAllProducts = async () => {
 
 const createProducts = async (req, res) => {
   const { title, price, detail, img, stock, category, mark } = req.body
-  try {
-    if (!title || !price || !detail || !img || !stock || !category || !mark) {
-      res.status(404).send("faltan parametros")
-    }
-  } catch (error) {
-    res.status(404).send("aun no hay nada")
-  }
+  // try {
+  //   if (!title || !price || !detail || !img || !stock || !category || !mark) {
+  //     res.status(404).send("faltan parametros")
+  //   }
+  // } catch (error) {
+  //   res.status(404).send("aun no hay nada")
+  // }
 
   try {
     let productCreated = await Product.create({
@@ -63,7 +63,8 @@ const createProducts = async (req, res) => {
       })
     }
 
-    res.status(200).send("Product created succesfully")
+    // res.status(200).send("Product created succesfully")
+    console.log("producto creado");
   } catch (error) {
     res
       .status(400)

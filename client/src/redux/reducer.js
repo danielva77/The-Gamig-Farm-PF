@@ -19,7 +19,11 @@ import {
   SET_FILTER_PRICE,
   SET_NAME_FILTER,
   GET_ALL_MARKS,
-  SET_FILTER_MARKS
+  SET_FILTER_MARKS,
+  
+  //FORMULARIO
+  
+  GET_PRODUCTS
 } from "./actions"
 
 const initialState = {
@@ -53,6 +57,9 @@ const initialState = {
 
   currentItems: [],
   loading: false,
+
+  // FORMULARIO
+  products : []
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -214,8 +221,20 @@ export default function rootReducer(state = initialState, action) {
           item.id === action.productId
             ? { ...item, quantity: item.quantity - 1 }
             : item
-        ),
-      };
+        )
+      }
+
+      // FORMULARIO 
+
+      case "POST_PRODUCTS": 
+      return{
+        ...state
+      }
+      case "GET_PRODUCTS":
+        return{
+          ...state,
+          products: action.payload
+        };
     default:
       return state
   }

@@ -98,6 +98,7 @@ export const Form = () => {
             ...input,
             [e.target.name]: e.target.value
         })
+        console.log(input)
     }
 
     function handleMark(e) {

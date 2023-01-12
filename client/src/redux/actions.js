@@ -1,4 +1,5 @@
 import axios from "axios"
+// import { log } from "console"
 
 export const GET_ALL_PROD = "GET_ALL_PROD"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
@@ -20,6 +21,12 @@ export const SET_NUMBERS_PAGINATED = "SET_NUMBERS_PAGINATED"
 export const RESET_FILTERS = "RESET_FILTERS"
 export const SET_FILTER_PRICE = "SET_FILTER_PRICE"
 export const SET_NAME_FILTER = "SET_NAME_FILTER"
+
+// FORMULARIO
+
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const POST_PRODUCTS = "POST_PRODUCTS"
+
 
 export const setNameFilter = payload => {
   console.log("object")
@@ -238,5 +245,28 @@ export function removeFromCart(id) {
 export function cleanDetail() {
   return {
     type: "CLEAN_DETAIL",
+  }
+}
+
+
+// Trabajando  en el formulario 2.0
+
+export function getProduct(){
+  return async function(dispatch){
+    var info = await axios.get("http://localhost:3001/products",{
+      
+    })
+    return dispatch({
+      type: GET_PRODUCTS,
+      payload: info.data
+    })
+  }
+}
+
+export function postProduct(payload){ //payload es lo que nos llega en el front
+  return async function (dispatch){
+    const response = await axios.post("http://localhost:3001/products", payload)
+    console.log("Producto creaado "+ response);
+    return response;
   }
 }
