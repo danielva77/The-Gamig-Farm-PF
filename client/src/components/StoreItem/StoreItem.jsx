@@ -24,7 +24,7 @@ export function StoreItem({ id, name, price, img }) {
   // }, [cart, id]);
   const handleAddToCart = () => {
     // Obtén la cantidad actual del producto en el carrito
-    const quantity = getItemQuantity(id);
+    // const quantity = getItemQuantity(id);
     // // Agrega el elemento al carrito utilizando el método addToCart del contexto
     // addToCart({ id, name, price, imgUrl, quantity });
 
@@ -46,28 +46,28 @@ export function StoreItem({ id, name, price, img }) {
   return (
     <div
       className="card text-center bg-dark"
-      style={{ height: "400px" }}
+      style={{ height: "100%", width: "100%" }}
       key={id}
     >
       <Link to={`/products/${id}`}>
-      <img
-        src={img}
-        alt="falta la imagen"
-        height="180px"
-        style={{ objectFit: "contain" }}
-        class="card-img-top"
-      />
-      
+        <img
+          src={img}
+          alt="falta la imagen"
+          height="180px"
+          style={{ objectFit: "contain" }}
+          class="card-img-top"
+        />
 
-      <div className="card-body text-light">
-        <h4 className="card-title" style={{ fontSize: "18px" }}>
-          {name}
-        </h4>
-        <p className="card-text text-secondary">${price}</p>
-      </div>
+
+        <div className="card-body text-light">
+          <h4 className="card-title" style={{ fontSize: "18px" }}>
+            {name}
+          </h4>
+          <p className="card-text text-secondary">${price}</p>
+        </div>
       </Link>
       <div class="card-footer">
-        {quantity === 0 ? (
+        {!cart.length ? (
           <div className="d-flex align-items-center">
             <button className="btn-primary" onClick={handleAddToCart}>
               + Add to Cart
@@ -111,7 +111,7 @@ export function StoreItem({ id, name, price, img }) {
               Remove
             </button>
           </div>
-      )}
+        )}
       </div>
     </div>
   );

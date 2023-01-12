@@ -12,7 +12,7 @@ import { useShoppingCart } from '../../context/CartContext/CartContext';
 
 
 export default function Details(props) {
-  const {incrementItemQuantity} = useShoppingCart()
+  const {incrementItemQuantity, quantity} = useShoppingCart()
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -47,7 +47,7 @@ export default function Details(props) {
             <p className='descripcion'>{myProduct[0].detail}</p>
             <p className='precio'>Precio: ${myProduct[0].price}</p>
             <div className='botonDiv'>
-              <button className='botonCarritoDetalle' onClick={handleAddToCart}><a className='suma'>+ </a><img src={cart} className="carrito" /> </button>
+              <button className='botonCarritoDetalle' onClick={handleAddToCart}><a className='suma'>+ {quantity}</a><img src={cart} className="carrito" /> </button>
             </div>
             <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
 

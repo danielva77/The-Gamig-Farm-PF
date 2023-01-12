@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   Table,
@@ -13,6 +13,18 @@ import { CartContext, useShoppingCart } from "../../context/CartContext/CartCont
 import "./Cart.css"
 
 const Cart = () => {
+
+  const [cartItems, setCartItems] = useState(() => {
+    const localStorageCart = localStorage.getItem("cart");
+    return localStorageCart ? JSON.parse(localStorageCart) : [];
+});
+
+useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    return () => localStorage.removeItem("cart");
+}, [cartItems])
+
+
   const {quantity } = useShoppingCart()
   //   const items = useSelector(state => state.cart.items);
   // const items = [];
@@ -20,8 +32,10 @@ const Cart = () => {
   const [show, setShow] = useState(false);
  
 
-  const { cart, addToCart, removeFromCart, getItemQuantity } =
+  const { cart, addToCart, removeFromCart, getItemQuantity, incrementItemQuantity, decrementItemQuantity } =
     useContext(CartContext);
+
+    const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   // const handleRemove = (id) => {
   //   dispatch(removeFromCart(id));
@@ -50,12 +64,14 @@ const Cart = () => {
           {cart.length === 0 ? (
             <p>No hay productos en el carrito</p>
           ) : (
+            <>
             <Table striped bordered hover style={{ color: "white" }}>
               <thead>
                 <tr>
                   <th>Producto</th>
                   <th>Imagen</th>
                   <th>Cantidad</th>
+                  <th>Precio</th>
                   <th>Acción</th>
                 </tr>
               </thead>
@@ -75,7 +91,8 @@ const Cart = () => {
                       />
                     </td>
 
-                    <td>{item.quantity}</td>
+                    <td>{item.quantity}<Button class="btn btn-sm p-0" onClick={() => incrementItemQuantity(item)}>+</Button><Button className="btn-quantity" onClick={() => decrementItemQuantity(item)}>-</Button></td>
+                    <td>{item.price}</td>
                     <td>
                       <OverlayTrigger
                         placement="top"
@@ -100,9 +117,16 @@ const Cart = () => {
                   <td>
                     {quantity}
                   </td>
+                  <td>
+        {totalPrice}
+        </td>
                 </tr>
               </tfoot>
             </Table>
+             <Button variant="success" >
+             Pagar {totalPrice}
+             </Button>
+             </>
           )}
         </Offcanvas.Body>
       </Offcanvas>
