@@ -14,17 +14,6 @@ import "./Cart.css"
 
 const Cart = () => {
 
-  const [cartItems, setCartItems] = useState(() => {
-    const localStorageCart = localStorage.getItem("cart");
-    return localStorageCart ? JSON.parse(localStorageCart) : [];
-});
-
-useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    return () => localStorage.removeItem("cart");
-}, [cartItems])
-
-
   const {quantity } = useShoppingCart()
   //   const items = useSelector(state => state.cart.items);
   // const items = [];
@@ -32,7 +21,7 @@ useEffect(() => {
   const [show, setShow] = useState(false);
  
 
-  const { cart, addToCart, removeFromCart, getItemQuantity, incrementItemQuantity, decrementItemQuantity } =
+  const {cart, addToCart, removeFromCart, getItemQuantity, incrementItemQuantity, decrementItemQuantity } =
     useContext(CartContext);
 
     const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -91,7 +80,7 @@ useEffect(() => {
                       />
                     </td>
 
-                    <td>{item.quantity}<Button class="btn btn-sm p-0" onClick={() => incrementItemQuantity(item)}>+</Button><Button className="btn-quantity" onClick={() => decrementItemQuantity(item)}>-</Button></td>
+                    <td>{item.quantity}<Button class="btn btn-sm p-0" onClick={() => incrementItemQuantity(item)}>+</Button><Button className="btn-quantity" onClick={() => decrementItemQuantity(item.id)}>-</Button></td>
                     <td>{item.price}</td>
                     <td>
                       <OverlayTrigger

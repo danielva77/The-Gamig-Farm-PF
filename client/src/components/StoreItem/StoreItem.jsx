@@ -39,7 +39,7 @@ export function StoreItem({ id, name, price, img }) {
     // addToCart({ id, name, price, imgUrl, quantity });
 
     // incrementItemQuantity({ id, name, price, imgUrl, quantity });
-    decrementItemQuantity(id);
+    removeFromCart(id);
     setQuantity(quantity - 1);
   };
 
