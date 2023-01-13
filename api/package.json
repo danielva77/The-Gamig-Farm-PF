@@ -21,7 +21,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.9.0",
     "pg": "^8.5.1",
+    "readable-stream": "^4.3.0",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {

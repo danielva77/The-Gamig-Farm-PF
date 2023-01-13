@@ -31,10 +31,8 @@ export const Form = () => {
 
     // VALIDACION → esta funcion valida los datos ingresados en el formulario y me da el ok para enviar el formulario
     function validate() {
-        let errors = {}
-
+        
         if (!input.title) {
-            errors.title = 'Debe completar el campo Title';
             return Swal.fire({
                 icon: "error",
                 title: "Error",
@@ -45,47 +43,24 @@ export const Form = () => {
             })
                         
         } else if (input.title.length <= 3) {
-            errors.title = 'El campo Title debe contener al menos 3 caracteres';
             return Swal.fire({
                 icon: "error",
                 title: "Error",
                 html: "El campo <b>Titulo</b> debe contener al menos 3 caracteres",
                 confirmButtonText: "Entiendo",
                 confirmButtonColor: "Red"
-                // footer: "El Titulo es obligatorio"
-            });
-        } else if (!/^[0-9]+$/.test(input.price)) {
-            errors.price = 'El campo Price solo puede contener numeros';
-            return Swal.fire({
-                icon: "error",
-                title: "Error",
-                html: "Debes completar el campo de <b>Precio</b>",
-                confirmButtonText: "Entiendo",
-                confirmButtonColor: "Red"
-                // footer: "El Titulo es obligatorio"
-            });
-        } else if (input.price <= 0) {
-            errors.price = 'El campo Price debe ser mayor a 0';
-            return Swal.fire({
-                icon: "error",
-                title: "Error",
-                html: "El campo <b>Precio</b> debe ser mayor a 0",
-                confirmButtonText: "Entiendo",
-                confirmButtonColor: "Red"
-                // footer: "El Titulo es obligatorio"
+                
             });
         } else if (!input.detail) {
-            errors.detail = 'Debes completar el campo Detail';
             return Swal.fire({
                 icon: "error",
                 title: "Error",
                 html: "Debes completar el campo de <b>Detalles</b>",
                 confirmButtonText: "Entiendo",
                 confirmButtonColor: "Red"
-                // footer: "El Titulo es obligatorio"
+               
             });
         } else if (input.detail.length <= 10) {
-            errors.detail = 'El campo Detail debe contener al menos 10 caracteres';
             return Swal.fire({
                 icon: "error",
                 title: "Error",
@@ -94,8 +69,27 @@ export const Form = () => {
                 confirmButtonColor: "Red"
                 // footer: "El Titulo es obligatorio"
             })
+        } else if (!/^[0-9]+$/.test(input.price)) {
+            return Swal.fire({
+                icon: "error",
+                title: "Error",
+                html: "Debes completar el campo de <b>Precio</b>",
+                confirmButtonText: "Entiendo",
+                confirmButtonColor: "Red"
+                
+            });
+        } else if (input.price <= 0 ) {
+            
+            return Swal.fire({
+                icon: "error",
+                title: "Error",
+                html: "El campo <b>Precio</b> debe ser mayor a 0",
+                confirmButtonText: "Entiendo",
+                confirmButtonColor: "Red"
+                
+            });
         } else if (!/^[0-9]+$/.test(input.stock)) {
-            errors.stock = 'El campo Stock solo puede contener numeros';
+            
             return Swal.fire({
                 icon: "error",
                 title: "Error",
@@ -104,9 +98,8 @@ export const Form = () => {
                 confirmButtonColor: "Red"
                 // footer: "El Titulo es obligatorio"
             });
-        } else if (input.stock <= 0) {
-            errors.stock = 'El campo Stock solo puede ser mayor o igual a 0';
-            return Swal.fire({
+        }   else if (input.stock <= 0) {
+                return Swal.fire({
                 icon: "error",
                 title: "Error",
                 html: "El campo de <b>Stock</b> solo puede ser mayor a 0",
@@ -115,8 +108,7 @@ export const Form = () => {
                 // footer: "El Titulo es obligatorio"
             })
         } else if (!input.mark.length) {
-            errors.mark = 'Debe seleccionar una Mark';
-            return Swal.fire({
+                return Swal.fire({
                 icon: "error",
                 title: "Error",
                 html: "Debes seleccionar una <b>Marca</b>",
@@ -125,7 +117,7 @@ export const Form = () => {
                 // footer: "El Titulo es obligatorio"
             })
         } else if (!input.category.length) {
-            errors.category = 'Debe seleccionar una Category';
+            
             return Swal.fire({
                 icon: "error",
                 title: "Error",
@@ -247,7 +239,7 @@ export const Form = () => {
                 title: "Producto creado con Exito",
                 html: "Puedes encontrar tu producto en Home",
                 icon: "success",
-                timer: 5000,
+                timer: 8000,
                 confirmButtonText: "Okay",
                 confirmButtonColor: "Green"
             }

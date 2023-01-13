@@ -1,5 +1,6 @@
 module.exports= {
     resolve:{
-        fallback:{ "path": require.resolve("path-browserify") }
+        fallback:{ "stream": false , "fs" : false, "path": false},        
     }
+
 }
