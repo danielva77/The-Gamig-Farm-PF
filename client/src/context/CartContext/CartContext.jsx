@@ -14,14 +14,12 @@ export const CartProvider = ({ children }) => {
     const localStorageCart = localStorage.getItem("cart");
     return localStorageCart ? JSON.parse(localStorageCart) : [];
 });
+
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
   
-  useEffect(() => {
-    if(cart.length === 0) localStorage.removeItem("cart")
-  }, [cart])
-  // const [cartItems, setCartItems] = useState(() => {
-  //   const localStorageCart = localStorage.getItem("cart");
-  //   return localStorageCart ? JSON.parse(localStorageCart) : [];
-  // })
+  
 
   const quantity = cart.reduce((total, item) => total + item.quantity, 0);
   
@@ -30,9 +28,8 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item) => setCart([...cart, item]);
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
-    if(cart.length === 0){
       localStorage.removeItem("cart");
-    }
+    
 };
   const getItemQuantity = (id) => {
     const item = cart.find((item) => item.id === id);
@@ -50,6 +47,7 @@ export const CartProvider = ({ children }) => {
     } else {
       // Si el ítem no existe, agrega uno nuevo con cantidad 1 al carrito
       addToCart({ ...item, quantity: 1 });
+      console.log(item)
       localStorage.setItem("cart", JSON.stringify(cart))
     }
   };
@@ -59,17 +57,19 @@ export const CartProvider = ({ children }) => {
     if (item) {
       // Si el ítem existe, disminuye su cantidad
       item.quantity--;
-      // Si la cantidad del ítem llega a cero, elimínalo del carrito
-      if (item.quantity === 0) {
+      // Si la cantidad del ítem llega a cero, pero hay mas de un item en el carrito, elimínalo del carrito
+      if (item.quantity === 0 && cart.length >= 1) {
         removeFromCart(id);
         localStorage.setItem("cart", JSON.stringify(cart))
       } else {
         // Si la cantidad del ítem es mayor a cero, actualiza el estado del carrito
+        // Si es igual a cero y solo hay un item en el carrito, no lo elimina
         setCart([...cart]);
         localStorage.setItem("cart", JSON.stringify(cart))
       }
     }
   };
+
 
   // Proporciona el estado y los métodos del carrito como valor del contexto
   return (

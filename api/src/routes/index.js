@@ -126,11 +126,9 @@ router.get("/products/:id", async (req, res) => {
 mercadopago.configure({access_token: process.env.MERCADOPAGO_KEY})
 
 router.post("/payment",(req, res) => {
-  // const products = req.body
-  // const totalProducts = [];
-  // totalProducts.push(products);
   totalProducts = req.body
   console.log("totalproducts", totalProducts)
+
   let preference = {
     "items": totalProducts.map((product) => {
 
@@ -142,10 +140,12 @@ router.post("/payment",(req, res) => {
       })
     }),
     "back_urls": {
-      "succes": "http://localhost:3001/products",
-      "failure": "",
+      "success": "http://localhost:3000/home",
+      "failure": "http://localhost:3000/home",
       "pending": "",
-    }
+    },
+    // "notification_url": "http://localhost:3000/products/notificacion",
+    "auto_return": "approved",
   };
 
   // totalProducts.map(async p => {
@@ -166,36 +166,5 @@ router.post("/payment",(req, res) => {
 
 }
 )
-
-
-
-// (req, res)=>{
-//   const products = req.body;
-//   let preference = {
-//     items: [{
-//       id: products.body,
-//       title: products.title,
-//       currency_id: "ARS",
-//       picture_url: products.img,
-//       description: products.detail,
-//       category_id: "art",
-//       quantity: products.quantity,
-//       unit_price: products.price,
-//     }],
-//     back_urls: {
-//       succes: "http://localhost:3001/products",
-//       failure: "",
-//       pending: "",
-//     },
-//     auto_return: "approved",
-//     binary_mode: true,
-//   }
-//   mercadopago.preferences.create(preference).then((response) => res.status(200).send({response})).catch((error) => res.status(400).send({error: error.message}))
-// })
-
-// Para el boton:
-// onClick={() => {
-//   axios.post("http://localhost:3001/payment", prod).then((res)=>window.location.href = response.data.response.body.init_point)
-// }}
 
 module.exports = router

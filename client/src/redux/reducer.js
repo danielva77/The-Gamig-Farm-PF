@@ -20,8 +20,13 @@ import {
   SET_NAME_FILTER,
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
-  POST_PRODUCTS
-} from "./actions"
+  POST_PRODUCTS,
+    //FORMULARIO
+  
+    GET_PRODUCTS
+  } from "./actions"
+
+
 
 const initialState = {
   items: [],
@@ -92,11 +97,11 @@ export default function rootReducer(state = initialState, action) {
         categoryFilter: action.payload,
       }
     
-      case POST_PRODUCTS:
-        console.log("reducer post",action.payload)
-        return{
-          ...state,
-        }
+      // case POST_PRODUCTS:
+      //   console.log("reducer post",action.payload)
+      //   return{
+      //     ...state,
+      //   }
 
     case SET_FILTER_MARKS:
       return {
@@ -223,6 +228,17 @@ export default function rootReducer(state = initialState, action) {
             : item
         ),
       };
+        // FORMULARIO 
+
+        case "POST_PRODUCTS": 
+        return{
+          ...state
+        }
+        case "GET_PRODUCTS":
+          return{
+            ...state,
+            products: action.payload
+          };
     default:
       return state
   }
