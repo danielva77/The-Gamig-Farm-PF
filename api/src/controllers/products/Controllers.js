@@ -27,7 +27,7 @@ const createProducts = async (req, res) => {
       res.status(404).send("faltan parametros")
     }
   } catch (error) {
-    res.status(404).send("aun no hay nada")
+    res.status(404).send("aun no hay nada", error)
   }
 
   try {
@@ -50,9 +50,8 @@ const createProducts = async (req, res) => {
         productCreated.addCategory(c[0])
       })
     }
-    // console.log("ESTO total", productCreated)
+    console.log("ESTO llega marca", mark)
     if (mark.length) {
-      // console.log("QUE LLEGA", mark)
       mark.map(async mak => {
         let m = await Mark.findOrCreate({
           where: { title: mak },
@@ -63,13 +62,10 @@ const createProducts = async (req, res) => {
       })
     }
 
-    res.status(200).send("Product created succesfully")
+     res.status(200).send("Product created succesfully")
   } catch (error) {
-    res
-      .status(400)
-      .send(
-        "Error al crear el producto. \nRevisar formato de valores recibidos (tanto category como marks deben ser arrays).\nLos nombres de productos son únicos, no se pueden repetir."
-      )
+    console.log("este es el error", error)
+    res.status(404).send("Error al crear el producto. \nRevisar formato de valores recibidos (tanto category como marks deben ser arrays).\nLos nombres de productos son únicos, no se pueden repetir.")
   }
 }
 

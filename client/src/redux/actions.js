@@ -11,6 +11,7 @@ export const CHANGE_SORT = "CHANGE_SORT"
 export const CHANGE_FILTER = "CHANGE_FILTER"
 export const CHANGE_PAGE = "CHANGE_PAGE"
 export const RESET_SORT = "RESET_SORT"
+export const POST_PRODUCTS = "POST_PRODUCTS"
 
 export const SET_PRICE_RANGE = "SET_PRICE_RANGE"
 export const SET_SORT = "SET_SORT"
@@ -94,6 +95,18 @@ export function getAllProd() {
   //     payload: jsonData,
   //   })
   // }
+}
+
+export function postProducts(payload){
+  console.log("esto llega en payload POST", payload)
+  return async function (dispatch){
+  const response = await axios.post("http://localhost:3001/products", payload);
+  
+  return dispatch({
+    type: "POST_PRODUCTS",
+    payload: response.data,
+  })
+}
 }
 
 export function getAllMarks(){

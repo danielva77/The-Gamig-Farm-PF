@@ -19,7 +19,8 @@ import {
   SET_FILTER_PRICE,
   SET_NAME_FILTER,
   GET_ALL_MARKS,
-  SET_FILTER_MARKS
+  SET_FILTER_MARKS,
+  POST_PRODUCTS
 } from "./actions"
 
 const initialState = {
@@ -30,7 +31,7 @@ const initialState = {
   marksFilter: "",
   nameFilter: "",
   currentPage: 1,
-  itemsPerPage: 2,
+  itemsPerPage: 4,
 
   detail: [],
   filter: {
@@ -90,6 +91,12 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         categoryFilter: action.payload,
       }
+    
+      case POST_PRODUCTS:
+        console.log("reducer post",action.payload)
+        return{
+          ...state,
+        }
 
     case SET_FILTER_MARKS:
       return {

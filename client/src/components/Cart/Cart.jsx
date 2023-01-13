@@ -10,7 +10,8 @@ import {
 import { removeFromCart } from "../../redux/actions";
 import Carrito from "../Assets/cart.png";
 import { CartContext, useShoppingCart } from "../../context/CartContext/CartContext";
-import "./Cart.css"
+import "./Cart.css";
+import axios from "axios"
 
 const Cart = () => {
 
@@ -32,7 +33,7 @@ const Cart = () => {
 
   const handleShow = () => setShow(true);
   const handleHide = () => setShow(false);
-
+  console.log("esto llega en cart", cart)
   return (
     <div className="cart">
       <Button variant="" class="btn btn float-right" onClick={handleShow}>
@@ -112,7 +113,8 @@ const Cart = () => {
                 </tr>
               </tfoot>
             </Table>
-             <Button variant="success" >
+             <Button variant="success"
+            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.open(res.data))}}>
              Pagar {totalPrice}
              </Button>
              </>
