@@ -27,7 +27,7 @@ const createProducts = async (req, res) => {
       res.status(404).send("faltan parametros")
     }
   } catch (error) {
-    res.status(404).send("aun no hay nada", error)
+    res.status(404).send("aun no hay nada")
   }
 
   try {
@@ -62,7 +62,7 @@ const createProducts = async (req, res) => {
       })
     }
 
-     res.status(200).send("Product created succesfully")
+    res.status(200).send("Product created succesfully")
   } catch (error) {
     console.log("este es el error", error)
     res.status(404).send("Error al crear el producto. \nRevisar formato de valores recibidos (tanto category como marks deben ser arrays).\nLos nombres de productos son únicos, no se pueden repetir.")
