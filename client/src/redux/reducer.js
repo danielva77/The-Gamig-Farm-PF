@@ -98,11 +98,11 @@ export default function rootReducer(state = initialState, action) {
         categoryFilter: action.payload,
       }
     
-      case POST_PRODUCTS:
-        console.log("reducer post",action.payload)
-        return{
-          ...state,
-        }
+      // case POST_PRODUCTS:
+      //   console.log("reducer post",action.payload)
+      //   return{
+      //     ...state,
+      //   }
 
     case SET_FILTER_MARKS:
       return {

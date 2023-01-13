@@ -315,8 +315,8 @@ export const Form = () => {
                     <input className="form-control escribir" type="text" id="img" value={input.img} onChange={(e) => handleImagen(e)}  />
                     <div id="emailHelp" className="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
                 </div>      
-
-                {/* MARK */}
+ 
+                {/* MARK */ }
 
                 <div className="div-mark col-5 selection2">
                     <label className="form-label labels ">Marca</label>

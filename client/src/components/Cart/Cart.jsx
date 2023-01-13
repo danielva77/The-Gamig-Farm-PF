@@ -15,9 +15,6 @@ import axios from "axios"
 
 const Cart = () => {
 
-<<<<<<< HEAD
-  // const handleRemove = id => {
-=======
 //   const [cartItems, setCartItems] = useState(() => {
 //     const localStorageCart = localStorage.getItem("cart");
 //     return localStorageCart ? JSON.parse(localStorageCart) : [];
@@ -42,7 +39,6 @@ const Cart = () => {
     const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   // const handleRemove = (id) => {
->>>>>>> cffaf7930586661447545f325da330c2856659f9
   //   dispatch(removeFromCart(id));
   // };
 
@@ -107,11 +103,7 @@ const Cart = () => {
                       >
                         <Button
                           variant="danger"
-<<<<<<< HEAD
-                          // onClick={() => handleRemove(item.id)}
-=======
                           onClick={() => removeFromCart(item.id)}
->>>>>>> cffaf7930586661447545f325da330c2856659f9
                         >
                           x
                         </Button>

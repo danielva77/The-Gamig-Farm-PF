@@ -26,7 +26,6 @@ export const SET_NAME_FILTER = "SET_NAME_FILTER"
 // FORMULARIO
 
 export const GET_PRODUCTS = "GET_PRODUCTS"
-export const POST_PRODUCTS = "POST_PRODUCTS"
 
 
 export const setNameFilter = payload => {
