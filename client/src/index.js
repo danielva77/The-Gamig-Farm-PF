@@ -22,7 +22,9 @@ ReactDOM.render(
       <Auth0Provider
         domain="thegamingfarm.us.auth0.com"
         clientId="cPlOrIF4eQIxbk8cPW4NVxXCsOgHLrBn"
-        redirectUri={window.location.origin}
+        redirectUri={window.location.origin} 
+        useRefreshTokens={true}
+        cacheLocation="localstorage"
       >
         <CartProvider>
         <App />

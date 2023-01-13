@@ -35,7 +35,7 @@ function NavBar() {
       </div>
 
       <SearchBar />
-      <Cart />
+      <Cart className="cart"/>
       <Favoritos />
 
       {isAuthenticated ? (

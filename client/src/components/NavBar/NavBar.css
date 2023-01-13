@@ -33,3 +33,9 @@
 .link:hover {
   color: #ff8906;
 }
+
+.cart{
+  position: absolute;
+  right: 17%;
+  top: 1%;
+}
