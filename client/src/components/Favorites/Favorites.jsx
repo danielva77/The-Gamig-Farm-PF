@@ -1,75 +1,40 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Table, Button, OverlayTrigger, Tooltip, Offcanvas } from 'react-bootstrap';
-import { removeFromCart } from '../../redux/actions';
-import Fav from "../Assets/favorito.png"
-import "./Favorites.css"
-
+import React from "react";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import { removeFromFav } from "../../redux/actions";
+import Fav from "../Assets/favorito.png";
+import { Link } from "react-router-dom";
+import { Offcanvas } from "react-bootstrap";
 
 const Favoritos = () => {
-//   const items = useSelector(state => state.cart.items);
-  const items = []
-  const dispatch = useDispatch();
+  const favItems = useSelector((state) => state.favItems);
   const [show, setShow] = useState(false);
 
-  const handleRemove = id => {
-    dispatch(removeFromCart(id));
+  const handleRemoveFromFav = () => {
+    removeFromFav();
   };
 
-  const handleShow = () => setShow(true);
-  const handleHide = () => setShow(false);
-
   return (
-    <div className="Fav">
-      <Button variant=""  class="btn btn float-left"  onClick={handleShow}> <img src={Fav} alt="imagen" class="img-fluid2"/></Button>
-      <Offcanvas show={show} onHide={handleHide} placement="end">
-        <Offcanvas.Header>
-          <Offcanvas.Title>Your Favourties</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          {items.length === 0 ? (
-            <p>No favourites yet</p>
-          ) : (
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Quantity</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map(item => (
-                  <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td>{item.quantity}</td>
-                    <td>
-                     
-                    <OverlayTrigger
-                        placement="top"
-                        overlay={
-                          <Tooltip>
-                            Delete {item.name} from Favourites
-                          </Tooltip>
-                        }
-                      >
-                        <Button
-                          variant="danger"
-                          onClick={() => handleRemove(item.id)}
-                        >
-                          x
-                        </Button>
-                      </OverlayTrigger>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              
-            </Table>
-          )}
-        </Offcanvas.Body>
+    <>
+      <button className="btn btn float-left" onClick={() => setShow(true)}>
+        <img src={Fav} alt="imagen" class="img-fluid2" />
+      </button>
+      <Offcanvas show={show} onHide={() => setShow(false)}>
+        <h3>Tus favoritos</h3>
+        <ul>
+          {favItems.map((item) => (
+            <li key={item.id}>
+              <img className="favoritos-img" src={item.img} alt={item.name} />
+              <h4>{item.name}</h4>
+              <p>${item.price}</p>
+              <button onClick={() => handleRemoveFromFav(item.id)}>
+                Remove from favorites
+              </button>
+            </li>
+          ))}
+        </ul>
       </Offcanvas>
-    </div>
+    </>
   );
 };
 

@@ -1,17 +1,19 @@
-import React from "react"
-import { StoreItem } from "../StoreItem/StoreItem"
+import React from "react";
+import { StoreItem } from "../StoreItem/StoreItem";
 import { useState, useEffect } from "react";
 // import data from "../../data/items.json";
 import { useDispatch, useSelector } from "react-redux";
-import { setNumbersPaginated } from "../../redux/actions";
+import { changePage, setNumbersPaginated } from "../../redux/actions";
 import "./Storeee.css";
 import { Link } from "react-router-dom";
 import { filterByName } from "../../hooks/filterByName";
 import { filteredbyCategory } from "../../hooks/filterByCategory";
+import { filteredbyMarks } from "../../hooks/filterByMarks";
 import { sortByPrice } from "../../hooks/sortByPrice";
 import { paginateItems } from "../../hooks/paginateItems";
 import { getNumberButtons } from "../../hooks/getNumberButtons";
 import Footer from "../Footer/Footer";
+
 
 
 function StoreItems({ currentVideogames }) {
@@ -27,16 +29,44 @@ function StoreItems({ currentVideogames }) {
   // variables globales para filtrado y ordenamiento
   const nameFilter = useSelector(state => state.nameFilter)
   const categoryFilter = useSelector(state => state.categoryFilter)
+  const markFilter = useSelector(state => state.marksFilter)
   const sortBy = useSelector(state => state.sortBy);
 
+  // funcion para volver a la pagina inicial (se la aplicará luego de cada filtrado u ordenado)
+  const resetCurrentPage = () => dispatch(changePage(1))
+
+  // variable auxiliar para filtrar, ordenar y paginar los items
+  let filteredAndSorted = items;
+
   // Filtrado por categoria
-  let filteredAndSorted = categoryFilter ? filteredbyCategory(items, categoryFilter) : items
+  filteredAndSorted = categoryFilter
+    ?
+    filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
+    :
+    filteredAndSorted
+  console.log("esto filtra categoria", filteredAndSorted)
+
+  // Filtrado por marca
+  filteredAndSorted = markFilter
+    ?
+    filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
+    :
+    filteredAndSorted
+  console.log("esto filtra marca", filteredAndSorted)
 
   // Filtrado por nombre
-  filteredAndSorted = nameFilter ? filterByName(filteredAndSorted, nameFilter) : filteredAndSorted
+  filteredAndSorted = nameFilter
+    ?
+    filterByName(filteredAndSorted, nameFilter, resetCurrentPage)
+    :
+    filteredAndSorted
 
   // Ordenamiento
-  filteredAndSorted = sortBy ? sortByPrice(filteredAndSorted, sortBy) : filteredAndSorted
+  filteredAndSorted = sortBy
+    ?
+    sortByPrice(filteredAndSorted, sortBy, resetCurrentPage)
+    :
+    filteredAndSorted
 
   // Paginate items
   let currentItems = paginateItems(filteredAndSorted, currentPage, itemsPerPage)
@@ -52,9 +82,11 @@ function StoreItems({ currentVideogames }) {
           {currentItems.length
             ?
             currentItems.map((card) => {
-              { console.log(card) }
+              // { console.log(card) }
               return (
-                <Link to={`/products/${card.id}`}>
+                <>
+                  <Link to={`/products/${card.id}`}>
+                  </Link>
                   <div className="modelo">
                     <StoreItem
                       id={card.id}
@@ -63,7 +95,7 @@ function StoreItems({ currentVideogames }) {
                       price={card.price}
                     />
                   </div>
-                </Link>
+                </>
               )
             })
             :

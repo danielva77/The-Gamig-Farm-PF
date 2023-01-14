@@ -188,3 +188,15 @@ export function cleanDetail() {
     type: "CLEAN_DETAIL",
   }
 }
+
+//Para Favoritos
+
+export const addToFavorites = item => ({
+  type: 'ADD_TO_FAVORITES',
+  item,
+});
+
+export const removeFromFav = id => ({
+  type: 'REMOVE_FROM_FAVORITES',
+  
+});

@@ -18,10 +18,13 @@ import {
   RESET_FILTERS,
   SET_FILTER_PRICE,
   SET_NAME_FILTER,
+  ADD_TO_FAV,
+  REMOVE_FROM_FAV
 } from "./actions"
 
 const initialState = {
   items: [],
+  favItems: [],
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
@@ -154,9 +157,23 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         detail: [],
       }
+      case 'ADD_TO_FAVORITES':
+        return {
+          ...state,
+          favItems: [...state.favItems, action.item]
+        };
+            case 'REMOVE_FROM_FAVORITES':
+        return {
+          ...state,
+          favItems: state.favItems.filter(item => item.id !== action.id)
+        };
+
+        
     default:
       return state
   }
+ 
+
 }
 
 //Reducers Search Bar
