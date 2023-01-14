@@ -1,20 +1,26 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState,  } from "react";
 import "./StoreItem.css";
 import { CartContext } from "../../../src/";
 import { useContext } from "react";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {addToFavorites} from "../../redux/actions";
 
-export function StoreItem({ id, name, price, img }) {
+export function StoreItem({ id, name, price, img, stock }) {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(0);
   // const quantity = getItemQuantity(id);
-  const handleAddToFavorites = () => {
+  const favItems = useSelector(state => state.favItems);
+
+const handleAddToFavorites = () => {
+    if(favItems.find(item => item.id === id)) {
+        console.log("Item already in favorites");
+        return;
+    }
     dispatch(addToFavorites({ id, name, price, img }));
-  }
+}
 
   const {
     cart,
@@ -34,7 +40,7 @@ export function StoreItem({ id, name, price, img }) {
     // // Agrega el elemento al carrito utilizando el método addToCart del contexto
     // addToCart({ id, name, price, imgUrl, quantity });
 
-    incrementItemQuantity({ id, name, price, img, quantity });
+    incrementItemQuantity({ id, name, price, img, quantity, stock });
     setQuantity(quantity + 1);
   };
 

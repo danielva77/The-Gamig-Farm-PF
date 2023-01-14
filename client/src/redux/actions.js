@@ -5,6 +5,7 @@ export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
 export const GET_DETAIL = "GET_DETAIL"
 export const CLEAN_DETAIL = "CLEAN_DETAIL"
 export const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES"
+export const GET_ALL_MARKS = "GET_ALL_MARKS"
 export const RESET_FILTER = "RESET_FILTER"
 export const CHANGE_SORT = "CHANGE_SORT"
 export const CHANGE_FILTER = "CHANGE_FILTER"
@@ -14,10 +15,16 @@ export const RESET_SORT = "RESET_SORT"
 export const SET_PRICE_RANGE = "SET_PRICE_RANGE"
 export const SET_SORT = "SET_SORT"
 export const SET_FILTER_CATEGORY = "SET_FILTER_CATEGORY"
+export const SET_FILTER_MARKS = "SET_FILTER_MARKS"
 export const SET_NUMBERS_PAGINATED = "SET_NUMBERS_PAGINATED"
 export const RESET_FILTERS = "RESET_FILTERS"
 export const SET_FILTER_PRICE = "SET_FILTER_PRICE"
 export const SET_NAME_FILTER = "SET_NAME_FILTER"
+
+// FORMULARIO
+
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const POST_PRODUCTS = "POST_PRODUCTS"
 
 export const setNameFilter = payload => {
   console.log("object")
@@ -52,11 +59,19 @@ export const setSort = payload => {
 }
 
 export const setFilterCategory = payload => {
+  console.log("payload", payload)
   return {
     type: SET_FILTER_CATEGORY,
     payload,
   }
 }
+export const setFilterMarks = payload => {
+  return {
+    type: SET_FILTER_MARKS,
+    payload,
+  }
+}
+
 
 export const setNumbersPaginated = payload => {
   return {
@@ -86,13 +101,61 @@ export function getAllProd() {
   // }
 }
 
+export function postProducts(payload){
+  console.log("esto llega en payload POST", payload)
+  return async function (dispatch){
+  const response = await axios.post("http://localhost:3001/products", payload);
+  
+  return dispatch({
+    type: "POST_PRODUCTS",
+    payload: response.data,
+  })
+}
+}
+
+export function getAllMarks(){
+  return async function (dispatch){
+    try {
+      const req = await axios.get("http://localhost:3001/mark")
+
+      // const categories = req.data
+      const unicos = req.data
+      const marks = [];
+
+      for(var i = 0; i < unicos.length; i++) {
+ 
+        const elemento = unicos[i];
+       
+        if (!marks.includes(unicos[i])) {
+          marks.push(elemento);
+        }
+      }
+
+      dispatch({ type: GET_ALL_MARKS, payload: marks })
+    } catch (error) {
+      console.log("error en getAllMarks", error)
+    }
+  }
+}
+
 export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
       const req = await axios.get("http://localhost:3001/category")
 
-      const categories = req.data
+      // const categories = req.data
+      const unicos = req.data
+      const categories = [];
+
+      for(var i = 0; i < unicos.length; i++) {
+ 
+        const elemento = unicos[i];
+       
+        if (!categories.includes(unicos[i])) {
+          categories.push(elemento);
+        }
+      }
 
       dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
 
@@ -101,7 +164,7 @@ export function getAllCategories() {
       //   dispatch({ type: GET_ALL_CATEGORIES, payload: categories })
     } catch (error) {
       // console.log(error.response.data)
-      console.log("error en getAllCategories")
+      console.log("error en getAllCategories", error)
     }
   }
 }
@@ -175,6 +238,12 @@ export const getDetail = id => {
 }
 
 //Actions para el carrito
+export function addToCart(payload) {
+  return {
+    type: "ADD_TO_CART",
+    payload,
+  };
+}
 
 export function removeFromCart(id) {
   return {
@@ -196,7 +265,32 @@ export const addToFavorites = item => ({
   item,
 });
 
-export const removeFromFav = id => ({
-  type: 'REMOVE_FROM_FAVORITES',
-  
-});
+export const removeFromFav = (id) => {
+  return {
+    type: 'REMOVE_FROM_FAVORITES',
+    payload: {
+      id: id
+    }
+  }
+};
+// Trabajando  en el formulario 2.0
+
+export function getProduct(){
+  return async function(dispatch){
+    var info = await axios.get("http://localhost:3001/products",{
+      
+    })
+    return dispatch({
+      type: GET_PRODUCTS,
+      payload: info.data
+    })
+  }
+}
+
+export function postProduct(payload){ //payload es lo que nos llega en el front
+  return async function (dispatch){
+    const response = await axios.post("http://localhost:3001/products", payload)
+    console.log("Producto creaado "+ response);
+    return response;
+  }
+}

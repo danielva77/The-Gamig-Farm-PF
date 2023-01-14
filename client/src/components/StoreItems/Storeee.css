@@ -48,12 +48,11 @@
   align-items: center;
   justify-content: center;
 }
-
 .productosT {
-  /* background-color: red; */
-  /* color: black;
-  position: absolute; */
-  /* bottom: 700px; */
+  /* background-color: red;
+  color: black;
+  bottom: 700px; */
+  position: absolute;
 }
 h1 {
   color: green;

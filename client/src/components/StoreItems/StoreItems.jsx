@@ -93,6 +93,7 @@ function StoreItems({ currentVideogames }) {
                       name={card.title}
                       img={card.img}
                       price={card.price}
+                      stock={card.stock}
                     />
                   </div>
                 </>
