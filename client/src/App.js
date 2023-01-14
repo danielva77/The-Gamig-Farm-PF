@@ -13,6 +13,7 @@ import Form from "./components/Form/Form";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Contact from "./components/Contacto/Contact";
+import Confirmation from "./components/Confirmation/Confirmation";
 
 function App() {
   // const { isAuthenticated } = useAuth0();
@@ -35,6 +36,7 @@ function App() {
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
+        <Route paht="/confirmation/approve" component={Confirmation} />
 
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>

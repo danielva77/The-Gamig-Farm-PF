@@ -14,7 +14,6 @@ export const CartProvider = ({ children }) => {
     const localStorageCart = localStorage.getItem("cart");
     return localStorageCart ? JSON.parse(localStorageCart) : [];
 });
-
 useEffect(() => {
   localStorage.setItem("cart", JSON.stringify(cart));
 }, [cart]);
@@ -26,11 +25,20 @@ useEffect(() => {
 
   // Métodos para manipular el carrito
   const addToCart = (item) => setCart([...cart, item]);
+  
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
       localStorage.removeItem("cart");
     
 };
+
+//vaciar el carrito
+const clearAllCart  = () => {
+  setCart([]);
+  localStorage.clear()
+};
+
+
   const getItemQuantity = (id) => {
     const item = cart.find((item) => item.id === id);
     return item ? item.quantity : 0;
@@ -77,6 +85,7 @@ useEffect(() => {
       value={{
         cart,
         quantity,
+        clearAllCart,
         addToCart,
         removeFromCart,
         getItemQuantity,

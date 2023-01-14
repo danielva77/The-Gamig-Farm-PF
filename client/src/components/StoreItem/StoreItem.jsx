@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
 
-export function StoreItem({ id, name, price, img }) {
+export function StoreItem({ id, name, price, img, stock }) {
   const [quantity, setQuantity] = useState(0);
   // const quantity = getItemQuantity(id);
 
@@ -28,7 +28,7 @@ export function StoreItem({ id, name, price, img }) {
     // // Agrega el elemento al carrito utilizando el método addToCart del contexto
     // addToCart({ id, name, price, imgUrl, quantity });
 
-    incrementItemQuantity({ id, name, price, img, quantity });
+    incrementItemQuantity({ id, name, price, img, quantity, stock });
     setQuantity(quantity + 1);
   };
 

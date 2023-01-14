@@ -95,9 +95,25 @@ const getMarks = async (req, res) => {
   }
 }
 
+const modifyProducts = async (req, res, next) => {
+  const id = req.params.id;
+  const product = req.body;
+  try {
+    await Product.update(product, {
+      where: {
+        id: id,
+      },
+    });
+    return res.json("Producto modificado");
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   getAllProducts,
   createProducts,
   getCategories,
-  getMarks
+  getMarks,
+  modifyProducts
 }

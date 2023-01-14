@@ -9,6 +9,7 @@ const {
   createProducts,
   getCategories,
   getMarks,
+  modifyProducts,
 } = require("../controllers/products/Controllers")
 
 const router = Router()
@@ -140,7 +141,7 @@ router.post("/payment",(req, res) => {
       })
     }),
     "back_urls": {
-      "success": "http://localhost:3000/home",
+      "success": "http://localhost:3000/confirmation/approve",
       "failure": "http://localhost:3000/home",
       "pending": "",
     },
@@ -166,5 +167,7 @@ router.post("/payment",(req, res) => {
 
 }
 )
+
+router.put("/products/:id", modifyProducts)
 
 module.exports = router

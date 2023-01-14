@@ -15,7 +15,7 @@ import axios from "axios"
 
 const Cart = () => {
 
-  const {quantity } = useShoppingCart()
+  const { quantity } = useShoppingCart()
   //   const items = useSelector(state => state.cart.items);
   // const items = [];
   // const dispatch = useDispatch();
@@ -114,7 +114,7 @@ const Cart = () => {
               </tfoot>
             </Table>
              <Button variant="success"
-            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.open(res.data))}}>
+            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.location.href =res.data)}}>
              Pagar {totalPrice}
              </Button>
              </>
