@@ -35,6 +35,7 @@ function App() {
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
+        
 
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>

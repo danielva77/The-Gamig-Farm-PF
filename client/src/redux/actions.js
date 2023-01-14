@@ -263,7 +263,7 @@ export function getProduct(){
   }
 }
 
-export function postProduct(payload){ //payload es lo que nos llega en el front
+export function   postProduct(payload){ //payload es lo que nos llega en el front
   return async function (dispatch){
     const response = await axios.post("http://localhost:3001/products", payload)
     console.log("Producto creaado "+ response);

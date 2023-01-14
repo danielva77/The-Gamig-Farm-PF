@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 
 export const Form = () => {
 
-    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }];
+    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }, { title: "HyperX" }];
     const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' }, { title: 'WebCam' }, { title: 'Auriculares' }, { title: 'Gabinetes' }, { title: 'MousePad' }, { title: 'Gabinete' }, { title: 'Placa Madre' }, { title: 'Tarjeta Grafica' }]
 
     // Guardo la data para enviar a la db en un estado local
@@ -147,20 +147,20 @@ export const Form = () => {
     }
 
     // Post 
-    function newProduct(data) {
+    // function newProduct(data) {
         
-        console.log("esto es la data", data);
-        return axios.post('http://localhost:3001/products', data)
+    //     console.log("esto es la data", data);
+    //     return axios.post('http://localhost:3001/products', data)
         
-            .then((data) => {
-                alert(data)
-                console.log(data);
-            })
-            .catch(e => {
-                console.log(e)
-                alert('error al crear el producto')
-            })
-    }
+    //         .then((data) => {
+    //             alert(data)
+    //             console.log(data);
+    //         })
+    //         .catch(e => {
+    //             console.log(e)
+    //             alert('error al crear el producto')
+    //         })
+    // }
 
     // Handles
     function handleChange(e) {
@@ -242,16 +242,9 @@ export const Form = () => {
                 timer: 8000,
                 confirmButtonText: "Okay",
                 confirmButtonColor: "Green"
-            }
-           
-          
-                
-            )
-            history.push("/home")
-            // Swal.fire(
-            //     "Perfecto", "Puedes encontrar el producto en home", "success"
-            // )
-            // window.location.reload()
+            })
+    history.push("/home")
+            
             
         }
     }
@@ -259,7 +252,7 @@ export const Form = () => {
     
     return (
         <div className="container padre">
-            {/* <h1 className="as"> as</h1> */}
+            
             <form className="formProduct row g-5 mt-2"  onSubmit={e => handleSubmit(e)}>
                 <h3 className="h3T">📦 Cargar el Producto 📦</h3>
 
@@ -331,16 +324,10 @@ export const Form = () => {
                 
             {/* BOTONES ↓ */}
               
-                <button type="submit" className="btn-enviar btn btn-success col-6 guardarBoton" >Guardar</button>     
+                <button type="submit" className="btn btn-success col-6 guardarBoton" >Guardar</button>     
                 <Link to="/Home"><button className="btn btn-danger volverBoton">Volver al Home</button></Link>
             
-            </form>
-
-
-
-
-            
-
+            </form>    
         </div>
 
     )
