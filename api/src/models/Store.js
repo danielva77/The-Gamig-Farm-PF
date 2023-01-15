@@ -10,7 +10,11 @@ module.exports = (sequelize) => {
           },
           //fecha de compra
         date: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        detail: {
+            type: DataTypes.TEXT,
             allowNull: false
         },
         //total de compra
@@ -18,10 +22,15 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        pay:{
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         //estado de compra
         state: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        
     })
 }

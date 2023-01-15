@@ -43,6 +43,7 @@ function NavBar() {
 
           <Profile />
           <LogoutButton />
+          <Link to='/myProfile'><button>Ir a mi perfil</button></Link>
         </>
       ) : (
         <LoginButton />

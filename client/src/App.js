@@ -13,6 +13,8 @@ import Form from "./components/Form/Form"
 import Footer from "./components/Footer/Footer"
 import Contact from "./components/Contact/Contact"
 import About from "./components/About/About"
+import LandingPageAd from "./components/Admin/LandingPageAd"
+import UserProfile from "./components/PanelProfile/UserProfile/UserProfile"
 
 function App() {
   // const { isAuthenticated } = useAuth0();
@@ -35,7 +37,7 @@ function App() {
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
-
+        <Route exact path="/myProfile" component={UserProfile} />
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>
       {/* <Footer className="amdr" /> */}

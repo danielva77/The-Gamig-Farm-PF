@@ -2,11 +2,11 @@ require("dotenv").config()
 const { Sequelize } = require("sequelize")
 const fs = require("fs")
 const path = require("path")
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT, DB_DEPLOY } =
+const { DB_USER, DB_PASSWORD, DB_HOST } =
   process.env
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/TheGamerFarm`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/gfarm`,
   {
     logging: false,
     native: false,
@@ -62,10 +62,10 @@ Product.belongsToMany(Store, { through: "Store_Product" });
 
 Product.hasMany(Review);
 Review.belongsTo(Product);
-
+//
 Mark.hasMany(Product)
-Product.hasMany(Mark)
-
+Product.belongsTo(Mark)
+//
 User.hasMany(Store)
 Store.belongsTo(User)
 

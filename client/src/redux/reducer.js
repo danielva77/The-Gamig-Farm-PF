@@ -1,6 +1,7 @@
 //Reducers Search Bar
 
 import {
+  GET_USER_ID,
   GET_ALL_PROD,
   SEARCH_BY_NAME,
   GET_DETAIL,
@@ -21,6 +22,9 @@ import {
 } from "./actions"
 
 const initialState = {
+  //
+  userID: {},
+  //
   items: [],
   sortBy: "",
   numbersPaginated: [],
@@ -53,6 +57,13 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    //
+    case GET_USER_ID:
+            return {
+                ...state,
+                userID: action.payload
+            };
+            //
     case SET_NAME_FILTER:
       return {
         ...state,

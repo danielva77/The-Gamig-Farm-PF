@@ -1,5 +1,7 @@
 import axios from "axios"
-
+//
+export const GET_USER_ID = "GET_USER_ID"
+//
 export const GET_ALL_PROD = "GET_ALL_PROD"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
 export const GET_DETAIL = "GET_DETAIL"
@@ -186,5 +188,18 @@ export function removeFromCart(id) {
 export function cleanDetail() {
   return {
     type: "CLEAN_DETAIL",
+  }
+}
+
+// trae user por id mas compras
+export function getUser (id) {
+  return function (dispatch) {
+      return axios.get(`http://localhost:3001/user/${id}`)
+      .then(res => {
+          dispatch({ type: GET_USER_ID, payload: res.data })
+      })
+      .catch(e => {
+          console.log(e)
+      })
   }
 }
