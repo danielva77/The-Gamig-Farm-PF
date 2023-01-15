@@ -3,6 +3,7 @@ import { Button, Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { getAllProd } from "../../redux/actions";
+import { formatCurrency } from "../../utilities/formatCurrency";
 
 export function CartItem({ id, quantity }) {
     const dispatch = useDispatch()
@@ -36,7 +37,7 @@ export function CartItem({ id, quantity }) {
                     )}
                 </div>
                 <div className="text-muter" style={{ fontSize: ".75rem" }}>
-                    ${item.price}
+                    {formatCurrency(item.price)}
                 </div>
             </div>
             <div className="d-flex align-items-center me-auto" style={{ gap: ".5rem" }}>
@@ -61,7 +62,7 @@ export function CartItem({ id, quantity }) {
                     +
                 </button>
             </div>
-            <div>${item.price * quantity}</div>
+            <div>{formatCurrency(item.price * quantity)}</div>
             <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item.id)}>x</Button>
         </Stack>
     );
