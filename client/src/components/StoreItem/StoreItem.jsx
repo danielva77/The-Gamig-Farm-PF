@@ -1,47 +1,20 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./StoreItem.css";
-import { CartContext } from "../../context/CartContext/CartContext";
-import { useContext } from "react";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
 
 export function StoreItem({ id, name, price, img }) {
-  const [quantity, setQuantity] = useState(0);
-  // const quantity = getItemQuantity(id);
 
   const {
     cart,
-    addToCart,
     getItemQuantity,
     removeFromCart,
     incrementItemQuantity,
     decrementItemQuantity,
   } = useShoppingCart();
-  // const { getItemQuantity } = useShoppingCart();
-  // useEffect(() => {
-  //   setQuantity(getItemQuantity(id));
-  // }, [cart, id]);
-  const handleAddToCart = () => {
-    // Obtén la cantidad actual del producto en el carrito
-    // const quantity = getItemQuantity(id);
-    // // Agrega el elemento al carrito utilizando el método addToCart del contexto
-    // addToCart({ id, name, price, imgUrl, quantity });
 
-    incrementItemQuantity({ id, name, price, img, quantity });
-    setQuantity(quantity + 1);
-  };
-
-  const handleRemoveFromCart = () => {
-    // Obtén la cantidad actual del producto en el carrito
-    const quantity = getItemQuantity(id);
-    // // Agrega el elemento al carrito utilizando el método addToCart del contexto
-    // addToCart({ id, name, price, imgUrl, quantity });
-
-    // incrementItemQuantity({ id, name, price, imgUrl, quantity });
-    removeFromCart(id);
-    setQuantity(quantity - 1);
-  };
+  const quantity = getItemQuantity(id)
 
   return (
     <div
@@ -69,7 +42,7 @@ export function StoreItem({ id, name, price, img }) {
       <div class="card-footer">
         {!cart.length ? (
           <div className="d-flex align-items-center">
-            <button className="btn-primary" onClick={handleAddToCart}>
+            <button className="btn-primary" onClick={() => incrementItemQuantity(id)}>
               + Add to Cart
             </button>
           </div>
@@ -84,7 +57,7 @@ export function StoreItem({ id, name, price, img }) {
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button
                 className="btn btn-outline-secondary rounded-0"
-                onClick={handleRemoveFromCart}
+                onClick={() => decrementItemQuantity}
               >
                 -
               </button>
@@ -98,7 +71,7 @@ export function StoreItem({ id, name, price, img }) {
               </div>
               <button
                 className="btn btn-outline-secondary rounded-0"
-                onClick={handleAddToCart}
+                onClick={() => incrementItemQuantity(id)}
               >
                 +
               </button>

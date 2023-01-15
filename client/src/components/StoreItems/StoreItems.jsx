@@ -81,18 +81,17 @@ function StoreItems({ currentVideogames }) {
         <div className="modelo3">
           {currentItems.length
             ?
-            currentItems.map((card) => {
-              // { console.log(card) }
+            currentItems.map((item) => {
               return (
                 <>
-                  <Link to={`/products/${card.id}`}>
+                  <Link to={`/products/${item.id}`}>
                   </Link>
                   <div className="modelo">
                     <StoreItem
-                      id={card.id}
-                      name={card.title}
-                      img={card.img}
-                      price={card.price}
+                      id={item.id}
+                      name={item.title}
+                      img={item.img}
+                      price={item.price}
                     />
                   </div>
                 </>
