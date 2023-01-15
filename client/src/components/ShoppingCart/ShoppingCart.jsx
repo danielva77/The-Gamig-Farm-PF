@@ -12,6 +12,7 @@ import {
 import axios from "axios"
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { CartItem } from "../CartItem/CartItem";
+import { formatCurrency } from "../../utilities/formatCurrency";
 
 
 export function ShoppingCart({ isOpen }) {
@@ -19,10 +20,10 @@ export function ShoppingCart({ isOpen }) {
 
     const { closeCart, cart } = useShoppingCart()
 
-    const precioTotal = cart.reduce((total, cartItem) => {
+    const precioTotal = formatCurrency(cart.reduce((total, cartItem) => {
         const item = storeItems.find((i) => i.id === cartItem.id);
         return total + (item?.price || 0) * cartItem.quantity
-    }, 0)
+    }, 0))
 
     return (
         <div className="cart">
