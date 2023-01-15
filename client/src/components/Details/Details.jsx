@@ -12,7 +12,7 @@ import { useShoppingCart } from '../../context/CartContext/CartContext';
 
 
 export default function Details(props) {
-  const {incrementItemQuantity, quantity} = useShoppingCart()
+  const {addItem, quantity} = useShoppingCart()
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -22,7 +22,7 @@ export default function Details(props) {
         price: myProduct[0].price,
         img: myProduct[0].img
     }
-    incrementItemQuantity(item);
+    addItem(item);
 };
 
   useEffect(() => {

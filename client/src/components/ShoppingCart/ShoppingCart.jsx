@@ -8,14 +8,16 @@ import {
     Offcanvas,
     Stack,
 } from "react-bootstrap";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios"
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { CartItem } from "../CartItem/CartItem";
 import { formatCurrency } from "../../utilities/formatCurrency";
+import Swal from "sweetalert2";
 
 
 export function ShoppingCart({ isOpen }) {
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
     const storeItems = useSelector(state => state.items)
 
     const { closeCart, cart } = useShoppingCart()
@@ -24,6 +26,25 @@ export function ShoppingCart({ isOpen }) {
         const item = storeItems.find((i) => i.id === cartItem.id);
         return total + (item?.price || 0) * cartItem.quantity
     }, 0))
+
+    const handlePayment = async () => {
+        if (isAuthenticated) {
+          try {
+            const response = await axios.post("http://localhost:3001/payment", cart);
+            window.open(response.data);
+          } catch (error) {
+            console.log(error);
+          }
+        } else {
+          Swal.fire({
+            title: "Inicie sesión primero",
+            text: "Debe iniciar sesión antes de continuar",
+            icon: "warning",
+            confirmButtonText: "OK"
+          });
+          loginWithRedirect({});
+        }
+      };
 
     return (
         <div className="cart">
@@ -42,20 +63,18 @@ export function ShoppingCart({ isOpen }) {
                         <p>No hay productos en el carrito</p>
                     ) : (
                         <>
-                            <Stack gap={3}>
-                                {cart?.map(item => (
-                                    <CartItem key={item.id} {...item} />
-                                ))}
-                                <div className="ms-auto fw-bold fs-5">
-                                    Total:{" "}
-                                    {precioTotal}
-                                </div>
-                            </Stack>
-                            <Button variant="success"
-                                onClick={() => { axios.post("http://localhost:3001/payment", cart).then((res) => window.open(res.data)) }}>
-                                Pagar {precioTotal}
-                            </Button>
-                        </>
+                        <Stack gap={3}>
+                          {cart?.map(item => (
+                            <CartItem key={item.id} {...item} />
+                          ))}
+                          <div className="ms-auto fw-bold fs-5">
+                            Total: {precioTotal}
+                          </div>
+                        </Stack>
+                        <Button variant="success" onClick={handlePayment}>
+                          Pagar {precioTotal}
+                        </Button>
+                      </>
                     )}
                 </Offcanvas.Body>
             </Offcanvas>

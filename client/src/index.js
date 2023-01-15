@@ -22,7 +22,7 @@ ReactDOM.render(
       <Auth0Provider
         domain="thegamingfarm.us.auth0.com"
         clientId="cPlOrIF4eQIxbk8cPW4NVxXCsOgHLrBn"
-        redirectUri={window.location.origin}
+        redirectUri={window.location.origin} 
         useRefreshTokens={true}
         cacheLocation="localstorage"
       >
@@ -39,4 +39,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals();

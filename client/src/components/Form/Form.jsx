@@ -11,8 +11,8 @@ import Swal from "sweetalert2";
 
 export const Form = () => {
 
-    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }];
-    const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' }, { title: 'WebCam' }, { title: 'Auriculares' }, { title: 'Gabinetes' }, { title: 'MousePad' }, { title: 'Gabinete' }, { title: 'Placa Madre' }, { title: 'Tarjeta Grafica' }]
+    const marks = [{ title: 'Logitech' }, { title: 'Razer' }, { title: 'Microsoft' }, { title: "Redragon" }, { title: "ASUS" }, { title: "HP" }];
+    const categories = [{ title: 'Mouse' }, { title: 'Teclado' }, { title: 'Combos' }, { title: 'WebCam' }, { title: 'Auriculares' }, { title: 'Gabinetes' }, { title: 'MousePad' }, { title: 'Consolas' }, { title: 'Placa Madre' }, { title: 'Tarjeta Grafica' }]
 
     // Guardo la data para enviar a la db en un estado local
 

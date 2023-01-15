@@ -4,7 +4,10 @@ import "./StoreItem.css";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
 
-export function StoreItem({ id, name, price, img }) {
+export function StoreItem({ id, name, price, img, stock }) {
+  const [quantity, setQuantity] = useState(0);
+  const [isInCart, setIsInCart] = useState(false);
+  // const quantity = getItemQuantity(id);
 
   const {
     cart,
@@ -12,9 +15,29 @@ export function StoreItem({ id, name, price, img }) {
     removeFromCart,
     incrementItemQuantity,
     decrementItemQuantity,
+    addItem
   } = useShoppingCart();
 
-  const quantity = getItemQuantity(id)
+  const cartQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+
+
+  const handleAddToCart = () => {
+    addItem({ id, name, price, img, quantity, stock });
+    // setQuantity(quantity + 1);
+    setIsInCart(true);
+  };
+
+  const handleRemoveFromCart = () => {
+    // Obtén la cantidad actual del producto en el carrito
+    // const quantity = getItemQuantity(id);
+    // // Agrega el elemento al carrito utilizando el método addToCart del contexto
+    // addToCart({ id, name, price, imgUrl, quantity });
+
+    // incrementItemQuantity({ id, name, price, imgUrl, quantity });
+    decrementItemQuantity(id);
+    // setQuantity(quantity - 1);
+    setIsInCart(false);
+  };
 
   return (
     <div
@@ -40,9 +63,9 @@ export function StoreItem({ id, name, price, img }) {
         </div>
       </Link>
       <div class="card-footer">
-        {!cart.length ? (
+        {getItemQuantity(id) === 0 ? (
           <div className="d-flex align-items-center">
-            <button className="btn-primary" onClick={() => incrementItemQuantity(id)}>
+            <button className="btn-primary" onClick={handleAddToCart}>
               + Add to Cart
             </button>
           </div>
@@ -67,7 +90,7 @@ export function StoreItem({ id, name, price, img }) {
                   color: "white",
                 }}
               >
-                <span>{quantity}</span> in cart
+                <span>{getItemQuantity(id)}</span> in cart
               </div>
               <button
                 className="btn btn-outline-secondary rounded-0"

@@ -20,11 +20,13 @@ import {
   SET_NAME_FILTER,
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
+  POST_PRODUCTS,
+    //FORMULARIO
   
-  //FORMULARIO
-  
-  GET_PRODUCTS
-} from "./actions"
+    GET_PRODUCTS
+  } from "./actions"
+
+
 
 const initialState = {
   items: [],
