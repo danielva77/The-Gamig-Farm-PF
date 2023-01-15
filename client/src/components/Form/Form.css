@@ -85,3 +85,12 @@ label{
 .dropzone:hover{
     cursor: pointer;
 }
+.imagenBoton{
+    position: absolute;
+    left:  1289px;
+    top: 130px;
+}
+#img{
+    cursor: pointer;
+    color: #ff8906;
+}

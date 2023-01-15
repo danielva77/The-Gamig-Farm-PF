@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-// import { getAllCategories, getAllMarks } from '';
 import { Link, useHistory } from "react-router-dom"
 import "./Form.css"
 import { postProduct, getProduct } from '../../redux/actions';
-// import { log } from "console";
 import Swal from "sweetalert2";
+
 
 
 export const Form = () => {
@@ -185,25 +184,10 @@ export const Form = () => {
                 category: e.target.value
             })
     }
-
-  
-
     function handleCategoria (e){
         setInput({
             ...input,
             category : [e.target.value]
-        })
-    }
-    function handleMarca (e){
-        setInput({
-            ...input,
-            mark : [e.target.value]
-        })
-    }
-    function handleImagen (e){
-        setInput({
-            ...input,
-            img : e.target.value
         })
     }
     function handlePrice(e) {
@@ -220,6 +204,18 @@ export const Form = () => {
         })
         console.log(input)
     }
+    function handleMarca (e){
+        setInput({
+            ...input,
+      
+            mark : [e.target.value],
+        
+          })
+    }
+    
+    
+    
+    
 
     const history = useHistory()
 
@@ -248,12 +244,113 @@ export const Form = () => {
             
         }
     }
+
+
+
+
+
+  
+
+// Cloudinary ☁
+const CLOUDINARY = "https://api.cloudinary.com/v1_1/dfa5dlork/image/upload";
+const CLOUDINARY_UPLOAD = "gamingFarm";
+const imagenes = " "
+
+const imagenFunction = async (e) => {
+
+
+
+
+  
+    Swal.fire({
+        title: "Imagen cargada con exito",
+        html: `<img src=${e.target.files[0]} width=100%>`,
+        icon: "success",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "Green",
+      });
+
+
+
+
+
+
+  const file = e.target.files[0]; //Archivo a cargar
+
+  const formData = new FormData(); //Creando el nuevo file
+
+  formData.append("file", file);
+  formData.append("upload_preset", CLOUDINARY_UPLOAD);
+
+
+   
+  const res = await axios.post(CLOUDINARY, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data", //Indicarle de que tipo viene el archivo
+    },
+  }); 
+
+  // Viendo propiedades del archivo cargado
+//   console.log(res);
+//   console.log(res.data.secure_url);
+
+
+  
+  const imagen = res.data.secure_url;
+
+
+//   img = ""
+  Swal.fire({
+      title: "Imagen cargada con exito",
+      html: `<img src=${imagen} width=100%>`,
+      icon: "success",
+      confirmButtonText: "Okay",
+      confirmButtonColor: "Green",
+    });
+
+    
+    // setInput({
+    //     ...input,
+    //     img: e.target.value
+    // })
+    
+};
+
+
+
+
+
+function handleImagen(e) {
+   
+     
+    
+  setInput({
+    ...input,
+    img: imagen
+})
+
+
+
+    Swal.fire({
+        title: "Imagen cargada con exito",
+        html: `<img src=${e.target.files[0]} width=100%>`,
+        icon: "success",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "Green",
+      });
+}
+
+
+
+
+
+
     const dispatch = useDispatch()
     
     return (
         <div className="container padre">
             
-            <form className="formProduct row g-5 mt-2"  onSubmit={e => handleSubmit(e)}>
+            <form className="formProduct row g-5 mt-2"  onSubmit={e => handleSubmit(e)} enctype="multipart/form-data">
                 <h3 className="h3T">📦 Cargar el Producto 📦</h3>
 
                 {/* TITULO  */}
@@ -276,7 +373,7 @@ export const Form = () => {
 
                 {/* PRECIO */}
 
-                <div className="div-title col-2">
+                <div className="div-title col-3">
                     <label htmlFor="price" className="form-label labels" >Precio</label>
                     <input type="number" name="price" className="form-control escribir"  id="price" min="0" max="1000000" value={input.price} placeholder="$ USD " onChange={(e) => handlePrice(e)}/>
                     {/* <div id="emailHelp" class="form-text">Lo que los clientes están dispuestos a pagar por un producto.</div> */}
@@ -286,7 +383,7 @@ export const Form = () => {
                     {/* STOCK NEW  */}
 
              
-                <div className="div-title col-2">
+                <div className="div-title col-3">
                     <label htmlFor="stock" className="form-label labels">Stock</label>
                     <input type="number" name="stock" className="form-control escribir"  id="stock" min="0" max="1000000" value={input.stock} onChange={(e) => handleStock(e)} placeholder="Cantidad"/>
                     {/* <div id="emailHelp" class="form-text">Lo que los clientes están dispuestos a pagar por un producto.</div> */}
@@ -295,9 +392,14 @@ export const Form = () => {
 
                    {/* IMAGEN */}
 
-                   <div className="col-8">
-                    <label htmlFor="img" className="form-label labels">Imagen</label>
-                    <input className="form-control escribir" type="text" id="img" value={input.img} onChange={(e) => handleImagen(e)}  />
+                   <div className="col-6">
+                    <label htmlFor="img" className="form-label labels">Imagen</label> <br />
+                    
+
+                     
+                    <input type="file" id="img" onChange={imagenFunction} value={input.img}/>
+
+
                     <div id="emailHelp" className="form-text">Los potenciales clientes pueden observar en detalle cómo es el artículo que quieren comprar</div>
                 </div>      
 
@@ -326,6 +428,8 @@ export const Form = () => {
               
                 <button type="submit" className="btn btn-success col-6 guardarBoton" >Guardar</button>     
                 <Link to="/Home"><button className="btn btn-danger volverBoton">Volver al Home</button></Link>
+
+                <Link to="/imagen"><button className="btn btn-primary imagenBoton">imagen</button></Link>
             
             </form>    
         </div>
