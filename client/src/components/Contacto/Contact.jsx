@@ -56,7 +56,15 @@ export default function Contact() {
         footer: "Tus mensajes son importantes para nosotros, nos interesa leerte",
       });
     } else {
-      setEnviar(true);
+      // enviarCorreo()
+      setEnviar(true)
+      // setInput({
+      //   email: "",
+      //   nombre: "",
+      //   asunto: "",
+      //   mensaje: ""
+      // })
+      
     }
   }
 
@@ -95,27 +103,47 @@ export default function Contact() {
   // Enviando el mensaje
 
   async function handleSubmit(e) {
-    validate();
+    
     e.preventDefault();
-    console.log("esto va a post →", input);
+    validate();
+
+   
+
+        if(enviar){
+          Swal.fire({
+            title: "Mensaje enviado con Exito",
+            html: "En breve estaremos leyendo tu mensaje y te responderemos sobre el mismo Mail",
+            icon: "success",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "Green",
+          });
 
 
-    if(enviar){
-
-      Swal.fire({
-        title: "Mensaje enviado con Exito",
-        html: "En breve estaremos leyendo tu mensaje y te responderemos sobre el mismo Mail",
-        icon: "success",
-        timer: 10000,
-        confirmButtonText: "Okay",
-        confirmButtonColor: "Green",
-      });
-      history.push("/home");
-    }
+          await axios.post("http://localhost:3001/enviarMensaje",
+          {dataMail: input}).then(history.push("/home"))
+      }
+  
+      
+      
+      
+      console.log("esto va a post →", input);
+     
   }
 
+  // RUTAS DE NODEMAILER
+
+  const enviarCorreo = async() =>{
+      await axios.post("http://localhost:3001/enviarMensaje",
+      {dataMail: input})
+  }
+
+
+
+
+
+
   return (
-    <div>
+    <div className="casita">
       <section id="seccion-contacto">
         <div class="container" id="contenedor-formulario">
           <div id="titulo-formulario" class="text-center mb-4">
@@ -181,6 +209,7 @@ export default function Contact() {
               <button
                 type="submit"
                 className="btn btn-primary w-100 fs-5 enviarMensaje"
+                // onClick={ handleSubmit}
               >
                 Enviar mensaje
               </button>

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@auth0/auth0-react": "^1.12.0",
+    "@uploadcare/react-widget": "^2.4.1",
     "bootstrap": "^5.2.3",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",

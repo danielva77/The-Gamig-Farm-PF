@@ -9,6 +9,8 @@ const {
   getMarks,
 } = require("../controllers/products/Controllers")
 
+const enviarMail = require("../config/mailer")
+
 const router = Router()
 
 // MIDDLEWARES 📌
@@ -18,6 +20,14 @@ const router = Router()
 const getDbInfo = async () => {
   return await User.findAll()
 }
+
+
+// Nodemailer 📧
+
+router.post("/enviarMensaje", enviarMail)
+
+
+
 
 // RUTAS
 

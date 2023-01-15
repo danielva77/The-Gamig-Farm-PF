@@ -5,6 +5,11 @@ import { Link, useHistory } from "react-router-dom";
 import "./Form.css";
 import { postProduct, getProduct } from "../../redux/actions";
 import Swal from "sweetalert2";
+// import uploadcare from 'uploadcare-widget/uploadcare.lang.en.min.js'
+import { Widget } from "@uploadcare/react-widget";
+
+<Widget publicKey="b64078a8eafda783a219" />;
+
 
 export const Form = () => {
   const marks = [
@@ -39,6 +44,9 @@ export const Form = () => {
     mark: "",
     category: "",
   });
+
+
+  const [cover, setCover] = useState(" imagen ")
 
   //Este estado me habilita a enviar el formulario
   const [enviar, setEnviar] = useState(false);
@@ -136,14 +144,14 @@ export const Form = () => {
     }
   }
 
-  // esta funcion limpia mi state local input
+  // Esta funcion limpia mi state local input
   function clearInput() {
     setInput({
       title: "",
       price: "",
       detail: "",
       stock: "",
-      img: "",
+      img: "SINFOTO",
       mark: "",
       category: "",
     });
@@ -243,11 +251,18 @@ export const Form = () => {
     }
   }
 
+
+
+
+
+
+
   function handleImagen(e) {
-    setInput({
-      ...input,
-      img: e.target.value,
-    });
+ 
+setInput({
+  ...input,
+  img: e.target.value
+})
 
     Swal.fire({
       title: "Imagen cargada con exito",
@@ -259,6 +274,13 @@ export const Form = () => {
   }
 
   const dispatch = useDispatch();
+
+            
+
+  // const widget = uploadcare.Widget("#uploader", { publicKey: 'b64078a8eafda783a219' });
+
+
+
 
   return (
     <div className="container padre">
@@ -365,16 +387,55 @@ export const Form = () => {
             Imagen
           </label>{" "}
           <br />
-          <input
+
+
+
+
+          {/* <input
             type="file"
-            id="img"
+            // id="img"
+            name="cover"
             onChange={handleImagen}
             value={input.img}
-          />
+          /> */}
+
+
+
+<input
+    type="hidden"
+    role="uploadcare-uploader"
+    data-public-key="b64078a8eafda783a219"
+    data-tabs="file camera url facebook gdrive gphotos"
+    value={input.img}
+    onChange={handleImagen}
+/>
+
+<Widget
+            publicKey="b64078a8eafda783a219"
+            id="file"
+            name="photos"
+            onChange={(e) => {
+              setInput({
+                ...input,
+                img: e.originalUrl});
+              console.log(e);
+            }}
+            />
+
+
+
+
+<input id="uploader" type="hidden" />
+
+
+
+
+
           <div id="emailHelp" className="form-text">
             Los potenciales clientes pueden observar en detalle cómo es el
             artículo que quieren comprar
           </div>
+         
         </div>
 
         {/* MARK */}
