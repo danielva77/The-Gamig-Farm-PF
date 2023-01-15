@@ -6,10 +6,14 @@ import Fav from "../Assets/favorito.png";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-
+import "../Favorites/Favorites.css"
 
 const Favoritos = () => {
+
+
   
+
+
   const favItems = useSelector((state) => state.favItems);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -22,24 +26,33 @@ const Favoritos = () => {
       <button className="btn btn float-left" onClick={() => setShow(true)}>
         <img src={Fav} alt="imagen" class="img-fluid2" />
       </button>
-      <Offcanvas show={show} onHide={() => setShow(false)}>
-        <h3>Tus favoritos</h3>
+      <Offcanvas show={show} placement="end" onHide={() => setShow(false)} style={{
+        height: "59vh",
+        margin: "73px 0px"}}>
+        <h3 className="header">Tus favoritos</h3>
         <ul>
+        <ul className="scrollable">
           {favItems.map((item) => (
             <li key={item.id}>
-              <img class="favoritos-img" style={{
-                          width: "125px",
-                          height: "75px",
-                          objectFit: "cover",
-                        }} src={item.img} alt={item.name} />
+              <Link to={`/products/${item.id}`}>
+                <img class="favoritos-img" style={{
+                  width:"200px",
+                  height: "200px",
+                  objectFit: "cover",
+                  display:"flex",
+                  alignItems:"center",
+                  justifyContent:"center"
 
-              <h4>{item.name}</h4>
+                }} src={item.img} alt={item.name} />
+                <h4>{item.name}</h4>
+              </Link>
               <p>${item.price}</p>
-              <button onClick={() => handleRemoveFromFav(item.id)}>
-                Remove from favorites
+              <button className="removeBtn" onClick={() => handleRemoveFromFav(item.id)}>
+                Eliminar
               </button>
             </li>
           ))}
+          </ul>
         </ul>
       </Offcanvas>
     </>
@@ -47,3 +60,4 @@ const Favoritos = () => {
 };
 
 export default Favoritos;
+

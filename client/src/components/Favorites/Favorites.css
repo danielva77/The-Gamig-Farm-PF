@@ -7,8 +7,30 @@
   /* background: #FFFFFF; */
 }
 
-.favoritos-img{
+.header{
   display: flex;
-  width: 200px;
-  height: 200px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 5px;
+  padding: 10px;
+  background-color: orange;
+  color: rgb(0, 0, 0);
 }
+
+.removeBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 35%;
+  border-radius: 15%;
+  border-color: rgba(240, 248, 255, 0);
+  background-color: rgba(255, 0, 0, 0.87);
+  font-weight: 6px;
+}
+
+.scrollable {
+height:50vh; /* Establece la altura del área de scroll */
+  overflow-y: scroll; /* Habilita el scroll en el eje y */
+  padding-top: 5px;
+}
+
