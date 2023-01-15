@@ -15,7 +15,7 @@ export function CartItem({ id, quantity }) {
         }
     }, [])
 
-    const { removeFromCart } = useShoppingCart();
+    const { removeFromCart, decrementItemQuantity, incrementItemQuantity } = useShoppingCart();
 
     const item = storeItems.find((item) => item.id === id);
 
@@ -38,6 +38,28 @@ export function CartItem({ id, quantity }) {
                 <div className="text-muter" style={{ fontSize: ".75rem" }}>
                     ${item.price}
                 </div>
+            </div>
+            <div className="d-flex align-items-center me-auto" style={{ gap: ".5rem" }}>
+                <button
+                    className="btn btn-outline-secondary rounded-0"
+                    onClick={() => decrementItemQuantity(id)}
+                >
+                    -
+                </button>
+                <div
+                    style={{
+                        fontSize: "17px",
+                        color: "white",
+                    }}
+                >
+                    <span>{quantity}</span>
+                </div>
+                <button
+                    className="btn btn-outline-secondary rounded-0"
+                    onClick={() => incrementItemQuantity(id)}
+                >
+                    +
+                </button>
             </div>
             <div>${item.price * quantity}</div>
             <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item.id)}>x</Button>

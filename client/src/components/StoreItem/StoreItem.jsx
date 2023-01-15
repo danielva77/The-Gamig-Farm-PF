@@ -57,7 +57,7 @@ export function StoreItem({ id, name, price, img }) {
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button
                 className="btn btn-outline-secondary rounded-0"
-                onClick={() => decrementItemQuantity}
+                onClick={() => decrementItemQuantity(id)}
               >
                 -
               </button>
