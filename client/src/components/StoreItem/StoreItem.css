@@ -1,9 +1,9 @@
 .btn-primary{
-    background-color: #00f45aba;
-    width: 100%;
+    background-color: #f4af00ca;
+    width: 80%;
     border-radius: 15px;
-    color:rgb(0, 255, 47);
-    border-color: #c60000f3;
+    color:rgb(255, 255, 255);
+    border-color: #c6000000;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     text-decoration: transparent;
@@ -11,7 +11,7 @@
 
 
 .btn-primary:hover {
-    background-color: #e40f00;
+    background-color: rgba(245, 229, 3, 0.888);
     text-decoration: transparent;
 }
 .modelo{

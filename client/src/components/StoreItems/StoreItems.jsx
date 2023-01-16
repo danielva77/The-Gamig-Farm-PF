@@ -44,7 +44,7 @@ function StoreItems({ currentVideogames }) {
     filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
     :
     filteredAndSorted
-  // console.log("esto filtra categoria", filteredAndSorted)
+  console.log("esto filtra categoria", filteredAndSorted)
 
   // Filtrado por marca
   filteredAndSorted = markFilter
@@ -52,7 +52,7 @@ function StoreItems({ currentVideogames }) {
     filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
     :
     filteredAndSorted
-  // console.log("esto filtra marca", filteredAndSorted)
+  console.log("esto filtra marca", filteredAndSorted)
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter

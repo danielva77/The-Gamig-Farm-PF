@@ -260,7 +260,21 @@ export function cleanDetail() {
   }
 }
 
+//Para Favoritos
 
+export const addToFavorites = item => ({
+  type: 'ADD_TO_FAVORITES',
+  item,
+});
+
+export const removeFromFav = (id) => {
+  return {
+    type: 'REMOVE_FROM_FAVORITES',
+    payload: {
+      id: id
+    }
+  }
+};
 // Trabajando  en el formulario 2.0
 
 export function getProduct(){

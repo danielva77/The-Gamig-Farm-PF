@@ -2,12 +2,24 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./StoreItem.css";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {addToFavorites} from "../../redux/actions";
 
 export function StoreItem({ id, name, price, img, stock }) {
   const [quantity, setQuantity] = useState(0);
-  const [isInCart, setIsInCart] = useState(false);
+  // const [isInCart, setIsInCart] = useState(false);
   // const quantity = getItemQuantity(id);
+  const favItems = useSelector(state => state.favItems);
+  const dispatch = useDispatch();
+
+  const handleAddToFavorites = () => {
+    if(favItems.find(item => item.id === id)) {
+        console.log("Item already in favorites");
+        return;
+    }
+    dispatch(addToFavorites({ id, name, price, img }));
+}
 
   const {
     cart,
@@ -24,7 +36,7 @@ export function StoreItem({ id, name, price, img, stock }) {
   const handleAddToCart = () => {
     addItem({ id, name, price, img, quantity, stock });
     // setQuantity(quantity + 1);
-    setIsInCart(true);
+    // setIsInCart(true);
   };
 
   const handleRemoveFromCart = () => {
@@ -36,7 +48,7 @@ export function StoreItem({ id, name, price, img, stock }) {
     // incrementItemQuantity({ id, name, price, imgUrl, quantity });
     decrementItemQuantity(id);
     // setQuantity(quantity - 1);
-    setIsInCart(false);
+    // setIsInCart(false);
   };
 
   return (
@@ -75,7 +87,7 @@ export function StoreItem({ id, name, price, img, stock }) {
             style={{ gap: ".5rem" }}
           >
             <div className="fav">
-              <button className="btn-primary">+ Favoutires</button>
+            <button className="btn-primary" onClick={handleAddToFavorites}>❤ Favoritos</button>
             </div>
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button

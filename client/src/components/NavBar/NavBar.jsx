@@ -40,7 +40,7 @@ function NavBar() {
       </div>
 
       <SearchBar />
-      <Cart className="cart" />
+      {/* <Cart className="cart" /> */}
       <Favoritos />
 
       {isAuthenticated ? (
@@ -53,11 +53,12 @@ function NavBar() {
         <LoginButton />
       )}
 
-      <Button variant="" class="btn btn float-right" onClick={openCart}>
+      <div className="cart-btn"><Button variant="" class="btn btn float-right" onClick={openCart}>
         {""}
         <img src={Carrito} alt="imagen" class="img-fluid" />
-        <div className="cart-quantity-circle">{cartQuantity}</div>
+        <div className="quantity-circle">{cartQuantity}</div>
       </Button>
+      </div>
 
     </div>
   );

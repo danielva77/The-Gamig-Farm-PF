@@ -18,18 +18,19 @@ import {
   RESET_FILTERS,
   SET_FILTER_PRICE,
   SET_NAME_FILTER,
+  ADD_TO_FAV,
+  REMOVE_FROM_FAV,
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
   POST_PRODUCTS,
-    //FORMULARIO
-  
-    GET_PRODUCTS
+  GET_PRODUCTS
   } from "./actions"
 
 
 
 const initialState = {
   items: [],
+  favItems: [],
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
@@ -201,6 +202,8 @@ export default function rootReducer(state = initialState, action) {
           ),
         };
       }
+    
+        
       // Si el producto no existe en el carrito, lo añadimos con cantidad 1
       return {
         ...state,
@@ -238,14 +241,29 @@ export default function rootReducer(state = initialState, action) {
       return{
         ...state
       }
-      case "GET_PRODUCTS":
-        return{
-          ...state,
-          products: action.payload
-        };
+        case "GET_PRODUCTS":
+          return{
+            ...state,
+            products: action.payload
+          };
+
+          case 'ADD_TO_FAVORITES':
+            return {
+              ...state,
+              favItems: [...state.favItems, action.item]
+            };
+            case 'REMOVE_FROM_FAVORITES':
+              return {
+                  ...state,
+                  favItems: state.favItems.filter(item => item.id !== action.payload.id)
+              };
+    
+
     default:
-      return state
+      return state;
   }
-}
+ 
+
+};
 
 //Reducers Search Bar
