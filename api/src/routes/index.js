@@ -12,6 +12,8 @@ const {
   modifyProducts,
 } = require("../controllers/products/Controllers")
 
+const enviarMail = require("../config/mailer")
+
 const router = Router()
 
 // MIDDLEWARES 📌
@@ -169,5 +171,6 @@ router.post("/payment",(req, res) => {
 )
 
 router.put("/products/:id", modifyProducts)
+router.post("/enviarMensaje", enviarMail)
 
 module.exports = router

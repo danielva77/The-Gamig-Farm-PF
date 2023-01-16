@@ -36,7 +36,7 @@ function App() {
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
-        <Route paht="/confirmation/approve" component={Confirmation} />
+        <Route path="/confirmation/approve" component={Confirmation} />
 
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>

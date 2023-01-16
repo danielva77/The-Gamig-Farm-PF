@@ -36,11 +36,12 @@ const Cart = () => {
   console.log("esto llega en cart", cart)
   return (
     <div className="cart">
-      <Button variant="" class="btn btn float-right" onClick={handleShow}>
+      <div><Button variant="" class="btn btn float-right" onClick={handleShow}>
         {""}
         <img src={Carrito} alt="imagen" class="img-fluid" />
         <div className="cart-quantity-circle">{quantity}</div>
       </Button>
+      </div>
       <Offcanvas
         show={show}
         onHide={handleHide}
