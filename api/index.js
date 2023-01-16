@@ -6,7 +6,7 @@ const axios = require("axios");
 
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
     // Creamos una variable de entorno llamada PORT (le damos valor 3001 localmente).
     // Heroku despues va a usar un valor propio internamente (distinto) para esa variable PORT.
     server.listen(port, () => {
