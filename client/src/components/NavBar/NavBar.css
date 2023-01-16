@@ -33,3 +33,28 @@
 .link:hover {
   color: #ff8906;
 }
+
+.cart{
+  position: absolute;
+  right: 17%;
+  top: 1%;
+}
+
+.cart-btn{
+  position: absolute;
+  left: 80%;
+}
+
+.quantity-circle{
+  position: absolute; 
+  /* bottom: 5px; */
+  left: 85%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}
+

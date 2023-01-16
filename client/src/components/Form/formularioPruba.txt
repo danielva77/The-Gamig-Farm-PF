@@ -1,0 +1,126 @@
+
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom"
+import { postProduct, getProduct } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+// import "./Form.css"
+
+import axios from "axios";
+// import { getAllCategories, getAllMarks } from '';
+
+
+
+export const Form = () => {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const products = useSelector((state) => state.products)
+
+
+    const [input, setInput] = useState({
+        title: "",
+        detail: "",
+        price: "",
+        stock: "",
+        imagen: "",
+        mark: [],
+        category: [],
+    })
+
+    const handleChange = (e) =>{
+        setInput({
+            ...input,
+            [e.target.name] : e.target.value
+        })
+        console.log(input);
+    }
+
+    useEffect(() => {
+        dispatch(getProduct())
+    }, [])
+
+    const handleSubmit = e =>{
+        e.preventDefault()
+        console.log(input);
+        dispatch(postProduct(input))
+        alert("PRODUCTO CREADO BRO")
+        setInput({
+
+        })
+        // history.push("/home")
+    }
+    
+
+    return (
+        <div>
+            <Link to="/Home"><button>HOME</button></Link>
+            <h1>Crear el producto</h1>
+
+            <form onSubmit={e => handleSubmit(e)}>
+
+                {/* TITULO */}
+                
+                <div>
+                <label htmlFor="titulo">Titulo</label>
+                <input type="text" value={input.title} name="title" onChange={handleChange}/>
+                </div>
+
+                {/* Detalles */}
+
+                <div>
+                <label htmlFor="detalle">Detalles</label>
+                <input type="text" value={input.detail}  name="detail"  onChange={handleChange}/>
+                </div>
+
+                {/* PRECIO */}
+
+                <div>
+                    <label htmlFor="precio">Precio</label>
+                    <input type="number" value={input.price}  name="price"  onChange={handleChange}/>
+                </div>
+
+                {/* STOCK */}
+
+                <div>
+                    <label htmlFor="precio">Stock</label>
+                    <input type="text" value={input.stock}  name="stock"  onChange={handleChange}/>
+                </div>
+
+                {/* IMAGEN */}
+
+                <div>
+                    <label htmlFor="precio">Imagen</label>
+                    <input type="text" value={input.imagen}  name="imagen"  onChange={handleChange}/>
+                </div>
+
+                {/* MARCA */}
+
+                <div>
+                    <label htmlFor="precio">Marca</label>
+                    <input type="text" value={input.mark}  name="mark"  onChange={handleChange}/>
+                </div>
+
+                {/* CATEGORIA */}
+
+                <div>
+                    <label htmlFor="precio">Categoria</label>
+                    <input type="text" value={input.category}  name="category"  onChange={handleChange}/>
+                </div>
+
+                <select>
+                   
+                        <option value="logitech">LOGITECH</option>
+                        <option value="asus">ASUS</option>
+                        <option value="hp">HP</option>
+                    
+                </select>
+
+                <button type="submit">CREAR PRODUCTO</button>
+
+            </form>
+        </div>
+    )
+
+}
+
+export default Form;

@@ -1,4 +1,6 @@
 const { Router } = require("express")
+const mercadopago = require('mercadopago');
+require("dotenv").config();
 const axios = require("axios")
 // Modelos de la base de datos ↓
 const { User } = require("../db")
@@ -6,7 +8,11 @@ const {
   getAllProducts,
   createProducts,
   getCategories,
+  getMarks,
+  modifyProducts,
 } = require("../controllers/products/Controllers")
+
+const enviarMail = require("../config/mailer")
 
 const router = Router()
 
@@ -101,6 +107,7 @@ router.get("/products", async (req, res) => {
 router.post("/products", createProducts)
 
 router.get("/category", getCategories)
+router.get("/mark", getMarks)
 
 router.get("/products/:id", async (req, res) => {
   // res.send("Soy el get /videogame")
@@ -117,5 +124,53 @@ router.get("/products/:id", async (req, res) => {
       : res.status(404).send("No existe juego con ese Id")
   }
 })
+
+
+mercadopago.configure({access_token: process.env.MERCADOPAGO_KEY})
+
+router.post("/payment",(req, res) => {
+  totalProducts = req.body
+  console.log("totalproducts", totalProducts)
+
+  let preference = {
+    "items": totalProducts.map((product) => {
+
+      return({
+        title: product.name,
+        unit_price: Number(product.price),
+        quantity: Number(product.quantity),
+        picture_url: product.img
+      })
+    }),
+    "back_urls": {
+      "success": "http://localhost:3000/confirmation/approve",
+      "failure": "http://localhost:3000/home",
+      "pending": "",
+    },
+    // "notification_url": "http://localhost:3000/products/notificacion",
+    "auto_return": "approved",
+  };
+
+  // totalProducts.map(async p => {
+  // await Product.increment({stock: -p.quantity}, {where:{ title: p.title}});
+  // })  
+
+  mercadopago.preferences
+  .create(preference)
+    .then(function (response) {
+      res.send(response.body.init_point)
+      //res.redirect({response.body.id})
+      // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.status(400).json(error.message);
+    });
+
+}
+)
+
+router.put("/products/:id", modifyProducts)
+router.post("/enviarMensaje", enviarMail)
 
 module.exports = router

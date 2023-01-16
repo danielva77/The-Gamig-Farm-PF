@@ -9,6 +9,7 @@ import CategoryFilter from "../CategoryFilter/CategoryFilter"
 import Sort from "../Sort/Sort"
 import ReloadPageBtn from "../ReloadPageBtn/ReloadPageBtn"
 import NavBar from "../NavBar/NavBar";
+import MarkFilter from "../MarkFilter/MarkFilter";
 
 
 export function Home() {
@@ -30,6 +31,7 @@ export function Home() {
 
         <Sort />
         <CategoryFilter />
+        <MarkFilter />
         <ReloadPageBtn />
         {/* <PriceFilter /> */}
       </div>

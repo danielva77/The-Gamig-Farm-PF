@@ -1,18 +1,32 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useContext } from 'react-redux';
 import { getDetail, cleanDetail } from '../../redux/actions';
-import "./Details.css"
+import "../Details/Details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
-import "./Details.css"
+// import "./details.css"
 import NavBar from "../NavBar/NavBar";
-
+import { useShoppingCart } from '../../context/CartContext/CartContext';
+import { addToFavorites } from '../../redux/actions';
 
 
 export default function Details(props) {
-
+  const {addItem, quantity} = useShoppingCart()
   const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    const item = {
+        id: props.match.params.id,
+        name: myProduct[0].title,
+        price: myProduct[0].price,
+        img: myProduct[0].img,
+        stock: myProduct[0].stock,
+    }
+    addItem(item);
+};
+
+const favItems = useSelector(state => state.favItems);
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id))
@@ -36,10 +50,9 @@ export default function Details(props) {
             <p className='descripcion'>{myProduct[0].detail}</p>
             <p className='precio'>Precio: ${myProduct[0].price}</p>
             <div className='botonDiv'>
-              <button className='botonCarritoDetalle'><a className='suma'>+ </a><img src={cart} className="carrito" /> </button>
+              <button className='botonCarritoDetalle' onClick={handleAddToCart}><a className='suma'>+ {quantity}</a><img src={cart} className="carrito" /> </button>
             </div>
             <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
-
 
 
           </div> : <p>Cargando ...</p>
