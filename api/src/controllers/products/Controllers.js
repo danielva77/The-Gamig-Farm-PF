@@ -62,7 +62,7 @@ const createProducts = async (req, res) => {
       })
     }
 
-    // res.status(200).send("Product created succesfully")
+    res.status(200).send("Product created succesfully")
     console.log("producto creado");
   } catch (error) {
     console.log("este es el error", error)
