@@ -85,7 +85,7 @@ export const setNumbersPaginated = payload => {
 export function getAllProd() {
   // ----- Get from API
   return async function (dispatch) {
-    var req = await axios.get("http://localhost:3001/products")
+    var req = await axios.get("/products")
     const products = req.data
 
     return dispatch({
@@ -106,7 +106,7 @@ export function getAllProd() {
 export function postProducts(payload){
   console.log("esto llega en payload POST", payload)
   return async function (dispatch){
-  const response = await axios.post("http://localhost:3001/products", payload);
+  const response = await axios.post("/products", payload);
   
   return dispatch({
     type: "POST_PRODUCTS",
@@ -118,7 +118,7 @@ export function postProducts(payload){
 export function getAllMarks(){
   return async function (dispatch){
     try {
-      const req = await axios.get("http://localhost:3001/mark")
+      const req = await axios.get("/mark")
 
       // const categories = req.data
       const unicos = req.data
@@ -144,7 +144,7 @@ export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
-      const req = await axios.get("http://localhost:3001/category")
+      const req = await axios.get("/category")
 
       // const categories = req.data
       const unicos = req.data
@@ -175,7 +175,7 @@ export function getAllCategories() {
 export function searchByName(name) {
   return async function (dispatch) {
     try {
-      let json = await axios.get("http://localhost:3001/products?title=" + name)
+      let json = await axios.get("/products?title=" + name)
       return dispatch({
         type: "SEARCH_BY_NAME",
         payload: json.data,
@@ -230,7 +230,7 @@ export function volverAhome() {
 //Actions para los Detalles
 export const getDetail = id => {
   return async function (dispatch) {
-    const response = await axios.get(`http://localhost:3001/products/${id}`)
+    const response = await axios.get(`/products/${id}`)
 
     return dispatch({
       type: GET_DETAIL,
@@ -279,7 +279,7 @@ export const removeFromFav = (id) => {
 
 export function getProduct(){
   return async function(dispatch){
-    var info = await axios.get("http://localhost:3001/products",{
+    var info = await axios.get("/products",{
       
     })
     return dispatch({
@@ -291,7 +291,7 @@ export function getProduct(){
 
 export function postProduct(payload){ //payload es lo que nos llega en el front
   return async function (dispatch){
-    const response = await axios.post("http://localhost:3001/products", payload)
+    const response = await axios.post("/products", payload)
     console.log("Producto creaado "+ response);
     return response;
   }
