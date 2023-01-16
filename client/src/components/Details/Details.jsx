@@ -50,8 +50,7 @@ export default function Details(props) {
             </div>
             <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
 
-
-
+          
           </div> : <p>Cargando ...</p>
       }
       <div className='filtros'>

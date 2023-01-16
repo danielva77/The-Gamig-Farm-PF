@@ -10,7 +10,6 @@ import { Widget } from "@uploadcare/react-widget";
 
 <Widget publicKey="b64078a8eafda783a219" />;
 
-
 export const Form = () => {
   const marks = [
     { title: "Logitech" },
@@ -45,8 +44,7 @@ export const Form = () => {
     category: "",
   });
 
-
-  const [cover, setCover] = useState(" imagen ")
+  const [cover, setCover] = useState(" imagen ");
 
   //Este estado me habilita a enviar el formulario
   const [enviar, setEnviar] = useState(false);
@@ -251,18 +249,11 @@ export const Form = () => {
     }
   }
 
-
-
-
-
-
-
   function handleImagen(e) {
- 
-setInput({
-  ...input,
-  img: e.target.value
-})
+    setInput({
+      ...input,
+      img: e.target.value,
+    });
 
     Swal.fire({
       title: "Imagen cargada con exito",
@@ -275,12 +266,7 @@ setInput({
 
   const dispatch = useDispatch();
 
-            
-
   // const widget = uploadcare.Widget("#uploader", { publicKey: 'b64078a8eafda783a219' });
-
-
-
 
   return (
     <div className="container padre">
@@ -387,10 +373,6 @@ setInput({
             Imagen
           </label>{" "}
           <br />
-
-
-
-
           {/* <input
             type="file"
             // id="img"
@@ -398,44 +380,32 @@ setInput({
             onChange={handleImagen}
             value={input.img}
           /> */}
-
-
-
-<input
+          {/* <input
     type="hidden"
     role="uploadcare-uploader"
     data-public-key="b64078a8eafda783a219"
     data-tabs="file camera url facebook gdrive gphotos"
     value={input.img}
     onChange={handleImagen}
-/>
-
-<Widget
+    className="botonI"
+/> */}
+          <Widget
             publicKey="b64078a8eafda783a219"
             id="file"
             name="photos"
             onChange={(e) => {
               setInput({
                 ...input,
-                img: e.originalUrl});
+                img: e.originalUrl,
+              });
               console.log(e);
             }}
-            />
-
-
-
-
-<input id="uploader" type="hidden" />
-
-
-
-
-
+          />
+          {/* <input id="uploader" type="hidden" /> */}
           <div id="emailHelp" className="form-text">
             Los potenciales clientes pueden observar en detalle cómo es el
             artículo que quieren comprar
           </div>
-         
         </div>
 
         {/* MARK */}

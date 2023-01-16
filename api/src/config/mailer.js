@@ -15,7 +15,7 @@ const enviarMail = (req, res) => {
       pass: "ugcjaculkhnwjmne" // generated ethereal password
     },
   });
-
+  
   transporter.verify().then(() => {
     console.log("DATOS → ", dataMail.email);
 
