@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer"
 // import "./details.css"
 import NavBar from "../NavBar/NavBar";
 import { useShoppingCart } from '../../context/CartContext/CartContext';
-
+import { addToFavorites } from '../../redux/actions';
 
 
 export default function Details(props) {
@@ -20,10 +20,13 @@ export default function Details(props) {
         id: props.match.params.id,
         name: myProduct[0].title,
         price: myProduct[0].price,
-        img: myProduct[0].img
+        img: myProduct[0].img,
+        stock: myProduct[0].stock,
     }
     addItem(item);
 };
+
+const favItems = useSelector(state => state.favItems);
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id))
@@ -50,7 +53,6 @@ export default function Details(props) {
               <button className='botonCarritoDetalle' onClick={handleAddToCart}><a className='suma'>+ {quantity}</a><img src={cart} className="carrito" /> </button>
             </div>
             <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
-
 
 
           </div> : <p>Cargando ...</p>

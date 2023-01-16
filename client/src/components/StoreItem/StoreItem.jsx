@@ -74,6 +74,10 @@ export function StoreItem({ id, name, price, img, stock }) {
           <p className="card-text text-secondary">${price}</p>
         </div>
       </Link>
+      <div className="fav">
+              <button className="btn-primary" onClick={handleAddToFavorites}>❤ Favoritos</button>
+            </div>
+      <div class="card-footer"></div>
       <div class="card-footer">
         {getItemQuantity(id) === 0 ? (
           <div className="d-flex align-items-center">
@@ -86,9 +90,9 @@ export function StoreItem({ id, name, price, img, stock }) {
             className="d-flex flex-column align-items-center "
             style={{ gap: ".5rem" }}
           >
-            <div className="fav">
+            {/* <div className="fav">
             <button className="btn-primary" onClick={handleAddToFavorites}>❤ Favoritos</button>
-            </div>
+            </div> */}
             <div className="d-flex align-items-center" style={{ gap: ".5rem" }}>
               <button
                 className="btn btn-outline-secondary rounded-0"

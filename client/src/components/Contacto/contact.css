@@ -1,13 +1,70 @@
-.cont-contact {
-  justify-content: center;
-  justify-items: center;
-  background-color: #0f0e17;
-  margin: 5%;
+
+/* IMAGEN SVG */
+#bg-contacto {
+  position: relative;
+  top: -130px;
 }
-.container-contact {
-  color: white;
-  justify-content: center;
-  justify-items: center;
-  margin: 5%;
-  background-color: #0f0e17;
+
+#seccion-contacto {
+  /* min-height: 450px;   */
+  position: relative;
+  top: 390px;
+}
+
+#contenedor-formulario {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff8906;
+  /* border-radius: 10px; */
+  max-width: 500px;
+  border: 10px solid rgb(0, 0, 0);
+  outline: 2px solid rgb(255, 255, 255);
+}
+
+#titulo-formulario {
+  font-family: proxima-nova, sans-serif;
+  color: #000000;
+  user-select: none;
+}
+h2{
+  letter-spacing: 1.5px;
+}
+.inputs{
+  background-color: #ffffff !important;
+  color: rgb(0, 0, 0) !important;
+  border: 2px solid black !important;
+  border-radius: 0px !important;
+}
+
+.inputs::placeholder{
+  color: rgb(99, 99, 99) !important;
+}
+.enviarMensaje{
+  border-radius: 0px !important;
+  background-color: rgb(6, 89, 255) !important;
+}
+.enviarMensaje:hover{
+  outline: 3px solid  rgb(6, 89, 255) !important;
+  background-color: black !important;
+  color: rgb(247, 247, 247) !important;
+  transition: all 1s;
+}
+
+.volverBoto{
+  position: absolute;
+  left:  -300px;
+  top: 0px;
+  font-family: proxima-nova, sans-serif !important;
+  text-shadow: 3px 2px 3px black;
+  border-radius: 0px !important;
+  padding: 6px !important; 
+  border: rgb(0, 0, 0) 1px solid !important; 
+}
+.casita{
+ position: absolute !important;
+  background-color: #000000 !important;
+  width: 100% !important;
+  height: 100% !important;
 }

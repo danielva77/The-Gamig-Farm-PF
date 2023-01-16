@@ -27,7 +27,7 @@ const Favoritos = () => {
         <img src={Fav} alt="imagen" class="img-fluid2" />
       </button>
       <Offcanvas show={show} placement="end" onHide={() => setShow(false)} style={{
-        height: "59vh",
+        height: "60vh",
         margin: "73px 0px"}}>
         <h3 className="header">Tus favoritos</h3>
         <ul>
