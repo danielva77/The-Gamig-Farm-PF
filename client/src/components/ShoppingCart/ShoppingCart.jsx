@@ -30,7 +30,7 @@ export function ShoppingCart({ isOpen }) {
     const handlePayment = async () => {
         if (isAuthenticated) {
           try {
-            const response = await axios.post("/payment", cart);
+            const response = await axios.post("https://the-gamig-farm-pf-production-5fa7.up.railway.app/payment", cart);
             window.open(response.data);
           } catch (error) {
             console.log(error);
