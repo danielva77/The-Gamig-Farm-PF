@@ -4,7 +4,7 @@ const { conn } = require("./src/db.js");
 const port = process.env.PORT || 3001;
 
 axios.defaults.baseURL =
-  process.env.REACT_APP_API_URL || `http://localhost:3000`
+  process.env.CLIENT_URL || `http://localhost:3000`
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
