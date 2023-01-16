@@ -20,7 +20,7 @@ const enviarMail = (req, res) => {
     console.log("DATOS → ", dataMail.email);
 
   })
-
+<
 
 
   // send mail with defined transport object
