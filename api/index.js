@@ -2,6 +2,7 @@ require("dotenv").config();
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const port = process.env.PORT || 3001;
+const axios = require("axios");
 
 axios.defaults.baseURL =
   process.env.CLIENT_URL || `http://localhost:3000`
