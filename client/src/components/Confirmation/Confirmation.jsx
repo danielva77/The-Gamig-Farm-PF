@@ -17,7 +17,7 @@ let discount = () =>{
 
     let total = el.stock - el.quantity;
     console.log("esto es totla", total)
-    return axios.put(`http://localhost:3001/products/${el.id}`, {stock: total})
+    return axios.put(`https://the-gamig-farm-pf-production-5fa7.up.railway.app/products/${el.id}`, {stock: total})
   })
 }
 
