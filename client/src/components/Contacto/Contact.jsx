@@ -10,7 +10,7 @@ export default function Contact() {
 
   const [input, setInput] = useState({
     email: "",
-    // nombre: "", // Pensarlo bien si realmente va a estar a estar este input
+    nombre: "", // Pensarlo bien si realmente va a estar a estar este input
     asunto: "",
     mensaje: ""
   });
@@ -28,16 +28,16 @@ export default function Contact() {
         confirmButtonColor: "Red",
         footer: "Tu correo es importante para poder responderte",
       });
-    // } else if (!input.nombre) {
-    //   return Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     html: "Debes completar el campo de <b>Nombre</b>",
-    //     confirmButtonText: "Entiendo",
-    //     confirmButtonColor: "Red",
-    //     footer: "Tu nombre es importante para poder conocerte",
-    //   });
-    // } else if (!input.asunto) {
+    } else if (!input.nombre) {
+      return Swal.fire({
+        icon: "error",
+        title: "Error",
+        html: "Debes completar el campo de <b>Nombre</b>",
+        confirmButtonText: "Entiendo",
+        confirmButtonColor: "Red",
+        footer: "Tu nombre es importante para poder conocerte",
+      });
+    } else if (!input.asunto) {
       return Swal.fire({
         icon: "error",
         title: "Error",
@@ -104,7 +104,7 @@ export default function Contact() {
 
   async function handleSubmit(e) {
     
-    e.preventDefault();
+    // e.preventDefault();
     validate();  
 
         if(enviar){
@@ -116,14 +116,14 @@ export default function Contact() {
             confirmButtonColor: "Green",
           });
 
-          await axios.post("http://localhost:3001/enviarMensaje",
-          {infoInput: input}).then(history.push("/home"))
+          // await axios.post("http://localhost:3001/enviarMensaje",
+          // {infoInput: input}).then(history.push("/home"))
       }
-  
+  // 
       
       
       
-      console.log("esto va a post →", input);
+      // console.log("esto va a post →", input);
      
   }
 
@@ -151,7 +151,7 @@ export default function Contact() {
             <p class="fs-5">Estamos aqui para hacer responder tus consultas</p>
           </div>
 
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form  action="https://formsubmit.co/thegamingfarm01@gmail.com" method="POST" onSubmit={handleSubmit}>
             <div class="mb-3">
               <input
                 type="email"
@@ -160,10 +160,12 @@ export default function Contact() {
                 placeholder="nombre@ejemplo.com"
                 value={input.email}
                 onChange={handleEmail}
+                name="Email"
                 // required
               />
+
             </div>
-{/* 
+
             <div class="mb-3">
               <input
                 type="text"
@@ -172,9 +174,10 @@ export default function Contact() {
                 placeholder="Tu nombre"
                 value={input.nombre}
                 onChange={handleNombre}
+                name="Nombre"
                 // required
               />
-            </div> */}
+            </div>
 
 
             <div class="mb-3">
@@ -185,6 +188,7 @@ export default function Contact() {
                 placeholder="Asunto"
                 value={input.asunto}
                 onChange={handleAsunto}
+                name="Asunto"
                 // required
               />
             </div>
@@ -199,23 +203,37 @@ export default function Contact() {
                 placeholder="Escribe aquí tu mensaje..."
                 value={input.mensaje}
                 onChange={handleMensaje}
+                name="Mensaje"
+                required
               ></textarea>
             </div>
+
+
+            {/* BOTONES  */}
+
+
 
             <div class="mb-3">
               <button
                 type="submit"
                 className="btn btn-primary w-100 fs-5 enviarMensaje"
-                // onClick={ handleSubmit}
-              >
+                onClick={handleSubmit}>
                 Enviar mensaje
               </button>
             </div>
-            <Link to="/Home">
-              <button className="btn btn-danger volverBoto">
-                Volver al Home
-              </button>
+
+
+            <Link 
+            to="/Home"><button className="btn btn-danger volverBoto">Volver al Home</button>
             </Link>
+
+
+            {/* CONFIGURACION DEL MAIL */}
+
+
+
+            <input type="hidden" name="_next" value="http://localhost:3000/home" />
+            <input type="hidden" name="_captcha" value="false" />
           </form>
         </div>
       </section>

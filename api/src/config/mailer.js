@@ -1,7 +1,5 @@
 const nodemailer = require("nodemailer");
 
-
-
 // CONFIGURANDO EL NODEMAILER
 
 const configurandoEmail = (req, res) => {
@@ -22,24 +20,20 @@ const configurandoEmail = (req, res) => {
 
 
 
-
 // ENVIAR EL MENSAJE 
 
-
-
-  transporter.verify().then(() => {})
-
-  // send mail with defined transport object
-  transporter.sendMail({
-    from: "oscarzavala2909@gmail.com", // sender address
-    to: "thegamingfarm01@gmail.com", // list of receivers
-    subject: infoInput.asunto, // Subject line
-    text: infoInput.mensaje
-  },);
-
-  console.log("Datos Enviado → ", infoInput);
+const mensaje = {
+  from: infoInput.email, // sender address
+  to: "thegamingfarm01@gmail.com", // list of receivers
+  subject: infoInput.asunto, // Subject line
+  text: infoInput.mensaje
 }
 
+// transporter.verify().then(() => {})
+
+  transporter.sendMail(mensaje);
+  console.log("Datos Enviado → ", infoInput);
+}
 
 const transporter = " "
 
