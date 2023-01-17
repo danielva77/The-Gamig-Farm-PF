@@ -1,10 +1,14 @@
 const nodemailer = require("nodemailer");
 
-const enviarMail = (req, res) => {
 
-  const { dataMail } = req.body
 
-  console.log("req-body → ", dataMail);
+// CONFIGURANDO EL NODEMAILER
+
+const configurandoEmail = (req, res) => {
+
+  const { infoInput } = req.body
+
+  console.log("req-body → ", infoInput);
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -15,25 +19,28 @@ const enviarMail = (req, res) => {
       pass: "ugcjaculkhnwjmne" // generated ethereal password
     },
   });
-  
-  transporter.verify().then(() => {
-    console.log("DATOS → ", dataMail.email);
 
-  })
-<
 
+
+
+// ENVIAR EL MENSAJE 
+
+
+
+  transporter.verify().then(() => {})
 
   // send mail with defined transport object
   transporter.sendMail({
-    from: dataMail.email, // sender address
+    from: "oscarzavala2909@gmail.com", // sender address
     to: "thegamingfarm01@gmail.com", // list of receivers
-    subject: dataMail.asunto, // Subject line
-    text: dataMail.mensaje // plain text body
-    // html: `<b>${dataMail.mensaje}</b>`, // html body
-  },
-    // console.log("mensaje enviado con exito")
-  );
-  console.log("ENVIADO", dataMail);
+    subject: infoInput.asunto, // Subject line
+    text: infoInput.mensaje
+  },);
+
+  console.log("Datos Enviado → ", infoInput);
 }
 
-module.exports = enviarMail
+
+const transporter = " "
+
+module.exports = configurandoEmail

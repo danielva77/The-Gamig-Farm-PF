@@ -9,7 +9,7 @@ const {
   getMarks,
 } = require("../controllers/products/Controllers")
 
-const enviarMail = require("../config/mailer")
+const configurandoEmail  = require("../config/mailer")
 
 const router = Router()
 
@@ -22,9 +22,28 @@ const getDbInfo = async () => {
 }
 
 
-// Nodemailer 📧
 
-router.post("/enviarMensaje", enviarMail)
+
+// NODEMAILER 📨
+
+
+// Function One:
+
+// try {
+//     await function transport(){
+
+//     }
+// } catch (error) {
+//   // code code code code code
+//   // return res.status().json({ message: "Something goes wrong! "})
+// }
+
+
+
+
+
+router.post("/enviarMensaje", configurandoEmail)
+
 
 
 
@@ -47,10 +66,10 @@ router.get("/usuarios", async (req, res) => {
     usuarioName.length
       ? res.status(200).send(usuarioName)
       : res
-          .status(404)
-          .send(
-            `<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`
-          )
+        .status(404)
+        .send(
+          `<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`
+        )
   } else {
     //no hay query → Enviar todos los datos normal
 

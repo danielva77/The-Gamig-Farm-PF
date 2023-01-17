@@ -10,7 +10,7 @@ export default function Contact() {
 
   const [input, setInput] = useState({
     email: "",
-    nombre: "",
+    // nombre: "", // Pensarlo bien si realmente va a estar a estar este input
     asunto: "",
     mensaje: ""
   });
@@ -28,16 +28,16 @@ export default function Contact() {
         confirmButtonColor: "Red",
         footer: "Tu correo es importante para poder responderte",
       });
-    } else if (!input.nombre) {
-      return Swal.fire({
-        icon: "error",
-        title: "Error",
-        html: "Debes completar el campo de <b>Nombre</b>",
-        confirmButtonText: "Entiendo",
-        confirmButtonColor: "Red",
-        footer: "Tu nombre es importante para poder conocerte",
-      });
-    } else if (!input.asunto) {
+    // } else if (!input.nombre) {
+    //   return Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     html: "Debes completar el campo de <b>Nombre</b>",
+    //     confirmButtonText: "Entiendo",
+    //     confirmButtonColor: "Red",
+    //     footer: "Tu nombre es importante para poder conocerte",
+    //   });
+    // } else if (!input.asunto) {
       return Swal.fire({
         icon: "error",
         title: "Error",
@@ -105,9 +105,7 @@ export default function Contact() {
   async function handleSubmit(e) {
     
     e.preventDefault();
-    validate();
-
-   
+    validate();  
 
         if(enviar){
           Swal.fire({
@@ -118,9 +116,8 @@ export default function Contact() {
             confirmButtonColor: "Green",
           });
 
-
           await axios.post("http://localhost:3001/enviarMensaje",
-          {dataMail: input}).then(history.push("/home"))
+          {infoInput: input}).then(history.push("/home"))
       }
   
       
@@ -166,7 +163,7 @@ export default function Contact() {
                 // required
               />
             </div>
-
+{/* 
             <div class="mb-3">
               <input
                 type="text"
@@ -177,7 +174,7 @@ export default function Contact() {
                 onChange={handleNombre}
                 // required
               />
-            </div>
+            </div> */}
 
 
             <div class="mb-3">
