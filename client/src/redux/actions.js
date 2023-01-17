@@ -27,7 +27,6 @@ export const SET_NAME_FILTER = "SET_NAME_FILTER"
 export const GET_PRODUCTS = "GET_PRODUCTS"
 export const POST_PRODUCTS = "POST_PRODUCTS"
 
-
 export const setNameFilter = payload => {
   console.log("object")
   return {
@@ -61,7 +60,7 @@ export const setSort = payload => {
 }
 
 export const setFilterCategory = payload => {
-  console.log("payload", payload)
+  console.log(`payload`, payload)
   return {
     type: SET_FILTER_CATEGORY,
     payload,
@@ -74,7 +73,6 @@ export const setFilterMarks = payload => {
   }
 }
 
-
 export const setNumbersPaginated = payload => {
   return {
     type: SET_NUMBERS_PAGINATED,
@@ -85,7 +83,7 @@ export const setNumbersPaginated = payload => {
 export function getAllProd() {
   // ----- Get from API
   return async function (dispatch) {
-    var req = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products")
+    var req = await axios.get(`/products`)
     const products = req.data
 
     return dispatch({
@@ -103,33 +101,32 @@ export function getAllProd() {
   // }
 }
 
-export function postProducts(payload){
+export function postProducts(payload) {
   console.log("esto llega en payload POST", payload)
-  return async function (dispatch){
-  const response = await axios.post("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products", payload);
-  
-  return dispatch({
-    type: "POST_PRODUCTS",
-    payload: response.data,
-  })
-}
+  return async function (dispatch) {
+    const response = await axios.post(`/products`, payload)
+
+    return dispatch({
+      type: "POST_PRODUCTS",
+      payload: response.data,
+    })
+  }
 }
 
-export function getAllMarks(){
-  return async function (dispatch){
+export function getAllMarks() {
+  return async function (dispatch) {
     try {
-      const req = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/mark")
+      const req = await axios.get(`/mark`)
 
       // const categories = req.data
       const unicos = req.data
-      const marks = [];
+      const marks = []
 
-      for(var i = 0; i < unicos.length; i++) {
- 
-        const elemento = unicos[i];
-       
+      for (var i = 0; i < unicos.length; i++) {
+        const elemento = unicos[i]
+
         if (!marks.includes(unicos[i])) {
-          marks.push(elemento);
+          marks.push(elemento)
         }
       }
 
@@ -144,18 +141,17 @@ export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
-      const req = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/category")
+      const req = await axios.get(`/category`)
 
       // const categories = req.data
       const unicos = req.data
-      const categories = [];
+      const categories = []
 
-      for(var i = 0; i < unicos.length; i++) {
- 
-        const elemento = unicos[i];
-       
+      for (var i = 0; i < unicos.length; i++) {
+        const elemento = unicos[i]
+
         if (!categories.includes(unicos[i])) {
-          categories.push(elemento);
+          categories.push(elemento)
         }
       }
 
@@ -175,7 +171,7 @@ export function getAllCategories() {
 export function searchByName(name) {
   return async function (dispatch) {
     try {
-      let json = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products?title=" + name)
+      let json = await axios.get(`/products?title=${name}`)
       return dispatch({
         type: "SEARCH_BY_NAME",
         payload: json.data,
@@ -230,7 +226,7 @@ export function volverAhome() {
 //Actions para los Detalles
 export const getDetail = id => {
   return async function (dispatch) {
-    const response = await axios.get(`https://the-gamig-farm-pf-production-5fa7.up.railway.app/products/${id}`)
+    const response = await axios.get(`/products/${id}`)
 
     return dispatch({
       type: GET_DETAIL,
@@ -244,7 +240,7 @@ export function addToCart(payload) {
   return {
     type: "ADD_TO_CART",
     payload,
-  };
+  }
 }
 
 export function removeFromCart(id) {
@@ -263,36 +259,35 @@ export function cleanDetail() {
 //Para Favoritos
 
 export const addToFavorites = item => ({
-  type: 'ADD_TO_FAVORITES',
+  type: "ADD_TO_FAVORITES",
   item,
-});
+})
 
-export const removeFromFav = (id) => {
+export const removeFromFav = id => {
   return {
-    type: 'REMOVE_FROM_FAVORITES',
+    type: "REMOVE_FROM_FAVORITES",
     payload: {
-      id: id
-    }
+      id: id,
+    },
   }
-};
+}
 // Trabajando  en el formulario 2.0
 
-export function getProduct(){
-  return async function(dispatch){
-    var info = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products",{
-      
-    })
+export function getProduct() {
+  return async function (dispatch) {
+    var info = await axios.get(`/products`, {})
     return dispatch({
       type: GET_PRODUCTS,
-      payload: info.data
+      payload: info.data,
     })
   }
 }
 
-export function postProduct(payload){ //payload es lo que nos llega en el front
-  return async function (dispatch){
-    const response = await axios.post("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products", payload)
-    console.log("Producto creaado "+ response);
-    return response;
+export function postProduct(payload) {
+  //payload es lo que nos llega en el front
+  return async function (dispatch) {
+    const response = await axios.post(`/products`, payload)
+    console.log("Producto creaado " + response)
+    return response
   }
 }

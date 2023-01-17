@@ -6,10 +6,10 @@ import "./login.css"
 export const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
-  return (  
-  
-    <a onClick={() => loginWithRedirect()}  className="login">
-  <span className="loginSpan">INICAR SESION</span>
-  </a> 
-)
+  return (
+
+    <a onClick={() => loginWithRedirect()} className="login">
+      <span className="loginSpan">INICAR SESION</span>
+    </a>
+  )
 };
