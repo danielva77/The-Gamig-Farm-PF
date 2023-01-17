@@ -103,6 +103,18 @@ export function getAllProd() {
   // }
 }
 
+export function postProducts(payload){
+  console.log("esto llega en payload POST", payload)
+  return async function (dispatch){
+  const response = await axios.post("http://localhost:3001/products", payload);
+  
+  return dispatch({
+    type: "POST_PRODUCTS",
+    payload: response.data,
+  })
+}
+}
+
 export function getAllMarks(){
   return async function (dispatch){
     try {
@@ -248,7 +260,21 @@ export function cleanDetail() {
   }
 }
 
+//Para Favoritos
 
+export const addToFavorites = item => ({
+  type: 'ADD_TO_FAVORITES',
+  item,
+});
+
+export const removeFromFav = (id) => {
+  return {
+    type: 'REMOVE_FROM_FAVORITES',
+    payload: {
+      id: id
+    }
+  }
+};
 // Trabajando  en el formulario 2.0
 
 export function getProduct(){

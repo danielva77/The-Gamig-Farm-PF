@@ -1,4 +1,4 @@
-export const sortByPrice = (items, sortBy) => {
+export const sortByPrice = (items, sortBy, resetCurrentPage) => {
   if (sortBy === "Min price") {
     let sortedItems = items.sort((a, b) => {
       return a.price - b.price
@@ -8,6 +8,7 @@ export const sortByPrice = (items, sortBy) => {
     let sortedItems = items.sort((a, b) => {
       return b.price - a.price
     })
+    resetCurrentPage()
     return sortedItems
   }
 }

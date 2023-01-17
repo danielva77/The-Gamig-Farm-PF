@@ -18,23 +18,26 @@ import {
   RESET_FILTERS,
   SET_FILTER_PRICE,
   SET_NAME_FILTER,
+  ADD_TO_FAV,
+  REMOVE_FROM_FAV,
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
-  
-  //FORMULARIO
-  
+  POST_PRODUCTS,
   GET_PRODUCTS
-} from "./actions"
+  } from "./actions"
+
+
 
 const initialState = {
   items: [],
+  favItems: [],
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
   marksFilter: "",
   nameFilter: "",
   currentPage: 1,
-  itemsPerPage: 2,
+  itemsPerPage: 4,
 
   detail: [],
   filter: {
@@ -97,6 +100,12 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         categoryFilter: action.payload,
       }
+    
+      // case POST_PRODUCTS:
+      //   console.log("reducer post",action.payload)
+      //   return{
+      //     ...state,
+      //   }
 
     case SET_FILTER_MARKS:
       return {
@@ -193,6 +202,8 @@ export default function rootReducer(state = initialState, action) {
           ),
         };
       }
+    
+        
       // Si el producto no existe en el carrito, lo añadimos con cantidad 1
       return {
         ...state,
@@ -230,14 +241,29 @@ export default function rootReducer(state = initialState, action) {
       return{
         ...state
       }
-      case "GET_PRODUCTS":
-        return{
-          ...state,
-          products: action.payload
-        };
+        case "GET_PRODUCTS":
+          return{
+            ...state,
+            products: action.payload
+          };
+
+          case 'ADD_TO_FAVORITES':
+            return {
+              ...state,
+              favItems: [...state.favItems, action.item]
+            };
+            case 'REMOVE_FROM_FAVORITES':
+              return {
+                  ...state,
+                  favItems: state.favItems.filter(item => item.id !== action.payload.id)
+              };
+    
+
     default:
-      return state
+      return state;
   }
-}
+ 
+
+};
 
 //Reducers Search Bar

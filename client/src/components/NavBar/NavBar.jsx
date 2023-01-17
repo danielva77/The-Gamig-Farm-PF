@@ -9,6 +9,9 @@ import { Profile } from "../Profile/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 import LOGO from "../Assets/LOGO.png"
+import { Button } from "react-bootstrap";
+import { useShoppingCart } from "../../context/CartContext/CartContext";
+import Carrito from "../Assets/cart.png";
 
 
 function NavBar() {
@@ -16,6 +19,8 @@ function NavBar() {
 
   // AUTENTICACION
   const { isAuthenticated } = useAuth0();
+
+  const { openCart, cartQuantity } = useShoppingCart()
 
   return (
     <div className="navbar-container">
@@ -35,7 +40,7 @@ function NavBar() {
       </div>
 
       <SearchBar />
-      <Cart />
+      {/* <Cart className="cart" /> */}
       <Favoritos />
 
       {isAuthenticated ? (
@@ -47,6 +52,13 @@ function NavBar() {
       ) : (
         <LoginButton />
       )}
+
+      <div className="cart-btn"><Button variant="" class="btn btn float-right" onClick={openCart}>
+        {""}
+        <img src={Carrito} alt="imagen" class="img-fluid" />
+        <div className="quantity-circle">{cartQuantity}</div>
+      </Button>
+      </div>
 
     </div>
   );

@@ -22,7 +22,7 @@ const configurandoEmail = (req, res) => {
 // ENVIAR EL MENSAJE 
  
 // Iniciar Sesion
-const mensaje = {
+const mensajeLogin = {
   from: infoInput.email, // sender address
   to: "oscarzavala2909@gmail.com", // list of receivers
   subject: "Bienvenido a la Comunidad 🎉", // Subject line
@@ -35,16 +35,20 @@ const mensaje = {
 }
 
 // Al terminar la compra
-const mensaje2 = {
+const mensajeCompra = {
   from: infoInput.email, // sender address
   to: "oscarzavala2909@gmail.com", // list of receivers
-  subject: "Compra finalizada con exito", // Subject line
-  text: "Estos fueron los productos que compraste"
+  subject: "Compra finalizada con exito 🛍", // Subject line
+  html: `<b>Estos fueron los productos que compraste:</b> <br> <br>
+  
+  
+    Total: $****
+  `
 }
 
 transporter.verify().then(() => {})
 
-  transporter.sendMail(mensaje);
+  transporter.sendMail(mensajeCompra);
   console.log("Datos Enviado → ", infoInput);
 }
 

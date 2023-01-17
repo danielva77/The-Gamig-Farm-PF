@@ -1,4 +1,4 @@
-export const filteredbyCategory = (items, categoryFilter) => {
+export const filteredbyCategory = (items, categoryFilter, resetCurrentPage) => {
   let filteredbyCategory = items
 
   if (categoryFilter) {
@@ -6,6 +6,9 @@ export const filteredbyCategory = (items, categoryFilter) => {
       item.Categories[0].title.includes(categoryFilter)
     )
   }
+
+  resetCurrentPage()
+
   if (filteredbyCategory) {
     return filteredbyCategory
   }

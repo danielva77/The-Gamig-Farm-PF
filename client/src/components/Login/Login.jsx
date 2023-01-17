@@ -18,4 +18,3 @@ export const LoginButton = () => {
   </a>  //onClick={() => info()}
 )
 };
-

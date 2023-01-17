@@ -1,4 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import Cart from "../../components/Cart/Cart";
+import { ShoppingCart } from "../../components/ShoppingCart/ShoppingCart";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 // Crea el contexto del carrito
 export const CartContext = createContext();
@@ -14,24 +17,58 @@ export const CartProvider = ({ children }) => {
     const localStorageCart = localStorage.getItem("cart");
     return localStorageCart ? JSON.parse(localStorageCart) : [];
 });
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
   
-  // const [cartItems, setCartItems] = useState(() => {
-  //   const localStorageCart = localStorage.getItem("cart");
-  //   return localStorageCart ? JSON.parse(localStorageCart) : [];
-  // })
+const quantity = cart.reduce((total, item) => total + item.quantity, 0);
 
-  const quantity = cart.reduce((total, item) => total + item.quantity, 0);
-  
+  const [isOpen, setIsOpen] = useState(false);
+
+  // La cantidad total de productos en el carrito
+  const cartQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   // Métodos para manipular el carrito
+
+  const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
   const addToCart = (item) => setCart([...cart, item]);
-  const removeFromCart = (id) => setCart(cart.filter((item) => item.id !== id));
+  
+//   const removeFromCart = (id) => {
+//     setCart(cart.filter((item) => item.id !== id));
+//       localStorage.removeItem("cart");
+    
+// };
+
+//vaciar el carrito
+const clearAllCart  = () => {
+  setCart([]);
+  localStorage.clear()
+};
+
+
   const getItemQuantity = (id) => {
     const item = cart.find((item) => item.id === id);
     return item ? item.quantity : 0;
   };
-  
-  const incrementItemQuantity = (item) => {
+
+  function incrementItemQuantity(id) {
+    setCart((currItems) => {
+      if (cart.find((item) => item.id === id) == null) {
+        return [...currItems, { id, quantity: 1 }];
+      } else {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  }
+
+  const addItem = (item) => {
     // Encuentra el ítem en el carrito
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
@@ -42,26 +79,33 @@ export const CartProvider = ({ children }) => {
     } else {
       // Si el ítem no existe, agrega uno nuevo con cantidad 1 al carrito
       addToCart({ ...item, quantity: 1 });
+      console.log(item)
       localStorage.setItem("cart", JSON.stringify(cart))
     }
   };
-  const decrementItemQuantity = (id) => {
-    // Encuentra el ítem en el carrito
-    const item = cart.find((item) => item.id === id);
-    if (item) {
-      // Si el ítem existe, disminuye su cantidad
-      item.quantity--;
-      // Si la cantidad del ítem llega a cero, elimínalo del carrito
-      if (item.quantity === 0) {
-        removeFromCart(id);
-        localStorage.setItem("cart", JSON.stringify(cart))
+
+  function decrementItemQuantity(id) {
+    setCart((currItems) => {
+      if (cart.find((item) => item.id === id)?.quantity === 1) {
+        return currItems.filter((item) => item.id !== id);
       } else {
-        // Si la cantidad del ítem es mayor a cero, actualiza el estado del carrito
-        setCart([...cart]);
-        localStorage.setItem("cart", JSON.stringify(cart))
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
+        });
       }
-    }
-  };
+    });
+  }
+
+  function removeFromCart(id) {
+    setCart((currItems) => {
+      return currItems.filter((item) => item.id !== id);
+    });
+  }
+
 
   // Proporciona el estado y los métodos del carrito como valor del contexto
   return (
@@ -69,14 +113,22 @@ export const CartProvider = ({ children }) => {
       value={{
         cart,
         quantity,
+        clearAllCart,
         addToCart,
+        addItem,
         removeFromCart,
         getItemQuantity,
         incrementItemQuantity,
         decrementItemQuantity,
+        removeFromCart,
+        openCart,
+        closeCart,
+        cart,
+        cartQuantity,
       }}
     >
       {children}
+      <ShoppingCart isOpen={isOpen} />
     </CartContext.Provider>
   );
 };
