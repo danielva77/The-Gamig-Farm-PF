@@ -12,7 +12,7 @@ export const LoginButton = () => {
 
 
   return (  
-  
+
     <a onClick={() => loginWithRedirect()}  className="login">
   <span>INICAR SESION</span>
   </a>  //onClick={() => info()}

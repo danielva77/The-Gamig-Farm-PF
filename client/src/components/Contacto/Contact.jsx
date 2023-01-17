@@ -117,8 +117,6 @@ export default function Contact() {
             timer: 5000
           });
 
-          // await axios.post("http://localhost:3001/enviarMensaje",
-          // {infoInput: input}).then(history.push("/home"))
       }
   // 
       
@@ -137,8 +135,13 @@ export default function Contact() {
 
 
 
+// NODEMAILER 
 
+const enviarMsj = async () => {
 
+  await axios.post("http://localhost:3001/enviarMensaje",
+  {infoInput: input}).then(history.push("/home"))
+}
 
   return (
     <div className="casita">
@@ -153,6 +156,14 @@ export default function Contact() {
           </div>
 
           <form  action="https://formsubmit.co/thegamingfarm01@gmail.com" method="POST" onSubmit={handleSubmit}>
+
+
+
+          <input type="hidden" name="_next" value="http://localhost:3000/home"/>
+          <input type="hidden" name="_captcha" value="false" />
+
+
+
             <div class="mb-3">
               <input
                 type="email"
@@ -226,6 +237,7 @@ export default function Contact() {
               </button>
             </div>
 
+          
 
             <Link 
             to="/Home"><button className="btn btn-danger volverBoto">Volver al Home</button>
@@ -236,9 +248,11 @@ export default function Contact() {
 
 
 
-            <input type="hidden" name="_next" value="http://localhost:3000/"/>
-            <input type="hidden" name="_captcha" value="false" />
           </form>
+
+          <div>
+            <button onClick={enviarMsj} >Mensaje - Iniciar Sesion</button>
+          </div>
         </div>
       </section>
     </div>
