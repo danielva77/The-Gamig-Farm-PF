@@ -102,18 +102,19 @@ export default function Contact() {
 
   // Enviando el mensaje
 
-  async function handleSubmit(e) {
+  async function handleSubmit (e) {
     
     // e.preventDefault();
     validate();  
 
         if(enviar){
-          Swal.fire({
+          await Swal.fire({
             title: "Mensaje enviado con Exito",
-            html: "En breve estaremos leyendo tu mensaje y te responderemos sobre el mismo Mail",
+            html: "Gracias, te responderemos a travez del Email",
             icon: "success",
             confirmButtonText: "Okay",
             confirmButtonColor: "Green",
+            timer: 5000
           });
 
           // await axios.post("http://localhost:3001/enviarMensaje",
@@ -209,6 +210,7 @@ export default function Contact() {
             </div>
 
 
+
             {/* BOTONES  */}
 
 
@@ -217,7 +219,9 @@ export default function Contact() {
               <button
                 type="submit"
                 className="btn btn-primary w-100 fs-5 enviarMensaje"
-                onClick={handleSubmit}>
+                onClick={handleSubmit}
+                >
+                  
                 Enviar mensaje
               </button>
             </div>
@@ -232,7 +236,7 @@ export default function Contact() {
 
 
 
-            <input type="hidden" name="_next" value="http://localhost:3000/home" />
+            <input type="hidden" name="_next" value="http://localhost:3000/"/>
             <input type="hidden" name="_captcha" value="false" />
           </form>
         </div>
