@@ -251,7 +251,7 @@ const enviarMsj = async () => {
           </form>
 
           <div>
-            <button onClick={enviarMsj} >Mensaje - Iniciar Sesion</button>
+            <button onClick={enviarMsj} >MSJ - Iniciar Sei</button>
           </div>
         </div>
       </section>
