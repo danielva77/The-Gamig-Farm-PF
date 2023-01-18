@@ -8,16 +8,17 @@ module.exports = (sequelize) => {
             allowNull: false,
             primaryKey: true,
           },
-          //fecha de compra
+          
         date: {
             type: DataTypes.DATEONLY,
             allowNull: false
         },
+/// detalle de compra
         detail: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        //total de compra
+        
         total: {
             type: DataTypes.INTEGER,
             allowNull: false

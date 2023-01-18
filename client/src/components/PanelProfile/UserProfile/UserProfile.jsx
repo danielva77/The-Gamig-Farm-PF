@@ -76,11 +76,10 @@ const rows = store.map(s => {
     }
 })
 
-    // const { loginWithRedirect, user, isAuthenticated } = useAuth0()
     return (
         <div>
             <h1>Hola {user.name}</h1>
-            {/* <button className="loginSpan" onClick={() => loginWithRedirect()}>INICIAR SESION</button> */}
+          
             <h1>Tu perfil</h1>
             <img src={user.avatar} alt='img not found'/>
             <h3>Nombre: {user.name}</h3>
@@ -93,16 +92,6 @@ const rows = store.map(s => {
             <br></br>
             <h1>Mis compras</h1>
 
-            {/* {isAuthenticated && (<p>{user}</p>)} */}
-            {/* 
-            {store.length ? store.map(s => {
-                return (
-                    <div>
-                    <p>id: {s.id} fecha: {s.date} producto: {s.product[0].title} total: {s.total} estado: {s.state} pago: {s.pay} </p>
-                </div>
-                )
-                
-            }): (<h4>Aun no has realizado compras!</h4>)} */}
             {/* <DataGrid
             rows={rows}
             columns={columns}

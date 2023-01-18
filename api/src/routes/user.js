@@ -9,11 +9,12 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
+//funciones controladoras. Mas abajo las rutas.
 const createUser = async () => {
     return await User.bulkCreate([{
         // id: 'pachilo@mail.com',
         name: 'pachilo',
-        avatar:'https://drive.google.com/file/d/1uEL5KKQ0622lXHl_4unPISGu0U0h_dYn/view?usp=share_link',
+        avatar:'pachilo',
         email: 'pachilo@mail.com',
         adress: '',
         dateOfBirth: '',
@@ -26,7 +27,7 @@ const createUser = async () => {
     {
         // id: 'luu@mail.com',
         name: 'luna',
-        avatar: 'https://drive.google.com/file/d/1uEMVAAM-gfyZrrR5yL81pxS2gH0pxVHB/view?usp=share_link',
+        avatar: 'luna',
         email: 'luna@mail.com',
         adress: '',
         dateOfBirth: '',
@@ -52,7 +53,7 @@ const createStore = async () => {
     })
     const store1= await Store.bulkCreate([{
         date: '01-01-2023',
-        detail: "[{id: 1, cant: 1, producto: 'monitor', precio: '5000'},{id: 1, cant: 2, producto: 'cpu', precio: '10000'}]",
+        detail: "id: 1, cant: 1, producto: monitor, precio: 5000 / id: 1, cant: 2, producto: cpu, precio: 10000",
         total: '15000',
         state: 'entregado',
         pay: 'credito',
@@ -60,14 +61,14 @@ const createStore = async () => {
 
     const store2= await Store.bulkCreate([{
         date: '01-01-2023',
-        detail: "[{id: 1, cant: 2, producto: 'mouse', precio: '100'}]",
+        detail: "id: 1, cant: 2, producto: mouse, precio: 100",
         total: '300',
         pay: 'credito',
         state: 'entregado',
     },
     {
         date: '09-01-2023',
-        detail: "[{id: 1, cant: 2, producto: 'teclado', precio: '500'}]",
+        detail: "id: 1, cant: 2, producto: teclado, precio: 500",
         total: '500',
         pay: 'debito',
         state: 'entregado',

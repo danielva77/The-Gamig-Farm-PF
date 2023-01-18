@@ -15,6 +15,7 @@ import Contact from "./components/Contact/Contact"
 import About from "./components/About/About"
 import LandingPageAd from "./components/Admin/LandingPageAd"
 import UserProfile from "./components/PanelProfile/UserProfile/UserProfile"
+import EditUserProfile from "./components/PanelProfile/UserProfile/EditUserProfile"
 
 function App() {
   // const { isAuthenticated } = useAuth0();
@@ -37,7 +38,8 @@ function App() {
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
-        <Route exact path="/myProfile" component={UserProfile} />
+        <Route path='/myProfile/:id' component={UserProfile} />
+        <Route path='/editProfile/:id' component={EditUserProfile} />
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>
       {/* <Footer className="amdr" /> */}
