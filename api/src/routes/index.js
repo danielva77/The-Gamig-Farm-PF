@@ -1,192 +1,121 @@
-const { Router } = require('express');
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-const axios = require('axios');
-const { User, Store } = require('../db');
+const { Router } = require("express")
+const axios = require("axios")
+// Modelos de la base de datos ↓
+const { User } = require("../db")
+const {
+  getAllProducts,
+  createProducts,
+  getCategories,
+} = require("../controllers/products/Controllers")
 
-const router = Router();
+const router = Router()
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+// MIDDLEWARES 📌
+// router.use('/auth', authRouter);
 
-//funciones controladoras. Mas abajo las rutas.
-const createUser = async () => {
-    return await User.bulkCreate([{
-        // id: 'pachilo@mail.com',
-        name: 'pachilo',
-        avatar:'pachilo',
-        email: 'pachilo@mail.com',
-        adress: '',
-        dateOfBirth: '01-07-2016',
-        telephone: 1122333211 ,
-        password: 'password',
-        isAdmin: false,
-        // Para desactivar el acceso
-        isActive: true,
-    }, 
-    {
-        // id: 'luu@mail.com',
-        name: 'luna',
-        avatar: 'luna',
-        email: 'luna@mail.com',
-        adress: '',
-        dateOfBirth: '01-12-2016',
-        telephone: 1122333211 ,
-        password: 'password',
-        isAdmin: true,
-        // Para desactivar el acceso
-        isActive: true,
-    }
-])
+// Traer todos los usuarios de la base de datos
+const getDbInfo = async () => {
+  return await User.findAll()
 }
 
-const createStore = async () => {
+// RUTAS
 
-    const users = await createUser();
+// Obtener todos los usuarios
+router.get("/usuarios", async (req, res) => {
+  // AXIOS.GET("")
+  const name = req.query.name // ?name="..."
 
-    const user1 = await User.findOne({
-        where: {name: 'luna'}
-    })
+  if (name) {
+    let users = await getDbInfo()
 
-    const user2 = await User.findOne({
-        where: {name: 'pachilo'}
-    })
-    const store1= await Store.bulkCreate([{
-        date: '01-01-2023',
-        detail: "id: 1, cant: 1, producto: monitor, precio: 5000 / id: 1, cant: 2, producto: cpu, precio: 10000",
-        total: '15000',
-        state: 'entregado',
-        pay: 'credito',
-    }])
+    //Comparamos ambos valores en minuscula
+    let usuarioName = await users.filter(
+      e => e.name.toLowerCase() == name.toLowerCase()
+    )
 
-    const store2= await Store.bulkCreate([{
-        date: '01-01-2023',
-        detail: "id: 1, cant: 2, producto: mouse, precio: 100",
-        total: '300',
-        pay: 'credito',
-        state: 'entregado',
-    },
-    {
-        date: '09-01-2023',
-        detail: "id: 1, cant: 2, producto: teclado, precio: 500",
-        total: '500',
-        pay: 'debito',
-        state: 'entregado',
-    }])
+    usuarioName.length
+      ? res.status(200).send(usuarioName)
+      : res
+          .status(404)
+          .send(
+            `<h1 style="background-color: black; color:red; text-align:center">ERORR 404 → No existe el usuario con el nombre de: ${name}<h1/>`
+          )
+  } else {
+    //no hay query → Enviar todos los datos normal
 
-    await user1.addStore(store1)
-    await user2.addStore(store2)
+    let users = await getDbInfo()
+    res.status(200).send(users)
+  }
+}) // ✅✅✅✅✅
 
-    return 'base cargada'
+// obtener un usuario en particular
+router.get("/usuario/name", async (req, res) => {
+  res.status(202).send("Este es el perfil de : Alfredo Zavala")
+}) // ❓❓❓❓❓
+// cargar/crear usuario
+router.post("/usuarios", async (req, res) => {
+  const { name, avatar, email, adress, dateOfBirth, telephone, password } =
+    req.body
 
-}
+  User.create({
+    name,
+    avatar,
+    email,
+    adress,
+    dateOfBirth,
+    telephone,
+    password,
+  }) // ✅✅✅✅✅
 
+  res.status(200).send("El elemento fue publicado con exito")
+}) //✅
+// Actualizar informacion del usuario
+router.put("/usuario/name", async (req, res) => {
+  res.send("El elemento fue actualizado")
+}) //✅
+// Eliminar cuenta del usuario
+router.delete("/usuario/name", async (req, res) => {
+  res.send("El elemento fue eliminado con exito")
+}) //✅
 
-const store = async (user, shopping) => {
-    try {
-        const user = await User.findOne({
-        where: { email: user }
-       })
-        const shop = await Store.create(shopping)
+// **********************
+// PRODUCTOS
+// **********************
+router.get("/products", async (req, res) => {
+  const nombre = req.query.title
+  let allprod = await getAllProducts()
 
-        await user.addStore(shop)
-
-        return 'la compra se ha realizado con exito'
-    } catch (error) {
-        console.log(error);
-    }
-
-}
-
-const userID = async (id) => {
-    try {
-        const us = await User.findByPk(id,{
-            include: { model: Store }
-        })
-        if(us) {
-            const data = {
-                id: us.id,
-                name: us.name,
-                avatar: us.avatar,
-                email: us.email,
-                adress: us.adress,
-                dateOfBirth: us.dateOfBirth,
-                telephone: us.telephone,
-                isAdmin: us.isAdmin,
-                isActive: us.isActive,
-                store: us.Stores.map(s => {
-                    return {
-                        id: s.id,
-                        date: s.date,
-                        detail: s.detail,
-                        total: s.total,
-                        pay: s.pay,
-                        state: s.state
-                    }
-                })
-            }
-            return data
-        }
-    } catch (error) {
-        console.log(error);
-    }
-   
-}
-
-const updateUser = async (data, id) => {
-    
-    try {
-        await User.update(data, {
-            where: { id: id }
-        })
-        return 'Se ha actualizado los datos con exito!'
-    } catch (error) {
-        console.log(error);
-    }
-    
-}
-
-// esta ruta me carga la base de datos con user mas compras
-router.get('/createuser', async function (req, res) {
-    try {
-        await createStore();
-    
-     return res.status(200).json('listo')        
-
-    } catch (error) {
-        console.error(error);
-        return res.status(404).send({mensaje: 'hubo un error'});
-    }
+  if (nombre) {
+    let videogamesName = await allprod.filter(el =>
+      el.title.toLowerCase().includes(nombre.toLowerCase())
+    )
+    videogamesName.length
+      ? res.status(200).send(videogamesName.slice(0, 15))
+      : res.status(404).send("product not found")
+  } else {
+    res.status(200).send(allprod)
+  }
 })
 
-// esta ruta me busca un ususrio de mi base de datos por id  mas las compras que realizo
-router.get('/user/:id', async function (req, res) {
-    const { id } = req.params;
-    try {
-        const data = await userID(id);
-        
-        return res.status(200).json(data);
+// getAllProducts);
+router.post("/products", createProducts)
 
-    } catch (error) {
-        console.error(error);
-        return res.status(404).send({mensaje: 'hubo un error'});
-    }
+router.get("/category", getCategories)
+
+router.get("/products/:id", async (req, res) => {
+  // res.send("Soy el get /videogame")
+  const { id } = req.params
+
+  console.log("numero", id.toString().length)
+
+  let allprodById = await getAllProducts()
+
+  if (id) {
+    let ProdId = await allprodById.filter(e => e.id == id)
+    ProdId.length
+      ? res.status(200).json(ProdId)
+      : res.status(404).send("No existe juego con ese Id")
+  }
 })
 
-// esta ruta modifica los datos del user
-
-router.put('/user/:id', async function (req, res) {
-    const data  = req.body;
-    const { id } = req.params;
-
-    try {    
-        const update = await updateUser(data, id);
-
-            return res.status(200).json(update);
-    } catch (error) {
-        console.error(error);
-        return res.status(404).send({mensaje: 'hubo un error'});
-    }
-})
-
-module.exports = router;
+module.exports = router
