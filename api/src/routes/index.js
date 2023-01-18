@@ -29,23 +29,8 @@ const getDbInfo = async () => {
 
 // NODEMAILER 📨
 
-
-// Function One:
-
-// try {
-//     await function transport(){
-
-//     }
-// } catch (error) {
-//   // code code code code code
-//   // return res.status().json({ message: "Something goes wrong! "})
-// }
-
-
-
-
-
-router.post("/enviarMensaje", configurandoEmail)
+// Al finalizar la compra ↓
+router.post("/MensajeCompra", configurandoEmail)
 
 
 
@@ -156,7 +141,7 @@ router.get("/products/:id", async (req, res) => {
 mercadopago.configure({access_token: process.env.MERCADOPAGO_KEY})
 
 router.post("/payment",(req, res) => {
-  totalProducts = req.body
+   totalProducts = req.body
   console.log("totalproducts", totalProducts)
 
   let preference = {

@@ -4,9 +4,9 @@ const nodemailer = require("nodemailer");
 
 const configurandoEmail = (req, res) => {
 
-  const { infoInput } = req.body
+  const  cart  = req.body
 
-  console.log("req-body → ", infoInput);
+  console.log("req-body → ", cart);
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -23,7 +23,7 @@ const configurandoEmail = (req, res) => {
  
 // Iniciar Sesion
 const mensajeLogin = {
-  from: infoInput.email, // sender address
+  from: "infoInput.email", // sender address
   to: "oscarzavala2909@gmail.com", // list of receivers
   subject: "Bienvenido a la Comunidad 🎉", // Subject line
   html: `Hola que tal? 👋🏻 <br> <br>
@@ -34,24 +34,55 @@ const mensajeLogin = {
   <b> Esto recien Empieza 🔥 </b>`
 }
 
+
+
+
+// SUMANDO PRICE
+
+const total = () =>{
+  
+  let suma = 0
+
+  for (let i = 0; i < cart.length; i++) {
+    
+    const sumar =  suma += cart[i].price
+    return sumar
+}
+}
+
+
+
 // Al terminar la compra
 const mensajeCompra = {
-  from: infoInput.email, // sender address
+  from: " ", // sender address
   to: "oscarzavala2909@gmail.com", // list of receivers
   subject: "Compra finalizada con exito 🛍", // Subject line
-  html: `<b>Estos fueron los productos que compraste:</b> <br> <br>
+  html: `<h1><u><cite>Estos fueron los productos que compraste:</cite></u></h1> <br> 
+
   
-  
-    Total: $****
-  `
+  ${cart.map(e =>  {
+    return `
+    <h2>Nombre: <cite>${e.name}</cite></h2> <h3>Precio: <cite>$${e.price}</cite></h3> <h3>Cantidad: <cite>${e.quantity}</cite></h3>
+    <img src=${e.img} width=500px height=500px>` 
+})} 
+
+
+<br><br><br>
+ <h2>Total: <cite>$${cart.reduce((total, product) => total + product.price, 0)}</cite></h2> 
+
+`
 }
 
 transporter.verify().then(() => {})
 
   transporter.sendMail(mensajeCompra);
-  console.log("Datos Enviado → ", infoInput);
+  console.log("Datos Enviado → ", cart);
 }
 
-const transporter = " "
-
 module.exports = configurandoEmail
+
+
+
+
+
+// CONFIGURAR COMO VIENE EL TOTAL DEL PRECIO
