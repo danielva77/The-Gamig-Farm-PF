@@ -47,7 +47,6 @@ function NavBar() {
         <>
 
           <Profile />
-          <LogoutButton />
         </>
       ) : (
         <LoginButton />

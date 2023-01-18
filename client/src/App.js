@@ -14,6 +14,8 @@ import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Contact from "./components/Contacto/Contact";
 import Confirmation from "./components/Confirmation/Confirmation";
+import { Compras } from "./components/Profile/Usuario/Compras";
+
 
 function App() {
   return (
@@ -26,6 +28,11 @@ function App() {
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
         <Route path="/confirmation/approve" component={Confirmation} />
+        <Route path="/perfil" component={Profile} />
+        <Route path="/compras" component={Compras} />
+
+
+
 
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>
