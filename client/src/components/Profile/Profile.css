@@ -87,3 +87,19 @@ line-height: 24px;
     margin-top: 1px;
 
 }
+
+.Favortios-btn{
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background:  #747272;
+    color: #ffff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 450;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    border: none;
+    overflow: hidden;
+    margin-top: 1px;
+}

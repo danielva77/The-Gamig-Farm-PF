@@ -47,6 +47,9 @@ export const Profile = () => {
             <Link to="/contacto">
               <button className="Contacto-btn"> Contacto </button>
             </Link>
+            <Link to="/favortios">
+              <button className="Favortios-btn"> Favortios </button>
+            </Link>
           <LogoutButton className="salir" />
           </div>
         </Offcanvas >

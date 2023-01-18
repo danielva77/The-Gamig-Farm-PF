@@ -15,6 +15,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contacto/Contact";
 import Confirmation from "./components/Confirmation/Confirmation";
 import { Compras } from "./components/Profile/Usuario/Compras";
+import {Favor} from "./components/Profile/Usuario/Favoritos"
 
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
         <Route path="/confirmation/approve" component={Confirmation} />
         <Route path="/perfil" component={Profile} />
         <Route path="/compras" component={Compras} />
+        <Route path="/favortios" component={Favor} />
+
 
 
 

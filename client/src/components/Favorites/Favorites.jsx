@@ -1,11 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { removeFromFav } from "../../redux/actions";
 import Fav from "../Assets/favorito.png";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import "../Favorites/Favorites.css"
 
 const Favoritos = () => {
