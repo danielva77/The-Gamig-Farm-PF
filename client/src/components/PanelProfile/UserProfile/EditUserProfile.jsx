@@ -23,6 +23,7 @@ const EditUserProfile = () => {
 
     return (
         <div>
+            <h2>Solo completá los campos que desees modificar!</h2>
             <form>
                 <div className="div-name">
                     <label name="title" htmlFor="name">Nombre: </label>
