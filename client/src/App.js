@@ -28,7 +28,7 @@ function App() {
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
         <Route path="/about" component={About} />
-        <Route path='/myProfile/' component={UserProfile} />
+        <Route path='/myProfile/:id' component={UserProfile} />
         <Route path='/editProfile/:id' component={EditUserProfile} />
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>
