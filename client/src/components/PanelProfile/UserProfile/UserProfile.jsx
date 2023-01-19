@@ -1,0 +1,131 @@
+import React, { useEffect } from "react";
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams, Link} from "react-router-dom"
+import { getUser, cleanDetail } from "../../../redux/actions";
+import "./userProfile.css"
+
+
+const UserProfile = () => {
+    const { id } = useParams()
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.userID)
+
+    useEffect(() => {
+        dispatch(getUser(id))
+
+        return () => dispatch(cleanDetail())
+    },[dispatch, id])
+
+//     const store = [{
+//         id: '01',
+//         date: '01-01-2023',
+//         product: [ {title: 'pc'}],
+//         total: '1000',
+//         state: 'entregado',
+//         pay: 'credito',
+        
+//     },
+//     {
+//         id: '22',
+//         date: '09-01-2023',
+//         product: [ {title: 'mouse'}],
+//         total: '150',
+//         state: 'pendiente',
+//         pay: '',
+        
+
+//     }
+// ];
+const store = user.store;
+
+const columns = [
+    {
+        field: 'id',
+        headerName: 'Id',
+    },
+    {
+        field: 'date',
+        headerName: 'Fecha de compra',
+    },
+    {
+        field: 'detail',
+        headerName: 'Detalle',
+    },
+    {
+        field: 'total',
+        headerName: 'Total',
+    },
+    {
+        field: 'pay',
+        headerName: 'Medio de Pago',
+    },
+    {
+        field: 'state',
+        headerName: 'Estado de compra',
+    },
+]
+
+// const rows = store.map(s => {
+//     return {
+//         id: s.id,
+//         date: s.date,
+//         detail: s.detail,
+//         total: s.total,
+//         pay: s.pay,
+//         state: s.state,
+//     }
+// })
+
+    return (
+        <div className="padres">
+            {/* <img src={user.avatar} alt='img not found'/> */}
+
+            {/* <h1>Hola {user.name} Camila 👋🏻</h1> */}
+            <Link to="/Home"><button className="atras">Atras</button></Link>
+            <div className="bienvenida">
+
+            <img src="https://www.estudiofoto.com/wp-content/uploads/2021/08/Fotografia-Profesional-Estudio-705x705.jpg" alt='img not found' className="profileF"/>
+            
+            <Link to={`$/editProfile/${id}`}><button className="editar">✏</button></Link>
+
+
+            <div className="profile">
+            <h1 className="tuPerfil">Tu perfil</h1> <br />
+            <h3><b>Nombre: {user.name}</b> Camila fuentes</h3>
+            <h3><b>Email: {user.email}</b> camilaF@gmail.com</h3>
+            <h3><b>Direccion: {user.adress}</b> Argentina</h3>
+            <h3><b>Fecha de nacimiento: {user.dateOfBirth}</b> 28/05/1990</h3>
+            <h3><b>Telefono: {user.telephone}</b> 261547481</h3>
+            </div>
+
+            </div>
+
+            <div className="informacion">
+            <h1 className="misCompras">Mis compras</h1>
+            <button className="btn btn-dark">Historial de Compras</button>
+            <button className="btn btn-dark m-4">Comentarios </button>
+            </div>
+
+
+            {/* <DataGrid
+            rows={rows}
+            columns={columns}
+            /> */}
+
+{/* 
+            <div 
+            style={{ height: 375, width: "100%" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          components={{ Toolbar: GridToolbar }}
+        />
+
+
+      </div> */}
+        </div>
+    )
+};
+
+export default UserProfile;

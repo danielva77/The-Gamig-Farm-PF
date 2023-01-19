@@ -62,10 +62,10 @@ Product.belongsToMany(Store, { through: "Store_Product" });
 
 Product.hasMany(Review);
 Review.belongsTo(Product);
-
+//
 Mark.hasMany(Product)
-Product.hasMany(Mark)
-
+Product.belongsTo(Mark)
+//
 User.hasMany(Store)
 Store.belongsTo(User)
 
