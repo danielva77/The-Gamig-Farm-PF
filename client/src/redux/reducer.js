@@ -241,6 +241,10 @@ export default function rootReducer(state = initialState, action) {
       return{
         ...state
       }
+      case "ADD_REVIEW": 
+      return{
+        ...state
+      }
         case "GET_PRODUCTS":
           return{
             ...state,

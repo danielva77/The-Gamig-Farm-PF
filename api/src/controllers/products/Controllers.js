@@ -1,4 +1,4 @@
-const { Product, Mark, Category } = require("../../db")
+const { Product, Mark, Category, Review } = require("../../db")
 
 // Funcion para traer todos los juegos, incluye el modelo categoria
 const getAllProducts = async () => {
@@ -10,6 +10,9 @@ const getAllProducts = async () => {
         },
         {
           model: Mark,
+        },
+        {
+          model: Review,
         },
       ],
     })

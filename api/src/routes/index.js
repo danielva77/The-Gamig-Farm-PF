@@ -12,6 +12,8 @@ const {
   modifyProducts,
 } = require("../controllers/products/Controllers")
 
+const { getAllReview, reviewCreate, reviewDelete  } = require("../controllers/review/controllers")
+
 const enviarMail = require("../config/mailer")
 
 const router = Router()
@@ -172,5 +174,11 @@ router.post("/payment",(req, res) => {
 
 router.put("/products/:id", modifyProducts)
 router.post("/enviarMensaje", enviarMail)
+
+
+//REVIEW
+router.post('/review', reviewCreate)
+router.delete("/review/:reviewId", reviewDelete)
+router.get('/review',getAllReview)
 
 module.exports = router

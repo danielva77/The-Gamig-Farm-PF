@@ -296,3 +296,21 @@ export function postProduct(payload){ //payload es lo que nos llega en el front
     return response;
   }
 }
+
+export const addReview = (payload) => {
+  return async function (dispatch) {
+    try {
+      const response = await axios.post("http://localhost:3001/review",payload);
+
+      return dispatch({
+        type: "ADD_REVIEW",
+        payload: response.data.body,
+      });
+    } catch (error) {
+      dispatch({
+        type: "ERROR",
+        payload: error,
+      });
+    }
+  };
+};

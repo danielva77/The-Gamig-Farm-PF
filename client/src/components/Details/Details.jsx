@@ -9,6 +9,7 @@ import Footer from "../Footer/Footer"
 import NavBar from "../NavBar/NavBar";
 import { useShoppingCart } from '../../context/CartContext/CartContext';
 import { addToFavorites } from '../../redux/actions';
+import AddReview from '../AddReview/AddReview';
 
 
 export default function Details(props) {
@@ -59,6 +60,10 @@ const favItems = useSelector(state => state.favItems);
       }
       <div className='filtros'>
         <a href="/home" className='volver'> 🡰 Volver</a>
+      </div>
+      <div>
+        <AddReview 
+        productId={props.match.params.id}/>
       </div>
       <div className='move-footer'>
         <Footer />
