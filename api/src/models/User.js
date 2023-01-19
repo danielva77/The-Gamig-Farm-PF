@@ -22,26 +22,26 @@ module.exports = (sequelize) => {
         },
         adress: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         dateOfBirth: {
             type: DataTypes.STRING ,
             // type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
         },
         telephone: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
-        // isAdmin: {
-        //     type: DataTypes.BOOLEAN,
-        //     allowNull: false,
-        //     defaultValue: false
-        // },
+        isAdmin: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
         // Para desactivar el acceso
         isActive: {
             type: DataTypes.BOOLEAN,

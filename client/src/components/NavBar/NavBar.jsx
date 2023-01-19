@@ -48,6 +48,7 @@ function NavBar() {
 
           <Profile />
           <LogoutButton />
+          <Link to='/myProfile/:id'><button>Ir a mi perfil</button></Link>
         </>
       ) : (
         <LoginButton />

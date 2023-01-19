@@ -64,8 +64,8 @@ Product.hasMany(Review, {foreignKey: 'productId'});
 Review.belongsTo(Product, {foreignKey: 'productId'});
 
 Mark.hasMany(Product)
-Product.hasMany(Mark)
-
+Product.belongsTo(Mark)
+//
 User.hasMany(Store)
 Store.belongsTo(User)
 

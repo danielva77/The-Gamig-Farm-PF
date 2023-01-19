@@ -1,6 +1,7 @@
 import axios from "axios"
-// import { log } from "console"
-
+//
+export const GET_USER_ID = "GET_USER_ID"
+//
 export const GET_ALL_PROD = "GET_ALL_PROD"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
 export const GET_DETAIL = "GET_DETAIL"
@@ -26,6 +27,9 @@ export const SET_NAME_FILTER = "SET_NAME_FILTER"
 
 export const GET_PRODUCTS = "GET_PRODUCTS"
 export const POST_PRODUCTS = "POST_PRODUCTS"
+
+//REVIEWS
+export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
 
 
 export const setNameFilter = payload => {
@@ -92,31 +96,21 @@ export function getAllProd() {
       type: "GET_ALL_PROD",
       payload: products,
     })
+  } }
+
+export function postProducts(payload) {
+  return async function (dispatch) {
+    const response = await axios.post("http://localhost:3001/products", payload);
+
+    return dispatch({
+      type: "POST_PRODUCTS",
+      payload: response.data,
+    })
   }
-
-  // ----- Get from json
-  // return async function (dispatch) {
-  //   return dispatch({
-  //     type: "GET_ALL_PROD",
-  //     payload: jsonData,
-  //   })
-  // }
 }
 
-export function postProducts(payload){
-  console.log("esto llega en payload POST", payload)
-  return async function (dispatch){
-  const response = await axios.post("http://localhost:3001/products", payload);
-  
-  return dispatch({
-    type: "POST_PRODUCTS",
-    payload: response.data,
-  })
-}
-}
-
-export function getAllMarks(){
-  return async function (dispatch){
+export function getAllMarks() {
+  return async function (dispatch) {
     try {
       const req = await axios.get("http://localhost:3001/mark")
 
@@ -124,10 +118,10 @@ export function getAllMarks(){
       const unicos = req.data
       const marks = [];
 
-      for(var i = 0; i < unicos.length; i++) {
- 
+      for (var i = 0; i < unicos.length; i++) {
+
         const elemento = unicos[i];
-       
+
         if (!marks.includes(unicos[i])) {
           marks.push(elemento);
         }
@@ -140,6 +134,8 @@ export function getAllMarks(){
   }
 }
 
+
+
 export function getAllCategories() {
   return async function (dispatch) {
     try {
@@ -150,10 +146,10 @@ export function getAllCategories() {
       const unicos = req.data
       const categories = [];
 
-      for(var i = 0; i < unicos.length; i++) {
- 
+      for (var i = 0; i < unicos.length; i++) {
+
         const elemento = unicos[i];
-       
+
         if (!categories.includes(unicos[i])) {
           categories.push(elemento);
         }
@@ -277,10 +273,10 @@ export const removeFromFav = (id) => {
 };
 // Trabajando  en el formulario 2.0
 
-export function getProduct(){
-  return async function(dispatch){
-    var info = await axios.get("http://localhost:3001/products",{
-      
+export function getProduct() {
+  return async function (dispatch) {
+    var info = await axios.get("http://localhost:3001/products", {
+
     })
     return dispatch({
       type: GET_PRODUCTS,
@@ -289,10 +285,10 @@ export function getProduct(){
   }
 }
 
-export function postProduct(payload){ //payload es lo que nos llega en el front
-  return async function (dispatch){
+export function postProduct(payload) { //payload es lo que nos llega en el front
+  return async function (dispatch) {
     const response = await axios.post("http://localhost:3001/products", payload)
-    console.log("Producto creaado "+ response);
+    console.log("Producto creaado " + response);
     return response;
   }
 }
@@ -314,3 +310,31 @@ export const addReview = (payload) => {
     }
   };
 };
+
+
+
+
+// trae user por id mas compras
+export function getUser(id) {
+  return function (dispatch) {
+    return axios.get(`http://localhost:3001/user/${id}`)
+      .then(res => {
+        dispatch({ type: GET_USER_ID, payload: res.data })
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  }
+}
+
+export function getReviews(){
+  return async function(dispatch){
+  const jsonreview = await axios.get("http://localhost:3001/review")
+  const review = jsonreview.data;
+
+  return dispatch({
+    type: "GET_ALL_REVIEWS",
+    payload: review,
+  })
+  }
+}

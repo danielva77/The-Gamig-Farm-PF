@@ -10,6 +10,7 @@ import NavBar from "../NavBar/NavBar";
 import { useShoppingCart } from '../../context/CartContext/CartContext';
 import { addToFavorites } from '../../redux/actions';
 import AddReview from '../AddReview/AddReview';
+import ReviewContainer from '../AddReview/ReviewContainer';
 
 
 export default function Details(props) {
@@ -55,7 +56,6 @@ const favItems = useSelector(state => state.favItems);
             </div>
             <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
 
-
           </div> : <p>Cargando ...</p>
       }
       <div className='filtros'>
@@ -65,6 +65,9 @@ const favItems = useSelector(state => state.favItems);
         <AddReview 
         productId={props.match.params.id}/>
       </div>
+      <div>
+        <ReviewContainer productId={props.match.params.id} />
+        </div>
       <div className='move-footer'>
         <Footer />
       </div>

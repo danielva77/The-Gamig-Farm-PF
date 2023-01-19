@@ -13,6 +13,7 @@ const getAllProducts = async () => {
         },
         {
           model: Review,
+          attributes: ["id","comment", "rating", "createdAt"],
         },
       ],
     })

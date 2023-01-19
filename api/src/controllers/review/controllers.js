@@ -3,9 +3,9 @@ const { Review } = require("../../db")
 const getAllReview = async (req, res, next) => {
       try{
         const response = await Review.findAll()
-        res.send(200).status(response)  
+        res.status(200).send(response)  
       }catch(error){
-        res.send(400).status(error)
+        res.status(400).send(error)
       }
     }
 
@@ -23,10 +23,10 @@ const getAllReview = async (req, res, next) => {
           productId, userId, comment, rating
         })
         
-        res.send(200).status(response) 
+        res.status(200).send(response) 
   
       }catch(error){
-        res.send(400).status(error)
+        res.status(400).send(error)
       }
     }
 
@@ -44,9 +44,9 @@ const getAllReview = async (req, res, next) => {
           const response = await reviewFound.destroy({
               where: { id: reviewId },
             });
-            res.send(200).status(response) 
+            res.status(200).send(response) 
           } catch (error) {
-            res.send(400).status(error)
+            res.status(400).send(error)
           }
         };
 

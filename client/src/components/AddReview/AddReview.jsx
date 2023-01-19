@@ -13,7 +13,7 @@ const colors = {
 export default function AddReview({productId}){
   const initialState = {
     productId: productId,
-    userId: "550e8400-e29b-41d4-a716-446655440000",
+    userId: "88e29e02-ce4f-4111-98c1-163554eb1636",
     comment: "",
     rating: 0
   };

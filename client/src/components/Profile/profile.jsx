@@ -16,7 +16,15 @@ export const Profile = () => {
         <h1 className="nameP">{user.given_name}</h1>
         {/* <p >Email: {user.email}</p> */}
         {console.log(user)}
+        <boton>Ir a mi perfil</boton>
       </div>
     )
   );
 };
+
+
+
+
+
+
+

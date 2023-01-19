@@ -1,0 +1,79 @@
+.padres{
+    background-color: rgb(120, 120, 120);
+    width: 100%;
+    /* height: 725px */
+    height: 864px;
+}
+.bienvenida{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    /* justify-content: space-around; */
+    width: 1200px;
+    position: relative;
+    left: 165px;
+    top: 50px;
+    border: 4px solid black;
+    padding: 30px 0;
+    border-radius: 20px;
+}
+.profile{
+    position: relative;
+    left: 220px;
+    /* background-color: blue; */
+    width: 850px;
+    /* justify-content: space-around; */
+    text-align: left    ;
+     
+}
+.editar{
+    background-color: #ff8906;
+    position: absolute;
+    top: 77%;
+    right: 815px;
+    border-radius: 7px;
+    padding: 0px 15px;
+    user-select: none;
+}
+.profileF{
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    left: 70px;
+    top: 10px;
+    user-select: none;
+}
+
+/* Tu perfil */
+.tuPerfil{
+    /* background-color: rebeccapurple; */
+    font-family: proxima-nova, sans-serif;
+    color: black;
+    font-size: 50px;
+    padding: 0px 0px;
+    user-select: none;
+    font-weight: bolder
+}
+h3{
+    padding: 5px 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+}
+b{
+    font-family: proxima-nova, sans-serif;
+    color: #ff8906;
+    font-size: 24px;
+    text-shadow: 0px 1px 0px black;
+}
+
+.informacion{
+    background-color: rgb(253, 150, 47);
+    position: relative;
+    top: 70px;
+}
+.misCompras{
+    color: #ff8906;
+    text-shadow: -2px 2px 1px black;
+}

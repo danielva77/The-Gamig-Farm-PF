@@ -1,6 +1,7 @@
 //Reducers Search Bar
 
 import {
+  GET_USER_ID,
   GET_ALL_PROD,
   SEARCH_BY_NAME,
   GET_DETAIL,
@@ -23,13 +24,18 @@ import {
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
   POST_PRODUCTS,
-  GET_PRODUCTS
-  } from "./actions"
+  GET_PRODUCTS,
+  GET_ALL_REVIEWS
+} from "./actions"
 
 
 
 const initialState = {
+  //
+  userID: {},
+  //
   items: [],
+  reviews: [],
   favItems: [],
   sortBy: "",
   numbersPaginated: [],
@@ -56,17 +62,24 @@ const initialState = {
   },
   sorted: [],
   categories: [],
-  marks:[],
+  marks: [],
 
   currentItems: [],
   loading: false,
 
   // FORMULARIO
-  products : []
+  products: []
 }
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    //
+    case GET_USER_ID:
+      return {
+        ...state,
+        userID: action.payload
+      };
+    //
     case SET_NAME_FILTER:
       return {
         ...state,
@@ -100,18 +113,18 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         categoryFilter: action.payload,
       }
-    
-      // case POST_PRODUCTS:
-      //   console.log("reducer post",action.payload)
-      //   return{
-      //     ...state,
-      //   }
+
+    // case POST_PRODUCTS:
+    //   console.log("reducer post",action.payload)
+    //   return{
+    //     ...state,
+    //   }
 
     case SET_FILTER_MARKS:
       return {
         ...state,
         marksFilter: action.payload,
-      }  
+      }
 
     case SET_NUMBERS_PAGINATED:
       return {
@@ -165,6 +178,12 @@ export default function rootReducer(state = initialState, action) {
         categories: action.payload,
       }
 
+    case GET_ALL_REVIEWS:
+      return {
+        ...state,
+        reviews: action.payload,
+      }
+
     case GET_ALL_MARKS:
       return {
         ...state,
@@ -202,8 +221,8 @@ export default function rootReducer(state = initialState, action) {
           ),
         };
       }
-    
-        
+
+
       // Si el producto no existe en el carrito, lo añadimos con cantidad 1
       return {
         ...state,
@@ -235,38 +254,38 @@ export default function rootReducer(state = initialState, action) {
         )
       }
 
-      // FORMULARIO 
+    // FORMULARIO 
 
-      case "POST_PRODUCTS": 
-      return{
+    case "POST_PRODUCTS":
+      return {
         ...state
       }
       case "ADD_REVIEW": 
       return{
         ...state
       }
-        case "GET_PRODUCTS":
-          return{
-            ...state,
-            products: action.payload
-          };
+    case "GET_PRODUCTS":
+      return {
+        ...state,
+        products: action.payload
+      };
 
-          case 'ADD_TO_FAVORITES':
-            return {
-              ...state,
-              favItems: [...state.favItems, action.item]
-            };
-            case 'REMOVE_FROM_FAVORITES':
-              return {
-                  ...state,
-                  favItems: state.favItems.filter(item => item.id !== action.payload.id)
-              };
-    
+    case 'ADD_TO_FAVORITES':
+      return {
+        ...state,
+        favItems: [...state.favItems, action.item]
+      };
+    case 'REMOVE_FROM_FAVORITES':
+      return {
+        ...state,
+        favItems: state.favItems.filter(item => item.id !== action.payload.id)
+      };
+
 
     default:
       return state;
   }
- 
+
 
 };
 

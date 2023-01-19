@@ -4,15 +4,13 @@ import "./contact.css";
 import support from "../Assets/support.png";
 import Swal from "sweetalert2";
 import axios from "axios";
-import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
 
 export default function Contact() {
   const history = useHistory();
 
   const [input, setInput] = useState({
     email: "",
-    nombre: "",
+    nombre: "", // Pensarlo bien si realmente va a estar a estar este input
     asunto: "",
     mensaje: ""
   });
@@ -104,31 +102,27 @@ export default function Contact() {
 
   // Enviando el mensaje
 
-  async function handleSubmit(e) {
+  async function handleSubmit (e) {
     
-    e.preventDefault();
-    validate();
-
-   
+    // e.preventDefault();
+    validate();  
 
         if(enviar){
-          Swal.fire({
+          await Swal.fire({
             title: "Mensaje enviado con Exito",
-            html: "En breve estaremos leyendo tu mensaje y te responderemos sobre el mismo Mail",
+            html: "Gracias, te responderemos a travez del Email",
             icon: "success",
             confirmButtonText: "Okay",
             confirmButtonColor: "Green",
+            timer: 5000
           });
 
-
-          await axios.post("http://localhost:3001/enviarMensaje",
-          {dataMail: input}).then(history.push("/home"))
       }
-  
+  // 
       
       
       
-      console.log("esto va a post →", input);
+      // console.log("esto va a post →", input);
      
   }
 
@@ -141,12 +135,15 @@ export default function Contact() {
 
 
 
+// NODEMAILER 
 
+const enviarMsj = async () => {
 
+  await axios.post("http://localhost:3001/enviarMensaje",
+  {infoInput: input}).then(history.push("/home"))
+}
 
   return (
-    <div>
-    <NavBar/>
     <div className="casita">
       <section id="seccion-contacto">
         <div class="container" id="contenedor-formulario">
@@ -158,8 +155,15 @@ export default function Contact() {
             <p class="fs-5">Estamos aqui para hacer responder tus consultas</p>
           </div>
 
-          {/* <form onSubmit={(e) => handleSubmit(e)}> */}
-          <form>
+          <form  action="https://formsubmit.co/thegamingfarm01@gmail.com" method="POST" onSubmit={handleSubmit}>
+
+
+
+          <input type="hidden" name="_next" value="http://localhost:3000/home"/>
+          <input type="hidden" name="_captcha" value="false" />
+
+
+
             <div class="mb-3">
               <input
                 type="email"
@@ -168,8 +172,10 @@ export default function Contact() {
                 placeholder="nombre@ejemplo.com"
                 value={input.email}
                 onChange={handleEmail}
+                name="Email"
                 // required
               />
+
             </div>
 
             <div class="mb-3">
@@ -180,6 +186,7 @@ export default function Contact() {
                 placeholder="Tu nombre"
                 value={input.nombre}
                 onChange={handleNombre}
+                name="Nombre"
                 // required
               />
             </div>
@@ -193,6 +200,7 @@ export default function Contact() {
                 placeholder="Asunto"
                 value={input.asunto}
                 onChange={handleAsunto}
+                name="Asunto"
                 // required
               />
             </div>
@@ -207,28 +215,46 @@ export default function Contact() {
                 placeholder="Escribe aquí tu mensaje..."
                 value={input.mensaje}
                 onChange={handleMensaje}
+                name="Mensaje"
+                required
               ></textarea>
             </div>
+
+
+
+            {/* BOTONES  */}
+
+
 
             <div class="mb-3">
               <button
                 type="submit"
                 className="btn btn-primary w-100 fs-5 enviarMensaje"
-                // onClick={ handleSubmit}
-              >
+                onClick={handleSubmit}
+                >
+                  
                 Enviar mensaje
               </button>
             </div>
-            <Link to="/Home">
-              <button className="btn btn-danger volverBoto">
-                Volver al Home
-              </button>
+
+          
+
+            <Link 
+            to="/Home"><button className="btn btn-danger volverBoto">Volver al Home</button>
             </Link>
+
+
+            {/* CONFIGURACION DEL MAIL */}
+
+
+
           </form>
+
+          <div>
+            <button onClick={enviarMsj} >MSJ - Iniciar Sei</button>
+          </div>
         </div>
       </section>
-    </div>
-    {/* <Footer/> */}
     </div>
   );
 }
