@@ -262,10 +262,21 @@ export function cleanDetail() {
 
 //Para Favoritos
 
-export const addToFavorites = item => ({
-  type: 'ADD_TO_FAVORITES',
-  item,
-});
+export const setFavorites = (items) => {
+  return {
+    type: "SET_FAVORITES",
+    payload: items
+  }
+}
+
+
+export const addToFavorites = item => {
+  return (dispatch) => {
+    localStorage.setItem('favItems', JSON.stringify(item));
+    dispatch({ type: 'ADD_TO_FAVORITES', item });
+  }
+};
+
 
 export const removeFromFav = (id) => {
   return {

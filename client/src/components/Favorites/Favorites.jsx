@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { removeFromFav } from "../../redux/actions";
+import { setFavorites } from "../../redux/actions";
 import Fav from "../Assets/favorito.png";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
@@ -9,17 +10,25 @@ import { useDispatch } from "react-redux";
 import "../Favorites/Favorites.css"
 
 const Favoritos = () => {
-
-
-  
-
-
+  // const [favItems, setFavItems] = useState([]);
   const favItems = useSelector((state) => state.favItems);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleRemoveFromFav = (id) => {
     dispatch(removeFromFav(id));
   };
+
+  useEffect(() => {
+    const storedItems = localStorage.getItem("favItems");
+    if (storedItems) {
+      const items = JSON.parse(storedItems);
+      dispatch(setFavorites(items));
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem("favItems", JSON.stringify(favItems));
+  }, [favItems]);
 
   return (
     <>
@@ -60,4 +69,3 @@ const Favoritos = () => {
 };
 
 export default Favoritos;
-

@@ -31,7 +31,7 @@ export function ShoppingCart({ isOpen }) {
         if (isAuthenticated) {
           try {
             const response = await axios.post("http://localhost:3001/payment", cart);
-            window.open(response.data);
+            window.location.assign(response.data);
           } catch (error) {
             console.log(error);
           }

@@ -22,11 +22,17 @@ let discount = () =>{
 }
 
 setTimeout(() => {
+  console.log("antes de limpiar el carrito", cart)
   clearAllCart();
+  console.log("despues de limpiar el carrito", cart)
+
 }, 3000);
 
 setTimeout(() => {
+  console.log("before push", history)
   history.push("/home");
+  console.log("after push", history)
+
 }, 5000);
 
   return(

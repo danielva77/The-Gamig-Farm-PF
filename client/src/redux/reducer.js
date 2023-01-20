@@ -257,6 +257,12 @@ export default function rootReducer(state = initialState, action) {
                   ...state,
                   favItems: state.favItems.filter(item => item.id !== action.payload.id)
               };
+              case 'SET_FAVORITES':
+  return {
+    ...state,
+    favItems: action.payload
+  };
+
     
 
     default:
