@@ -85,7 +85,7 @@ export const setNumbersPaginated = payload => {
 export function getAllProd() {
   // ----- Get from API
   return async function (dispatch) {
-    var req = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products")
+    var req = await axios.get("http://localhost:3001/products")
     const products = req.data
 
     return dispatch({
@@ -106,7 +106,7 @@ export function getAllProd() {
 export function postProducts(payload){
   console.log("esto llega en payload POST", payload)
   return async function (dispatch){
-  const response = await axios.post("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products", payload);
+  const response = await axios.post("http://localhost:3001/products", payload);
   
   return dispatch({
     type: "POST_PRODUCTS",
@@ -118,7 +118,7 @@ export function postProducts(payload){
 export function getAllMarks(){
   return async function (dispatch){
     try {
-      const req = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/mark")
+      const req = await axios.get("http://localhost:3001/mark")
 
       // const categories = req.data
       const unicos = req.data
@@ -144,7 +144,7 @@ export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
-      const req = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/category")
+      const req = await axios.get("http://localhost:3001/category")
 
       // const categories = req.data
       const unicos = req.data
@@ -175,7 +175,7 @@ export function getAllCategories() {
 export function searchByName(name) {
   return async function (dispatch) {
     try {
-      let json = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products?title=" + name)
+      let json = await axios.get("http://localhost:3001/products?title=" + name)
       return dispatch({
         type: "SEARCH_BY_NAME",
         payload: json.data,
@@ -230,7 +230,7 @@ export function volverAhome() {
 //Actions para los Detalles
 export const getDetail = id => {
   return async function (dispatch) {
-    const response = await axios.get(`https://the-gamig-farm-pf-production-5fa7.up.railway.app/products/${id}`)
+    const response = await axios.get(`http://localhost:3001/products/${id}`)
 
     return dispatch({
       type: GET_DETAIL,
@@ -262,10 +262,21 @@ export function cleanDetail() {
 
 //Para Favoritos
 
-export const addToFavorites = item => ({
-  type: 'ADD_TO_FAVORITES',
-  item,
-});
+export const setFavorites = (items) => {
+  return {
+    type: "SET_FAVORITES",
+    payload: items
+  }
+}
+
+
+export const addToFavorites = item => {
+  return (dispatch) => {
+    localStorage.setItem('favItems', JSON.stringify(item));
+    dispatch({ type: 'ADD_TO_FAVORITES', item });
+  }
+};
+
 
 export const removeFromFav = (id) => {
   return {
@@ -279,7 +290,7 @@ export const removeFromFav = (id) => {
 
 export function getProduct(){
   return async function(dispatch){
-    var info = await axios.get("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products",{
+    var info = await axios.get("http://localhost:3001/products",{
       
     })
     return dispatch({
@@ -291,7 +302,7 @@ export function getProduct(){
 
 export function postProduct(payload){ //payload es lo que nos llega en el front
   return async function (dispatch){
-    const response = await axios.post("https://the-gamig-farm-pf-production-5fa7.up.railway.app/products", payload)
+    const response = await axios.post("http://localhost:3001/products", payload)
     console.log("Producto creaado "+ response);
     return response;
   }

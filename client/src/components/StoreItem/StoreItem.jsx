@@ -13,13 +13,13 @@ export function StoreItem({ id, name, price, img, stock }) {
   const favItems = useSelector(state => state.favItems);
   const dispatch = useDispatch();
 
-  const handleAddToFavorites = () => {
-    if(favItems.find(item => item.id === id)) {
-        console.log("Item already in favorites");
-        return;
-    }
-    dispatch(addToFavorites({ id, name, price, img }));
-}
+
+  const handleAddToFavorites = (item) => {
+    dispatch(addToFavorites(item));
+    localStorage.setItem("favItems", JSON.stringify([...favItems, item]));
+
+  };
+
 
   const {
     cart,
@@ -75,7 +75,7 @@ export function StoreItem({ id, name, price, img, stock }) {
         </div>
       </Link>
       <div className="fav">
-              <button className="btn-primary" onClick={handleAddToFavorites}>❤ Favoritos</button>
+              <button className="btn-primary" onClick={() => handleAddToFavorites({id, name, price, img})}>❤ Favoritos</button>
             </div>
       <div class="card-footer"></div>
       <div class="card-footer">
