@@ -97,7 +97,7 @@ export default function AddReview({productId}){
       if (!review.rating) {return ratingAlert() }
       if (!review.comment) {return commetAlert() }
       if (!review.userId) {return userIdAlert() }
-      console.log("esto es review", review)
+
 
       dispatch(addReview(review))
       successAlert()

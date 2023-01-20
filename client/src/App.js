@@ -17,6 +17,7 @@ import UserProfile from "./components/PanelProfile/UserProfile/UserProfile"
 import EditUserProfile from "./components/PanelProfile/UserProfile/EditUserProfile"
 import Contact from "./components/Contacto/Contact";
 import Confirmation from "./components/Confirmation/Confirmation";
+import ModifyProducts from "./components/Form/ModifyProducts"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path='/myProfile/:id' component={UserProfile} />
         <Route path='/editProfile/:id' component={EditUserProfile} />
+        <Route path='/editproduct/:id' component={ModifyProducts} />
         {/* <Route path='/Footer' component={Footer} /> */}
       </Switch>
     </div>

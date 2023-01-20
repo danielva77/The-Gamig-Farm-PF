@@ -11,6 +11,7 @@ import { useShoppingCart } from '../../context/CartContext/CartContext';
 import { addToFavorites } from '../../redux/actions';
 import AddReview from '../AddReview/AddReview';
 import ReviewContainer from '../AddReview/ReviewContainer';
+import { disabledProducts, addStock } from '../../redux/actions';
 
 
 export default function Details(props) {
@@ -40,9 +41,11 @@ const favItems = useSelector(state => state.favItems);
 
   let myProduct = useSelector((state) => state.detail);
 
+
   return (
     <div className='details-container'>
       <NavBar />
+
       {
         myProduct.length > 0 ?
           <div className='details-info'>
@@ -66,8 +69,16 @@ const favItems = useSelector(state => state.favItems);
         productId={props.match.params.id}/>
       </div>
       <div>
+          <button onClick={disabledProducts(props.match.params.id)}>Desactivar producto</button>
+          <Link to={`/editproduct/${props.match.params.id}`}>
+          <button>Editar informacion del producto</button></Link>
+          <input type="number" min="0" step="1" name="stock"></input>
+          <button onClick={addStock(props.match.params.id,5)} >Agregar stock</button>
+        </div>
+      <div>
         <ReviewContainer productId={props.match.params.id} />
         </div>
+
       <div className='move-footer'>
         <Footer />
       </div>

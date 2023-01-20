@@ -21,7 +21,7 @@ let discount = async () =>{
   cart.map(el => {
 
     let total = el.stock - el.quantity;
-    console.log("esto es totla", total)
+
     return axios.put(`http://localhost:3001/products/${el.id}`, {stock: total})
     
   })

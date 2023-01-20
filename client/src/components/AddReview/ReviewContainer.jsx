@@ -3,6 +3,12 @@ import {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { getReviews } from '../../redux/actions';
 import Review from './Review';
+import { FaStar } from "react-icons/fa"
+
+const colors = {
+  orange: "#FFBA5A",
+  grey: "#a9a9a9"
+};
 
 export default function ReviewContainer({productId}) {
   const dispatch = useDispatch();
@@ -10,14 +16,35 @@ export default function ReviewContainer({productId}) {
     dispatch(getReviews());
   }, [dispatch]);
 
+  const stars = Array(5).fill(0)
   const reviews = useSelector(state => state.reviews)
-  console.log("esto llega en revies", reviews)
+
 
   let reviewsById = reviews.filter(e => e.productId === productId)
-  console.log("despues de filtrar", reviewsById)
+
+
+  let average = 0;
+  if(reviewsById.length>0){
+  let length = reviewsById.length;
+  let sum = 0;
+  let calc = reviewsById.map(e => sum = sum + e.rating);
+  average = sum/length;
+  }
 
   return (
     <div>
+      <div>
+      {stars.map((_, index) => {
+        return (
+          <FaStar
+            key={index}
+            size={15}
+            color={average > index ? colors.orange : colors.grey}
+          />
+        )
+      })}
+      <p>Promedio : {average}</p>
+      </div>
       { reviewsById.length ?
         <div>
             { reviewsById.map(({ rating, comment, createdAt}, i) => (

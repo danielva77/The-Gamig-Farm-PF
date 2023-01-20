@@ -65,7 +65,7 @@ export const setSort = payload => {
 }
 
 export const setFilterCategory = payload => {
-  console.log("payload", payload)
+  
   return {
     type: SET_FILTER_CATEGORY,
     payload,
@@ -126,7 +126,6 @@ export function getAllMarks() {
           marks.push(elemento);
         }
       }
-
       dispatch({ type: GET_ALL_MARKS, payload: marks })
     } catch (error) {
       console.log("error en getAllMarks", error)
@@ -336,5 +335,29 @@ export function getReviews(){
     type: "GET_ALL_REVIEWS",
     payload: review,
   })
+  }
+}
+
+export function disabledProducts(id){
+  return async function(dispatch){
+    let producto = await axios.get(`http://localhost:3001/products/${id}`)
+    let isActive = producto.data[0].isActive;
+    let b;
+    if(isActive){b=false}else{b=true};
+    return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  }
+  // let b;
+  // if(isActive){b=false}else{b=true}
+  // return function (dispatch){
+  //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  // }
+}
+
+export function addStock(id, number){
+  console.log("esto llego del boton", number)
+  return async function(dispatch){
+    let producto = await axios.get(`http://localhost:3001/products/${id}`)
+    let total = producto.data[0].stock + number;
+    return axios.put(`http://localhost:3001/products/${id}`, {stock: total})
   }
 }

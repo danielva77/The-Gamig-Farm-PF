@@ -11,6 +11,7 @@ export default function Paginado() {
     // setButtonColor('hsl(305, 33%, 69%, .8)')
     // e.target.style.backgroundColor = buttonColor
     dispatch(changePage(e.target.value))
+
   }
 
   return (
