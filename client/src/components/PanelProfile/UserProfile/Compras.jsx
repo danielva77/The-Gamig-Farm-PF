@@ -1,5 +1,7 @@
 import React from "react";
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import "./userProfile.css"
+
 
 const Compras = ({ rows }) => {
 
@@ -32,7 +34,7 @@ const Compras = ({ rows }) => {
     return (
         <div>
              <div 
-            style={{ height: 375, width: "100%" }}>
+            className="tablaMaterial" > 
         <DataGrid
           rows={rows}
           columns={columns}

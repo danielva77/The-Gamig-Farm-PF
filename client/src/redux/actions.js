@@ -362,3 +362,22 @@ export function addStock(id, number){
     return axios.put(`http://localhost:3001/products/${id}`, {stock: total})
   }
 }
+
+
+// Accion para traer ID usuario
+
+
+export function idUser(email){
+    return async function(dispatch){
+      let usuarios = await axios.get("http://localhost:3001/usuarios")
+      let tocarUser = usuarios.data;
+      let miUsuario = tocarUser.filter(e => e.email == email)
+      let idUsuario = miUsuario[0]
+      return dispatch({
+        type: "ID_USER",
+        payload: idUsuario
+      })
+    }
+}
+
+

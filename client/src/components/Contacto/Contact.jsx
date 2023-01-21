@@ -116,7 +116,7 @@ export default function Contact() {
             confirmButtonColor: "Green",
             timer: 5000
           });
-
+          history.push("/home");
       }
   // 
       
@@ -126,22 +126,6 @@ export default function Contact() {
      
   }
 
-  // RUTAS DE NODEMAILER
-
-  const enviarCorreo = async() =>{
-      await axios.post("http://localhost:3001/enviarMensaje",
-      {dataMail: input})
-  }
-
-
-
-// NODEMAILER 
-
-const enviarMsj = async () => {
-
-  await axios.post("http://localhost:3001/enviarMensaje",
-  {infoInput: input}).then(history.push("/home"))
-}
 
   return (
     <div className="casita">
@@ -249,10 +233,10 @@ const enviarMsj = async () => {
 
 
           </form>
-
+{/* 
           <div>
             <button onClick={enviarMsj} >MSJ - Iniciar Sei</button>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

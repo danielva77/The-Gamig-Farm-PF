@@ -28,6 +28,7 @@ function App() {
         <Route path="/products/:id" component={Details} />
         <Route path="/form" component={Form} />
         <Route path="/contacto" component={Contact} />
+        <Route path="/confirmation/approve" component={Confirmation} />
         <Route path="/about" component={About} />
         <Route path='/myProfile/:id' component={UserProfile} />
         <Route path='/editProfile/:id' component={EditUserProfile} />

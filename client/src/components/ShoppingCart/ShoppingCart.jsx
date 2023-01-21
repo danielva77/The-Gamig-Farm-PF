@@ -48,7 +48,6 @@ export function ShoppingCart({ isOpen }) {
 
     return (
         <div className="cart">
-            {console.log("cart: ", cart)}
             <Offcanvas
                 show={isOpen}
                 onHide={closeCart}

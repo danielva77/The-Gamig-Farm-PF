@@ -33,6 +33,7 @@ import {
 const initialState = {
   //
   userID: {},
+  idUsuarioActual: {},
   //
   items: [],
   reviews: [],
@@ -205,6 +206,7 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         detail: [],
       };
+      // work here
     case "ADD_TO_CART":
       // Comprobamos si el producto ya existe en el carrito
       const existingProduct = state.items.find(
@@ -280,7 +282,11 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         favItems: state.favItems.filter(item => item.id !== action.payload.id)
       };
-
+    case "ID_USER":
+      return{
+        ...state,
+        idUsuarioActual: action.payload
+      }
 
     default:
       return state;
