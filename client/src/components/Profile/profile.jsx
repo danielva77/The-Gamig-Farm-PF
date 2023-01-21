@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LogoutButton } from "../Logout/Logout";
+import { UserProfile } from "../Profile/Usuario/PanelProfile/UserProfile/UserProfile";
 
 export const Profile = () => {
   const [show, setShow] = useState(false);
@@ -39,7 +40,7 @@ export const Profile = () => {
           </h3>
           <div className="btns">
             <Link to="/perfil">
-              <button className="Perfil-btn"> Perfil </button>
+              <button onClick={UserProfile} className="Perfil-btn"> Perfil </button>
             </Link>
             <Link to="/compras">
               <button className="compras-btn"> Tus compras </button>
