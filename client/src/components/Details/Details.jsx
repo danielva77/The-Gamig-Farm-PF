@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, useContext } from 'react-redux';
 import { getDetail, cleanDetail } from '../../redux/actions';
@@ -41,6 +41,13 @@ const favItems = useSelector(state => state.favItems);
 
   let myProduct = useSelector((state) => state.detail);
 
+  const [stock, setStock] = useState(0);
+  function handleStock(e) {
+  setStock(parseInt(e.target.value));
+    
+
+  }
+  console.log("llega stock a agregar",stock);
 
   return (
     <div className='details-container'>
@@ -72,8 +79,8 @@ const favItems = useSelector(state => state.favItems);
           <button onClick={disabledProducts(props.match.params.id)}>Desactivar producto</button>
           <Link to={`/editproduct/${props.match.params.id}`}>
           <button>Editar informacion del producto</button></Link>
-          <input type="number" min="0" step="1" name="stock"></input>
-          <button onClick={addStock(props.match.params.id,5)} >Agregar stock</button>
+          <input type="number" min="0" step="1" name="stock" onChange={e => handleStock(e)}></input>
+          <button onClick={addStock(props.match.params.id, stock)} >Agregar stock</button>
         </div>
       <div>
         <ReviewContainer productId={props.match.params.id} />
