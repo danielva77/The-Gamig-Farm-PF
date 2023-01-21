@@ -249,10 +249,10 @@ const enviarMsj = async () => {
 
 
           </form>
-
+{/* 
           <div>
             <button onClick={enviarMsj} >MSJ - Iniciar Sei</button>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

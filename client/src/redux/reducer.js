@@ -197,6 +197,7 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         detail: [],
       };
+      // work here
     case "ADD_TO_CART":
       // Comprobamos si el producto ya existe en el carrito
       const existingProduct = state.items.find(

@@ -8,12 +8,18 @@ export const LoginButton = () => {
   const { loginWithRedirect, user } = useAuth0();
 
 
+const crearUsuario = async() =>{
+  await loginWithRedirect()
+  // alert(user.email)
 
+
+  
+}
 
 
   return (  
 
-    <a onClick={() => loginWithRedirect()}  className="login">
+    <a onClick={() => crearUsuario()}  className="login">
   <span>INICAR SESION</span>
   </a>  //onClick={() => info()}
 )

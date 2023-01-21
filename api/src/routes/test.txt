@@ -1,0 +1,16 @@
+router.post("/usuarios", async (req, res) => {
+  const { name, avatar, email, adress, dateOfBirth, telephone, password } =
+    req.body
+
+  User.create({  //FindOrCreate
+    name,
+    avatar,
+    email,
+    adress,
+    dateOfBirth,
+    telephone,
+    password,
+  }) // ✅✅✅✅✅
+
+  res.status(200).send("El usuario fue registrado con exito")
+}) //✅

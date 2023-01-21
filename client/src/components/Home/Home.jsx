@@ -10,18 +10,19 @@ import Sort from "../Sort/Sort"
 import ReloadPageBtn from "../ReloadPageBtn/ReloadPageBtn"
 import NavBar from "../NavBar/NavBar";
 import MarkFilter from "../MarkFilter/MarkFilter";
+import { useParams, Link} from "react-router-dom"
+
 
 
 export function Home() {
   const dispatch = useDispatch();
-
   const currentPage = useSelector(state => state.currentPage);
-
+  
   useEffect(() => {
     dispatch(getAllProd())
     dispatch(getAllCategories())
   }, [dispatch]);
-
+  
 
   return (
     <div>
@@ -42,7 +43,7 @@ export function Home() {
 
 
       <StoreItems />
-
+      <Link to={`/myProfile/70c87f8e-e26e-43d7-a496-8bf24007d8db`}><button className="editar">VER MI PERFIL</button></Link>
     </div>
   )
 }
