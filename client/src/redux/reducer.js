@@ -32,6 +32,7 @@ import {
 const initialState = {
   //
   userID: {},
+  idUsuarioActual: {},
   //
   items: [],
   favItems: [],
@@ -269,7 +270,11 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         favItems: state.favItems.filter(item => item.id !== action.payload.id)
       };
-
+    case "ID_USER":
+      return{
+        ...state,
+        idUsuarioActual: action.payload
+      }
 
     default:
       return state;

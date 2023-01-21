@@ -19,7 +19,7 @@ const UserProfile = () => {
         return () => dispatch(cleanDetail())
     },[dispatch, id])
 
-    console.warn(user.id) //⭐ Este id llega bien al componente 'my profile' 
+    console.warn(id) //⭐ Este id llega bien al componente 'my profile' 
 
 
     return (
@@ -35,7 +35,7 @@ const UserProfile = () => {
 
         <div className="profile">
         <h1 className="tuPerfil">Tu perfil</h1> <br/>
-        <h3><b>Nombre:</b> {user.name}</h3>
+        <h3><b>Nickname:</b> {user.name}</h3>
         <h3><b>Email:</b> {user.email}</h3>
         <h3><b>Direccion:</b> {user.adress}</h3>
         <h3><b>Fecha de nacimiento:</b> {user.dateOfBirth}</h3>

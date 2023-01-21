@@ -314,3 +314,25 @@ export function getUser(id) {
       })
   }
 }
+
+
+
+// Accion para traer ID usuario
+
+
+export function idUser(email){
+    return async function(dispatch){
+      let usuarios = await axios.get("http://localhost:3001/usuarios")
+      let tocarUser = usuarios.data;
+      let miUsuario = tocarUser.filter(e => e.email == email)
+      let idUsuario = miUsuario[0]
+      console.log("miUsuario → ",miUsuario);
+      console.log("id Usuario → ",idUsuario);
+      return dispatch({
+        type: "ID_USER",
+        payload: idUsuario
+      })
+    }
+}
+
+

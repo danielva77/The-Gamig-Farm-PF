@@ -88,18 +88,20 @@ const EditUserProfile = () => {
         <div class="form-floating mb-2 ">
           <input
             type="email"
+            value={user.email}
             className="form-control inputNew"
             id="floatingEmail"
             placeholder="name@example.com"
             name="email"
-            value={input.email}
+            // value={input.email}
             onChange={(e) => handleChange(e)}
+            disabled
           />
           <label for="floatingEmail">Email address</label>
         </div>
 
         {/* CONTRASEÑA */}
-        <div class="form-floating mb-2">
+        {/* <div class="form-floating mb-2">
           <input
             type="password"
             className="form-control inputNew"
@@ -110,7 +112,7 @@ const EditUserProfile = () => {
             onChange={(e) => handleChange(e)}
           />
           <label for="floatingPassword">Password</label>
-        </div>
+        </div> */}
         
         {/* DIRECCION */}
         <div class="form-floating mb-2">
