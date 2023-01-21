@@ -6,7 +6,9 @@ import { getUser, cleanDetail } from "../../../redux/actions";
 import "./editUserProfile.css";
 import usuarioSinFoto from "../../Assets/usuarioSinFoto.png";
 import Swal from "sweetalert2";
+import { Widget } from "@uploadcare/react-widget";
 
+<Widget publicKey="b64078a8eafda783a219" />;
 
 const EditUserProfile = () => {
   const dispatch = useDispatch();
@@ -21,7 +23,10 @@ const EditUserProfile = () => {
   }, [dispatch, id]);
 
   const [input, setInput] = useState({});
-
+  const [foto, setFoto] = useState({
+    avatar: ""
+  })
+ 
   function handleChange(e) {
     setInput({
       ...input,
@@ -173,6 +178,21 @@ const EditUserProfile = () => {
           />
           <label for="floatingFOTO">FOTO</label>
         </div>
+
+
+        <Widget
+            publicKey="b64078a8eafda783a219"
+            id="file"
+            name="avatar"
+            value={foto.avatar}
+            onChange={(e) => {
+              setFoto({
+                ...foto,
+                avatar: e.originalUrl,
+              });
+              console.log(e);
+            }}
+          />
 
         {/* BOTONES */}
         

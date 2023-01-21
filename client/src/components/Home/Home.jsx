@@ -30,6 +30,8 @@ export function Home() {
   useEffect(() => {
     dispatch(getAllProd())
     dispatch(getAllCategories())
+    dispatch(idUser(google2.user.email)) //This is a correct???
+
   }, [dispatch]);
   
 
@@ -57,7 +59,7 @@ console.log("google 2 → ", google2);
 
       <StoreItems />
 
-    {/* {idUser(google2.user.email)} */}
+
 
       <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link>
     </div>

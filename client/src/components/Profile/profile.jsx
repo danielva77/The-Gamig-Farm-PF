@@ -24,9 +24,9 @@ export const Profile = () => {
 },[dispatch, id])
 
 
-useEffect(() => {
-  dispatch(idUser(google.user.email))
-},[])
+// useEffect(() => {
+//   dispatch(idUser(google.user.email))
+// },[])
 
 
 // console.warn(user) //⭐ Este id llega bien SOLAMENTE en 'my profile' 
@@ -53,16 +53,12 @@ useEffect(() => {
   }
 
 
-    // setTimeout(() => {
-    //   idUser(google.user.email)
-    // }, 3000);
-
   return (
     isAuthenticated && (
       <div>
         <img src={google.user.picture} alt={google.user.name} className="imagenP"/>
         <h1 className="nameP">{google.user.given_name}</h1>       
-        {idUser(google.user.email)}
+        {/* {idUser(google.user.email)} */}
       </div>
     )
   );
