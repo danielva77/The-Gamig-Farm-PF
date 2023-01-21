@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { getDetail } from "../../redux/actions";
+import { disabledProducts, getDetail } from "../../redux/actions";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 
 export default function ModifyProducts(props){
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDetail(props.match.params.id))
+  }, []);
+
+  let myProduct = useSelector((state) => state.detail);
+
   const marks = [
     { title: "Logitech" },
     { title: "Razer" },
@@ -29,13 +37,22 @@ export default function ModifyProducts(props){
     { title: "Otros" }
   ];
 
-  const dispatch = useDispatch();
+  const [input, setInput] = useState({
+    title:"",
+    price: 0,
+    detail: "",
+    stock: "",
+    img: "",
+    mark: "",
+    category: "",
+  });
+console.log("esto queda en input", input)
 
-  useEffect(() => {
-    dispatch(getDetail(props.match.params.id))
-  }, []);
-
-  let myProduct = useSelector((state) => state.detail);
+function handleChange(e){
+  setInput({
+    ...input,
+    [e.target.name] : e.target.value,
+  })}
   
 
   return(
@@ -44,16 +61,20 @@ export default function ModifyProducts(props){
       {
         myProduct.length > 0 ?
           <div>
-            <h6>Current Title : {myProduct[0].title}</h6>
-            <input type="text" placeholder="Modify title ..."></input>
+            <h3>{myProduct[0].isActive === true ? "PRODUCTO ACTIVO" : "PRODUCTO DESACTIVADO"}</h3>
+            <button onClick={disabledProducts(props.match.params.id)}>Desactivar / Activar producto</button>
+            <h6>Titulo actual : {myProduct[0].title}</h6>
+            <input type="text" name="title" value={myProduct[0].title} placeholder="Modificar titulo ..." onChange={(e) =>{handleChange(e)}}></input>
             {/* <div><img src={myProduct[0].img} alt="img"></img></div> */}
-            <h6>Current Detail : {myProduct[0].detail}</h6>
-            <input type="text" placeholder="Modify details ..."></input>
-            <h6>Current Price: ${myProduct[0].price}</h6>
-            <input type="number" min="0" placeholder="Modify price ..."></input>
-            <h6>Current Mark : {myProduct[0].Marks[0] ? myProduct[0].Marks[0].title : "--"}</h6>
+            <h6>Detalle actual : {myProduct[0].detail}</h6>
+            <input type="text" name="detail" value={myProduct[0].detail} placeholder="Modificar detalle ..." onChange={(e) =>{handleChange(e)}}></input>
+            <h6>Stock actual : {myProduct[0].stock}</h6>
+            <input type="number" name="stock" value={myProduct[0].stock} min="0" placeholder="Corregir el stock ..." onChange={(e) =>{handleChange(e)}}></input>
+            <h6>Precio actual: ${myProduct[0].price}</h6>
+            <input type="number" name="price" min="0" value={myProduct[0].price} placeholder="Modificar precio ..." onChange={(e) =>{handleChange(e)}}></input>
+            <h6>Marca actual : {myProduct[0].Marks[0] ? myProduct[0].Marks[0].title : "--"}</h6>
             <select>
-            <option disabled selected>select other...</option>
+            <option disabled selected>seleccionar otro...</option>
               {marks?.map((m) => (
                 <option name="mark" value={m.title} key={m.title}>
                   {m.title}
@@ -61,9 +82,9 @@ export default function ModifyProducts(props){
               ))}
             </select>
 
-            <h6>Current Category : {myProduct[0].Categories[0] ? myProduct[0].Categories[0].title : "--"}</h6>
+            <h6>Categoria actual : {myProduct[0].Categories[0] ? myProduct[0].Categories[0].title : "--"}</h6>
             <select>
-            <option disabled selected>select other...</option>
+            <option disabled selected>seleccionar otro...</option>
               {categories?.map((c) => (
                 <option name="category" value={c.title} key={c.title}>
                   {c.title}

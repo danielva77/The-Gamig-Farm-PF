@@ -79,7 +79,7 @@ const favItems = useSelector(state => state.favItems);
           <button onClick={disabledProducts(props.match.params.id)}>Desactivar producto</button>
           <Link to={`/editproduct/${props.match.params.id}`}>
           <button>Editar informacion del producto</button></Link>
-          <input type="number" min="0" step="1" name="stock" onChange={e => handleStock(e)}></input>
+          <input type="number" min="0" step="1" name="stock" onChange={e => handleStock(e)} placeholder="Cantidad a agregar ..."></input>
           <button onClick={addStock(props.match.params.id, stock)} >Agregar stock</button>
         </div>
       <div>

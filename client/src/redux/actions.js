@@ -343,7 +343,8 @@ export function disabledProducts(id){
     let producto = await axios.get(`http://localhost:3001/products/${id}`)
     let isActive = producto.data[0].isActive;
     let b;
-    if(isActive){b=false}else{b=true};
+    if(isActive){b=false; alert("Desactivado")}else{b=true; alert("Activado")};
+    
     return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
   }
   // let b;
