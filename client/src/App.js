@@ -17,7 +17,6 @@ import FormAdmin from "./admin/scenes/form"
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import { ColorModeContext, useMode } from "./admin/theme"
 import { useState } from "react"
-import AdminApp from "./AdminApp"
 
 function App() {
   const [theme, colorMode] = useMode()
@@ -27,9 +26,7 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="App">
-          <Route path="/admin" component={Sidebar} />
-
+        <div className="app">
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/home" component={Home} />
@@ -40,13 +37,11 @@ function App() {
             <Route path="/confirmation/approve" component={Confirmation} />
 
             {/* Admin */}
-
-            <Route exact path="/admin" component={Dashboard} />
+            <Route exact path="/admin" component={Sidebar} />
+            <Route path="/admin/dashboard" component={Dashboard} />
             <Route path="/admin/products" component={Products} />
             <Route path="/admin/contacts" component={Contacts} />
             <Route path="/admin/form" component={FormAdmin} />
-
-            {/* <Route path='/Footer' component={Footer} /> */}
           </Switch>
         </div>
       </ThemeProvider>
