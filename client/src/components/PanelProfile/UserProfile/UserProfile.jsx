@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link} from "react-router-dom"
@@ -15,17 +15,19 @@ const UserProfile = () => {
 
     useEffect(() => {
         dispatch(getUser(id))
-
         return () => dispatch(cleanDetail())
     },[dispatch, id])
 
-    console.warn(id) //⭐ Este id llega bien al componente 'my profile' 
+    // console.warn(id) //⭐ Este id llega bien al componente 'my profile' 
+
+
+
 
 
     return (
         <div className="padres">
 
-        <Link to={`/Home/`+ user.id}><button className="atras">Atras</button></Link>
+        <Link to={`/home`}><button className="atras">Atras</button></Link>
         <div className="bienvenida">
 
         <img src={user.avatar ? user.avatar : "https://img2.freepng.es/20190213/sbb/kisspng-computer-icons-portable-network-graphics-login-cli-jennie-bp-khi-c-yu-kaiexo-cng-ngy-c-5c649ebb391d63.823550061550098107234.jpg"}className="profileF"/>

@@ -24,7 +24,8 @@ import {
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
   POST_PRODUCTS,
-  GET_PRODUCTS
+  GET_PRODUCTS,
+  GET_ALL_REVIEWS
 } from "./actions"
 
 
@@ -35,6 +36,7 @@ const initialState = {
   idUsuarioActual: {},
   //
   items: [],
+  reviews: [],
   favItems: [],
   sortBy: "",
   numbersPaginated: [],
@@ -177,6 +179,12 @@ export default function rootReducer(state = initialState, action) {
         categories: action.payload,
       }
 
+    case GET_ALL_REVIEWS:
+      return {
+        ...state,
+        reviews: action.payload,
+      }
+
     case GET_ALL_MARKS:
       return {
         ...state,
@@ -252,6 +260,10 @@ export default function rootReducer(state = initialState, action) {
 
     case "POST_PRODUCTS":
       return {
+        ...state
+      }
+      case "ADD_REVIEW": 
+      return{
         ...state
       }
     case "GET_PRODUCTS":

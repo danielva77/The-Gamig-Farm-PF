@@ -54,15 +54,15 @@ Product.hasMany(Mark);
 User.hasMany(Store);
 Store.belongsTo(User);
 
-User.hasMany(Review);
-Review.belongsTo(User);
+User.hasMany(Review, {foreignKey: 'userId'});
+Review.belongsTo(User, {foreignKey: 'userId'});
 
 Store.belongsToMany(Product, { through: "Store_Product" });
 Product.belongsToMany(Store, { through: "Store_Product" });
 
-Product.hasMany(Review);
-Review.belongsTo(Product);
-//
+Product.hasMany(Review, {foreignKey: 'productId'});
+Review.belongsTo(Product, {foreignKey: 'productId'});
+
 Mark.hasMany(Product)
 Product.belongsTo(Mark)
 //

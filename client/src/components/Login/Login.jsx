@@ -9,18 +9,14 @@ export const LoginButton = () => {
 
 
 const crearUsuario = async() =>{
-  await loginWithRedirect()
-  // alert(user.email)
-
-
-  
+  await loginWithRedirect()  
 }
 
 
   return (  
 
     <a onClick={() => crearUsuario()}  className="login">
-  <span>INICAR SESION</span>
+  <span>INICIAR SESION</span>
   </a>  //onClick={() => info()}
 )
 };

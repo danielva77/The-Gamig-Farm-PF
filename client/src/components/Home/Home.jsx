@@ -16,26 +16,30 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 
+
 export function Home() {
   const dispatch = useDispatch();
   const currentPage = useSelector(state => state.currentPage);
   let idUser2 = useSelector((state) => state.idUsuarioActual)
   const google2 = useAuth0();
-  
-  // useEffect(() => {
-  //   dispatch(idUser(google2.user.email))
-  // },[])
-
 
   useEffect(() => {
     dispatch(getAllProd())
     dispatch(getAllCategories())
-    dispatch(idUser(google2.user.email)) //This is a correct???
-
   }, [dispatch]);
-  
 
-console.log("google 2 → ", google2);
+
+  setTimeout( async () => {
+    await dispatch(idUser(google2.user.email))
+  }, 1000);
+
+
+
+
+//   const profileCorrect  = async() =>{
+//     const usersC = await idUser(google2.user.email)
+//     return usersC
+// }
 
 
 
@@ -58,10 +62,10 @@ console.log("google 2 → ", google2);
 
 
       <StoreItems />
-
-
-
-      <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link>
+      <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> 
+    {/* {idUser(google2.user.email)} */}
+    {/* <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> */}
+    
     </div>
   )
 }

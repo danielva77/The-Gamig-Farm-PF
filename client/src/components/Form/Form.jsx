@@ -44,7 +44,7 @@ export const Form = () => {
     category: "",
   });
 
-  const [cover, setCover] = useState(" imagen ");
+  // const [cover, setCover] = useState(" imagen ");
 
   //Este estado me habilita a enviar el formulario
   const [enviar, setEnviar] = useState(false);
@@ -229,7 +229,7 @@ export const Form = () => {
   async function handleSubmit(e) {
     validate();
     e.preventDefault();
-    console.log("esto va a post →", input);
+    // console.log("esto va a post →", input);
     dispatch(postProduct(input));
 
     if (enviar) {
@@ -399,7 +399,7 @@ export const Form = () => {
                 img: e.originalUrl,
               });
               console.log(e);
-            }}
+            }}  
           />
           {/* <input id="uploader" type="hidden" /> */}
           <div id="emailHelp" className="form-text">

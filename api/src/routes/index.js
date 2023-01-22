@@ -12,6 +12,9 @@ const {
   modifyProducts,
 } = require("../controllers/products/Controllers")
 
+const { getAllReview, reviewCreate, reviewDelete  } = require("../controllers/review/controllers")
+
+const enviarMail = require("../config/mailer")
 const configurandoEmail  = require("../config/mailer")
 
 const router = Router()
@@ -31,10 +34,6 @@ const getDbInfo = async () => {
 
 // Al finalizar la compra ↓
 router.post("/MensajeCompra", configurandoEmail)
-
-
-
-
 
 // RUTAS
 
@@ -104,9 +103,6 @@ router.get("/mark", getMarks)
 router.get("/products/:id", async (req, res) => {
   // res.send("Soy el get /videogame")
   const { id } = req.params
-
-  console.log("numero", id.toString().length)
-
   let allprodById = await getAllProducts()
 
   if (id) {
@@ -416,6 +412,10 @@ router.put('/user/:id', async function (req, res) {
 })
 
 
+//REVIEW
+router.post('/review', reviewCreate)
+router.delete("/ewview/:reviewId", reviewDelete)
+router.get('/review',getAllReview)
 
 
 

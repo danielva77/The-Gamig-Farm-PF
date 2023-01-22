@@ -22,10 +22,19 @@ const EditUserProfile = () => {
     return () => dispatch(cleanDetail());
   }, [dispatch, id]);
 
-  const [input, setInput] = useState({});
-  const [foto, setFoto] = useState({
-    avatar: ""
-  })
+  const [input, setInput] = useState({
+    name: user.name,
+    adress: user.adress,
+    dateOfBirth: user.dateOfBirth,
+    telephone: user.telephone,
+    avatar: user.avatar,
+  });
+
+
+
+
+
+
  
   function handleChange(e) {
     setInput({
@@ -47,7 +56,9 @@ const EditUserProfile = () => {
         confirmButtonText: "Okay",
         confirmButtonColor: "Green",
       });
-      
+        console.log("usuario actualizado → ", id )
+        console.log("usuario actualizado2 → ", input )
+
      await axios.put("http://localhost:3001/user/" + id, input);
      history.push(`/myprofile/${id}`);
       
@@ -61,18 +72,30 @@ const EditUserProfile = () => {
       </h2>
       <form className="formulario mt-2" onSubmit={(e) => handleSubmit(e)}>
         <div className="imagenFoto">
-          <label name="img" htmlFor="img">
+        <label name="img" htmlFor="img" className="fotoActual">
             Foto Actual:
-          </label>
+          </label> 
           <img
-            src={user.avatar ? user.avatar : usuarioSinFoto}
+            src={input.avatar ? input.avatar : user.avatar}
             alt="img not found"
-            className="profileF"
-          />
+            className="profileF fotoEdit"
+          /> 
+          
         </div>
        <br />
 
-
+       <Widget
+            publicKey="b64078a8eafda783a219"
+            id="file"
+            name="photos"
+            onChange={(e) => {
+              setInput({
+                ...input,
+                avatar: e.originalUrl,
+              });
+              console.log(e);
+            }}  
+          />
             {/* NOMBRE Y APELLIDO */}
        <div class="form-floating mb-2 ">
           <input
@@ -96,7 +119,7 @@ const EditUserProfile = () => {
             value={user.email}
             className="form-control inputNew"
             id="floatingEmail"
-            placeholder="name@example.com"
+            // placeholder="name@example.com"
             name="email"
             // value={input.email}
             onChange={(e) => handleChange(e)}
@@ -165,37 +188,11 @@ const EditUserProfile = () => {
 
 
 
-        {/* FOTO */}
-        <div class="form-floating mb-2">
-          <input
-            type="number"
-            className="form-control inputNew"
-            id="floatingFOTO"
-            placeholder="Celular"
-            name="avatar"
-            value={input.avatar}
-            onChange={(e) => handleChange(e)}
-          />
-          <label for="floatingFOTO">FOTO</label>
-        </div>
-
-
-        <Widget
-            publicKey="b64078a8eafda783a219"
-            id="file"
-            name="avatar"
-            value={foto.avatar}
-            onChange={(e) => {
-              setFoto({
-                ...foto,
-                avatar: e.originalUrl,
-              });
-              console.log(e);
-            }}
-          />
+      
+       
 
         {/* BOTONES */}
-        
+   
         <button
           type="submit"
           className="btn btn-success mb-4" 

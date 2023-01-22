@@ -28,6 +28,9 @@ export const SET_NAME_FILTER = "SET_NAME_FILTER"
 export const GET_PRODUCTS = "GET_PRODUCTS"
 export const POST_PRODUCTS = "POST_PRODUCTS"
 
+//REVIEWS
+export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
+
 
 export const setNameFilter = payload => {
   console.log("object")
@@ -62,7 +65,7 @@ export const setSort = payload => {
 }
 
 export const setFilterCategory = payload => {
-  console.log("payload", payload)
+  
   return {
     type: SET_FILTER_CATEGORY,
     payload,
@@ -93,19 +96,9 @@ export function getAllProd() {
       type: "GET_ALL_PROD",
       payload: products,
     })
-  }
-
-  // ----- Get from json
-  // return async function (dispatch) {
-  //   return dispatch({
-  //     type: "GET_ALL_PROD",
-  //     payload: jsonData,
-  //   })
-  // }
-}
+  } }
 
 export function postProducts(payload) {
-  console.log("esto llega en payload POST", payload)
   return async function (dispatch) {
     const response = await axios.post("http://localhost:3001/products", payload);
 
@@ -133,13 +126,14 @@ export function getAllMarks() {
           marks.push(elemento);
         }
       }
-
       dispatch({ type: GET_ALL_MARKS, payload: marks })
     } catch (error) {
       console.log("error en getAllMarks", error)
     }
   }
 }
+
+
 
 export function getAllCategories() {
   return async function (dispatch) {
@@ -298,6 +292,23 @@ export function postProduct(payload) { //payload es lo que nos llega en el front
   }
 }
 
+export const addReview = (payload) => {
+  return async function (dispatch) {
+    try {
+      const response = await axios.post("http://localhost:3001/review",payload);
+
+      return dispatch({
+        type: "ADD_REVIEW",
+        payload: response.data.body,
+      });
+    } catch (error) {
+      dispatch({
+        type: "ERROR",
+        payload: error,
+      });
+    }
+  };
+};
 
 
 
@@ -315,6 +326,42 @@ export function getUser(id) {
   }
 }
 
+export function getReviews(){
+  return async function(dispatch){
+  const jsonreview = await axios.get("http://localhost:3001/review")
+  const review = jsonreview.data;
+
+  return dispatch({
+    type: "GET_ALL_REVIEWS",
+    payload: review,
+  })
+  }
+}
+
+export function disabledProducts(id){
+  return async function(dispatch){
+    let producto = await axios.get(`http://localhost:3001/products/${id}`)
+    let isActive = producto.data[0].isActive;
+    let b;
+    if(isActive){b=false; alert("Desactivado")}else{b=true; alert("Activado")};
+    
+    return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  }
+  // let b;
+  // if(isActive){b=false}else{b=true}
+  // return function (dispatch){
+  //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  // }
+}
+
+export function addStock(id, number){
+  console.log("esto llego del boton", number)
+  return async function(dispatch){
+    let producto = await axios.get(`http://localhost:3001/products/${id}`)
+    let total = producto.data[0].stock + number;
+    return axios.put(`http://localhost:3001/products/${id}`, {stock: total})
+  }
+}
 
 
 // Accion para traer ID usuario
@@ -326,8 +373,6 @@ export function idUser(email){
       let tocarUser = usuarios.data;
       let miUsuario = tocarUser.filter(e => e.email == email)
       let idUsuario = miUsuario[0]
-      console.log("miUsuario → ",miUsuario);
-      console.log("id Usuario → ",idUsuario);
       return dispatch({
         type: "ID_USER",
         payload: idUsuario
