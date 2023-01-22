@@ -5,9 +5,9 @@ import { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LogoutButton } from "../Logout/Logout";
-import { UserProfile } from "../Profile/Usuario/PanelProfile/UserProfile/UserProfile";
+import  UserProfile from "../Profile/Usuario/PanelProfile/UserProfile/UserProfile";
 
-export const Profile = () => {
+  export const Profile = () => {
   const [show, setShow] = useState(false);
   const { user, isAuthenticated, isLoading } = useAuth0();
 
