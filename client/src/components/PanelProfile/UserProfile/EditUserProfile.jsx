@@ -7,6 +7,10 @@ import "./editUserProfile.css";
 import usuarioSinFoto from "../../Assets/usuarioSinFoto.png";
 import Swal from "sweetalert2";
 import { Widget } from "@uploadcare/react-widget";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
+
 
 <Widget publicKey="b64078a8eafda783a219" />;
 
@@ -15,6 +19,9 @@ const EditUserProfile = () => {
   const { id } = useParams();
   const user = useSelector((state) => state.userID);
   const history = useHistory()
+  const google3 = useAuth0();
+
+
 
   useEffect(() => {
     dispatch(getUser(id));
@@ -31,7 +38,7 @@ const EditUserProfile = () => {
   });
 
 
-
+ const fotoGoogleDefecto = google3.user.picture
 
 
 
@@ -76,7 +83,7 @@ const EditUserProfile = () => {
             Foto Actual:
           </label> 
           <img
-            src={input.avatar ? input.avatar : user.avatar}
+            src={input.avatar ? input.avatar : google3.user.avatar}
             alt="img not found"
             className="profileF fotoEdit"
           /> 

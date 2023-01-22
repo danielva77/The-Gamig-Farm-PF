@@ -14,7 +14,10 @@ const {
 
 const { getAllReview, reviewCreate, reviewDelete  } = require("../controllers/review/controllers")
 
-const enviarMail = require("../config/mailer")
+// const enviarMail = require("../config/mailer") ← ESTA FUNCION NO VA??????????
+
+
+
 const configurandoEmail  = require("../config/mailer")
 
 const router = Router()
@@ -35,7 +38,11 @@ const getDbInfo = async () => {
 // Al finalizar la compra ↓
 router.post("/MensajeCompra", configurandoEmail)
 
-// RUTAS
+
+
+
+
+// RUTAS 🚧
 
 // Obtener todos los usuarios
 router.get("/usuarios", async (req, res) => {
