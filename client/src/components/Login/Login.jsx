@@ -1,22 +1,21 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import "./login.css"
-// import { transporter } from "../nodemailer/nodemailer";
-// const nodemailer = require("nodemailer");
+import React, { useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import "./login.css";
 
 export const LoginButton = () => {
-  const { loginWithRedirect, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, getAccessTokenSilently } = useAuth0();
 
+  useEffect(() => {
+    const saveToken = async () => {
+      if (isAuthenticated) {
+        const token = await getAccessTokenSilently();
+        localStorage.setItem("access_token", token);
+      }
+    };
+    saveToken();
+  }, [isAuthenticated, getAccessTokenSilently]);
 
-const crearUsuario = async() =>{
-  await loginWithRedirect()  
-}
-
-
-  return (  
-
-    <a onClick={() => crearUsuario()}  className="login">
-  <span>INICIAR SESION</span>
-  </a>  //onClick={() => info()}
-)
+  return (
+    <a className="login" onClick={() => loginWithRedirect() }>Iniciar sesión</a>
+  );
 };

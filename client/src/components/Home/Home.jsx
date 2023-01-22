@@ -32,7 +32,7 @@ export function Home() {
   setTimeout( async () => {
     await dispatch(idUser(google2.user.email))
   }, 1000);
-
+// ❌ REVISAR ESTO POR QUE CARGA LA API CADA 1 SEGUNDO ❌
 
 
 
@@ -62,7 +62,7 @@ export function Home() {
 
 
       <StoreItems />
-      <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> 
+      {google2.isAuthenticated ? <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> : <div></div>}
     {/* {idUser(google2.user.email)} */}
     {/* <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> */}
     

@@ -24,6 +24,7 @@ function StoreItems({ currentVideogames }) {
 
   // variables globales para Paginado
   const currentPage = useSelector(state => state.currentPage)
+  // const itemsPerPage = useState(2)
   const itemsPerPage = useSelector(state => state.itemsPerPage)
 
   // variables globales para filtrado y ordenamiento

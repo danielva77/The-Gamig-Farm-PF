@@ -3,8 +3,18 @@ import "./LandingPage.css";
 import { NavLink } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { idUser } from "../../redux/actions";
 
 const LandingPage = () => {
+  const dispatch = useDispatch
+  // const google2 = useAuth0();
+
+  // useEffect(() => {
+  //   if(google2.isAuthenticated){dispatch(idUser(google2.user.email))} //This is a correct???
+  // }, []);
   return (
     <>
       {/* <NavBar /> */}
