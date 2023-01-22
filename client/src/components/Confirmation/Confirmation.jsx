@@ -31,7 +31,10 @@ setTimeout(() => {
 }, 1000);
 
 setTimeout(() => {
+  console.log("antes de limpiar el carrito", cart)
   clearAllCart();
+  console.log("despues de limpiar el carrito", cart)
+
 }, 3000);
 
 setTimeout(async() => {

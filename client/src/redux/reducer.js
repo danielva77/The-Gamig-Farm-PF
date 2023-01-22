@@ -287,6 +287,13 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         idUsuarioActual: action.payload
       }
+      case 'SET_FAVORITES':
+      return {
+        ...state,
+        favItems: action.payload
+      };
+
+    
 
     default:
       return state;
