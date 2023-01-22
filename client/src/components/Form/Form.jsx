@@ -229,13 +229,13 @@ export const Form = () => {
   async function handleSubmit(e) {
     validate();
     e.preventDefault();
-    // console.log("esto va a post →", input);
-    dispatch(postProduct(input));
+   
 
     if (enviar) {
-      // dispatch(postProduct(input))
-
-      // await newProduct(input);
+      
+      dispatch(postProduct(input));
+      
+      
       clearInput();
       Swal.fire({
         title: "Producto creado con Exito",

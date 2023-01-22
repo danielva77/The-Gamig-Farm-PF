@@ -1,5 +1,5 @@
 .footer {
-  background-color: #000000;
+  background-color: #0f0e17;
   color: white;
   /* position: absolute; */
   /* top: 250vh; */
@@ -7,7 +7,7 @@
   padding: 20px 30px;
   display: flex;
   font-size: 12px;
-  justify-content: space-around;
+  justify-content: space-between;
   /* margin-top: -20%; */
 }
 
@@ -17,8 +17,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-  color: #858484;
- 
+  color: #ffffff;
 }
 
 .parrafo1 {
@@ -33,17 +32,14 @@
   width: 50%;
 }
 .link1 {
-  color: #f1f1f1;
+  color: #7600FF;
   text-decoration: none;
-  display: block;
-  margin: 10px 0;
 }
 .link1:hover {
-  color: #7600FF;
+  color: #ffffff;
 }
 .conocenos {
-  margin-top: 40px;
-  text-align: left;
+  margin-top: 2px;
 }
 .fotoContacto {
   margin-bottom: 10px;
@@ -55,7 +51,6 @@
 .p2 {
   position: relative;
   right: -67px;
-  display: block;
 }
 .p3 {
   position: relative;
@@ -63,9 +58,5 @@
 }
 .contenedores {
   /* display: block; */
-  justify-content: space-between;
-  position: relative;
-  left: 90px;
-  margin-top: 40px;
-  text-align: left;
+  justify-content: space-around;
 }
