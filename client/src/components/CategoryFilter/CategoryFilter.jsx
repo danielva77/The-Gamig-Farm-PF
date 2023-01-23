@@ -19,13 +19,15 @@ const CategoryFilter = () => {
 
     return (
         <select
+            class="form-select filterCategory" 
+            aria-label="Default select example"
             name="type"
             id="type"
             onChange={handleChangeFilter}
             menuPlacement="top"
             defaultValue={'DEFAULT'}
         >
-            <option value="DEFAULT" disabled hidden>Category</option>
+            <option value="DEFAULT" disabled hidden selected>Category</option>
             {categories?.map(category => {
                 return (
                     <option>{category}</option>
@@ -37,3 +39,7 @@ const CategoryFilter = () => {
 };
 
 export default CategoryFilter;
+
+
+
+

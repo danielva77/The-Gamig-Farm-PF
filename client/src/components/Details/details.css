@@ -70,7 +70,7 @@
   /* identical to box height */
   width: auto;
 
-  color: #ff8906;
+  color: #7600FF;
 }
 .stock {
   position: absolute;
@@ -111,8 +111,7 @@
   height: 41px;
   left: 0px;
   top: 70px;
-
-  background: #ff8906;
+  background: #7600FF;
 }
 .volver {
   color: #000;
@@ -136,7 +135,7 @@
   left: 1038px;
   top: 375px;
 
-  background: #ff8906;
+  background: #7600FF;
   border-radius: 10px;
   border: none;
   color: #fff;

@@ -16,7 +16,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 
-
 export function Home() {
   const dispatch = useDispatch();
   const currentPage = useSelector(state => state.currentPage);
@@ -41,43 +40,48 @@ export function Home() {
 
 
 
-  setTimeout( async () => {
-    await dispatch(idUser(google2.user.email))
-  }, 1000);
-// ❌ REVISAR ESTO POR QUE CARGA LA API CADA 1 SEGUNDO ❌
-
-
-
-//   const profileCorrect  = async() =>{
-//     const usersC = await idUser(google2.user.email)
-//     return usersC
-// }
-
 
 
   return (
     <div>
 
-      <div className="home-container">
-        <NavBar />
 
+
+<NavBar />
+<div className='filtros'>
+    
+        <div>
         <Sort />
+        </div>
+
+        <div>
         <CategoryFilter />
+        </div>
+
+        <div>
         <MarkFilter />
+        </div>
+
+        <div>
         <ReloadPageBtn />
-        {/* <PriceFilter /> */}
-      </div>
-      <div>
+        </div>
+    
+       
+  </div>
+
+
+
+     
+      <div><p>Page -{currentPage}-</p></div>
+      <div >
         <Paginado />
       </div>
-      <div><p>Page -{currentPage}-</p></div>
-
  
       <StoreItems />
       {/* {google2.isAuthenticated ? <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> : <div></div>} */}
     {/* {idUser(google2.user.email)} */}
     {/* <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> */}
-    
+   
     </div>
   )
 }

@@ -8,7 +8,7 @@ const ReloadPageBtn = () => {
 
 
   return (
-    <button onClick={handleReloadPage}>
+    <button onClick={handleReloadPage} className="botonReset">
       Reset filters
     </button>
 

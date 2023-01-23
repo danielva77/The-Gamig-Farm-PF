@@ -31,7 +31,7 @@
   line-height: 24px;
 }
 .link:hover {
-  color: #ff8906;
+  color: #7600FF;
 }
 
 .cart{
@@ -43,18 +43,30 @@
 .cart-btn{
   position: absolute;
   left: 80%;
+  top: 11px;
 }
 
 .quantity-circle{
   position: absolute; 
-  /* bottom: 5px; */
+  bottom: 20px;
   left: 85%;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #4400ff;
   color: white;
   text-align: center;
   line-height: 20px;
 }
 
+.logoOriginal1{
+  width: 90px;
+  position: relative;
+  top: -8px;
+  left: 70px;
+}
+/* .img-fluid{
+  position: absolute;
+  background-color: red !important;
+  top: 20px;
+} */

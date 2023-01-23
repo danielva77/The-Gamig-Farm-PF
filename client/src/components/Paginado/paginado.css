@@ -1,0 +1,14 @@
+.paginated-container{
+    /* background-color: red !important; */
+    position: relative;
+    top: 28px;
+    
+}
+.botons{
+    background-color: #7600FF !important;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-left: 15px;
+    color: #fff;
+    border: none
+}

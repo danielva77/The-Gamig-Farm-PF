@@ -2,7 +2,7 @@
   position: absolute;
 
   right: 2%;
-  top: 20px;
+  top: 21px;
   cursor: pointer;
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -16,5 +16,5 @@
   line-height: 24px;
 }
 .login:hover {
-  color: #ff8906;
+  color: #4400ff;
 }

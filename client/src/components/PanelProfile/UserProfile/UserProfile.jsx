@@ -6,37 +6,23 @@ import { getUser, cleanDetail, shopUser } from "../../../redux/actions";
 import Compras from "./Compras";
 import "./userProfile.css"
 import usuarioSinFoto from "../../Assets/usuarioSinFoto.png"
-<<<<<<< HEAD
-import { useAuth0 } from "@auth0/auth0-react";
-
-
-
-=======
 import { idUser } from "../../../redux/actions";
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
->>>>>>> 2070d133a20d362a40db624007c8cf07423ec67c
 
 const UserProfile = () => {
-    const google = useAuth0();
+    const google3 = useAuth0();
     let email= JSON.parse(localStorage.getItem("email"));
     const { id } = useParams()
     const dispatch = useDispatch()
     const user = useSelector(state => state.userID)
-<<<<<<< HEAD
-    const google3 = useAuth0();
-
-    useEffect(() => {
-        dispatch(getUser(id))
-=======
     const shop = useSelector(state => state.shopuser)
 
     useEffect(() => {
         dispatch(getUser(id))
         dispatch(idUser(email))
         dispatch(shopUser(email))
->>>>>>> 2070d133a20d362a40db624007c8cf07423ec67c
         return () => dispatch(cleanDetail())
     },[dispatch, id])
 
