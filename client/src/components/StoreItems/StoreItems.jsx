@@ -81,6 +81,7 @@ function StoreItems({ currentVideogames }) {
           {currentItems.length
             ?
             currentItems.map((item) => {
+              if(item.isActive){
               return (
                 <>
                   <Link to={`/products/${item.id}`}>
@@ -95,7 +96,7 @@ function StoreItems({ currentVideogames }) {
                     />
                   </div>
                 </>
-              )
+              )}
             })
             :
             <div>  "No hay productos todavía."</div>
