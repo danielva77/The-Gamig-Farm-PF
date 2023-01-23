@@ -25,12 +25,19 @@ export function Home() {
   // useEffect(() => {
   //   dispatch(idUser(google2.user.email))
   // },[])
+  let email= JSON.parse(localStorage.getItem("email"));
 
   useEffect(() => {
     dispatch(getAllProd())
     dispatch(getAllCategories())
-    if(google2.isAuthenticated){dispatch(idUser(google2.user.email))} //This is a correct???
+    if(google2.isAuthenticated){dispatch(idUser(email))} //This is a correct???
   }, [dispatch]);
+
+  //   useEffect(() => {
+  //     console.log("HARTO!", email)
+  //  dispatch(idUser(email)) //This is a correct???
+  //   }, [dispatch]);
+
 
 
 
@@ -52,9 +59,9 @@ export function Home() {
       </div>
       <div><p>Page -{currentPage}-</p></div>
 
-
+ 
       <StoreItems />
-      {google2.isAuthenticated ? <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> : <div></div>}
+      {/* {google2.isAuthenticated ? <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> : <div></div>} */}
     {/* {idUser(google2.user.email)} */}
     {/* <Link to={`/myProfile/${idUser2.id}`}><button className="editar">VER MI PERFIL</button></Link> */}
     

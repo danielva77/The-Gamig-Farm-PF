@@ -31,7 +31,7 @@ const LandingPage = () => {
             consolas y juegos que necesitas para que tu experiencia de juego sea
             excelente.”
           </p>
-          <NavLink to="/home">
+          <NavLink to="/home" onClick={e => window.location.assign("http://localhost:3000/home")}>
             <button class="cssbuttons-io">
               <span>
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -2,6 +2,8 @@ require("dotenv").config();
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const port = process.env.PORT || 3001;
+const axios = require("axios");
+
 
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {

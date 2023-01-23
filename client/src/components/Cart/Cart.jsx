@@ -25,6 +25,7 @@ const Cart = () => {
   const {cart, addToCart, removeFromCart, getItemQuantity, incrementItemQuantity, decrementItemQuantity } =
     useContext(CartContext);
 
+
     const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   // const handleRemove = (id) => {

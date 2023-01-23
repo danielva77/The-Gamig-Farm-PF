@@ -8,30 +8,37 @@ module.exports = (sequelize) => {
             allowNull: false,
             primaryKey: true,
           },
-          
-        date: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-        },
-/// detalle de compra
-        detail: {
-            type: DataTypes.TEXT,
+        collection: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        
-        total: {
-            type: DataTypes.INTEGER,
+        email: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        pay:{
+        idproduct: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
-        //estado de compra
-        state: {
+        img: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
-        
+        payment: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        quantity: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     })
 }

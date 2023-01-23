@@ -7,29 +7,25 @@ const Compras = ({ rows }) => {
 
     const columns = [
         {
-            field: 'id',
-            headerName: 'Id',
+            field: 'title',
+            headerName: 'Producto',
         },
         {
-            field: 'date',
+            field: 'quantity',
+            headerName: 'Cantidad',
+        },
+        {
+            field: 'price',
+            headerName: 'Precio c/u',
+        },
+        {
+            field: 'payment',
+            headerName: 'Operacion MP',
+        },
+        {
+            field: 'createdAt',
             headerName: 'Fecha de compra',
-        },
-        {
-            field: 'detail',
-            headerName: 'Detalle',
-        },
-        {
-            field: 'total',
-            headerName: 'Total',
-        },
-        {
-            field: 'pay',
-            headerName: 'Medio de Pago',
-        },
-        {
-            field: 'state',
-            headerName: 'Estado de compra',
-        },
+        }
     ]
     return (
         <div>

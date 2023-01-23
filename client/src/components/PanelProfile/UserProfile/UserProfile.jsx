@@ -2,20 +2,27 @@ import React, { useEffect } from "react";
 // import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link} from "react-router-dom"
-import { getUser, cleanDetail } from "../../../redux/actions";
+import { getUser, cleanDetail, shopUser } from "../../../redux/actions";
 import Compras from "./Compras";
 import "./userProfile.css"
 import usuarioSinFoto from "../../Assets/usuarioSinFoto.png"
+import { idUser } from "../../../redux/actions";
+import { useAuth0 } from "@auth0/auth0-react";
+import NavBar from "../../NavBar/NavBar";
+import Footer from "../../Footer/Footer";
 
 const UserProfile = () => {
+    const google = useAuth0();
+    let email= JSON.parse(localStorage.getItem("email"));
     const { id } = useParams()
     const dispatch = useDispatch()
     const user = useSelector(state => state.userID)
-
+    const shop = useSelector(state => state.shopuser)
 
     useEffect(() => {
         dispatch(getUser(id))
-
+        dispatch(idUser(email))
+        dispatch(shopUser(email))
         return () => dispatch(cleanDetail())
     },[dispatch, id])
 
@@ -23,9 +30,11 @@ const UserProfile = () => {
 
 
     return (
+        <div>
+            <NavBar/>
         <div className="padres">
 
-        <Link to={`/home`}><button className="atras">Atras</button></Link>
+        {/* <Link to={`/home`}><button className="atras">Atras</button></Link> */}
         <div className="bienvenida">
 
         <img src={user.avatar ? user.avatar : "https://img2.freepng.es/20190213/sbb/kisspng-computer-icons-portable-network-graphics-login-cli-jennie-bp-khi-c-yu-kaiexo-cng-ngy-c-5c649ebb391d63.823550061550098107234.jpg"}className="profileF"/>
@@ -46,15 +55,17 @@ const UserProfile = () => {
 
         <div className="informacion">
         <h1 className="misCompras">Mis compras</h1>
-        <button className="btn btn-dark">Historial de Compras</button>
-        <button className="btn btn-dark m-4">Comentarios </button>
+        {/* <button className="btn btn-dark">Historial de Compras</button>
+        <button className="btn btn-dark m-4">Comentarios </button> */}
         
-        {user.store ? (<Compras rows={user.store}></Compras>) : (<h2>Espere mientras cargamos sus compras...</h2>)} 
+        {shop ? (<Compras rows={shop}></Compras>) : (<h2>Espere mientras cargamos sus compras...</h2>)} 
         
         
         //Boton de espera en bootstrap ↑↑↑
         
         </div>
+    </div>
+    {/* <Footer/> */}
     </div>
     )
 };

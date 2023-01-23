@@ -11,8 +11,8 @@ const {
   getMarks,
   modifyProducts,
 } = require("../controllers/products/Controllers")
-
 const { getAllReview, reviewCreate, reviewDelete  } = require("../controllers/review/controllers")
+const { createshop, getShops } =require("../controllers/products/controllerShop")
 
 const enviarMail = require("../config/mailer")
 const configurandoEmail  = require("../config/mailer")
@@ -131,8 +131,8 @@ router.post("/payment",(req, res) => {
       })
     }),
     "back_urls": {
-      "success": "http://localhost:3000/confirmation/approve",
-      "failure": "http://localhost:3000/home",
+      "success": "https://the-gamig-farm-pf-rho.vercel.app/confirmation/approve",
+      "failure": "https://the-gamig-farm-pf-rho.vercel.app/home",
       "pending": "",
     },
     // "notification_url": "http://localhost:3000/products/notificacion",
@@ -224,31 +224,31 @@ router.put("/products/:id", modifyProducts)
 // ])
 // }
 
-const createStore = async () => {
+// const createStore = async (name) => {
 
-  const user1 = await User.findAll({
-      where: {name: name}
-  })
+//   const user1 = await User.findAll({
+//       where: {name: name}
+//   })
 
-  const store1= await Store.create([{
-      date: '01-01-2023',
-      detail: "id: 1, cant: 1, producto: monitor, precio: 5000 / id: 1, cant: 2, producto: cpu, precio: 10000",
-      total: '15200',
-      state: 'Entregado',
-      pay: 'Credito',
-  },
-  {
-    date: '09-01-2023',
-    detail: "id: 1, cant: 2, producto: teclado, precio: 500",
-    total: '500',
-    pay: 'debito',
-    state: 'entregado',
-}])
+//   const store1= await Store.create([{
+//       date: '01-01-2023',
+//       detail: "id: 1, cant: 1, producto: monitor, precio: 5000 / id: 1, cant: 2, producto: cpu, precio: 10000",
+//       total: '15200',
+//       state: 'Entregado',
+//       pay: 'Credito',
+//   },
+//   {
+//     date: '09-01-2023',
+//     detail: "id: 1, cant: 2, producto: teclado, precio: 500",
+//     total: '500',
+//     pay: 'debito',
+//     state: 'entregado',
+// }])
 
-  await user1.addStore(store1)
+//   await user1.addStore(store1)
 
-  return 'base cargada'
-}
+//   return 'base cargada'
+// }
 
 // ??? AL USUARIO AL COMPRAR ???
 const store = async (user, shopping) => {
@@ -416,6 +416,9 @@ router.put('/user/:id', async function (req, res) {
 router.post('/review', reviewCreate)
 router.delete("/ewview/:reviewId", reviewDelete)
 router.get('/review',getAllReview)
+
+router.post("/addshop", createshop)
+router.get("/shops", getShops)
 
 
 

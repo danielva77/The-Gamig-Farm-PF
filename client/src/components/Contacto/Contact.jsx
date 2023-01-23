@@ -4,6 +4,8 @@ import "./contact.css";
 import support from "../Assets/support.png";
 import Swal from "sweetalert2";
 import axios from "axios";
+import Footer from "../Footer/Footer";
+import NavBar from "../NavBar/NavBar";
 
 export default function Contact() {
   const history = useHistory();
@@ -128,6 +130,8 @@ export default function Contact() {
 
 
   return (
+    <div>
+      <NavBar/>
     <div className="casita">
       <section id="seccion-contacto">
         <div class="container" id="contenedor-formulario">
@@ -222,10 +226,10 @@ export default function Contact() {
             </div>
 
           
-
+{/* 
             <Link 
             to="/Home"><button className="btn btn-danger volverBoto">Volver al Home</button>
-            </Link>
+            </Link> */}
 
 
             {/* CONFIGURACION DEL MAIL */}
@@ -239,6 +243,8 @@ export default function Contact() {
           </div> */}
         </div>
       </section>
+    </div>
+    <Footer/>
     </div>
   );
 }
