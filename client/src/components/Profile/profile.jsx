@@ -21,7 +21,10 @@ const Profile = () => {
   useEffect(() => {
     localStorage.setItem("email", JSON.stringify(google.user.email));
   }, [google.user.email]);
+  
   let email= JSON.parse(localStorage.getItem("email"));
+  
+  
   useEffect(() => {
     if(google.isAuthenticated){dispatch(idUser(email))} //This is a correct???
   }, [dispatch]);
