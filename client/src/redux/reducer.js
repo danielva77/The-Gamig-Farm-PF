@@ -38,6 +38,7 @@ const initialState = {
   items: [],
   reviews: [],
   favItems: [],
+  shopuser:[],
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
@@ -287,12 +288,20 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         idUsuarioActual: action.payload
       }
+      case "SHOP_USER":
+        return{
+          ...state,
+          shopuser: action.payload
+        }
       case 'SET_FAVORITES':
       return {
         ...state,
         favItems: action.payload
       };
-
+      case "POST_SHOP":
+        return {
+          ...state
+        }
     
 
     default:

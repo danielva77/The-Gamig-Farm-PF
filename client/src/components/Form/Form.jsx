@@ -18,6 +18,10 @@ export const Form = () => {
     { title: "ASUS" },
     { title: "HP" },
     { title: "HyperX" },
+    { title: "Genius" },
+    { title: "Microsoft" },
+    { title: "Samsung" },
+    { title: "Sony" },
   ];
   const categories = [
     { title: "Mouse" },

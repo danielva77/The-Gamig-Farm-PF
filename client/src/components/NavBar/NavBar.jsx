@@ -5,7 +5,7 @@ import "./NavBar.css";
 import Favoritos from "../Favorites/Favorites";
 import { LoginButton } from "../Login/Login";
 import { LogoutButton } from "../Logout/Logout";
-import { Profile } from "../Profile/profile";
+import  Profile  from "../Profile/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 import LOGO from "../Assets/LOGO.png"

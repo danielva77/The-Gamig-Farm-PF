@@ -14,7 +14,6 @@ import { CartProvider } from "./context/CartContext/CartContext"
 import { BrowserRouter } from "react-router-dom"
 
 // dotenv.config()
-axios.defaults.baseURL = `http://localhost:3001`
 
 ReactDOM.render(
   <Provider store={store}>

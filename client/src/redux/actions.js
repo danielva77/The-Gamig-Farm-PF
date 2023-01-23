@@ -98,12 +98,23 @@ export function getAllProd() {
     })
   } }
 
-export function postProducts(payload) {
-  return async function (dispatch) {
-    const response = await axios.post("http://localhost:3001/products", payload);
-
+export function postProducts(payload){
+  console.log("esto llega en payload POST", payload)
+  return async function (dispatch){
+  const response = await axios.post("http://localhost:3001/products", payload);
+  
+  return dispatch({
+    type: "POST_PRODUCTS",
+    payload: response.data,
+  })
+}
+}
+export function postShop(payload){
+  console.log("esto llega accion shop", payload)
+  return async function(dispatch){
+    const response = await axios.post("http://localhost:3001/addshop", payload);
     return dispatch({
-      type: "POST_PRODUCTS",
+      type: "POST_SHOP",
       payload: response.data,
     })
   }
@@ -257,13 +268,13 @@ export function cleanDetail() {
 
 //Para Favoritos
 
+
 export const setFavorites = (items) => {
   return {
     type: "SET_FAVORITES",
     payload: items
   }
 }
-
 
 export const addToFavorites = item => {
   return (dispatch) => {
@@ -321,22 +332,6 @@ export const addReview = (payload) => {
   };
 };
 
-
-
-
-// trae user por id mas compras
-export function getUser(id) {
-  return function (dispatch) {
-    return axios.get(`http://localhost:3001/user/${id}`)
-      .then(res => {
-        dispatch({ type: GET_USER_ID, payload: res.data })
-      })
-      .catch(e => {
-        console.log(e)
-      })
-  }
-}
-
 export function getReviews(){
   return async function(dispatch){
   const jsonreview = await axios.get("http://localhost:3001/review")
@@ -381,7 +376,7 @@ export function idUser(email){
     return async function(dispatch){
       let usuarios = await axios.get("http://localhost:3001/usuarios")
       let tocarUser = usuarios.data;
-      let miUsuario = tocarUser.filter(e => e.email == email)
+      let miUsuario = tocarUser.filter(e => e.email === email)
       let idUsuario = miUsuario[0]
       return dispatch({
         type: "ID_USER",
@@ -389,5 +384,34 @@ export function idUser(email){
       })
     }
 }
+export function shopUser(email){
+  return async function(dispatch){
+    let usuarios = await axios.get("http://localhost:3001/shops")
+    let tocarUser = usuarios.data;
+    let miUsuario = tocarUser.filter(e => e.email === email)
+    let idUsuario = miUsuario
+    return dispatch({
+      type: "SHOP_USER",
+      payload: idUsuario
+    })
+  }
+}
 
 
+
+
+
+
+
+// trae user por id mas compras
+export function getUser(id) {
+  return function (dispatch) {
+    return axios.get(`http://localhost:3001/user/${id}`)
+      .then(res => {
+        dispatch({ type: GET_USER_ID, payload: res.data })
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  }
+}

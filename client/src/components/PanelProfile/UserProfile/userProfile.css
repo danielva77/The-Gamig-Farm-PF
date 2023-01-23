@@ -84,10 +84,11 @@ b{
 .tablaMaterial{
     background-color: rgb(255, 255, 255);
     position: relative;
-    left: 450px;
+    /* left: 450px; */
     border: 3px solid black;
     height: 400px;
-    width: 40%;
+    margin:2%;
+    /* width: 40%; */
     border-radius: 6px;
     
 }
