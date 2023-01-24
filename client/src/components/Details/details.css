@@ -1,9 +1,3 @@
-/* body {
-  position: relative;
-  padding-bottom: 7em;
-  min-height: 110vh;
-} */
-
 .details-container {
   display: flex;
   flex-direction: column;
