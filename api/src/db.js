@@ -5,13 +5,18 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT, DB_DEPLOY } =
   process.env;
 
-const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/productos`,
-  {
-    logging: false,
-    native: false,
-  }
-);
+const sequelize = DB_DEPLOY
+  ? new Sequelize(DB_DEPLOY, {
+      logging: false,
+      native: false,
+    })
+  : new Sequelize(
+      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+      {
+        logging: false,
+        native: false,
+      }
+    );
 
 const basename = path.basename(__filename);
 
@@ -40,7 +45,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Product, Category, Mark, Review, Store, User } = sequelize.models;
+const { Product, Category, Mark, Review, Store, User, Favorite } =
+  sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -54,6 +60,21 @@ Product.hasMany(Mark);
 User.hasMany(Store);
 Store.belongsTo(User);
 
+User.hasMany(Review, { foreignKey: "userId" });
+Review.belongsTo(User, { foreignKey: "userId" });
+
+Store.belongsToMany(Product, { through: "Store_Product" });
+Product.belongsToMany(Store, { through: "Store_Product" });
+
+Product.hasMany(Review, { foreignKey: "productId" });
+Review.belongsTo(Product, { foreignKey: "productId" });
+
+Mark.hasMany(Product);
+Product.belongsTo(Mark);
+//
+User.hasMany(Store);
+Store.belongsTo(User);
+
 User.hasMany(Review);
 Review.belongsTo(User);
 
@@ -63,26 +84,27 @@ Product.belongsToMany(Store, { through: "Store_Product" });
 Product.hasMany(Review);
 Review.belongsTo(Product);
 
-Mark.hasMany(Product)
-Product.hasMany(Mark)
+User.hasMany(Store);
+Store.belongsTo(User);
 
-User.hasMany(Store)
-Store.belongsTo(User)
+User.hasMany(Review);
+Review.belongsTo(User);
 
-User.hasMany(Review)
-Review.belongsTo(User)
+User.hasMany(Favorite);
+Favorite.belongsTo(User);
 
-Store.belongsToMany(Product, { through: "Store_Product" })
-Product.belongsToMany(Store, { through: "Store_Product" })
+User.hasMany(Favorite, {
+  foreignKey: "userId",
+  as: "favorites",
+});
 
-Product.hasMany(Review)
-Review.belongsTo(Product)
+Favorite.belongsTo(User, {
+  foreignKey: "userId",
+  as: "user",
+});
 
-User.hasMany(Store)
-Store.belongsTo(User)
-
-User.hasMany(Review)
-Review.belongsTo(User)
+// User.belongsToMany(Product, { through: Favorite, foreignKey: "email" });
+// Favorite.belongsTo(Product, { foreignKey: "productId" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

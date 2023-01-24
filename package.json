@@ -1,12 +1,15 @@
 {
   "dependencies": {
     "@auth0/auth0-react": "^1.12.0",
-    "axios": "^1.2.2",
+    "@uploadcare/react-widget": "^2.4.1",
     "bootstrap": "^5.2.3",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
+    "fs-extra": "^11.1.0",
+    "nodemailer": "^6.9.0",
     "process": "^0.11.10",
+    "redux-toolkit": "^1.1.2",
     "sweetalert2": "^11.7.0",
-    "redux-toolkit": "^1.1.2"
+    "timers-browserify": "^2.0.12"
   }
 }

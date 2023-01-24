@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/NavBar';
+import News from '../News/News';
+import Carrusel from '../Slider/Slider';
 import "./about.css"
 
 const team = [
@@ -89,6 +91,8 @@ export default function About() {
           )
         })
       }
+      <Carrusel/>
+      <News/>
       <Footer />
     </div>
   )

@@ -1,6 +1,7 @@
 //Reducers Search Bar
 
 import {
+  GET_USER_ID,
   GET_ALL_PROD,
   SEARCH_BY_NAME,
   GET_DETAIL,
@@ -23,14 +24,19 @@ import {
   GET_ALL_MARKS,
   SET_FILTER_MARKS,
   POST_PRODUCTS,
-  GET_PRODUCTS
-  } from "./actions"
-
-
+  GET_PRODUCTS,
+  GET_ALL_REVIEWS,
+} from "./actions";
 
 const initialState = {
+  //
+  userID: {},
+  idUsuarioActual: {},
+  //
   items: [],
+  reviews: [],
   favItems: [],
+  shopuser: [],
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
@@ -56,27 +62,34 @@ const initialState = {
   },
   sorted: [],
   categories: [],
-  marks:[],
+  marks: [],
 
   currentItems: [],
   loading: false,
 
   // FORMULARIO
-  products : []
-}
+  products: [],
+};
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    //
+    case GET_USER_ID:
+      return {
+        ...state,
+        userID: action.payload,
+      };
+    //
     case SET_NAME_FILTER:
       return {
         ...state,
         nameFilter: action.payload,
-      }
+      };
     case SET_FILTER_PRICE:
       return {
         ...state,
         filterBy: action.payload,
-      }
+      };
     case RESET_FILTERS:
       return {
         ...state,
@@ -84,51 +97,51 @@ export default function rootReducer(state = initialState, action) {
         filter: {
           type: "",
         },
-      }
+      };
     case SET_SORT:
       return {
         ...state,
         sortBy: action.payload,
-      }
+      };
     case SET_PRICE_RANGE:
       return {
         ...state,
         priceRange: action.payload,
-      }
+      };
     case SET_FILTER_CATEGORY:
       return {
         ...state,
         categoryFilter: action.payload,
-      }
-    
-      // case POST_PRODUCTS:
-      //   console.log("reducer post",action.payload)
-      //   return{
-      //     ...state,
-      //   }
+      };
+
+    // case POST_PRODUCTS:
+    //   console.log("reducer post",action.payload)
+    //   return{
+    //     ...state,
+    //   }
 
     case SET_FILTER_MARKS:
       return {
         ...state,
         marksFilter: action.payload,
-      }  
+      };
 
     case SET_NUMBERS_PAGINATED:
       return {
         ...state,
         numbersPaginated: action.payload,
-      }
+      };
 
     case GET_ALL_PROD:
       return {
         ...state,
         items: action.payload,
-      }
+      };
     case CHANGE_PAGE:
       return {
         ...state,
         currentPage: action.payload,
-      }
+      };
     // case GET_ALL_PROD:
     //   // Si ha habido algun ordenamiento, no modificamos aquí pokemonsSorted
     //   for (let prop in state.sort) {
@@ -163,29 +176,36 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         categories: action.payload,
-      }
+      };
+
+    case GET_ALL_REVIEWS:
+      return {
+        ...state,
+        reviews: action.payload,
+      };
 
     case GET_ALL_MARKS:
       return {
         ...state,
         marks: action.payload,
-      }
+      };
 
     case "REMOVE_FROM_CART":
       return {
         ...state,
-        items: state.items.filter(item => item.id !== action.id),
-      }
+        items: state.items.filter((item) => item.id !== action.id),
+      };
     case GET_DETAIL:
       return {
         ...state,
         detail: action.payload,
-      }
+      };
     case CLEAN_DETAIL:
       return {
         ...state,
         detail: [],
       };
+    // work here
     case "ADD_TO_CART":
       // Comprobamos si el producto ya existe en el carrito
       const existingProduct = state.items.find(
@@ -202,8 +222,7 @@ export default function rootReducer(state = initialState, action) {
           ),
         };
       }
-    
-        
+
       // Si el producto no existe en el carrito, lo añadimos con cantidad 1
       return {
         ...state,
@@ -232,44 +251,62 @@ export default function rootReducer(state = initialState, action) {
           item.id === action.productId
             ? { ...item, quantity: item.quantity - 1 }
             : item
-        )
-      }
+        ),
+      };
 
-      // FORMULARIO 
+    // FORMULARIO
 
-      case "POST_PRODUCTS": 
-      return{
-        ...state
-      }
-        case "GET_PRODUCTS":
-          return{
-            ...state,
-            products: action.payload
-          };
+    case "POST_PRODUCTS":
+      return {
+        ...state,
+      };
+    case "ADD_REVIEW":
+      return {
+        ...state,
+      };
+    case "GET_PRODUCTS":
+      return {
+        ...state,
+        products: action.payload,
+      };
+    case "GET_FAVORITES":
+      return { ...state, favItems: action.payload };
 
-          case 'ADD_TO_FAVORITES':
-            return {
-              ...state,
-              favItems: [...state.favItems, action.item]
-            };
-            case 'REMOVE_FROM_FAVORITES':
-              return {
-                  ...state,
-                  favItems: state.favItems.filter(item => item.id !== action.payload.id)
-              };
-              case 'SET_FAVORITES':
-  return {
-    ...state,
-    favItems: action.payload
-  };
-
-    
+    case "ADD_TO_FAVORITES":
+      return {
+        ...state,
+        favItems: [...state.favItems, action.item],
+      };
+    case "REMOVE_FROM_FAVORITES":
+      return {
+        ...state,
+        favItems: state.favItems.filter(
+          (item) => item.id !== action.payload.id
+        ),
+      };
+    case "ID_USER":
+      return {
+        ...state,
+        idUsuarioActual: action.payload,
+      };
+    case "SHOP_USER":
+      return {
+        ...state,
+        shopuser: action.payload,
+      };
+    case "SET_FAVORITES":
+      return {
+        ...state,
+        favItems: action.payload,
+      };
+    case "POST_SHOP":
+      return {
+        ...state,
+      };
 
     default:
       return state;
   }
- 
-
-};
+}
 
 //Reducers Search Bar
