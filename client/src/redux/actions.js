@@ -31,6 +31,7 @@ export const POST_PRODUCTS = "POST_PRODUCTS"
 //REVIEWS
 export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
 
+export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS"
 
 export const setNameFilter = payload => {
   console.log("object")
@@ -65,7 +66,6 @@ export const setSort = payload => {
 }
 
 export const setFilterCategory = payload => {
-  
   return {
     type: SET_FILTER_CATEGORY,
     payload,
@@ -77,7 +77,6 @@ export const setFilterMarks = payload => {
     payload,
   }
 }
-
 
 export const setNumbersPaginated = payload => {
   return {
@@ -96,23 +95,24 @@ export function getAllProd() {
       type: "GET_ALL_PROD",
       payload: products,
     })
-  } }
+  }
+}
 
-export function postProducts(payload){
+export function postProducts(payload) {
   console.log("esto llega en payload POST", payload)
-  return async function (dispatch){
-  const response = await axios.post("http://localhost:3001/products", payload);
-  
-  return dispatch({
-    type: "POST_PRODUCTS",
-    payload: response.data,
-  })
+  return async function (dispatch) {
+    const response = await axios.post("http://localhost:3001/products", payload)
+
+    return dispatch({
+      type: "POST_PRODUCTS",
+      payload: response.data,
+    })
+  }
 }
-}
-export function postShop(payload){
+export function postShop(payload) {
   console.log("esto llega accion shop", payload)
-  return async function(dispatch){
-    const response = await axios.post("http://localhost:3001/addshop", payload);
+  return async function (dispatch) {
+    const response = await axios.post("http://localhost:3001/addshop", payload)
     return dispatch({
       type: "POST_SHOP",
       payload: response.data,
@@ -127,14 +127,13 @@ export function getAllMarks() {
 
       // const categories = req.data
       const unicos = req.data
-      const marks = [];
+      const marks = []
 
       for (var i = 0; i < unicos.length; i++) {
-
-        const elemento = unicos[i];
+        const elemento = unicos[i]
 
         if (!marks.includes(unicos[i])) {
-          marks.push(elemento);
+          marks.push(elemento)
         }
       }
       dispatch({ type: GET_ALL_MARKS, payload: marks })
@@ -144,8 +143,6 @@ export function getAllMarks() {
   }
 }
 
-
-
 export function getAllCategories() {
   return async function (dispatch) {
     try {
@@ -154,14 +151,13 @@ export function getAllCategories() {
 
       // const categories = req.data
       const unicos = req.data
-      const categories = [];
+      const categories = []
 
       for (var i = 0; i < unicos.length; i++) {
-
-        const elemento = unicos[i];
+        const elemento = unicos[i]
 
         if (!categories.includes(unicos[i])) {
-          categories.push(elemento);
+          categories.push(elemento)
         }
       }
 
@@ -250,7 +246,7 @@ export function addToCart(payload) {
   return {
     type: "ADD_TO_CART",
     payload,
-  };
+  }
 }
 
 export function removeFromCart(id) {
@@ -268,90 +264,98 @@ export function cleanDetail() {
 
 //Para Favoritos
 
-
-export const setFavorites = (items) => {
+export const setFavorites = items => {
   return {
     type: "SET_FAVORITES",
-    payload: items
+    payload: items,
   }
 }
 
 export const addToFavorites = item => {
-  return (dispatch) => {
-    localStorage.setItem('favItems', JSON.stringify(item));
-    dispatch({ type: 'ADD_TO_FAVORITES', item });
+  return dispatch => {
+    localStorage.setItem("favItems", JSON.stringify(item))
+    dispatch({ type: "ADD_TO_FAVORITES", item })
   }
-};
+}
 
-
-export const removeFromFav = (id) => {
+export const removeFromFav = id => {
   return {
-    type: 'REMOVE_FROM_FAVORITES',
+    type: "REMOVE_FROM_FAVORITES",
     payload: {
-      id: id
-    }
+      id: id,
+    },
   }
-};
+}
 // Trabajando  en el formulario 2.0
 
 export function getProduct() {
   return async function (dispatch) {
-    var info = await axios.get("http://localhost:3001/products", {
-
-    })
+    var info = await axios.get("http://localhost:3001/products", {})
     return dispatch({
       type: GET_PRODUCTS,
-      payload: info.data
+      payload: info.data,
     })
   }
 }
 
-export function postProduct(payload) { //payload es lo que nos llega en el front
+export function postProduct(payload) {
+  //payload es lo que nos llega en el front
   return async function (dispatch) {
     const response = await axios.post("http://localhost:3001/products", payload)
-    console.log("Producto creaado " + response);
-    return response;
+    console.log("Producto creaado " + response)
+    return response
   }
 }
 
-export const addReview = (payload) => {
+export const addReview = payload => {
   return async function (dispatch) {
     try {
-      const response = await axios.post("http://localhost:3001/review",payload);
+      const response = await axios.post("http://localhost:3001/review", payload)
 
       return dispatch({
         type: "ADD_REVIEW",
         payload: response.data.body,
-      });
+      })
     } catch (error) {
       dispatch({
         type: "ERROR",
         payload: error,
-      });
+      })
     }
-  };
-};
-
-export function getReviews(){
-  return async function(dispatch){
-  const jsonreview = await axios.get("http://localhost:3001/review")
-  const review = jsonreview.data;
-
-  return dispatch({
-    type: "GET_ALL_REVIEWS",
-    payload: review,
-  })
   }
 }
 
-export function disabledProducts(id){
-  return async function(dispatch){
+export function getReviews() {
+  return async function (dispatch) {
+    const jsonreview = await axios.get("http://localhost:3001/review")
+    const review = jsonreview.data
+
+    return dispatch({
+      type: "GET_ALL_REVIEWS",
+      payload: review,
+    })
+  }
+}
+
+export function disabledProducts(id) {
+  return async function (dispatch) {
     let producto = await axios.get(`http://localhost:3001/products/${id}`)
-    let isActive = producto.data[0].isActive;
-    let b;
-    if(isActive){b=false; alert("Desactivado")}else{b=true; alert("Activado")};
-    
-    return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+    let isActive = producto.data[0].isActive
+    let b
+    if (isActive) {
+      b = false
+      alert("Desactivado")
+    } else {
+      b = true
+      alert("Activado")
+    }
+
+    axios.put(`http://localhost:3001/products/${id}`, { isActive: b })
+
+    return dispatch({
+      type: DISABLED_PRODUCTS,
+      payload: id,
+    })
   }
   // let b;
   // if(isActive){b=false}else{b=true}
@@ -360,54 +364,47 @@ export function disabledProducts(id){
   // }
 }
 
-export function addStock(id, number){
+export function addStock(id, number) {
   console.log("esto llego del boton", number)
-  return async function(dispatch){
+  return async function (dispatch) {
     let producto = await axios.get(`http://localhost:3001/products/${id}`)
-    let total = producto.data[0].stock + number;
-    return axios.put(`http://localhost:3001/products/${id}`, {stock: total})
+    let total = producto.data[0].stock + number
+    return axios.put(`http://localhost:3001/products/${id}`, { stock: total })
   }
 }
 
-
 // Accion para traer ID usuario
 
-
-export function idUser(email){
-    return async function(dispatch){
-      let usuarios = await axios.get("http://localhost:3001/usuarios")
-      let tocarUser = usuarios.data;
-      let miUsuario = tocarUser.filter(e => e.email === email)
-      let idUsuario = miUsuario[0]
-      return dispatch({
-        type: "ID_USER",
-        payload: idUsuario
-      })
-    }
+export function idUser(email) {
+  return async function (dispatch) {
+    let usuarios = await axios.get("http://localhost:3001/usuarios")
+    let tocarUser = usuarios.data
+    let miUsuario = tocarUser.filter(e => e.email === email)
+    let idUsuario = miUsuario[0]
+    return dispatch({
+      type: "ID_USER",
+      payload: idUsuario,
+    })
+  }
 }
-export function shopUser(email){
-  return async function(dispatch){
+export function shopUser(email) {
+  return async function (dispatch) {
     let usuarios = await axios.get("http://localhost:3001/shops")
-    let tocarUser = usuarios.data;
+    let tocarUser = usuarios.data
     let miUsuario = tocarUser.filter(e => e.email === email)
     let idUsuario = miUsuario
     return dispatch({
       type: "SHOP_USER",
-      payload: idUsuario
+      payload: idUsuario,
     })
   }
 }
 
-
-
-
-
-
-
 // trae user por id mas compras
 export function getUser(id) {
   return function (dispatch) {
-    return axios.get(`http://localhost:3001/user/${id}`)
+    return axios
+      .get(`http://localhost:3001/user/${id}`)
       .then(res => {
         dispatch({ type: GET_USER_ID, payload: res.data })
       })
