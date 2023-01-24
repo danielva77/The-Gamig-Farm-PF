@@ -38,19 +38,18 @@ export function Home() {
 
 
 
-const hola = { email } 
+  
+  
+  
 
-
-      
-//  POST PARA HACER LA PETICION
+  // 📨📨📨📨📨 POST PARA HACER LA PETICION 📨📨📨📨📨  
   
+  // const msj = { email } 
+  //   const enviarMensajeCorre =  () => {
   
-  
-    const enviarMensajeCorre =  () => {
-  
-     axios.post("http://localhost:3001/nuevoUsuario", hola);
-      console.log(hola);
-    }
+  //    axios.post("http://localhost:3001/nuevoUsuario", msj);
+  //     console.log(msj);
+  //   }
   
 
 
@@ -96,10 +95,13 @@ const hola = { email }
 
 
 
-      {/*   BOTON DE PRUEBA DEL POST */}
 
 
-      <button type="submit" className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button>
+
+
+      {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
+
+      {/* <button type="submit" className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button> */}
             
 
 

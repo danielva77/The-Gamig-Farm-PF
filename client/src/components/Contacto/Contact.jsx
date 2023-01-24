@@ -60,14 +60,7 @@ export default function Contact() {
           "Tus mensajes son importantes para nosotros, nos interesa leerte",
       });
     } else {
-      // enviarCorreo()
       setEnviar(true);
-      // setInput({
-      //   email: "",
-      //   nombre: "",
-      //   asunto: "",
-      //   mensaje: ""
-      // })
     }
   }
 
@@ -120,37 +113,7 @@ export default function Contact() {
       });
       history.push("/home");
     }
-    //
-
-    // console.log("esto va a post →", input);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -243,17 +206,7 @@ export default function Contact() {
                   Enviar mensaje
                 </button>
               </div>
-
-              
-             
-
-
-          
-
-              
             </form>
-          
-         
           </div>
         </section>
       </div>

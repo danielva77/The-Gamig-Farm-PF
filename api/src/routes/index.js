@@ -231,7 +231,6 @@ const userID = async (id) => {
               telephone: us.telephone,
               isAdmin: us.isAdmin,
               isActive: us.isActive,
-              cliente: us.cliente,
               store: us.Stores.map(s => {
                   return {
                       id: s.id,
@@ -304,7 +303,8 @@ User.findOne({
         adress,
         dateOfBirth,
         telephone,
-        password,     
+        password,
+ 
       }
     })
       .then(([user, created]) => {

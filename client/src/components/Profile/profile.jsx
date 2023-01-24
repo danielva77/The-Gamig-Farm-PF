@@ -18,7 +18,7 @@ const Profile = () => {
   const userId = useSelector(state => state.userID)
   let idUsusuario = useSelector((state) => state.idUsuarioActual)
 
-  
+
 
 
 
@@ -29,6 +29,7 @@ const Profile = () => {
   }, [google.user.email]);
   
   let email= JSON.parse(localStorage.getItem("email"));
+  const correo = {email}
   
   
   useEffect(() => {
@@ -47,22 +48,33 @@ const Profile = () => {
       dateOfBirth: "",
       telephone: "",
       avatar: google.user.picture,
-      cliente: true, //false → por defecto
     } 
 
+    
+    
+    
     axios.post("http://localhost:3001/createuser", datosUser)
-    
-    // if(userId.cliente === false){
-    //   alert("correo de bienvenida")
-    // userId.cliente = true
-    // }
-    
-
-
-
   }
 
 
+
+// 
+
+
+//   const userNew = []
+//   let b = 0
+// console.log("BBBB", b)
+
+//   if(!userNew.includes(email) && b == 0){
+//     userNew.push(email)
+//     console.warn("userNew → ", userNew)
+//     axios.post("http://localhost:3001/nuevoUsuario", correo);
+
+//     b = 1
+//     console.log("BBBB  2222222", b)
+//   }
+
+//   console.log("userNew → ", userNew)
 
 
 
