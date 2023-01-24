@@ -4,11 +4,11 @@ const nodemailer = require("nodemailer");
 
 // ENVIAR MENSAJE
 
-const configurandoEmail = (req, res) => {
+const configurandoEmail = (email) => {
 
-  const email  = req.body
+  // const email  = req.body
 
-  console.warn("Correo que le llega por req.body → ", email.email);
+  // console.warn("Correo que le llega por req.body → ", email.email);
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -27,7 +27,7 @@ const configurandoEmail = (req, res) => {
 
 const mensajeLogin = {
   from: " ", // sender address
-  to: email.email , // list of receivers
+  to: email , // list of receivers
   subject: "Bienvenido a la Comunidad 🎉", // Subject line
   html: `Hola que tal? 👋🏻 <br> <br>
   Estamos felices de que seas parte de nuestra comunidad, te damos la bienvenidad y cualquier consulta puedes escribir a nuestro soporte  <br>

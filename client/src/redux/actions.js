@@ -93,7 +93,7 @@ export function getAllProd() {
 
     return dispatch({
       type: "GET_ALL_PROD",
-      payload: products,
+      payload: products
     })
   }
 }

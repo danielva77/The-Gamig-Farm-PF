@@ -26,10 +26,10 @@ const team = [
   {
     id: 1,
     name: 'Bradley Caruci',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    description: "Desarrollador Front-end en busca de nuevas experiencias y retos que me hagan crecer personalmente y profesionalmente.",
     image: "https://i.ibb.co/VqK0hH9/Foto-Perfil-Linkedin-1.png",
-    linkedin: "www.linkedin.com",
-    github: "www.github.com"
+    linkedin: "https://www.linkedin.com/in/bradley-caruci-767a7a22a/",
+    github: "https://github.com/BradleyGCF"
   },
   {
     id: 1,
@@ -42,10 +42,10 @@ const team = [
   {
     id: 1,
     name: 'Benjamin Bidondo ',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    image: "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png",
-    linkedin: "www.linkedin.com",
-    github: "www.github.com"
+    description: "Actualmente estoy explorando las oportunidades ilimitadas de la programación. Emocionado de formar parte de este equipo y poder ampliar mis aptitudes como Full Stack Developer",
+    image: "https://i.ibb.co/m92fCR5/Whats-App-Image-2023-01-22-at-12-28-50.jpg",
+    linkedin: "https://www.linkedin.com/in/benjamin-bidondo-lacassy-a5a089231/",
+    github: "https://github.com/BBidondo"
   },
   {
     id: 1,
@@ -58,10 +58,10 @@ const team = [
   {
     id: 1,
     name: 'Alfredo Zavala',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ",
+    description: "Desarrollador Full Stack,  Quiero utilizar mis habilidades para llevar a cabo ideas, proyectos, que tengan impacto en el mundo. Acompañado con el aprendizaje de todos los días el ingles",
     image: "https://i.ibb.co/SPrW9kB/Whats-App-Image-2023-01-23-at-14-28-14.jpg",
-    linkedin: "www.linkedin.com",
-    github: "www.github.com"
+    linkedin: "https://www.linkedin.com/in/alfredo-zavala-/",
+    github: "https://github.com/Tutialfred"
   },
 ]
 
@@ -106,8 +106,9 @@ export default function About() {
 
 
                   <div className='linksEquipo'>
-                    <a href={el.linkedin}><img src={linkedinMorado} width="40" height="40" alt="linkedin" target="_blank" className='linkedinI' /></a>
-                    <a href={el.github}><img src={gitHubMorado} width="50" height="50" alt="github" target="_blank" /></a>
+                    <a href={el.linkedin} target="_blank"><img src={linkedinMorado} width="40" height="40" alt="linkedin" className='linkedinI' /></a>
+
+                    <a href={el.github} target="_blank"><img src={gitHubMorado} width="50" height="50" alt="github" /></a>
                   </div>
 
 

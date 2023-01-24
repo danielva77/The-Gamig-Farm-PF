@@ -32,8 +32,8 @@ export default function SearchBar() {
 <nav className="navbar bg-body-tertiary divSearch">
   <div className="container-fluid">
     <form class="d-flex" role="search">
-  <input type="search" className="form-control me-2" placeholder="Buscar" aria-label="Search" />
-      <button class="btn btn-outline-success botonBuscar" type="submit">Search</button>
+  <input type="search" className="form-control me-2" placeholder="Buscar" aria-label="Search"  onChange={(e) => { handleInputChange(e) }}/>
+      <button class="btn btn-outline-success botonBuscar" type="submit" onClick={(e) => { handleSubmit(e) }}>Search</button>
     </form>
   </div>
 </nav>
