@@ -14,7 +14,9 @@ import { useShoppingCart } from "../../context/CartContext/CartContext";
 import Carrito from "../Assets/cart.png";
 
 
+
 function NavBar() {
+
 
 
   // AUTENTICACION
@@ -40,7 +42,7 @@ function NavBar() {
       </div>
 
       <SearchBar />
-      {/* <Cart className="cart" /> */}
+    
       <Favoritos />
 
       {isAuthenticated ? (

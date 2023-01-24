@@ -13,11 +13,14 @@ import Footer from "../../Footer/Footer";
 
 const UserProfile = () => {
     const google3 = useAuth0();
-    let email= JSON.parse(localStorage.getItem("email"));
+    let email = JSON.parse(localStorage.getItem("email"));
     const { id } = useParams()
     const dispatch = useDispatch()
-    const user = useSelector(state => state.userID)
+    const user = useSelector(state => state.userID) 
     const shop = useSelector(state => state.shopuser)
+
+
+
 
     useEffect(() => {
         dispatch(getUser(id))
@@ -30,7 +33,6 @@ const UserProfile = () => {
     const fotoGoogleDefecto = google3.user.picture
 
 
-console.log(email);
 
 
     return (
@@ -59,8 +61,7 @@ console.log(email);
 
         <div className="informacion">
         <h1 className="misCompras">Mis compras</h1>
-        {/* <button className="btn btn-dark">Historial de Compras</button>
-        <button className="btn btn-dark m-4">Comentarios </button> */}
+       
         
         {shop ? (<Compras rows={shop}></Compras>) : (<h2>Espere mientras cargamos sus compras...</h2>)} 
         
@@ -69,7 +70,6 @@ console.log(email);
         
         </div>
     </div>
-    {/* <Footer/> */}
     </div>
     )
 };

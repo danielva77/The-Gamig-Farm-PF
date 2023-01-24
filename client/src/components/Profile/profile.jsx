@@ -18,6 +18,10 @@ const Profile = () => {
   const userId = useSelector(state => state.userID)
   let idUsusuario = useSelector((state) => state.idUsuarioActual)
 
+  
+
+
+
 
   
   useEffect(() => {
@@ -28,19 +32,14 @@ const Profile = () => {
   
   
   useEffect(() => {
-    if(google.isAuthenticated){dispatch(idUser(email))} //This is a correct???
+    if(google.isAuthenticated){dispatch(idUser(email))} 
   }, [dispatch]);
-//   useEffect(() => {
-//     dispatch(getUser(idUsusuario.id))
 
-//     return () => dispatch(cleanDetail())
-
-// },[dispatch, idUsusuario.id])
-
-
+ 
   if (isLoading) {
     return <div>Loading...</div>;
   }else{
+  
     const datosUser = {
       name: google.user.name,
       email: google.user.email,
@@ -48,10 +47,30 @@ const Profile = () => {
       dateOfBirth: "",
       telephone: "",
       avatar: google.user.picture,
-      password: ""
-    }
+      cliente: true, //false → por defecto
+    } 
+
     axios.post("http://localhost:3001/createuser", datosUser)
+    
+    // if(userId.cliente === false){
+    //   alert("correo de bienvenida")
+    // userId.cliente = true
+    // }
+    
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
   return (
     isAuthenticated && (
       <div>
@@ -79,18 +98,7 @@ const Profile = () => {
                         <Link to={`/myProfile/${idUsusuario.id}`}>
                         <button onClick={UserProfile} className="Perfil-btn">Mi informacion</button>
                       </Link>
-            {/* <Link to={`/myProfile/${idUsusuario.id}`}>
-              <button onClick={UserProfile} className="Perfil-btn">Mi informacion</button>
-            </Link> */}
-            {/* <Link to="/compras ">
-              <button className="compras-btn"> Tus compras </button>
-            </Link>
-            <Link to="/contacto">
-              <button className="Contacto-btn"> Contacto </button>
-            </Link>*/}
-            {/* <Link to="/favortios">
-              <button className="Favortios-btn"> Favortios </button>
-            </Link>  */}
+            
           <LogoutButton className="salir" />
           </div>
         </Offcanvas >

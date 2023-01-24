@@ -192,74 +192,6 @@ router.put("/products/:id", modifyProducts)
 
 
 
-
-
-
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-
-//funciones controladoras. Mas abajo las rutas.
-
-
-// YA ESTA ACTUALIZADA ESTA FUNCION ↓↓↓ ❌
-
-// const createUser = async () => {
-//   return await User.bulkCreate([{
-//       // id: 'pachilo@mail.com',
-//       name: 'pachilo',
-//       avatar:'pachilo',
-//       email: 'pachilo@mail.com',
-//       adress: '',
-//       dateOfBirth: '01-07-2016',
-//       telephone: 1122333211 ,
-//       password: 'password',
-//       isAdmin: false,
-//       // Para desactivar el acceso
-//       isActive: true,
-//   }, 
-//   {
-//       // id: 'luu@mail.com',
-//       name: 'luna',
-//       avatar: 'luna',
-//       email: 'luna@mail.com',
-//       adress: '',
-//       dateOfBirth: '01-12-2016',
-//       telephone: 1122333211 ,
-//       password: 'password',
-//       isAdmin: true,
-//       // Para desactivar el acceso
-//       isActive: true,
-//   }
-// ])
-// }
-
-// const createStore = async (name) => {
-
-//   const user1 = await User.findAll({
-//       where: {name: name}
-//   })
-
-//   const store1= await Store.create([{
-//       date: '01-01-2023',
-//       detail: "id: 1, cant: 1, producto: monitor, precio: 5000 / id: 1, cant: 2, producto: cpu, precio: 10000",
-//       total: '15200',
-//       state: 'Entregado',
-//       pay: 'Credito',
-//   },
-//   {
-//     date: '09-01-2023',
-//     detail: "id: 1, cant: 2, producto: teclado, precio: 500",
-//     total: '500',
-//     pay: 'debito',
-//     state: 'entregado',
-// }])
-
-//   await user1.addStore(store1)
-
-//   return 'base cargada'
-// }
-
 // ??? AL USUARIO AL COMPRAR ???
 const store = async (user, shopping) => {
   try {
@@ -299,6 +231,7 @@ const userID = async (id) => {
               telephone: us.telephone,
               isAdmin: us.isAdmin,
               isActive: us.isActive,
+              cliente: us.cliente,
               store: us.Stores.map(s => {
                   return {
                       id: s.id,
@@ -371,7 +304,7 @@ User.findOne({
         adress,
         dateOfBirth,
         telephone,
-        password,
+        password,     
       }
     })
       .then(([user, created]) => {

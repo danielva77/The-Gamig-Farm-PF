@@ -38,19 +38,18 @@ export function Home() {
 
 
 
-
-
+const hola = { email } 
 
 
       
-
+//  POST PARA HACER LA PETICION
   
   
   
-    const enviarMensajeCorre = async () => {
+    const enviarMensajeCorre =  () => {
   
-      axios.post("http://localhost:3001/nuevoUsuario", email);
-      console.log(email);
+     axios.post("http://localhost:3001/nuevoUsuario", hola);
+      console.log(hola);
     }
   
 
@@ -96,10 +95,11 @@ export function Home() {
       <StoreItems />
 
 
-    
+
+      {/*   BOTON DE PRUEBA DEL POST */}
 
 
-      <button className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button>
+      <button type="submit" className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button>
             
 
 
