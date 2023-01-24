@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, useContext } from 'react-redux';
 import { getDetail, cleanDetail } from '../../redux/actions';
-import "../Details/Details.css"
+import "../Details/details.css"
 import cart from "../Assets/cart.png"
 import Footer from "../Footer/Footer"
 // import "./details.css"
