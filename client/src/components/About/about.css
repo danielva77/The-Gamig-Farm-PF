@@ -1,4 +1,4 @@
-.about-container {
+/* .about-container {
   display: flex;
   flex-direction: column;
 }
@@ -23,4 +23,91 @@
   margin: 5%;
   border-color: black;
   border-width: 1%;
+} */
+
+
+/* DISEÑO NUEVO */
+
+.primerDiv{
+  margin: 40px 70px;
+  font-family: proxima-nova, sans-serif;
+}
+.sobreNosotros{
+  font-weight: 800;
+  text-align: left;
+}
+.parrafo1{
+  font-style: normal;
+font-weight: 500;
+font-size: 25px;
+line-height: 38px;
+width: auto;
+color: #51535A;
+text-align: left;
+
+}
+.nuestroEquipo{
+  font-weight: 800;
+  text-align: left;
+}
+
+
+/* CARDS */
+
+.tarjetasPadre{
+  display: inline-flex;
+  margin: 15px;
+  padding: 0;
+
+}
+
+
+
+.cardPersona{
+  width: 607px;
+  height: 300px;
+  background: #0F0E17;
+  border-radius: 15px;
+  justify-content: space-around;
+  color: #fff;
+
+}
+.fotoEquipo{
+  width: 170px;
+  height: 170px;
+  border-radius: 9999px;
+  position: relative;
+  left:  15px;
+  display: block;
+  top: 50px;
+}
+
+.divFoto{
+  display: block;
+}
+
+
+.nombreEquipo{
+  
+  display: inline-flex;
+  position: relative;
+  top:   -140px;
+  left: 60px;
+  color: #7600FF;
+  font-family: proxima-nova, sans-serif;
+
+}
+.descripcionEquipo{
+  /* margin-left: 30px; */
+  position: relative;
+  left: 210px;
+  top: -120px;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  width:400px;
+  text-align: left;
+  
+}
+divImagen{
+  background-color: red;
 }

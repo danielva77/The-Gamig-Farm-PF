@@ -125,6 +125,33 @@ export default function Contact() {
     // console.log("esto va a post →", input);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <NavBar />
@@ -133,7 +160,7 @@ export default function Contact() {
           <div class="container" id="contenedor-formulario">
             <div id="titulo-formulario" class="text-center mb-4">
               <div>
-                <img src={support} alt="contacto" class="img-fluid" />
+                <img src={support} alt="contacto" className="img-f" />
               </div>
               <h2>Contacto</h2>
               <p class="fs-5">
@@ -217,17 +244,16 @@ export default function Contact() {
                 </button>
               </div>
 
-              {/* 
-            <Link 
-            to="/Home"><button className="btn btn-danger volverBoto">Volver al Home</button>
-            </Link> */}
+              
+             
 
-              {/* CONFIGURACION DEL MAIL */}
+
+          
+
+              
             </form>
-            {/* 
-          <div>
-            <button onClick={enviarMsj} >MSJ - Iniciar Sei</button>
-          </div> */}
+          
+         
           </div>
         </section>
       </div>

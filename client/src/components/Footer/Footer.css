@@ -8,7 +8,6 @@
   display: flex;
   font-size: 12px;
   justify-content: space-around;
-  /* margin-top: -20%; */
 }
 
 .titulo2 {
@@ -18,7 +17,6 @@
   font-size: 20px;
   line-height: 30px;
   color: #858484;
- 
 }
 
 .parrafo1 {

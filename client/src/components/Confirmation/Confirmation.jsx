@@ -63,9 +63,7 @@ if(status == "approved"){
   }, 3000);
 }
 
-  
-  // envia el correo de la compra hecha ! 🛍
-  // axios.post("http://localhost:3001/MensajeCompra", cart) 
+
 
   console.warn("LO QUE LLEGA DEL MENSAJE POR req.body → ", cart);
 

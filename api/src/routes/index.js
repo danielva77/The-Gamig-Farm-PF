@@ -19,6 +19,7 @@ const { createshop, getShops } =require("../controllers/products/controllerShop"
 
 
 const configurandoEmail  = require("../config/mailer")
+const mensajeBienvenida  = require("../config/mailerBienvenida")
 
 const router = Router()
 
@@ -38,6 +39,8 @@ const getDbInfo = async () => {
 // Al finalizar la compra ↓
 router.post("/MensajeCompra", configurandoEmail)
 
+// Al iniciar por primera vez 
+router.post("/nuevoUsuario", mensajeBienvenida)
 
 
 

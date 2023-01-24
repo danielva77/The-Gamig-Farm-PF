@@ -30,7 +30,7 @@ const UserProfile = () => {
     const fotoGoogleDefecto = google3.user.picture
 
 
-console.log(fotoGoogleDefecto);
+console.log(email);
 
 
     return (
