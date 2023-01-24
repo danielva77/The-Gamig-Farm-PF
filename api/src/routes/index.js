@@ -141,8 +141,8 @@ router.post("/payment",(req, res) => {
       })
     }),
     "back_urls": {
-      "success": "https://the-gamig-farm-pf-rho.vercel.app/confirmation/approve",
-      "failure": "https://the-gamig-farm-pf-rho.vercel.app/home",
+      "success": "http://localhost:3000/confirmation/approve",
+      "failure": "http://localhost:3000/home",
       "pending": "",
     },
     // "notification_url": "http://localhost:3000/products/notificacion",

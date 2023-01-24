@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa"
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { getDetail, addReview } from '../../redux/actions';
+import { idUser } from '../../redux/actions';
 
 const colors = {
   orange: "#FFBA5A",
@@ -11,9 +12,16 @@ const colors = {
 };
 
 export default function AddReview({productId}){
+  const dispatch = useDispatch()
+  let email= JSON.parse(localStorage.getItem("email"));
+  useEffect(() => {
+{dispatch(idUser(email))} //This is a correct???
+  }, [dispatch]);
+  let idUser2 = useSelector((state) => state.idUsuarioActual)
+  console.log("ESTE ES EL USUSARIO", idUser2.id)
   const initialState = {
     productId: productId,
-    userId: "88e29e02-ce4f-4111-98c1-163554eb1636",
+    userId: idUser2.id,
     comment: "",
     rating: 0
   };
@@ -32,7 +40,7 @@ export default function AddReview({productId}){
 
 
 
-  const dispatch = useDispatch()
+
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
 
@@ -110,7 +118,7 @@ export default function AddReview({productId}){
 
   return(
     <div>
-      <h2>Add Review</h2>
+      <h2>Agregar Review</h2>
         <div>
           {stars.map((_, index) => {
             return (
@@ -130,12 +138,12 @@ export default function AddReview({productId}){
           })}
         </div>
         <textarea
-          placeholder="What's your reference?"
+          placeholder="Opina sobre este producto ..."
           value={review.comment} 
           name='comment' 
           onChange={handleOnChange}
         />
-        <button type='button' onClick={handleSubmit}>Submit</button>
+        <button type='button' onClick={handleSubmit}>Enviar</button>
     </div>
   )
 }

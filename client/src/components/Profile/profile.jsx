@@ -23,7 +23,10 @@ const Profile = () => {
   useEffect(() => {
     localStorage.setItem("email", JSON.stringify(google.user.email));
   }, [google.user.email]);
+  
   let email= JSON.parse(localStorage.getItem("email"));
+  
+  
   useEffect(() => {
     if(google.isAuthenticated){dispatch(idUser(email))} //This is a correct???
   }, [dispatch]);
@@ -73,9 +76,12 @@ const Profile = () => {
             <img className="picture" src={user.picture}></img> {user.name}
           </h3>
           <div className="btns">
-            <Link to={`/myProfile/${idUsusuario.id}`}>
+                        <Link to={`/myProfile/${idUsusuario.id}`}>
+                        <button onClick={UserProfile} className="Perfil-btn">Mi informacion</button>
+                      </Link>
+            {/* <Link to={`/myProfile/${idUsusuario.id}`}>
               <button onClick={UserProfile} className="Perfil-btn">Mi informacion</button>
-            </Link>
+            </Link> */}
             {/* <Link to="/compras ">
               <button className="compras-btn"> Tus compras </button>
             </Link>
