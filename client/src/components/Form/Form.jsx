@@ -7,10 +7,12 @@ import { postProduct, getProduct } from "../../redux/actions";
 import Swal from "sweetalert2";
 // import uploadcare from 'uploadcare-widget/uploadcare.lang.en.min.js'
 import { Widget } from "@uploadcare/react-widget";
+import NavBar from "../NavBar/NavBar";
 
 <Widget publicKey="b64078a8eafda783a219" />;
 
 export const Form = () => {
+  <NavBar/>
   const marks = [
     { title: "Juegos" },
     { title: "Mandos" },

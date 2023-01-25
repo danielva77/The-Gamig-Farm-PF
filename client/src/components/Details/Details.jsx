@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector, useContext } from "react-redux";
 import { getDetail, cleanDetail } from "../../redux/actions";
-import "../Details/Details.css";
+import "../Details/details.css";
 import cart from "../Assets/cart.png";
 import Footer from "../Footer/Footer";
 // import "./details.css"
@@ -12,8 +12,12 @@ import { addToFavorites } from "../../redux/actions";
 import AddReview from "../AddReview/AddReview";
 import ReviewContainer from "../AddReview/ReviewContainer";
 import { disabledProducts, addStock } from "../../redux/actions";
+import Carrusel from "../Slider/Slider";
 
 export default function Details(props) {
+ let usuariologueado = JSON.parse(localStorage.getItem("email"));
+ console.log("USUARIOLOGUEADO", usuariologueado)
+ let emailadmin = "thegamingfarm01@gmail.com"
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
 
@@ -78,9 +82,20 @@ export default function Details(props) {
           🡰 Volver
         </a>
       </div>
-      <div>
-        <AddReview className="Review" productId={props.match.params.id} />
+      <div className="carrusel">
+        <Carrusel />
       </div>
+      { usuariologueado ? 
+      <div>
+        <div>
+          <AddReview className="Review" productId={props.match.params.id} />
+        </div>
+      </div> : null
+      }
+        <div>
+          <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
+        </div> 
+        { usuariologueado == emailadmin ? 
       <div>
         <button onClick={disabledProducts(props.match.params.id)}>
           Desactivar producto
@@ -100,10 +115,7 @@ export default function Details(props) {
           Agregar stock
         </button>
       </div>
-      <div>
-        <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
-      </div>
-
+      : null  }
       <div className="move-footer">
         <Footer />
       </div>

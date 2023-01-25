@@ -21,7 +21,7 @@
 /* Filtro SORT */
 .filterSort{
   width: 10% !important;
-  left: 30% !important;
+  left: 21% !important;
   position: relative;
   padding: 2px 25px !important;
   border: 2px solid rgba(0, 0, 0, 0.262) !important;
@@ -29,6 +29,7 @@
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
+  height: 28px;
 }
 .filterSort:focus{
   background-color: rgb(0, 0, 0) !important;
@@ -42,7 +43,7 @@
 /* Filtro Category */
 .filterCategory{
   width: 10% !important;
-  left: 42% !important;
+  left: 32.8% !important;
   position: relative;
   padding: 1px 25px !important;
   border: 2px solid rgba(0, 0, 0, 0.21) !important;
@@ -50,6 +51,7 @@
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
+  top: 1px;
 }
 .filterCategory:focus{
   background-color: rgb(0, 0, 0) !important;
@@ -81,8 +83,9 @@
 
 .botonReset{
   width: 10% !important;
-  left: 21% !important;
+  left: 22% !important;
   position: relative;
+  height: 28px;
   padding: 1px 25px !important;
   border: 2px solid rgba(0, 0, 0, 0.21) !important;
   top: -30px;
@@ -95,6 +98,6 @@
 
 /* TODO EL DIV ENTERO ↑ */
 .filtros{
-  justify-content: flex-end !important;
+  justify-content: start !important;
 
 }

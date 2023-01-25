@@ -31,23 +31,23 @@
   line-height: 24px;
 }
 .link:hover {
-  color: #7600FF;
+  color: #7600ff;
 }
 
-.cart{
+.cart {
   position: absolute;
   right: 17%;
   top: 1%;
 }
 
-.cart-btn{
+.cart-btn {
   position: absolute;
   left: 80%;
   top: 11px;
 }
 
-.quantity-circle{
-  position: absolute; 
+.quantity-circle {
+  position: absolute;
   bottom: 20px;
   left: 85%;
   width: 20px;
@@ -59,11 +59,11 @@
   line-height: 20px;
 }
 
-.logoOriginal1{
+.logoOriginal1 {
   width: 90px;
   position: relative;
-  top: -8px;
-  left: 70px;
+  top: -12px;
+  left: 80px;
 }
 /* .img-fluid{
   position: absolute;
