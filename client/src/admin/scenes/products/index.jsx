@@ -2,9 +2,7 @@ import { Box, Button, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
 import Sidebar from "../global/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { disabledProducts, getAllProd } from "../../../redux/actions";
@@ -16,25 +14,6 @@ const Products = () => {
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
-  // const handleDisable = () => {
-  //   disabledProducts(cellValues.row.id)
-  //   // window.location.reload
-  // }
-
-
-  // $(function(){
-  //    $("#btnCambiar").click(function () {
-  //       /*
-  //          Aquí cambia el elemento, lo dejo comentado para que no falle el snippet
-  //          quita las barras // en tu contexto y debería funcionar
-  //       */
-  //       //$('#data-table-default tr.solucionada').toggle();
-  //       $(this).text(function(i, text){
-  //           return text === "MOSTRAR" ? "OCULTAR" : "MOSTRAR";
-  //       })
-  //    });
-  // })
 
   useEffect(() => {
     dispatch(getAllProd())

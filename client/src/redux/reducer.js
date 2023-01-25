@@ -27,11 +27,13 @@ import {
   GET_PRODUCTS,
   GET_ALL_REVIEWS,
   DISABLED_PRODUCTS,
+  GET_ALL_USERS,
 } from "./actions"
 
 const initialState = {
   //
   userID: {},
+  users: [],
   idUsuarioActual: {},
   //
   items: [],
@@ -317,6 +319,12 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         items: auxItems,
+      }
+
+    case GET_ALL_USERS:
+      return {
+        ...state,
+        users: action.payload,
       }
 
     default:

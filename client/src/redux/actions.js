@@ -32,6 +32,7 @@ export const POST_PRODUCTS = "POST_PRODUCTS"
 export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
 
 export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS"
+export const GET_ALL_USERS = "GET_ALL_USERS"
 
 export const setNameFilter = payload => {
   console.log("object")
@@ -412,4 +413,43 @@ export function getUser(id) {
         console.log(e)
       })
   }
+}
+
+export function getAllUsers(id) {
+  return async function (dispatch) {
+    let aux = axios.get(`http://localhost:3001/user/${id}`)
+    const users = aux.data
+
+    return dispatch({
+      type: GET_ALL_USERS,
+      payload: users,
+    })
+  }
+}
+
+export function disableUser(id) {
+  return async function (dispatch) {
+    let producto = await axios.get(`http://localhost:3001/products/${id}`)
+    let isActive = producto.data[0].isActive
+    let b
+    if (isActive) {
+      b = false
+      alert("Desactivado")
+    } else {
+      b = true
+      alert("Activado")
+    }
+
+    axios.put(`http://localhost:3001/products/${id}`, { isActive: b })
+
+    return dispatch({
+      type: DISABLED_PRODUCTS,
+      payload: id,
+    })
+  }
+  // let b;
+  // if(isActive){b=false}else{b=true}
+  // return function (dispatch){
+  //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  // }
 }
