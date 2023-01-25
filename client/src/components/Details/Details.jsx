@@ -63,7 +63,7 @@ export default function Details(props) {
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+ {quantity}</a>
+              <a className="suma">+{quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>

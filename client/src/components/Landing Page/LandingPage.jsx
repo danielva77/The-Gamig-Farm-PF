@@ -7,6 +7,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { idUser } from "../../redux/actions";
+import Fuego from "../Assets/fuego.png"
 
 const LandingPage = () => {
   const dispatch = useDispatch
@@ -20,16 +21,17 @@ const LandingPage = () => {
       {/* <NavBar /> */}
       <div className="info-landing">
         <div className="container">
+         
           <h1 className="tituloLanding">
-            Maximiza tu Experiencia de Juego con Nuestros Productos.
+            Enciende tu Experiencia de Juego con Nuestros Productos
           </h1>
 
+           {/* <img  className="fuego" src={Fuego}  /> */}
+
           <p className="bienvenido">
-            ¡Bienvenido a la mejor tienda de juegos del mundo! Aquí en nuestra
-            tienda hemos trabajado incansablemente para ofrecerle los mejores
-            productos del campo de los juegos. Tenemos todos los accesorios,
-            consolas y juegos que necesitas para que tu experiencia de juego sea
-            excelente.”
+           "Bienvenidos a TheGamingFarm! aquí podrás encontrar un cátalogo
+            completo de las consolas más icónicas de las últimas décadas e 
+            informarte de las novedades relacionadas al Mundo Gamer”
           </p>
           <NavLink to="/home" onClick={e => window.location.assign("http://localhost:3000/home")}>
             <button class="cssbuttons-io">

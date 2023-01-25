@@ -24,7 +24,7 @@
   left: 30% !important;
   position: relative;
   padding: 2px 25px !important;
-  border: 2px solid black !important;
+  border: 2px solid rgba(0, 0, 0, 0.262) !important;
   margin-top: 4px;
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
@@ -45,7 +45,7 @@
   left: 42% !important;
   position: relative;
   padding: 1px 25px !important;
-  border: 2px solid black !important;
+  border: 2px solid rgba(0, 0, 0, 0.21) !important;
   margin-top: -30px;
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
@@ -64,7 +64,7 @@
   left: 54% !important;
   position: relative;
   padding: 1px 25px !important;
-  border: 2px solid black !important;
+  border: 2px solid rgba(0, 0, 0, 0.214) !important;
   margin-top: -29px;
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
@@ -84,7 +84,7 @@
   left: 21% !important;
   position: relative;
   padding: 1px 25px !important;
-  border: 2px solid black !important;
+  border: 2px solid rgba(0, 0, 0, 0.21) !important;
   top: -30px;
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;

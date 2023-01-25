@@ -12,7 +12,7 @@ import NavBar from "../NavBar/NavBar";
 import MarkFilter from "../MarkFilter/MarkFilter";
 import { useParams, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from "axios"
+import axios from "axios";
 
 export function Home() {
   const dispatch = useDispatch();
@@ -30,41 +30,14 @@ export function Home() {
     } //This is a correct???
   }, [dispatch]);
 
+  // 📨📨📨📨📨 POST PARA HACER LA PETICION 📨📨📨📨📨
 
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  // 📨📨📨📨📨 POST PARA HACER LA PETICION 📨📨📨📨📨  
-  
-  // const msj = { email } 
+  // const msj = { email }
   //   const enviarMensajeCorre =  () => {
-  
+
   //    axios.post("http://localhost:3001/nuevoUsuario", msj);
   //     console.log(msj);
   //   }
-  
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -96,30 +69,9 @@ export function Home() {
 
       <StoreItems />
 
-
-
-
-
-
-
       {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
 
       {/* <button type="submit" className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button> */}
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   );
 }
