@@ -1,5 +1,5 @@
 .modificar{
-    background-color: #ff8906;
+    background-color: #7600FF;
     padding: 25px;
     font-family: proxima-nova, sans-serif;
     font-weight: 700;
@@ -7,6 +7,7 @@
     user-select: none;
     /* margin: 0 0; */
     padding: 5px 0 ;
+    
 }
 .padre{
     background-color: rgb(0, 0, 0);
@@ -22,4 +23,20 @@
     background-color: rgb(123, 123, 123) !important;
     width: 500px;
     margin: 30px 0;
+}
+.fotoEdit{
+    position: relative;
+    left: -7px;
+}
+.fotoActual{
+    display: block;
+    padding-bottom: 15px;
+    padding-top: 25px;
+    font-family: proxima-nova, sans-serif;
+    font-size: 25px;
+    text-shadow: 1.5px 1.5px 2px #9a9a9a;
+    user-select: none;
+}
+login:hover{
+    color: #4400ff;
 }

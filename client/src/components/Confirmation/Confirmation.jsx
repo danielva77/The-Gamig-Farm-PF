@@ -96,6 +96,10 @@ export default function Confirmation() {
   //Enviar correo al finalizar la compra
   // .then()
 
+  // useEffect((e) => {
+  //   axios.post("http://localhost:3001/MensajeCompra", cart);
+  // }, []);
+
   return (
     <div>
       <NavBar />

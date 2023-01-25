@@ -5,7 +5,7 @@
   "products": [
    
     {
-      "title": "Play Station",
+      "title": "PlayStation",
       "price": 104,
       "detail": "Con la primera PlayStation Sony se introdujo en el mercado del videojuego como una apisonadora. Características como la reproducción de CD musicales y un catálogo de videojuegos que apelaba más a los jóvenes y menos a los niños, la consola logró eliminar, en parte, esa idea de que el ocio interactivo es para los más pequeños de la casa. En su catálogo hay joyas de este entretenimiento como Metal Gear Solid, Final Fantasy VII, WipeOut, Gran Turismo e innumerables juegos más.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/1280px-PSX-Console-wController.png",
@@ -15,7 +15,7 @@
     },
 
     {
-      "title": "Mando Play Station",
+      "title": "Mando PlayStation",
       "price": 38,
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/PSX-DualShock.png/2560px-PSX-DualShock.png",
       "stock": 22,
@@ -140,7 +140,7 @@
 
   
     {
-      "title": "Play Station 2",
+      "title": "PlayStation 2",
       "price": 198,
       "detail": "PlayStation 2 se estrenó en el año 2000 con un precio elevado para la época (en España, 75.000 pesetas) y acompañada de anuncios televisivos dirigidos por David Lynch. La consola más popular de la historia siguió la senda de la primera PlayStation. PS2 tenía un lector de DVD que permitió que entrara en los salones de muchos hogares, al igual que la primera PSX hizo lo propio con los CD. Además, si PlayStation era el ejemplo de que los videojuegos podían apelar a un público adulto, PS2 asentó esa idea. Entre sus circuitos se han ejecutado obras como Ratchet & Clank y Jak & Daxter, pero también se desarrolló la saga Silent Hill, se expandió el JRPG con Final Fantasy X y Dragon Quest VIII, se generó el entusiasmo por los mundos abiertos con Grand Theft Auto III y se exploraron otras ideas con Shadow of the Colossus e ICO. A fecha de 31 de diciembre de 2021 ha vendido más de 155 millones de unidades.",
       "img": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e483edbf-4b49-42e8-a684-cdf17c4f227f/dd42vvw-074fd077-4117-446e-a7e7-ea545f3a5c38.png/v1/fill/w_1175,h_680,strp/playstation_2_phat_png_by_framerater_dd42vvw-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzQxIiwicGF0aCI6IlwvZlwvZTQ4M2VkYmYtNGI0OS00MmU4LWE2ODQtY2RmMTdjNGYyMjdmXC9kZDQydnZ3LTA3NGZkMDc3LTQxMTctNDQ2ZS1hN2U3LWVhNTQ1ZjNhNWMzOC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.rWquLB3lVRxG12SXX4gVtz82u92g615L4S67RjvvB80",
@@ -150,7 +150,7 @@
     },
 
    {
-      "title": "Mando Play Station 2",
+      "title": "Mando PlayStation 2",
       "price": 58,
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/PlayStation2-DualShock2.png/1200px-PlayStation2-DualShock2.png",
       "category": ["PlayStation 2"],
@@ -332,10 +332,10 @@
     },
 
     {
-      "title": "Pokémon Edición Negra y Blanca 2",
+      "title": "Pokémon Edición Negra 2",
       "price": 21,
       "detail":"La saga Pokémon vuelve a Nintendo DS (sin olvidar que será compatible también con Nintendo 3DS), para traernos la segunda parte de las aventuras vividas en las Ediciones Blanca y Negra. Nuevas áreas que explorar, nuevos modos y la presencia de entrenadores clásicos como Misty garantizan el éxito de una de las sagas de rol más populares de la historia.",
-      "img": "https://static.wikia.nocookie.net/espokemon/images/a/a4/Box_Pok%C3%A9mon_Negro_2.png/revision/latest?cb=20140217225209",
+      "img": "https://static.wikia.nocookie.net/espokemon/images/a/a4/Box_Pok%C3%A9mon_Negro_2.png/revision/latest/scale-to-width-down/1000?cb=20140217225209",
       "stock": 12,
       "category": ["Nintendo DS"],
       "mark": ["Juegos"]
@@ -389,7 +389,7 @@
       "title": "Xbox",
       "price": 289,
       "detail": "Microsoft entró en el mercado de las consolas de videojuegos, tras décadas haciendo juegos para PC, en 2001. Xbox fue la consola más potente de su generación, una adelantada a su tiempo en cuanto a funcionalidades online y en sus tripas se ejecutaron títulos y servicios que acabaron por definir a la marca, como Halo, Forza Motorsport y Xbox Live. La cifra de ventas más reciente publicada en 2006 por la compañía se refiere a más de 24 millones de consolas Xbox vendidas en todo el mundo",
-      "img":"https://image.pngaaa.com/402/2928402-middle.png",
+      "img":"https://upload.wikimedia.org/wikipedia/commons/c/c2/Xbox-Console-Set.png",
       "stock": 27,
       "category": ["Xbox"],
       "mark": ["Xbox"]
@@ -398,7 +398,7 @@
     {
       "title": "Mando Xbox",
       "price": 43,
-      "img":"https://e7.pngegg.com/pngimages/931/491/png-clipart-black-xbox-one-controller-xbox-black-joystick-electronics-joysticks.png",
+      "img":"https://o.remove.bg/downloads/0fdde968-474c-4e72-9b61-4ad4ac6b60dd/xbox-one-con-el-mando-en-las-manos_5pm8-removebg-preview.png",
       "stock": 27,
       "category": ["Xbox"],
       "mark": ["Mandos"]
@@ -520,7 +520,7 @@
     {
       "title": "Mando Nintendo 64",
       "price": 17,
-      "img":"https://static.wikia.nocookie.net/nintendo/images/8/8a/Mando_de_Nintendo_64.png/revision/latest?cb=20200421153558&path-prefix=es",
+      "img":"https://o.remove.bg/downloads/12e66d32-ede4-4a79-9e4d-74ad46a5b845/752px-N64-Controller-Gray-removebg-preview.png",
       "stock": 227,
       "category": ["Nintendo 64"],
       "mark": ["Mandos"]
@@ -634,7 +634,7 @@
       "title": "Xbox One",
       "price": 274,
       "detail": "La consola de actual generación de Microsoft, Xbox One, ha vendido aproximadamente 50 millones de consolas hasta finales 2019, aunque solo es una estimación, porque la compañía de Redmond dejó de dar cifras de ventas en octubre de 2015. La máquina ha tenido dos revisiones: una ligeramente más potente, compacta y con ciertas funciones adicionales (como HDR) llamada Xbox One S; y una intergeneracional, capaz de ofrecer gráficos 4K gracias a su mayor potencia, denominada Xbox One X. En esta consola se ha estrenado Xbox Game Pass, un servicio que se extenderá a próximos sistemas de Microsoft y que funciona como un Netflix de videojuegos.",
-      "img":"https://toppng.com/uploads/preview/xbox-one-console-transparent-11562942324xbd9hyiibh.png",
+      "img":"https://o.remove.bg/downloads/215acb08-578c-44c4-b561-726da2d9922e/kisspng-microsoft-xbox-one-x-microsoft-xbox-one-s-video-ga-xbox-one-x-png-picture-2-76599-xbox-one-x-png-5d0392387d52c8.8266148915605151285133-removebg-preview.png",
       "stock": 27,
       "category": ["Xbox One"],
       "mark": ["Xbox One"]
@@ -642,7 +642,7 @@
     {
       "title": "Mando Xbox One",
       "price": 49,
-      "img":"https://static.wikia.nocookie.net/xbox/images/f/fa/Xbox-one-controller.png/revision/latest?cb=20200329035448",
+      "img":"https://i.blogs.es/0f2c70/650_1000_xbox-one-mando/1366_2000.png",
       "stock": 13,
       "category": ["Xbox One"],
       "mark": ["Mandos"]
@@ -723,7 +723,7 @@
       "title": "The Witcher 3: Wild Hunt",
       "price": 21,
       "detail":"The Witcher 3 para Xbox One es la tercera entrega de esta saga desarrollada por CDProjekt a nivel multiplataforma. En ella encontrarás una mezcla de aventura y rol en un mundo épico basado en la fantasía. En la piel de Geralt de Rivia, el afamado cazador de bestias, te enfrentarás a peligros no vistos hasta el momento. El juego cuenta con dos estilos de lucha diferentes que aportarán más o menos rapidez y diferentes ataques según el desarrollo de nuestro personaje. Casi cien animaciones en ataques que contribuirán a hacer más realista y grande el nombre de The Witcher.",
-      "img": "https://images.hind.ee/5949/66/the-witcher-3-wild-hunt-xbox-one.jpg",
+      "img": "https://www.mobygames.com/images/covers/l/361775-the-witcher-3-wild-hunt-complete-edition-xbox-one-front-cover.png",
       "stock": 12,
       "category": ["Xbox One"],
       "mark": ["Juegos"]
@@ -1062,7 +1062,7 @@
       "title": "Xbox 360",
       "price": 179,
       "detail": "Para su segunda consola Microsoft profundizó en lo que había funcionado de la primera Xbox: mejoró el juego online, dio aún más relevancia a sus sagas y estudios principales como Rare y Bungie, y continuó apostando por la potencia; pero también se centró en algo que le dio bastante ventaja frente a PS3 durante los primeros años: la accesibilidad de la plataforma para los desarrolladores, lo que hizo que muchos juegos multiplataforma funcionaran mejor en una consola relativamente menos potente que su competidora. La consola se vendía con distintos tamaños de disco duro y tuvo dos revisiones. En 2014 Microsoft anunció que había vendido 84 millones de unidades, pero sumando las cifras de ventas en diversos territorios hasta 2016, la cifra total asciende hasta los 86 millones aproximadamente.",
-      "img":"https://static.wikia.nocookie.net/gamerspedia/images/9/9a/Xbox_360.png/revision/latest?cb=20170813223258&path-prefix=es",
+      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Xbox-360-Pro-wController.png/1370px-Xbox-360-Pro-wController.png",
       "stock": 24,
       "category": ["Xbox 360"],
       "mark": ["Xbox 360"]
@@ -1195,7 +1195,7 @@
       "title": "PlayStation 3",
       "price": 219,
       "detail": "La tercera consola de sobremesa de Sony no comenzó con buen pie. Llegó al mercado a un precio de 600 euros, lo que suponía 200 € más que Xbox 360 y 350 euros respecto a Wii. Sin embargo, la máquina fue teniendo revisiones que rebajaban funcionalidades, como la retrocompatibilidad, a cambio de una disminución de precio. Conforme fueron llegando grandes exclusivos como Uncharted 2: El reino de los ladrones, Heavy Rain y Killzone 2, se dio un vuelco a las tornas. Con The Last of Us se cerró su catálogo de juegos exclusivos, uno de los motivos por los que colocó más de 87,4 millones a fecha de marzo de 2017 (dejó de distribuirse en Japón en mayo de ese año).",
-      "img": "https://assets.stickpng.com/images/585ea071cb11b227491c3505.png",
+      "img": "https://o.remove.bg/downloads/829e2da8-d8f8-4d95-9aa0-f66cb8dabd8c/kisspng-playstation-2-playstation-3-playstation-4-xbox-360-console-5acf975338bf61.5334361115235541312324-removebg-preview.png",
       "stock": 15,
       "category": ["PlayStation 3"],
       "mark": ["PlayStation 3"]
@@ -1404,15 +1404,7 @@
       "mark": ["Juegos"]
     },
 
-    {
-      "title": "The Legend of Zelda: Skyward Sword",
-      "price": 32,
-      "detail":"La leyenda de Zelda vuelve a Wii en una aventura en la que Link tendrá, una vez más, que salvar a la princesa. Con un aspecto gráfico que se inspira en las acuarelas impresionistas, el juego usará exhaustivamente el mando de Wii para controlar las armas y el escudo de Link, usando la detección de movimiento mejorada del mando Wii Motion Plus. Tendremos que manejar la espada con precisión para acabar con los enemigos, aprovechando sus puntos débiles, y apuntar con el arcado, el boomerang y otras armas de Link. El escudo, vital para protegernos de los enemigos, se maneja con el nunchaku conectado al mando de la consola.",
-      "img": "https://www.mobygames.com/images/covers/l/232101-the-legend-of-zelda-skyward-sword-limited-edition-pack-wii-other.jpg",
-      "stock": 12,
-      "category": ["Wii"],
-      "mark": ["Juegos"]
-    },
+  
 
     {
       "title": "Monster Hunter 3",
@@ -1451,7 +1443,7 @@
     {
       "title": "Controles Nintendo Switch",
       "price": 53,
-      "img":"https://w7.pngwing.com/pngs/887/578/png-transparent-nintendo-switch-pro-controller-pokemon-red-and-blue-joy-con-nintendo-electronics-nintendo-video-game-thumbnail.png",
+      "img":"https://e7.pngegg.com/pngimages/1018/518/png-clipart-nintendo-switch-pro-controller-nintendo-switch-joy-con-l-r-nintendo-electronics-nintendo.png",
       "stock": 11,
       "category": ["Nintendo Switch"],
       "mark": ["Mandos"]
@@ -1731,9 +1723,9 @@
       "title": "Mega Drive",
       "price": 372,
       "detail": "La consola de 16 bits de SEGA dio origen a Sonic: The Hedgehog, una de las mascotas del videojuego más reconocidas desde entonces, pero también a una gran cantidad de títulos de todo tipo que siempre se comparaban con sus homólogos de Super Nintendo. Mega Drive se comercializó como Sega Genesis en Norteamérica, uno de los factores que hacen que no se tengan totalmente claras las cifras de venta oficiales: los datos oficiales apuntan a 30,75 millones, pero a ello hay que sumar Sega Genesis 3, Nomad y consolas clónicas de otras marcas que elevan la cifra a los 39,5 millones aproximadamente.",
-      "img": "https://w7.pngwing.com/pngs/571/565/png-transparent-atgames-sega-genesis-flashback-2017-sega-genesis-classics-mega-drive-others-gadget-electronics-video-game.png",
+      "img": "https://o.remove.bg/downloads/cae1ccee-f0a5-44c4-8c47-4e1704ba3fb7/png-transparent-atgames-sega-genesis-flashback-2017-sega-genesis-classics-mega-drive-others-gadget-electronics-video-game-removebg-preview.png",
       "stock": 35,
-      "category": ["ega Mega Drive"],
+      "category": ["Sega Mega Drive"],
       "mark": ["Sega Mega Drive"]
     },
 
@@ -1751,7 +1743,7 @@
       "title": "Castlevania: The New Generation",
       "price": 38,
       "detail":"El cartucho nos permitía elegir, al principio de la partida, entre dos personajes. John Morris era un lejano descendiente de los Belmont (de ahí que porte el legendario látigo de la familia, Vampire Killer), pero además ¡era el hijo de Quincy Morris!, uno de los personajes de la novela de Bram Stoker. En el manual PAL lo rebautizaron como Kincy Morris, posiblemente para evitarse líos legales.",
-      "img": "https://static.wikia.nocookie.net/castlevania/images/9/95/Castlevania_The_New_Generation_-_cubierta_europa.jpg/revision/latest?cb=20140228054448&path-prefix=es",
+      "img": "https://thehande.files.wordpress.com/2020/11/cvbloodlines.png",
       "stock": 12,
       "category": ["Sega Mega Drive"],
       "mark": ["Juegos"]

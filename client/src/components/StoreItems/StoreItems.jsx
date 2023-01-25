@@ -75,7 +75,7 @@ function StoreItems({ currentVideogames }) {
   return (
     <>
       <div className="divG">
-        <h1 className="productosT">PRODUCTOS</h1>
+        
         <div className="modelo3">
           {currentItems.length ? (
             currentItems.map((item) => {

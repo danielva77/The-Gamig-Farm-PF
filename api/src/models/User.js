@@ -47,6 +47,12 @@ module.exports = (sequelize) => {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: true
-        }
+        },
+        // para enviar mail solo una vez
+        // cliente: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: false,
+        //     defaultValue: false
+        // }
     })
 }

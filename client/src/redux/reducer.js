@@ -26,6 +26,7 @@ import {
   POST_PRODUCTS,
   GET_PRODUCTS,
   GET_ALL_REVIEWS,
+  DISABLED_PRODUCTS,
 } from "./actions";
 
 const initialState = {
@@ -269,8 +270,6 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         products: action.payload,
       };
-    case "GET_FAVORITES":
-      return { ...state, favItems: action.payload };
 
     case "ADD_TO_FAVORITES":
       return {
@@ -294,20 +293,6 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         shopuser: action.payload,
       };
-    case "POST_SHOP":
-      return {
-        ...state,
-      };
-    case "ID_USER":
-      return {
-        ...state,
-        idUsuarioActual: action.payload,
-      };
-    case "SHOP_USER":
-      return {
-        ...state,
-        shopuser: action.payload,
-      };
     case "SET_FAVORITES":
       return {
         ...state,
@@ -316,6 +301,24 @@ export default function rootReducer(state = initialState, action) {
     case "POST_SHOP":
       return {
         ...state,
+      };
+    case DISABLED_PRODUCTS:
+      let auxProduct = state.items.find((prod) => prod.id === action.payload);
+
+      var foundIndex = state.items.findIndex((x) => x.id == action.payload);
+
+      let auxItems = state.items;
+
+      // auxItems[foundIndex] = {...auxProduct, isActive: auxProduct.isActive ? false : true}
+      auxProduct.isActive
+        ? (auxProduct.isActive = false)
+        : (auxProduct.isActive = true);
+
+      auxItems[foundIndex] = auxProduct;
+
+      return {
+        ...state,
+        items: auxItems,
       };
 
     default:

@@ -6,13 +6,22 @@ import { getUser, cleanDetail } from "../../../redux/actions";
 import "./editUserProfile.css";
 import usuarioSinFoto from "../../Assets/usuarioSinFoto.png";
 import Swal from "sweetalert2";
+import { Widget } from "@uploadcare/react-widget";
+import { useAuth0 } from "@auth0/auth0-react";
 
+
+
+
+<Widget publicKey="b64078a8eafda783a219" />;
 
 const EditUserProfile = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const user = useSelector((state) => state.userID);
   const history = useHistory()
+  const google3 = useAuth0();
+
+
 
   useEffect(() => {
     dispatch(getUser(id));
@@ -20,8 +29,20 @@ const EditUserProfile = () => {
     return () => dispatch(cleanDetail());
   }, [dispatch, id]);
 
-  const [input, setInput] = useState({});
+  const [input, setInput] = useState({
+    name: user.name,
+    adress: user.adress,
+    dateOfBirth: user.dateOfBirth,
+    telephone: user.telephone,
+    avatar: user.avatar,
+  });
 
+
+ const fotoGoogleDefecto = google3.user.picture
+
+
+
+ 
   function handleChange(e) {
     setInput({
       ...input,
@@ -42,7 +63,9 @@ const EditUserProfile = () => {
         confirmButtonText: "Okay",
         confirmButtonColor: "Green",
       });
-      
+        console.log("usuario actualizado → ", id )
+        console.log("usuario actualizado2 → ", input )
+
      await axios.put("http://localhost:3001/user/" + id, input);
      history.push(`/myprofile/${id}`);
       
@@ -56,18 +79,30 @@ const EditUserProfile = () => {
       </h2>
       <form className="formulario mt-2" onSubmit={(e) => handleSubmit(e)}>
         <div className="imagenFoto">
-          <label name="img" htmlFor="img">
+        <label name="img" htmlFor="img" className="fotoActual">
             Foto Actual:
-          </label>
+          </label> 
           <img
-            src={user.avatar ? user.avatar : usuarioSinFoto}
+            src={input.avatar ? input.avatar : google3.user.avatar}
             alt="img not found"
-            className="profileF"
-          />
+            className="profileF fotoEdit"
+          /> 
+          
         </div>
        <br />
 
-
+       <Widget
+            publicKey="b64078a8eafda783a219"
+            id="file"
+            name="photos"
+            onChange={(e) => {
+              setInput({
+                ...input,
+                avatar: e.originalUrl,
+              });
+              console.log(e);
+            }}  
+          />
             {/* NOMBRE Y APELLIDO */}
        <div class="form-floating mb-2 ">
           <input
@@ -91,7 +126,7 @@ const EditUserProfile = () => {
             value={user.email}
             className="form-control inputNew"
             id="floatingEmail"
-            placeholder="name@example.com"
+            // placeholder="name@example.com"
             name="email"
             // value={input.email}
             onChange={(e) => handleChange(e)}
@@ -160,22 +195,11 @@ const EditUserProfile = () => {
 
 
 
-        {/* FOTO */}
-        <div class="form-floating mb-2">
-          <input
-            type="number"
-            className="form-control inputNew"
-            id="floatingFOTO"
-            placeholder="Celular"
-            name="avatar"
-            value={input.avatar}
-            onChange={(e) => handleChange(e)}
-          />
-          <label for="floatingFOTO">FOTO</label>
-        </div>
+      
+       
 
         {/* BOTONES */}
-        
+   
         <button
           type="submit"
           className="btn btn-success mb-4" 

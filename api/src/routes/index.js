@@ -2,8 +2,10 @@ const { Router } = require("express");
 const mercadopago = require("mercadopago");
 require("dotenv").config();
 const axios = require("axios");
+const p = require("../../productos.json");
+
 // Modelos de la base de datos ↓
-const { User, Store, Favorite } = require("../db");
+const { User, Store, Category, Mark, Product, Favorite } = require("../db");
 const {
   getAllProducts,
   createProducts,
@@ -27,8 +29,10 @@ const {
   removeFromFavorites,
 } = require("../controllers/favorites/controllers");
 
-const enviarMail = require("../config/mailer");
+// const enviarMail = require("../config/mailer") ← ESTA FUNCION NO VA??????????
+
 const configurandoEmail = require("../config/mailer");
+const mensajeBienvenida = require("../config/mailerBienvenida");
 
 const router = Router();
 
@@ -45,7 +49,10 @@ const getDbInfo = async () => {
 // Al finalizar la compra ↓
 router.post("/MensajeCompra", configurandoEmail);
 
-// RUTAS
+// Al iniciar por primera vez
+// router.post("/nuevoUsuario", mensajeBienvenida)
+
+// RUTAS 🚧
 
 // Obtener todos los usuarios
 router.get("/usuarios", async (req, res) => {
@@ -162,74 +169,6 @@ router.post("/payment", (req, res) => {
 router.put("/products/:id", modifyProducts);
 // router.post("/enviarMensaje", enviarMail)
 
-// USER -- JACQUE
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-
-//funciones controladoras. Mas abajo las rutas.
-
-//   return 'base cargada'
-// }
-
-// YA ESTA ACTUALIZADA ESTA FUNCION ↓↓↓ ❌
-
-// const createUser = async () => {
-//   return await User.bulkCreate([{
-//       // id: 'pachilo@mail.com',
-//       name: 'pachilo',
-//       avatar:'pachilo',
-//       email: 'pachilo@mail.com',
-//       adress: '',
-//       dateOfBirth: '01-07-2016',
-//       telephone: 1122333211 ,
-//       password: 'password',
-//       isAdmin: false,
-//       // Para desactivar el acceso
-//       isActive: true,
-//   },
-//   {
-//       // id: 'luu@mail.com',
-//       name: 'luna',
-//       avatar: 'luna',
-//       email: 'luna@mail.com',
-//       adress: '',
-//       dateOfBirth: '01-12-2016',
-//       telephone: 1122333211 ,
-//       password: 'password',
-//       isAdmin: true,
-//       // Para desactivar el acceso
-//       isActive: true,
-//   }
-// ])
-// }
-
-// const createStore = async (name) => {
-
-//   const user1 = await User.findAll({
-//       where: {name: name}
-//   })
-
-//   const store1= await Store.create([{
-//       date: '01-01-2023',
-//       detail: "id: 1, cant: 1, producto: monitor, precio: 5000 / id: 1, cant: 2, producto: cpu, precio: 10000",
-//       total: '15200',
-//       state: 'Entregado',
-//       pay: 'Credito',
-//   },
-//   {
-//     date: '09-01-2023',
-//     detail: "id: 1, cant: 2, producto: teclado, precio: 500",
-//     total: '500',
-//     pay: 'debito',
-//     state: 'entregado',
-// }])
-
-//   await user1.addStore(store1)
-
-//   return 'base cargada'
-// }
-
 // ??? AL USUARIO AL COMPRAR ???
 const store = async (user, shopping) => {
   try {
@@ -331,6 +270,8 @@ router.post("/createuser", async function (req, res) {
         })
           .then(([user, created]) => {
             if (created) {
+              mensajeBienvenida(email);
+
               return res.json(user);
             }
           })
@@ -399,6 +340,176 @@ router.delete("/favorites/:id", async (req, res) => {
   } catch (error) {
     console.log("error eliminacion favoritos", error);
     res.status(400).send(error);
+  }
+});
+
+// BENJA , JAQUE ↓
+
+//routes cargar db
+const consola = [
+  { title: "PlayStation" },
+  { title: "PlayStation 2" },
+  { title: "PlayStation 3" },
+  { title: "PlayStation 4" },
+  { title: "PlayStation 5" },
+  { title: "Xbox" },
+  { title: "Xbox 360" },
+  { title: "Xbox One" },
+  { title: "Sega Mega Drive" },
+  { title: "Nintendo 64" },
+  { title: "Nintendo DS" },
+  { title: "Wii" },
+  { title: "Nintendo Switch" },
+];
+
+const mark = [{ title: "Juegos" }, { title: "Mandos" }];
+
+const createCategory = async () => {
+  try {
+    await Category.bulkCreate(consola);
+    return "Se crearon categorias";
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const createMark = async () => {
+  try {
+    await Mark.bulkCreate(mark);
+    return "Se crearon juegos y mandos";
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const createProduct = async () => {
+  try {
+    let category = "";
+    let marca = "";
+    let producto = "";
+    let allProducts = [];
+    let agregarCategory = [];
+    let agregarMark = [];
+
+    for (let i = 0; i < p.products.length; i++) {
+      category = await Category.findOne({
+        where: { title: p.products[i].category },
+      });
+      marca = await Mark.findOne({
+        where: { title: p.products[i].mark },
+      });
+      producto = await Product.create({
+        title: p.products[i].title,
+        price: p.products[i].price,
+        detail: p.products[i].detail,
+        img: p.products[i].img,
+        stock: p.products[i].stock,
+      });
+
+      let addM = producto.addMark(marca);
+      let addC = producto.addCategory(category);
+      allProducts.push(producto);
+      agregarCategory.push(addC);
+      agregarMark.push(addM);
+    }
+
+    await Promise.all([...allProducts, ...agregarCategory, ...agregarMark]);
+
+    return "La base de datos se ha cargado con exito";
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const filterByMandos = async () => {
+  const data = await Mark.findAll({
+    where: { title: "Mandos" },
+    include: {
+      model: Product,
+      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      through: {
+        attributes: [],
+      },
+    },
+  });
+  return data[0].Products;
+};
+
+const filterByJuegos = async () => {
+  const data = await Mark.findAll({
+    where: { title: "Juegos" },
+    include: {
+      model: Product,
+      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      through: {
+        attributes: [],
+      },
+    },
+  });
+  return data[0].Products;
+};
+
+const filterByCategory = async (consola) => {
+  const data = await Category.findAll({
+    where: { title: consola },
+    include: {
+      model: Product,
+      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      through: {
+        attributes: [],
+      },
+    },
+  });
+  return data[0].Products;
+};
+
+router.get("/db", async (req, res) => {
+  try {
+    //   const categories = await createCategory();
+    //   const marks = await createMark();
+    await createCategory();
+    await createMark();
+
+    const products = await createProduct();
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log(error);
+    return res.status(404).json(error);
+  }
+});
+
+router.get("/filterByMandos", async (req, res) => {
+  try {
+    const products = await filterByMandos();
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log(error);
+    return res.status(404).json(error);
+  }
+});
+
+router.get("/filterByJuegos", async (req, res) => {
+  try {
+    const products = await filterByJuegos();
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log(error);
+    return res.status(404).json(error);
+  }
+});
+
+router.get("/filterByCategory", async (req, res) => {
+  try {
+    const { consola } = req.query;
+    const products = await filterByCategory(consola);
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log(error);
+    return res.status(404).json(error);
   }
 });
 

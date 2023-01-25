@@ -43,7 +43,10 @@
     "timers-browserify": "^2.0.12",
     "uploadcare-widget": "^3.21.0",
     "web-vitals": "^2.1.4",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "formik": "^2.2.9",
+    "react-pro-sidebar": "^0.7.1",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

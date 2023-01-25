@@ -16,6 +16,6 @@ export const LoginButton = () => {
   }, [isAuthenticated, getAccessTokenSilently]);
 
   return (
-    <a className="login" onClick={() => loginWithRedirect() }>Iniciar sesión</a>
+    <a className="login" onClick={() => loginWithRedirect() }>INICIAR SESIÓN</a>
   );
 };

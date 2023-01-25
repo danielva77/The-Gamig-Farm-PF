@@ -8,7 +8,7 @@ import { LogoutButton } from "../Logout/Logout";
 import Profile from "../Profile/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import LOGO from "../Assets/LOGO.png";
+import logoOriginal1 from "../Assets/logoOriginal1.svg";
 import { Button } from "react-bootstrap";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import Carrito from "../Assets/cart.png";
@@ -22,8 +22,12 @@ function NavBar() {
   return (
     <div className="navbar-container">
       <div className="logo-container">
-        <Link to="/" className="Nombrelogo">
-          <img src={LOGO} title="Logo Gaming" />
+        <Link to="/">
+          <img
+            src={logoOriginal1}
+            title="Logo Gaming"
+            className="logoOriginal1"
+          />
         </Link>
       </div>
 
@@ -46,7 +50,7 @@ function NavBar() {
       </div>
 
       <SearchBar />
-      {/* <Cart className="cart" /> */}
+
       <Favoritos />
 
       {isAuthenticated ? (
@@ -61,7 +65,7 @@ function NavBar() {
       <div className="cart-btn">
         <Button variant="" class="btn btn float-right" onClick={openCart}>
           {""}
-          <img src={Carrito} alt="imagen" class="img-fluid" />
+          <img src={Carrito} alt="imagen" className="img-fluid" />
           <div className="quantity-circle">{cartQuantity}</div>
         </Button>
       </div>

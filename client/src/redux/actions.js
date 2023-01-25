@@ -31,6 +31,8 @@ export const POST_PRODUCTS = "POST_PRODUCTS";
 //REVIEWS
 export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
 
+export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS";
+
 export const setNameFilter = (payload) => {
   console.log("object");
   return {
@@ -408,7 +410,12 @@ export function disabledProducts(id) {
       alert("Activado");
     }
 
-    return axios.put(`http://localhost:3001/products/${id}`, { isActive: b });
+    axios.put(`http://localhost:3001/products/${id}`, { isActive: b });
+
+    return dispatch({
+      type: DISABLED_PRODUCTS,
+      payload: id,
+    });
   };
   // let b;
   // if(isActive){b=false}else{b=true}
