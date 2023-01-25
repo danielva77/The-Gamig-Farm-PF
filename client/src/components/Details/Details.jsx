@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector, useContext } from "react-redux";
 import { getDetail, cleanDetail } from "../../redux/actions";
-import "../Details/Details.css";
+import "../Details/details.css";
 import cart from "../Assets/cart.png";
 import Footer from "../Footer/Footer";
 // import "./details.css"
@@ -78,35 +78,66 @@ export default function Details(props) {
           🡰 Volver
         </a>
       </div>
-      <div>
+
+
+
+
+
+
+
+
+
+
+{/* BOTONES DE ADMINISTRADORES */}
+
+
+
+
+
+
+
+
+
+
+
+      <div className="AdministradorB">
         <AddReview className="Review" productId={props.match.params.id} />
       </div>
       <div>
-        <button onClick={disabledProducts(props.match.params.id)}>
+        <button onClick={disabledProducts(props.match.params.id)} className="activarDesactivar">
           Desactivar producto
         </button>
         <Link to={`/editproduct/${props.match.params.id}`}>
-          <button>Editar informacion del producto</button>
+          <button className="editarProducto">Editar informacion del producto</button>
         </Link>
+        
+        <div className="cantidadAgregar">
         <input
           type="number"
           min="0"
           step="1"
           name="stock"
           onChange={(e) => handleStock(e)}
-          placeholder="Cantidad a agregar ..."
-        ></input>
-        <button onClick={addStock(props.match.params.id, stock)}>
-          Agregar stock
+          className="inputNumero"
+          placeholder="Stock"
+        ></input> <br />
+        <button onClick={addStock(props.match.params.id, stock)} className="agregarStock">
+          Agregar stock 
         </button>
-      </div>
-      <div>
-        <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
+          </div>
+
+
       </div>
 
-      <div className="move-footer">
-        <Footer />
+
+      <div className="comentarios">
+        <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
       </div>
+          
+
+      {/* <div className="move-footer"> */}
+        {/* <Footer /> */}
+      {/* </div> */}
     </div>
   );
 }

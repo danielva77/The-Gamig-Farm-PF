@@ -32,7 +32,7 @@ export default function ReviewContainer({productId}) {
   }
 
   return (
-    <div>
+    <div >
       <div>
       {stars.map((_, index) => {
         return (
@@ -54,7 +54,7 @@ export default function ReviewContainer({productId}) {
               ))}
         </div> :
         <div>
-          <h2>This product has no reviews at the moment</h2>
+          <h2>Este producto por el momento no contiene comentarios</h2>
         </div>
       }
     </div>

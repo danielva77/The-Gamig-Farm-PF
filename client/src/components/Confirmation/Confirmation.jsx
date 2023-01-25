@@ -95,10 +95,10 @@ setTimeout(async() => {
 }, 5000);
 
 
-
+const mensajeCorreo = { cart, email}
  
 useEffect((e) => {
-  axios.post("http://localhost:3001/MensajeCompra", cart);
+  axios.post("http://localhost:3001/MensajeCompra", mensajeCorreo);
 }, []);
 
 

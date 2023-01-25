@@ -17,10 +17,10 @@ class Footer extends React.Component {
         <div className="contenedores">
           <h2 className="titulo2">Compra sin moverte</h2>
 
-          <a href="/home" className="link1">
+          <a href="/home" className="link1"  target="_blank">
             Tu perfil
           </a>
-          <a href="/home" className="link1">
+          <a href="/home" className="link1"  target="_blank">
             Productos
           </a>
         </div>
@@ -28,13 +28,13 @@ class Footer extends React.Component {
         <div className="conocenos">
           <h2 className="titulo2">Conocenos</h2>
 
-          <a href="/contacto" className="link1">
+          <a href="/contacto" className="link1" target="_blank">
             Contacto
           </a>
-          <a href="/contacto" className="link1">
+          <a href="/about" className="link1"  target="_blank">
             Sobre Nosotros
           </a>
-          <a href="/contacto" className="link1">
+          <a href="https://github.com/danielva77/The-Gamig-Farm-PF" className="link1"  target="_blank">
             GitHub
           </a>
         </div>

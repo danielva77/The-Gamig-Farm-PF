@@ -119,11 +119,19 @@ export default function AddReview({productId}){
 
   return(
     <div className='Review'>
-      <h2>Agregar Review</h2>
+      <h2 className='tituloAgregar'>Agregar un Comentario</h2>
+      <textarea
+          placeholder="Opina sobre este producto ..."
+          value={review.comment} 
+          name='comment' 
+          onChange={handleOnChange}
+          className="inputComentario"
+        /> <br /> 
         <div>
           {stars.map((_, index) => {
             return (
               <FaStar
+              className='estrellas'
                 key={index}
                 size={24}
                 onClick={() => handleClick(index + 1)}
@@ -133,18 +141,14 @@ export default function AddReview({productId}){
                 style={{
                   marginRight: 10,
                   cursor: "pointer"
+                
                 }}
               />
             )
           })}
-        </div>
-        <textarea
-          placeholder="Opina sobre este producto ..."
-          value={review.comment} 
-          name='comment' 
-          onChange={handleOnChange}
-        />
-        <button type='button' onClick={handleSubmit}>Enviar</button>
+        </div> 
+         <br />
+        <button type='button' onClick={handleSubmit} className="botonPublicar">Publicar</button>
     </div>
   )
 }

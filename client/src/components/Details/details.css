@@ -159,6 +159,124 @@
   top: 110vh;
 }
 
-.ReviewCont{
-  padding-top: 90%;
+
+
+
+/* BOTONES ADMINISTRADOR */
+
+
+/* .AdministradorB{
+  background-color: red;
+} */
+
+
+/* Agregar el comentario */
+.Review{ 
+  /* background-color: hsl(114, 87%, 50%); */
+  position: absolute;
+  left: 62%;
+  top: 535px;
+  /* border: 3px solid rgb(77, 226, 35); */
+  
+
+}
+.tituloAgregar{
+  font-weight: 700;
+  font-family: proxima-nova, sans-serif;
+}
+.activarDesactivar{
+  background-color: red !important;
+  position: absolute;
+  left: 67%;
+  top: 122px;
+  height: 50px;
+  border-radius: 20px;
+  width: 177px;
+  font-weight: 700;
+}
+
+.inputComentario{
+  width: 400px;
+  position: relative;
+  top: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.estrellas{
+  position: relative;
+  top: 20px;
+  width: 30px;
+}
+
+.botonPublicar{
+  width: 100px;
+  position: relative;
+  top: 20px;
+
+  /*  */
+
+
+  background-color: rgb(143, 84, 245);
+  font-size: 23px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid rgb(143, 84, 245);
+  height: 50px;
+  width: 125px;
+
+
+
+}
+
+.editarProducto{
+  background-color: rgb(213, 73, 209) !important;
+  position: absolute;
+  left: 80%;
+  top: 122px;
+  height: 50px;
+  width: 280px;
+  font-weight: 700;
+  border-radius: 20px;
+  /* border: 2px solid rgb(0, 44, 187); */
+
+}
+.cantidadAgregar{
+  /* background-color: rgb(44, 47, 241) !important; */
+  position: absolute;
+  left: 77.5%;
+  top: 337px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+
+
+
+.comentarios{
+  /* background-color: rgba(91, 208, 2, 0.793); */
+  position: absolute; 
+  left: 550px;
+  top: 850px;
+ 
+  /* margin-top: 250px; */
+
+}
+.inputNumero{
+  width: 76px;
+  /* background-color: rgb(54, 120, 251); */
+  /* padding: 14px; */
+  font-size: 21px;
+  border-radius: 4px;
+  /* text-align: center; */
+  border: 2px solid rgb(0, 0, 0);
+
+}
+.agregarStock{
+  background-color: rgb(54, 120, 251);
+  position: relative;
+  top: 15px;
+  border-radius: 10px;
+  padding: 5px 5px;
+  width: 125px;
 }
