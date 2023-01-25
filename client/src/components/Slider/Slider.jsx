@@ -88,7 +88,7 @@ export default function Carrusel() {
     <div className="container">
       {/* <h2> Responsive </h2> */}
       <Slider {...settings}>
-        {activeItems.map((item) => (
+        {activeItems.slice(0, 10).map((item) => (
           <div key={item.id}>
             <Link to={`/products/${item.id}`}>
               <img src={item.img} alt={item.title} className="img-size" />

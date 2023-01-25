@@ -64,7 +64,7 @@
   /* identical to box height */
   width: auto;
 
-  color: #7600FF;
+  color: #7600ff;
 }
 .stock {
   position: absolute;
@@ -105,7 +105,7 @@
   height: 41px;
   left: 0px;
   top: 70px;
-  background: #7600FF;
+  background: #7600ff;
 }
 .volver {
   color: #000;
@@ -129,7 +129,7 @@
   left: 1038px;
   top: 375px;
 
-  background: #7600FF;
+  background: #7600ff;
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -159,6 +159,10 @@
   top: 110vh;
 } */
 
-.ReviewCont{
+.ReviewCont {
   padding-top: 90%;
+}
+
+.carrusel {
+  padding-top: 50%;
 }

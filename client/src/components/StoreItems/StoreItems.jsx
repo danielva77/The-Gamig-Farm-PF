@@ -13,6 +13,7 @@ import { sortByPrice } from "../../hooks/sortByPrice";
 import { paginateItems } from "../../hooks/paginateItems";
 import { getNumberButtons } from "../../hooks/getNumberButtons";
 import Footer from "../Footer/Footer";
+import News from "../News/News";
 
 function StoreItems({ currentVideogames }) {
   const dispatch = useDispatch();
@@ -99,6 +100,7 @@ function StoreItems({ currentVideogames }) {
             <div> "No hay productos todavía."</div>
           )}
         </div>
+        <News />
         <Footer className="footer2" />
       </div>
     </>
