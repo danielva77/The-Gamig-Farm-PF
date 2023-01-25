@@ -7,10 +7,19 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { idUser } from "../../redux/actions";
+import { useState } from "react";
 
 const LandingPage = () => {
+  const google = useAuth0();
   const dispatch = useDispatch();
   // const google2 = useAuth0();
+
+  useEffect(() => {
+    if(google.isAuthenticated){ localStorage.setItem("email", JSON.stringify(google.user.email));
+  }});
+
+    let email= JSON.parse(localStorage.getItem("email"))
+
 
   // useEffect(() => {
   //   if(google2.isAuthenticated){dispatch(idUser(google2.user.email))} //This is a correct???

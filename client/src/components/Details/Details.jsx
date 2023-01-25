@@ -15,6 +15,9 @@ import { disabledProducts, addStock } from "../../redux/actions";
 import Carrusel from "../Slider/Slider";
 
 export default function Details(props) {
+  let usuariologueado = JSON.parse(localStorage.getItem("email"));
+  console.log("USUARIOLOGUEADO", usuariologueado);
+  let emailadmin = "thegamingfarm01@gmail.com";
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
 
@@ -50,7 +53,6 @@ export default function Details(props) {
   return (
     <div className="details-container">
       <NavBar />
-
       {myProduct.length > 0 ? (
         <div className="details-info">
           <h1 className="titulo">{myProduct[0].title}</h1>
@@ -83,34 +85,38 @@ export default function Details(props) {
         <Carrusel />
       </div>
       <div>
-        <AddReview className="Review" productId={props.match.params.id} />
-      </div>
-      <div>
-        <button onClick={disabledProducts(props.match.params.id)}>
-          Desactivar producto
-        </button>
-        <Link to={`/editproduct/${props.match.params.id}`}>
-          <button>Editar informacion del producto</button>
-        </Link>
-        <input
-          type="number"
-          min="0"
-          step="1"
-          name="stock"
-          onChange={(e) => handleStock(e)}
-          placeholder="Cantidad a agregar ..."
-        ></input>
-        <button onClick={addStock(props.match.params.id, stock)}>
-          Agregar stock
-        </button>
-      </div>
+        <div>
+          <AddReview className="Review" productId={props.match.params.id} />
+        </div>
+      </div>{" "}
+      : null
       <div>
         <ReviewContainer
           className="ReviewCont"
           productId={props.match.params.id}
         />
       </div>
-
+      {usuariologueado == emailadmin ? (
+        <div>
+          <button onClick={disabledProducts(props.match.params.id)}>
+            Desactivar producto
+          </button>
+          <Link to={`/editproduct/${props.match.params.id}`}>
+            <button>Editar informacion del producto</button>
+          </Link>
+          <input
+            type="number"
+            min="0"
+            step="1"
+            name="stock"
+            onChange={(e) => handleStock(e)}
+            placeholder="Cantidad a agregar ..."
+          ></input>
+          <button onClick={addStock(props.match.params.id, stock)}>
+            Agregar stock
+          </button>
+        </div>
+      ) : null}
       <div className="move-footer">
         <Footer />
       </div>

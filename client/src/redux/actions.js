@@ -28,10 +28,13 @@ export const SET_NAME_FILTER = "SET_NAME_FILTER";
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const POST_PRODUCTS = "POST_PRODUCTS";
 
-//REVIEWS
-export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
+// REVIEWS
+export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
 
-export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS";
+// ADMIN
+export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS"
+export const GET_ALL_USERS = "GET_ALL_USERS"
+export const DISABLE_USER = "DISABLE_USER"
 
 export const setNameFilter = (payload) => {
   console.log("object");
@@ -484,4 +487,43 @@ export function getUser(id) {
         console.log(e);
       });
   };
+}
+
+export function getAllUsers() {
+  return async function (dispatch) {
+    let aux = await axios.get(`http://localhost:3001/usuarios`)
+    const users = aux.data
+
+    return dispatch({
+      type: GET_ALL_USERS,
+      payload: users,
+    })
+  }
+}
+
+export function disableUser(id) {
+  return async function (dispatch) {
+    let producto = await axios.get(`http://localhost:3001/user/${id}`)
+
+    // console.log("producto: ", producto.data)
+    let isActive = producto.data.isActive
+
+    if (isActive) {
+      alert("Desactivado")
+    } else {
+      alert("Activado")
+    }
+
+    await axios.put(`http://localhost:3001/user/desactivar/${id}`)
+
+    return dispatch({
+      type: DISABLE_USER,
+      payload: id,
+    })
+  }
+  // let b;
+  // if(isActive){b=false}else{b=true}
+  // return function (dispatch){
+  //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  // }
 }

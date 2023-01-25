@@ -27,11 +27,14 @@ import {
   GET_PRODUCTS,
   GET_ALL_REVIEWS,
   DISABLED_PRODUCTS,
+  GET_ALL_USERS,
+  DISABLE_USER,
 } from "./actions";
 
 const initialState = {
   //
   userID: {},
+  users: [],
   idUsuarioActual: {},
   //
   items: [],
@@ -44,7 +47,7 @@ const initialState = {
   marksFilter: "",
   nameFilter: "",
   currentPage: 1,
-  itemsPerPage: 9,
+  itemsPerPage: 12,
 
   detail: [],
   filter: {
@@ -321,6 +324,15 @@ export default function rootReducer(state = initialState, action) {
         items: auxItems,
       };
 
+    case GET_ALL_USERS:
+      return {
+        ...state,
+        users: action.payload,
+      };
+    case DISABLE_USER:
+      return {
+        ...state,
+      };
     default:
       return state;
   }

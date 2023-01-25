@@ -3,6 +3,7 @@ const mercadopago = require("mercadopago");
 require("dotenv").config();
 const axios = require("axios");
 const p = require("../../productos.json");
+const {desactivarUsuario} = require("../controllers/userControllers")
 
 // Modelos de la base de datos ↓
 const { User, Store, Category, Mark, Product, Favorite } = require("../db");
@@ -319,7 +320,7 @@ router.put("/user/:id", async function (req, res) {
 
 //REVIEW
 router.post("/review", reviewCreate);
-router.delete("/ewview/:reviewId", reviewDelete);
+router.delete("/review/:reviewId", reviewDelete);
 router.get("/review", getAllReview);
 
 router.post("/addshop", createshop);
@@ -513,5 +514,7 @@ router.get("/filterByCategory", async (req, res) => {
     return res.status(404).json(error);
   }
 });
+
+router.put("/user/desactivar/:id", desactivarUsuario)
 
 module.exports = router;
