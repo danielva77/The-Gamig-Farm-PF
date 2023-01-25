@@ -397,6 +397,18 @@ export function getReviews() {
   };
 }
 
+export function disabledReviews(id){
+  return async function(dispatch){
+    const disabled = await axios.delete(`http://localhost:3001/review/${id}`)
+    const review = disabled.data
+
+    return dispatch({
+      type: "DISABLED_REVIEWS",
+      payload: review,
+    })
+  }
+}
+
 export function disabledProducts(id) {
   return async function (dispatch) {
     let producto = await axios.get(`http://localhost:3001/products/${id}`);
