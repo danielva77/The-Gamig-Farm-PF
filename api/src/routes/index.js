@@ -375,7 +375,7 @@ router.get("/shops", getShops)
 
 //routes cargar db
 const consola = [{title:'PlayStation'}, {title:'PlayStation 2'}, {title:'PlayStation 3'},{title:'PlayStation 4'} , {title: 'PlayStation 5'}, {title: 'Xbox'}, {title: 'Xbox 360'}, {title:'Xbox One'}, {title:'Sega Mega Drive'}, { title:'Nintendo 64'},
-{title: 'Nintendo DS'}, {title: 'Wii'},{title: 'Nintendo Switch'} ];
+{title: 'Nintendo DS'}, {title: 'Wii'},{title: 'Nintendo Switch'}, {title: 'PROBANDO'}];
 
 const mark = [{title: 'Juegos'}, {title: 'Mandos'}];
 
@@ -386,7 +386,6 @@ const createCategory = async () => {
   } catch (error) {
       console.log(error)
   }
-
 }
 
 const createMark = async () => {
@@ -396,7 +395,6 @@ const createMark = async () => {
   } catch (error) {
       console.log(error)
   }
-  
 }
 
 const createProduct = async () => {
@@ -469,6 +467,8 @@ const filterByJuegos= async () => {
     return data[0].Products
 }
 
+
+// Consola ↓
 const filterByCategory = async (consola) => {
     const data = await Category.findAll({
         where: {title: consola},

@@ -13,6 +13,8 @@ import MarkFilter from "../MarkFilter/MarkFilter";
 import { useParams, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios"
+import Mandos from "../Mandos/Mando"
+import Noticas from "../Noticias/Noticas"
 
 export function Home() {
   const dispatch = useDispatch();
@@ -71,20 +73,29 @@ export function Home() {
       <NavBar />
       <div className="filtros">
         <div>
-          <Sort />
+        <Sort />
         </div>
 
         <div>
-          <CategoryFilter />
+        <CategoryFilter />
         </div>
 
         <div>
-          <MarkFilter />
+        <MarkFilter />
+        </div>       
+
+        <div>
+        <Mandos/>
         </div>
 
         <div>
-          <ReloadPageBtn />
+        <ReloadPageBtn />
         </div>
+
+        <div>
+          <Noticas/>
+        </div>
+
       </div>
 
       <div>

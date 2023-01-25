@@ -21,9 +21,9 @@ const Sort = () => {
             menuPlacement="top"
             defaultValue={'DEFAULT'}
         >
-            <option value="DEFAULT" disabled hidden selected>Sort by price</option>
-            <option>Max price</option>
-            <option>Min price</option>
+            <option value="DEFAULT" disabled hidden selected>Precio:</option>
+            <option>Mayor a Menor</option>
+            <option>Menor a Mayor</option>
         </select>
 
     );

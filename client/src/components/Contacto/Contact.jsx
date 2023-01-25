@@ -183,8 +183,9 @@ export default function Contact() {
               </div>
 
               <div class="mb-3">
-                <textarea
-                  class="form-control inputs"
+                <input
+                 type="text"
+                  class="form-control inputs2"
                   id="exampleFormControlTextarea1"
                   rows="3"
                   placeholder="Escribe aquí tu mensaje..."
@@ -192,7 +193,7 @@ export default function Contact() {
                   onChange={handleMensaje}
                   name="Mensaje"
                   required
-                ></textarea>
+                />
               </div>
 
               {/* BOTONES  */}
