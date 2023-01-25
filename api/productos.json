@@ -335,7 +335,7 @@
       "title": "Pokémon Edición Negra 2",
       "price": 21,
       "detail":"La saga Pokémon vuelve a Nintendo DS (sin olvidar que será compatible también con Nintendo 3DS), para traernos la segunda parte de las aventuras vividas en las Ediciones Blanca y Negra. Nuevas áreas que explorar, nuevos modos y la presencia de entrenadores clásicos como Misty garantizan el éxito de una de las sagas de rol más populares de la historia.",
-      "img": "https://static.wikia.nocookie.net/espokemon/images/a/a4/Box_Pok%C3%A9mon_Negro_2.png/revision/latest/scale-to-width-down/1000?cb=20140217225209",
+      "img": "https://th.bing.com/th/id/OIP.AN6P8IxFA0WYIBDnCv-pFwAAAA?pid=ImgDet&rs=1",
       "stock": 12,
       "category": ["Nintendo DS"],
       "mark": ["Juegos"]
@@ -398,7 +398,7 @@
     {
       "title": "Mando Xbox",
       "price": 43,
-      "img":"https://o.remove.bg/downloads/0fdde968-474c-4e72-9b61-4ad4ac6b60dd/xbox-one-con-el-mando-en-las-manos_5pm8-removebg-preview.png",
+      "img":"https://pngimg.com/uploads/xbox/xbox_PNG17512.png",
       "stock": 27,
       "category": ["Xbox"],
       "mark": ["Mandos"]
@@ -520,7 +520,7 @@
     {
       "title": "Mando Nintendo 64",
       "price": 17,
-      "img":"https://o.remove.bg/downloads/12e66d32-ede4-4a79-9e4d-74ad46a5b845/752px-N64-Controller-Gray-removebg-preview.png",
+      "img":"https://picandocodigo.net/wp-content/uploads/2016/03/nintendo-64-controller.png",
       "stock": 227,
       "category": ["Nintendo 64"],
       "mark": ["Mandos"]
@@ -634,7 +634,7 @@
       "title": "Xbox One",
       "price": 274,
       "detail": "La consola de actual generación de Microsoft, Xbox One, ha vendido aproximadamente 50 millones de consolas hasta finales 2019, aunque solo es una estimación, porque la compañía de Redmond dejó de dar cifras de ventas en octubre de 2015. La máquina ha tenido dos revisiones: una ligeramente más potente, compacta y con ciertas funciones adicionales (como HDR) llamada Xbox One S; y una intergeneracional, capaz de ofrecer gráficos 4K gracias a su mayor potencia, denominada Xbox One X. En esta consola se ha estrenado Xbox Game Pass, un servicio que se extenderá a próximos sistemas de Microsoft y que funciona como un Netflix de videojuegos.",
-      "img":"https://o.remove.bg/downloads/215acb08-578c-44c4-b561-726da2d9922e/kisspng-microsoft-xbox-one-x-microsoft-xbox-one-s-video-ga-xbox-one-x-png-picture-2-76599-xbox-one-x-png-5d0392387d52c8.8266148915605151285133-removebg-preview.png",
+      "img":"https://www.windowscentral.com/sites/wpcentral.com/files/styles/mediumplus/public/field/image/2018/09/xbox-one-x-stock.png",
       "stock": 27,
       "category": ["Xbox One"],
       "mark": ["Xbox One"]
@@ -758,7 +758,7 @@
       "title": "Nintendo Entertainment System (NES)",
       "price": 203,
       "detail": "La primera consola de Nintendo llegó para salvar un mercado, el de las videoconsolas con juegos vendidos por separado, que se daba por muerto tras el pinchazo de Atari y la sobreproducción de títulos. NES (Famicom en Japón) llegó con una premisa: todos los juegos editados eran de alta calidad porque contaban con el sello de Nintendo, quienes revisaban cada software producido para el sistema. Aunque de la premisa al resultado hay un trecho, NES logró revitalizar el mercado y colocó 61,91 millones de consolas gracias a la calidad de sus títulos: Super Mario Bros., The Legend of Zelda, Final Fantasy y tantas otras sagas nacieron aquí.",
-      "img":"https://static.wikia.nocookie.net/earthbound/images/c/cc/Nintendo_Entertainment_System.png/revision/latest?cb=20180706065511",
+      "img":"https://th.bing.com/th/id/R.1acab092cee311129fc06b5be338ca8f?rik=pBZx1F97MO%2be0w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fnes-png-nintendo-entertainment-system-console-png-3300.png&ehk=urNqJ5WBk1nN%2f%2f97Fgq1O1emDWr5D0zgfHrmiczTJU4%3d&risl=1&pid=ImgRaw&r=0",
       "stock": 23,
       "category": ["Nintendo (NES)"],
       "mark": ["Nintendo (NES)"]
@@ -817,7 +817,7 @@
       "title": "Mega Man 2",
       "price": 48,
       "detail":"Una robótica y complicada trama desarrollada en escenarios futuristas y plataformas llenas de misiones y acción hacen que este juego de NES nos haya enganchado durante horas hasta conseguir completar cada nivel y llegar a derrotar al Dr. Willy y sus robots obsesionados con dominar el mundo.",
-      "img": "https://static.wikia.nocookie.net/esmegaman/images/e/ef/MM2-FrenteEU.jpg/revision/latest?cb=20111220204717",
+      "img": "https://www.mobygames.com/images/covers/l/43085-mega-man-2-nes-front-cover.jpg",
       "stock": 12,
       "category": ["Nintendo (NES)"],
       "mark": ["Juegos"]
@@ -978,7 +978,7 @@
       "title": "WipEout Pulse",
       "price": 24,
       "detail":"Wipeout Pulse es un videojuego de carreras para la videoconsola portátil PlayStation Portable y PlayStation 2 de Sony. El juego fue anunciado oficialmente el 27 de marzo de 2007 y fue lanzado en Europa el 12 de diciembre de 2007. El juego está ambientado en el año 2207.",
-      "img": "https://static.wikia.nocookie.net/wipeout/images/0/0a/Wipeout_pulse_cover.jpg/revision/latest?cb=20210708163427",
+      "img": "https://th.bing.com/th/id/R.d8b338bb1c1b2a44b23ba201faf3c5f0?rik=5FchKBpQoZkruA&pid=ImgRaw&r=0",
       "stock": 12,
       "category": ["PSP"],
       "mark": ["Juegos"]
@@ -1062,7 +1062,7 @@
       "title": "Xbox 360",
       "price": 179,
       "detail": "Para su segunda consola Microsoft profundizó en lo que había funcionado de la primera Xbox: mejoró el juego online, dio aún más relevancia a sus sagas y estudios principales como Rare y Bungie, y continuó apostando por la potencia; pero también se centró en algo que le dio bastante ventaja frente a PS3 durante los primeros años: la accesibilidad de la plataforma para los desarrolladores, lo que hizo que muchos juegos multiplataforma funcionaran mejor en una consola relativamente menos potente que su competidora. La consola se vendía con distintos tamaños de disco duro y tuvo dos revisiones. En 2014 Microsoft anunció que había vendido 84 millones de unidades, pero sumando las cifras de ventas en diversos territorios hasta 2016, la cifra total asciende hasta los 86 millones aproximadamente.",
-      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Xbox-360-Pro-wController.png/1370px-Xbox-360-Pro-wController.png",
+      "img":"https://th.bing.com/th/id/R.34767da50681b88f3f8f995296ea947f?rik=NQjJhWtdUAdIUw&pid=ImgRaw&r=0",
       "stock": 24,
       "category": ["Xbox 360"],
       "mark": ["Xbox 360"]
@@ -1195,7 +1195,7 @@
       "title": "PlayStation 3",
       "price": 219,
       "detail": "La tercera consola de sobremesa de Sony no comenzó con buen pie. Llegó al mercado a un precio de 600 euros, lo que suponía 200 € más que Xbox 360 y 350 euros respecto a Wii. Sin embargo, la máquina fue teniendo revisiones que rebajaban funcionalidades, como la retrocompatibilidad, a cambio de una disminución de precio. Conforme fueron llegando grandes exclusivos como Uncharted 2: El reino de los ladrones, Heavy Rain y Killzone 2, se dio un vuelco a las tornas. Con The Last of Us se cerró su catálogo de juegos exclusivos, uno de los motivos por los que colocó más de 87,4 millones a fecha de marzo de 2017 (dejó de distribuirse en Japón en mayo de ese año).",
-      "img": "https://o.remove.bg/downloads/829e2da8-d8f8-4d95-9aa0-f66cb8dabd8c/kisspng-playstation-2-playstation-3-playstation-4-xbox-360-console-5acf975338bf61.5334361115235541312324-removebg-preview.png",
+      "img": "https://th.bing.com/th/id/R.69080cfb31590de5c0bac253b84f8d6c?rik=fdFTvupikcjGtw&riu=http%3a%2f%2flamcdn.net%2ffurfurmag.ru%2fpost_image-image%2fq_ltN6YbS8eMTxNNAqkTPw-wide.png&ehk=qhBdpgY06GLGzt3OXvXgW%2fCM46hpAcuI6Itv7s5h8vs%3d&risl=&pid=ImgRaw&r=0",
       "stock": 15,
       "category": ["PlayStation 3"],
       "mark": ["PlayStation 3"]
@@ -1443,7 +1443,7 @@
     {
       "title": "Controles Nintendo Switch",
       "price": 53,
-      "img":"https://e7.pngegg.com/pngimages/1018/518/png-clipart-nintendo-switch-pro-controller-nintendo-switch-joy-con-l-r-nintendo-electronics-nintendo.png",
+      "img":"https://tiendastundra.cl/wp-content/uploads/2021/09/nintendo-switch-mando-joycon.png",
       "stock": 11,
       "category": ["Nintendo Switch"],
       "mark": ["Mandos"]
@@ -1557,7 +1557,7 @@
       "title": "PlayStation 4",
       "price": 372,
       "detail": "A pesar de que muchos vaticinaron que esta sería la última generación de consolas, y que en sus primeros meses no tuvo un catálogo especialmente brillante, PS4 fue un éxito de ventas desde el primer día, y casi siete años después de su lanzamiento ya ha superado a la mítica PlayStation: a fecha de octubre de 2020 Sony ha colocado 113,8 millones de unidades. Parte de la culpa la tienen juegos como God of War, Spider-Man, The Last of Us Parte 2, Ghost of Tsushima, Horizon: Zero Dawn y Uncharted 4: El desenlace del ladrón, pero también first-party como los incombustibles Grand Theft Auto V, Call of Duty y FIFA.",
-      "img": "https://assets.stickpng.com/images/585ea27bcb11b227491c350b.png",
+      "img": "https://th.bing.com/th/id/R.d26bde038222c52dc2fd40b645e38c02?rik=zVMWZUTfH2MFfQ&pid=ImgRaw&r=0",
       "stock": 35,
       "category": ["PlayStation 4"],
       "mark": ["PlayStation 4"]
@@ -1647,7 +1647,7 @@
       "title": "SpiderMan",
       "price": 25,
       "detail":"Este SpiderMan es el primero tras el que se encuentra Marvel garantizando una historia de calidad con el humor tan clásico de Peter Parker, el protagonista que tiene para batir a muchísimos villano. El juego cuenta con un método de progresión en cuanto a trajes y mejoras muy completo y trepidante acción. Sin duda un juego top de PS4 que cuenta con una secuela, SpiderMan: Miles Morales.",
-      "img": "https://live.staticflickr.com/890/39409294460_ab333b4658_b.jpg",
+      "img": "https://th.bing.com/th/id/R.f7a3eb6c1c0ebe7c0f6c3f46e305bee2?rik=or5h9keEvP5bew&riu=http%3a%2f%2fbraindamaged.fr%2fwp-content%2fuploads%2f2018%2f04%2fSpider-man-jeu-ps4-768x980.jpg&ehk=WMXOQObLF8tH6bptUFDBYj5zWKx41ClB572ayVnUqdg%3d&risl=&pid=ImgRaw&r=0",
       "stock": 12,
       "category": ["PlayStation 4"],
       "mark": ["Juegos"]
@@ -1723,7 +1723,7 @@
       "title": "Mega Drive",
       "price": 372,
       "detail": "La consola de 16 bits de SEGA dio origen a Sonic: The Hedgehog, una de las mascotas del videojuego más reconocidas desde entonces, pero también a una gran cantidad de títulos de todo tipo que siempre se comparaban con sus homólogos de Super Nintendo. Mega Drive se comercializó como Sega Genesis en Norteamérica, uno de los factores que hacen que no se tengan totalmente claras las cifras de venta oficiales: los datos oficiales apuntan a 30,75 millones, pero a ello hay que sumar Sega Genesis 3, Nomad y consolas clónicas de otras marcas que elevan la cifra a los 39,5 millones aproximadamente.",
-      "img": "https://o.remove.bg/downloads/cae1ccee-f0a5-44c4-8c47-4e1704ba3fb7/png-transparent-atgames-sega-genesis-flashback-2017-sega-genesis-classics-mega-drive-others-gadget-electronics-video-game-removebg-preview.png",
+      "img": "https://pluspng.com/img-png/sega-png-atgames-sega-genesis-flashback-png-1280.png",
       "stock": 35,
       "category": ["Sega Mega Drive"],
       "mark": ["Sega Mega Drive"]

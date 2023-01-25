@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import Mandos from "../Mandos/Mando"
+import Noticas from "../Noticias/Noticas"
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
@@ -13,8 +15,7 @@ import MarkFilter from "../MarkFilter/MarkFilter";
 import { useParams, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios"
-import Mandos from "../Mandos/Mando"
-import Noticas from "../Noticias/Noticas"
+
 
 export function Home() {
   const dispatch = useDispatch();
