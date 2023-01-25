@@ -99,9 +99,7 @@ function StoreItems({ currentVideogames }) {
           ) : (
             <div> "No hay productos todavía."</div>
           )}
-          <News />
         </div>
-        <Footer className="footer2" />
       </div>
     </>
   );

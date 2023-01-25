@@ -37,7 +37,7 @@ export default function News() {
     return (
       <div key={index}>
         <h3>{noticia.title}</h3>
-        <a href={noticia.link}>Link</a>
+        <a href={noticia.link} target="_blank">Link</a>
         <p>{noticia.pubDate}</p>
         <p>{noticia.creator}</p>
         {noticia.imageUrl && (
@@ -62,7 +62,7 @@ export default function News() {
     slidesPerRow: 2,
   };
   return (
-    <div>
+    <div className="news">
       <h2>Noticias de Gaming</h2>
       <Slider {...settings}>{newsList}</Slider>
     </div>

@@ -15,6 +15,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios"
 import Mandos from "../Mandos/Mando"
 import Noticas from "../Noticias/Noticas"
+import News from "../News/News";
+import Footer from "../Footer/Footer";
 
 export function Home() {
   const dispatch = useDispatch();
@@ -106,6 +108,13 @@ export function Home() {
       </div>
 
       <StoreItems />
+      <div>
+      <News/>
+      </div>
+      
+      <div>
+        <Footer/>
+      </div>
 
 
 
