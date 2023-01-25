@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getAllProd } from "../../redux/actions";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
-// import StoreItem from "../StoreItem/StoreItem";
-import { StoreItem } from "../StoreItem/StoreItem";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -29,14 +31,30 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function Carrusel({ products }) {
+export default function Carrusel() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllProd());
+  }, []);
+  const items = useSelector((state) => state.items);
+  console.log("esto es iteems", items);
+
+  // variable auxiliar para mostrar solo los items que esten activos
+  const activeItems = items.filter((item) => item.isActive);
+  console.log("aqui llega esto de items:", activeItems);
+
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 4,
+    speed: 1000,
+    slidesToShow: 5,
     slidesToScroll: 4,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -67,17 +85,33 @@ export default function Carrusel({ products }) {
     ],
   };
   return (
-    <div>
+    <div className="container">
       <h2> Responsive </h2>
       <Slider {...settings}>
-        {products.map((product) => (
-          <StoreItem
-            key={product.id}
-            image={product.image}
-            link={`/product/${product.id}`}
-          />
+        {activeItems.map((item) => (
+          <div key={item.id}>
+            <Link to={`/products/${item.id}`}>
+              <img src={item.img} alt={item.title} className="img-size" />
+            </Link>
+          </div>
         ))}
       </Slider>
     </div>
   );
 }
+
+//   return (
+//     <div>
+//       <h2> Responsive </h2>
+//       <Slider {...settings}>
+//         {products.map((product) => (
+//           <StoreItem
+//             key={product.id}
+//             image={product.image}
+//             link={`/product/${product.id}`}
+//           />
+//         ))}
+//       </Slider>
+//     </div>
+//   );
+// }

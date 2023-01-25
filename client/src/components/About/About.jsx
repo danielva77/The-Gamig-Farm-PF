@@ -4,6 +4,8 @@ import NavBar from "../NavBar/NavBar";
 import "./about.css";
 import gitHubMorado from "../Assets/gitHubMorado.png";
 import linkedinMorado from "../Assets/linkedinMorado.png";
+import News from "../News/News";
+import Carrusel from "../Slider/Slider";
 
 const team = [
   {
@@ -135,7 +137,8 @@ export default function About() {
           );
         })}
       </div>
-
+      {/* <Carrusel />
+      <News /> */}
       <Footer />
     </div>
   );
