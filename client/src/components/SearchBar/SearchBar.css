@@ -1,57 +1,14 @@
-/* .searchbar-div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
-    border-radius: 10px;
-    border-color: #cc00ff;
-    margin-right: 10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    width: 100%;
-   
-} */
-
-.search-bar-container {
-  position: absolute;
-  width: fit-content;
-  height: fit-content;
-  right: 24%;
-  top: 21px;
-  display: flex;
-  column-gap: 10px;
+.divSearch{
+  /* background-color: rebeccapurple; */
+  position: relative;
+  left: 45%;
+  top: -40px;
 }
-
-.Nombrelogo {
-  position: absolute;
-  width: 76px;
-  height: 68px;
-  left: 86.22px;
-  top: -5px;
-
-  mix-blend-mode: luminosity;
-  /* transform: rotate(.22deg); */
+.botonBuscar{
+  color: rgb(255, 255, 255) !important;
+  border: 2px solid rgb(255, 255, 255) !important;
 }
-
-.search-bar-input {
-  width: 180px;
-  height: 17px;
-
-  background: rgba(255, 255, 255, 0.21);
-  border-radius: 8px;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-}
-
-.search-bar-input:active {
-  /* box-shadow: 2px 2px 15px #8707ff inset; */
-  border: greenyellow;
-  outline: greenyellow;
-}
-
-.lupaa {
-  width: 21px;
-  height: 23px;
-  cursor: pointer;
+.botonBuscar:hover{
+  background-color: #7600FF !important;
+  transition: .5s linear;
 }

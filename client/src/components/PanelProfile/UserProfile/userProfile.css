@@ -26,7 +26,7 @@
      
 }
 .editar{
-    background-color: #ff8906;
+    background-color: #7600FF;
     position: absolute;
     top: 77%;
     right: 815px;
@@ -48,7 +48,7 @@
 
 /* Tu perfil */
 .tuPerfil{
-    /* background-color: rebeccapurple; */
+   
     font-family: proxima-nova, sans-serif;
     color: black;
     font-size: 50px;
@@ -63,13 +63,13 @@ h3{
 }
 b{
     font-family: proxima-nova, sans-serif;
-    color: #ff8906;
+    color: #7600FF;
     font-size: 24px;
-    text-shadow: 0px 1px 0px black;
+    text-shadow: 1px .5px .5px black;
 }
 
 .informacion{
-    background-color: rgb(255, 176, 86);
+    background-color: #8922ff;
     position: relative;
     top: 180px;
     border-top: 4px solid rgb(0, 0, 0);

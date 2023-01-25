@@ -53,7 +53,7 @@ export function StoreItem({ id, name, price, img, stock }) {
 
   return (
     <div
-      className="card text-center bg-dark"
+      className="card text-center bg-white"
       style={{ height: "100%", width: "100%" }}
       key={id}
     >
@@ -67,22 +67,23 @@ export function StoreItem({ id, name, price, img, stock }) {
         />
 
 
-        <div className="card-body text-light">
-          <h4 className="card-title" style={{ fontSize: "18px" }}>
+        <div className="card-body ">
+          <h4 className="card-title" style={{ fontSize: "20px" }}>
             {name}
           </h4>
-          <p className="card-text text-secondary">${price}</p>
+          <br />
+          <p className="card-text">${price}</p>
         </div>
       </Link>
       <div className="fav">
-              <button className="btn-primary" onClick={() => handleAddToFavorites({id, name, price, img})}>❤ Favoritos</button>
+              <button className="btn-favorito" onClick={() => handleAddToFavorites({id, name, price, img})}>Favoritos</button>
             </div>
-      <div class="card-footer"></div>
-      <div class="card-footer">
+    
+      <div class="card-footer clear">
         {getItemQuantity(id) === 0 ? (
-          <div className="d-flex align-items-center">
-            <button className="btn-primary" onClick={handleAddToCart}>
-              + Add to Cart
+          <div >
+            <button className="btn-favorito" onClick={handleAddToCart}>
+              + Agregar al carrito
             </button>
           </div>
         ) : (

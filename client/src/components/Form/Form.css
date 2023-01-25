@@ -9,14 +9,14 @@
     ;
     letter-spacing: 1.5px;
     font-size: 45px;
-    color: #ff8906;
+    color: #7600FF;
 }
 
 .padre {
     background-color: #0f0e17;
     /* border-radius: 50vh; */
     outline: 4.5px solid black;
-    border: 2px solid #ff8906;
+    border: 2px solid #7600FF;
     /* height: 710px; */
 }
 
@@ -25,7 +25,7 @@
     border: 2px black solid !important;
     color: rgb(255, 255, 255) !important;
     border-radius: 0px !important;
-    border: .1px solid #ff8906 !important;
+    border: .1px solid #7600FF !important;
 }
 
 
@@ -87,7 +87,7 @@ label {
 .dropzone {
     text-align: center;
     background-color: rgb(0, 0, 0);
-    border: .1px solid #ff8906 !important;
+    border: .1px solid #7600FF !important;
     height: 45px;
 }
 
@@ -103,5 +103,5 @@ label {
 
 #img {
     cursor: pointer;
-    color: #ff8906;
+    color: #7600FF;
 }
