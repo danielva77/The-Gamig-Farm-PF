@@ -12,28 +12,27 @@ import { Widget } from "@uploadcare/react-widget";
 
 export const Form = () => {
   const marks = [
-    { title: "Logitech" },
-    { title: "Razer" },
-    { title: "Redragon" },
-    { title: "ASUS" },
-    { title: "HP" },
-    { title: "HyperX" },
-    { title: "Genius" },
-    { title: "Microsoft" },
-    { title: "Samsung" },
-    { title: "Sony" },
+    { title: "Juegos" },
+    { title: "Mandos" },
+    
   ];
   const categories = [
-    { title: "Mouse" },
-    { title: "Teclado" },
-    { title: "Combos" },
-    { title: "WebCam" },
-    { title: "Auriculares" },
-    { title: "Gabinetes" },
-    { title: "MousePad" },
-    { title: "Gabinete" },
-    { title: "Placa Madre" },
-    { title: "Tarjeta Grafica" },
+    { title: "PlayStation" },
+  { title: "PlayStation 2" },
+  { title: "PlayStation 3" },
+  { title: "PlayStation 4" },
+  { title: "PlayStation 5" },
+  { title: "Xbox" },
+  { title: "Xbox 360" },
+  { title: "Xbox One" },
+  { title: "Sega Mega Drive" },
+  { title: "Nintendo 64" },
+  { title: "Nintendo DS" },
+  { title: "Wii" },
+  { title: "Nintendo Switch" },
+  { title: "Nintendo (NES)" },
+  { title: "Nintendo 3DS" },
+  { title: "PSP" }, 
   ];
 
   // Guardo la data para enviar a la db en un estado local
