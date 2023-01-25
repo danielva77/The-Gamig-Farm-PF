@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { idUser } from "../../redux/actions";
 
 const LandingPage = () => {
-  const dispatch = useDispatch
+  const dispatch = useDispatch();
   // const google2 = useAuth0();
 
   // useEffect(() => {

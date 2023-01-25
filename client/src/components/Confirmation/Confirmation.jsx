@@ -18,13 +18,11 @@ export default function Confirmation(){
 
   let { cart, clearAllCart } = useShoppingCart();
   const dispatch = useDispatch();
-  let usuario = useSelector((state) => state.idUsuarioActual)
+  // let usuario = useSelector((state) => state.idUsuarioActual)
   let status = "";
-  useEffect(() => {
-    if(google.isAuthenticated){dispatch(idUser(email))} //This is a correct???
-  }, [dispatch]);
-
-  let idusuario=usuario.id;
+  // useEffect(() => {
+  //   if(google.isAuthenticated){dispatch(idUser(email))} //This is a correct???
+  // }, [dispatch]);
 
 const valores = window.location.search;
 // console.log(valores);
@@ -43,26 +41,23 @@ let input ={
   img: "",
   price: 0,
   quantity: 0,
-
 }
-let addShop = async () =>{  
-  cart.map(el =>{
+let cantidad =0;
+
+let addShop = () =>{  
+  cart.forEach(el =>{
     input.idproduct = el.id;
     input.title = el.name;
     input.img = el.img;
     input.price = el.price;
     input.quantity = el.quantity;
 
+    if(cantidad<cart.length){
     dispatch(postShop(input))
-    console.log("input confirmation",input)
+    cantidad = cantidad +1;
+    console.log("input confirmation",input)}
+
   })}
-
-if(status == "approved"){
-  setTimeout(() => {
-    addShop();
-  }, 3000);
-}
-
   
   // envia el correo de la compra hecha ! 🛍
   // axios.post("http://localhost:3001/MensajeCompra", cart) 
@@ -77,16 +72,23 @@ let discount = async () =>{
     
   })
 }
+if(status == "approved"){
+  setTimeout(() => {
+    addShop();
+    discount()
+  }, 1000);
+}
 
-setTimeout(() => {
-  discount();
-}, 3000);
+// setTimeout(() => {
+//   discount();
+// }, 3000);
 
-setTimeout(() => {
-  clearAllCart();
-}, 4500);
+// setTimeout(() => {
+//   clearAllCart();
+// }, 4500);
 
 setTimeout(async() => {
+  clearAllCart();
   history.push("/home")
 }, 5000);
 
