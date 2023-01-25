@@ -114,12 +114,34 @@ const filterByCategory = async (consola) => {
     return data[0].Products
 }
 
+const filterByCategoryAndMark = async (mark, category) => {
+    if(category && mark) {
+    const data = await Product.findAll({
+        include:
+         [
+            { model: Category, where: { title: category } },
+            { model: Mark, where: { title: mark } }
+        ],
+        attributes: ['id','title', 'price', 'detail', 'img', 'stock' ]
+    });
+    return data;
+
+    } else if(!category && mark === 'Juegos') {
+        return filterByJuegos()
+    } else if(!category && mark === 'Mandos') {
+        return filterByMandos()
+    } else if(category && !mark) {
+        return filterByCategory()
+    }
+    
+}
+
 router.get('/db', async (req, res) => {
 try {
-//   const categories = await createCategory();
-//   const marks = await createMark();
-await createCategory();
-await createMark();
+  const categories = await createCategory();
+  const marks = await createMark();
+// await createCategory();
+// await createMark();
 
   const products = await createProduct();
 
@@ -131,41 +153,53 @@ await createMark();
 }
 })
 
-router.get('/filterByMandos', async (req, res) => {
-    try {
-        const products = await filterByMandos();
+// router.get('/filterByMandos', async (req, res) => {
+//     try {
+//         const products = await filterByMandos();
 
-        return res.status(200).json(products)
+//         return res.status(200).json(products)
+        
+//     } catch (error) {
+//         console.log(error)
+//   return res.status(404).json(error)
+//     }
+// })
+
+// router.get('/filterByJuegos', async (req, res) => {
+//     try {
+//         const products = await filterByJuegos();
+
+//         return res.status(200).json(products)
+        
+//     } catch (error) {
+//         console.log(error)
+//   return res.status(404).json(error)
+//     }
+// })
+
+// router.get('/filterByCategory', async (req, res) => {
+//     try {
+//         const { consola } = req.query;
+//         const products = await filterByCategory(consola);
+
+//         return res.status(200).json(products)
+        
+//     } catch (error) {
+//         console.log(error)
+//   return res.status(404).json(error)
+//     }
+// })
+
+router.get('/filter', async (req, res) => {
+    try {
+            const { tipo, consola} = req.query;
+            
+            const data = await filterByCategoryAndMark(tipo, consola);
+            res.json(data);
         
     } catch (error) {
         console.log(error)
   return res.status(404).json(error)
     }
 })
-
-router.get('/filterByJuegos', async (req, res) => {
-    try {
-        const products = await filterByJuegos();
-
-        return res.status(200).json(products)
-        
-    } catch (error) {
-        console.log(error)
-  return res.status(404).json(error)
-    }
-})
-
-router.get('/filterByCategory', async (req, res) => {
-    try {
-        const { consola } = req.query;
-        const products = await filterByCategory(consola);
-
-        return res.status(200).json(products)
-        
-    } catch (error) {
-        console.log(error)
-  return res.status(404).json(error)
-    }
-})
-
 module.exports = router;
