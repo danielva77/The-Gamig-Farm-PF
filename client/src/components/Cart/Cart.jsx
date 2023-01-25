@@ -25,6 +25,7 @@ const Cart = () => {
   const {cart, addToCart, removeFromCart, getItemQuantity, incrementItemQuantity, decrementItemQuantity } =
     useContext(CartContext);
 
+
     const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   // const handleRemove = (id) => {
@@ -33,7 +34,6 @@ const Cart = () => {
 
   const handleShow = () => setShow(true);
   const handleHide = () => setShow(false);
-  console.log("esto llega en cart", cart)
   return (
     <div className="cart">
       <div><Button variant="" class="btn btn float-right" onClick={handleShow}>
@@ -115,7 +115,7 @@ const Cart = () => {
               </tfoot>
             </Table>
              <Button variant="success"
-            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.location.href =res.data)}}>
+            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.location.href = res.data)}}>
              Pagar {totalPrice}
              </Button>
              </>

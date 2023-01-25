@@ -169,6 +169,9 @@ router.put("/products/:id", modifyProducts);
 
 //funciones controladoras. Mas abajo las rutas.
 
+//   return 'base cargada'
+// }
+
 // YA ESTA ACTUALIZADA ESTA FUNCION ↓↓↓ ❌
 
 // const createUser = async () => {

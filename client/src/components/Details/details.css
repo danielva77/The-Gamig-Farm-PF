@@ -165,17 +165,3 @@
   position: absolute;
   top: 110vh;
 }
-
-.fav{
-  position: absolute;
-  width: 71px;
-  height: 48px;
-  left: 938px;
-  top: 375px;
-
-  background: #ff8906;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  /* font-size: 50px; */
-}

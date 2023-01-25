@@ -66,11 +66,11 @@ const createProducts = async (req, res) => {
       })
     }
 
-    // res.status(200).send("Product created succesfully")
+    res.status(200).send("Product created succesfully")
     console.log("producto creado");
   } catch (error) {
     console.log("este es el error", error)
-    res.status(404).send("Error al crear el producto. \nRevisar formato de valores recibidos (tanto category como marks deben ser arrays).\nLos nombres de productos son únicos, no se pueden repetir.")
+    res.status(404).send(error)
   }
 }
 

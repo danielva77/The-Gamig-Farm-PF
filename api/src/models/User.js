@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
-        },
+        },  
         adress: {
             type: DataTypes.STRING,
             allowNull: true,

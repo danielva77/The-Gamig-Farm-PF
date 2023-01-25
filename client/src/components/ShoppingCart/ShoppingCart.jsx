@@ -45,10 +45,9 @@ export function ShoppingCart({ isOpen }) {
           loginWithRedirect({});
         }
       };
-
+      console.log("componente cart", cart)
     return (
         <div className="cart">
-            {console.log("cart: ", cart)}
             <Offcanvas
                 show={isOpen}
                 onHide={closeCart}

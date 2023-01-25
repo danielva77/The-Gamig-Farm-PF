@@ -294,6 +294,20 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         shopuser: action.payload,
       };
+    case "POST_SHOP":
+      return {
+        ...state,
+      };
+    case "ID_USER":
+      return {
+        ...state,
+        idUsuarioActual: action.payload,
+      };
+    case "SHOP_USER":
+      return {
+        ...state,
+        shopuser: action.payload,
+      };
     case "SET_FAVORITES":
       return {
         ...state,
