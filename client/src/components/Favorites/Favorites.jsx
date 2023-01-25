@@ -20,7 +20,7 @@ const Favoritos = () => {
   const handleRemoveFromFavorites = (id) => {
     Swal.fire({
       title: "Eliminar items de sus favoritos?",
-      showCancelButton: false,
+      showCancelButton: true,
       confirmButtonText: "Ok",
       cancelButtonText: "Cancel",
     }).then((result) => {

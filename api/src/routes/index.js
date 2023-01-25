@@ -449,6 +449,7 @@ const filterByJuegos = async () => {
   return data[0].Products;
 };
 
+// Consola ↓
 const filterByCategory = async (consola) => {
   const data = await Category.findAll({
     where: { title: consola },

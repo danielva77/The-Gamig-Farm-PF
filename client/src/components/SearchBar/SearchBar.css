@@ -1,8 +1,8 @@
 .divSearch{
   /* background-color: rebeccapurple; */
   position: relative;
-  left: 50%;
-  top: -10px;
+  left: 45%;
+  top: -40px;
 }
 .botonBuscar{
   color: rgb(255, 255, 255) !important;
@@ -11,5 +11,4 @@
 .botonBuscar:hover{
   background-color: #7600FF !important;
   transition: .5s linear;
-
 }

@@ -86,7 +86,7 @@ export default function Carrusel() {
   };
   return (
     <div className="container">
-      <h2> Responsive </h2>
+      {/* <h2> Responsive </h2> */}
       <Slider {...settings}>
         {activeItems.map((item) => (
           <div key={item.id}>
