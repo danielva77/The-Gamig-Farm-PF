@@ -20,6 +20,7 @@ const MarkFilter = () => {
 
     return (
         <select
+            class="form-select filterMark"
             name="type"
             id="type"
             onChange={handleChangeFilter}
@@ -33,7 +34,6 @@ const MarkFilter = () => {
                 )
             })}
         </select>
-
     );
 };
 

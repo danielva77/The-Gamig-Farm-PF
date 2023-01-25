@@ -11,14 +11,17 @@ const Sort = () => {
     };
 
     return (
-        <select
+        
+        <select 
+            className="form-select filterSort" 
+            aria-label="Default select example"
             name="type"
             id="type"
             onChange={handleChangeSort}
             menuPlacement="top"
             defaultValue={'DEFAULT'}
         >
-            <option value="DEFAULT" disabled hidden>Sort by price</option>
+            <option value="DEFAULT" disabled hidden selected>Sort by price</option>
             <option>Max price</option>
             <option>Min price</option>
         </select>
@@ -27,3 +30,8 @@ const Sort = () => {
 };
 
 export default Sort;
+
+
+
+
+

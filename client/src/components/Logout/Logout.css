@@ -1,26 +1,16 @@
 .logout{
-    /* position: absolute;
-width: 59px;
+  position: absolute;
+width: 65px;
 height: 26px;
 left: 94%;
-top: 42px;
+bottom: 93.5%;
 z-index: 1;
 background: rgba(255, 255, 255, 5%);
 border-radius: 10px;
-cursor: pointer; */
-display:grid;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 33%;
-  background:  #747272;
-  color: #ffff;
-  position: relative;
-  font-family:Arial, Helvetica, sans-serif;
-  font-weight: 450;
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  border: none;
-  overflow: hidden;
-   position: absolute;
+cursor: pointer;
+color: rgb(255, 255, 255) !important;
+}
+
+.logout:hover{
+  color: red !important;
 }

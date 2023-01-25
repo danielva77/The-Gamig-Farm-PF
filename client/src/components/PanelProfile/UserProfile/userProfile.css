@@ -1,8 +1,8 @@
 .padres{
-    background-color: rgb(120, 120, 120);
+    background-color: rgb(84, 84, 84);
     width: 100%;
     /* height: 725px */
-    height: 864px;
+    height: 870px;
 }
 .bienvenida{
     background-color: rgb(255, 255, 255);
@@ -11,7 +11,7 @@
     width: 1200px;
     position: relative;
     left: 165px;
-    top: 50px;
+    top: 70px;
     border: 4px solid black;
     padding: 30px 0;
     border-radius: 20px;
@@ -26,7 +26,7 @@
      
 }
 .editar{
-    background-color: #ff8906;
+    background-color: #7600FF;
     position: absolute;
     top: 77%;
     right: 815px;
@@ -48,7 +48,7 @@
 
 /* Tu perfil */
 .tuPerfil{
-    /* background-color: rebeccapurple; */
+   
     font-family: proxima-nova, sans-serif;
     color: black;
     font-size: 50px;
@@ -63,17 +63,41 @@ h3{
 }
 b{
     font-family: proxima-nova, sans-serif;
-    color: #ff8906;
+    color: #7600FF;
     font-size: 24px;
-    text-shadow: 0px 1px 0px black;
+    text-shadow: 1px .5px .5px black;
 }
 
 .informacion{
-    background-color: rgb(253, 150, 47);
+    background-color: #8922ff;
     position: relative;
-    top: 70px;
+    top: 180px;
+    border-top: 4px solid rgb(0, 0, 0);
+    padding-bottom: 40px;
+    
 }
 .misCompras{
-    color: #ff8906;
-    text-shadow: -2px 2px 1px black;
+    color: #000000;
+    text-shadow: -2px 2px 1px rgb(255, 255, 255);
+}
+
+.tablaMaterial{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    /* left: 450px; */
+    border: 3px solid black;
+    height: 400px;
+    margin:2%;
+    /* width: 40%; */
+    border-radius: 6px;
+    
+}
+.atras{
+    background-color: rgb(193, 65, 65);
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 7%;
 }

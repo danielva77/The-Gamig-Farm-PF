@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector, useContext } from 'react-redux';
 import { getDetail, cleanDetail } from '../../redux/actions';
@@ -9,6 +9,9 @@ import Footer from "../Footer/Footer"
 import NavBar from "../NavBar/NavBar";
 import { useShoppingCart } from '../../context/CartContext/CartContext';
 import { addToFavorites } from '../../redux/actions';
+import AddReview from '../AddReview/AddReview';
+import ReviewContainer from '../AddReview/ReviewContainer';
+import { disabledProducts, addStock } from '../../redux/actions';
 
 
 export default function Details(props) {
@@ -38,9 +41,18 @@ const favItems = useSelector(state => state.favItems);
 
   let myProduct = useSelector((state) => state.detail);
 
+  const [stock, setStock] = useState(0);
+  function handleStock(e) {
+  setStock(parseInt(e.target.value));
+    
+
+  }
+  console.log("llega stock a agregar",stock);
+
   return (
     <div className='details-container'>
       <NavBar />
+
       {
         myProduct.length > 0 ?
           <div className='details-info'>
@@ -54,12 +66,26 @@ const favItems = useSelector(state => state.favItems);
             </div>
             <p className='stock'>Unidades disponibles: {myProduct[0].stock}</p>
 
-
           </div> : <p>Cargando ...</p>
       }
       <div className='filtros'>
         <a href="/home" className='volver'> 🡰 Volver</a>
       </div>
+      <div>
+        <AddReview 
+        productId={props.match.params.id}/>
+      </div>
+      <div>
+          <button onClick={disabledProducts(props.match.params.id)}>Desactivar producto</button>
+          <Link to={`/editproduct/${props.match.params.id}`}>
+          <button>Editar informacion del producto</button></Link>
+          <input type="number" min="0" step="1" name="stock" onChange={e => handleStock(e)} placeholder="Cantidad a agregar ..."></input>
+          <button onClick={addStock(props.match.params.id, stock)} >Agregar stock</button>
+        </div>
+      <div>
+        <ReviewContainer productId={props.match.params.id} />
+        </div>
+
       <div className='move-footer'>
         <Footer />
       </div>

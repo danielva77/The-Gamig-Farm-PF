@@ -69,7 +69,7 @@ export function Favor() {
               <button className="removeBtn" onClick={() => handleRemoveFromFav(item.id)}>
                 Eliminar
               </button>
-            </li>
+            </li> 
           ))}
           </ul>
      </div>

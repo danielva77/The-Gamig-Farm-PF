@@ -34,7 +34,7 @@ function StoreItems({ currentVideogames }) {
   const sortBy = useSelector(state => state.sortBy);
 
   // funcion para volver a la pagina inicial (se la aplicará luego de cada filtrado u ordenado)
-  const resetCurrentPage = () => dispatch(changePage(1))
+  const resetCurrentPage = () => dispatch(changePage(currentPage))
 
   // variable auxiliar para filtrar, ordenar y paginar los items
   let filteredAndSorted = items;
@@ -45,7 +45,6 @@ function StoreItems({ currentVideogames }) {
     filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
     :
     filteredAndSorted
-  console.log("esto filtra categoria", filteredAndSorted)
 
   // Filtrado por marca
   filteredAndSorted = markFilter
@@ -53,7 +52,6 @@ function StoreItems({ currentVideogames }) {
     filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
     :
     filteredAndSorted
-  console.log("esto filtra marca", filteredAndSorted)
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter
@@ -78,11 +76,12 @@ function StoreItems({ currentVideogames }) {
   return (
     <>
       <div className="divG">
-        <h1 className="productosT">PRODUCTOS</h1>
+        
         <div className="modelo3">
           {currentItems.length
             ?
             currentItems.map((item) => {
+              if(item.isActive){
               return (
                 <>
                   <Link to={`/products/${item.id}`}>
@@ -97,7 +96,7 @@ function StoreItems({ currentVideogames }) {
                     />
                   </div>
                 </>
-              )
+              )}
             })
             :
             <div>  "No hay productos todavía."</div>
