@@ -350,7 +350,7 @@ router.put('/user/:id', async function (req, res) {
 
 //REVIEW
 router.post('/review', reviewCreate)
-router.delete("/ewview/:reviewId", reviewDelete)
+router.delete("/review/:reviewId", reviewDelete)
 router.get('/review',getAllReview)
 
 router.post("/addshop", createshop)

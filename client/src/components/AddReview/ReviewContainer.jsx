@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import { getReviews } from '../../redux/actions';
+import { getReviews, disabledReviews } from '../../redux/actions';
 import Review from './Review';
 import { FaStar } from "react-icons/fa"
 
@@ -21,6 +21,7 @@ export default function ReviewContainer({productId}) {
 
 
   let reviewsById = reviews.filter(e => e.productId === productId)
+  console.log("ESTO ES REVIEWBYID,", reviewsById)
 
 
   let average = 0;
@@ -47,9 +48,10 @@ export default function ReviewContainer({productId}) {
       </div>
       { reviewsById.length ?
         <div>
-            { reviewsById.map(({ rating, comment, createdAt}, i) => (
+            { reviewsById.map(({ id, rating, comment, createdAt}, i) => (
                 <div key={i}>
                   <Review rating={rating} comment={comment} createdAt={createdAt}/>
+                  <div><button onClick={disabledReviews(id)}>Eliminar este comentario</button></div>
                 </div>
               ))}
         </div> :
