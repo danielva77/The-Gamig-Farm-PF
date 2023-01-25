@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector, useContext } from "react-redux";
 import { getDetail, cleanDetail } from "../../redux/actions";
-import "../Details/Details.css";
+import "../Details/details.css";
 import cart from "../Assets/cart.png";
 import Footer from "../Footer/Footer";
 // import "./details.css"
@@ -79,7 +79,7 @@ export default function Details(props) {
         </a>
       </div>
       <div>
-        <AddReview productId={props.match.params.id} />
+        <AddReview className="Review" productId={props.match.params.id} />
       </div>
       <div>
         <button onClick={disabledProducts(props.match.params.id)}>
@@ -101,7 +101,10 @@ export default function Details(props) {
         </button>
       </div>
       <div>
-        <ReviewContainer productId={props.match.params.id} />
+        <ReviewContainer
+          className="ReviewCont"
+          productId={props.match.params.id}
+        />
       </div>
 
       <div className="move-footer">

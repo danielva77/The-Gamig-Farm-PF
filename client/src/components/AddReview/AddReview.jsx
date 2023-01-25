@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { getDetail, addReview } from '../../redux/actions';
 import { idUser } from '../../redux/actions';
+import "./Reviewing.css"
 
 const colors = {
   orange: "#FFBA5A",
@@ -117,7 +118,7 @@ export default function AddReview({productId}){
 
 
   return(
-    <div>
+    <div className='Reviewing'>
       <h2>Agregar Review</h2>
         <div>
           {stars.map((_, index) => {
