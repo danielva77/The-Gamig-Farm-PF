@@ -12,6 +12,7 @@ import { addToFavorites } from "../../redux/actions";
 import AddReview from "../AddReview/AddReview";
 import ReviewContainer from "../AddReview/ReviewContainer";
 import { disabledProducts, addStock } from "../../redux/actions";
+import Carrusel from "../Slider/Slider";
 
 export default function Details(props) {
  let usuariologueado = JSON.parse(localStorage.getItem("email"));
@@ -80,6 +81,9 @@ export default function Details(props) {
           {" "}
           🡰 Volver
         </a>
+      </div>
+      <div className="carrusel">
+        <Carrusel />
       </div>
       { usuariologueado ? 
       <div>
