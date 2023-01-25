@@ -5,7 +5,8 @@ import Header from "../../components/Header";
 import { useEffect } from "react";
 import Sidebar from "../global/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
-import { disabledProducts, getAllProd, getAllUsers } from "../../../redux/actions";
+import { disableUser, getAllUsers } from "../../../redux/actions";
+import BtnDisableUser from "./BtnDisableUser";
 
 const Users = () => {
     const dispatch = useDispatch()
@@ -17,25 +18,23 @@ const Users = () => {
 
     useEffect(() => {
         dispatch(getAllUsers())
-    }, [users])
+    }, [dispatch])
+
 
     const columns = [
         { field: "id", headerName: "ID" },
         {
-            field: "name", headerName: "Name", width: 400
+            field: "name", headerName: "Name", width: 210
         },
         { field: "email", headerName: "Email" },
         { field: "telephone", headerName: "Telephone", type: "number" },
         { field: "isAdmin", headerName: "isAdmin", type: "boolean" },
         {
-            field: "state", headerName: "State", renderCell: (cellValues) => {
+            field: "state", headerName: "State", width: 300, renderCell: (cellValues) => {
                 return (
-                    <Button
-                        variant="contained"
-                        color={cellValues.row.isAdmin ? "success" : "error"}
-                        onClick={() => dispatch(disabledProducts(cellValues.row.id))}>
-                        {cellValues.row.isAdmin ? "Activado" : "Desactivado"}
-                    </Button>
+                    <BtnDisableUser
+                        cellValues={cellValues}
+                    />
                 )
             }
         }
@@ -44,6 +43,7 @@ const Users = () => {
     return (
         <Box display="flex">
             <Sidebar />
+            {console.log('usuarios: ', users)}
             <Box m="20px"
                 width="80%"
                 sx={{
@@ -74,7 +74,7 @@ const Users = () => {
                         color: `${colors.grey[100]} !important`,
                     },
                 }}>
-                <Header title="PRODUCTS" subtitle="Managing the Products" />
+                <Header title="USERS" subtitle="Managing the Users" />
                 <Box
                     m="40px 0 0 0"
                     height="75vh"

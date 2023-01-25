@@ -38,7 +38,6 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: 'red',
         width: "20%",
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
@@ -104,9 +103,9 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
-              to="/admin/contacts"
-              icon={<ContactsOutlinedIcon />}
+              title="Manage Users"
+              to="/admin/users"
+              icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

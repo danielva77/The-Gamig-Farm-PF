@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Sidebar from "../global/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { disabledProducts, getAllProd } from "../../../redux/actions";
+import BtnDisableProduct from "./BtnDisableProduct";
 
 const Products = () => {
   const dispatch = useDispatch()
@@ -17,7 +18,8 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(getAllProd())
-  }, [products])
+  }, [dispatch])
+
 
   const columns = [
     { field: "id", headerName: "ID" },
@@ -27,14 +29,11 @@ const Products = () => {
     { field: "price", headerName: "Price", width: 50, renderCell: (params) => '$' + params.row.price, },
     { field: "stock", headerName: "Stock", width: 50, type: "number" },
     {
-      field: "state", headerName: "State", renderCell: (cellValues) => {
+      field: "state", headerName: "State", width: 300, renderCell: (cellValues) => {
         return (
-          <Button
-            variant="contained"
-            color={cellValues.row.isActive ? "success" : "error"}
-            onClick={() => dispatch(disabledProducts(cellValues.row.id))}>
-            {cellValues.row.isActive ? "Activado" : "Desactivado"}
-          </Button>
+          <BtnDisableProduct
+            cellValues={cellValues}
+          />
         )
       }
     }
@@ -42,6 +41,7 @@ const Products = () => {
 
   return (
     <Box display="flex">
+      {console.log(products)}
       <Sidebar />
       <Box m="20px"
         width="80%"

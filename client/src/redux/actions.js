@@ -28,11 +28,13 @@ export const SET_NAME_FILTER = "SET_NAME_FILTER"
 export const GET_PRODUCTS = "GET_PRODUCTS"
 export const POST_PRODUCTS = "POST_PRODUCTS"
 
-//REVIEWS
+// REVIEWS
 export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
 
+// ADMIN
 export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS"
 export const GET_ALL_USERS = "GET_ALL_USERS"
+export const DISABLE_USER = "DISABLE_USER"
 
 export const setNameFilter = payload => {
   console.log("object")
@@ -415,9 +417,9 @@ export function getUser(id) {
   }
 }
 
-export function getAllUsers(id) {
+export function getAllUsers() {
   return async function (dispatch) {
-    let aux = axios.get(`http://localhost:3001/user/${id}`)
+    let aux = await axios.get(`http://localhost:3001/usuarios`)
     const users = aux.data
 
     return dispatch({
@@ -429,21 +431,21 @@ export function getAllUsers(id) {
 
 export function disableUser(id) {
   return async function (dispatch) {
-    let producto = await axios.get(`http://localhost:3001/products/${id}`)
-    let isActive = producto.data[0].isActive
-    let b
+    let producto = await axios.get(`http://localhost:3001/user/${id}`)
+
+    // console.log("producto: ", producto.data)
+    let isActive = producto.data.isActive
+
     if (isActive) {
-      b = false
       alert("Desactivado")
     } else {
-      b = true
       alert("Activado")
     }
 
-    axios.put(`http://localhost:3001/products/${id}`, { isActive: b })
+    await axios.put(`http://localhost:3001/user/desactivar/${id}`)
 
     return dispatch({
-      type: DISABLED_PRODUCTS,
+      type: DISABLE_USER,
       payload: id,
     })
   }

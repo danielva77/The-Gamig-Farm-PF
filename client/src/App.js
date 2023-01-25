@@ -27,6 +27,7 @@ import FormAdmin from "./admin/scenes/form"
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import { ColorModeContext, useMode } from "./admin/theme"
 import { useState } from "react"
+import Users from "./admin/scenes/users"
 
 function App() {
   const [theme, colorMode] = useMode()
@@ -54,7 +55,8 @@ function App() {
             <Route exact path="/admin" component={Sidebar} />
             <Route path="/admin/dashboard" component={Dashboard} />
             <Route path="/admin/products" component={Products} />
-            <Route path="/admin/contacts" component={Contacts} />
+            <Route path="/admin/users" component={Users} />
+            {/* <Route path="/admin/contacts" component={Contacts} /> */}
             <Route path="/admin/form" component={FormAdmin} />
           </Switch>
         </div>

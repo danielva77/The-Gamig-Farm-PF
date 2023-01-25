@@ -28,6 +28,7 @@ import {
   GET_ALL_REVIEWS,
   DISABLED_PRODUCTS,
   GET_ALL_USERS,
+  DISABLE_USER,
 } from "./actions"
 
 const initialState = {
@@ -326,7 +327,10 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         users: action.payload,
       }
-
+    case DISABLE_USER:
+      return {
+        ...state,
+      }
     default:
       return state
   }
