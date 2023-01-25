@@ -82,6 +82,10 @@ export default function Details(props) {
         <AddReview className="Review" productId={props.match.params.id} />
       </div>
       <div>
+        <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
+      </div>
+
+      <div>
         <button onClick={disabledProducts(props.match.params.id)}>
           Desactivar producto
         </button>
@@ -100,10 +104,6 @@ export default function Details(props) {
           Agregar stock
         </button>
       </div>
-      <div>
-        <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
-      </div>
-
       <div className="move-footer">
         <Footer />
       </div>
