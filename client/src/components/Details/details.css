@@ -22,14 +22,14 @@
   line-height: 48px;
   /* identical to box height */
   width: auto;
-  color: #000000;
+  color: #ffffff;
   margin-right: 140px;
   text-align: left;
 }
 .imagenProducto {
   position: absolute;
-  width: 296px;
-  height: 296px;
+  max-width: 100%;
+  height: 360px;
   left: 220px;
   top: 143px;
 }
@@ -96,7 +96,7 @@
   line-height: 42px;
   /* identical to box height */
 
-  color: #000000;
+  color: #ffffff;
 }
 
 .filtros {
@@ -157,4 +157,8 @@
 .move-footer {
   position: absolute;
   top: 110vh;
+}
+
+.ReviewCont{
+  padding-top: 90%;
 }
