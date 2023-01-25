@@ -1,123 +1,114 @@
-.btn-primary{
-    background-color: #f41000ca;
-    width: 80%;
-    border-radius: 15px;
-    color:rgb(255, 255, 255);
-    /* border-color: #86e22400; */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    text-decoration: transparent;
+.btn-primary {
+  background-color: #f41000ca;
+  width: 80%;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  /* border-color: #86e22400; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  text-decoration: transparent;
 }
-
 
 .btn-primary:hover {
-    background-color: rgba(245, 229, 3, 0.888);
-    text-decoration: transparent;
+  background-color: rgba(245, 229, 3, 0.888);
+  text-decoration: transparent;
 }
-.modelo{
-    width: 300px;
-    overflow: hidden;
-    transition: 0.5s;
-    animation: ease-in-out;
-    box-shadow: 0px 0px 15px 0px;
-    margin-bottom: 20%;
-    border: #c57327;
-    margin: 1px 30px;
-    text-decoration: transparent;
-    /* display: inline-flex; */
-    
+.modelo {
+  width: 300px;
+  overflow: hidden;
+  transition: 0.5s;
+  animation: ease-in-out;
+  box-shadow: 0px 0px 15px 0px;
+  margin-bottom: 20%;
+  border: #c57327;
+  margin: 1px 30px;
+  text-decoration: transparent;
+  /* display: inline-flex; */
 }
-.nombre{
-    font-family: proxima-nova, sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 22px;
-color: #000000;
+.nombre {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
 
-text-align: left;
-margin-top: 30px;
+  text-align: left;
+  margin-top: 30px;
+}
+.precios {
+  color: green;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 40px;
 
+  color: #000000;
 }
-.precios{
-    color: green;
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 30px;
-/* identical to box height */
-text-align: left;
-margin-left: 20px;
-margin-top: 40px;
+.nombreC {
+  width: 90%;
+  margin: 0px 7%;
+  text-decoration: transparent;
+}
+.imagen {
+  width: 230px;
+  height: 220px;
+}
+.carritoss {
+  /* width: 73px; */
+  /* height: 34.81px; */
+  position: absolute;
 
-
-color: #000000;
+  top: 420px;
 }
-.nombreC{
-    width: 90%;
-    margin: 0px 7%;
-    text-decoration: transparent;
-    
+.botonn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  left: 260px;
 }
-.imagen{
-    width: 230px;
-    height: 220px;
+.botonnF {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  right: -40px;
+  top: -7px;
 }
-.carritoss{
-    /* width: 73px; */
-/* height: 34.81px; */
-position: absolute;
-
-top: 420px;
-}
-.botonn{
-    border: none ;
-    background-color: transparent;
-    position: absolute;
-    left: 260px;
-}
-.botonnF{
-    border: none ;
-    background-color: transparent;
-    position: relative;
-    right:  -40px;
-    top: -7px;
-}
-
 
 /*  */
 
-
-.clear{
-    background-color: white !important;
-    border-top: none !important;
+.clear {
+  background-color: white !important;
+  border-top: none !important;
 }
-.card-title{
-    color: #000000;
-    font-family: proxima-nova, sans-serif;
-    font-weight: 700;
-    
+.card-title {
+  color: #000000;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
 }
-.card-text{
-    color: #000000;
-    font-family: proxima-nova, sans-serif;
-    font-size: 25px;
-    position: relative;
-    right:  110px;
-  
+.card-text {
+  color: #000000;
+  font-family: proxima-nova, sans-serif;
+  font-size: 25px;
+  position: relative;
+  right: 110px;
 }
 
-.btn-favorito{
-    width: 271px;
-height: 42px;
-left: 659px;
-top: 488px;
+.btn-favorito {
+  width: 271px;
+  height: 42px;
+  left: 659px;
+  top: 488px;
 
-background: #7600FF;
-border-radius: 10px;
-color: #fff;
-font-size: 21px;
-font-family: proxima-nova, sans-serif;
-border: none;
+  background: #7600ff;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 21px;
+  font-family: proxima-nova, sans-serif;
+  border: none;
 }
