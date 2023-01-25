@@ -48,9 +48,6 @@ const { Product, Category, Mark, Review, Store, User } = sequelize.models;
 Product.belongsToMany(Category, { through: "Product_Category" });
 Category.belongsToMany(Product, { through: "Product_Category" });
 
-Mark.hasMany(Product);
-Product.hasMany(Mark);
-
 User.hasMany(Store);
 Store.belongsTo(User);
 
@@ -66,18 +63,6 @@ Review.belongsTo(Product);
 Mark.belongsToMany(Product, { through: "Product_Mark" })
 Product.belongsToMany(Mark, { through: "Product_Mark" })
 //
-User.hasMany(Store)
-Store.belongsTo(User)
-
-User.hasMany(Review)
-Review.belongsTo(User)
-
-Store.belongsToMany(Product, { through: "Store_Product" })
-Product.belongsToMany(Store, { through: "Store_Product" })
-
-Product.hasMany(Review)
-Review.belongsTo(Product)
-
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');
