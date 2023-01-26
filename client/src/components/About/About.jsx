@@ -137,8 +137,8 @@ export default function About() {
           );
         })}
       </div>
-      {/* <Carrusel />
-      <News /> */}
+      <Carrusel />
+      <News />
       <Footer />
     </div>
   );

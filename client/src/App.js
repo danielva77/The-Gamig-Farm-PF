@@ -1,37 +1,37 @@
 // import Footer from './components/Footer/Footer';
-import "./App.css"
-import LandingPage from "./components//Landing Page/LandingPage"
-import { Route, BrowserRouter, Switch } from "react-router-dom"
-import Home from "./components/Home/Home"
-import Details from "./components/Details/Details"
-import NavBar from "./components/NavBar/NavBar"
+import "./App.css";
+import LandingPage from "./components//Landing Page/LandingPage";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Details from "./components/Details/Details";
+import NavBar from "./components/NavBar/NavBar";
 // import { LoginButton } from "./components/Login/Login";
 // import { LogoutButton } from "../src/components/Logout/Logout"
-import { Profile } from "./components/Profile/profile"
-import { useAuth0 } from "@auth0/auth0-react"
-import Form from "./components/Form/Form"
-import Footer from "./components/Footer/Footer"
-import About from "./components/About/About"
-import LandingPageAd from "./components/Admin/LandingPageAd"
-import UserProfile from "./components/PanelProfile/UserProfile/UserProfile"
-import EditUserProfile from "./components/PanelProfile/UserProfile/EditUserProfile"
-import Contact from "./components/Contacto/Contact"
-import Confirmation from "./components/Confirmation/Confirmation"
-import ModifyProducts from "./components/Form/ModifyProducts"
+import { Profile } from "./components/Profile/profile";
+import { useAuth0 } from "@auth0/auth0-react";
+import Form from "./components/Form/Form";
+import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
+import LandingPageAd from "./components/Admin/LandingPageAd";
+import UserProfile from "./components/PanelProfile/UserProfile/UserProfile";
+import EditUserProfile from "./components/PanelProfile/UserProfile/EditUserProfile";
+import Contact from "./components/Contacto/Contact";
+import Confirmation from "./components/Confirmation/Confirmation";
+import ModifyProducts from "./components/Form/ModifyProducts";
 
-import Sidebar from "./admin/scenes/global/Sidebar"
-import Dashboard from "./admin/scenes/dashboard"
-import Products from "./admin/scenes/products"
-import Contacts from "./admin/scenes/contacts"
-import FormAdmin from "./admin/scenes/form"
-import { CssBaseline, ThemeProvider } from "@mui/material"
-import { ColorModeContext, useMode } from "./admin/theme"
-import { useState } from "react"
-import Users from "./admin/scenes/users"
+import Sidebar from "./admin/scenes/global/Sidebar";
+import Dashboard from "./admin/scenes/dashboard";
+import Products from "./admin/scenes/products";
+import Contacts from "./admin/scenes/contacts";
+import FormAdmin from "./admin/scenes/form";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "./admin/theme";
+import { useState } from "react";
+import Users from "./admin/scenes/users";
 
 function App() {
-  const [theme, colorMode] = useMode()
-  const [isSidebar, setIsSidebar] = useState(true)
+  const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -62,7 +62,7 @@ function App() {
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -16,6 +16,8 @@ import Carrito from "../Assets/cart.png";
 function NavBar() {
   // AUTENTICACION
   const { isAuthenticated } = useAuth0();
+  let email = JSON.parse(localStorage.getItem("email"));
+  let emailadmin="thegamingfarm01@gmail.com"
 
   const { openCart, cartQuantity } = useShoppingCart();
 
@@ -32,12 +34,9 @@ function NavBar() {
       </div>
 
       <div className="menu-navbar">
-        <a className="link" href="/home">
+        {/* <a className="link" href="/home">
           Inicio
-        </a>
-        <a className="link" href="/form">
-          Formulario
-        </a>
+        </a> */}
         <a className="link" href="/home">
           Productos
         </a>
@@ -47,6 +46,10 @@ function NavBar() {
         <a className="link" href="/about">
           Sobre Nosotros
         </a>
+        { email == emailadmin ?
+        <a className="link" href="/admin">
+          Administrador
+        </a> : null}
       </div>
 
       <SearchBar />

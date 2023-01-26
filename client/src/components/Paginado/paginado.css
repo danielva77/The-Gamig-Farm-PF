@@ -1,15 +1,17 @@
-.paginated-container{
-    /* background-color: red !important; */
-    position: relative;
-    top: -4px;
-    
+.paginated-container {
+  /* background-color: red !important; */
+  position: relative;
+  top: -4px;
 }
-.botons{
-    background-color: #7600FF !important;
-    padding: 4px 12px;
-    border-radius: 6px;
-    margin-left: 15px;
-    margin-top: 15px;
-    color: #fff;
-    border: none
+.botons {
+  background-color: #7600ff !important;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-left: 15px;
+  margin-top: 15px;
+  color: #fff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

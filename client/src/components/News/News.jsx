@@ -3,6 +3,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./News.css";
 
 export default function News() {
   const [news, setNews] = useState([]);
@@ -35,31 +36,37 @@ export default function News() {
 
   const newsList = news.map((noticia, index) => {
     return (
-      <div key={index}>
-        <h3>{noticia.title}</h3>
-        <a href={noticia.link}>Link</a>
-        <p>{noticia.pubDate}</p>
-        <p>{noticia.creator}</p>
-        {noticia.imageUrl && (
-          <img
-            src={noticia.imageUrl}
-            alt={noticia.title}
-            style={{ maxWidth: "200px" }}
-          />
-        )}
+      <div className="cardNews" key={index}>
+        <div className="card-details">
+          <p class="text-title">{noticia.title}</p>
+
+          <p>{noticia.pubDate}</p>
+          <p>{noticia.creator}</p>
+          {noticia.imageUrl && (
+            <img
+              src={noticia.imageUrl}
+              alt={noticia.title}
+              style={{ maxWidth: "200px" }}
+            />
+          )}
+        </div>
+        <a href={noticia.link} target="_blank">
+          <button class="card-button">Link</button>
+        </a>
       </div>
     );
   });
 
   const settings = {
     className: "center",
-    centerMode: true,
+    centerMode: false,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
+    centerPadding: "20px",
+    slidesToShow: 5,
     speed: 500,
     rows: 2,
-    slidesPerRow: 2,
+    slidesPerRow: 1,
+    variableWidth: true,
   };
   return (
     <div>
@@ -68,11 +75,3 @@ export default function News() {
     </div>
   );
 }
-
-// axios.get('https://www.3djuegos.com/feedburner.xml')
-//   .then(response => {
-//     xml2js.parseString(response.data, (err, result) => {
-//       // aqui tienes el resultado parseado en formato json
-//       const news = result.rss.channel[0].item;
-//     });
-//   });

@@ -90,7 +90,10 @@ export default function Carrusel() {
       <Slider {...settings}>
         {activeItems.slice(0, 10).map((item) => (
           <div key={item.id}>
-            <Link to={`/products/${item.id}`}>
+            <Link
+              to={`/products/${item.id}`}
+              onClick={() => window.open(`/products/${item.id}`, "_blank")}
+            >
               <img src={item.img} alt={item.title} className="img-size" />
             </Link>
           </div>
@@ -99,19 +102,3 @@ export default function Carrusel() {
     </div>
   );
 }
-
-//   return (
-//     <div>
-//       <h2> Responsive </h2>
-//       <Slider {...settings}>
-//         {products.map((product) => (
-//           <StoreItem
-//             key={product.id}
-//             image={product.image}
-//             link={`/product/${product.id}`}
-//           />
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// }
