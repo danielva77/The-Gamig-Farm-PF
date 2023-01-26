@@ -72,8 +72,6 @@ Review.belongsTo(Product, { foreignKey: "productId" });
 Mark.belongsToMany(Product, { through: "Product_Mark" });
 Product.belongsToMany(Mark, { through: "Product_Mark" });
 //
-User.hasMany(Store);
-Store.belongsTo(User);
 
 // User.hasMany(Favorite);
 // Favorite.belongsTo(User);
