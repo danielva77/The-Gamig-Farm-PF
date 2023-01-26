@@ -139,7 +139,7 @@ export default function Contact() {
               <input
                 type="hidden"
                 name="_next"
-                value="http://localhost:3000/home"
+                value="/home"
               />
               <input type="hidden" name="_captcha" value="false" />
 
