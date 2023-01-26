@@ -53,7 +53,7 @@ const Profile = () => {
     
     
     
-    axios.post("http://localhost:3001/createuser", datosUser)
+    axios.post("/createuser", datosUser)
   }
 
 
