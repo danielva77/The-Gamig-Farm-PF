@@ -59,6 +59,31 @@ let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == 
     setStock(parseInt(e.target.value));
   }
 
+
+  const successAlert = () => {
+    Swal.fire({
+        title: 'stock agregado satisfactoriamente',
+        showDenyButton: false,
+        showCancelButton: false,
+        confirmButtonText: "Ok",
+        icon: "success"
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
+    });
+  }
+  function agregarstock(id, stock){
+  console.log("estollegoastock", id, stock)
+  dispatch(addStock(id, stock))
+  successAlert()
+  }
+function disabled(id){
+dispatch(disabledProducts(id))
+}
+
+
   return (
     <div className="details-container">
       <NavBar />
@@ -106,7 +131,8 @@ let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == 
         </div> 
         { usuariologueado == emailadmin ? 
       <div>
-        <button onClick={disabledProducts(props.match.params.id)}>
+        {/* <button onClick={disabledProducts(props.match.params.id)}> */}
+        <button onClick={e => disabled(props.match.params.id)}>
           Desactivar producto
         </button>
         <Link to={`/editproduct/${props.match.params.id}`}>
@@ -120,7 +146,8 @@ let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == 
           onChange={(e) => handleStock(e)}
           placeholder="Cantidad a agregar ..."
         ></input>
-        <button onClick={addStock(props.match.params.id, stock)}>
+        {/* <button onClick={addStock(props.match.params.id, stock)}> */}
+        <button onClick={() => agregarstock(props.match.params.id, stock)}>
           Agregar stock
         </button>
       </div>

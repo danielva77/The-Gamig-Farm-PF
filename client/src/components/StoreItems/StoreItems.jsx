@@ -29,7 +29,8 @@ function StoreItems({ currentVideogames }) {
   // variables globales para filtrado y ordenamiento
   const nameFilter = useSelector((state) => state.nameFilter);
   const categoryFilter = useSelector((state) => state.categoryFilter);
-  const markFilter = useSelector((state) => state.marksFilter);
+  const mandofilter = useSelector((state) => state.filtermandos);
+  const juegosfilter = useSelector((state) => state.filterjuegos);
   const sortBy = useSelector((state) => state.sortBy);
 
   // funcion para volver a la pagina inicial (se la aplicará luego de cada filtrado u ordenado)
@@ -38,15 +39,24 @@ function StoreItems({ currentVideogames }) {
   // variable auxiliar para filtrar, ordenar y paginar los items
   let filteredAndSorted = items;
 
+  if(mandofilter[0]){filteredAndSorted = mandofilter}
+if(juegosfilter[0]){filteredAndSorted = juegosfilter}
+console.log("MAAAANDOOOSSS", mandofilter)
+
   // Filtrado por categoria
   filteredAndSorted = categoryFilter
     ? filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
     : filteredAndSorted;
 
   // Filtrado por marca
-  filteredAndSorted = markFilter
-    ? filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
-    : filteredAndSorted;
+  // filteredAndSorted = markFilter
+  //   ? filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
+  //   : filteredAndSorted;
+
+    // Filtrado por mandos
+    // filteredAndSorted = mandofilter
+    // ? mandofilter
+    // : filteredAndSorted;
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter
@@ -58,12 +68,22 @@ function StoreItems({ currentVideogames }) {
     ? sortByPrice(filteredAndSorted, sortBy, resetCurrentPage)
     : filteredAndSorted;
 
+
+
+    // filteredAndSorted = mandofilter[0] ?
+    // mandofilter : filteredAndSorted
+
+    // filteredAndSorted = juegosfilter[0] ?
+    // juegosfilter : filteredAndSorted
+
+
   // Paginate items
   let currentItems = paginateItems(
     filteredAndSorted,
     currentPage,
     itemsPerPage
   );
+
 
   // Enviar array de botones al paginado
   getNumberButtons(
