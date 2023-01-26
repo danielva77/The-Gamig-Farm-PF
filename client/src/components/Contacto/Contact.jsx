@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./contact.css";
-import support from "../Assets/support.png";
+import support from "../Assets/agente-de-servicio-al-cliente.png";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Footer from "../Footer/Footer";
@@ -125,7 +125,7 @@ export default function Contact() {
               <div>
                 <img src={support} alt="contacto" className="img-f" />
               </div>
-              <h2>Contacto</h2>
+             <br/>
               <p class="fs-5">
                 Estamos aqui para hacer responder tus consultas
               </p>

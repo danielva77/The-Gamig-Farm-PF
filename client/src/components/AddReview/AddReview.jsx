@@ -16,8 +16,8 @@ export default function AddReview({productId}){
   const dispatch = useDispatch()
   let email= JSON.parse(localStorage.getItem("email"));
   useEffect(() => {
-      {dispatch(idUser(email));
-      dispatch(shopUser(email));} //This is a correct???
+      dispatch(idUser(email));
+      dispatch(shopUser(email)); //This is a correct???
   }, [dispatch]);
   let idUser2 = useSelector((state) => state.idUsuarioActual)
 
@@ -110,12 +110,22 @@ export default function AddReview({productId}){
 
 
   return(
+    <div className='Review'>
+      <h2 className='tituloAgregar'>Agregar un Comentario</h2>
+      <textarea
+          placeholder="Opina sobre este producto ..."
+          value={review.comment} 
+          name='comment' 
+          onChange={handleOnChange}
+          className="inputComentario"
+        /> <br /> 
     <div >
       <h2>Agrega tu opinion del producto</h2>
         <div>
           {stars.map((_, index) => {
             return (
               <FaStar
+              className='estrellas'
                 key={index}
                 size={24}
                 onClick={() => handleClick(index + 1)}
@@ -125,10 +135,14 @@ export default function AddReview({productId}){
                 style={{
                   marginRight: 10,
                   cursor: "pointer"
+                
                 }}
               />
             )
           })}
+        </div> 
+         <br />
+        <button type='button' onClick={handleSubmit} className="botonPublicar">Publicar</button>
         </div>
         <textarea
           placeholder="Califica este producto ..."

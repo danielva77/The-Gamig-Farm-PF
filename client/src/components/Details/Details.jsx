@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector, useContext } from "react-redux";
-import { getDetail, cleanDetail } from "../../redux/actions";
+import { getDetail, cleanDetail, getAllUsers } from "../../redux/actions";
 import "../Details/details.css";
 import cart from "../Assets/cart.png";
 import Footer from "../Footer/Footer";
@@ -21,6 +21,14 @@ export default function Details(props) {
  let emailadmin = "thegamingfarm01@gmail.com"
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
+let usuario = useSelector(state => state.users)
+console.log("TODOS LOS USUARIOS", usuario)
+// let suaurioact = useSelector( state => state.idUsuarioActual)
+// console.log("ACTUAAAL", suaurioact)
+
+// useEffect(() => {
+//   dispatch(getAllUsers())
+// },[dispatch])
 
   const shop = useSelector((state) => state.shopuser);
   useEffect(() => {
@@ -95,12 +103,15 @@ dispatch(disabledProducts(id))
             alt="img"
             className="imagenProducto"
           ></img>
+        
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
+          
           <p className="descripcion">{myProduct[0].detail}</p>
+          
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+ {quantity}</a>
+              <a className="suma">+{quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>

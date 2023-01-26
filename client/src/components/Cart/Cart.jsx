@@ -16,6 +16,9 @@ import axios from "axios"
 const Cart = () => {
 
   const { quantity } = useShoppingCart()
+
+  let idUser2 = useSelector( state => state.idUsuarioActual)
+
   //   const items = useSelector(state => state.cart.items);
   // const items = [];
   // const dispatch = useDispatch();
@@ -114,10 +117,12 @@ const Cart = () => {
                 </tr>
               </tfoot>
             </Table>
+            { idUser2?.isActive ? 
              <Button variant="success"
             onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.location.href = res.data)}}>
              Pagar {totalPrice}
              </Button>
+             : null }
              </>
           )}
         </Offcanvas.Body>

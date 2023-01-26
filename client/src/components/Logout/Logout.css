@@ -1,14 +1,17 @@
 .logout{
   position: absolute;
+  right: 2%;
+  top: 7%;
 width: 65px;
 height: 26px;
-left: 94%;
-bottom: 93.5%;
+/* left: 300%; */
+justify-items: flex-end;
 z-index: 1;
 background: rgba(255, 255, 255, 5%);
 border-radius: 10px;
 cursor: pointer;
 color: rgb(255, 255, 255) !important;
+
 }
 
 .logout:hover{

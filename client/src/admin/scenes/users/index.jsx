@@ -7,11 +7,8 @@ import Sidebar from "../global/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { disableUser, getAllUsers } from "../../../redux/actions";
 import BtnDisableUser from "./BtnDisableUser";
-import { Navbar } from "react-bootstrap";
-import NavBar from "../../../components/NavBar/NavBar";
 
 const Users = () => {
-    <NavBar/>
     const dispatch = useDispatch()
 
     const users = useSelector(state => state.users)

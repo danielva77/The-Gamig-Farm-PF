@@ -11,7 +11,7 @@ const sequelize = DB_DEPLOY
       native: false,
     })
   : new Sequelize(
-      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/productos`,
       {
         logging: false,
         native: false,

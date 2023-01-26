@@ -7,34 +7,27 @@ import { postProduct, getProduct } from "../../redux/actions";
 import Swal from "sweetalert2";
 // import uploadcare from 'uploadcare-widget/uploadcare.lang.en.min.js'
 import { Widget } from "@uploadcare/react-widget";
-import NavBar from "../NavBar/NavBar";
 
 <Widget publicKey="b64078a8eafda783a219" />;
 
 export const Form = () => {
-  <NavBar/>
   const marks = [
     { title: "Juegos" },
     { title: "Mandos" },
-    
   ];
   const categories = [
-    { title: "PlayStation" },
-  { title: "PlayStation 2" },
-  { title: "PlayStation 3" },
-  { title: "PlayStation 4" },
-  { title: "PlayStation 5" },
-  { title: "Xbox" },
-  { title: "Xbox 360" },
-  { title: "Xbox One" },
-  { title: "Sega Mega Drive" },
-  { title: "Nintendo 64" },
-  { title: "Nintendo DS" },
-  { title: "Wii" },
-  { title: "Nintendo Switch" },
-  { title: "Nintendo (NES)" },
-  { title: "Nintendo 3DS" },
-  { title: "PSP" }, 
+    { title: "Playstation" },
+    { title: "Playstation 2" },
+    { title: "Playstation 3" },
+    { title: "Playstation 4" },
+    { title: "Xbox" },
+    { title: "Xbox One" },
+    { title: "Xbox 360" },
+    { title: "wii" },
+    { title: "Nintendo 64" },
+    { title: "Sega Mega Drive" },
+    { title: "Nintendo Switch" },
+    { title: "Nintendo DS" }
   ];
 
   // Guardo la data para enviar a la db en un estado local

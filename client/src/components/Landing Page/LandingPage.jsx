@@ -7,19 +7,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { idUser } from "../../redux/actions";
+import Fuego from "../Assets/fuego.png"
 import { useState } from "react";
+import Control from "../Assets/74ace6e2-4502-4866-a67d-77f47afde849.jpg-output.png"
 
 const LandingPage = () => {
-  const google = useAuth0();
   const dispatch = useDispatch();
   // const google2 = useAuth0();
-
-  useEffect(() => {
-    if(google.isAuthenticated){ localStorage.setItem("email", JSON.stringify(google.user.email));
-  }});
-
-    let email= JSON.parse(localStorage.getItem("email"))
-
 
   // useEffect(() => {
   //   if(google2.isAuthenticated){dispatch(idUser(google2.user.email))} //This is a correct???
@@ -29,19 +23,21 @@ const LandingPage = () => {
       {/* <NavBar /> */}
       <div className="info-landing">
         <div className="container">
+         
           <h1 className="tituloLanding">
-            Maximiza tu Experiencia de Juego con Nuestros Productos.
+            Enciende tu Experiencia de Juego con Nuestros Productos
           </h1>
 
+           {/* <img  className="fuego" src={Fuego}  /> */}
+
           <p className="bienvenido">
-            ¡Bienvenido a la mejor tienda de juegos del mundo! Aquí en nuestra
-            tienda hemos trabajado incansablemente para ofrecerle los mejores
-            productos del campo de los juegos. Tenemos todos los accesorios,
-            consolas y juegos que necesitas para que tu experiencia de juego sea
-            excelente.”
+           "Bienvenidos a TheGamingFarm! Aquí podrás encontrar un cátalogo
+            completo de las consolas más icónicas de las últimas décadas e 
+            informarte de las novedades relacionadas al Mundo Gamer”
           </p>
           <NavLink to="/home" onClick={e => window.location.assign("http://localhost:3000/home")}>
             <button class="cssbuttons-io">
+
               <span>
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"></path>
@@ -49,7 +45,10 @@ const LandingPage = () => {
                 </svg>{" "}
                 Productos
               </span>
+      
             </button>
+            <img className="ps5" src={Control}/>
+
           </NavLink>
 
           {/* <div className="img-control-container"></div> */}

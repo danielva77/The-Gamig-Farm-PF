@@ -7,8 +7,14 @@ import { Link } from "react-router-dom";
 import { addToFavorites } from "../../redux/actions";
 import { useAuth0 } from "@auth0/auth0-react";
 import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
 
 export function StoreItem({ id, name, price, img, stock }) {
+
+  let idUser2 = useSelector((state) => state.idUsuarioActual);
+
+  console.log("BANEADOOO", idUser2)
+
   const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
   const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -101,7 +107,9 @@ export function StoreItem({ id, name, price, img, stock }) {
         </button>
       </div>
       <div class="card-footer"></div>
+      { !(idUser2 && !idUser2.isActive) ?
       <div class="card-footer">
+        
         {getItemQuantity(id) === 0 ? (
           <div>
             <button className="btn-favorito" onClick={handleAddToCart}>
@@ -147,7 +155,9 @@ export function StoreItem({ id, name, price, img, stock }) {
             </button>
           </div>
         )}
+      
       </div>
+      : null }
     </div>
   );
 }

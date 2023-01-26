@@ -12,7 +12,7 @@ const MarkFilter = () => {
 
     return (
        <div>
-            <button class="filterMark2" onClick={() => dispatch(filterByJuegos())}>JUEGOS</button>
+            <button class="filterMark2" onClick={() => dispatch(filterByJuegos())}>Juegos</button>
        </div>
     );
 };

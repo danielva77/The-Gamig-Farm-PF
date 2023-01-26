@@ -1,14 +1,14 @@
 .footer {
+
   background-color: #000000;
   color: white;
-   /* position: absolute;  */
+  /* position: absolute; */
   /* top: 250vh; */
   width: 100vw;
   padding: 20px 30px;
   display: flex;
   font-size: 12px;
   justify-content: space-around;
-  /* margin-top: 80%; */
 }
 
 .titulo2 {

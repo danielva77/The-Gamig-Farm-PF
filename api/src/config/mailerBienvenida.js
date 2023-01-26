@@ -16,12 +16,7 @@ const configurandoEmail = (email) => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: "thegamingfarm01@gmail.com", // generated ethereal user
-      pass: "rveuzhibqljnpztq"
-    },
-    tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false
-    },
+      pass: "rveuzhibqljnpztq"},
   });
 
 
