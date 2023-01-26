@@ -109,7 +109,7 @@ export function postProducts(payload) {
   console.log("esto llega en payload POST", payload);
   return async function (dispatch) {
     const response = await axios.post(
-      "http://localhost:3001/products",
+      "/products",
       payload
     );
 
@@ -327,7 +327,7 @@ export function deleteFavorites(id) {
   return async function (dispatch) {
     console.log("esto llega antes de elminiar", id);
     const response = await axios.delete(
-      `http://localhost:3001/favorites/${id}`
+      `/favorites/${id}`
     );
     return response;
   };
@@ -453,7 +453,7 @@ export function addStock(id, number) {
   return async function (dispatch) {
     let producto = await axios.get(`/products/${id}`);
     let total = producto.data[0].stock + number;
-    return axios.put(`http://localhost:3001/products/${id}`, { stock: total });
+    return axios.put(`/products/${id}`, { stock: total });
   };
 }
 
