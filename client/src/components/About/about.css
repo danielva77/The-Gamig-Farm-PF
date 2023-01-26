@@ -41,8 +41,8 @@ left: 60px;
 
 .tarjetasPadre{
   display: inline-flex;
-  margin: 15px;
-  padding: 0;
+  margin: 16px;
+  /* padding: 0; */
 
 }
 
@@ -61,16 +61,18 @@ left: 60px;
 .fotoEquipo{
   width: 240px;
   height: 240px;
-  border-radius: 9999px;
+  border-radius: 50%;
   position: relative;
-  left:  15px;
-  display: block;
+  left:  -200px;
+  /* display: block; */
   top: 30px;
+  object-fit: contain;
+ 
 }
-
+/* 
 .divFoto{
   display: block;
-}
+} */
 
 
 .nombreEquipo{

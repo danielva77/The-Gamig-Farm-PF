@@ -36,6 +36,10 @@ export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS"
 export const GET_ALL_USERS = "GET_ALL_USERS"
 export const DISABLE_USER = "DISABLE_USER"
 
+//FILTER
+export const FILTER_BY_JUEGOS = "FILTER_BY_JUEGOS";
+export const FILTER_BY_MANDOS = "FILTER_BY_MANDOS";
+
 export const setNameFilter = (payload) => {
   console.log("object");
   return {
@@ -526,4 +530,26 @@ export function disableUser(id) {
   // return function (dispatch){
   //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
   // }
+}
+
+export function filterByJuegos () {
+  return async function (dispatch) {
+    const data = await axios('http://localhost:3001/filterByJuegos')
+
+    return dispatch({
+      type: FILTER_BY_JUEGOS,
+      payload: data.data
+    })
+  }
+}
+
+export function filterByMandos () {
+  return async function (dispatch) {
+    const data = await axios('http://localhost:3001/filterByMandos')
+
+    return dispatch({
+      type: FILTER_BY_MANDOS,
+      payload: data.data
+    })
+  }
 }

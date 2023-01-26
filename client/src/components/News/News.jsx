@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -34,6 +34,16 @@ export default function News() {
     });
   }, []);
 
+  const sliderRef = useRef();
+
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
   const newsList = news.map((noticia, index) => {
     return (
       <div className="cardNews" key={index}>
@@ -58,21 +68,25 @@ export default function News() {
   });
 
   const settings = {
-    className: "center",
-    centerMode: true,
+    className: "slider variable-width",
+    centerMode: false,
     infinite: true,
     centerPadding: "20px",
-    slidesToShow: 5,
+    slidesToShow: 4,
     speed: 500,
     rows: 2,
     slidesPerRow: 1,
     variableWidth: true,
-    width: 100,
   };
   return (
     <div>
-      <h2>Noticias de Gaming</h2>
-      <Slider {...settings}>{newsList}</Slider>
+      <div style={{ textAlign: "center" }}>
+        <button className="btnPrev" onClick={previous}></button>
+        <button className="btnNext" onClick={next}></button>
+      </div>
+      <Slider ref={sliderRef} {...settings}>
+        {newsList}
+      </Slider>
     </div>
   );
 }

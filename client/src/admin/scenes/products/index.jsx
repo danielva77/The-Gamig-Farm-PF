@@ -2,15 +2,14 @@ import { Box, Button, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
+import { useState } from "react";
 import { useEffect } from "react";
+import axios from "axios";
 import Sidebar from "../global/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { disabledProducts, getAllProd } from "../../../redux/actions";
-import BtnDisableProduct from "./BtnDisableProduct";
-import NavBar from "../../../components/NavBar/NavBar";
 
 const Products = () => {
-  <NavBar/>
   const dispatch = useDispatch()
 
   const products = useSelector(state => state.items)
@@ -18,10 +17,28 @@ const Products = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  // const handleDisable = () => {
+  //   disabledProducts(cellValues.row.id)
+  //   // window.location.reload
+  // }
+
+
+  // $(function(){
+  //    $("#btnCambiar").click(function () {
+  //       /*
+  //          Aquí cambia el elemento, lo dejo comentado para que no falle el snippet
+  //          quita las barras // en tu contexto y debería funcionar
+  //       */
+  //       //$('#data-table-default tr.solucionada').toggle();
+  //       $(this).text(function(i, text){
+  //           return text === "MOSTRAR" ? "OCULTAR" : "MOSTRAR";
+  //       })
+  //    });
+  // })
+
   useEffect(() => {
     dispatch(getAllProd())
-  }, [dispatch])
-
+  }, [products])
 
   const columns = [
     { field: "id", headerName: "ID" },
@@ -31,11 +48,14 @@ const Products = () => {
     { field: "price", headerName: "Price", width: 50, renderCell: (params) => '$' + params.row.price, },
     { field: "stock", headerName: "Stock", width: 50, type: "number" },
     {
-      field: "state", headerName: "State", width: 300, renderCell: (cellValues) => {
+      field: "state", headerName: "State", renderCell: (cellValues) => {
         return (
-          <BtnDisableProduct
-            cellValues={cellValues}
-          />
+          <Button
+            variant="contained"
+            color={cellValues.row.isActive ? "success" : "error"}
+            onClick={() => dispatch(disabledProducts(cellValues.row.id))}>
+            {cellValues.row.isActive ? "Activado" : "Desactivado"}
+          </Button>
         )
       }
     }
@@ -43,7 +63,6 @@ const Products = () => {
 
   return (
     <Box display="flex">
-      {console.log(products)}
       <Sidebar />
       <Box m="20px"
         width="80%"

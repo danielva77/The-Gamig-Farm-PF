@@ -55,9 +55,8 @@ function App() {
             <Route exact path="/admin" component={Sidebar} />
             <Route path="/admin/dashboard" component={Dashboard} />
             <Route path="/admin/products" component={Products} />
-            <Route path="/admin/users" component={Users} />
-            {/* <Route path="/admin/contacts" component={Contacts} /> */}
-            <Route path="/admin/form" component={Form} />
+            <Route path="/admin/contacts" component={Contacts} />
+            <Route path="/admin/form" component={FormAdmin} />
           </Switch>
         </div>
       </ThemeProvider>

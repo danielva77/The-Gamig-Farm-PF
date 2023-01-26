@@ -14,6 +14,18 @@ module.exports = (sequelize) => {
         },
         email: {
             type: DataTypes.STRING,
+          //fecha de compra
+        date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        detail: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        //total de compra
+        total: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         idproduct: {
@@ -39,6 +51,6 @@ module.exports = (sequelize) => {
         quantity: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }},
     })
 }

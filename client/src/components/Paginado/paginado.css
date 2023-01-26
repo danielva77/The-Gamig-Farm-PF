@@ -2,13 +2,17 @@
   /* background-color: red !important; */
   position: relative;
   top: -4px;
+  width: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2%;
 }
 .botons {
-  background-color: #7600ff !important;
+  background-color: #000000 !important;
   padding: 4px 12px;
   border-radius: 6px;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 20px;
   color: #fff;
   border: none;
   display: flex;

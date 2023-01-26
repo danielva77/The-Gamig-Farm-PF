@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import Mandos from "../Mandos/Mando"
+import Noticas from "../Noticias/Noticas"
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
@@ -12,11 +14,11 @@ import NavBar from "../NavBar/NavBar";
 import MarkFilter from "../MarkFilter/MarkFilter";
 import { useParams, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from "axios"
-import Mandos from "../Mandos/Mando"
-import Noticas from "../Noticias/Noticas"
-import News from "../News/News";
+import axios from "axios";
 import Footer from "../Footer/Footer";
+import News from "../News/News";
+
+
 
 export function Home() {
   const dispatch = useDispatch();
@@ -34,41 +36,14 @@ export function Home() {
     } //This is a correct???
   }, [dispatch]);
 
+  // 📨📨📨📨📨 POST PARA HACER LA PETICION 📨📨📨📨📨
 
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  // 📨📨📨📨📨 POST PARA HACER LA PETICION 📨📨📨📨📨  
-  
-  // const msj = { email } 
+  // const msj = { email }
   //   const enviarMensajeCorre =  () => {
-  
+
   //    axios.post("http://localhost:3001/nuevoUsuario", msj);
   //     console.log(msj);
   //   }
-  
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -79,7 +54,7 @@ export function Home() {
         </div>
 
         <div>
-        <CategoryFilter />
+        <CategoryFilter/>
         </div>
 
         <div>
@@ -93,53 +68,29 @@ export function Home() {
         <div>
         <ReloadPageBtn />
         </div>
-
+{/* 
         <div>
           <Noticas/>
-        </div>
+        </div> */}
 
       </div>
 
       <div>
         <p>Page -{currentPage}-</p>
-      </div>
+      </div>  
       <div>
-        <Paginado />
       </div>
 
       <StoreItems />
-      <div>
+      <Paginado />  
       <News/>
-      </div>
       
-      <div>
-        <Footer/>
-      </div>
-
-
-
-
-
+      <Footer className='footer2' />
 
 
       {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
 
       {/* <button type="submit" className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button> */}
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   );
 }

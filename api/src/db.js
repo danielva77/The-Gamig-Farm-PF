@@ -54,27 +54,12 @@ const { Product, Category, Mark, Review, Store, User, Favorite } =
 Product.belongsToMany(Category, { through: "Product_Category" });
 Category.belongsToMany(Product, { through: "Product_Category" });
 
-Mark.hasMany(Product);
-Product.hasMany(Mark);
-
 User.hasMany(Store);
 Store.belongsTo(User);
 
 User.hasMany(Review, { foreignKey: "userId" });
 Review.belongsTo(User, { foreignKey: "userId" });
-
-Store.belongsToMany(Product, { through: "Store_Product" });
-Product.belongsToMany(Store, { through: "Store_Product" });
-
-Product.hasMany(Review, { foreignKey: "productId" });
-Review.belongsTo(Product, { foreignKey: "productId" });
-
-Mark.hasMany(Product);
-Product.belongsTo(Mark);
 //
-User.hasMany(Store);
-Store.belongsTo(User);
-
 User.hasMany(Review);
 Review.belongsTo(User);
 
@@ -90,11 +75,8 @@ Product.belongsToMany(Mark, { through: "Product_Mark" });
 User.hasMany(Store);
 Store.belongsTo(User);
 
-User.hasMany(Review);
-Review.belongsTo(User);
-
-User.hasMany(Favorite);
-Favorite.belongsTo(User);
+// User.hasMany(Favorite);
+// Favorite.belongsTo(User);
 
 User.hasMany(Favorite, {
   foreignKey: "userId",

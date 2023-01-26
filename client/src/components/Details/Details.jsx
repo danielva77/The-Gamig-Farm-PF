@@ -13,13 +13,24 @@ import AddReview from "../AddReview/AddReview";
 import ReviewContainer from "../AddReview/ReviewContainer";
 import { disabledProducts, addStock } from "../../redux/actions";
 import Carrusel from "../Slider/Slider";
+import Swal from "sweetalert2";
+import { shopUser } from "../../redux/actions";
 
 export default function Details(props) {
   let usuariologueado = JSON.parse(localStorage.getItem("email"));
-  console.log("USUARIOLOGUEADO", usuariologueado);
   let emailadmin = "thegamingfarm01@gmail.com";
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
+
+  const shop = useSelector((state) => state.shopuser);
+  console.log("ESTE ES SHOOOOOP", shop);
+  useEffect(() => {
+    dispatch(shopUser(usuariologueado)); //This is a correct???
+  }, [dispatch]);
+
+  let confirmacion = shop.filter(
+    (e) => e.email == usuariologueado && e.idproduct == props.match.params.id
+  );
 
   const handleAddToCart = () => {
     const item = {
@@ -48,11 +59,34 @@ export default function Details(props) {
   function handleStock(e) {
     setStock(parseInt(e.target.value));
   }
-  console.log("llega stock a agregar", stock);
+
+  const successAlert = () => {
+    Swal.fire({
+      title: "stock agregado satisfactoriamente",
+      showDenyButton: false,
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      icon: "success",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
+    });
+  };
+  function agregarstock(id, stock) {
+    console.log("estollegoastock", id, stock);
+    dispatch(addStock(id, stock));
+    successAlert();
+  }
+  function disabled(id) {
+    dispatch(disabledProducts(id));
+  }
 
   return (
     <div className="details-container">
       <NavBar />
+
       {myProduct.length > 0 ? (
         <div className="details-info">
           <h1 className="titulo">{myProduct[0].title}</h1>
@@ -61,12 +95,15 @@ export default function Details(props) {
             alt="img"
             className="imagenProducto"
           ></img>
+
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
+
           <p className="descripcion">{myProduct[0].detail}</p>
+
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+ {quantity}</a>
+              <a className="suma">+{quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>
@@ -84,12 +121,13 @@ export default function Details(props) {
       <div className="carrusel">
         <Carrusel />
       </div>
-      <div>
+      {usuariologueado && confirmacion.length > 0 ? (
         <div>
-          <AddReview className="Review" productId={props.match.params.id} />
+          <div>
+            <AddReview className="Review" productId={props.match.params.id} />
+          </div>
         </div>
-      </div>{" "}
-      : null
+      ) : null}
       <div>
         <ReviewContainer
           className="ReviewCont"
@@ -98,7 +136,8 @@ export default function Details(props) {
       </div>
       {usuariologueado == emailadmin ? (
         <div>
-          <button onClick={disabledProducts(props.match.params.id)}>
+          {/* <button onClick={disabledProducts(props.match.params.id)}> */}
+          <button onClick={(e) => disabled(props.match.params.id)}>
             Desactivar producto
           </button>
           <Link to={`/editproduct/${props.match.params.id}`}>
@@ -112,12 +151,13 @@ export default function Details(props) {
             onChange={(e) => handleStock(e)}
             placeholder="Cantidad a agregar ..."
           ></input>
-          <button onClick={addStock(props.match.params.id, stock)}>
+          {/* <button onClick={addStock(props.match.params.id, stock)}> */}
+          <button onClick={() => agregarstock(props.match.params.id, stock)}>
             Agregar stock
           </button>
         </div>
       ) : null}
-      <div className="move-footer">
+      <div>
         <Footer />
       </div>
     </div>
