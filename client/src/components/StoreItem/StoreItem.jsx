@@ -75,7 +75,7 @@ export function StoreItem({ id, name, price, img, stock }) {
           
           </div>
 <br/>       
-<br/>     
+    
           <p className="card-text">Precio: ${price}</p>
         </div>
       </Link>

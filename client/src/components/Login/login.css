@@ -1,8 +1,8 @@
 .login {
   position: absolute;
 
-  right: 2%;
-  top: 21px;
+  left: 24px;
+  top: 10px;
   cursor: pointer;
   color: rgb(255, 255, 255);
   text-decoration: none;

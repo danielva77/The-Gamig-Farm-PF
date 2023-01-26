@@ -96,12 +96,15 @@ dispatch(disabledProducts(id))
             alt="img"
             className="imagenProducto"
           ></img>
+        
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
+          
           <p className="descripcion">{myProduct[0].detail}</p>
+          
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+ {quantity}</a>
+              <a className="suma">+{quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>

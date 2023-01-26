@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getReviews, disabledReviews } from "../../redux/actions";
 import Review from "./Review";
 import { FaStar } from "react-icons/fa";
+import "./Review.css"
 
 const colors = {
   orange: "#FFBA5A",
@@ -32,7 +33,7 @@ export default function ReviewContainer({ productId }) {
   }
 
   return (
-    <div>
+    <div className="Reviews">
       <div>
         {stars.map((_, index) => {
           return (
