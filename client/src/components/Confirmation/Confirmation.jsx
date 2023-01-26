@@ -8,7 +8,7 @@ import { getDetail, postShop, idUser } from "../../redux/actions";
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-
+import "./confirmation.css"
 
 export default function Confirmation(){
   const google = useAuth0();
@@ -104,17 +104,21 @@ useEffect((e) => {
 
   return (
     <div>
-      <NavBar/>
-      <h1>Te tenemos buenas noticias !!!</h1>
-      <h2>Tu compra fue realizada con éxito</h2>
-      <p>Te enviaremos por mail el detalle de tu compra! esperamos lo disfrutes</p>
+      <NavBar/> <br />
+      <div className="confirmation">
+      <h1 className="titleC">🌟 Te tenemos buenas noticias 🌟</h1> <br />
+      <h2>Tu compra fue realizada con éxito ✅</h2>
+
 
       <img
-        src="https://i.giphy.com/media/kUTME7ABmhYg5J3psM/giphy.webp"
+        src="https://usagif.com/wp-content/uploads/loading-97.gif"
         alt="alt"
-      />
-      <h5>Seras redirigido a la pagina principal en unos segundos ...</h5>
+        className="imagenCargando"
+        />
+        <h2>Te enviaremos por mail el detalle de tu compra! </h2>
       <Footer/>
+      
+      </div>
     </div>
   );
 }

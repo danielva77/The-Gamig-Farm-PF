@@ -10,7 +10,7 @@ const team = [
   {
     id: 1,
     name: 'Daniel Valdez',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    description: "Ingeniero y desarrollador full stack, con gran habilidad en pensamiento analítico y orientado a resultados. Buen manejo de inglés y trabajo en equipo",
     image: "https://i.ibb.co/6RCcVWw/IMG-20230125-WA0015.jpg",
     linkedin: "https://www.linkedin.com/in/daniel-valdez-94a638195/",
     github: "https://github.com/danielva77"
@@ -18,7 +18,7 @@ const team = [
   {
     id: 1,
     name: 'Jacqueline Castillo',
-    description: "FALTA DESCRIPCION",
+    description: "Desarrollador full stack, con gran habilidad analítica y lógica capaz de encontrar soluciones a los problemas que se plantean y con alto interés en explorar los caminos de la programación.",
     image: "https://i.ibb.co/6tzgn0K/IMG-20230125-WA0014.jpg",
     linkedin: "https://www.linkedin.com/in/jacqueline-castillo-/",
     github: "https://github.com/jacquec"
@@ -34,10 +34,10 @@ const team = [
   {
     id: 1,
     name: 'Imanol Malamud',
-    description: "Fullstack Developer - Con interés en participar en proyectos para el desarrollo de productos y servicios IT. Me gusta trabajar en grupo. Tengo un buen manejo del inglés.- FALTAN LINKS",
+    description: "Fullstack Developer - Con interés en participar en proyectos para el desarrollo de productos y servicios IT. Me gusta trabajar en grupo. Tengo un buen manejo del inglés.",
     image: "https://i.ibb.co/y50pk1Q/IMG-20230125-WA0013.jpg",
-    linkedin: "www.linkedin.com",
-    github: "www.github.com"
+    linkedin: "https://www.linkedin.com/in/imanol-malamud/",
+    github: "https://github.com/ImanolMalamud"
   },
   {
     id: 1,

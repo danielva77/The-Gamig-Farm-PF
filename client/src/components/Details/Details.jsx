@@ -98,7 +98,7 @@ dispatch(disabledProducts(id))
           ></img>
         
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
-          <h2> Hacemos envíos a todo el país</h2>
+          
           <p className="descripcion">{myProduct[0].detail}</p>
           
           <p className="precio">Precio: ${myProduct[0].price}</p>
