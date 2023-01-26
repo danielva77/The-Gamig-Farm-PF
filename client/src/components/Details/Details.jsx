@@ -13,13 +13,23 @@ import AddReview from "../AddReview/AddReview";
 import ReviewContainer from "../AddReview/ReviewContainer";
 import { disabledProducts, addStock } from "../../redux/actions";
 import Carrusel from "../Slider/Slider";
+import Swal from "sweetalert2";
+import { shopUser } from "../../redux/actions";
 
 export default function Details(props) {
  let usuariologueado = JSON.parse(localStorage.getItem("email"));
- console.log("USUARIOLOGUEADO", usuariologueado)
  let emailadmin = "thegamingfarm01@gmail.com"
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
+
+  const shop = useSelector((state) => state.shopuser);
+  console.log("ESTE ES SHOOOOOP", shop)
+  useEffect(() => {
+    dispatch(shopUser(usuariologueado)) //This is a correct???
+}, [dispatch]);
+
+let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == props.match.params.id )
+
 
   const handleAddToCart = () => {
     const item = {
@@ -48,7 +58,6 @@ export default function Details(props) {
   function handleStock(e) {
     setStock(parseInt(e.target.value));
   }
-  console.log("llega stock a agregar", stock);
 
   return (
     <div className="details-container">
@@ -85,7 +94,7 @@ export default function Details(props) {
       <div className="carrusel">
         <Carrusel />
       </div>
-      { usuariologueado ? 
+      { usuariologueado && confirmacion.length>0 ? 
       <div>
         <div>
           <AddReview className="Review" productId={props.match.params.id} />
@@ -116,7 +125,7 @@ export default function Details(props) {
         </button>
       </div>
       : null  }
-      <div className="move-footer">
+      <div>
         <Footer />
       </div>
     </div>

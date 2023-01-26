@@ -38,11 +38,11 @@ export default function Carrusel() {
     dispatch(getAllProd());
   }, []);
   const items = useSelector((state) => state.items);
-  console.log("esto es iteems", items);
+
 
   // variable auxiliar para mostrar solo los items que esten activos
   const activeItems = items.filter((item) => item.isActive);
-  console.log("aqui llega esto de items:", activeItems);
+
 
   var settings = {
     dots: true,

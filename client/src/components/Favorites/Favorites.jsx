@@ -38,7 +38,6 @@ const Favoritos = () => {
   useEffect(() => {
     dispatch(getUserFavorites());
   }, [dispatch]);
-  console.log("esto es favoritos", favItems);
 
   return (
     <>

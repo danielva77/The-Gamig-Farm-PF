@@ -93,10 +93,10 @@ export function Home() {
         <div>
         <ReloadPageBtn />
         </div>
-
+{/* 
         <div>
           <Noticas/>
-        </div>
+        </div> */}
 
       </div>
 

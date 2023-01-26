@@ -11,6 +11,8 @@ const colors = {
 };
 
 export default function ReviewContainer({ productId }) {
+  let emailadmin = "thegamingfarm01@gmail.com";
+  let usuariologueado = JSON.parse(localStorage.getItem("email"));
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getReviews());
@@ -20,7 +22,6 @@ export default function ReviewContainer({ productId }) {
   const reviews = useSelector((state) => state.reviews);
 
   let reviewsById = reviews.filter((e) => e.productId === productId);
-  console.log("ESTO ES REVIEWBYID,", reviewsById);
 
   let average = 0;
   if (reviewsById.length > 0) {
@@ -42,24 +43,25 @@ export default function ReviewContainer({ productId }) {
             />
           );
         })}
-        <p>Promedio : {average}</p>
+        <h4>Promedio de opiniones : {average} puntos</h4>
       </div>
       {reviewsById.length ? (
         <div>
           {reviewsById.map(({ id, rating, comment, createdAt }, i) => (
             <div key={i}>
               <Review rating={rating} comment={comment} createdAt={createdAt} />
+              { usuariologueado == emailadmin ? 
               <div>
                 <button onClick={disabledReviews(id)}>
                   Eliminar este comentario
                 </button>
-              </div>
+              </div> : null}
             </div>
           ))}
         </div>
       ) : (
         <div>
-          <h2>This product has no reviews at the moment</h2>
+          <h2>Este producto no tiene reviews en este momento</h2>
         </div>
       )}
     </div>
