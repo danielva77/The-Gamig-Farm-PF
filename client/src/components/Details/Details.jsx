@@ -89,23 +89,22 @@ dispatch(disabledProducts(id))
       <NavBar />
 
       {myProduct.length > 0 ? (
-
-         
         <div className="details-info">
-          <div className="Img-prod"><img
+          <h1 className="titulo">{myProduct[0].title}</h1>
+          <img
             src={myProduct[0].img}
             alt="img"
             className="imagenProducto"
-          ></img><div/>
-          <h1 className="titulo">{myProduct[0].title}</h1>
-        
+          ></img>
         
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
+          <h2> Hacemos envíos a todo el país</h2>
           <p className="descripcion">{myProduct[0].detail}</p>
+          
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+ {quantity}</a>
+              <a className="suma">+{quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>

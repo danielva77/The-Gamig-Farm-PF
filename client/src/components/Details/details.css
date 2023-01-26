@@ -22,7 +22,7 @@
   line-height: 48px;
   /* identical to box height */
   width: auto;
-  color: #ffffff;
+  color: #000000;
   margin-right: 140px;
   text-align: left;
 }
@@ -32,6 +32,7 @@
   height: 360px;
   left: 220px;
   top: 143px;
+  margin-top: 2%;
 }
 .descripcion {
   position: absolute;
@@ -124,9 +125,9 @@
 }
 .botonCarritoDetalle {
   position: absolute;
-  width: 155px;
+  width: 125px;
   height: 48px;
-  left: 1038px;
+  left: 1064px;
   top: 375px;
 
   background: #7600ff;
@@ -136,7 +137,7 @@
   /* font-size: 50px; */
 }
 .suma {
-  font-family: "Poppins";
+  font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -167,6 +168,5 @@
   padding-top: 50%;
 }
 
-.Img-prod{
-  
+.Img-prod {
 }
