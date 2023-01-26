@@ -35,7 +35,7 @@ const LandingPage = () => {
             completo de las consolas más icónicas de las últimas décadas e 
             informarte de las novedades relacionadas al Mundo Gamer”
           </p>
-          <NavLink to="https://the-gamig-farm-5x2ok3kga-danielva77.vercel.app/home">
+          <NavLink to="/home">
             <button class="cssbuttons-io">
 
               <span>
