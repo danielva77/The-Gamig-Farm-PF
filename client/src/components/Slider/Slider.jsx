@@ -38,11 +38,11 @@ export default function Carrusel() {
     dispatch(getAllProd());
   }, []);
   const items = useSelector((state) => state.items);
-
+  console.log("esto es iteems", items);
 
   // variable auxiliar para mostrar solo los items que esten activos
   const activeItems = items.filter((item) => item.isActive);
-
+  console.log("aqui llega esto de items:", activeItems);
 
   var settings = {
     dots: true,
@@ -88,9 +88,12 @@ export default function Carrusel() {
     <div className="container">
       {/* <h2> Responsive </h2> */}
       <Slider {...settings}>
-        {activeItems.slice(0, 10).map((item) => (
-          <div key={item.id}>
-            <Link to={`/products/${item.id}`}>
+        {activeItems.slice(20, 30).map((item) => (
+          <div className="Margenimg" key={item.id}>
+            <Link
+              to={`/products/${item.id}`}
+              onClick={() => window.open(`/products/${item.id}`, "_blank")}
+            >
               <img src={item.img} alt={item.title} className="img-size" />
             </Link>
           </div>
@@ -99,19 +102,3 @@ export default function Carrusel() {
     </div>
   );
 }
-
-//   return (
-//     <div>
-//       <h2> Responsive </h2>
-//       <Slider {...settings}>
-//         {products.map((product) => (
-//           <StoreItem
-//             key={product.id}
-//             image={product.image}
-//             link={`/product/${product.id}`}
-//           />
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// }

@@ -89,13 +89,17 @@ dispatch(disabledProducts(id))
       <NavBar />
 
       {myProduct.length > 0 ? (
+
+         
         <div className="details-info">
-          <h1 className="titulo">{myProduct[0].title}</h1>
-          <img
+          <div className="Img-prod"><img
             src={myProduct[0].img}
             alt="img"
             className="imagenProducto"
-          ></img>
+          ></img><div/>
+          <h1 className="titulo">{myProduct[0].title}</h1>
+        
+        
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
           <p className="descripcion">{myProduct[0].detail}</p>
           <p className="precio">Precio: ${myProduct[0].price}</p>
