@@ -87,7 +87,7 @@ const filterByMandos = async () => {
     where: { title: "Mandos" },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      attributes: ["id", "title", "price", "detail", "img", "stock", "mark"],
       through: {
         attributes: [],
       },
@@ -101,7 +101,7 @@ const filterByJuegos = async () => {
     where: { title: "Juegos" },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      attributes: ["id", "title", "price", "detail", "img", "stock", "mark"],
       through: {
         attributes: [],
       },
@@ -115,7 +115,7 @@ const filterByCategory = async (consola) => {
     where: { title: consola },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      attributes: ["id", "title", "price", "detail", "img", "stock", "mark"],
       through: {
         attributes: [],
       },
