@@ -15,15 +15,15 @@ const LandingPage = () => {
   const dispatch = useDispatch();
   const google = useAuth0();
   
-    useEffect(() => {
-   localStorage.setItem("email", JSON.stringify(google.user.email));
-  }, [google.user.email]);
+//    useEffect(() => {
+//   localStorage.setItem("email", JSON.stringify(google.user.email));
+//  }, [google.user.email]);
   
-  let email= JSON.parse(localStorage.getItem("email"));
+//  let email= JSON.parse(localStorage.getItem("email"));
 
-  useEffect(() => {
-     if(google.isAuthenticated){dispatch(idUser(google.user.email))} //This is a correct???
-   }, []);
+//  useEffect(() => {
+//     if(google.isAuthenticated){dispatch(idUser(google.user.email))} //This is a correct???
+//   }, []);
   return (
     <>
       {/* <NavBar /> */}
