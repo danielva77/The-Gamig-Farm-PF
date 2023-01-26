@@ -13,7 +13,13 @@ import Control from "../Assets/74ace6e2-4502-4866-a67d-77f47afde849.jpg-output.p
 
 const LandingPage = () => {
   const dispatch = useDispatch();
-  // const google2 = useAuth0();
+  const google = useAuth0();
+  
+    useEffect(() => {
+    localStorage.setItem("email", JSON.stringify(google.user.email));
+  }, [google.user.email]);
+  
+  let email= JSON.parse(localStorage.getItem("email"));
 
   // useEffect(() => {
   //   if(google2.isAuthenticated){dispatch(idUser(google2.user.email))} //This is a correct???
