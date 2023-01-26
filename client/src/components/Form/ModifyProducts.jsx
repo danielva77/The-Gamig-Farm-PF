@@ -33,7 +33,7 @@ function handleChange(e){
   const {id} = useParams()
   async function handleSubmit(e){
     e.preventDefault();
-    await axios.put(`http://localhost:3001/products/${id}`, {
+    await axios.put(`/products/${id}`, {
       title: input.title, price: input.price, detail: input.detail
     });
 
