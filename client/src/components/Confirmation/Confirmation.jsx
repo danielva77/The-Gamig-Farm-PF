@@ -105,12 +105,12 @@ useEffect((e) => {
   return (
     <div>
       <NavBar/>
-      <h1>Te tenemos buenas noticias !!!</h1>
+      <h1>Te tenemos buenas noticias</h1>
       <h2>Tu compra fue realizada con éxito</h2>
-      <p>Te enviaremos por mail el detalle de tu compra! esperamos lo disfrutes</p>
+      <h5>Te enviaremos por mail el detalle de tu compra! esperamos lo disfrutes</h5>
 
       <img
-        src="https://i.giphy.com/media/kUTME7ABmhYg5J3psM/giphy.webp"
+        src="https://codigofuente.io/wp-content/uploads/2018/09/progress.gif"
         alt="alt"
       />
       <h5>Seras redirigido a la pagina principal en unos segundos ...</h5>

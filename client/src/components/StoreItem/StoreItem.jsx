@@ -71,7 +71,7 @@ export function StoreItem({ id, name, price, img, stock }) {
           <h4 className="card-title" style={{ fontSize: "20px" }}>
             {name}
           </h4>
-          <br />
+          
           <p className="card-text">${price}</p>
         </div>
       </Link>
