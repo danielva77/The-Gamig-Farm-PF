@@ -119,7 +119,7 @@ const Cart = () => {
             </Table>
             { idUser2?.isActive ? 
              <Button variant="success"
-            onClick={() =>{axios.post("http://localhost:3001/payment", cart).then((res) => window.location.href = res.data)}}>
+            onClick={() =>{axios.post("/payment", cart).then((res) => window.location.href = res.data)}}>
              Pagar {totalPrice}
              </Button>
              : null }
