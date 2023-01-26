@@ -28,16 +28,21 @@ function StoreItems({ currentVideogames }) {
   const itemsPerPage = useSelector(state => state.itemsPerPage)
 
   // variables globales para filtrado y ordenamiento
-  const nameFilter = useSelector(state => state.nameFilter)
-  const categoryFilter = useSelector(state => state.categoryFilter)
-  const markFilter = useSelector(state => state.marksFilter)
-  const sortBy = useSelector(state => state.sortBy);
+  const nameFilter = useSelector((state) => state.nameFilter);
+  const categoryFilter = useSelector((state) => state.categoryFilter);
+  const mandofilter = useSelector((state) => state.filtermandos);
+  const juegosfilter = useSelector((state) => state.filterjuegos);
+  const sortBy = useSelector((state) => state.sortBy);
 
   // funcion para volver a la pagina inicial (se la aplicará luego de cada filtrado u ordenado)
   const resetCurrentPage = () => dispatch(changePage(currentPage))
 
   // variable auxiliar para filtrar, ordenar y paginar los items
   let filteredAndSorted = items;
+
+  if(mandofilter[0]){filteredAndSorted = mandofilter}
+if(juegosfilter[0]){filteredAndSorted = juegosfilter}
+console.log("MAAAANDOOOSSS", mandofilter)
 
   // Filtrado por categoria
   filteredAndSorted = categoryFilter
@@ -47,11 +52,14 @@ function StoreItems({ currentVideogames }) {
     filteredAndSorted
 
   // Filtrado por marca
-  filteredAndSorted = markFilter
-    ?
-    filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
-    :
-    filteredAndSorted
+  // filteredAndSorted = markFilter
+  //   ? filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
+  //   : filteredAndSorted;
+
+    // Filtrado por mandos
+    // filteredAndSorted = mandofilter
+    // ? mandofilter
+    // : filteredAndSorted;
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter
@@ -67,8 +75,18 @@ function StoreItems({ currentVideogames }) {
     :
     filteredAndSorted
 
+
+
+    // filteredAndSorted = mandofilter[0] ?
+    // mandofilter : filteredAndSorted
+
+    // filteredAndSorted = juegosfilter[0] ?
+    // juegosfilter : filteredAndSorted
+
+
   // Paginate items
   let currentItems = paginateItems(filteredAndSorted, currentPage, itemsPerPage)
+
 
   // Enviar array de botones al paginado
   getNumberButtons(filteredAndSorted, itemsPerPage, dispatch, setNumbersPaginated)
@@ -102,7 +120,7 @@ function StoreItems({ currentVideogames }) {
             <div>  "No hay productos todavía."</div>
           }
         </div>
-        <Footer className='footer2' />
+       
       </div>
     </>
 

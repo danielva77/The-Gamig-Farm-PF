@@ -2,7 +2,7 @@
   background-color: #0f0e17;
   /* position: absolute; */
   width: 100vw;
-  height: 70px;
+  height: 105px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,7 +11,7 @@
 .menu-navbar {
   position: absolute;
   left: 18%;
-  top: 0;
+  margin-top: 3vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -44,6 +44,7 @@
   position: absolute;
   left: 80%;
   top: 11px;
+  margin-top: 22px;
 }
 
 .quantity-circle{
@@ -62,7 +63,7 @@
 .logoOriginal1{
   width: 150px;
   position: relative;
-  top: -36px;
+  top: -20px;
   left: 80px;
 }
 /* .img-fluid{
@@ -70,3 +71,14 @@
   background-color: red !important;
   top: 20px;
 } */
+
+.search{
+  margin-top: 3vh;
+}
+
+.auten{
+ position: absolute;
+ top: -20px;
+  margin-top: 40px;
+  left: 89%;
+}

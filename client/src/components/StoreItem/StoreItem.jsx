@@ -68,11 +68,15 @@ export function StoreItem({ id, name, price, img, stock }) {
 
 
         <div className="card-body ">
+          <div className="title-container">
           <h4 className="card-title" style={{ fontSize: "20px" }}>
             {name}
           </h4>
           
-          <p className="card-text">${price}</p>
+          </div>
+<br/>       
+<br/>     
+          <p className="card-text">Precio: ${price}</p>
         </div>
       </Link>
       <div className="fav">
@@ -104,7 +108,7 @@ export function StoreItem({ id, name, price, img, stock }) {
               <div
                 style={{
                   fontSize: "17px",
-                  color: "white",
+                  color: "black",
                 }}
               >
                 <span>{getItemQuantity(id)}</span> in cart

@@ -10,6 +10,7 @@ import { idUser } from "../../../redux/actions";
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
+import Editar from "../../Assets/editar.png"
 
 const UserProfile = () => {
     const google3 = useAuth0();
@@ -43,9 +44,11 @@ const UserProfile = () => {
         {/* <Link to={`/home`}><button className="atras">Atras</button></Link> */}
         <div className="bienvenida">
 
+          <Link to={`/editProfile/${id}`}>
+            <button className="editar"> <img src={Editar} alt="image"/> </button>
+          </Link>
         <img src={user.avatar ? user.avatar : fotoGoogleDefecto}className="profileF"/>
-        
-        <Link to={`/editProfile/${id}`}><button className="editar">✏</button></Link>
+      
 
 
         <div className="profile">
@@ -60,14 +63,13 @@ const UserProfile = () => {
         </div>
 
         <div className="informacion">
-        <h1 className="misCompras">Mis compras</h1>
-       
-        
-        {shop ? (<Compras rows={shop}></Compras>) : (<h2>Espere mientras cargamos sus compras...</h2>)} 
-        
-        
-        //Boton de espera en bootstrap ↑↑↑
-        
+          <h1 className="misCompras">Mis compras</h1>
+          {shop ? (
+            <Compras rows={shop}></Compras>
+          ) : (
+            <h2>Espere mientras cargamos sus compras...</h2>
+          )}
+         
         </div>
     </div>
     </div>

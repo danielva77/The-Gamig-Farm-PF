@@ -3,8 +3,8 @@ import { FaStar } from "react-icons/fa"
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { getDetail, addReview } from '../../redux/actions';
-import { idUser } from '../../redux/actions';
-import "./Review.css"
+import { idUser, shopUser } from '../../redux/actions';
+import "./Reviewing.css"
 
 const colors = {
   orange: "#FFBA5A",
@@ -16,10 +16,11 @@ export default function AddReview({productId}){
   const dispatch = useDispatch()
   let email= JSON.parse(localStorage.getItem("email"));
   useEffect(() => {
-{dispatch(idUser(email))} //This is a correct???
+      dispatch(idUser(email));
+      dispatch(shopUser(email)); //This is a correct???
   }, [dispatch]);
   let idUser2 = useSelector((state) => state.idUsuarioActual)
-  console.log("ESTE ES EL USUSARIO", idUser2.id)
+
   const initialState = {
     productId: productId,
     userId: idUser2.id,
@@ -28,20 +29,6 @@ export default function AddReview({productId}){
   };
 
   const [review, setReview] = useState(initialState);
-
-  // aca me tengo que traer el id del usuario que esta regostrado
-  // const userOne = useSelector((state) => state.petitionsReducer.userOne)
-  // useEffect(() => {
-  //   if (userOne) {
-  //     setReview({
-  //       ...review,
-  //       userId: userOne.id
-  //     })
-  //   }  },[userOne]);
-
-
-
-
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
 
@@ -70,10 +57,16 @@ export default function AddReview({productId}){
   //Alertas
   const successAlert = () => {
     Swal.fire({
-        title: 'Review created successfully',
+        title: 'Review creado satisfacoriamente',
+        showDenyButton: false,
+        showCancelButton: false,
         confirmButtonText: "Ok",
-        timer: 3000,
         icon: "success"
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
     });
   }
   
@@ -106,12 +99,11 @@ export default function AddReview({productId}){
       if (!review.rating) {return ratingAlert() }
       if (!review.comment) {return commetAlert() }
       if (!review.userId) {return userIdAlert() }
-
-
       dispatch(addReview(review))
       successAlert()
       setReview({ ...initialState})
       dispatch(getDetail(productId))
+
     }
 
 
@@ -127,6 +119,8 @@ export default function AddReview({productId}){
           onChange={handleOnChange}
           className="inputComentario"
         /> <br /> 
+    <div >
+      <h2>Agrega tu opinion del producto</h2>
         <div>
           {stars.map((_, index) => {
             return (
@@ -149,6 +143,14 @@ export default function AddReview({productId}){
         </div> 
          <br />
         <button type='button' onClick={handleSubmit} className="botonPublicar">Publicar</button>
+        </div>
+        <textarea
+          placeholder="Califica este producto ..."
+          value={review.comment} 
+          name='comment' 
+          onChange={handleOnChange}
+        />
+        <button type='button' onClick={handleSubmit}>Enviar</button>
     </div>
   )
 }

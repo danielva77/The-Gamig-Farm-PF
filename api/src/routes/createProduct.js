@@ -5,7 +5,7 @@ const p = require('../../productos.json');
 const router = Router()
 //routes cargar db
 const consola = [{title:'PlayStation'}, {title:'PlayStation 2'}, {title:'PlayStation 3'},{title:'PlayStation 4'} , {title: 'PlayStation 5'}, {title: 'Xbox'}, {title: 'Xbox 360'}, {title:'Xbox One'}, {title:'Sega Mega Drive'}, { title:'Nintendo 64'},
-{title: 'Nintendo DS'}, {title: 'Wii'},{title: 'Nintendo Switch'} ];
+{title: 'Nintendo DS'}, {title: 'Wii'},{title: 'Nintendo Switch'}, {title: 'Nintendo (NES)'} ,{title: 'Nintendo 3DS'} ,{title: 'PSP'}  ];
 
 const mark = [{title: 'Juegos'}, {title: 'Mandos'}];
 
@@ -70,49 +70,47 @@ let agregarMark = []
 }
 
 const filterByMandos = async () => {
-    const data = await Mark.findAll({
-        where: {title: 'Mandos'},
-        include: {
-            model: Product,
-            attributes: ['id','title', 'price', 'detail', 'img', 'stock' ],
-                through: {
-                    attributes: [],
-                },
+  const data = await Mark.findAll({
+    where: { title: "Mandos" },
+    include: {
+      model: Product,
+      attributes: ["id", "title", "price", "detail", "img", "stock", "mark"],
+      through: {
+        attributes: [],
+      },
+    },
+  });
+  return data[0].Products;
+};
 
-        }
-    });
-    return data[0].Products
-  }
-
-const filterByJuegos= async () => {
-    const data = await Mark.findAll({
-        where: {title: 'Juegos'},
-        include: {
-            model: Product,
-            attributes: ['id','title', 'price', 'detail', 'img', 'stock' ],
-                through: {
-                    attributes: [],
-                },
-
-        }
-    });
-    return data[0].Products
-}
+const filterByJuegos = async () => {
+  const data = await Mark.findAll({
+    where: { title: "Juegos" },
+    include: {
+      model: Product,
+      attributes: ["id", "title", "price", "detail", "img", "stock", "mark"],
+      through: {
+        attributes: [],
+      },
+    },
+  });
+  return data[0].Products;
+};
 
 const filterByCategory = async (consola) => {
-    const data = await Category.findAll({
-        where: {title: consola},
-        include: {
-            model: Product,
-            attributes: ['id','title', 'price', 'detail', 'img', 'stock' ],
-                through: {
-                    attributes: [],
-                },
+  const data = await Category.findAll({
+    where: { title: consola },
+    include: {
+      model: Product,
+      attributes: ["id", "title", "price", "detail", "img", "stock", "mark"],
+      through: {
+        attributes: [],
+      },
+    },
+  });
+  return data[0].Products;
+};
 
-        }
-    });
-    return data[0].Products
-}
 
 const filterByCategoryAndMark = async (mark, category) => {
     if(category && mark) {

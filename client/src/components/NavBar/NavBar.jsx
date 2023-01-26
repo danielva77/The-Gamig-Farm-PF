@@ -41,10 +41,11 @@ function NavBar() {
         <a className="link" href="/about">Sobre Nosotros</a>
       </div>
 
-      <SearchBar />
+      <SearchBar className="search"/>
     
       <Favoritos />
 
+<div className="auten">
       {isAuthenticated ? (
         <>
 
@@ -55,8 +56,9 @@ function NavBar() {
       ) : (
         <LoginButton />
       )}
+      </div>
 
-      <div className="cart-btn"><Button variant="" class="btn btn float-right" onClick={openCart}>
+      <div className="cart-btn"><Button variant="" class="btn btn-float-right" onClick={openCart}>
         {""}
         <img src={Carrito} alt="imagen" className="img-fluid" />
         <div className="quantity-circle">{cartQuantity}</div>

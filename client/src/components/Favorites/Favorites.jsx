@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { removeFromFav } from "../../redux/actions";
@@ -32,8 +32,11 @@ const Favoritos = () => {
 
   return (
     <>
-      <button className="btn btn float-left" onClick={() => setShow(true)}>
-        <img src={Fav} alt="imagen" class="img-fluid2" />
+      <button className="btn btn-float-left " onClick={() => setShow(true)}>
+        <img src={Fav} alt="imagen" className="img-fluid" style={{  position: "absolute",
+  left: "86%",
+  top: "42px",
+  mt: "22px"}} />
       </button>
       <Offcanvas
         show={show}
