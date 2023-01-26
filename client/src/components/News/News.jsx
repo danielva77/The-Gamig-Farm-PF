@@ -59,7 +59,7 @@ export default function News() {
 
   const settings = {
     className: "center",
-    centerMode: false,
+    centerMode: true,
     infinite: true,
     centerPadding: "20px",
     slidesToShow: 5,
@@ -67,6 +67,7 @@ export default function News() {
     rows: 2,
     slidesPerRow: 1,
     variableWidth: true,
+    width: 100,
   };
   return (
     <div>

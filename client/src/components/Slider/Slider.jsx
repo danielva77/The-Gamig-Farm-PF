@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllProd } from "../../redux/actions";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
 
 function SampleNextArrow(props) {
