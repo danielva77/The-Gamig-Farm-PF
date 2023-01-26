@@ -10,6 +10,7 @@ import { idUser } from "../../../redux/actions";
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
+import Editar from "../../Assets/editar.png"
 
 const UserProfile = () => {
   const google3 = useAuth0();
@@ -40,7 +41,7 @@ const UserProfile = () => {
           />
 
           <Link to={`/editProfile/${id}`}>
-            <button className="editar">✏</button>
+            <button className="editar"> <img src={Editar} alt="image"/> </button>
           </Link>
 
           <div className="profile">
@@ -70,7 +71,7 @@ const UserProfile = () => {
           ) : (
             <h2>Espere mientras cargamos sus compras...</h2>
           )}
-          //Boton de espera en bootstrap ↑↑↑
+         
         </div>
       </div>
     </div>

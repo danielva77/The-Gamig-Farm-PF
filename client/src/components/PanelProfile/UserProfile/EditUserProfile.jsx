@@ -75,7 +75,7 @@ const EditUserProfile = () => {
   return (
     <div className="padre container">
       <h2 className="modificar">
-        Solo completá los campos que desees modificar!
+        Completa los campos que desees modificar
       </h2>
       <form className="formulario mt-2" onSubmit={(e) => handleSubmit(e)}>
         <div className="imagenFoto">
@@ -210,7 +210,7 @@ const EditUserProfile = () => {
 
         <div>
           <Link to={`/myProfile/${id}`}>
-            <button className="btn-volver btn btn-danger mb-2">Volver a mi perfil</button>
+            <button class="btn custom-button">Volver a mi perfil</button>
           </Link>
         </div>
       </form>
