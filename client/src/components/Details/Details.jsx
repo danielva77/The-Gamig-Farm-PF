@@ -23,7 +23,6 @@ export default function Details(props) {
   const dispatch = useDispatch();
 
   const shop = useSelector((state) => state.shopuser);
-  console.log("ESTE ES SHOOOOOP", shop)
   useEffect(() => {
     dispatch(shopUser(usuariologueado)) //This is a correct???
 }, [dispatch]);

@@ -119,7 +119,7 @@ router.get("/products/:id", async (req, res) => {
   let allprodById = await getAllProducts();
 
   if (id) {
-    let ProdId = await allprodById.filter((e) => e.id == id);
+    let ProdId = allprodById.filter((e) => e.id == id);
     ProdId.length
       ? res.status(200).json(ProdId)
       : res.status(404).send("No existe juego con ese Id");

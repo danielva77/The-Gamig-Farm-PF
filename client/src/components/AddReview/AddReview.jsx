@@ -102,7 +102,7 @@ export default function AddReview({productId}){
       dispatch(addReview(review))
       successAlert()
       setReview({ ...initialState})
-      dispatch(getDetail(productId))
+      // dispatch(getDetail(productId))
 
     }
 

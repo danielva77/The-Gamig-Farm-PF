@@ -41,7 +41,6 @@ function StoreItems({ currentVideogames }) {
 
   if(mandofilter[0]){filteredAndSorted = mandofilter}
 if(juegosfilter[0]){filteredAndSorted = juegosfilter}
-console.log("MAAAANDOOOSSS", mandofilter)
 
   // Filtrado por categoria
   filteredAndSorted = categoryFilter

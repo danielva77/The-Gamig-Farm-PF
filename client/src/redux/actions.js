@@ -244,12 +244,17 @@ export function volverAhome() {
 //Actions para los Detalles
 export const getDetail = (id) => {
   return async function (dispatch) {
-    const response = await axios.get(`http://localhost:3001/products/${id}`);
+    try {
+      const response = await axios.get(`http://localhost:3001/products/${id}`);
 
-    return dispatch({
-      type: GET_DETAIL,
-      payload: response.data,
-    });
+      return dispatch({
+        type: GET_DETAIL,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error)
+    }
+
   };
 };
 
