@@ -21,9 +21,9 @@ const LandingPage = () => {
   
   let email= JSON.parse(localStorage.getItem("email"));
 
-  // useEffect(() => {
-  //   if(google2.isAuthenticated){dispatch(idUser(google2.user.email))} //This is a correct???
-  // }, []);
+  useEffect(() => {
+     if(google2.isAuthenticated){dispatch(idUser(google.user.email))} //This is a correct???
+   }, []);
   return (
     <>
       {/* <NavBar /> */}
