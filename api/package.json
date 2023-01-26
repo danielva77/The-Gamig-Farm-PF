@@ -14,6 +14,8 @@
     "npm": ">=6.14.6"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.12.1",
+    "@uploadcare/react-widget": "^2.4.1",
     "axios": "^0.27.2",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -24,13 +26,14 @@
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.0",
     "pg": "^8.5.1",
+    "readable-stream": "^4.3.0",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1",
-    "nodemon": "^2.0.6",
-    "supertest": "^6.0.1",
-    "supertest-session": "^4.1.0"
+    "supertest-session": "4.1.0",
+    "mocha": "8.2.1",
+    "chai": "4.2.0",
+    "nodemon": "2.0.6",
+    "supertest": "6.0.1"
   }
 }

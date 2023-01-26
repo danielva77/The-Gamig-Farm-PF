@@ -24,19 +24,24 @@ function StoreItems({ currentVideogames }) {
 
   // variables globales para Paginado
   const currentPage = useSelector(state => state.currentPage)
+  // const itemsPerPage = useState(2)
   const itemsPerPage = useSelector(state => state.itemsPerPage)
 
   // variables globales para filtrado y ordenamiento
-  const nameFilter = useSelector(state => state.nameFilter)
-  const categoryFilter = useSelector(state => state.categoryFilter)
-  const markFilter = useSelector(state => state.marksFilter)
-  const sortBy = useSelector(state => state.sortBy);
+  const nameFilter = useSelector((state) => state.nameFilter);
+  const categoryFilter = useSelector((state) => state.categoryFilter);
+  const mandofilter = useSelector((state) => state.filtermandos);
+  const juegosfilter = useSelector((state) => state.filterjuegos);
+  const sortBy = useSelector((state) => state.sortBy);
 
   // funcion para volver a la pagina inicial (se la aplicará luego de cada filtrado u ordenado)
-  const resetCurrentPage = () => dispatch(changePage(1))
+  const resetCurrentPage = () => dispatch(changePage(currentPage))
 
   // variable auxiliar para filtrar, ordenar y paginar los items
   let filteredAndSorted = items;
+
+  if(mandofilter[0]){filteredAndSorted = mandofilter}
+if(juegosfilter[0]){filteredAndSorted = juegosfilter}
 
   // Filtrado por categoria
   filteredAndSorted = categoryFilter
@@ -44,15 +49,16 @@ function StoreItems({ currentVideogames }) {
     filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
     :
     filteredAndSorted
-  console.log("esto filtra categoria", filteredAndSorted)
 
   // Filtrado por marca
-  filteredAndSorted = markFilter
-    ?
-    filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
-    :
-    filteredAndSorted
-  console.log("esto filtra marca", filteredAndSorted)
+  // filteredAndSorted = markFilter
+  //   ? filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
+  //   : filteredAndSorted;
+
+    // Filtrado por mandos
+    // filteredAndSorted = mandofilter
+    // ? mandofilter
+    // : filteredAndSorted;
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter
@@ -68,8 +74,18 @@ function StoreItems({ currentVideogames }) {
     :
     filteredAndSorted
 
+
+
+    // filteredAndSorted = mandofilter[0] ?
+    // mandofilter : filteredAndSorted
+
+    // filteredAndSorted = juegosfilter[0] ?
+    // juegosfilter : filteredAndSorted
+
+
   // Paginate items
   let currentItems = paginateItems(filteredAndSorted, currentPage, itemsPerPage)
+
 
   // Enviar array de botones al paginado
   getNumberButtons(filteredAndSorted, itemsPerPage, dispatch, setNumbersPaginated)
@@ -77,11 +93,12 @@ function StoreItems({ currentVideogames }) {
   return (
     <>
       <div className="divG">
-        <h1 className="productosT">PRODUCTOS</h1>
+        
         <div className="modelo3">
           {currentItems.length
             ?
             currentItems.map((item) => {
+              if(item.isActive){
               return (
                 <>
                   <Link to={`/products/${item.id}`}>
@@ -96,13 +113,13 @@ function StoreItems({ currentVideogames }) {
                     />
                   </div>
                 </>
-              )
+              )}
             })
             :
             <div>  "No hay productos todavía."</div>
           }
         </div>
-        <Footer className='footer2' />
+       
       </div>
     </>
 

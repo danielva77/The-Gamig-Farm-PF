@@ -6,8 +6,109 @@
 } */
 
 .home-container {
-  background-color: rgb(60, 58, 58);
+  background-color: rgba(209, 4, 4, 0.879);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+
+
+
+/* filtros  */
+
+
+/* Filtro SORT */
+.filterSort{
+  width: 10% !important;
+  left: 16% !important;
+  position: relative;
+  padding: 2px 25px !important;
+  border: 2px solid rgba(0, 0, 0, 0.262) !important;
+  margin-top: 3px;
+  background-color: rgb(255, 255, 255) !important;
+  font-family: proxima-nova, sans-serif;
+  border-radius: 5px !important;
+  height: 28px;
+  top:2px
+}
+.filterSort:focus{
+  background-color: rgb(0, 0, 0) !important;
+  color: aliceblue !important;
+  transition: .5s linear;
+}
+
+
+
+
+/* Filtro Category */
+.filterCategory{
+  width: 10% !important;
+  left: 30.6% !important;
+  position: relative;
+  padding: 1px 25px !important;
+  border: 2px solid rgba(0, 0, 0, 0.21) !important;
+  margin-top: -30px;
+  background-color: rgb(255, 255, 255) !important;
+  font-family: proxima-nova, sans-serif;
+  border-radius: 5px !important;
+  top: 4px;
+}
+.filterCategory:focus{
+  background-color: rgb(0, 0, 0) !important;
+  color: aliceblue !important;
+  transition: .5s linear;
+}
+
+/* Filtro Mark */
+
+.filterMark{
+  width: 10% !important;
+  left: 54% !important;
+  position: relative;
+  padding: 1px 25px !important;
+  border: 2px solid rgba(0, 0, 0, 0.214) !important;
+  margin-top: -9px;
+  background-color: rgb(255, 255, 255) !important;
+  font-family: proxima-nova, sans-serif;
+  border-radius: 5px !important;
+  
+}
+.filterMark:focus{
+  background-color: rgb(0, 0, 0) !important;
+  color: aliceblue !important;
+  transition: .5s linear;
+
+}
+
+/* Boton Reset  */
+
+.botonReset{
+  width: 10% !important;
+  left: 29% !important;
+  position: relative;
+  height: 28px;
+  padding: 1px 25px !important;
+  border: 2px solid rgba(0, 0, 0, 0.21) !important;
+  
+  background-color: rgb(255, 255, 255) !important;
+  font-family: proxima-nova, sans-serif;
+  border-radius: 5px !important;
+  top: -25px
+}
+
+
+
+/* TODO EL DIV ENTERO ↑ */
+.filtros{
+  justify-content: start !important;
+  /* background-color: green  !important;  */
+  position: absolute !important;
+  margin-top: 35px !important;
+  position: absolute;
+    height: 28px;
+  
+    top: 6px;
+    width: 150px;
+
 }

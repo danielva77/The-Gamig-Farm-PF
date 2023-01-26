@@ -1,0 +1,13 @@
+.container {
+  padding: 2rem;
+ 
+}
+
+.img-size {
+  width: 400px;
+  height: 300px;
+  object-fit: contain;
+  
+}
+
+

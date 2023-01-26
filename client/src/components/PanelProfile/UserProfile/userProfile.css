@@ -1,0 +1,106 @@
+.padres{
+    background-color: rgb(84, 84, 84);
+    width: 100%;
+    /* height: 725px */
+    height: 870px;
+}
+.bienvenida{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    /* justify-content: space-around; */
+    width: 1200px;
+    position: relative;
+    left: 165px;
+    top: 70px;
+    border: 2px solid rgba(0, 0, 0, 0.596);
+    padding: 30px 0;
+    border-radius: 20px;
+}
+.profile{
+    position: relative;
+    left: 220px;
+    /* background-color: blue; */
+    width: 850px;
+    /* justify-content: space-around; */
+    text-align: left ;
+    
+     
+}
+.editar{
+    background-color: #7600FF;
+    position: absolute;
+    top: 77%;
+    right: 815px;
+    border-radius: 7px;
+    padding: 0px 15px;
+    user-select: none;
+    border-color: #0000000c;
+    
+}
+.profileF{
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.233);
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    left: 70px;
+    top: 10px;
+    user-select: none;
+}
+
+/* Tu perfil */
+.tuPerfil{
+   
+    font-family: proxima-nova, sans-serif;
+    color: rgba(0, 0, 0, 0.219);
+    font-size: 50px;
+    padding: 0px 0px;
+    user-select: none;
+    font-weight: bolder
+}
+h3{
+    padding: 5px 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+}
+b{
+    font-family: proxima-nova, sans-serif;
+    color: #7600FF;
+    font-size: 24px;
+    text-shadow: 1px .5px .5px rgba(0, 0, 0, 0);
+}
+
+.informacion{
+    background-color: #8922ff;
+    position: relative;
+    top: 180px;
+    border-top: 4px solid rgb(0, 0, 0);
+    padding-bottom: 40px;
+    
+}
+.misCompras{
+    color: rgb(250, 250, 250);
+   margin-top: 20px;
+}
+
+.tablaMaterial{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    /* left: 450px; */
+    border: 3px solid black;
+    height: 400px;
+    margin:2%;
+    /* width: 40%; */
+    border-radius: 6px;
+    
+}
+.atras{
+    background-color: rgb(193, 65, 65);
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 7%;
+}

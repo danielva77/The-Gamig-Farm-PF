@@ -1,4 +1,4 @@
-const { Product, Mark, Category } = require("../../db")
+const { Product, Mark, Category, Review } = require("../../db")
 
 // Funcion para traer todos los juegos, incluye el modelo categoria
 const getAllProducts = async () => {
@@ -10,6 +10,10 @@ const getAllProducts = async () => {
         },
         {
           model: Mark,
+        },
+        {
+          model: Review,
+          attributes: ["id","comment", "rating", "createdAt"],
         },
       ],
     })
@@ -74,7 +78,8 @@ const createProducts = async (req, res) => {
 const getCategories = async (req, res) => {
   try {
     const cat = await getAllProducts()
-    let c = cat.map(el => {
+    let extrae = cat.filter(el => el.Categories[0] !== undefined)
+    let c = extrae.map(el => {
       return el.Categories[0].title
     })
     res.status(200).send(c)
@@ -86,8 +91,9 @@ const getCategories = async (req, res) => {
 const getMarks = async (req, res) => {
   try {
     const mak = await getAllProducts()
-    let m = mak.map(el => {
-      return el.Marks[0].title
+    let extrae = mak.filter(el => el.Marks[0] !== undefined )
+    let m = extrae.map(el => {
+    return el.Marks[0].title
     })
     res.status(200).send(m)
   } catch (error) {

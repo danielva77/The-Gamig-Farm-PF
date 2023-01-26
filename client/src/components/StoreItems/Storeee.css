@@ -17,22 +17,30 @@
   text-decoration: transparent;
 }
 .modelo {
-  width: 380px;
+  width: 370px;
   height: 430px;
   overflow: hidden;
   transition: 0.5s;
   animation: ease-in-out;
-  margin-bottom: 20%;
+  margin-bottom: 1%;
   border-radius: 10px;
   border: #e66f00;
-  margin-top: 50px;
+  margin-top: 40px;
   display: inline-flex;
-  box-shadow: 5px 5px 5px 3px rgb(230, 230, 230);
+  box-shadow: 5px 5px 5px 3px rgb(201, 201, 201);
   border: 2px solid rgb(230, 230, 230);
   border-radius: 5%;
   text-decoration: none;
   text-decoration: transparent;
+  margin-bottom: 30px;
 }
+
+.modelo:hover{
+  box-shadow: 0px 0px 5px 3px #7600ff;
+}
+
+
+
 .modelo3 {
   display: inline-flex;
   background-color: rgb(255, 255, 255);
@@ -48,14 +56,9 @@
   align-items: center;
   justify-content: center;
 }
-.productosT {
-  /* background-color: red;
-  color: black;
-  bottom: 700px; */
-  position: absolute;
-}
+
 h1 {
-  color: green;
+  color: rgb(7, 10, 7);
   /* position: absolute; */
 
   top: 100px;

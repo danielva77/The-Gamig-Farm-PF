@@ -30,8 +30,8 @@ export function ShoppingCart({ isOpen }) {
     const handlePayment = async () => {
         if (isAuthenticated) {
           try {
-            const response = await axios.post("https://the-gamig-farm-pf-production-5fa7.up.railway.app/payment", cart);
-            window.open(response.data);
+            const response = await axios.post("http://localhost:3001/payment", cart);
+            window.location.assign(response.data);
           } catch (error) {
             console.log(error);
           }
@@ -45,10 +45,8 @@ export function ShoppingCart({ isOpen }) {
           loginWithRedirect({});
         }
       };
-
     return (
         <div className="cart">
-            {console.log("cart: ", cart)}
             <Offcanvas
                 show={isOpen}
                 onHide={closeCart}

@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./contact.css";
-import support from "../Assets/support.png";
+import support from "../Assets/agente-de-servicio-al-cliente.png";
 import Swal from "sweetalert2";
 import axios from "axios";
-import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import NavBar from "../NavBar/NavBar";
 
 export default function Contact() {
   const history = useHistory();
 
   const [input, setInput] = useState({
     email: "",
-    nombre: "",
+    nombre: "", // Pensarlo bien si realmente va a estar a estar este input
     asunto: "",
-    mensaje: ""
+    mensaje: "",
   });
 
   //Este estado me habilita a enviar el formulario
@@ -46,7 +46,8 @@ export default function Contact() {
         html: "Debes completar el campo de <b>Asunto</b>",
         confirmButtonText: "Entiendo",
         confirmButtonColor: "Red",
-        footer: "El asunto es importante para poder ver de que trata tu mensaje",
+        footer:
+          "El asunto es importante para poder ver de que trata tu mensaje",
       });
     } else if (!input.mensaje) {
       return Swal.fire({
@@ -55,18 +56,11 @@ export default function Contact() {
         html: "Debes completar el campo de <b>Mensaje</b>",
         confirmButtonText: "Entiendo",
         confirmButtonColor: "Red",
-        footer: "Tus mensajes son importantes para nosotros, nos interesa leerte",
+        footer:
+          "Tus mensajes son importantes para nosotros, nos interesa leerte",
       });
     } else {
-      // enviarCorreo()
-      setEnviar(true)
-      // setInput({
-      //   email: "",
-      //   nombre: "",
-      //   asunto: "",
-      //   mensaje: ""
-      // })
-      
+      setEnviar(true);
     }
   }
 
@@ -89,146 +83,135 @@ export default function Contact() {
 
   function handleAsunto(e) {
     setInput({
-        ...input,
-        asunto: e.target.value,
-      });
+      ...input,
+      asunto: e.target.value,
+    });
     console.log(input);
   }
   function handleMensaje(e) {
     setInput({
-        ...input,
-        mensaje: e.target.value,
-      });
+      ...input,
+      mensaje: e.target.value,
+    });
     console.log(input);
   }
 
   // Enviando el mensaje
 
   async function handleSubmit(e) {
-    
-    e.preventDefault();
+    // e.preventDefault();
     validate();
 
-   
-
-        if(enviar){
-          Swal.fire({
-            title: "Mensaje enviado con Exito",
-            html: "En breve estaremos leyendo tu mensaje y te responderemos sobre el mismo Mail",
-            icon: "success",
-            confirmButtonText: "Okay",
-            confirmButtonColor: "Green",
-          });
-
-
-          await axios.post("http://localhost:3001/enviarMensaje",
-          {dataMail: input}).then(history.push("/home"))
-      }
-  
-      
-      
-      
-      console.log("esto va a post →", input);
-     
+    if (enviar) {
+      await Swal.fire({
+        title: "Mensaje enviado con Exito",
+        html: "Gracias, te responderemos a travez del Email",
+        icon: "success",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "Green",
+        timer: 5000,
+      });
+      history.push("/home");
+    }
   }
-
-  // RUTAS DE NODEMAILER
-
-  const enviarCorreo = async() =>{
-      await axios.post("http://localhost:3001/enviarMensaje",
-      {dataMail: input})
-  }
-
-
-
-
-
 
   return (
     <div>
-    <NavBar/>
-    <div className="casita">
-      <section id="seccion-contacto">
-        <div class="container" id="contenedor-formulario">
-          <div id="titulo-formulario" class="text-center mb-4">
-            <div>
-              <img src={support} alt="contacto" class="img-fluid" />
+      <NavBar />
+      <div className="casita">
+        <section id="seccion-contacto">
+          <div class="container" id="contenedor-formulario">
+            <div id="titulo-formulario" class="text-center mb-4">
+              <div>
+                <img src={support} alt="contacto" className="img-f" />
+              </div>
+             <br/>
+              <p class="fs-5">
+                Estamos aqui para hacer responder tus consultas
+              </p>
             </div>
-            <h2>Contacto</h2>
-            <p class="fs-5">Estamos aqui para hacer responder tus consultas</p>
+
+            <form
+              action="https://formsubmit.co/thegamingfarm01@gmail.com"
+              method="POST"
+              onSubmit={handleSubmit}
+            >
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000/home"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <div class="mb-3">
+                <input
+                  type="email"
+                  className="form-control inputs"
+                  id="email"
+                  placeholder="nombre@ejemplo.com"
+                  value={input.email}
+                  onChange={handleEmail}
+                  name="Email"
+                  // required
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  className="form-control inputs"
+                  id="nombre"
+                  placeholder="Tu nombre"
+                  value={input.nombre}
+                  onChange={handleNombre}
+                  name="Nombre"
+                  // required
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  className="form-control inputs"
+                  id="asunto"
+                  placeholder="Asunto"
+                  value={input.asunto}
+                  onChange={handleAsunto}
+                  name="Asunto"
+                  // required
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                 type="text"
+                  class="form-control inputs2"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  placeholder="Escribe aquí tu mensaje..."
+                  value={input.mensaje}
+                  onChange={handleMensaje}
+                  name="Mensaje"
+                  required
+                />
+              </div>
+
+              {/* BOTONES  */}
+
+              <div class="mb-3">
+                <button
+                  type="submit"
+                  className="btn btn-primary w-100 fs-5 enviarMensaje"
+                  onClick={handleSubmit}
+                >
+                  Enviar mensaje
+                </button>
+              </div>
+            </form>
           </div>
-
-          {/* <form onSubmit={(e) => handleSubmit(e)}> */}
-          <form>
-            <div class="mb-3">
-              <input
-                type="email"
-                className="form-control inputs"
-                id="email"
-                placeholder="nombre@ejemplo.com"
-                value={input.email}
-                onChange={handleEmail}
-                // required
-              />
-            </div>
-
-            <div class="mb-3">
-              <input
-                type="text"
-                className="form-control inputs"
-                id="nombre"
-                placeholder="Tu nombre"
-                value={input.nombre}
-                onChange={handleNombre}
-                // required
-              />
-            </div>
-
-
-            <div class="mb-3">
-              <input
-                type="text"
-                className="form-control inputs"
-                id="asunto"
-                placeholder="Asunto"
-                value={input.asunto}
-                onChange={handleAsunto}
-                // required
-              />
-            </div>
-
-        
-
-            <div class="mb-3">
-              <textarea
-                class="form-control inputs"
-                id="exampleFormControlTextarea1"
-                rows="3"
-                placeholder="Escribe aquí tu mensaje..."
-                value={input.mensaje}
-                onChange={handleMensaje}
-              ></textarea>
-            </div>
-
-            <div class="mb-3">
-              <button
-                type="submit"
-                className="btn btn-primary w-100 fs-5 enviarMensaje"
-                // onClick={ handleSubmit}
-              >
-                Enviar mensaje
-              </button>
-            </div>
-            <Link to="/Home">
-              <button className="btn btn-danger volverBoto">
-                Volver al Home
-              </button>
-            </Link>
-          </form>
-        </div>
-      </section>
-    </div>
-    {/* <Footer/> */}
+        </section>
+      </div>
+      <Footer />
     </div>
   );
 }

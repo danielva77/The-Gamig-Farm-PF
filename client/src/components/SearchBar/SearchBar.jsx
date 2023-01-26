@@ -25,28 +25,19 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="search-bar-container">
-      {/* <Link to="/"
-       className='Nombrelogo'>
 
 
-        <img src={LOGO} title="Logo Gaming"/>
+    <>
 
-
-        </Link> */}
-      {/* </div>   */}
-      <input
-        className="search-bar-input"
-        type="text"
-        name="buscar"
-        placeholder="Search ..."
-        onChange={(e) => { handleInputChange(e) }}
-        // value={input.buscar} 
-        autoComplete="off"
-      ></input>
-      <img className="lupaa" src={lupa} alt="lupa" onClick={(e) => { handleSubmit(e) }} />
-      {/* </div> */}
-    </div>
+<nav className="navbar bg-body-tertiary divSearch">
+  <div className="container-fluid">
+    <form class="d-flex" role="search">
+  <input type="search" className="form-control me-2" placeholder="Buscar" aria-label="Search"  onChange={(e) => { handleInputChange(e) }}/>
+      <button class="btn btn-outline-success botonBuscar" type="submit" onClick={(e) => { handleSubmit(e) }}>Search</button>
+    </form>
+  </div>
+</nav>
+    </>
 
   );
 }

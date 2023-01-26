@@ -7,35 +7,27 @@ import { postProduct, getProduct } from "../../redux/actions";
 import Swal from "sweetalert2";
 // import uploadcare from 'uploadcare-widget/uploadcare.lang.en.min.js'
 import { Widget } from "@uploadcare/react-widget";
-import NavBar from "../NavBar/NavBar";
 
 <Widget publicKey="b64078a8eafda783a219" />;
 
-
 export const Form = () => {
   const marks = [
-    { title: "Logitech" },
-    { title: "Razer" },
-    { title: "Redragon" },
-    { title: "ASUS" },
-    { title: "HP" },
-    { title: "HyperX" },
-    { title: "Genius" },
-    { title: "Microsoft" },
-    { title: "Samsung" },
-    { title: "Sony" },
+    { title: "Juegos" },
+    { title: "Mandos" },
   ];
   const categories = [
-    { title: "Mouse" },
-    { title: "Teclado" },
-    { title: "Combos" },
-    { title: "WebCam" },
-    { title: "Auriculares" },
-    { title: "Gabinetes" },
-    { title: "MousePad" },
-    { title: "Gabinete" },
-    { title: "Placa Madre" },
-    { title: "Tarjeta Grafica" },
+    { title: "Playstation" },
+    { title: "Playstation 2" },
+    { title: "Playstation 3" },
+    { title: "Playstation 4" },
+    { title: "Xbox" },
+    { title: "Xbox One" },
+    { title: "Xbox 360" },
+    { title: "wii" },
+    { title: "Nintendo 64" },
+    { title: "Sega Mega Drive" },
+    { title: "Nintendo Switch" },
+    { title: "Nintendo DS" }
   ];
 
   // Guardo la data para enviar a la db en un estado local
@@ -50,8 +42,7 @@ export const Form = () => {
     category: "",
   });
 
-
-  const [cover, setCover] = useState(" imagen ")
+  // const [cover, setCover] = useState(" imagen ");
 
   //Este estado me habilita a enviar el formulario
   const [enviar, setEnviar] = useState(false);
@@ -236,13 +227,13 @@ export const Form = () => {
   async function handleSubmit(e) {
     validate();
     e.preventDefault();
-    console.log("esto va a post →", input);
-    dispatch(postProduct(input));
+   
 
     if (enviar) {
-      // dispatch(postProduct(input))
-
-      // await newProduct(input);
+      
+      dispatch(postProduct(input));
+      
+      
       clearInput();
       Swal.fire({
         title: "Producto creado con Exito",
@@ -256,18 +247,11 @@ export const Form = () => {
     }
   }
 
-
-
-
-
-
-
   function handleImagen(e) {
- 
-setInput({
-  ...input,
-  img: e.target.value
-})
+    setInput({
+      ...input,
+      img: e.target.value,
+    });
 
     Swal.fire({
       title: "Imagen cargada con exito",
@@ -280,16 +264,9 @@ setInput({
 
   const dispatch = useDispatch();
 
-            
-
   // const widget = uploadcare.Widget("#uploader", { publicKey: 'b64078a8eafda783a219' });
 
-
-
-
   return (
-    <div>
-      <NavBar/>
     <div className="container padre">
       <form
         className="formProduct row g-5 mt-2"
@@ -394,10 +371,6 @@ setInput({
             Imagen
           </label>{" "}
           <br />
-
-
-
-
           {/* <input
             type="file"
             // id="img"
@@ -405,44 +378,32 @@ setInput({
             onChange={handleImagen}
             value={input.img}
           /> */}
-
-
-
-<input
+          {/* <input
     type="hidden"
     role="uploadcare-uploader"
     data-public-key="b64078a8eafda783a219"
     data-tabs="file camera url facebook gdrive gphotos"
     value={input.img}
     onChange={handleImagen}
-/>
-
-<Widget
+    className="botonI"
+/> */}
+          <Widget
             publicKey="b64078a8eafda783a219"
             id="file"
             name="photos"
             onChange={(e) => {
               setInput({
                 ...input,
-                img: e.originalUrl});
+                img: e.originalUrl,
+              });
               console.log(e);
-            }}
-            />
-
-
-
-
-<input id="uploader" type="hidden" />
-
-
-
-
-
+            }}  
+          />
+          {/* <input id="uploader" type="hidden" /> */}
           <div id="emailHelp" className="form-text">
             Los potenciales clientes pueden observar en detalle cómo es el
             artículo que quieren comprar
           </div>
-         
         </div>
 
         {/* MARK */}
@@ -492,7 +453,6 @@ setInput({
           <button className="btn btn-danger volverBoton">Volver al Home</button>
         </Link>
       </form>
-    </div>
     </div>
   );
 };

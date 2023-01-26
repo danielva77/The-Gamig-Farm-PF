@@ -1,4 +1,3 @@
-
 /* IMAGEN SVG */
 #bg-contacto {
   position: relative;
@@ -8,19 +7,20 @@
 #seccion-contacto {
   /* min-height: 450px;   */
   position: relative;
-  top: 390px;
+  top: 290px;
+  
 }
 
 #contenedor-formulario {
   position: absolute;
-  top: 80%;
+  top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ff8906;
-  /* border-radius: 10px; */
+  background-color: #7600FF;
   max-width: 500px;
-  border: 10px solid rgb(0, 0, 0);
-  outline: 2px solid rgb(255, 255, 255);
+  /* border: 3.5px solid #ffffff; */
+  /* outline: 4px solid rgb(0, 0, 0); */
+  z-index: 1;
 }
 
 #titulo-formulario {
@@ -28,43 +28,72 @@
   color: #000000;
   user-select: none;
 }
-h2{
+
+h2 {
   letter-spacing: 1.5px;
 }
-.inputs{
+
+.inputs {
   background-color: #ffffff !important;
   color: rgb(0, 0, 0) !important;
-  border: 2px solid black !important;
+  /* border: 2.5px solid black !important; */
   border-radius: 0px !important;
+  /* height: 80px;  */
 }
 
-.inputs::placeholder{
-  color: rgb(99, 99, 99) !important;
-}
-.enviarMensaje{
-  border-radius: 0px !important;
-  background-color: rgb(6, 89, 255) !important;
-}
-.enviarMensaje:hover{
-  outline: 3px solid  rgb(6, 89, 255) !important;
-  background-color: black !important;
-  color: rgb(247, 247, 247) !important;
-  transition: all 1s;
+.inputs::placeholder {
+  color: rgb(90, 90, 90) !important;
 }
 
-.volverBoto{
+
+.inputs2 {
+  background-color: #ffffff !important;
+  color: rgb(0, 0, 0) !important;
+  /* border: 2.5px solid black !important; */
+  border-radius: 0px !important;
+  font-size: 13px !important;
+  padding-bottom: 30px !important;
+  /* overflow: scroll;  */
+}
+
+
+
+
+
+.enviarMensaje {
+  border-radius: 0px !important;
+  background-color: #000000 !important;
+  color: rgb(255, 255, 255) !important;
+  letter-spacing: 1.5px;
+  border: .1px solid rgb(0, 0, 0) !important;
+  border-radius: 100px !important;
+}
+
+.volverBoto {
   position: absolute;
-  left:  -300px;
+  left: -300px;
   top: 0px;
   font-family: proxima-nova, sans-serif !important;
   text-shadow: 3px 2px 3px black;
   border-radius: 0px !important;
-  padding: 6px !important; 
-  border: rgb(0, 0, 0) 1px solid !important; 
+  padding: 6px !important;
+  border: rgb(0, 0, 0) 2px solid !important;
 }
-.casita{
- position: absolute !important;
-  background-color: #000000 !important;
+
+.casita {
+  position: absolute !important;
+  background-color: #212020 !important;
   width: 100% !important;
   height: 100% !important;
+}
+
+input:focus {
+  background-color: #000000 !important;
+  color: white !important;
+  transition: all .8s;
+}
+.img-f{
+  position: relative;
+  width: 200px;
+  left: 0px;
 }

@@ -1,0 +1,14 @@
+.confirmation{
+    /* background-color: red ; */
+    color: black;
+    font-family: proxima-nova, sans-serif;
+}
+.imagenCargando{
+    width: 35%;
+    height: 35%;
+}
+.titleC{
+    font-family: proxima-nova, sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+}

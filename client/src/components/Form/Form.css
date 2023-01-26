@@ -1,54 +1,58 @@
-
-.formProduct{
+.formProduct {
     margin-bottom: 100px;
     /* background-color: blue; */
 }
-.h3T{
+
+.h3T {
     margin-bottom: 20px;
-    font-family: proxima-nova, sans-serif;;
+    font-family: proxima-nova, sans-serif;
+    ;
     letter-spacing: 1.5px;
     font-size: 45px;
-    color: #ff8906;
+    color: #7600FF;
 }
-.padre{
+
+.padre {
     background-color: #0f0e17;
     /* border-radius: 50vh; */
     outline: 4.5px solid black;
-    border: 2px solid #ff8906;
+    border: 2px solid #7600FF;
     /* height: 710px; */
-    
 }
-.escribir{
 
+.escribir {
     background-color: #000000 !important;
     border: 2px black solid !important;
     color: rgb(255, 255, 255) !important;
     border-radius: 0px !important;
-    border: .1px solid #ff8906 !important;
+    border: .1px solid #7600FF !important;
+}
 
-}
-.escribir:active{
-    background-color: red !important;
-}
-.escribir::placeholder{
+
+.escribir::placeholder {
     color: rgb(119, 119, 119) !important;
 }
-.as{
+
+.as {
     color: transparent;
     margin-top: 20px;
     user-select: none;
 }
-.detalless{
-    padding-bottom: 22px !important ;
-    
+
+.detalless {
+    padding-bottom: 22px !important;
+
 }
-label{
+
+label {
     color: #ffffff;
-    font-family: proxima-nova, sans-serif;;
+    font-family: proxima-nova, sans-serif;
+    ;
     font-size: 17px;
-    
+
 }
-.guardarBoton{
+
+.guardarBoton {
     position: absolute;
     top: 610px;
     left: 420px;
@@ -58,39 +62,46 @@ label{
     text-shadow: 3px 2px 3px black;
     border-radius: 0px !important;
 }
-.volverBoton{
+
+.volverBoton {
     position: absolute;
-    left:  1289px;
+    left: 1289px;
     top: 12px;
     font-family: proxima-nova, sans-serif !important;
     text-shadow: 3px 2px 3px black;
     border-radius: 0px !important;
-    padding: 6px !important; 
-    border: rgb(0, 0, 0) 1px solid !important; 
+    padding: 6px !important;
+    border: rgb(0, 0, 0) 1px solid !important;
 }
-.selection{
+
+.selection {
     position: relative;
     left: 130px;
 }
-.selection2{
+
+.selection2 {
     position: relative;
     left: 90px;
 }
-.dropzone{
+
+.dropzone {
     text-align: center;
     background-color: rgb(0, 0, 0);
-    border: .1px solid #ff8906 !important;
-   height:45px;
+    border: .1px solid #7600FF !important;
+    height: 45px;
 }
-.dropzone:hover{
+
+.dropzone:hover {
     cursor: pointer;
 }
-.imagenBoton{
+
+.imagenBoton {
     position: absolute;
-    left:  1289px;
+    left: 1289px;
     top: 130px;
 }
-#img{
+
+#img {
     cursor: pointer;
-    color: #ff8906;
+    color: #7600FF;
 }

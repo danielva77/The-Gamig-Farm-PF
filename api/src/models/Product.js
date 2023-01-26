@@ -13,26 +13,31 @@ module.exports = sequelize => {
         primaryKey: true,
       },
       title: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(2048),
         allowNull: false,
-        unique: true,
       },
       price: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
       detail: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: DataTypes.STRING(2048),
+        allowNull: true,
       },
       img: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(2048),
         allowNull: true,
       },
       stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0
       },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
+    }
     },
     { timestamps: false }
   )

@@ -43,7 +43,7 @@ const quantity = cart.reduce((total, item) => total + item.quantity, 0);
 //vaciar el carrito
 const clearAllCart  = () => {
   setCart([]);
-  localStorage.clear()
+  // localStorage.clear()
 };
 
 

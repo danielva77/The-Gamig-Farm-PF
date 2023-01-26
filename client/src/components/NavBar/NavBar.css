@@ -2,7 +2,7 @@
   background-color: #0f0e17;
   /* position: absolute; */
   width: 100vw;
-  height: 70px;
+  height: 105px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,7 +11,7 @@
 .menu-navbar {
   position: absolute;
   left: 18%;
-  top: 0;
+  margin-top: 3vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -31,7 +31,7 @@
   line-height: 24px;
 }
 .link:hover {
-  color: #ff8906;
+  color: #7600FF;
 }
 
 .cart{
@@ -43,18 +43,42 @@
 .cart-btn{
   position: absolute;
   left: 80%;
+  top: 11px;
+  margin-top: 22px;
 }
 
 .quantity-circle{
   position: absolute; 
-  /* bottom: 5px; */
+  bottom: 20px;
   left: 85%;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #4400ff;
   color: white;
   text-align: center;
   line-height: 20px;
 }
 
+.logoOriginal1{
+  width: 150px;
+  position: relative;
+  top: -20px;
+  left: 80px;
+}
+/* .img-fluid{
+  position: absolute;
+  background-color: red !important;
+  top: 20px;
+} */
+
+.search{
+  margin-top: 3vh;
+}
+
+.auten{
+ position: absolute;
+ top: -20px;
+  margin-top: 40px;
+  left: 89%;
+}

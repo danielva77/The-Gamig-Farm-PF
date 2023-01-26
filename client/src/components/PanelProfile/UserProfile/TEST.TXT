@@ -1,0 +1,192 @@
+ <div className="padres">
+            {/* <img src={user.avatar} alt='img not found'/> */}
+
+            {/* <h1>Hola {user.name} Camila 👋🏻</h1> */}
+            <Link to="/Home"><button className="atras">Atras</button></Link>
+            <div className="bienvenida">
+
+            <img src="https://www.estudiofoto.com/wp-content/uploads/2021/08/Fotografia-Profesional-Estudio-705x705.jpg" alt='img not found' className="profileF"/>
+            
+            <Link to={`$/editProfile/${id}`}><button className="editar">✏</button></Link>
+
+
+            <div className="profile">
+            <h1 className="tuPerfil">Tu perfil</h1> <br />
+            <h3><b>Nombre: {user.name}</b> Camila fuentes</h3>
+            <h3><b>Email: {user.email}</b> camilaF@gmail.com</h3>
+            <h3><b>Direccion: {user.adress}</b> Argentina</h3>
+            <h3><b>Fecha de nacimiento: {user.dateOfBirth}</b> 28/05/1990</h3>
+            <h3><b>Telefono: {user.telephone}</b> 261547481</h3>
+            </div>
+
+            </div>
+
+            <div className="informacion">
+            <h1 className="misCompras">Mis compras</h1>
+            <button className="btn btn-dark">Historial de Compras</button>
+            <button className="btn btn-dark m-4">Comentarios </button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            PART 2 , FORMULARIO BOOTSTRAP
+
+
+
+            <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <span class="input-group-text" id="basic-addon2">@example.com</span>
+</div>
+
+<div class="mb-3">
+  <label for="basic-url" class="form-label">Your vanity URL</label>
+  <div class="input-group">
+    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  </div>
+  <div class="form-text">Example help text goes outside the input group.</div>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+  <span class="input-group-text">@</span>
+  <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+</div>
+
+<div class="input-group">
+  <span class="input-group-text">With textarea</span>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+funciones...
+
+
+
+
+
+
+
+
+
+    <img src={user.avatar ? user.avatar : usuarioSinFoto} alt='img not found' className="profileF"/>
+
+
+
+
+
+     <input type="text" name="name" value={input.name} onChange={(e) => handleChange(e)} />
+
+
+
+
+
+<input type="text" name="email" value={input.email} onChange={(e) => handleChange(e)} />
+
+
+
+
+
+
+<input type="text" name="adress" value={input.adress} onChange={(e) => handleChange(e)} />
+
+
+
+
+
+
+
+
+
+<input type="date" name="date" value={input.date} onChange={(e) => handleChange(e)} />
+
+
+
+
+
+
+
+<input type="number" name="telephone"  value={input.telephone} onChange={(e) => handleChange(e)} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <input type="text" name="avatar" value={input.avatar} onChange={(e) => handleChange(e)} />
+
+
+
+
+
+
+
+
+
+
+
+      <button type="submit" className="btn-enviar" onClick={(e) => handleSubmit(e)}>Guardar</button>
+
+
+
+
+
+
+
+
+    <Link to={`/myProfile/${id}`}><button className="btn-volver">Volver a mi perfil</button></Link>
