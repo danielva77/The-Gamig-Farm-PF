@@ -27,6 +27,10 @@ import {
   GET_PRODUCTS,
   GET_ALL_REVIEWS,
   DISABLED_PRODUCTS,
+  GET_ALL_USERS,
+  DISABLE_USER,
+  FILTER_BY_JUEGOS,
+  FILTER_BY_MANDOS
 } from "./actions"
 
 const initialState = {
@@ -38,6 +42,8 @@ const initialState = {
   reviews: [],
   favItems: [],
   shopuser: [],
+  filterjuegos: [],
+  filtermandos:[],
   sortBy: "",
   numbersPaginated: [],
   categoryFilter: "",
@@ -319,6 +325,27 @@ export default function rootReducer(state = initialState, action) {
         items: auxItems,
       }
 
+    case GET_ALL_USERS:
+      return {
+        ...state,
+        users: action.payload,
+      }
+    case DISABLE_USER:
+      return {
+        ...state,
+      }
+      case FILTER_BY_JUEGOS:
+        return {
+          ...state,
+          filterjuegos: action.payload,
+          currentPage: 1
+        }
+      case FILTER_BY_MANDOS:
+        return {
+          ...state,
+          filtermandos: action.payload,
+          currentPage: 1
+        }
     default:
       return state
   }

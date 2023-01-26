@@ -16,6 +16,7 @@ import { useParams, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import Footer from "../Footer/Footer";
+import News from "../News/News";
 
 
 
@@ -53,7 +54,7 @@ export function Home() {
         </div>
 
         <div>
-        <CategoryFilter />
+        <CategoryFilter/>
         </div>
 
         <div>
@@ -67,10 +68,10 @@ export function Home() {
         <div>
         <ReloadPageBtn />
         </div>
-
+{/* 
         <div>
           <Noticas/>
-        </div>
+        </div> */}
 
       </div>
 
@@ -81,7 +82,9 @@ export function Home() {
       </div>
 
       <StoreItems />
-      <Paginado />
+      <Paginado />  
+      <News/>
+      
       <Footer className='footer2' />
 
 

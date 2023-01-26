@@ -12,10 +12,24 @@ import { addToFavorites } from "../../redux/actions";
 import AddReview from "../AddReview/AddReview";
 import ReviewContainer from "../AddReview/ReviewContainer";
 import { disabledProducts, addStock } from "../../redux/actions";
+import Carrusel from "../Slider/Slider";
+import Swal from "sweetalert2";
+import { shopUser } from "../../redux/actions";
 
 export default function Details(props) {
+ let usuariologueado = JSON.parse(localStorage.getItem("email"));
+ let emailadmin = "thegamingfarm01@gmail.com"
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
+
+  const shop = useSelector((state) => state.shopuser);
+  console.log("ESTE ES SHOOOOOP", shop)
+  useEffect(() => {
+    dispatch(shopUser(usuariologueado)) //This is a correct???
+}, [dispatch]);
+
+let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == props.match.params.id )
+
 
   const handleAddToCart = () => {
     const item = {
@@ -44,7 +58,31 @@ export default function Details(props) {
   function handleStock(e) {
     setStock(parseInt(e.target.value));
   }
-  console.log("llega stock a agregar", stock);
+
+
+  const successAlert = () => {
+    Swal.fire({
+        title: 'stock agregado satisfactoriamente',
+        showDenyButton: false,
+        showCancelButton: false,
+        confirmButtonText: "Ok",
+        icon: "success"
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
+    });
+  }
+  function agregarstock(id, stock){
+  console.log("estollegoastock", id, stock)
+  dispatch(addStock(id, stock))
+  successAlert()
+  }
+function disabled(id){
+dispatch(disabledProducts(id))
+}
+
 
   return (
     <div className="details-container">
@@ -63,7 +101,7 @@ export default function Details(props) {
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+{quantity}</a>
+              <a className="suma">+ {quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>
@@ -78,66 +116,45 @@ export default function Details(props) {
           🡰 Volver
         </a>
       </div>
-
-
-
-
-
-
-
-
-
-
-{/* BOTONES DE ADMINISTRADORES */}
-
-
-
-
-
-
-
-
-
-
-
-      <div className="AdministradorB">
-        <AddReview className="Review" productId={props.match.params.id} />
+      <div className="carrusel">
+        <Carrusel />
       </div>
+      { usuariologueado && confirmacion.length>0 ? 
       <div>
-        <button onClick={disabledProducts(props.match.params.id)} className="activarDesactivar">
+        <div>
+          <AddReview className="Review" productId={props.match.params.id} />
+        </div>
+      </div> : null
+      }
+        <div>
+          <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
+        </div> 
+        { usuariologueado == emailadmin ? 
+      <div>
+        {/* <button onClick={disabledProducts(props.match.params.id)}> */}
+        <button onClick={e => disabled(props.match.params.id)}>
           Desactivar producto
         </button>
         <Link to={`/editproduct/${props.match.params.id}`}>
-          <button className="editarProducto">Editar informacion del producto</button>
+          <button>Editar informacion del producto</button>
         </Link>
-        
-        <div className="cantidadAgregar">
         <input
           type="number"
           min="0"
           step="1"
           name="stock"
           onChange={(e) => handleStock(e)}
-          className="inputNumero"
-          placeholder="Stock"
-        ></input> <br />
-        <button onClick={addStock(props.match.params.id, stock)} className="agregarStock">
-          Agregar stock 
+          placeholder="Cantidad a agregar ..."
+        ></input>
+        {/* <button onClick={addStock(props.match.params.id, stock)}> */}
+        <button onClick={() => agregarstock(props.match.params.id, stock)}>
+          Agregar stock
         </button>
-          </div>
-
-
       </div>
-
-
-      <div className="comentarios">
-        <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
+      : null  }
+      <div>
+        <Footer />
       </div>
-          
-
-      {/* <div className="move-footer"> */}
-        {/* <Footer /> */}
-      {/* </div> */}
     </div>
   );
 }

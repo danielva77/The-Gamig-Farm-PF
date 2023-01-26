@@ -1,62 +1,69 @@
-import React from 'react'
-import {useState, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import { getReviews } from '../../redux/actions';
-import Review from './Review';
-import { FaStar } from "react-icons/fa"
+import React from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getReviews, disabledReviews } from "../../redux/actions";
+import Review from "./Review";
+import { FaStar } from "react-icons/fa";
 
 const colors = {
   orange: "#FFBA5A",
-  grey: "#a9a9a9"
+  grey: "#a9a9a9",
 };
 
-export default function ReviewContainer({productId}) {
+export default function ReviewContainer({ productId }) {
+  let emailadmin = "thegamingfarm01@gmail.com";
+  let usuariologueado = JSON.parse(localStorage.getItem("email"));
   const dispatch = useDispatch();
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(getReviews());
   }, [dispatch]);
 
-  const stars = Array(5).fill(0)
-  const reviews = useSelector(state => state.reviews)
+  const stars = Array(5).fill(0);
+  const reviews = useSelector((state) => state.reviews);
 
-
-  let reviewsById = reviews.filter(e => e.productId === productId)
-
+  let reviewsById = reviews.filter((e) => e.productId === productId);
 
   let average = 0;
-  if(reviewsById.length>0){
-  let length = reviewsById.length;
-  let sum = 0;
-  let calc = reviewsById.map(e => sum = sum + e.rating);
-  average = sum/length;
+  if (reviewsById.length > 0) {
+    let length = reviewsById.length;
+    let sum = 0;
+    let calc = reviewsById.map((e) => (sum = sum + e.rating));
+    average = sum / length;
   }
 
   return (
-    <div >
+    <div>
       <div>
-      {stars.map((_, index) => {
-        return (
-          <FaStar
-            key={index}
-            size={15}
-            color={average > index ? colors.orange : colors.grey}
-          />
-        )
-      })}
-      <p>Promedio : {average}</p>
+        {stars.map((_, index) => {
+          return (
+            <FaStar
+              key={index}
+              size={15}
+              color={average > index ? colors.orange : colors.grey}
+            />
+          );
+        })}
+        <h4>Promedio de opiniones : {average} puntos</h4>
       </div>
-      { reviewsById.length ?
+      {reviewsById.length ? (
         <div>
-            { reviewsById.map(({ rating, comment, createdAt}, i) => (
-                <div key={i}>
-                  <Review rating={rating} comment={comment} createdAt={createdAt}/>
-                </div>
-              ))}
-        </div> :
-        <div>
-          <h2>Este producto por el momento no contiene comentarios</h2>
+          {reviewsById.map(({ id, rating, comment, createdAt }, i) => (
+            <div key={i}>
+              <Review rating={rating} comment={comment} createdAt={createdAt} />
+              { usuariologueado == emailadmin ? 
+              <div>
+                <button onClick={disabledReviews(id)}>
+                  Eliminar este comentario
+                </button>
+              </div> : null}
+            </div>
+          ))}
         </div>
-      }
+      ) : (
+        <div>
+          <h2>Este producto no tiene reviews en este momento</h2>
+        </div>
+      )}
     </div>
-  )
+  );
 }

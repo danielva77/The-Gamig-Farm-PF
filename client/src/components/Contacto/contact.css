@@ -94,6 +94,6 @@ input:focus {
 }
 .img-f{
   position: relative;
-  width: 400px;
-  left: 20px;
+  width: 200px;
+  left: 0px;
 }

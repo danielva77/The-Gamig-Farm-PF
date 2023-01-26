@@ -78,45 +78,18 @@ const Profile = () => {
 
 
 
-
-
-
-
-
   return (
     isAuthenticated && (
       <div>
-          <h1 className="nameP" alt={google.user.given_name}></h1>
+          <Link to={`/myProfile/${idUsusuario.id}`}>
         <button className="btn btn float-left" onClick={() => setShow(true)}>
-          <img src={google.user.picture} alt={google.user.name} className="imagenP" />{" "}
+          <img src={google.user.picture}  className="imagenP" />{" "}
         </button>
-
-        <Offcanvas
-          show={show}
-          placement="end"
-          onHide={() => setShow(false)}
-          style={{
-            height: "34vh",
-            width: "35vh",
-            margin: "73px 0px",
-            bg: "#0000"
-          
-          }}
-        >
-          <h3 className="header">
-            <img className="picture" src={user.picture}></img> {user.name}
-          </h3>
-          <div className="btns">
-                        <Link to={`/myProfile/${idUsusuario.id}`}>
-                        <button onClick={UserProfile} className="Perfil-btn">Mi informacion</button>
-                      </Link>
-            
-          <LogoutButton className="salir" />
+        </Link>
+         
           </div>
-        </Offcanvas >
-      </div>
     )
-  );
+  )
 };
 
 export default Profile;

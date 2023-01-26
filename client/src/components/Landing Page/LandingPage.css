@@ -23,7 +23,7 @@
   width: 695px;
   height: 120px;
   left: 6%;
-  top: 24%;
+  top:18%;
   font-family: proxima-nova, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -38,7 +38,7 @@
   width: 555px;
   height: 180px;
   left: 6%;
-  top: 45%;
+  top: 40%;
 
   font-family: proxima-nova, sans-serif;
   font-style: normal;
@@ -64,7 +64,7 @@
    width: 262px;
    height: 79px;
    left: 18%;
-   top: 75%;
+   top: 69%;
  }
  
  .cssbuttons-io svg {
