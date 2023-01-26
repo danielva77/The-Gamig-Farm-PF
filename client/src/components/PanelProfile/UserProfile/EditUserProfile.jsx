@@ -66,7 +66,7 @@ const EditUserProfile = () => {
         console.log("usuario actualizado → ", id )
         console.log("usuario actualizado2 → ", input )
 
-     await axios.put("http://localhost:3001/user/" + id, input);
+     await axios.put("/user/" + id, input);
      history.push(`/myprofile/${id}`);
       
 
