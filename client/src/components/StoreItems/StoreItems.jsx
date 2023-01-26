@@ -13,96 +13,100 @@ import { sortByPrice } from "../../hooks/sortByPrice";
 import { paginateItems } from "../../hooks/paginateItems";
 import { getNumberButtons } from "../../hooks/getNumberButtons";
 import Footer from "../Footer/Footer";
-import News from "../News/News";
+
+
 
 function StoreItems({ currentVideogames }) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   // todos los productos
-  const items = useSelector((state) => state.items);
+  const items = useSelector(state => state.items)
 
   // variables globales para Paginado
-  const currentPage = useSelector((state) => state.currentPage);
+  const currentPage = useSelector(state => state.currentPage)
   // const itemsPerPage = useState(2)
-  const itemsPerPage = useSelector((state) => state.itemsPerPage);
+  const itemsPerPage = useSelector(state => state.itemsPerPage)
 
   // variables globales para filtrado y ordenamiento
-  const nameFilter = useSelector((state) => state.nameFilter);
-  const categoryFilter = useSelector((state) => state.categoryFilter);
-  const markFilter = useSelector((state) => state.marksFilter);
-  const sortBy = useSelector((state) => state.sortBy);
+  const nameFilter = useSelector(state => state.nameFilter)
+  const categoryFilter = useSelector(state => state.categoryFilter)
+  const markFilter = useSelector(state => state.marksFilter)
+  const sortBy = useSelector(state => state.sortBy);
 
   // funcion para volver a la pagina inicial (se la aplicará luego de cada filtrado u ordenado)
-  const resetCurrentPage = () => dispatch(changePage(currentPage));
+  const resetCurrentPage = () => dispatch(changePage(currentPage))
 
   // variable auxiliar para filtrar, ordenar y paginar los items
   let filteredAndSorted = items;
 
   // Filtrado por categoria
   filteredAndSorted = categoryFilter
-    ? filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
-    : filteredAndSorted;
+    ?
+    filteredbyCategory(filteredAndSorted, categoryFilter, resetCurrentPage)
+    :
+    filteredAndSorted
 
   // Filtrado por marca
   filteredAndSorted = markFilter
-    ? filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
-    : filteredAndSorted;
+    ?
+    filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
+    :
+    filteredAndSorted
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter
-    ? filterByName(filteredAndSorted, nameFilter, resetCurrentPage)
-    : filteredAndSorted;
+    ?
+    filterByName(filteredAndSorted, nameFilter, resetCurrentPage)
+    :
+    filteredAndSorted
 
   // Ordenamiento
   filteredAndSorted = sortBy
-    ? sortByPrice(filteredAndSorted, sortBy, resetCurrentPage)
-    : filteredAndSorted;
+    ?
+    sortByPrice(filteredAndSorted, sortBy, resetCurrentPage)
+    :
+    filteredAndSorted
 
   // Paginate items
-  let currentItems = paginateItems(
-    filteredAndSorted,
-    currentPage,
-    itemsPerPage
-  );
+  let currentItems = paginateItems(filteredAndSorted, currentPage, itemsPerPage)
 
   // Enviar array de botones al paginado
-  getNumberButtons(
-    filteredAndSorted,
-    itemsPerPage,
-    dispatch,
-    setNumbersPaginated
-  );
+  getNumberButtons(filteredAndSorted, itemsPerPage, dispatch, setNumbersPaginated)
 
   return (
     <>
       <div className="divG">
+        
         <div className="modelo3">
-          {currentItems.length ? (
+          {currentItems.length
+            ?
             currentItems.map((item) => {
-              if (item.isActive) {
-                return (
-                  <>
-                    <Link to={`/products/${item.id}`}></Link>
-                    <div className="modelo">
-                      <StoreItem
-                        id={item.id}
-                        name={item.title}
-                        img={item.img}
-                        price={item.price}
-                        stock={item.stock}
-                      />
-                    </div>
-                  </>
-                );
-              }
+              if(item.isActive){
+              return (
+                <>
+                  <Link to={`/products/${item.id}`}>
+                  </Link>
+                  <div className="modelo">
+                    <StoreItem
+                      id={item.id}
+                      name={item.title}
+                      img={item.img}
+                      price={item.price}
+                      stock={item.stock}
+                    />
+                  </div>
+                </>
+              )}
             })
-          ) : (
-            <div> "No hay productos todavía."</div>
-          )}
+            :
+            <div>  "No hay productos todavía."</div>
+          }
         </div>
+       
       </div>
     </>
-  );
+
+  )
 }
 
-export default StoreItems;
+export default StoreItems

@@ -1,49 +1,42 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+  import React from "react";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { removeFromFavorites } from "../../redux/actions";
+import { removeFromFav } from "../../redux/actions";
 import { setFavorites } from "../../redux/actions";
-import { getFavorites } from "../../redux/actions";
-import { getUserFavorites, deleteFavorites } from "../../redux/actions";
 import Fav from "../Assets/favorito.png";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
-import "../Favorites/Favorites.css";
-import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import "../Favorites/Favorites.css"
 
 const Favoritos = () => {
-  const user = useSelector((state) => state.user);
-  const favoritos = useSelector((state) => state.favItems);
+  // const [favItems, setFavItems] = useState([]);
+  const favItems = useSelector((state) => state.favItems);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-
-  const handleRemoveFromFavorites = (id) => {
-    Swal.fire({
-      title: "Eliminar items de sus favoritos?",
-      showCancelButton: true,
-      confirmButtonText: "Ok",
-      cancelButtonText: "Cancel",
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-        dispatch(deleteFavorites(id));
-        window.location.reload();
-      }
-    });
+  const handleRemoveFromFav = (id) => {
+    dispatch(removeFromFav(id));
   };
 
-  let email = JSON.parse(localStorage.getItem("email"));
-
-  let favItems = favoritos.filter((e) => e.email == email);
   useEffect(() => {
-    dispatch(getUserFavorites());
+    const storedItems = localStorage.getItem("favItems");
+    if (storedItems) {
+      const items = JSON.parse(storedItems);
+      dispatch(setFavorites(items));
+    }
   }, [dispatch]);
-  console.log("esto es favoritos", favItems);
+
+  useEffect(() => {
+    localStorage.setItem("favItems", JSON.stringify(favItems));
+  }, [favItems]);
 
   return (
     <>
-      <button className="btn btn float-left" onClick={() => setShow(true)}>
-        <img src={Fav} alt="imagen" class="img-fluid2" />
+      <button className="btn btn-float-left " onClick={() => setShow(true)}>
+        <img src={Fav} alt="imagen" className="img-fluid" style={{  position: "absolute",
+  left: "86%",
+  top: "42px",
+  mt: "22px"}} />
       </button>
       <Offcanvas
         show={show}
@@ -78,7 +71,7 @@ const Favoritos = () => {
                 <p>${item.price}</p>
                 <button
                   className="removeBtn"
-                  onClick={() => handleRemoveFromFavorites(item.id)}
+                  onClick={() => handleRemoveFromFav(item.id)}
                 >
                   Eliminar
                 </button>

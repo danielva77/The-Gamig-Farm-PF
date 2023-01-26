@@ -99,5 +99,8 @@
 /* TODO EL DIV ENTERO ↑ */
 .filtros{
   justify-content: start !important;
+  /* background-color: green  !important;  */
+  position: absolute !important;
+  margin-top: 35px !important;
 
 }

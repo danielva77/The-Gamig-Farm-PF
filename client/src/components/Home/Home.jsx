@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import Mandos from "../Mandos/Mando"
+import Noticas from "../Noticias/Noticas"
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
@@ -12,11 +14,10 @@ import NavBar from "../NavBar/NavBar";
 import MarkFilter from "../MarkFilter/MarkFilter";
 import { useParams, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from "axios"
-import Mandos from "../Mandos/Mando"
-import Noticas from "../Noticias/Noticas"
-import News from "../News/News";
+import axios from "axios";
 import Footer from "../Footer/Footer";
+
+
 
 export function Home() {
   const dispatch = useDispatch();
@@ -75,19 +76,14 @@ export function Home() {
 
       <div>
         <p>Page -{currentPage}-</p>
-      </div>
+      </div>  
       <div>
-        <Paginado />
       </div>
 
       <StoreItems />
-      <div>
-      <News/>
-      </div>
-      
-      <div>
-        <Footer/>
-      </div>
+      <Paginado />
+      <Footer className='footer2' />
+
 
       {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
 

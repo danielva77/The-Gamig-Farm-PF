@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories, setFilterCategory } from '../../redux/actions';
 
+
 const CategoryFilter = () => {
     const dispatch = useDispatch()
 
@@ -27,12 +28,14 @@ const CategoryFilter = () => {
             menuPlacement="top"
             defaultValue={'DEFAULT'}
         >
-            <option value="DEFAULT" disabled hidden selected>Consolas</option>
+            
+            <option value="DEFAULT" disabled hidden selected>Consolas:</option>
             {categories?.map(category => {
                 return (
                     <option>{category}</option>
                 )
             })}
+            
         </select>
 
     );

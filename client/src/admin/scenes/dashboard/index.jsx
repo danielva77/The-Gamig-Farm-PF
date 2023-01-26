@@ -5,10 +5,8 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import Header from "../../components/Header";
 import Sidebar from "../global/Sidebar";
-import NavBar from "../../../components/NavBar/NavBar";
 
 const Dashboard = () => {
-  <NavBar/>
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const colors = tokens(theme.palette.mode);

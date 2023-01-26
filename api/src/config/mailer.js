@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 
 const configurandoEmail = (req, res) => {
 
-  const cart  = req.body
+  const {cart, email}  = req.body
 
   console.warn("LO QUE LLEGA DEL MENSAJE POR req.body → ", cart);
 
@@ -16,12 +16,7 @@ const configurandoEmail = (req, res) => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: "thegamingfarm01@gmail.com", // generated ethereal user
-      pass: "rveuzhibqljnpztq"
-    },
-    tls: {
-      // do not fail on invalid certs
-      rejectUnauthorized: false
-  },
+      pass: "rveuzhibqljnpztq"},
   });
 
 
@@ -46,27 +41,12 @@ const accountTotal = () => {
 
 
 
-// ENVIAR EL MENSAJE 
- 
-// Iniciar Sesion por primera vez 👦🏻
-
-const mensajeLogin = {
-  from: "infoInput.email", // sender address
-  to: "oscarzavalatuti@gmail.com", // list of receivers
-  subject: "Bienvenido a la Comunidad 🎉", // Subject line
-  html: `Hola que tal? 👋🏻 <br> <br>
-  Estamos felices de que seas parte de nuestra comunidad, te damos la bienvenidad y cualquier consulta puedes escribir a nuestro soporte  <br>
-  📩 'thegamingfarm01@gmail.com'
-  
-  <br> <br> <br>
-  <b> Esto recien Empieza 🔥 </b>`
-}
 
 
 // Al terminar la compra 🛒
 const mensajeCompra = {
   from: " ", // sender address
-  to: "oscarzavalatuti@gmail.com", // list of receivers
+  to: email, // list of receivers
   subject: "Compra finalizada con exito 🛍", // Subject line
   html: `<h1><u><cite>Estos fueron los productos que compraste:</cite></u></h1> <br> 
 

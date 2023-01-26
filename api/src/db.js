@@ -45,8 +45,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Product, Category, Mark, Review, Store, User, Favorite } =
-  sequelize.models;
+const { Product, Category, Mark, Review, Store, User } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -54,61 +53,21 @@ const { Product, Category, Mark, Review, Store, User, Favorite } =
 Product.belongsToMany(Category, { through: "Product_Category" });
 Category.belongsToMany(Product, { through: "Product_Category" });
 
-Mark.hasMany(Product);
-Product.hasMany(Mark);
-
 User.hasMany(Store);
 Store.belongsTo(User);
 
-User.hasMany(Review, { foreignKey: "userId" });
-Review.belongsTo(User, { foreignKey: "userId" });
+User.hasMany(Review, {foreignKey: 'userId'});
+Review.belongsTo(User, {foreignKey: 'userId'});
 
 Store.belongsToMany(Product, { through: "Store_Product" });
 Product.belongsToMany(Store, { through: "Store_Product" });
 
-Product.hasMany(Review, { foreignKey: "productId" });
-Review.belongsTo(Product, { foreignKey: "productId" });
-
-Mark.hasMany(Product);
-Product.belongsTo(Mark);
+Product.hasMany(Review);
+Review.belongsTo(Product);
 //
-User.hasMany(Store);
-Store.belongsTo(User);
-
-User.hasMany(Review);
-Review.belongsTo(User);
-
-Store.belongsToMany(Product, { through: "Store_Product" });
-Product.belongsToMany(Store, { through: "Store_Product" });
-
-Product.hasMany(Review, { foreignKey: "productId" });
-Review.belongsTo(Product, { foreignKey: "productId" });
+Mark.belongsToMany(Product, { through: "Product_Mark" })
+Product.belongsToMany(Mark, { through: "Product_Mark" })
 //
-Mark.belongsToMany(Product, { through: "Product_Mark" });
-Product.belongsToMany(Mark, { through: "Product_Mark" });
-//
-User.hasMany(Store);
-Store.belongsTo(User);
-
-User.hasMany(Review);
-Review.belongsTo(User);
-
-User.hasMany(Favorite);
-Favorite.belongsTo(User);
-
-User.hasMany(Favorite, {
-  foreignKey: "userId",
-  as: "favorites",
-});
-
-Favorite.belongsTo(User, {
-  foreignKey: "userId",
-  as: "user",
-});
-
-// User.belongsToMany(Product, { through: Favorite, foreignKey: "email" });
-// Favorite.belongsTo(Product, { foreignKey: "productId" });
-
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');

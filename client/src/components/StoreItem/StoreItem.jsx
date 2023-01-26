@@ -2,56 +2,24 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./StoreItem.css";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToFavorites } from "../../redux/actions";
-import { useAuth0 } from "@auth0/auth0-react";
-import Swal from "sweetalert2";
+import {addToFavorites} from "../../redux/actions";
 
 export function StoreItem({ id, name, price, img, stock }) {
   const [quantity, setQuantity] = useState(0);
+  // const [isInCart, setIsInCart] = useState(false);
+  // const quantity = getItemQuantity(id);
+  const favItems = useSelector(state => state.favItems);
   const dispatch = useDispatch();
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-  let email = JSON.parse(localStorage.getItem("email"));
-  let productId = id;
-  let title = name;
 
-  let favoritos = {
-    email: email,
-    productId: productId,
-    img: img,
-    price: price,
-    title: title,
+  const handleAddToFavorites = (item) => {
+    dispatch(addToFavorites(item));
+    localStorage.setItem("favItems", JSON.stringify([...favItems, item]));
+
   };
 
-  const handleAddToFavorites = () => {
-    if (isAuthenticated) {
-      Swal.fire({
-        title: "Producto agregado a favoritos",
-        showDenyButton: false,
-        showCancelButton: false,
-        confirmButtonText: "Ok",
-        denyButtonText: "Don't save",
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          dispatch(addToFavorites(favoritos));
-          window.location.reload();
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
-    } else {
-      Swal.fire({
-        title: "Inicie sesión primero",
-        text: "Debe iniciar sesión antes de continuar",
-        icon: "warning",
-        confirmButtonText: "OK",
-      });
-      loginWithRedirect({});
-    }
-  };
 
   const {
     cart,
@@ -59,17 +27,28 @@ export function StoreItem({ id, name, price, img, stock }) {
     removeFromCart,
     incrementItemQuantity,
     decrementItemQuantity,
-    addItem,
+    addItem
   } = useShoppingCart();
 
   const cartQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
+
   const handleAddToCart = () => {
     addItem({ id, name, price, img, quantity, stock });
+    // setQuantity(quantity + 1);
+    // setIsInCart(true);
   };
 
   const handleRemoveFromCart = () => {
+    // Obtén la cantidad actual del producto en el carrito
+    // const quantity = getItemQuantity(id);
+    // // Agrega el elemento al carrito utilizando el método addToCart del contexto
+    // addToCart({ id, name, price, imgUrl, quantity });
+
+    // incrementItemQuantity({ id, name, price, imgUrl, quantity });
     decrementItemQuantity(id);
+    // setQuantity(quantity - 1);
+    // setIsInCart(false);
   };
 
   return (
@@ -87,23 +66,26 @@ export function StoreItem({ id, name, price, img, stock }) {
           class="card-img-top"
         />
 
+
         <div className="card-body ">
+          <div className="title-container">
           <h4 className="card-title" style={{ fontSize: "20px" }}>
             {name}
           </h4>
-          <br />
-          <p className="card-text">${price}</p>
+          
+          </div>
+<br/>       
+<br/>     
+          <p className="card-text">Precio: ${price}</p>
         </div>
       </Link>
       <div className="fav">
-        <button className="btn-favorito" onClick={handleAddToFavorites}>
-          ❤ Favoritos
-        </button>
-      </div>
-      <div class="card-footer"></div>
-      <div class="card-footer">
+              <button className="btn-favorito" onClick={() => handleAddToFavorites({id, name, price, img})}>Favoritos</button>
+            </div>
+    
+      <div class="card-footer clear">
         {getItemQuantity(id) === 0 ? (
-          <div>
+          <div >
             <button className="btn-favorito" onClick={handleAddToCart}>
               + Agregar al carrito
             </button>
@@ -126,7 +108,7 @@ export function StoreItem({ id, name, price, img, stock }) {
               <div
                 style={{
                   fontSize: "17px",
-                  color: "white",
+                  color: "black",
                 }}
               >
                 <span>{getItemQuantity(id)}</span> in cart

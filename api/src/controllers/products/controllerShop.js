@@ -27,7 +27,6 @@ const createshop = async (req, res) =>{
         res.send(200).status(createShop)
     console.log("COMPRA CARGADA CORRECTAMENTE")
     } catch (error) {
-        console.log(error)
         res.status(404).send(error)
     }
 }

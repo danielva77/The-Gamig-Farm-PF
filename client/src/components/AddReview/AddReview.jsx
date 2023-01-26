@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { getDetail, addReview } from '../../redux/actions';
 import { idUser } from '../../redux/actions';
-import "./Reviewing.css"
+import "./Review.css"
 
 const colors = {
   orange: "#FFBA5A",
@@ -118,12 +118,20 @@ export default function AddReview({productId}){
 
 
   return(
-    <div className='Reviewing'>
-      <h2>Agregar Review</h2>
+    <div className='Review'>
+      <h2 className='tituloAgregar'>Agregar un Comentario</h2>
+      <textarea
+          placeholder="Opina sobre este producto ..."
+          value={review.comment} 
+          name='comment' 
+          onChange={handleOnChange}
+          className="inputComentario"
+        /> <br /> 
         <div>
           {stars.map((_, index) => {
             return (
               <FaStar
+              className='estrellas'
                 key={index}
                 size={24}
                 onClick={() => handleClick(index + 1)}
@@ -133,18 +141,14 @@ export default function AddReview({productId}){
                 style={{
                   marginRight: 10,
                   cursor: "pointer"
+                
                 }}
               />
             )
           })}
-        </div>
-        <textarea
-          placeholder="Opina sobre este producto ..."
-          value={review.comment} 
-          name='comment' 
-          onChange={handleOnChange}
-        />
-        <button type='button' onClick={handleSubmit}>Enviar</button>
+        </div> 
+         <br />
+        <button type='button' onClick={handleSubmit} className="botonPublicar">Publicar</button>
     </div>
   )
 }

@@ -25,7 +25,7 @@ const MarkFilter = () => {
 
     return (
        <div>
-            <button class="filterMark2" onClick={alerta}>JUEGOS</button>
+            <button class="filterMark2" onClick={alerta}>Juegos</button>
        </div>
     );
 };

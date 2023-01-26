@@ -7,34 +7,33 @@ import { postProduct, getProduct } from "../../redux/actions";
 import Swal from "sweetalert2";
 // import uploadcare from 'uploadcare-widget/uploadcare.lang.en.min.js'
 import { Widget } from "@uploadcare/react-widget";
-import NavBar from "../NavBar/NavBar";
 
 <Widget publicKey="b64078a8eafda783a219" />;
 
 export const Form = () => {
-  <NavBar/>
   const marks = [
-    { title: "Juegos" },
-    { title: "Mandos" },
-    
+    { title: "Logitech" },
+    { title: "Razer" },
+    { title: "Redragon" },
+    { title: "ASUS" },
+    { title: "HP" },
+    { title: "HyperX" },
+    { title: "Genius" },
+    { title: "Microsoft" },
+    { title: "Samsung" },
+    { title: "Sony" },
   ];
   const categories = [
-    { title: "PlayStation" },
-  { title: "PlayStation 2" },
-  { title: "PlayStation 3" },
-  { title: "PlayStation 4" },
-  { title: "PlayStation 5" },
-  { title: "Xbox" },
-  { title: "Xbox 360" },
-  { title: "Xbox One" },
-  { title: "Sega Mega Drive" },
-  { title: "Nintendo 64" },
-  { title: "Nintendo DS" },
-  { title: "Wii" },
-  { title: "Nintendo Switch" },
-  { title: "Nintendo (NES)" },
-  { title: "Nintendo 3DS" },
-  { title: "PSP" }, 
+    { title: "Mouse" },
+    { title: "Teclado" },
+    { title: "Combos" },
+    { title: "WebCam" },
+    { title: "Auriculares" },
+    { title: "Gabinetes" },
+    { title: "MousePad" },
+    { title: "Gabinete" },
+    { title: "Placa Madre" },
+    { title: "Tarjeta Grafica" },
   ];
 
   // Guardo la data para enviar a la db en un estado local
