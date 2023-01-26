@@ -35,7 +35,7 @@ const LandingPage = () => {
             completo de las consolas más icónicas de las últimas décadas e 
             informarte de las novedades relacionadas al Mundo Gamer”
           </p>
-          <NavLink to="/home" onClick={e => window.location.assign("http://localhost:3000/home")}>
+          <NavLink to="/home">
             <button class="cssbuttons-io">
 
               <span>
