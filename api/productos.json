@@ -16,6 +16,7 @@
     {
       "title": "Mando PlayStation",
       "price": 38,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/PSX-DualShock.png/2560px-PSX-DualShock.png",
       "stock": 22,
       "category": ["PlayStation"],
@@ -145,6 +146,7 @@
     {
       "title": "Mando PlayStation 2",
       "price": 58,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/PlayStation2-DualShock2.png/1200px-PlayStation2-DualShock2.png",
       "category": ["PlayStation 2"],
       "mark": ["Mandos"]
@@ -383,6 +385,7 @@
     {
       "title": "Mando Xbox",
       "price": 43,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://pngimg.com/uploads/xbox/xbox_PNG17512.png",
       "stock": 27,
       "category": ["Xbox"],
@@ -501,6 +504,7 @@
     {
       "title": "Mando Nintendo 64",
       "price": 17,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://picandocodigo.net/wp-content/uploads/2016/03/nintendo-64-controller.png",
       "stock": 227,
       "category": ["Nintendo 64"],
@@ -619,6 +623,7 @@
     {
       "title": "Mando Xbox One",
       "price": 49,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://i.blogs.es/0f2c70/650_1000_xbox-one-mando/1366_2000.png",
       "stock": 13,
       "category": ["Xbox One"],
@@ -1026,6 +1031,7 @@
     {
       "title": "Mando Xbox 360",
       "price": 22,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/spanish/xbox360_controller.png",
       "stock": 24,
       "category": ["Xbox 360"],
@@ -1155,6 +1161,7 @@
     {
       "title": "Mando PlayStation 3",
       "price": 31,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/4/43/PS3_controller.png",
       "stock": 15,
       "category": ["PlayStation 3"],
@@ -1284,6 +1291,7 @@
     {
       "title": "Control de Wii",
       "price": 18,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Wiimote.png",
       "stock": 13,
       "category": ["Wii"],
@@ -1383,6 +1391,7 @@
     {
       "title": "Controles Nintendo Switch",
       "price": 53,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://tiendastundra.cl/wp-content/uploads/2021/09/nintendo-switch-mando-joycon.png",
       "stock": 11,
       "category": ["Nintendo Switch"],
@@ -1502,6 +1511,7 @@
     {
       "title": "Mando PlayStation 4",
       "price": 57,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/spanish/ds4_controller.png",
       "stock": 35,
       "category": ["PlayStation 4"],
@@ -1811,6 +1821,7 @@
     {
       "title": "Mando PlayStation 5",
       "price": 98,
+      "detail":"Retroalimentación háptica: siente una respuesta físicamente sensible a tus acciones en el juego con actuadores duales que reemplazan los motores tradicionales. Disparadores adaptables: experimenta diferentes niveles de fuerza y tensión mientras interactúas con tu equipo y entornos en el juego. Micrófono integrado y conector para auriculares: chatea con amigos en línea utilizando el micrófono integrado o conectando un auricular al conector de 0.138 in.",
       "img": "https://gmedia.playstation.com/is/image/SIEPDC/dualsense-controller-product-thumbnail-01-en-14sep21?$facebook$",
       "stock": 12,
       "category": ["PlayStation 5"],
