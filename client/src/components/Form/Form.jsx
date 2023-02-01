@@ -23,7 +23,7 @@ export const Form = () => {
     { title: "Xbox" },
     { title: "Xbox One" },
     { title: "Xbox 360" },
-    { title: "wii" },
+    { title: "Wii" },
     { title: "Nintendo 64" },
     { title: "Sega Mega Drive" },
     { title: "Nintendo Switch" },

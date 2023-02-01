@@ -143,8 +143,8 @@ router.post("/payment", (req, res) => {
     }),
     back_urls: {
       success: "http://localhost:3000/confirmation/approve",
-      failure: "http://localhost:3000/home",
-      pending: "",
+      failure: "http://localhost:3000/confirmation/approve",
+      pending: "http://localhost:3000/confirmation/approve",
     },
     // "notification_url": "http://localhost:3000/products/notificacion",
     auto_return: "approved",

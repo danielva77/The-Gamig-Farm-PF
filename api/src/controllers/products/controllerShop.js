@@ -9,24 +9,18 @@ const createshop = async (req, res) =>{
             where: { 
                 idproduct, 
                 payment, 
-                collection , 
-                email,img,             
+                collection, 
+                email,
+                img,             
                 price: price.toString(),
                 title, 
                 quantity: quantity.toString() },
-            // collection , 
-            // email, 
-            // // idproduct, 
-            // img, 
-            // // payment, 
-            // price: price.toString(),
-            // title, 
-            // quantity: quantity.toString()
         })
 
         res.send(200).status(createShop)
     console.log("COMPRA CARGADA CORRECTAMENTE")
     } catch (error) {
+        console.log("ESTE ES EL ERROR POSTSHOP", error)
         res.status(404).send(error)
     }
 }

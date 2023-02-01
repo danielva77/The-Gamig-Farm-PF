@@ -6,6 +6,7 @@ import { disabledProducts, getDetail } from "../../redux/actions";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 import Swal from "sweetalert2";
+import "../Form/modify.css"
 
 export default function ModifyProducts(props){
   const dispatch = useDispatch();
@@ -50,7 +51,7 @@ function handleChange(e){
   
 
   return(
-    <div>
+    <div className="containermodify">
       <NavBar/>
       {
         myProduct.length > 0 ?

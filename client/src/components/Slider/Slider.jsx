@@ -92,7 +92,7 @@ export default function Carrusel() {
           <div className="Margenimg" key={item.id}>
             <Link
               to={`/products/${item.id}`}
-              onClick={() => window.open(`/products/${item.id}`, "_blank")}
+              onClick={() => window.location.href = `/products/${item.id}`}
             >
               <img src={item.img} alt={item.title} className="img-size" />
             </Link>

@@ -17,6 +17,10 @@ const configurandoEmail = (email) => {
     auth: {
       user: "thegamingfarm01@gmail.com", // generated ethereal user
       pass: "rveuzhibqljnpztq"},
+      tls:{
+        //do not fail on invalid certs
+        rejectUnauthorized: false
+      },
   });
 
 

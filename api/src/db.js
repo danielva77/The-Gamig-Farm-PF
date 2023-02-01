@@ -11,7 +11,7 @@ const sequelize = DB_DEPLOY
       native: false,
     })
   : new Sequelize(
-      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/productos`,
+      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
       {
         logging: false,
         native: false,
@@ -72,19 +72,19 @@ Review.belongsTo(Product, { foreignKey: "productId" });
 Mark.belongsToMany(Product, { through: "Product_Mark" });
 Product.belongsToMany(Mark, { through: "Product_Mark" });
 //
-User.hasMany(Store);
-Store.belongsTo(User);
+// User.hasMany(Store);
+// Store.belongsTo(User);
 
 // User.hasMany(Favorite);
 // Favorite.belongsTo(User);
 
 User.hasMany(Favorite, {
-  foreignKey: "userId",
+  foreignKey: "useruarioId",
   as: "favorites",
 });
 
 Favorite.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "useriarioId",
   as: "user",
 });
 

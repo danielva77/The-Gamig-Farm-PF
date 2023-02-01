@@ -38,6 +38,7 @@ const Favoritos = () => {
   useEffect(() => {
     dispatch(getUserFavorites());
   }, [dispatch]);
+  console.log("ESTOESFAVITEMS", favItems)
 
   return (
     <>
@@ -58,7 +59,8 @@ const Favoritos = () => {
           <ul className="scrollable">
             {favItems.map((item) => (
               <li key={item.id}>
-                <Link to={`/products/${item.id}`}>
+                <Link to={`/products/${item.productId}`}
+                onClick={() => window.location.href = `/products/${item.productId}`}>
                   <img
                     class="favoritos-img"
                     style={{
