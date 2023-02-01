@@ -38,11 +38,11 @@ const UserProfile = () => {
 
     return (
         <div>
-            <NavBar/>
+           
         <div className="padres">
-
         {/* <Link to={`/home`}><button className="atras">Atras</button></Link> */}
         <div className="bienvenida">
+       
 
           <Link to={`/editProfile/${id}`}>
             <button className="editar"> <img src={Editar} alt="image"/> </button>
@@ -50,14 +50,17 @@ const UserProfile = () => {
         <img src={user.avatar ? user.avatar : fotoGoogleDefecto}className="profileF"/>
       
 
-
+        <div className="profilecont">
         <div className="profile">
         <h1 className="tuPerfil">Tu perfil</h1> <br/>
-        <h3><b>Nickname:</b> {user.name}</h3>
-        <h3><b>Email:</b> {user.email}</h3>
-        <h3><b>Direccion:</b> {user.adress}</h3>
-        <h3><b>Fecha de nacimiento:</b> {user.dateOfBirth}</h3>
-        <h3><b>Telefono:</b> {user.telephone}</h3>
+        
+        <h3 className="datos"><b>Nickname:</b> {user.name}</h3>
+        <h3 className="datos"><b>Email:</b> {user.email}</h3>
+        <h3 className="datos"><b>Direccion:</b> {user.adress}</h3>
+        <h3 className="datos"><b>Fecha de nacimiento:</b> {user.dateOfBirth}</h3>
+        <h3 className="datos"><b>Telefono:</b> {user.telephone}</h3>
+        
+        </div>
         </div>
 
         </div>

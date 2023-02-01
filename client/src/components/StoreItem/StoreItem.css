@@ -114,7 +114,9 @@ top: 420px;
     font-family: proxima-nova, sans-serif;
     font-size: 20px;
     position: relative;
-    right:  100px;
+    right:  83px;
+    
+    
   
 }
 
@@ -130,4 +132,8 @@ color: #fff;
 font-size: 21px;
 font-family: proxima-nova, sans-serif;
 border: none;
+}
+
+.card-body{
+    height: 95px;
 }

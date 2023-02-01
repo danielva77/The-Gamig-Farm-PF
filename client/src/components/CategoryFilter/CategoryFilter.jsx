@@ -27,9 +27,10 @@ const CategoryFilter = () => {
             onChange={handleChangeFilter}
             menuPlacement="top"
             defaultValue={'DEFAULT'}
+           
         >
             
-            <option value="DEFAULT" disabled hidden selected>Consolas:</option>
+            <option value="DEFAULT" disabled hidden selected>Consolas</option>
             {categories?.map(category => {
                 return (
                     <option>{category}</option>

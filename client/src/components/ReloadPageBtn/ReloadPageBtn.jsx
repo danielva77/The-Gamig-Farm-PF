@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../ReloadPageBtn/reload.css"
 
 const ReloadPageBtn = () => {
 

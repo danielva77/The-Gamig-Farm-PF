@@ -73,14 +73,14 @@ const EditUserProfile = () => {
   }
 
   return (
-    <div className="padre container">
-      <h2 className="modificar">
+    <div className="padre container" style={{ border: "#ffffff", width: "70%", background:"black", height: "100%" }}>
+      <h2 className="modificar" style={{ borderRadius: "10px" }}>
         Completa los campos que desees modificar
       </h2>
-      <form className="formulario mt-2" onSubmit={(e) => handleSubmit(e)}>
+      <form className="formulario mt-2"  style={{ border: "#ffffff" }}   onSubmit={(e) => handleSubmit(e)}>
         <div className="imagenFoto">
-        <label name="img" htmlFor="img" className="fotoActual">
-            Foto Actual:
+        <label name="img" htmlFor="img" className="fotoActual" >
+            Foto Actual
           </label> 
           <img
             src={input.avatar ? input.avatar : google3.user.avatar}
@@ -202,7 +202,8 @@ const EditUserProfile = () => {
    
         <button
           type="submit"
-          className="btn btn-success mb-4" 
+          className="btn btn mb-4" 
+          style={{ backgroundColor: "#7600FF" }} 
         //   onClick={(e) => handleSubmit(e)}
         >
           Guardar
@@ -210,7 +211,7 @@ const EditUserProfile = () => {
 
         <div>
           <Link to={`/myProfile/${id}`}>
-            <button class="btn custom-button">Volver a mi perfil</button>
+            <button class="btn custom-button" style={{ backgroundColor: "#7600FF" }} >Volver a mi perfil</button>
           </Link>
         </div>
       </form>

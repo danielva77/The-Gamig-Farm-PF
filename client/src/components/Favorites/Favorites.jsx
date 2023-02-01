@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { removeFromFav } from "../../redux/actions";
@@ -7,7 +7,8 @@ import Fav from "../Assets/favorito.png";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import "../Favorites/Favorites.css"
+import "../Favorites/Favorites.css";
+import { StoreItem } from "../StoreItem/StoreItem";
 
 const Favoritos = () => {
   // const [favItems, setFavItems] = useState([]);
@@ -32,11 +33,13 @@ const Favoritos = () => {
 
   return (
     <>
-      <button className="btn btn-float-left " onClick={() => setShow(true)}>
-        <img src={Fav} alt="imagen" className="img-fluid" style={{  position: "absolute",
-  left: "86%",
-  top: "42px",
-  mt: "22px"}} />
+      <button class="btn btn-float-left " onClick={() => setShow(true)}>
+        <img
+          src={Fav}
+          alt="imagen"
+          className="img-fluid"
+          style={{ position: "absolute", left: "86%", top: "42px", mt: "22px" }}
+        />
       </button>
       <Offcanvas
         show={show}
@@ -44,7 +47,7 @@ const Favoritos = () => {
         onHide={() => setShow(false)}
         style={{
           height: "60vh",
-          margin: "73px 0px",
+          margin: "146px 0px",
         }}
       >
         <h3 className="header">Tus favoritos</h3>
@@ -68,6 +71,7 @@ const Favoritos = () => {
                   />
                   <h4>{item.name}</h4>
                 </Link>
+
                 <p>${item.price}</p>
                 <button
                   className="removeBtn"

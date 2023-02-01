@@ -6,4 +6,6 @@
     width: 150px;
     border-radius: 4px;
     border-color: hsla(0, 0%, 0%, 0.215);
+    font-size: medium;
+    font-weight: 500;
 }
