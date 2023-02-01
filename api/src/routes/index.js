@@ -361,6 +361,9 @@ const consola = [
   { title: "Nintendo DS" },
   { title: "Wii" },
   { title: "Nintendo Switch" },
+  { title: "Nintendo 3DS" },
+  { title: "Nintendo (NES)" },
+  { title: "PSP" },
 ];
 
 const mark = [{ title: "Juegos" }, { title: "Mandos" }];
@@ -456,7 +459,7 @@ const filterByCategory = async (consola) => {
     where: { title: consola },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock"],
+      attributes: ["id", "title", "price", "detail", "img", "stock", ],
       through: {
         attributes: [],
       },
