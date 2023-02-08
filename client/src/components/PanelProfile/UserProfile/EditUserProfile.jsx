@@ -73,7 +73,7 @@ const EditUserProfile = () => {
   }
 
   return (
-    <div className="padre container" style={{ border: "#ffffff", width: "70%", background:"black", height: "100%" }}>
+    <div className="padre container" style={{ border: "#ffffff", width: "1600px", background:"black", height: "100%" }}>
       <h2 className="modificar" style={{ borderRadius: "10px" }}>
         Completa los campos que desees modificar
       </h2>

@@ -1,5 +1,8 @@
 .details-container {
   display: flex;
+  width: 100%;
+  
+  background-color: #fff;
   flex-direction: column;
 }
 
@@ -162,7 +165,7 @@
 } */
 
 .ReviewCont {
-  padding-top: 90%;
+  margin-top: 90%;
   color: #000;
 }
 
@@ -172,4 +175,8 @@
 
 .Review {
   color: #000;
+}
+
+.infocont{
+background-color: #fff;
 }
