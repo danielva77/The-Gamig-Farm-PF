@@ -1,11 +1,11 @@
 .paginated-container{
     /* background-color: red !important; */
     position: relative;
-    top: -4px;
+    top: 5px;
     width: 500px;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 2%;
+   
     
 }
 .botons{
