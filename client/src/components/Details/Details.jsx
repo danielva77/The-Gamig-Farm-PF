@@ -89,6 +89,7 @@ dispatch(disabledProducts(id))
       <NavBar />
 
       {myProduct.length > 0 ? (
+        <div className="infocont">
         <div className="details-info">
           <h1 className="titulo">{myProduct[0].title}</h1>
           <img
@@ -106,6 +107,7 @@ dispatch(disabledProducts(id))
             </button>
           </div>
           <p className="stock">Unidades disponibles: {myProduct[0].stock}</p>
+        </div>
         </div>
       ) : (
         <p>Cargando ...</p>

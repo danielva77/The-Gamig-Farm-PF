@@ -125,7 +125,7 @@ export default function Contact() {
               <div>
                 <img src={support} alt="contacto" className="img-f" />
               </div>
-             <br/>
+              <br />
               <p class="fs-5">
                 Estamos aqui para hacer responder tus consultas
               </p>
@@ -184,7 +184,7 @@ export default function Contact() {
 
               <div class="mb-3">
                 <input
-                 type="text"
+                  type="text"
                   class="form-control inputs2"
                   id="exampleFormControlTextarea1"
                   rows="3"
@@ -201,7 +201,7 @@ export default function Contact() {
               <div class="mb-3">
                 <button
                   type="submit"
-                  className="btn btn-primary w-100 fs-5 enviarMensaje"
+                  className="enviarMensaje"
                   onClick={handleSubmit}
                 >
                   Enviar mensaje

@@ -2,9 +2,10 @@
     /* background-color: red !important; */
     position: relative;
     top: 5px;
-    width: 500px;
-    left: 50%;
+    width: 100%;
+    left: 49.5%;
     transform: translateX(-50%);
+    margin-bottom: 6vh;
    
     
 }

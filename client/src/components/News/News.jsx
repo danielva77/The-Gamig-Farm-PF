@@ -63,14 +63,13 @@ export default function News() {
     infinite: true,
     centerPadding: "20px",
     slidesToShow: 4,
-    speed: 500,
+    speed: 100,
     rows: 2,
     slidesPerRow: 1,
     variableWidth: true,
     };
   return (
     <div>
-      <h2>Noticias de Gaming</h2>
       <Slider {...settings}>{newsList}</Slider>
     </div>
   );

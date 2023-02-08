@@ -71,6 +71,7 @@ const Profile = () => {
 
 
   return (
+  
     isAuthenticated && (
       <div>
           <Link to={`/myProfile/${idUsusuario.id}`}>
@@ -81,6 +82,7 @@ const Profile = () => {
          
           </div>
     )
+    
   )
 };
 

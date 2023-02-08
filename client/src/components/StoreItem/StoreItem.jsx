@@ -54,15 +54,17 @@ export function StoreItem({ id, name, price, img, stock }) {
   return (
     <div
       className="card text-center bg-white"
-      style={{ height: "100%", width: "100%" }}
+      style={{ height: "104%", width: "100%", bottom: "15px" }}
       key={id}
     >
       <Link to={`/products/${id}`}>
-        <img
+        <img className="Image"
           src={img}
           alt="falta la imagen"
           height="180px"
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "contain", 
+        margin: "10px",
+      top:"15px"}}
           class="card-img-top"
         />
 
