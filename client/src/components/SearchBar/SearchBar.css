@@ -1,19 +1,18 @@
-.divSearch{
+.divSearch {
   /* background-color: rebeccapurple; */
-  position: relative;
-  left: 45%;
-  top: -40px;
-  
+  /* position: relative; */
+  /* left: 45%;
+  top: -40px; */
+  /* outline: 2px solid white;s */
 }
-.botonBuscar{
+.botonBuscar {
   color: rgb(255, 255, 255) !important;
-  border: 2px solid rgb(255, 255, 255) !important;
 }
-.botonBuscar:hover{
-  background-color: #7600FF !important;
-  transition: .5s linear;
+.botonBuscar:hover {
+  background-color: #7600ff !important;
+  transition: 0.5s linear;
 }
 
-.container-fluid{
+.container-fluid {
   margin-top: 6vh;
 }

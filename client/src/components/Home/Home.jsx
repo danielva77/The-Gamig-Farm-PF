@@ -50,53 +50,28 @@ export function Home() {
   return (
     <div>
       <NavBar />
-      <div className="filtros">
-        <div>
-        <Sort />
-        </div>
 
-        <div>
-        <CategoryFilter/>
-        </div>
 
-        <div>
-        <MarkFilter />
-        </div>       
-
-        <div>
-        <Mandos/>
-        </div>
-
-        <div>
-        <ReloadPageBtn />
-        </div>
-{/* 
-        <div>
-          <Noticas/>
-        </div> */}
-
-      </div>
-
-      <div>
+      < div >
         <p>Page -{currentPage}-</p>
-      </div>  
+      </ div >
       <div>
       </div>
 
       <StoreItems />
 
-      <Paginado />  
+      <Paginado />
 
-      
-      <News/>
-      
+
+      <News />
+
       <Footer className='footer2' />
 
 
       {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
 
       {/* <button type="submit" className="btn btn-danger" onClick={enviarMensajeCorre}>Enviar correo al Mail</button> */}
-    </div>
+    </div >
   );
 }
 export default Home;

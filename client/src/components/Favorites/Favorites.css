@@ -1,14 +1,16 @@
-.img-fluid2 {
-  position: absolute;
+.fav-btn {
+  /* position: absolute;
   right: 12%;
   top: 24px;
   bottom: 12%;
-  margin-top: 22px;
+  margin-top: 22px; */
 
   /* background: #FFFFFF; */
+  /* position: relative; */
+  /* right: 20px; */
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +20,7 @@
   color: rgb(0, 0, 0);
 }
 
-.removeBtn{
+.removeBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,8 +32,7 @@
 }
 
 .scrollable {
-height:50vh; /* Establece la altura del área de scroll */
+  height: 50vh; /* Establece la altura del área de scroll */
   overflow-y: scroll; /* Habilita el scroll en el eje y */
   padding-top: 5px;
 }
-

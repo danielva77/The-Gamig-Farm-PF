@@ -27,13 +27,12 @@ import FormAdmin from "./admin/scenes/form"
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import { ColorModeContext, useMode } from "./admin/theme"
 import { useState } from "react"
-import Users from "./admin/scenes/users";
+import Users from "./admin/scenes/users"
 import { useSelector } from "react-redux"
 
 function App() {
   const [theme, colorMode] = useMode()
   const [isSidebar, setIsSidebar] = useState(true)
-
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -41,6 +40,7 @@ function App() {
         <CssBaseline />
         <div className="App">
           <Switch>
+            <Route exact path="/navbar" component={NavBar} />
             <Route exact path="/" component={LandingPage} />
             <Route path="/home" component={Home} />
             <Route path="/products/:id" component={Details} />

@@ -1,105 +1,100 @@
 .imagenP {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: 91%;
-    top: 20px;
-    border-radius: 50%;
-      
+  /* position: absolute; */
+  width: 25px;
+  height: 25px;
+  /* left: 91%; */
+  /* top: 20px; */
+  border-radius: 50%;
 }
-.nameP{
-
-position: absolute;
-width: 58px;
-height: 24px;
-left: 96%;
-top: -20px;
-font-size: 7px;
-color: rgb(255, 255, 255);
-font-family: proxima-nova, sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
-
+.nameP {
+  /* position: absolute; */
+  width: 58px;
+  height: 24px;
+  /* left: 96%; */
+  /* top: -20px; */
+  font-size: 7px;
+  color: rgb(255, 255, 255);
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 }
 
-.header{
-    color: rgb(251, 251, 251);
-    font-size: 79%;
-    background-color: rgb(0, 0, 0);
-    /* border-top-left-radius: 15px; */
+.header {
+  color: rgb(251, 251, 251);
+  font-size: 79%;
+  background-color: rgb(0, 0, 0);
+  /* border-top-left-radius: 15px; */
 }
 
-.picture{
-    border-radius:100%;
-    margin-right: 5%;
-    object-fit:contain; 
-    width: 58px;
-    height: 24px;
+.picture {
+  border-radius: 100%;
+  margin-right: 5%;
+  object-fit: contain;
+  width: 58px;
+  height: 24px;
 }
 
-
-.Perfil-btn{
-    display:grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background:  #747272;
-    color: #ffff;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 450;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    border: none;
-    overflow: hidden;
+.Perfil-btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #747272;
+  color: #ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 450;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border: none;
+  overflow: hidden;
 }
 
-.compras-btn{
-    display:grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background:  #747272;;
-    color: #ffff;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 450;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    border: none;
-    overflow: hidden;
-    margin-top: 1px;
+.compras-btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #747272;
+  color: #ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 450;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border: none;
+  overflow: hidden;
+  margin-top: 1px;
 }
 
-.Contacto-btn{
-    display:grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background:  #747272;
-    color: #ffff;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 450;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    border: none;
-    overflow: hidden;
-    margin-top: 1px;
-
+.Contacto-btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #747272;
+  color: #ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 450;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border: none;
+  overflow: hidden;
+  margin-top: 1px;
 }
 
-.Favortios-btn{
-    display:grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background:  #747272;
-    color: #ffff;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 450;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    border: none;
-    overflow: hidden;
-    margin-top: 1px;
+.Favortios-btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #747272;
+  color: #ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 450;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border: none;
+  overflow: hidden;
+  margin-top: 1px;
 }

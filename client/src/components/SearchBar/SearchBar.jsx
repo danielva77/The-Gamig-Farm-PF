@@ -1,11 +1,10 @@
+import { Box } from "@mui/material";
+import { GridSearchIcon } from "@mui/x-data-grid";
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchByName, setNameFilter } from '../../redux/actions'
-import { Link } from "react-router-dom"
 import './SearchBar.css'
-import lupa from "../Assets/lupa.png"
-import LOGO from "../Assets/LOGO.png"
 
 export default function SearchBar() {
   const dispatch = useDispatch(); //hoks
@@ -25,19 +24,24 @@ export default function SearchBar() {
   };
 
   return (
+    <form role="search">
 
-
-    <>
-
-<nav className="navbar bg-body-tertiary divSearch">
-  <div className="container-fluid">
-    <form class="d-flex" role="search">
-  <input type="search" className="form-control me-2" placeholder="Buscar" aria-label="Search"  onChange={(e) => { handleInputChange(e) }}/>
-      <button class="btn btn-outline-success botonBuscar" type="submit" onClick={(e) => { handleSubmit(e) }}>Search</button>
+      <Box display="d-flex" columnGap="3px">
+        <input
+          type="search"
+          className="form-control"
+          placeholder="Buscar"
+          aria-label="Search"
+          onChange={(e) => { handleInputChange(e) }}
+        />
+        <button
+          className="btn botonBuscar"
+          type="submit"
+          onClick={(e) => { handleSubmit(e) }}
+        >
+          <GridSearchIcon fontSize="large" onClick={(e) => { handleSubmit(e) }} />
+        </button>
+      </Box>
     </form>
-  </div>
-</nav>
-    </>
-
   );
 }
