@@ -409,14 +409,14 @@ const createProduct = async () => {
         stock: prodJson.products[i].stock,
       })
 
-      let addM = producto.addMark(marca)
-      let addC = producto.addCategory(category)
+      await producto.addMark(marca)
+      await producto.addCategory(category)
 
-      allProducts.push(producto)
-      agregarCategory.push(addC)
-      agregarMark.push(addM)
+      // allProducts.push(producto)
+      // agregarCategory.push(addC)
+      // agregarMark.push(addM)
 
-      await Promise.all([...category, ...marca, ...producto])
+      // await Promise.all([...category, ...marca, ...producto])
     }
 
     return "La base de datos se ha cargado con exito"
@@ -493,7 +493,7 @@ router.get("/db", async (req, res) => {
 
     const products = await createProduct()
 
-    return res.status(200).json(products)
+    return res.status(200).send(products)
   } catch (error) {
     console.log(error)
     return res.status(404).json(error)
