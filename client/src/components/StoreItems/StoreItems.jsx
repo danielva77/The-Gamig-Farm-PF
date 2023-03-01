@@ -13,6 +13,7 @@ import { sortByPrice } from "../../hooks/sortByPrice";
 import { paginateItems } from "../../hooks/paginateItems";
 import { getNumberButtons } from "../../hooks/getNumberButtons";
 import Footer from "../Footer/Footer";
+import { convertLength } from "@mui/material/styles/cssUtils";
 
 
 
@@ -40,8 +41,8 @@ function StoreItems({ currentVideogames }) {
   // variable auxiliar para filtrar, ordenar y paginar los items
   let filteredAndSorted = items;
 
-  if(mandofilter[0]){filteredAndSorted = mandofilter}
-if(juegosfilter[0]){filteredAndSorted = juegosfilter}
+  //   if(mandofilter[0]){filteredAndSorted = mandofilter}
+  // if(juegosfilter[0]){filteredAndSorted = juegosfilter}
 
   // Filtrado por categoria
   filteredAndSorted = categoryFilter
@@ -55,10 +56,10 @@ if(juegosfilter[0]){filteredAndSorted = juegosfilter}
   //   ? filteredbyMarks(filteredAndSorted, markFilter, resetCurrentPage)
   //   : filteredAndSorted;
 
-    // Filtrado por mandos
-    // filteredAndSorted = mandofilter
-    // ? mandofilter
-    // : filteredAndSorted;
+  // Filtrado por mandos
+  // filteredAndSorted = mandofilter
+  // ? mandofilter
+  // : filteredAndSorted;
 
   // Filtrado por nombre
   filteredAndSorted = nameFilter
@@ -76,11 +77,11 @@ if(juegosfilter[0]){filteredAndSorted = juegosfilter}
 
 
 
-    // filteredAndSorted = mandofilter[0] ?
-    // mandofilter : filteredAndSorted
+  // filteredAndSorted = mandofilter[0] ?
+  // mandofilter : filteredAndSorted
 
-    // filteredAndSorted = juegosfilter[0] ?
-    // juegosfilter : filteredAndSorted
+  // filteredAndSorted = juegosfilter[0] ?
+  // juegosfilter : filteredAndSorted
 
 
   // Paginate items
@@ -92,34 +93,33 @@ if(juegosfilter[0]){filteredAndSorted = juegosfilter}
 
   return (
     <>
+      {console.log('items: ', items)}
       <div className="divG">
-        
+
         <div className="modelo3">
-          {currentItems.length
+          {items[0]
             ?
-            currentItems.map((item) => {
-              if(item.isActive){
-              return (
-                <>
-                  <Link to={`/products/${item.id}`}>
-                  </Link>
-                  <div className="modelo">
-                    <StoreItem
-                      id={item.id}
-                      name={item.title}
-                      img={item.img}
-                      price={item.price}
-                      stock={item.stock}
-                    />
-                  </div>
-                </>
-              )}
-            })
+            items.map((item) =>
+              // item.isActive ? 
+              <>
+                <Link to={`/products/${item.id}`}>
+                </Link>
+                <div className="modelo">
+                  <StoreItem
+                    id={item.id}
+                    name={item.title}
+                    img={item.img}
+                    price={item.price}
+                    stock={item.stock}
+                  />
+                </div>
+              </>
+            )
             :
             <div>  "No hay productos todavía."</div>
           }
         </div>
-       
+
       </div>
     </>
 
