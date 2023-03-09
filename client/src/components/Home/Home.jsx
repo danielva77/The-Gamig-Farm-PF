@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Mandos from "../Mandos/Mando"
-import Noticas from "../Noticias/Noticas"
+import Mandos from "../Mandos/Mando";
+import Noticas from "../Noticias/Noticas";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
@@ -17,8 +17,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import Footer from "../Footer/Footer";
 import News from "../News/News";
-
-
 
 export function Home() {
   const dispatch = useDispatch();
@@ -50,43 +48,40 @@ export function Home() {
       <NavBar />
       <div className="filtros">
         <div>
-        <Sort />
+          <Sort />
         </div>
 
         <div>
-        <CategoryFilter/>
+          <CategoryFilter />
         </div>
 
         <div>
-        <MarkFilter />
-        </div>       
-
-        <div>
-        <Mandos/>
+          <MarkFilter />
         </div>
 
         <div>
-        <ReloadPageBtn />
+          <Mandos />
         </div>
-{/* 
+
+        <div>
+          <ReloadPageBtn />
+        </div>
+        {/* 
         <div>
           <Noticas/>
         </div> */}
-
       </div>
 
       <div>
         <p>Page -{currentPage}-</p>
-      </div>  
-      <div>
       </div>
+      <div></div>
 
       <StoreItems />
-      <Paginado />  
-      <News/>
-      
-      <Footer className='footer2' />
+      <Paginado />
+      <News />
 
+      <Footer className="footer2" />
 
       {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
 
