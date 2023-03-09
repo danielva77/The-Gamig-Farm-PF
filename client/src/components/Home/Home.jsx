@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Mandos from "../Mandos/Mando"
-import Noticas from "../Noticias/Noticas"
+import Mandos from "../Mandos/Mando";
+import Noticas from "../Noticias/Noticas";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
@@ -18,8 +18,6 @@ import axios from "axios";
 import Footer from "../Footer/Footer";
 import News from "../News/News";
 
-
-
 export function Home() {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.currentPage);
@@ -27,8 +25,15 @@ export function Home() {
   const google2 = useAuth0();
 
   let email = JSON.parse(localStorage.getItem("email"));
+  
+  // MODO OSCURO
+  // const functionModo = () => {
+  //   alert(
+  //     "Todavia estamos en proceso sobre el cambio de modo oscuro a modo claro, gracias por entender..."
+  //   );
+  // };
 
-  useEffect(() => {
+  useEffect(() => { 
     dispatch(getAllProd());
     dispatch(getAllCategories());
     if (google2.isAuthenticated) {
@@ -50,43 +55,48 @@ export function Home() {
       <NavBar />
       <div className="filtros">
         <div>
-        <Sort />
+          <Sort />
         </div>
 
         <div>
-        <CategoryFilter/>
+          <CategoryFilter />
         </div>
 
         <div>
-        <MarkFilter />
-        </div>       
-
-        <div>
-        <Mandos/>
+          <MarkFilter />
         </div>
 
         <div>
-        <ReloadPageBtn />
+          <Mandos />
         </div>
-{/* 
+
+        <div>
+          <ReloadPageBtn />
+        </div>
+
+        {/* MODO OSCURO */}
+        {/* <button onClick={functionModo}>
+          <div className="luzNoche">
+            <p className="modoOscuro">Modo Oscuro 🌑</p>
+          </div>
+        </button> */}
+
+        {/* 
         <div>
           <Noticas/>
         </div> */}
-
       </div>
 
       <div>
         <p>Page -{currentPage}-</p>
-      </div>  
-      <div>
       </div>
+      <div></div>
 
       <StoreItems />
-      <Paginado />  
-      <News/>
-      
-      <Footer className='footer2' />
+      <Paginado />
+      <News />
 
+      <Footer className="footer2" />
 
       {/* 📨📨📨   BOTON DE PRUEBA DEL POST  📨📨📨  */}
 

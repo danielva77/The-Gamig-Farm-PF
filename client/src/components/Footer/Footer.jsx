@@ -10,12 +10,12 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <div>
-          <h3></h3>
-          <img src={logoOriginal1} alt="" />
+          
+          <img src={logoOriginal1} alt="" className="imagenLogito" />
         </div>
 
         <div className="contenedores">
-          <h2 className="titulo2">Compra sin moverte</h2>
+          <h2 className="titulo2 compraS">Compra sin moverte</h2>
 
           <a href="/home" className="link1"  target="_blank">
             Tu perfil
@@ -26,7 +26,7 @@ class Footer extends React.Component {
         </div>
 
         <div className="conocenos">
-          <h2 className="titulo2">Conocenos</h2>
+          <h2 className="titulo2 conocenosS">Conocenos</h2>
 
           <a href="/contacto" className="link1" target="_blank">
             Contacto

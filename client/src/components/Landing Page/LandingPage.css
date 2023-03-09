@@ -162,3 +162,44 @@ position: absolute;
 right:-4%;
 margin-top: 10%;
 }
+
+
+/*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 414px) {
+  .ps5{
+    max-width: 100%;
+    height: 300px;
+  position: absolute;
+  right:-4%;
+  top: 360px !important
+  /* margin-top: 10%; */
+  } 
+
+.bienvenido{
+  /* background-color: red; */
+  padding-bottom: 10px;
+  width: 400px;
+  position: absolute;
+  left: 10px;
+  top: 310px;
+  font-size: 18px;
+}
+.tituloLanding{
+  /* border: 3px solid rgb(252, 0, 0); */
+  position: absolute;
+  width: 400px;
+  top: 70px;
+  left: 8px;
+  font-size: 37px;
+}
+.cssbuttons-io{
+  /* border: 6px solid green; */
+  position: absolute;
+  top: 750px;
+}
+
+
+
+
+}

@@ -103,3 +103,22 @@ line-height: 24px;
     overflow: hidden;
     margin-top: 1px;
 }
+/*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 414px) {
+    .imagenP {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        left: 200px;
+        top: 60px;
+        border-radius: 50%;
+    }
+    .logout{
+        /* background-color: rgb(62, tr, 101) !important; */
+        position: relative;
+        left: 190px;
+        top: 70px;
+    }
+    
+}

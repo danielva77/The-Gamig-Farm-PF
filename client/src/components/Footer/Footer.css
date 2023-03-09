@@ -69,3 +69,67 @@
   margin-top: 40px;
   text-align: left;
 }
+
+
+
+/*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 414px) {
+  .footer{
+    /* background-color: red; */
+    height: 350px !important;
+  }
+  .titulo2 {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #a0a0a0;
+    /* background-color: green; */
+    position: relative;
+    left: -10px !important;
+    top: -20px
+  }
+  .compraS{
+    /* background-color: darkgreen; */
+    width: 230px;
+    padding: 0 !important;
+    margin: 0;
+    position: relative;
+    left: -60px !important;
+  }
+  .conocenosS{
+    /* background-color: #7600FF; */
+    position: relative;
+    left: 5px !important;
+  }
+  .conocenos {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #a7a9be;
+    text-align: center;
+    width: 50%;
+    background-color: transparent !important;
+    /* background-color: green; */
+    /* position: relative; */
+    /* left: ; */
+  }
+  .contenedores{
+    background-color: transparent;
+    /* background-color: blue; */
+    position: relative;
+    left: -105px;
+    width: 100px;
+  }
+  .imagenLogito{
+    /* border: 6px solid turquoise; */
+    position: relative;
+    left: 125px;
+    top: 170px;
+  }
+}

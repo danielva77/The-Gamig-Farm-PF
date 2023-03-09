@@ -113,3 +113,57 @@ left: 60px;
   margin-right: 18px;
   top: 5px;
 }
+
+
+
+
+/*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 414px) {
+  .primerDiv{
+    /* background-color: red; */
+    width: 300px;
+  }
+  .fotoEquipo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    left:  -140px;
+    top: 15px;
+    /* display: block; */
+    /* top: 30px; */
+    object-fit: contain;
+   /* border: 1px solid white; */
+   /* background-color: red; */
+  }
+  .cardPersona{
+    /* background-color: green; */
+    position: relative;
+    left: -18px;
+    width: 397px;
+  }
+  .nombreEquipo{
+    /* background-color: #ffffff; */
+    position: relative;
+    top: -70px;
+    left: 45px;
+    /* width: 250px; */
+    font-size: 29px;
+    text-align: center;   
+  }
+  .descripcionEquipo{
+    /* background-color: red; */
+    position: relative;
+    left: 10px;
+    top: 5px;
+    /* font-size: 15px; */
+    width: 380px;
+  }
+  .parrafo1{
+    /* background-color: green; */
+    width: 400px;
+    position: relative;
+    left: -3px !important;
+  }
+}

@@ -50,24 +50,6 @@ const Profile = () => {
 
 
 
-// 
-
-
-//   const userNew = []
-//   let b = 0
-// console.log("BBBB", b)
-
-//   if(!userNew.includes(email) && b == 0){
-//     userNew.push(email)
-//     console.warn("userNew → ", userNew)
-//     axios.post("http://localhost:3001/nuevoUsuario", correo);
-
-//     b = 1
-//     console.log("BBBB  2222222", b)
-//   }
-
-//   console.log("userNew → ", userNew)
-
 
 
   return (

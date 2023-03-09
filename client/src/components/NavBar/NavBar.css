@@ -84,3 +84,105 @@
   margin-top: 30px;
   left: 89%;
 }
+
+
+
+
+
+/*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 414px) {
+  .navbar-container{
+    /* background-color: red; */
+    height: 205px;
+  }
+  .filtros{
+    background-color: aqua !important;
+    position: relative;
+    top: 168px !important;
+  }
+  .logoOriginal1{
+    /* background-color: red; */
+    /* border: 3px solid green; */
+    position: absolute;
+    left: 10px;
+    width: 100px !important;
+    height: 100px;
+  }
+  .form-control{
+    /* background-color: red !important; */
+    /* border: 3px solid green; */
+    position: absolute;
+    width: 210px !important;
+    left: -70px;
+    top: 48px;
+    font-size: 13px !important;
+    letter-spacing: 1px;
+  }
+  .botonBuscar{
+    background-color: red;
+    border: 1px solid rgb(255, 255, 255) !important;
+    position: relative;
+    top: -64px;
+    left: 130px;
+    font-size: 10px !important;
+  }
+  .producto{
+    /* background-color: yellow !important; */
+    font-size: 20px;
+    position: relative;
+    left: -110px;
+    top: 52px;
+  }
+  .contacto{
+    /* background-color: yellow !important; */
+    font-size: 20px;
+    position: relative;
+    left: -224px;
+    top: 135px;
+  }
+  .sobreNosotro{
+    /* background-color: yellow !important; */
+    font-size: 20px;
+    position: relative;
+    left: -110px;
+    top: 70px;
+  }
+  .login{
+    /* background-color: blue; */
+    position: relative;
+    left: 190px !important;
+    top: 60px !important; 
+    font-size: 25px !important;
+    width: 130px;
+    height: 50px;
+    /* border: 3px solid black; */
+    padding: 0px 0px ;
+  }
+  .carritoN{
+    /* background-color: green; */
+    position: relative;
+    top: 112px;
+    left: -110px;
+  }
+  .img-fluid{
+    /* background-color: green !important; */
+    position: relative;
+    left: 300px !important;
+    top: 155px !important;
+  }
+  .quantity-circle{
+    /* background-color: skyblue !important; */
+    position: relative;
+    left: -25px;
+    top: 75px;
+  }
+  .filterCategory{
+    background-color: red !important;
+}
+.admins{
+  /* background-color: red; */
+  position: relative;
+  left: -100px;
+}
+}

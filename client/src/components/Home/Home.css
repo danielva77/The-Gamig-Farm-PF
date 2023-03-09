@@ -19,7 +19,7 @@
 
 
 /* Filtro SORT */
-.filterSort{
+.filterSort {
   width: 10% !important;
   left: 16% !important;
   position: relative;
@@ -30,9 +30,10 @@
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
   height: 28px;
-  top:2px
+  top: 2px
 }
-.filterSort:focus{
+
+.filterSort:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
   transition: .5s linear;
@@ -42,7 +43,7 @@
 
 
 /* Filtro Category */
-.filterCategory{
+.filterCategory {
   width: 10% !important;
   left: 30.6% !important;
   position: relative;
@@ -54,7 +55,8 @@
   border-radius: 5px !important;
   top: 4px;
 }
-.filterCategory:focus{
+
+.filterCategory:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
   transition: .5s linear;
@@ -62,7 +64,7 @@
 
 /* Filtro Mark */
 
-.filterMark{
+.filterMark {
   width: 10% !important;
   left: 54% !important;
   position: relative;
@@ -72,9 +74,10 @@
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-  
+
 }
-.filterMark:focus{
+
+.filterMark:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
   transition: .5s linear;
@@ -83,14 +86,14 @@
 
 /* Boton Reset  */
 
-.botonReset{
+.botonReset {
   width: 10% !important;
   left: 29% !important;
   position: relative;
   height: 28px;
   padding: 1px 25px !important;
   border: 2px solid rgba(0, 0, 0, 0.21) !important;
-  
+
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
@@ -100,18 +103,19 @@
 
 
 /* TODO EL DIV ENTERO ↑ */
-.filtros{
+.filtros {
   justify-content: start !important;
   /* background-color: green  !important;  */
   position: absolute !important;
   margin-top: 35px !important;
   position: absolute;
-    height: 28px;
-  
-    top: 6px;
-    width: 150px;
+  height: 28px;
+
+  top: 6px;
+  width: 150px;
 
 }
+
 /* BOTONES ADMINISTRADOR */
 
 
@@ -121,20 +125,22 @@
 
 
 /* Agregar el comentario */
-.Review{ 
+.Review {
   /* background-color: hsl(114, 87%, 50%); */
   position: absolute;
   left: 62%;
   top: 535px;
   /* border: 3px solid rgb(77, 226, 35); */
-  
+
 
 }
-.tituloAgregar{
+
+.tituloAgregar {
   font-weight: 700;
   font-family: proxima-nova, sans-serif;
 }
-.activarDesactivar{
+
+.activarDesactivar {
   background-color: red !important;
   position: absolute;
   left: 67%;
@@ -145,7 +151,7 @@
   font-weight: 700;
 }
 
-.inputComentario{
+.inputComentario {
   width: 400px;
   position: relative;
   top: 15px;
@@ -153,18 +159,16 @@
   font-size: 18px;
 }
 
-.estrellas{
+.estrellas {
   position: relative;
   top: 20px;
   width: 30px;
 }
 
-.botonPublicar{
+.botonPublicar {
   width: 100px;
   position: relative;
   top: 20px;
-
-  /*  */
 
 
   background-color: rgb(143, 84, 245);
@@ -179,7 +183,7 @@
 
 }
 
-.editarProducto{
+.editarProducto {
   background-color: rgb(213, 73, 209) !important;
   position: absolute;
   left: 80%;
@@ -191,7 +195,8 @@
   /* border: 2px solid rgb(0, 44, 187); */
 
 }
-.cantidadAgregar{
+
+.cantidadAgregar {
   /* background-color: rgb(44, 47, 241) !important; */
   position: absolute;
   left: 77.5%;
@@ -203,16 +208,17 @@
 
 
 
-.comentarios{
+.comentarios {
   /* background-color: rgba(91, 208, 2, 0.793); */
-  position: absolute; 
+  position: absolute;
   left: 550px;
   top: 850px;
- 
+
   /* margin-top: 250px; */
 
 }
-.inputNumero{
+
+.inputNumero {
   width: 76px;
   /* background-color: rgb(54, 120, 251); */
   /* padding: 14px; */
@@ -222,11 +228,81 @@
   border: 2px solid rgb(0, 0, 0);
 
 }
-.agregarStock{
+
+.agregarStock {
   background-color: rgb(54, 120, 251);
   position: relative;
   top: 15px;
   border-radius: 10px;
   padding: 5px 5px;
   width: 125px;
+}
+
+@media (max-width: 414px) {
+
+  /* ! FILTER 1 */
+  .filterSort {
+    left: 5px !important;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.262) !important;
+    background-color: rgb(255, 0, 0) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 80px !important;
+  }
+  
+  .filterSort:focus {
+    background-color: rgb(0, 0, 0) !important;
+    color: aliceblue !important;
+    transition: .5s linear;
+  }
+
+
+
+  /* ! FILTER 2 */
+
+  .filterCategory {
+    left: 90px !important;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgba(13, 254, 0, 0.941) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 70px !important;
+    /* font-size: 12px; */
+ 
+  }
+  
+  .filterCategory:focus {
+    background-color: rgb(0, 0, 0) !important;
+    color: aliceblue !important;
+    transition: .5s linear;
+  }
+  .filterMark2{
+    left: 170px !important;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgba(60, 198, 252, 0.941) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 65px !important;
+  }
+  .filterMark3{
+    left: 245px !important;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgba(250, 254, 0, 0.941) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 68px !important;
+  }
+  .botonReset{
+    background-color: red !important;
+    position: relative;
+    /* overflow: hidden ; */
+    width: 80px !important;
+    text-align: center !important;
+    left: 160px !important; 
+    font-size: 12px !important;
+    letter-spacing: 1px;
+    font-weight: 800;
+    height: 40px;
+    top: -29.9px;
+  }
 }

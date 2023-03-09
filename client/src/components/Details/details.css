@@ -1,7 +1,6 @@
 .details-container {
   display: flex;
   width: 100%;
-  
   background-color: #fff;
   flex-direction: column;
 }
@@ -29,6 +28,7 @@
   margin-right: 140px;
   text-align: left;
 }
+
 .imagenProducto {
   position: absolute;
   max-width: 300px;
@@ -37,6 +37,7 @@
   top: 143px;
   margin-top: 2%;
 }
+
 .descripcion {
   position: absolute;
   font-family: proxima-nova, sans-serif;
@@ -52,8 +53,9 @@
 
   color: #a7a9be;
   text-align: left;
-  
+
 }
+
 .precio {
   position: absolute;
   width: 204px;
@@ -71,6 +73,7 @@
 
   color: #7600ff;
 }
+
 .stock {
   position: absolute;
   width: auto;
@@ -87,6 +90,7 @@
 
   color: #a7a9be;
 }
+
 .descripcionTitulo {
   position: absolute;
   width: auto;
@@ -112,6 +116,7 @@
   top: 70px;
   background: #7600ff;
 }
+
 .volver {
   color: #000;
   text-decoration: none;
@@ -123,10 +128,12 @@
   top: 8px;
   width: auto;
 }
+
 .volver:hover {
   color: #fff;
   text-decoration: none;
 }
+
 .botonCarritoDetalle {
   position: absolute;
   width: 125px;
@@ -140,6 +147,7 @@
   color: #fff;
   /* font-size: 50px; */
 }
+
 .suma {
   font-family: "Helvetica";
   font-style: normal;
@@ -150,9 +158,11 @@
   color: #ffffff;
   text-decoration: none;
 }
+
 .suma:hover {
   color: #fff;
 }
+
 .carrito {
   position: relative;
   width: 30px;
@@ -177,6 +187,6 @@
   color: #000;
 }
 
-.infocont{
-background-color: #fff;
+.infocont {
+  background-color: #fff;
 }

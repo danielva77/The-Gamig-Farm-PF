@@ -17,7 +17,7 @@ function NavBar() {
   // AUTENTICACION
   const { isAuthenticated } = useAuth0();
   let email = JSON.parse(localStorage.getItem("email"));
-  let emailadmin="thegamingfarm01@gmail.com"
+  let emailadmin = "thegamingfarm01@gmail.com";
 
   const { openCart, cartQuantity } = useShoppingCart();
 
@@ -37,19 +37,20 @@ function NavBar() {
         {/* <a className="link" href="/home">
           Inicio
         </a> */}
-        <a className="link" href="/home">
+        <a className="link producto" href="/home">
           Productos
         </a>
-        <a className="link" href="/contacto">
+        <a className="link contacto" href="/contacto">
           Contacto
         </a>
-        <a className="link" href="/about">
+        <a className="link sobreNosotro" href="/about">
           Sobre Nosotros
         </a>
-        { email == emailadmin ?
-        <a className="link" href="/admin">
-          Administrador
-        </a> : null}
+        {email == emailadmin ? (
+          <a className="link admins" href="/admin">
+            Administrador
+          </a>
+        ) : null}
       </div>
 
       <SearchBar />
@@ -68,7 +69,7 @@ function NavBar() {
       <div className="cart-btn">
         <Button variant="" class="btn btn float-right" onClick={openCart}>
           {""}
-          <img src={Carrito} alt="imagen" className="img-fluid" />
+          <img src={Carrito} alt="imagen" className="img-fluid" class="carritoN" />
           <div className="quantity-circle">{cartQuantity}</div>
         </Button>
       </div>
