@@ -1,169 +1,185 @@
 /* DISEÑO NUEVO */
 
-.primerDiv{
+.primerDiv {
   margin: 40px 10px;
   position: relative;
   font-family: proxima-nova, sans-serif;
 }
-.sobreNosotros{
+.sobreNosotros {
   font-weight: 800;
   text-align: left;
   position: relative;
   top: 10px;
   left: 60px;
-
+  color: #ffffff;
+  background-color: #7600ff;
+  width: 1380px;
+  padding: 2%;
+  border-radius: 10px;
 }
-.parrafo1{
+.parrafo1 {
   font-style: normal;
-font-weight: 500;
-font-size: 25px;
-line-height: 38px;
-width: 95%;
-color: #51535A;
-text-align: left;
-position: relative;
-top: 10px;
-left: 60px;
-
-
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 38px;
+  width: 92%;
+  color: #67686b;
+  text-align: left;
+  position: relative;
+  top: 20px;
+  left: 60px;
 }
-.nuestroEquipo{
+.nuestroEquipo {
   font-weight: 800;
   text-align: left;
   position: relative;
   left: 60px;
-  top: 10px;
+  top: 7px;
+  color: #ffffff;
   /* background-color: red; */
 }
 
-
 /* CARDS */
 
-.tarjetasPadre{
+.tarjetasPadre {
   display: inline-flex;
   margin: 16px;
   /* padding: 0; */
-
 }
 
-
-
-.cardPersona{
+.cardPersona {
   width: 680px;
   height: 300px;
-  background: #0F0E17;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 10px;
   justify-content: space-around;
-  color: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #7600ff 0px 30px 60px -30px;
-
+  color: #000000;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #7600ff 0px 30px 60px -30px; */
 }
-.fotoEquipo{
+.fotoEquipo {
   width: 240px;
   height: 240px;
   border-radius: 50%;
   position: relative;
-  left:  -200px;
+  left: -200px;
   /* display: block; */
   top: 30px;
   object-fit: contain;
- 
 }
 /* 
 .divFoto{
   display: block;
 } */
 
-
-.nombreEquipo{
-  
+.nombreEquipo {
   /* display: inline-flex; */
   position: relative;
-  top:   -200px;
+  top: -200px;
   left: 265px;
-  color: #7600FF;
+  color: #7600ff;
   font-family: proxima-nova, sans-serif;
   font-weight: 700;
   text-align: left;
-
 }
-.descripcionEquipo{
+.descripcionEquipo {
   position: relative;
   left: 270px;
   top: -195px;
   font-family: proxima-nova, sans-serif;
   font-weight: 400;
-  width:400px;
+  width: 400px;
   text-align: left;
   font-size: 18px;
   text-align: left;
 }
 
-
-.linksEquipo{
+.linksEquipo {
   position: relative;
-  bottom:  200px;
+  bottom: 200px;
   left: 540px;
   display: flex;
   width: 120px;
   padding: 10px;
 }
-.linkedinI{
+.linkedinI {
   position: relative;
   margin-right: 18px;
   top: 5px;
 }
 
-
-
-
 /*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
 /* Estilos para pantallas más pequeñas (hasta 414px) */
-@media (max-width: 414px) {
-  .primerDiv{
+@media (max-width: 747px) {
+  .primerDiv {
     /* background-color: red; */
     width: 300px;
   }
-  .fotoEquipo{
+  .sobreNosotros {
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    left: 69px;
+    color: #ffffff;
+    background-color: #b6b6b6;
+    width: 252px;
+    padding: 2%;
+    border-radius: 10px;
+  }
+
+  .fotoEquipo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     position: relative;
-    left:  -140px;
-    top: 15px;
+    left: -140px;
+    top: 27px;
     /* display: block; */
     /* top: 30px; */
     object-fit: contain;
-   /* border: 1px solid white; */
-   /* background-color: red; */
+    /* border: 1px solid white; */
+    /* background-color: red; */
   }
-  .cardPersona{
+  .cardPersona {
     /* background-color: green; */
     position: relative;
     left: -18px;
     width: 397px;
   }
-  .nombreEquipo{
+  .nombreEquipo {
     /* background-color: #ffffff; */
     position: relative;
-    top: -70px;
+    top: -40px;
     left: 45px;
     /* width: 250px; */
     font-size: 29px;
-    text-align: center;   
+    text-align: center;
   }
-  .descripcionEquipo{
+  .descripcionEquipo {
     /* background-color: red; */
     position: relative;
     left: 10px;
     top: 5px;
     /* font-size: 15px; */
     width: 380px;
+    font-weight: 500;
   }
-  .parrafo1{
+  .parrafo1 {
     /* background-color: green; */
-    width: 400px;
+    width: 390px;
     position: relative;
-    left: -3px !important;
+    left: 0px !important;
+    text-align: justify;
+    text-justify: inter-word !important;
+  }
+
+  .nuestroEquipo{
+    font-weight: 800;
+    text-align: left;
+    position: relative;
+    left: 69px;
+    margin:9px;
+    color: #ffffff;
+    /* background-color: red; */
   }
 }

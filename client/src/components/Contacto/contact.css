@@ -16,13 +16,13 @@
   top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #7600FF;
+  background-color: #ffffff;
   max-width: 500px;
   height: 610px;
   /* border: 3.5px solid #ffffff; */
   /* outline: 4px solid rgb(0, 0, 0); */
   z-index: 1;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 #titulo-formulario {
@@ -39,7 +39,7 @@ h2 {
   background-color: #ffffff !important;
   color: rgb(0, 0, 0) !important;
   /* border: 2.5px solid black !important; */
-  border-radius: 0px !important;
+  border-radius: 5px !important;
   /* height: 80px;  */
 }
 
@@ -52,7 +52,7 @@ h2 {
   background-color: #ffffff !important;
   color: rgb(0, 0, 0) !important;
   /* border: 2.5px solid black !important; */
-  border-radius: 0px !important;
+  border-radius: 5px !important;
   font-size: 13px !important;
   padding-bottom: 30px !important;
   /* overflow: scroll;  */
@@ -85,7 +85,7 @@ h2 {
   border-radius: 100px !important;
     border: none;
   background: #000000;
-  color: rgb(255, 255, 255);
+  color: #f7f7f7;
   overflow: hidden;
    position: absolute;
    width: 90%;
@@ -166,7 +166,7 @@ h2 {
 
 .casita {
   position: absolute !important;
-  background-color: #212020 !important;
+  background-color: #ccc6c6 !important;
   width: 100% !important;
   height: 100% !important;
 }

@@ -21,3 +21,15 @@
     justify-content: center;
     align-items: center; 
 }
+@media (max-width: 747px) {
+    .paginated-container{
+        
+        width: 100%;
+        left: 48%;
+        transform: translateX(-50%);
+        margin-bottom: 6vh;
+        top: 17px;
+       
+        
+    }
+}
