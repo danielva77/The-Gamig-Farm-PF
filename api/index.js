@@ -12,3 +12,10 @@ conn.sync({ force: false }).then(() => {
     console.log(`%s listening at ${port}`); // eslint-disable-line no-console
   });
 });
+
+//?asdasda 
+
+//*dasdasd🔗
+//!asd
+//TODO: you know 
+

@@ -1,15 +1,13 @@
 import React from "react";
 import "./LandingPage.css";
 import { NavLink } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
+
 import Footer from "../Footer/Footer";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect } from "react";
+
 import { useDispatch } from "react-redux";
-import { idUser } from "../../redux/actions";
-import Fuego from "../Assets/fuego.png"
-import { useState } from "react";
-import Control from "../Assets/74ace6e2-4502-4866-a67d-77f47afde849.jpg-output.png"
+
+import Control from "../Assets/74ace6e2-4502-4866-a67d-77f47afde849.jpg-output.png";
+import Logoooo from "../Assets/logoOriginal1.svg";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -22,34 +20,31 @@ const LandingPage = () => {
     <>
       {/* <NavBar /> */}
       <div className="info-landing">
-        <div className="container">
-         
-          <h1 className="tituloLanding">
-            Enciende tu Experiencia de Juego con Nuestros Productos
-          </h1>
+        <div className="container" >
+          
+          <img className="logoooo" src={Logoooo} />
 
-           {/* <img  className="fuego" src={Fuego}  /> */}
+          <h1 className="tituloLanding">Bienvenid@s a TheGamingFarm! </h1>
 
-          <p className="bienvenido">
-           "Bienvenidos a TheGamingFarm! Aquí podrás encontrar un cátalogo
-            completo de las consolas más icónicas de las últimas décadas e 
-            informarte de las novedades relacionadas al Mundo Gamer”
-          </p>
-          <NavLink to="/home" onClick={e => window.location.assign("http://localhost:3000/home")}>
+          {/* <img  className="fuego" src={Fuego}  /> */}
+          <NavLink to="/home" onClick=
+            {(e) => window.location.assign("http://localhost:3000/home")}>
             <button class="cssbuttons-io">
-
-              <span>
+              <span className="letrasss">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"></path>
-                  
                 </svg>{" "}
-                Productos
+                Catálogo
               </span>
-      
             </button>
-            <img className="ps5" src={Control}/>
-
+            <p className="bienvenido">
+              " Aquí podrás encontrar un cátalogo completo de las consolas más
+              icónicas de las últimas décadas e informarte de las novedades
+              relacionadas al Mundo Gamer! "
+            </p>
+            
           </NavLink>
+          <img className="ps5" src={Control} />
 
           {/* <div className="img-control-container"></div> */}
 

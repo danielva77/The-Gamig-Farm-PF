@@ -117,3 +117,34 @@ b{
 .profilecont{
     width: 100%;
 }
+
+/*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 414px) {
+    .bienvenida{
+        /* background-color: red; */
+        position: relative;
+        left: 8px;
+        display: block;
+        width: 395px;
+    }
+    .profileF{
+        position: relative;
+        left: 2px;
+        top: 80px;
+    }
+    .tuPerfil{
+        position: relative;
+        left: 90px;
+        top: -350px;
+    }
+    .profile{
+        background-color: transparent;
+        position: relative;
+        top: 40px;
+        left: 10px;
+        width: 377px;
+        height: 380px;
+        padding-top: 0px;
+    }
+}

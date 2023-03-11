@@ -6,20 +6,16 @@
 } */
 
 .home-container {
-  background-color: rgba(209, 4, 4, 0.879);
+  background-color: rgb(241, 241, 241);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-
-
 /* filtros  */
 
-
 /* Filtro SORT */
-.filterSort{
+.filterSort {
   width: 10% !important;
   left: 16% !important;
   position: relative;
@@ -30,19 +26,17 @@
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
   height: 28px;
-  top:2px
+  top: 2px;
 }
-.filterSort:focus{
+
+.filterSort:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
 
-
-
-
 /* Filtro Category */
-.filterCategory{
+.filterCategory {
   width: 10% !important;
   left: 30.6% !important;
   position: relative;
@@ -54,15 +48,16 @@
   border-radius: 5px !important;
   top: 4px;
 }
-.filterCategory:focus{
+
+.filterCategory:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
 
 /* Filtro Mark */
 
-.filterMark{
+.filterMark {
   width: 10% !important;
   left: 54% !important;
   position: relative;
@@ -72,43 +67,223 @@
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-  
 }
-.filterMark:focus{
+
+.filterMark:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
-  transition: .5s linear;
-
+  transition: 0.5s linear;
 }
 
 /* Boton Reset  */
 
-.botonReset{
+.botonReset {
   width: 10% !important;
   left: 29% !important;
   position: relative;
   height: 28px;
   padding: 1px 25px !important;
   border: 2px solid rgba(0, 0, 0, 0.21) !important;
-  
+
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-  top: -25px
+  top: -25px;
 }
 
-
-
 /* TODO EL DIV ENTERO ↑ */
-.filtros{
+.filtros {
   justify-content: start !important;
   /* background-color: green  !important;  */
   position: absolute !important;
   margin-top: 35px !important;
   position: absolute;
-    height: 28px;
-  
-    top: 6px;
-    width: 150px;
+  height: 28px;
 
+  top: 6px;
+  width: 150px;
+}
+
+/* BOTONES ADMINISTRADOR */
+
+/* .AdministradorB{
+  background-color: red;
+} */
+
+/* Agregar el comentario */
+.Review {
+  /* background-color: hsl(114, 87%, 50%); */
+  position: absolute;
+  left: 62%;
+  top: 535px;
+  /* border: 3px solid rgb(77, 226, 35); */
+}
+
+.tituloAgregar {
+  font-weight: 700;
+  font-family: proxima-nova, sans-serif;
+}
+
+.activarDesactivar {
+  background-color: red !important;
+  position: absolute;
+  left: 67%;
+  top: 122px;
+  height: 50px;
+  border-radius: 20px;
+  width: 177px;
+  font-weight: 700;
+}
+
+.inputComentario {
+  width: 400px;
+  position: relative;
+  top: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.estrellas {
+  position: relative;
+  top: 20px;
+  width: 30px;
+}
+
+.botonPublicar {
+  width: 100px;
+  position: relative;
+  top: 20px;
+
+  background-color: rgb(143, 84, 245);
+  font-size: 23px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid rgb(143, 84, 245);
+  height: 50px;
+  width: 125px;
+}
+
+.editarProducto {
+  background-color: rgb(213, 73, 209) !important;
+  position: absolute;
+  left: 80%;
+  top: 122px;
+  height: 50px;
+  width: 280px;
+  font-weight: 700;
+  border-radius: 20px;
+  /* border: 2px solid rgb(0, 44, 187); */
+}
+
+.cantidadAgregar {
+  /* background-color: rgb(44, 47, 241) !important; */
+  position: absolute;
+  left: 77.5%;
+  top: 337px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.comentarios {
+  /* background-color: rgba(91, 208, 2, 0.793); */
+  position: absolute;
+  left: 550px;
+  top: 850px;
+
+  /* margin-top: 250px; */
+}
+
+.inputNumero {
+  width: 76px;
+  /* background-color: rgb(54, 120, 251); */
+  /* padding: 14px; */
+  font-size: 21px;
+  border-radius: 4px;
+  /* text-align: center; */
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.agregarStock {
+  background-color: rgb(54, 120, 251);
+  position: relative;
+  top: 15px;
+  border-radius: 10px;
+  padding: 5px 5px;
+  width: 125px;
+}
+
+@media (max-width: 747px) {
+  .pagina {
+    margin-top: 87px;
+    background-color: #0f0e17;
+  }
+
+  /* ! FILTER 1 */
+  .filterSort {
+    margin-left: 35px;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgb(255, 255, 255);
+    font-family: proxima-nova, sans-serif;
+    width: 88px !important;
+    text-align: center; /* centrar el texto horizontalmente */
+  }
+
+  .filterSort:focus {
+    background-color: rgb(0, 0, 0) !important;
+    color: aliceblue !important;
+    transition: 0.5s linear;
+    text-align: center; /* centrar el texto horizontalmente */
+
+  }
+
+  /* ! FILTER 2 */
+
+  .filterCategory {
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgb(255, 255, 255) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 88px !important;
+    left: 0px !important;
+    text-align: center; /* centrar el texto horizontalmente en el elemento select */
+    
+  }
+
+  .filterCategory:focus {
+    background-color: rgb(0, 0, 0) !important;
+    color: aliceblue !important;
+    transition: 0.5s linear;
+  }
+  .filterMark2 {
+    left: 200px !important;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgb(255, 255, 255) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 88px !important;
+  }
+  .filterMark3 {
+    left: 299px !important;
+    position: relative;
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: rgb(255, 255, 255) !important;
+    font-family: proxima-nova, sans-serif;
+    width: 88px !important;
+  }
+  .botonReset {
+    background-color: rgb(252, 252, 252) !important;
+    position: relative;
+    overflow: hidden;
+    display: none;
+    width: 80px !important;
+    text-align: center !important;
+    left: 100px !important;
+    font-size: 16px !important;
+    height: 30px;
+    font-weight: 800;
+    line-height: center; /* igual a la altura del botón */
+    text-align: center;
+    margin-top: 44px;
+  }
 }

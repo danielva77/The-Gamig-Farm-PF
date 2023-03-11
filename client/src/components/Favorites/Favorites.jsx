@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { removeFromFav } from "../../redux/actions";
 import { setFavorites } from "../../redux/actions";
-import Fav from "../Assets/favorito.png";
+import Fav from "../Assets/me-gusta.png";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { useDispatch } from "react-redux";
@@ -33,14 +33,10 @@ const Favoritos = () => {
 
   return (
     <>
-      <button class="btn btn-float-left " onClick={() => setShow(true)}>
-        <img
-          src={Fav}
-          alt="imagen"
-          className="img-fluid"
-          style={{ position: "absolute", left: "86%", top: "42px", mt: "22px" }}
-        />
-      </button>
+      <button className="img-fluid botonFavoritos" onClick={() => setShow(true)}>
+  <img src={Fav} alt="imagen" style={{width: "22px"}}/>
+</button>
+
       <Offcanvas
         show={show}
         placement="end"

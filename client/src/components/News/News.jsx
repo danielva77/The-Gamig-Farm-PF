@@ -62,12 +62,27 @@ export default function News() {
     centerMode: false,
     infinite: true,
     centerPadding: "20px",
-    slidesToShow: 4,
-    speed: 100,
-    rows: 2,
+    speed: 200,
+    rows: 3,
     slidesPerRow: 1,
     variableWidth: true,
-    };
+    slidesToShow: 5,
+    autoplay: true, // agregar la prop de autoplay
+  autoplaySpeed: 3000, // agregar la duración del intervalo en milisegundos
+    responsive: [
+      
+      {
+        breakpoint: 768, // Pantallas pequeñas
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          rows: 1,
+          variableWidth: false,
+        }
+      }
+    ]
+  };
+  
   return (
     <div>
       <Slider {...settings}>{newsList}</Slider>

@@ -1,4 +1,11 @@
 .botonReset{
     font-size: medium;
     font-weight: 500;
+    height: 28px;
+    width: 150px;
+    border-radius: 4px;
+    border-color: hsla(0, 0%, 0%, 0.215);
+    font-size: medium;
+    font-weight: 500;
+    top: -24px;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector, useContext } from "react-redux";
 import { getDetail, cleanDetail } from "../../redux/actions";
-import "../Details/details.css";
+import "../Details/Details.css";
 import cart from "../Assets/cart.png";
 import Footer from "../Footer/Footer";
 // import "./details.css"
@@ -97,15 +97,12 @@ dispatch(disabledProducts(id))
             alt="img"
             className="imagenProducto"
           ></img>
-        
           <h3 className="descripcionTitulo">Descripcion del producto:</h3>
-          
           <p className="descripcion">{myProduct[0].detail}</p>
-          
           <p className="precio">Precio: ${myProduct[0].price}</p>
           <div className="botonDiv">
             <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+{quantity}</a>
+              <a className="suma">+ {quantity}</a>
               <img src={cart} className="carrito" />{" "}
             </button>
           </div>

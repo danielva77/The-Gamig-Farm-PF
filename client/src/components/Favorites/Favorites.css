@@ -1,14 +1,14 @@
-.img-fluid2 {
+.botonFavoritos {
   position: absolute;
-  right: 12%;
-  top: 24px;
-  bottom: 12%;
+  right: 12.5%;
+  top: 18px;
+  border: none;
   margin-top: 22px;
-
-  /* background: #FFFFFF; */
+  background-color: rgba(240, 248, 255, 0);
+  display: grid;
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,10 +16,10 @@
   padding: 10px;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.removeBtn{
+.removeBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,8 +31,23 @@
 }
 
 .scrollable {
-height:50vh; /* Establece la altura del área de scroll */
+  height: 50vh; /* Establece la altura del área de scroll */
   overflow-y: scroll; /* Habilita el scroll en el eje y */
   padding-top: 5px;
 }
 
+
+@media (max-width: 767px) {
+
+
+.botonFavoritos {
+  position: absolute;
+  right: 12.5%;
+  top: 15px;
+  border: none;
+  margin-top: -103px;
+  margin-left: 3%;
+  background-color: rgba(240, 248, 255, 0);
+  display: grid;
+}
+}

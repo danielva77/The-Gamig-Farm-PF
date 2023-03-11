@@ -17,3 +17,11 @@
 .container-fluid{
   margin-top: 6vh;
 }
+
+@media (max-width: 768px) {
+  .botonBuscar {
+    display: none !important;
+  }
+
+
+}

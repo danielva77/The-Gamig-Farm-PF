@@ -43,7 +43,7 @@ const team = [
     id: 1,
     name: 'Benjamin Bidondo ',
     description: "Actualmente estoy explorando las oportunidades ilimitadas de la programación. Emocionado de formar parte de este equipo y poder ampliar mis aptitudes como Full Stack Developer",
-    image: "https://i.ibb.co/zrcN54G/Whats-App-Image-2023-01-22-at-12-28-1.png",
+    image: "https://i.ibb.co/jHtRY8Z/perfil-artigas.jpg",
     linkedin: "https://www.linkedin.com/in/benjamin-bidondo-lacassy-a5a089231/",
     github: "https://github.com/BBidondo"
   },

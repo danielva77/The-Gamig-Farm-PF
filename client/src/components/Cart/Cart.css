@@ -22,3 +22,24 @@
 .btn-quantity{
   font-size: 12px;
 }
+
+.cart{
+  width: 370px;
+}
+
+@media (max-width: 747px) {
+
+.cart-quantity-circle{
+  position: relative; 
+ /* bottom: 5px;
+ right: 5px; */
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ background-color: red;
+ color: white;
+ text-align: center;
+ line-height: 20px;
+
+}
+}

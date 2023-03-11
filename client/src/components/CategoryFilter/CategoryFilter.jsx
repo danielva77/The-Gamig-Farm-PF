@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories, setFilterCategory } from '../../redux/actions';
 
 
+
 const CategoryFilter = () => {
     const dispatch = useDispatch()
 
@@ -18,31 +19,30 @@ const CategoryFilter = () => {
         dispatch(setFilterCategory(e.target.value));
     };
 
+
+
     return (
         <select
-            class="form-select filterCategory" 
+            className="form-select filterCategory " 
             aria-label="Default select example"
             name="type"
             id="type"
             onChange={handleChangeFilter}
-            menuPlacement="top"
             defaultValue={'DEFAULT'}
-           
         >
-            
             <option value="DEFAULT" disabled hidden selected>Consolas</option>
             {categories?.map(category => {
                 return (
-                    <option>{category}</option>
+                    <option key={category} value={category}>{category}</option>
                 )
             })}
-            
         </select>
-
     );
 };
 
 export default CategoryFilter;
+
+
 
 
 
