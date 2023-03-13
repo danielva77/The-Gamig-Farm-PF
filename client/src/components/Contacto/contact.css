@@ -182,3 +182,21 @@ input:focus {
   left: 0px;
 }
 
+
+/* Estilos para pantallas más pequeñas (hasta 414px) */
+@media (max-width: 747px) {
+  .inputs{
+    position: relative;
+    top: -20px;
+    left: 15px;
+    /* background-color: red !important; */
+    width: 360px !important;
+  }
+  .inputs2{
+    position: relative;
+    top: -20px;
+    left: 15px;
+    width: 360px !important;
+    /* background-color: rgb(39, 64, 224) !important; */
+  }
+}
