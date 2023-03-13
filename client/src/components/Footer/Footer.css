@@ -79,6 +79,19 @@
     /* background-color: red; */
     height: 350px !important;
   }
+
+  .link1 {
+    color: #f1f1f1;
+    text-decoration: none;
+    display: grid;
+    margin: 20px 0;
+    margin-left: 30px;
+    font-size: 20px;
+  }
+  .link1:hover {
+    color: #7600FF;
+  }
+
   .titulo2 {
     font-family: proxima-nova, sans-serif;
     font-style: normal;
@@ -88,8 +101,9 @@
     color: #a0a0a0;
     /* background-color: green; */
     position: relative;
-    left: -10px !important;
+    left: -200px !important;
     top: -20px
+    
   }
   .compraS{
     /* background-color: darkgreen; */
@@ -97,7 +111,7 @@
     padding: 0 !important;
     margin: 0;
     position: relative;
-    left: -60px !important;
+    left: 20px !important;
   }
   .conocenosS{
     /* background-color: #7600FF; */
@@ -123,7 +137,7 @@
     background-color: transparent;
     /* background-color: blue; */
     position: relative;
-    left: -105px;
+    left: 5px;
     width: 100px;
   }
   .imagenLogito{
@@ -131,5 +145,7 @@
     position: relative;
     left: 125px;
     top: 170px;
+    
   }
+
 }

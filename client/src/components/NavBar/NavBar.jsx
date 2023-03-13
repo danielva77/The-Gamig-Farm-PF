@@ -8,7 +8,8 @@ import { LogoutButton } from "../Logout/Logout";
 import Profile from "../Profile/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import logoOriginal1 from "../Assets/logoOriginal1.svg";
+
+import logoOriginal from "../Assets/logoOriginal1.svg";
 import { Button } from "react-bootstrap";
 import { useShoppingCart } from "../../context/CartContext/CartContext";
 import Carrito from "../Assets/cart.png";
@@ -25,11 +26,13 @@ function NavBar() {
     <div className="navbar-container">
       <div className="logo-container">
         <Link to="/">
+  
           <img
-            src={logoOriginal1}
+            src={logoOriginal}
             title="Logo Gaming"
             className="logoOriginal1"
           />
+
         </Link>
       </div>
 
@@ -55,7 +58,7 @@ function NavBar() {
 
       <SearchBar />
 
-      <Favoritos />
+      <Favoritos/>
 
       {isAuthenticated ? (
         <>
@@ -66,13 +69,14 @@ function NavBar() {
         <LoginButton />
       )}
 
-      <div className="cart-btn">
-        <Button variant="" class="btn btn float-right" onClick={openCart}>
-          {""}
-          <img src={Carrito} alt="imagen" className="img-fluid" class="carritoN" />
-          <div className="quantity-circle">{cartQuantity}</div>
-        </Button>
-      </div>
+<div className="cart-btn" style={{ display: "flex", alignItems: "center" }}>
+  <Button variant="" class="btn btn float-right" onClick={openCart}>
+    {""}
+    <img src={Carrito} alt="imagen" className="img-fluid" class="carritoN" />
+    <div className="quantity-circle">{cartQuantity}</div>
+  </Button>
+</div>
+
     </div>
   );
 }

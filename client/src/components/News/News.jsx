@@ -63,13 +63,30 @@ export default function News() {
     className: "center",
     centerMode: false,
     infinite: true,
-    centerPadding: "20px",
-    slidesToShow: 4,
-    speed: 100,
-    rows: 2,
+    // centerPadding: "20px",
+    speed: 400,
+    rows: 3,
     slidesPerRow: 1,
     variableWidth: true,
-    };
+    slidesToShow: 5,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    touchMove: true, // desactivar el desplazamiento táctil
+    swipeToSlide: true, // desactivar el clic y arrastre de la pantalla completa
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          rows: 1,
+          variableWidth: false,
+        }
+      }
+    ]
+  };
+  
+  
   return (
     <div>
       <Slider {...settings}>{newsList}</Slider>

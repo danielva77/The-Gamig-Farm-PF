@@ -40,7 +40,7 @@ export function CartItem({ id, quantity }) {
                     {formatCurrency(item.price)}
                 </div>
             </div>
-            <div className="d-flex align-items-center me-auto" style={{ gap: ".5rem" }}>
+            <div className="d-flex align-items-center me-auto" style={{ gap: ".7rem" }}>
                 <button
                     className="btn btn-outline-secondary rounded-0"
                     onClick={() => decrementItemQuantity(id)}

@@ -1,8 +1,8 @@
 import React from "react";
 import "./Home.css";
 import Mandos from "../Mandos/Mando";
-import Noticas from "../Noticias/Noticas";
-import { useState, useEffect } from "react";
+
+import {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
 import Paginado from "../Paginado/Paginado";
@@ -12,9 +12,9 @@ import Sort from "../Sort/Sort";
 import ReloadPageBtn from "../ReloadPageBtn/ReloadPageBtn";
 import NavBar from "../NavBar/NavBar";
 import MarkFilter from "../MarkFilter/MarkFilter";
-import { useParams, Link } from "react-router-dom";
+
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from "axios";
+
 import Footer from "../Footer/Footer";
 import News from "../News/News";
 
@@ -73,21 +73,13 @@ export function Home() {
         <div>
           <ReloadPageBtn />
         </div>
-
-        {/* MODO OSCURO */}
-        {/* <button onClick={functionModo}>
-          <div className="luzNoche">
-            <p className="modoOscuro">Modo Oscuro 🌑</p>
-          </div>
-        </button> */}
-
         {/* 
         <div>
           <Noticas/>
         </div> */}
       </div>
 
-      <div>
+      <div className="pagina">
         <p>Page -{currentPage}-</p>
       </div>
       <div></div>

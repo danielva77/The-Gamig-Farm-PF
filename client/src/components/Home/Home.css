@@ -6,17 +6,13 @@
 } */
 
 .home-container {
-  background-color: rgba(209, 4, 4, 0.879);
+  background-color: rgb(241, 241, 241);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-
-
 /* filtros  */
-
 
 /* Filtro SORT */
 .filterSort {
@@ -30,17 +26,14 @@
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
   height: 28px;
-  top: 2px
+  top: 2px;
 }
 
 .filterSort:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
-
-
-
 
 /* Filtro Category */
 .filterCategory {
@@ -59,7 +52,7 @@
 .filterCategory:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
 
 /* Filtro Mark */
@@ -74,14 +67,12 @@
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-
 }
 
 .filterMark:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
-  transition: .5s linear;
-
+  transition: 0.5s linear;
 }
 
 /* Boton Reset  */
@@ -97,10 +88,8 @@
   background-color: rgb(255, 255, 255) !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-  top: -25px
+  top: -25px;
 }
-
-
 
 /* TODO EL DIV ENTERO ↑ */
 .filtros {
@@ -113,16 +102,13 @@
 
   top: 6px;
   width: 150px;
-
 }
 
 /* BOTONES ADMINISTRADOR */
 
-
 /* .AdministradorB{
   background-color: red;
 } */
-
 
 /* Agregar el comentario */
 .Review {
@@ -131,8 +117,6 @@
   left: 62%;
   top: 535px;
   /* border: 3px solid rgb(77, 226, 35); */
-
-
 }
 
 .tituloAgregar {
@@ -170,7 +154,6 @@
   position: relative;
   top: 20px;
 
-
   background-color: rgb(143, 84, 245);
   font-size: 23px;
   border-radius: 10px;
@@ -178,9 +161,6 @@
   border: 2px solid rgb(143, 84, 245);
   height: 50px;
   width: 125px;
-
-
-
 }
 
 .editarProducto {
@@ -193,7 +173,6 @@
   font-weight: 700;
   border-radius: 20px;
   /* border: 2px solid rgb(0, 44, 187); */
-
 }
 
 .cantidadAgregar {
@@ -205,9 +184,6 @@
   border-radius: 20px;
 }
 
-
-
-
 .comentarios {
   /* background-color: rgba(91, 208, 2, 0.793); */
   position: absolute;
@@ -215,7 +191,6 @@
   top: 850px;
 
   /* margin-top: 250px; */
-
 }
 
 .inputNumero {
@@ -226,7 +201,6 @@
   border-radius: 4px;
   /* text-align: center; */
   border: 2px solid rgb(0, 0, 0);
-
 }
 
 .agregarStock {
@@ -238,71 +212,78 @@
   width: 125px;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 747px) {
+  .pagina {
+    margin-top: 87px;
+    background-color: #0f0e17;
+  }
 
   /* ! FILTER 1 */
   .filterSort {
-    left: 5px !important;
+    margin-left: 35px;
     position: relative;
-    border: 2px solid rgba(0, 0, 0, 0.262) !important;
-    background-color: rgb(255, 0, 0) !important;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: rgb(255, 255, 255);
     font-family: proxima-nova, sans-serif;
-    width: 80px !important;
+    width: 88px !important;
+    text-align: center; /* centrar el texto horizontalmente */
   }
-  
+
   .filterSort:focus {
     background-color: rgb(0, 0, 0) !important;
     color: aliceblue !important;
-    transition: .5s linear;
+    transition: 0.5s linear;
+    text-align: center; /* centrar el texto horizontalmente */
+
   }
-
-
 
   /* ! FILTER 2 */
 
   .filterCategory {
-    left: 90px !important;
     position: relative;
     border: 2px solid rgba(0, 0, 0, 0.21) !important;
-    background-color: rgba(13, 254, 0, 0.941) !important;
+    background-color: rgb(255, 255, 255) !important;
     font-family: proxima-nova, sans-serif;
-    width: 70px !important;
-    /* font-size: 12px; */
- 
+    width: 88px !important;
+    left: 0px !important;
+    text-align: center; /* centrar el texto horizontalmente en el elemento select */
+    
   }
-  
+
   .filterCategory:focus {
     background-color: rgb(0, 0, 0) !important;
     color: aliceblue !important;
-    transition: .5s linear;
+    transition: 0.5s linear;
   }
-  .filterMark2{
-    left: 170px !important;
+  .filterMark2 {
+    left: 200px !important;
     position: relative;
     border: 2px solid rgba(0, 0, 0, 0.21) !important;
-    background-color: rgba(60, 198, 252, 0.941) !important;
+    background-color: rgb(255, 255, 255) !important;
     font-family: proxima-nova, sans-serif;
-    width: 65px !important;
+    width: 88px !important;
   }
-  .filterMark3{
-    left: 245px !important;
+  .filterMark3 {
+    left: 299px !important;
     position: relative;
-    border: 2px solid rgba(0, 0, 0, 0.21) !important;
-    background-color: rgba(250, 254, 0, 0.941) !important;
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: rgb(255, 255, 255) !important;
     font-family: proxima-nova, sans-serif;
-    width: 68px !important;
+    width: 88px !important;
   }
-  .botonReset{
-    background-color: red !important;
+  .botonReset {
+    background-color: rgb(252, 252, 252) !important;
     position: relative;
-    /* overflow: hidden ; */
+    overflow: hidden;
+    display: none;
     width: 80px !important;
     text-align: center !important;
-    left: 160px !important; 
-    font-size: 12px !important;
-    letter-spacing: 1px;
+    left: 100px !important;
+    font-size: 16px !important;
+    height: 30px;
     font-weight: 800;
-    height: 40px;
-    top: -29.9px;
+    line-height: center; /* igual a la altura del botón */
+    text-align: center;
+    margin-top: 44px;
   }
 }

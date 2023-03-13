@@ -20,11 +20,14 @@ color: rgb(255, 255, 255) !important;
 
 /* ! TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
 /* Estilos para pantallas más pequeñas (hasta 414px) */
-@media (max-width: 414px) {
-  /* .logout{
+@media (max-width: 747px) {
+
+
+  .logout{
     position: absolute;
-  width: 65px;
+  width: 26px;
   height: 26px;
+  margin-left:6%;
   left: 94%;
   top:5.2%;
   
@@ -34,5 +37,9 @@ color: rgb(255, 255, 255) !important;
   cursor: pointer;
   color: rgb(255, 255, 255) !important;
   
-  } */
+  }
+  
+  .logout:hover{
+    color: red !important;
+  }
 }

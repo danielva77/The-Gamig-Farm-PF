@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import "./login.css";
+import Access from "../Assets/acceso.png"
 
 export const LoginButton = () => {
   const { isAuthenticated, loginWithRedirect, getAccessTokenSilently } = useAuth0();
@@ -16,6 +17,6 @@ export const LoginButton = () => {
   }, [isAuthenticated, getAccessTokenSilently]);
 
   return (
-    <a className="login" onClick={() => loginWithRedirect() }>INICIAR SESIÓN</a>
+    <img className="login" src={Access} onClick={() => loginWithRedirect() }  />
   );
 };

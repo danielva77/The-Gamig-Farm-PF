@@ -10,18 +10,19 @@
 
 .menu-navbar {
   position: absolute;
-  left: 25%;
+  margin-left: 20%;
   margin-top: 3vh;
   display: flex;
   flex-wrap: wrap;
-  
- 
+  align-items: center;
+  justify-content: center;
 }
 
 .link {
+  display: inline-block;
   position: relative;
   color: white;
-  top: 20px;
+  top: 5px;
   text-decoration: none;
   /* bottom: 25px; */
   margin: -0px 12px;
@@ -31,42 +32,56 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  width: 100px;
 }
 .link:hover {
-  color: #7600FF;
+  color: #7600ff;
+  transition: background-color 0.5s ease;
 }
 
-.cart{
+.cart {
   position: absolute;
   right: 17%;
   top: 1%;
 }
 
-.cart-btn{
+.cart-btn {
   position: absolute;
   left: 80%;
   top: 11px;
   margin-top: 22px;
 }
 
-.quantity-circle{
-  position: absolute; 
+.quantity-circle {
+  position: absolute;
   bottom: 20px;
   left: 85%;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #4400ff;
+  background-color: #7600ff;
   color: white;
   text-align: center;
   line-height: 20px;
 }
 
-.logoOriginal1{
+.logoOriginal1 {
   width: 150px;
   position: relative;
   top: -20px;
   left: 80px;
+}
+
+.login {
+  /* background-color: blue; */
+  position: relative;
+  left: 30px !important;
+  top: 1px !important;
+  font-size: 25px !important;
+  width: 130px;
+  height: 50px;
+  /* border: 3px solid black; */
+  padding: 0px 0px;
 }
 /* .img-fluid{
   position: absolute;
@@ -74,115 +89,146 @@
   top: 20px;
 } */
 
-.search{
+.search {
   margin-top: 3vh;
 }
 
-.auten{
- position: absolute;
- top: -10px;
+.auten {
+  position: absolute;
+  top: -10px;
   margin-top: 30px;
   left: 89%;
 }
 
-
-
-
-
 /*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
 /* Estilos para pantallas más pequeñas (hasta 414px) */
-@media (max-width: 414px) {
-  .navbar-container{
+@media (max-width: 844px) {
+  .menu-navbar {
+    display: block;
+    position: absolute;
+    align-items: center;
+  }
+  .link {
+    position: relative;
+    color: white;
+    top: 5px;
+    text-decoration: none;
+    /* bottom: 25px; */
+    margin: -0px 12px;
+    /*  */
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+  }
+  .link:hover {
+    color: #ffffff;
+    background-color: #7600ff;
+    transition: background-color 0.5s ease;
+  }
+
+  .navbar-container {
     /* background-color: red; */
     height: 205px;
   }
-  .filtros{
-    background-color: aqua !important;
+  .filtros {
+    background-color: #0f0e17 !important;
     position: relative;
-    top: 168px !important;
+    top: 198px !important;
+    height: 390px;
+    margin-left: 14px;
   }
-  .logoOriginal1{
+  .logoOriginal1 {
     /* background-color: red; */
     /* border: 3px solid green; */
     position: absolute;
-    left: 10px;
-    width: 100px !important;
-    height: 100px;
+    left: 14px;
+    width: 90px !important;
+    height: 90px;
+    margin-top: 39px;
   }
-  .form-control{
+  .form-control {
     /* background-color: red !important; */
     /* border: 3px solid green; */
     position: absolute;
-    width: 210px !important;
-    left: -70px;
-    top: 48px;
+    width: 140px !important;
+
+    right: -53px;
+    top: 90px;
     font-size: 13px !important;
     letter-spacing: 1px;
   }
-  .botonBuscar{
-    background-color: red;
-    border: 1px solid rgb(255, 255, 255) !important;
-    position: relative;
-    top: -64px;
-    left: 130px;
-    font-size: 10px !important;
-  }
-  .producto{
+
+  .producto {
     /* background-color: yellow !important; */
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
-    left: -110px;
-    top: 52px;
+    left: -20%;
+    top: 82px;
+    background-color: #000000;
+    width: 390px;
+    border-radius: 3px;
   }
-  .contacto{
+  .contacto {
     /* background-color: yellow !important; */
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
-    left: -224px;
-    top: 135px;
+    left: -20%;
+    top: 117px;
+    background-color: #000000;
+    width: 390px;
+    border-radius: 3px;
   }
-  .sobreNosotro{
+  .sobreNosotro {
     /* background-color: yellow !important; */
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
-    left: -110px;
-    top: 70px;
+    left: -20%;
+    top: 64px;
+    background-color: #000000;
+    width: 390px;
+    border-radius: 3px;
   }
-  .login{
-    /* background-color: blue; */
-    position: relative;
-    left: 190px !important;
-    top: 60px !important; 
-    font-size: 25px !important;
-    width: 130px;
-    height: 50px;
-    /* border: 3px solid black; */
-    padding: 0px 0px ;
-  }
-  .carritoN{
-    /* background-color: green; */
-    position: relative;
-    top: 112px;
-    left: -110px;
-  }
-  .img-fluid{
-    /* background-color: green !important; */
-    position: relative;
-    left: 300px !important;
-    top: 155px !important;
-  }
-  .quantity-circle{
-    /* background-color: skyblue !important; */
-    position: relative;
-    left: -25px;
-    top: 75px;
-  }
-  .filterCategory{
-    background-color: red !important;
 }
-.admins{
-  /* background-color: red; */
+.login {
+  /* background-color: blue; */
   position: relative;
-  left: -100px;
+  left: 100px !important;
+  top: 12px !important;
+  font-size: 25px !important;
+  width: 130px;
+  height: 50px;
+  /* border: 3px solid black; */
+  padding: 0px 0px;
 }
+.carritoN {
+  /* background-color: green; */
+  position: relative;
+  top: 12px;
+  left: -73px;
+}
+.img-fluid {
+  /* background-color: green !important; */
+  position: relative;
+  left: 300px !important;
+  top: 155px !important;
+}
+.quantity-circle {
+  /* background-color: skyblue !important; */
+  position: relative;
+  left: -60px;
+  top: -15px;
+}
+
+.admins {
+  /* background-color: red; */
+  font-size: 16px;
+  position: relative;
+  left: -20%;
+  top: 99px;
+  background-color: #000000;
+  width: 390px;
+  border-radius: 3px;
 }
