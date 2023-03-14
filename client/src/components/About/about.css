@@ -166,11 +166,13 @@
   }
   .parrafo1 {
     /* background-color: green; */
-    width: 390px;
+    width: 380px;
     position: relative;
-    left: 0px !important;
+    left: -5px !important;
     text-align: justify;
     text-justify: inter-word !important;
+    margin: 0 10px;
+    font-size: 18px;
   }
 
   .nuestroEquipo{

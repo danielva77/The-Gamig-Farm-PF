@@ -16,81 +16,130 @@
 
 /* Filtro SORT */
 .filterSort {
-  width: 10% !important;
-  left: 16% !important;
+  width: 20% !important;
+  left: .1% !important;
   position: relative;
-  padding: 2px 25px !important;
-  border: 2px solid rgba(0, 0, 0, 0.262) !important;
+  padding: 0px 25px !important;
+  border: 1px solid #ffffff00 !important;
   margin-top: 3px;
-  background-color: rgb(255, 255, 255) !important;
+  background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-  height: 28px;
-  top: 2px;
+  height: 40.4px;
+  top: -2.5px;
+  color: #fff !important;
+  text-align: center;
+  border-right: 3px solid rgb(255, 255, 255) !important;
 }
-
-.filterSort:focus {
-  background-color: rgb(0, 0, 0) !important;
-  color: aliceblue !important;
-  transition: 0.5s linear;
+.filterSort:hover{
+  background-color: rgb(251, 251, 251) !important;
+  color: #000 !important;
+  transition: .5s !important;
+  cursor: pointer !important;
 }
 
 /* Filtro Category */
 .filterCategory {
-  width: 10% !important;
-  left: 30.6% !important;
+  width: 20% !important;
+  left: 20.15% !important;
   position: relative;
   padding: 1px 25px !important;
-  border: 2px solid rgba(0, 0, 0, 0.21) !important;
-  margin-top: -30px;
-  background-color: rgb(255, 255, 255) !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+  margin-top: -40px;
+  background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
-  border-radius: 5px !important;
-  top: 4px;
+  /* border-radius: 5px !important; */
+  border-right: 3px solid rgb(255, 255, 255) !important;
+  height: 40.4px;
+  top: -4px;
+  color: #fff !important;
+  text-align: center;
 }
 
-.filterCategory:focus {
+/* .filterCategory:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
   transition: 0.5s linear;
+} */
+.filterCategory:hover{
+  background-color: rgb(251, 251, 251) !important;
+  color: #000 !important;
+  transition: .5s !important;
+  cursor: pointer;
 }
-
 /* Filtro Mark */
 
-.filterMark {
-  width: 10% !important;
-  left: 54% !important;
+.filterMark2 {
+  width: 20% !important;
+  left: 40.2% !important;
   position: relative;
   padding: 1px 25px !important;
-  border: 2px solid rgba(0, 0, 0, 0.214) !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+  border-right: 3px solid rgb(255, 255, 255) !important;
   margin-top: -9px;
-  background-color: rgb(255, 255, 255) !important;
+  background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
+  height: 41px !important ;
+  top: 9.1px !important;
+  color: #fff !important;
+  /* background-color: red !important; */
 }
-
-.filterMark:focus {
+.filterMark2:hover{
+  background-color: rgb(251, 251, 251) !important;
+  color: #000 !important;
+  transition: .5s !important;
+}
+.filterMark3 {
+  width: 20% !important;
+  left: 60.3% !important;
+  position: relative;
+  padding: 1px 25px !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+  border-right: 3px solid rgb(255, 255, 255) !important;
+  margin-top: -9px;
+  background-color: transparent !important;
+  font-family: proxima-nova, sans-serif;
+  border-radius: 5px !important;
+  height: 41px !important ;
+  top: 9.1px !important;
+  color: #fff !important;
+  /* background-color: red !important; */
+}
+.filterMark3:hover{
+  background-color: rgb(251, 251, 251) !important;
+  color: #000 !important;
+  transition: .5s !important;
+}
+/* .filterMark:focus {
   background-color: rgb(0, 0, 0) !important;
   color: aliceblue !important;
   transition: 0.5s linear;
-}
+} */
 
 /* Boton Reset  */
 
 .botonReset {
-  width: 10% !important;
-  left: 29% !important;
+  width: 19.5% !important;
+  left: 40.1% !important;
   position: relative;
-  height: 28px;
   padding: 1px 25px !important;
-  border: 2px solid rgba(0, 0, 0, 0.21) !important;
-
-  background-color: rgb(255, 255, 255) !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+  border-right: 3px solid rgb(255, 255, 255) !important;
+  margin-top: -9px;
+  background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
   border-radius: 5px !important;
-  top: -25px;
+  height: 41px !important ;
+  top: -35px !important;
+  color: #fff !important;
+  /* background-color: red !important; */
 }
-
+.botonReset:hover{
+  background-color: rgb(251, 251, 251) !important;
+  color: #000 !important;
+  transition: .5s !important;
+}
 /* TODO EL DIV ENTERO ↑ */
 .filtros {
   justify-content: start !important;
