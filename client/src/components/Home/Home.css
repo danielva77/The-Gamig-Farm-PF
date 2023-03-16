@@ -24,13 +24,21 @@
   margin-top: 3px;
   background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   height: 40.4px;
-  top: -2.5px;
+  top: -2.3px;
   color: #fff !important;
   text-align: center;
   border-right: 3px solid rgb(255, 255, 255) !important;
+  transition: .5s !important;
+
 }
+
+.filterSort:focus {
+  background-color: rgb(255, 253, 253) !important;
+  color: rgb(3, 3, 3) !important;
+  transition: 0.5s linear;
+} 
 .filterSort:hover{
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
@@ -48,23 +56,24 @@
   margin-top: -40px;
   background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
-  /* border-radius: 5px !important; */
+  border-radius: 0px !important;
   border-right: 3px solid rgb(255, 255, 255) !important;
   height: 40.4px;
-  top: -4px;
+  top: -2.6px;
   color: #fff !important;
   text-align: center;
+  transition: .5s !important;
 }
 
-/* .filterCategory:focus {
-  background-color: rgb(0, 0, 0) !important;
-  color: aliceblue !important;
+ .filterCategory:focus {
+  background-color: rgb(255, 253, 253) !important;
+  color: rgb(3, 3, 3) !important;
   transition: 0.5s linear;
-} */
+} 
 .filterCategory:hover{
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
-  transition: .5s !important;
+ 
   cursor: pointer;
 }
 /* Filtro Mark */
@@ -79,16 +88,17 @@
   margin-top: -9px;
   background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   height: 41px !important ;
   top: 9.1px !important;
   color: #fff !important;
+  transition: .5s !important;
+
   /* background-color: red !important; */
 }
 .filterMark2:hover{
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
-  transition: .5s !important;
 }
 .filterMark3 {
   width: 20% !important;
@@ -100,16 +110,17 @@
   margin-top: -9px;
   background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   height: 41px !important ;
   top: 9.1px !important;
   color: #fff !important;
+  transition: .5s !important;
+
   /* background-color: red !important; */
 }
 .filterMark3:hover{
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
-  transition: .5s !important;
 }
 /* .filterMark:focus {
   background-color: rgb(0, 0, 0) !important;
@@ -125,20 +136,21 @@
   position: relative;
   padding: 1px 25px !important;
   border: 2px solid rgba(0, 0, 0, 0) !important;
-  border-right: 3px solid rgb(255, 255, 255) !important;
-  margin-top: -9px;
+  /* border-right: 3px solid rgb(255, 255, 255) !important; */
+  margin-top: -9.2px;
   background-color: transparent !important;
   font-family: proxima-nova, sans-serif;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   height: 41px !important ;
-  top: -35px !important;
+  top: -34.5px !important;
   color: #fff !important;
+  transition: .5s !important;
+
   /* background-color: red !important; */
 }
 .botonReset:hover{
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
-  transition: .5s !important;
 }
 /* TODO EL DIV ENTERO ↑ */
 .filtros {
@@ -267,59 +279,96 @@
     background-color: #0f0e17;
   }
 
-  /* ! FILTER 1 */
-  .filterSort {
-    margin-left: 35px;
-    position: relative;
-    border: 2px solid rgba(0, 0, 0, 0.21) !important;
-    background-color: rgb(255, 255, 255);
-    font-family: proxima-nova, sans-serif;
-    width: 88px !important;
-    text-align: center; /* centrar el texto horizontalmente */
+  .filtros {
+    justify-content: start !important;
+    /* background-color: green  !important;  */
+    position: absolute !important;
+    margin-top: 35px !important;
+    position: absolute;
+    height: 28px;
+  
+    top: 6px;
+    width: 130px;
   }
 
+  /* ! FILTER 1 */
+  .filterSort {
+    margin-left: 101px;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.21) !important;
+    background-color: black !important; /* Cambiar el fondo a negro */
+    font-family: proxima-nova, sans-serif;
+    color: #ffffff;
+    width: 88px !important;
+    text-align: center; /* Centrar el texto horizontalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+
   .filterSort:focus {
-    background-color: rgb(0, 0, 0) !important;
-    color: aliceblue !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
     transition: 0.5s linear;
     text-align: center; /* centrar el texto horizontalmente */
 
   }
 
   /* ! FILTER 2 */
-
   .filterCategory {
     position: relative;
     border: 2px solid rgba(0, 0, 0, 0.21) !important;
-    background-color: rgb(255, 255, 255) !important;
+    background-color: rgb(0, 0, 0) !important;
     font-family: proxima-nova, sans-serif;
-    width: 88px !important;
-    left: 0px !important;
-    text-align: center; /* centrar el texto horizontalmente en el elemento select */
-    
+    width: 90px !important;
+    left: -6px !important;
+    color: #ffffff;
+    text-align: center; /* Centrar el texto horizontalmente en el elemento select */
+    border-radius: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  
 
   .filterCategory:focus {
-    background-color: rgb(0, 0, 0) !important;
-    color: aliceblue !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
     transition: 0.5s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .filterMark2 {
     left: 200px !important;
     position: relative;
     border: 2px solid rgba(0, 0, 0, 0.21) !important;
-    background-color: rgb(255, 255, 255) !important;
+    background-color: rgb(0, 0, 0) !important;
+    color: #fff; /* Cambiar el color del texto a blanco */
     font-family: proxima-nova, sans-serif;
     width: 88px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
+  
   .filterMark3 {
     left: 299px !important;
     position: relative;
-    border: 2px solid rgb(255, 255, 255) !important;
-    background-color: rgb(255, 255, 255) !important;
+    border: 2px solid rgba(255, 255, 255, 0) !important;
+    background-color: rgb(0, 0, 0) !important;
     font-family: proxima-nova, sans-serif;
     width: 88px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: auto;
   }
+  
   .botonReset {
     background-color: rgb(252, 252, 252) !important;
     position: relative;

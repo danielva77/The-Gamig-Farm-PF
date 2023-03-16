@@ -17,19 +17,20 @@ import Swal from "sweetalert2";
 import { shopUser } from "../../redux/actions";
 
 export default function Details(props) {
- let usuariologueado = JSON.parse(localStorage.getItem("email"));
- let emailadmin = "thegamingfarm01@gmail.com"
+  let usuariologueado = JSON.parse(localStorage.getItem("email"));
+  let emailadmin = "thegamingfarm01@gmail.com";
   const { addItem, quantity } = useShoppingCart();
   const dispatch = useDispatch();
 
   const shop = useSelector((state) => state.shopuser);
-  console.log("ESTE ES SHOOOOOP", shop)
+  console.log("ESTE ES SHOOOOOP", shop);
   useEffect(() => {
-    dispatch(shopUser(usuariologueado)) //This is a correct???
-}, [dispatch]);
+    dispatch(shopUser(usuariologueado)); //This is a correct???
+  }, [dispatch]);
 
-let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == props.match.params.id )
-
+  let confirmacion = shop.filter(
+    (e) => e.email == usuariologueado && e.idproduct == props.match.params.id
+  );
 
   const handleAddToCart = () => {
     const item = {
@@ -59,30 +60,28 @@ let confirmacion = shop.filter(e =>e.email == usuariologueado && e.idproduct == 
     setStock(parseInt(e.target.value));
   }
 
-
   const successAlert = () => {
     Swal.fire({
-        title: 'stock agregado satisfactoriamente',
-        showDenyButton: false,
-        showCancelButton: false,
-        confirmButtonText: "Ok",
-        icon: "success"
+      title: "stock agregado satisfactoriamente",
+      showDenyButton: false,
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      icon: "success",
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         window.location.reload();
       }
     });
+  };
+  function agregarstock(id, stock) {
+    console.log("estollegoastock", id, stock);
+    dispatch(addStock(id, stock));
+    successAlert();
   }
-  function agregarstock(id, stock){
-  console.log("estollegoastock", id, stock)
-  dispatch(addStock(id, stock))
-  successAlert()
+  function disabled(id) {
+    dispatch(disabledProducts(id));
   }
-function disabled(id){
-dispatch(disabledProducts(id))
-}
-
 
   return (
     <div className="details-container">
@@ -90,24 +89,31 @@ dispatch(disabledProducts(id))
 
       {myProduct.length > 0 ? (
         <div className="infocont">
-        <div className="details-info">
-          <h1 className="titulo">{myProduct[0].title}</h1>
-          <img
-            src={myProduct[0].img}
-            alt="img"
-            className="imagenProducto"
-          ></img>
-          <h3 className="descripcionTitulo">Descripcion del producto:</h3>
-          <p className="descripcion">{myProduct[0].detail}</p>
-          <p className="precio">Precio: ${myProduct[0].price}</p>
-          <div className="botonDiv">
-            <button className="botonCarritoDetalle" onClick={handleAddToCart}>
-              <a className="suma">+ {quantity}</a>
-              <img src={cart} className="carrito" />{" "}
-            </button>
+          <div className="details">
+            <div className="elementoss">
+              <h1 className="titulo">{myProduct[0].title}</h1>
+              <img
+                src={myProduct[0].img}
+                alt="img"
+                className="imagenProducto"
+              />
+              <h3 className="ver">Ver detalles del producto</h3>
+              <p className="precio">Precio: ${myProduct[0].price}</p>
+              <div className="botonDiv">
+                <button
+                  className="botonCarritoDetalle"
+                  onClick={handleAddToCart}
+                >
+                  <a className="suma">+ {quantity}</a>
+                  <img src={cart} className="carrito" />{" "}
+                </button>
+              </div>
+            
+            <p className="stock">Unidades disponibles: {myProduct[0].stock}</p>
+            </div>
           </div>
-          <p className="stock">Unidades disponibles: {myProduct[0].stock}</p>
-        </div>
+          <h3 className="descripcionTitulo">Descripcion del producto</h3>
+          <p className="descripcion">{myProduct[0].detail}</p>
         </div>
       ) : (
         <p>Cargando ...</p>
@@ -121,39 +127,42 @@ dispatch(disabledProducts(id))
       <div className="carrusel">
         <Carrusel />
       </div>
-      { usuariologueado && confirmacion.length>0 ? 
-      <div>
+      {usuariologueado && confirmacion.length > 0 ? (
         <div>
-          <AddReview className="Review" productId={props.match.params.id} />
+          <div>
+            <AddReview className="Review" productId={props.match.params.id} />
+          </div>
         </div>
-      </div> : null
-      }
-        <div>
-          <ReviewContainer className="ReviewCont" productId={props.match.params.id} />
-        </div> 
-        { usuariologueado == emailadmin ? 
+      ) : null}
       <div>
-        {/* <button onClick={disabledProducts(props.match.params.id)}> */}
-        <button onClick={e => disabled(props.match.params.id)}>
-          Desactivar producto
-        </button>
-        <Link to={`/editproduct/${props.match.params.id}`}>
-          <button>Editar informacion del producto</button>
-        </Link>
-        <input
-          type="number"
-          min="0"
-          step="1"
-          name="stock"
-          onChange={(e) => handleStock(e)}
-          placeholder="Cantidad a agregar ..."
-        ></input>
-        {/* <button onClick={addStock(props.match.params.id, stock)}> */}
-        <button onClick={() => agregarstock(props.match.params.id, stock)}>
-          Agregar stock
-        </button>
+        <ReviewContainer
+          className="ReviewCont"
+          productId={props.match.params.id}
+        />
       </div>
-      : null  }
+      {usuariologueado == emailadmin ? (
+        <div>
+          {/* <button onClick={disabledProducts(props.match.params.id)}> */}
+          <button onClick={(e) => disabled(props.match.params.id)}>
+            Desactivar producto
+          </button>
+          <Link to={`/editproduct/${props.match.params.id}`}>
+            <button>Editar informacion del producto</button>
+          </Link>
+          <input
+            type="number"
+            min="0"
+            step="1"
+            name="stock"
+            onChange={(e) => handleStock(e)}
+            placeholder="Cantidad a agregar ..."
+          ></input>
+          {/* <button onClick={addStock(props.match.params.id, stock)}> */}
+          <button onClick={() => agregarstock(props.match.params.id, stock)}>
+            Agregar stock
+          </button>
+        </div>
+      ) : null}
       <div>
         <Footer />
       </div>

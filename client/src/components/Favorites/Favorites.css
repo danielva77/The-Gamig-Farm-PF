@@ -1,8 +1,8 @@
 .botonFavoritos {
-  position: absolute;
-  right: 12.5%;
+  position: relative;
+  left: 54.5%;
   top: 18px;
-  border: none;
+  border: 1px;
   margin-top: 22px;
   background-color: rgba(240, 248, 255, 0);
   display: grid;
@@ -35,7 +35,19 @@
   overflow-y: scroll; /* Habilita el scroll en el eje y */
   padding-top: 5px;
 }
+@media (max-width: 1500px) {
+  .botonFavoritos {
+    position: relative;
+    left: 50.5%;
+    top: 18px;
+    border: 1px;
+    margin-top: 22px;
+    background-color: rgba(240, 248, 255, 0);
+    display: grid;
+  }
 
+
+}
 
 @media (max-width: 767px) {
 
@@ -46,7 +58,7 @@
   top: 15px;
   border: none;
   margin-top: -103px;
-  margin-left: 3%;
+  margin-left: 4.7%;
   background-color: rgba(240, 248, 255, 0);
   display: grid;
 }

@@ -9,8 +9,9 @@
 }
 
 .menu-navbar {
+  
   position: absolute;
-  margin-left: 20%;
+  left: 16%;
   margin-top: 3vh;
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +32,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 29px;
   width: 100px;
 }
 .link:hover {
@@ -100,13 +101,21 @@
   left: 89%;
 }
 
+.admins{
+  top: 3px;
+  background-color: #d1d1d100;
+  width: fit-content;
+  left: 16px;
+} 
+
 /*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
 /* Estilos para pantallas más pequeñas (hasta 414px) */
-@media (max-width: 844px) {
+@media (max-width: 746px) {
   .menu-navbar {
     display: block;
     position: absolute;
     align-items: center;
+    left: 80px;
   }
   .link {
     position: relative;
@@ -191,7 +200,7 @@
     width: 390px;
     border-radius: 3px;
   }
-}
+
 .login {
   /* background-color: blue; */
   position: relative;
@@ -231,4 +240,5 @@
   background-color: #000000;
   width: 390px;
   border-radius: 3px;
+}
 }
