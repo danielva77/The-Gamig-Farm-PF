@@ -274,6 +274,12 @@
 }
 
 @media (max-width: 747px) {
+  /* body{
+    background-color: red !important;
+  } */
+
+/* ! REVISAR THIS ↑ */
+
   .pagina {
     margin-top: 87px;
     background-color: #0f0e17;

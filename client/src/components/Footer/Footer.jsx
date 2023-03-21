@@ -37,7 +37,16 @@ class Footer extends React.Component {
           <a href="https://github.com/danielva77/The-Gamig-Farm-PF" className="link1"  target="_blank">
             GitHub
           </a>
+          <br />
+          <h6 className="footerFinal">Copyright © 2023 The Gaming Farm Inc. All rights reserved.</h6>
         </div>
+
+        
+            
+
+            
+        {/* <div> */}
+        {/* </div> */}
       </footer>
     );
   }

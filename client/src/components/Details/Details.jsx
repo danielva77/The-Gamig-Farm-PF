@@ -15,7 +15,6 @@ import { disabledProducts, addStock } from "../../redux/actions";
 import Carrusel from "../Slider/Slider";
 import Swal from "sweetalert2";
 import { shopUser } from "../../redux/actions";
-
 export default function Details(props) {
   let usuariologueado = JSON.parse(localStorage.getItem("email"));
   let emailadmin = "thegamingfarm01@gmail.com";
@@ -97,7 +96,7 @@ export default function Details(props) {
                 alt="img"
                 className="imagenProducto"
               />
-              <h3 className="ver">Ver detalles del producto</h3>
+              {/* <h3 className="ver">Ver detalles del producto</h3> */}
               <p className="precio">Precio: ${myProduct[0].price}</p>
               <div className="botonDiv">
                 <button

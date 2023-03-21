@@ -206,3 +206,124 @@ padding: 2%;
 .infocont {
   background-color: #fff;
 }
+
+
+/*!  tamaño para celulares */
+@media (max-width: 747px) {
+
+  .imagenProducto{
+    background-color: red;
+    position: relative;
+    left: 5px;
+    top: -490px;
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    /* margin-top: 6%; */
+    /* margin-right: 2%; */
+    margin-bottom: 2rem;
+  }
+
+  .filtros {
+    position: relative;
+    width: 100%;
+    height: 41px;
+    left: -14px;
+    top: 169px !important;
+    background: #812be5 !important;
+   }
+   .elementoss{
+    /* background-color: rgb(8, 81, 226) !important; */
+    background-color: transparent ;
+    position: relative ;
+    bottom: -20px !important;
+    height: 620px;
+    /* left: -40px !important; */
+
+   }
+   .titulo{
+    /* background-color: yellow !important; */
+    top: 20px !important;
+    position: relative !important;
+    right: 785px;
+    /* justify-content: space-between; */
+    height: 560px;
+    /* width: 30px !important; */
+    box-shadow: 7px 7px 6px #838383;
+    outline: .1px solid black;
+   }
+ 
+   .descripcion{
+     /* border: 2px solid red; */
+    /* background-color: #089bde !important; */
+    width: 100%;
+    position: relative;
+    width: 100% !important;
+    height: 100%;
+    text-align: center !important;
+    padding: 0 30px;
+    font-weight: 500;
+    margin: 0 !important;
+    top: 95px ;
+  /* text-align: center; */
+   }
+
+   .stock {
+    position: absolute !important;
+    /* width: auto; */
+    /* height: 30px; */
+    left: 10px;
+    top: 420px;
+    /* border: 4px solid brown; */
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    /* font-weight: 400; */
+    font-size: 20px;
+    /* line-height: 30px; */
+    /* identical to box height */
+  
+    color: #747474;
+  }
+  .precio {
+    position: absolute !important;
+    width: 140px !important;
+    height: 40px !important;
+    left: 10px;
+    text-align: start;
+      
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    top: 450px !important;
+  
+    color: #7600ff;
+    /* border: 3px solid rgb(183, 30, 183) !important; */
+  }
+  .botonCarritoDetalle {
+    position: absolute !important;
+    width: 225px !important;
+    height: 48px !important;
+    left: 100px;
+    top: 515px;
+  
+    background: #7600ff;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    /* font-size: 50px; */
+  }
+  .descripcionTitulo {
+    /* background-color: green !important; */
+    position: absolute !important;
+    top: 850px !important;
+    /* border: 4px solid red; */
+    width: 410px;
+  }
+  .container{
+    /* background-color: red; */
+    position: relative;
+    top: -80px;
+  }
+
+}
