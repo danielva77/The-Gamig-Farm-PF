@@ -43,7 +43,7 @@
 }
 .conocenos {
   margin-top: 40px;
-  text-align: left;
+  text-align: center;
 }
 .fotoContacto {
   margin-bottom: 10px;
@@ -65,25 +65,26 @@
   /* display: block; */
   justify-content: space-between;
   position: relative;
-  left: 90px;
+  left: 100px;
   margin-top: 40px;
-  text-align: left;
+  text-align: center;
 }
 .footerFinal{
   /* background-color: rgb(176, 40, 40); */
   position: relative;
-  left: -300px;
+  left: -290px;
   /* bottom:  -3000px; */
   /* top: 3670px; */
   /* margin-top: 25px; */
   /* padding-bottom: 15px  !important; */
   /* width: s1000px; */
-  color: rgb(244, 213, 255);
-  font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+  color: rgba(255, 255, 255, 0.479);
+  font-family: Arial, Helvetica, sans-serif;
   /* width: 10px; */
-  top: 10px;
+  top: -10px;
   cursor: pointer;
   user-select: none;
+  font-weight: 12px;
 }
 
 
@@ -128,18 +129,18 @@
     padding: 0 !important;
     margin: 0;
     position: relative;
-    left: 20px !important;
+    left: -45px !important;
   }
   .conocenosS{
     /* background-color: #7600FF; */
     position: relative;
-    left: 5px !important;
+    left: 10px !important;
   }
   .conocenos {
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 18px;
     text-align: center;
     color: #a7a9be;
@@ -148,7 +149,7 @@
     background-color: transparent !important;
     /* background-color: green; */
     /* position: relative; */
-    /* left: ; */
+     
   }
   .contenedores{
     background-color: transparent;
@@ -173,8 +174,8 @@
     /* margin-top: 25px; */
     /* padding-bottom: 15px  !important; */
     /* width: s1000px; */
-    color: rgb(244, 213, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+    color: rgba(255, 255, 255, 0.479);
+    font-family: Arial, Helvetica, sans-serif;
     width: 340px;
     top: 10px;
     cursor: pointer;

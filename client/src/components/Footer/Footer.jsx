@@ -38,7 +38,7 @@ class Footer extends React.Component {
             GitHub
           </a>
           <br />
-          <h6 className="footerFinal">Copyright © 2023 The Gaming Farm Inc. All rights reserved.</h6>
+          <h6 className="footerFinal">Copyright © 2023 The Gaming Farm Inc.</h6>
         </div>
 
         

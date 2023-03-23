@@ -17,7 +17,7 @@
 /* Filtro SORT */
 .filterSort {
   width: 20% !important;
-  left: .1% !important;
+  left: 0.1% !important;
   position: relative;
   padding: 0px 25px !important;
   border: 1px solid #ffffff00 !important;
@@ -30,19 +30,18 @@
   color: #fff !important;
   text-align: center;
   border-right: 3px solid rgb(255, 255, 255) !important;
-  transition: .5s !important;
-
+  transition: 0.5s !important;
 }
 
 .filterSort:focus {
   background-color: rgb(255, 253, 253) !important;
   color: rgb(3, 3, 3) !important;
   transition: 0.5s linear;
-} 
-.filterSort:hover{
+}
+.filterSort:hover {
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
-  transition: .5s !important;
+  transition: 0.5s !important;
   cursor: pointer !important;
 }
 
@@ -62,18 +61,18 @@
   top: -2.6px;
   color: #fff !important;
   text-align: center;
-  transition: .5s !important;
+  transition: 0.5s !important;
 }
 
- .filterCategory:focus {
+.filterCategory:focus {
   background-color: rgb(255, 253, 253) !important;
   color: rgb(3, 3, 3) !important;
   transition: 0.5s linear;
-} 
-.filterCategory:hover{
+}
+.filterCategory:hover {
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
- 
+
   cursor: pointer;
 }
 /* Filtro Mark */
@@ -92,11 +91,11 @@
   height: 41px !important ;
   top: 9.1px !important;
   color: #fff !important;
-  transition: .5s !important;
+  transition: 0.5s !important;
 
   /* background-color: red !important; */
 }
-.filterMark2:hover{
+.filterMark2:hover {
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
 }
@@ -114,11 +113,11 @@
   height: 41px !important ;
   top: 9.1px !important;
   color: #fff !important;
-  transition: .5s !important;
+  transition: 0.5s !important;
 
   /* background-color: red !important; */
 }
-.filterMark3:hover{
+.filterMark3:hover {
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
 }
@@ -144,11 +143,11 @@
   height: 41px !important ;
   top: -34.5px !important;
   color: #fff !important;
-  transition: .5s !important;
+  transition: 0.5s !important;
 
   /* background-color: red !important; */
 }
-.botonReset:hover{
+.botonReset:hover {
   background-color: rgb(251, 251, 251) !important;
   color: #000 !important;
 }
@@ -157,9 +156,9 @@
   justify-content: start !important;
   /* background-color: green  !important;  */
   position: absolute !important;
-  margin-top: 35px !important;
+  margin-top: 5px !important;
   position: absolute;
-  height: 28px;
+  height: 2px;
 
   top: 6px;
   width: 150px;
@@ -274,12 +273,6 @@
 }
 
 @media (max-width: 747px) {
-  /* body{
-    background-color: red !important;
-  } */
-
-/* ! REVISAR THIS ↑ */
-
   .pagina {
     margin-top: 87px;
     background-color: #0f0e17;
@@ -289,10 +282,10 @@
     justify-content: start !important;
     /* background-color: green  !important;  */
     position: absolute !important;
-    margin-top: 35px !important;
+    margin-top: 65px !important;
     position: absolute;
     height: 28px;
-  
+
     top: 6px;
     width: 130px;
   }
@@ -311,15 +304,12 @@
     align-items: center;
     justify-content: center;
   }
-  
-  
 
   .filterSort:focus {
     background-color: rgb(255, 255, 255) !important;
     color: rgb(0, 0, 0) !important;
     transition: 0.5s linear;
     text-align: center; /* centrar el texto horizontalmente */
-
   }
 
   /* ! FILTER 2 */
@@ -337,7 +327,6 @@
     align-items: center;
     justify-content: center;
   }
-  
 
   .filterCategory:focus {
     background-color: rgb(255, 255, 255) !important;
@@ -360,7 +349,7 @@
     justify-content: center;
     text-align: center;
   }
-  
+
   .filterMark3 {
     left: 299px !important;
     position: relative;
@@ -374,7 +363,7 @@
     text-align: center;
     text-justify: auto;
   }
-  
+
   .botonReset {
     background-color: rgb(252, 252, 252) !important;
     position: relative;

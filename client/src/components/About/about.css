@@ -13,7 +13,7 @@
   left: 60px;
   color: #ffffff;
   background-color: #7600ff;
-  width: 1380px;
+  width: 1335px;
   padding: 2%;
   border-radius: 10px;
 }
@@ -23,7 +23,7 @@
   font-size: 25px;
   line-height: 38px;
   width: 92%;
-  color: #67686b;
+  color: #9b9c9e;
   text-align: left;
   position: relative;
   top: 20px;
@@ -48,7 +48,7 @@
 }
 
 .cardPersona {
-  width: 680px;
+  width: 678px;
   height: 300px;
   background: #ffffff;
   border-radius: 10px;

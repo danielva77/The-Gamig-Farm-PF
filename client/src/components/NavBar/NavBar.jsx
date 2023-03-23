@@ -69,7 +69,7 @@ function NavBar() {
         <LoginButton />
       )}
 
-<div className="cart-btn" style={{ display: "flex", alignItems: "center" }}>
+<div className="cart-btn" style={{ display: "block", alignItems: "center" }}>
   <Button variant="" class="btn btn float-right" onClick={openCart}>
     {""}
     <img src={Carrito} alt="imagen" className="img-fluid" class="carritoN" />
