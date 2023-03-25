@@ -3,7 +3,7 @@ const mercadopago = require("mercadopago");
 require("dotenv").config();
 const axios = require("axios");
 const p = require("../../productos.json");
-const {desactivarUsuario} = require("../controllers/userControllers")
+const { desactivarUsuario } = require("../controllers/userControllers");
 
 // Modelos de la base de datos ↓
 const { User, Store, Category, Mark, Product, Favorite } = require("../db");
@@ -430,7 +430,15 @@ const filterByMandos = async () => {
     where: { title: "Mandos" },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock", "isActive"],
+      attributes: [
+        "id",
+        "title",
+        "price",
+        "detail",
+        "img",
+        "stock",
+        "isActive",
+      ],
       through: {
         attributes: [],
       },
@@ -444,7 +452,15 @@ const filterByJuegos = async () => {
     where: { title: "Juegos" },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock", "isActive"],
+      attributes: [
+        "id",
+        "title",
+        "price",
+        "detail",
+        "img",
+        "stock",
+        "isActive",
+      ],
       through: {
         attributes: [],
       },
@@ -459,7 +475,7 @@ const filterByCategory = async (consola) => {
     where: { title: consola },
     include: {
       model: Product,
-      attributes: ["id", "title", "price", "detail", "img", "stock", ],
+      attributes: ["id", "title", "price", "detail", "img", "stock"],
       through: {
         attributes: [],
       },
@@ -470,10 +486,10 @@ const filterByCategory = async (consola) => {
 
 router.get("/db", async (req, res) => {
   try {
-    //   const categories = await createCategory();
-    //   const marks = await createMark();
-    await createCategory();
-    await createMark();
+    const categories = await createCategory();
+    const marks = await createMark();
+    // await createCategory();
+    // await createMark();
 
     const products = await createProduct();
 
@@ -518,6 +534,6 @@ router.get("/filterByCategory", async (req, res) => {
   }
 });
 
-router.put("/user/desactivar/:id", desactivarUsuario)
+router.put("/user/desactivar/:id", desactivarUsuario);
 
 module.exports = router;

@@ -29,16 +29,16 @@ export const GET_PRODUCTS = "GET_PRODUCTS";
 export const POST_PRODUCTS = "POST_PRODUCTS";
 
 // REVIEWS
-export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS"
+export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
 
 // ADMIN
-export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS"
-export const GET_ALL_USERS = "GET_ALL_USERS"
-export const DISABLE_USER = "DISABLE_USER"
+export const DISABLED_PRODUCTS = "DISABLED_PRODUCTS";
+export const GET_ALL_USERS = "GET_ALL_USERS";
+export const DISABLE_USER = "DISABLE_USER";
 
 //FILTER
-export const FILTER_BY_JUEGOS = "FILTER_BY_JUEGOS";
-export const FILTER_BY_MANDOS = "FILTER_BY_MANDOS";
+export const FILTER_BY_GAMES = "FILTER_BY_GAMES";
+export const FILTER_BY_JOYSTICK = "FILTER_BY_JOYSTICK";
 
 export const setNameFilter = (payload) => {
   console.log("object");
@@ -404,16 +404,16 @@ export function getReviews() {
   };
 }
 
-export function disabledReviews(id){
-  return async function(dispatch){
-    const disabled = await axios.delete(`http://localhost:3001/review/${id}`)
-    const review = disabled.data
+export function disabledReviews(id) {
+  return async function (dispatch) {
+    const disabled = await axios.delete(`http://localhost:3001/review/${id}`);
+    const review = disabled.data;
 
     return dispatch({
       type: "DISABLED_REVIEWS",
       payload: review,
-    })
-  }
+    });
+  };
 }
 
 export function disabledProducts(id) {
@@ -495,36 +495,36 @@ export function getUser(id) {
 
 export function getAllUsers() {
   return async function (dispatch) {
-    let aux = await axios.get(`http://localhost:3001/usuarios`)
-    const users = aux.data
+    let aux = await axios.get(`http://localhost:3001/usuarios`);
+    const users = aux.data;
 
     return dispatch({
       type: GET_ALL_USERS,
       payload: users,
-    })
-  }
+    });
+  };
 }
 
 export function disableUser(id) {
   return async function (dispatch) {
-    let producto = await axios.get(`http://localhost:3001/user/${id}`)
+    let producto = await axios.get(`http://localhost:3001/user/${id}`);
 
     // console.log("producto: ", producto.data)
-    let isActive = producto.data.isActive
+    let isActive = producto.data.isActive;
 
     if (isActive) {
-      alert("Desactivado")
+      alert("Desactivado");
     } else {
-      alert("Activado")
+      alert("Activado");
     }
 
-    await axios.put(`http://localhost:3001/user/desactivar/${id}`)
+    await axios.put(`http://localhost:3001/user/desactivar/${id}`);
 
     return dispatch({
       type: DISABLE_USER,
       payload: id,
-    })
-  }
+    });
+  };
   // let b;
   // if(isActive){b=false}else{b=true}
   // return function (dispatch){
@@ -532,24 +532,18 @@ export function disableUser(id) {
   // }
 }
 
-export function filterByJuegos () {
+export function filterByGames() {
   return async function (dispatch) {
-    const data = await axios('http://localhost:3001/filterByJuegos')
-
     return dispatch({
-      type: FILTER_BY_JUEGOS,
-      payload: data.data
-    })
-  }
+      type: FILTER_BY_GAMES,
+    });
+  };
 }
 
-export function filterByMandos () {
+export function filterByJoystick() {
   return async function (dispatch) {
-    const data = await axios('http://localhost:3001/filterByMandos')
-
     return dispatch({
-      type: FILTER_BY_MANDOS,
-      payload: data.data
-    })
-  }
+      type: FILTER_BY_JOYSTICK,
+    });
+  };
 }

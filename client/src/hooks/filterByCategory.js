@@ -1,17 +1,18 @@
-export const filteredbyCategory = (items, categoryFilter, resetCurrentPage) => {
-  let filteredbyCategory = items
+export const filteredbyCategory = (
+  filteredAndSorted,
+  categoryFilter,
+  resetCurrentPage
+) => {
+  let filteredbyCategory = filteredAndSorted;
 
-  if (categoryFilter) {
-    filteredbyCategory = filteredbyCategory.filter(el => el.Categories[0] !== undefined)
-    filteredbyCategory = filteredbyCategory.filter(item =>
-      item.Categories[0].title.includes(categoryFilter)
-    )
-  }
+  filteredbyCategory = filteredbyCategory.filter((item) =>
+    item.Categories[0].title.includes(categoryFilter)
+  );
 
-  resetCurrentPage()
+  resetCurrentPage();
 
   if (filteredbyCategory) {
-    return filteredbyCategory
+    return filteredbyCategory;
   }
-  return items
-}
+  return filteredAndSorted;
+};

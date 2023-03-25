@@ -1,8 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Mandos from "../Mandos/Mando";
 
-import {  useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoreItems from "../StoreItems/StoreItems";
 import Paginado from "../Paginado/Paginado";
@@ -11,12 +10,12 @@ import CategoryFilter from "../CategoryFilter/CategoryFilter";
 import Sort from "../Sort/Sort";
 import ReloadPageBtn from "../ReloadPageBtn/ReloadPageBtn";
 import NavBar from "../NavBar/NavBar";
-import MarkFilter from "../MarkFilter/MarkFilter";
-
+import JoystickFilter from "../JoystickFilter/JoystickFilter";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import Footer from "../Footer/Footer";
 import News from "../News/News";
+import GamesFilter from "../GamesFilter/GamesFilter";
 
 export function Home() {
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ export function Home() {
   const google2 = useAuth0();
 
   let email = JSON.parse(localStorage.getItem("email"));
-  
+
   // MODO OSCURO
   // const functionModo = () => {
   //   alert(
@@ -33,7 +32,7 @@ export function Home() {
   //   );
   // };
 
-  useEffect(() => { 
+  useEffect(() => {
     dispatch(getAllProd());
     dispatch(getAllCategories());
     if (google2.isAuthenticated) {
@@ -63,11 +62,11 @@ export function Home() {
         </div>
 
         <div>
-          <MarkFilter />
+          <GamesFilter />
         </div>
 
         <div>
-          <Mandos />
+          <JoystickFilter />
         </div>
 
         <div>
