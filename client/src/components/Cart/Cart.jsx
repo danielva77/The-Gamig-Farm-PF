@@ -36,7 +36,7 @@ const Cart = () => {
   const handleHide = () => setShow(false);
   return (
     <div className="cart">
-      <div><Button variant="" class="btn btn float-right" onClick={handleShow}>
+      <div><Button variant="" onClick={handleShow}>
         {""}
         <img src={Carrito} alt="imagen" class="img-fluid" />
         <div className="cart-quantity-circle">{quantity}</div>

@@ -108,6 +108,8 @@
   left: 16px;
 } 
 
+
+
 /*  TODO → TODO ESTO PERTENECE AL TAMAÑO PERSONALIZADO DEL CELULAR */
 /* Estilos para pantallas más pequeñas (hasta 414px) */
 @media (max-width: 746px) {
@@ -117,6 +119,11 @@
     align-items: center;
     left: 80px;
    
+  }
+
+  .cart-btn {
+    left: 260px;
+    top: 22px;
   }
   .link {
     position: relative;
@@ -229,8 +236,8 @@
 .quantity-circle {
   /* background-color: skyblue !important; */
   position: relative;
-  left: -60px;
-  top: -15px;
+  left: 15px;
+  top: -25px;
 }
 
 .admins {
