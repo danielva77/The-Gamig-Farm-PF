@@ -45,7 +45,7 @@ const Profile = () => {
       avatar: google.user.picture,
     };
 
-    axios.post("http://localhost:3001/createuser", datosUser);
+    axios.post("/createuser", datosUser);
   }
 
 

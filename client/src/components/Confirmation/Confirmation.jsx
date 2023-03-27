@@ -70,7 +70,7 @@ let addShop = () =>{
     cart.map((el) => {
       let total = el.stock - el.quantity;
 
-    return axios.put(`http://localhost:3001/products/${el.id}`, {stock: total})
+    return axios.put(`/products/${el.id}`, {stock: total})
     
   })
 }
@@ -98,7 +98,7 @@ setTimeout(async() => {
 const mensajeCorreo = { cart, email}
  
 useEffect((e) => {
-  axios.post("http://localhost:3001/MensajeCompra", mensajeCorreo);
+  axios.post("/MensajeCompra", mensajeCorreo);
 }, []);
 
 

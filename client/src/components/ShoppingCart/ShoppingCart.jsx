@@ -30,7 +30,7 @@ export function ShoppingCart({ isOpen }) {
     const handlePayment = async () => {
         if (isAuthenticated) {
           try {
-            const response = await axios.post("http://localhost:3001/payment", cart);
+            const response = await axios.post("/payment", cart);
             window.location.assign(response.data);
           } catch (error) {
             console.log(error);
