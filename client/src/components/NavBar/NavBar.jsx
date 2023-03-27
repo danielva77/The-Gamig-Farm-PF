@@ -72,7 +72,7 @@ function NavBar() {
 <div className="cart-btn" style={{ display: "block", alignItems: "center" }}>
   <Button variant="" class="btn btn float-right" onClick={openCart}>
     {""}
-    <img src={Carrito} alt="imagen" className="img-fluid" class="carritoN" />
+    <img src={Carrito} alt="imagen" className="" class="" />
     <div className="quantity-circle">{cartQuantity}</div>
   </Button>
 </div>

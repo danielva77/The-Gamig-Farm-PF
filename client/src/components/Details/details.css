@@ -211,6 +211,12 @@ padding: 2%;
 /*!  tamaño para celulares */
 @media (max-width: 747px) {
 
+.volver{
+  top:-20px;
+  left: 2px;
+
+}
+
   .imagenProducto{
     /* background-color: red; */
     position: relative;
@@ -226,7 +232,7 @@ padding: 2%;
 
   .filtros {
     position: relative;
-    width: 9%;
+    width: 0%;
     height: 4px;
     /* left: -14px; */
     top: 169px !important;
