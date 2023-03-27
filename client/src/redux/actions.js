@@ -95,7 +95,7 @@ export const setNumbersPaginated = (payload) => {
 export function getAllProd() {
   // ----- Get from API
   return async function (dispatch) {
-    var req = await axios.get("http://localhost:3001/products");
+    var req = await axios.get("/products");
     const products = req.data;
 
     return dispatch({
@@ -109,7 +109,7 @@ export function postProducts(payload) {
   console.log("esto llega en payload POST", payload);
   return async function (dispatch) {
     const response = await axios.post(
-      "http://localhost:3001/products",
+      "/products",
       payload
     );
 
@@ -122,7 +122,7 @@ export function postProducts(payload) {
 export function postShop(payload) {
   console.log("esto llega accion shop", payload);
   return async function (dispatch) {
-    const response = await axios.post("http://localhost:3001/addshop", payload);
+    const response = await axios.post("/addshop", payload);
     return dispatch({
       type: "POST_SHOP",
       payload: response.data,
@@ -133,7 +133,7 @@ export function postShop(payload) {
 export function getAllMarks() {
   return async function (dispatch) {
     try {
-      const req = await axios.get("http://localhost:3001/mark");
+      const req = await axios.get("/mark");
 
       // const categories = req.data
       const unicos = req.data;
@@ -157,7 +157,7 @@ export function getAllCategories() {
   return async function (dispatch) {
     try {
       //----- API
-      const req = await axios.get("http://localhost:3001/category");
+      const req = await axios.get("/category");
 
       // const categories = req.data
       const unicos = req.data;
@@ -188,7 +188,7 @@ export function searchByName(name) {
   return async function (dispatch) {
     try {
       let json = await axios.get(
-        "http://localhost:3001/products?title=" + name
+        "/products?title=" + name
       );
       return dispatch({
         type: "SEARCH_BY_NAME",
@@ -244,7 +244,7 @@ export function volverAhome() {
 //Actions para los Detalles
 export const getDetail = (id) => {
   return async function (dispatch) {
-    const response = await axios.get(`http://localhost:3001/products/${id}`);
+    const response = await axios.get(`/products/${id}`);
 
     return dispatch({
       type: GET_DETAIL,
@@ -278,7 +278,7 @@ export function cleanDetail() {
 export function getFavorites(email) {
   return function (dispatch) {
     return axios
-      .get(`http://localhost:3001/favorites?email=${email}`)
+      .get(`/favorites?email=${email}`)
       .then((res) => {
         dispatch({ type: "GET_FAVORITES", payload: res.data });
       })
@@ -298,7 +298,7 @@ export const setFavorites = (items) => {
 export function addToFavorites(payload) {
   return async function (dispatch) {
     const response = await axios.post(
-      "http://localhost:3001/favorites",
+      "/favorites",
       payload
     );
     return response;
@@ -308,7 +308,7 @@ export function addToFavorites(payload) {
 export function removeFromFavorites(email, productId) {
   return function (dispatch) {
     return axios
-      .post("http://localhost:3001/favorites/remove", { email, productId })
+      .post("/favorites/remove", { email, productId })
       .then(() => {
         dispatch({ type: "REMOVE_FROM_FAVORITES", productId });
       })
@@ -322,7 +322,7 @@ export function deleteFavorites(id) {
   return async function (dispatch) {
     console.log("esto llega antes de elminiar", id);
     const response = await axios.delete(
-      `http://localhost:3001/favorites/${id}`
+      `/favorites/${id}`
     );
     return response;
   };
@@ -331,7 +331,7 @@ export function deleteFavorites(id) {
 export function getUserFavorites() {
   return async function (dispatch) {
     try {
-      const favorites = await axios.get(`http://localhost:3001/favorites`);
+      const favorites = await axios.get(`/favorites`);
       dispatch({ type: "SET_FAVORITES", payload: favorites.data });
     } catch (error) {
       console.log(error);
@@ -351,7 +351,7 @@ export const removeFromFav = (id) => {
 
 export function getProduct() {
   return async function (dispatch) {
-    var info = await axios.get("http://localhost:3001/products", {});
+    var info = await axios.get("/products", {});
     return dispatch({
       type: GET_PRODUCTS,
       payload: info.data,
@@ -363,7 +363,7 @@ export function postProduct(payload) {
   //payload es lo que nos llega en el front
   return async function (dispatch) {
     const response = await axios.post(
-      "http://localhost:3001/products",
+      "/products",
       payload
     );
     console.log("Producto creaado " + response);
@@ -375,7 +375,7 @@ export const addReview = (payload) => {
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        "http://localhost:3001/review",
+        "/review",
         payload
       );
 
@@ -394,7 +394,7 @@ export const addReview = (payload) => {
 
 export function getReviews() {
   return async function (dispatch) {
-    const jsonreview = await axios.get("http://localhost:3001/review");
+    const jsonreview = await axios.get("/review");
     const review = jsonreview.data;
 
     return dispatch({
@@ -406,7 +406,7 @@ export function getReviews() {
 
 export function disabledReviews(id){
   return async function(dispatch){
-    const disabled = await axios.delete(`http://localhost:3001/review/${id}`)
+    const disabled = await axios.delete(`/review/${id}`)
     const review = disabled.data
 
     return dispatch({
@@ -418,7 +418,7 @@ export function disabledReviews(id){
 
 export function disabledProducts(id) {
   return async function (dispatch) {
-    let producto = await axios.get(`http://localhost:3001/products/${id}`);
+    let producto = await axios.get(`/products/${id}`);
     let isActive = producto.data[0].isActive;
     let b;
     if (isActive) {
@@ -429,7 +429,7 @@ export function disabledProducts(id) {
       alert("Activado");
     }
 
-    axios.put(`http://localhost:3001/products/${id}`, { isActive: b });
+    axios.put(`/products/${id}`, { isActive: b });
 
     return dispatch({
       type: DISABLED_PRODUCTS,
@@ -439,16 +439,16 @@ export function disabledProducts(id) {
   // let b;
   // if(isActive){b=false}else{b=true}
   // return function (dispatch){
-  //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  //   return axios.put(`/products/${id}`, {isActive: b})
   // }
 }
 
 export function addStock(id, number) {
   console.log("esto llego del boton", number);
   return async function (dispatch) {
-    let producto = await axios.get(`http://localhost:3001/products/${id}`);
+    let producto = await axios.get(`/products/${id}`);
     let total = producto.data[0].stock + number;
-    return axios.put(`http://localhost:3001/products/${id}`, { stock: total });
+    return axios.put(`/products/${id}`, { stock: total });
   };
 }
 
@@ -456,7 +456,7 @@ export function addStock(id, number) {
 
 export function idUser(email) {
   return async function (dispatch) {
-    let usuarios = await axios.get("http://localhost:3001/usuarios");
+    let usuarios = await axios.get("/usuarios");
     let tocarUser = usuarios.data;
     let miUsuario = tocarUser.filter((e) => e.email === email);
     let idUsuario = miUsuario[0];
@@ -468,7 +468,7 @@ export function idUser(email) {
 }
 export function shopUser(email) {
   return async function (dispatch) {
-    let usuarios = await axios.get("http://localhost:3001/shops");
+    let usuarios = await axios.get("/shops");
     let tocarUser = usuarios.data;
     let miUsuario = tocarUser.filter((e) => e.email === email);
     let idUsuario = miUsuario;
@@ -483,7 +483,7 @@ export function shopUser(email) {
 export function getUser(id) {
   return function (dispatch) {
     return axios
-      .get(`http://localhost:3001/user/${id}`)
+      .get(`/user/${id}`)
       .then((res) => {
         dispatch({ type: GET_USER_ID, payload: res.data });
       })
@@ -495,7 +495,7 @@ export function getUser(id) {
 
 export function getAllUsers() {
   return async function (dispatch) {
-    let aux = await axios.get(`http://localhost:3001/usuarios`)
+    let aux = await axios.get(`/usuarios`)
     const users = aux.data
 
     return dispatch({
@@ -507,7 +507,7 @@ export function getAllUsers() {
 
 export function disableUser(id) {
   return async function (dispatch) {
-    let producto = await axios.get(`http://localhost:3001/user/${id}`)
+    let producto = await axios.get(`/user/${id}`)
 
     // console.log("producto: ", producto.data)
     let isActive = producto.data.isActive
@@ -518,7 +518,7 @@ export function disableUser(id) {
       alert("Activado")
     }
 
-    await axios.put(`http://localhost:3001/user/desactivar/${id}`)
+    await axios.put(`/user/desactivar/${id}`)
 
     return dispatch({
       type: DISABLE_USER,
@@ -528,13 +528,13 @@ export function disableUser(id) {
   // let b;
   // if(isActive){b=false}else{b=true}
   // return function (dispatch){
-  //   return axios.put(`http://localhost:3001/products/${id}`, {isActive: b})
+  //   return axios.put(`/products/${id}`, {isActive: b})
   // }
 }
 
 export function filterByJuegos () {
   return async function (dispatch) {
-    const data = await axios('http://localhost:3001/filterByJuegos')
+    const data = await axios('/filterByJuegos')
 
     return dispatch({
       type: FILTER_BY_JUEGOS,
@@ -545,7 +545,7 @@ export function filterByJuegos () {
 
 export function filterByMandos () {
   return async function (dispatch) {
-    const data = await axios('http://localhost:3001/filterByMandos')
+    const data = await axios('/filterByMandos')
 
     return dispatch({
       type: FILTER_BY_MANDOS,
