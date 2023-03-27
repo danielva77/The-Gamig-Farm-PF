@@ -27,8 +27,8 @@ const LandingPage = () => {
           <h1 className="tituloLanding">Bienvenid@s a TheGamingFarm! </h1>
 
           {/* <img  className="fuego" src={Fuego}  /> */}
-          <NavLink to="/home" onClick=
-            {(e) => window.location.assign("/home")}>
+          <NavLink to="/products" onClick=
+            {("/home")}>
             <button class="cssbuttons-io">
               <span className="letrasss">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
