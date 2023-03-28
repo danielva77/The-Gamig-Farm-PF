@@ -1,6 +1,9 @@
-module.exports= {
-    resolve:{
-        fallback:{ "stream": false , "fs" : false, "path": false},        
-    }
+const Dotenv = require('dotenv-webpack');
 
+module.exports = {
+  // ... tu configuración de Webpack ...
+  plugins: [
+    // Agrega el plugin de dotenv-webpack
+    new Dotenv()
+  ]
 }

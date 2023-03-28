@@ -20,9 +20,14 @@
     "@uploadcare/react-widget": "^2.4.1",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.3",
+    "env-cmd": "^10.1.0",
     "express": "^4.18.2",
     "formik": "^2.2.9",
+    "fs": "^0.0.1-security",
     "nodemailer": "^6.9.0",
+    "os": "^0.1.2",
+    "os-browserify": "^0.3.0",
+    "path": "^0.12.7",
     "process": "^0.11.10",
     "react": "17.0.2",
     "react-bootstrap": "^2.7.0",
@@ -72,5 +77,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv-webpack": "^8.0.1"
   }
 }
