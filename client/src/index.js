@@ -12,8 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Auth0Provider } from "@auth0/auth0-react"
 import { CartProvider } from "./context/CartContext/CartContext"
 import { BrowserRouter } from "react-router-dom";
-import dotenv from 'dotenv';
-dotenv.config();
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 const { REACT_APP_DEPLOY } = process.env
 
