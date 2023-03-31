@@ -10,22 +10,92 @@
     "nodemailer": "^6.9.0",
     "process": "^0.11.10",
     "redux-toolkit": "^1.1.2",
-    "sweetalert2": "^11.7.0"
-
-
-
-
+    "sweetalert2": "^11.7.0",
+    "react-scripts": "^5.0.1",
+    "@auth0/auth0-react": "^1.12.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.8.3",
+    "@mui/x-data-grid": "^5.12.1",
+    "@mui/x-data-grid-generator": "^5.12.1",
+    "@mui/x-data-grid-premium": "^5.12.1",
+    "@mui/x-data-grid-pro": "^5.12.1",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.1",
+    "@uploadcare/react-widget": "^2.4.1",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.2",
+    "formik": "^2.2.9",
+    "fs": "^0.0.1-security",
+    "nodemailer": "^6.9.0",
+    "os": "^0.1.2",
+    "os-browserify": "^0.3.0",
+    "path": "^0.12.7",
+    "process": "^0.11.10",
+    "react": "17.0.2",
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.7.1",
+    "react-pro-sidebar": "^0.7.1",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.29.0",
+    "readable-stream": "^4.3.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "smtp-server": "^3.11.0",
+    "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
+    "sweetalert2": "^11.7.0",
+    "timers": "^0.1.1",
+    "timers-browserify": "^2.0.12",
+    "uploadcare-widget": "^3.21.0",
+    "web-vitals": "^2.1.4",
+    "xml2js": "^0.4.23",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
-    "dotenv-webpack": "^8.0.1"
-
-
-
+    "dotenv-webpack": "^8.0.1",
+    "react-scripts": "^5.0.1"
   },
-"scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-}
+  "scripts": {
+   
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  
+},
+"browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+},
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
